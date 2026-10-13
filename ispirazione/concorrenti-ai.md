@@ -40,7 +40,7 @@ Regola: **prendiamo le tecniche, non l'identità.**
 
 ## Lo spazio libero per Scopri.AI
 Nessuno unisce **velocità + fonti verificate + utilità pratica**: chi è veloce non cita le fonti, chi le cita è lento.
-La nostra firma: **"✓ PROVATO"** sui prompt e **"Fonte:"** su ogni notizia.
+La nostra firma: **"Fonte:"** su ogni notizia (non sui prompt).
 
 ## Pagine con nomi simili (cercando "scopri ai" su Instagram)
 - `scopriai` — pagina AI ferma da maggio 2025.

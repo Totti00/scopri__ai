@@ -6,7 +6,7 @@
 - **Bio:**
   ```
   🧠 L'intelligenza artificiale che funziona davvero
-  ✓ Prompt provati · Notizie con la fonte
+  💡 Prompt pronti da copiare · Notizie verificate
   📌 Salva, prova, scopri
   ```
 - **Tipo di account:** Creator (per vedere le statistiche).
@@ -16,9 +16,9 @@
 Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il nostro spazio.
 
 ## Firma visiva (da usare sempre)
-- Timbro **"✓ PROVATO"** sulle slide dei prompt provati.
-- Riga **"Fonte: …"** su ogni slide di notizia.
+- Riga **"Fonte: …"** su ogni slide di notizia, curiosità o dato. **Non** sulle slide dei prompt.
 - Logo **Scopri.AI** in ogni slide.
+- Nessun timbro "provato" o simili sulle slide.
 
 ## Palette (scelta il 13/10/2026: "blu pieno, carta e giallo")
 | Ruolo | Colore | Hex |

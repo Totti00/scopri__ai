@@ -8,7 +8,7 @@ La novità AI più utile della settimana per una persona normale (un nuovo model
 ## Struttura delle slide
 1. **Copertina** — titolo-gancio di una riga e mezza con una parola chiave evidenziata nel colore accento. Esempio: "Google ora crea videogiochi da una frase. **Serve davvero?**" Etichetta in alto: `[ È USCITO ]`.
 2. **Cos'è** — 2–4 righe in parole semplici + screenshot ufficiale del prodotto. Riga fonte in basso.
-3. **Come si usa** — 3 passaggi numerati. Se c'è un prompt, va provato (timbro "✓ PROVATO").
+3. **Come si usa** — 3 passaggi numerati. Se c'è un prompt, Claude lo controlla prima (senza timbri sulla slide).
 4. **Il verdetto** — voto da 1 a 10 grande, con "Per chi è utile" / "Per chi no". Fondo accento.
 5. *(opzionale)* **CTA** — "Segui @scopri__ai" + domanda per i commenti.
 
