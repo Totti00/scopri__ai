@@ -38,7 +38,11 @@ Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il 
 
 ## Grafica
 - Font: **Space Grotesk** (titoli e testo), **JetBrains Mono** (etichette, fonti, prompt).
-- Logo: `brand/logo/logo-orizzontale-su-blu.png` e `brand/logo/logo-orizzontale-su-carta.png`.
+- **Logo ufficiale (scelto il 13/10/2026): "Scopri" + fumetto con "AI".**
+  - Foto profilo: `brand/logo/ufficiale/foto-profilo.png` (fumetto giallo con "AI" blu su fondo blu).
+  - Logo su fondo blu: `brand/logo/ufficiale/logo-su-blu.png` (testo bianco, fumetto giallo).
+  - Logo su fondo carta: `brand/logo/ufficiale/logo-su-carta.png` (testo nero, fumetto blu).
+  - Le altre proposte restano in `brand/logo/` come archivio.
 - Formato slide: 1080×1350 px.
 
 Da evitare perché tipico dei concorrenti: fondo nero con lilla o viola, mascotte robot, collage di CEO.
