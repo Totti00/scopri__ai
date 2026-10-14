@@ -1,0 +1,21 @@
+⚡ Google ha lanciato Gemini 4 Argon, la sua AI più avanzata.
+
+Dal 13 ottobre è nell'app Gemini, in tutto il mondo. Ma solo per chi paga Google AI Pro o Ultra, e arriva un po' alla volta.
+
+Cosa cambia quando lo usi:
+✅ risposte più dirette, senza giri di parole
+✅ ti aggiorna più spesso nei lavori lunghi
+✅ la modalità Task lavora per te anche quando non sei al computer (per ora solo in alcuni Paesi)
+
+È davvero il più bravo? Nei test di Google sulla programmazione è primo, e anche la classifica indipendente Vals AI lo mette al primo posto. Ma ChatGPT e Claude sono vicinissimi.
+
+La curiosità: dentro Google, Argon ha trovato da solo come liberare oltre 300 TiB di memoria nei data center. È la memoria di circa 19.000 portatili.
+
+👉 Per te: se usi Gemini gratis, per ora non cambia niente.
+
+Tu pagheresti per un'AI più brava? Dimmelo nei commenti 👇
+📌 Salva il post e seguici per le prossime novità.
+
+Fonti: Google (blog e note di rilascio dell'app Gemini), Google DeepMind, SiliconANGLE, Vals AI.
+
+#intelligenzaartificiale #gemini #google #AI #tecnologia #novitàtech

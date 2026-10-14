@@ -1,0 +1,74 @@
+{
+ "rubrica": "NEWS LAMPO",
+ "slides": [
+  {
+   "tipo": "copertina",
+   "titolo": "Google ha lanciato *Gemini 4 Argon*.",
+   "sottotitolo": "La sua AI più avanzata. Ecco cosa cambia per te.",
+   "visual": {
+    "immagine": "media/keyart.png",
+    "posizione": "22% center",
+    "didascalia": "Immagine: Google"
+   }
+  },
+  {
+   "tipo": "testo",
+   "titolo": "Da ieri è *nell'app Gemini*",
+   "testo": [
+    "Google l'ha presentato il 30 settembre. Dal 13 ottobre arriva nell'app Gemini, **in tutto il mondo**.",
+    "Ma solo per chi paga **Google AI Pro** o **Ultra**. Arriva un po' alla volta: se non lo vedi, aspetta qualche giorno."
+   ],
+   "visual": {
+    "immagine": "media/demos.png",
+    "posizione": "center",
+    "didascalia": "Immagine: Google"
+   },
+   "fonte": "Google, SiliconANGLE"
+  },
+  {
+   "tipo": "testo",
+   "titolo": "Cosa *cambia*",
+   "dimensione_testo": 46,
+   "testo": [
+    "✅ Risposte **più dirette**: meno giri di parole, meno ripetizioni, niente frasi fatte.",
+    "✅ Nei lavori lunghi ti **aggiorna più spesso** su cosa sta facendo.",
+    "✅ Nuova modalità **Task** (attività): lavora per te anche quando non sei al computer. Per ora solo in alcuni Paesi."
+   ],
+   "per_te": "se usi Gemini gratis, per ora non cambia niente.",
+   "fonte": "Google",
+   "dimensione": 76
+  },
+  {
+   "tipo": "testo",
+   "titolo": "È davvero *il più bravo*?",
+   "testo": [
+    "Nel test di Google sulla programmazione è primo: **77,9%**. Ma ChatGPT e Claude sono vicini.",
+    "Anche la classifica indipendente **Vals AI**, su lavori veri come finanza e legge, lo mette primo. Di poco."
+   ],
+   "visual": {
+    "immagine": "media/deepswe.png",
+    "adatta": "contain",
+    "posizione": "center",
+    "didascalia": "Grafico: Google DeepMind"
+   },
+   "fonte": "Google DeepMind, Vals AI"
+  },
+  {
+   "tipo": "testo",
+   "titolo": "Google lo usa *già*",
+   "testo": [
+    "Dentro Google, Argon ha analizzato i data center e ha trovato **da solo** dove risparmiare memoria.",
+    "Risultato: oltre 300 TiB liberati. È la memoria di **circa 19.000 portatili** da 16 GB."
+   ],
+   "visual": {
+    "numero": "300 TiB",
+    "sotto": "di memoria liberata nei data center di Google"
+   },
+   "fonte": "Google"
+  },
+  {
+   "tipo": "chiusura",
+   "domanda": "Pagheresti per un'AI più brava? Dimmelo nei commenti 👇"
+  }
+ ]
+}
