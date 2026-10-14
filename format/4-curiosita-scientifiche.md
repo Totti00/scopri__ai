@@ -17,4 +17,4 @@ Non scade: si può preparare in anticipo e fa da **rubrica di riserva** quando n
 5. **"Quindi…"** — cosa ci si porta a casa, in una frase.
 6. **Chiusura** (fondo blu) — domanda per i commenti + "Segui @scopri__ai".
 
-**Fonte obbligatoria** su ogni slide di spiegazione e in caption (Nature, Science, MIT Technology Review, siti di università e centri di ricerca, Treccani per le definizioni).
+**Fonte obbligatoria** in fondo alla caption, non sulle slide (Nature, Science, MIT Technology Review, siti di università e centri di ricerca, Treccani per le definizioni).

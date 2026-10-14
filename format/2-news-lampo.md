@@ -22,8 +22,8 @@ Regole:
 
 ## Struttura delle slide
 1. **Copertina** (fondo blu) — titolo-gancio di una riga e mezza, con la parola chiave in giallo. Scritta piccola in alto: `NEWS LAMPO`. Sopra, la foto o il video veri della notizia.
-2. **Cos'è successo** (fondo carta) — 2–4 righe semplici + foto, video o screenshot veri. Fonte in basso.
-3. **Cosa cambia per te** (fondo carta) — 2–3 punti concreti. Fonte in basso.
+2. **Cos'è successo** (fondo carta) — 2–4 righe semplici + foto, video o screenshot veri.
+3. **Cosa cambia per te** (fondo carta) — 2–3 punti concreti.
 4. *(facoltativa)* **Come provarlo** — 3 passaggi, se si può già usare.
 5. **Chiusura** (fondo blu) — domanda per i commenti + "Segui @scopri__ai".
 
@@ -35,7 +35,7 @@ Regole:
 
 👉 Cosa cambia per te: [1 frase concreta]
 
-Fonte: [testata/azienda]
+Fonti: [aziende e testate] · Immagini: [chi le ha fatte]
 
 📌 Salva il post · Tu cosa ne pensi? 👇
 #intelligenzaartificiale #[prodotto] #[tema]

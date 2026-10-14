@@ -1,6 +1,6 @@
 # Rubrica 1 — "Le news AI della settimana che ti sei perso"
 
-**Slide:** 7. **Ispirata a:** "Weekly AI Update" di @profession.ai (appuntamento fisso, fonte su ogni slide), con in più "cosa cambia per te".
+**Slide:** 7. **Ispirata a:** "Weekly AI Update" di @profession.ai (appuntamento fisso), con in più "cosa cambia per te".
 
 ## Cosa sceglie
 Le 5 notizie di tech e AI più rilevanti degli ultimi 7 giorni (anche di altri temi, purché ci sia dentro un minimo di tech), ognuna confermata da 2 fonti (vedi `fonti.md`). Almeno una riguarda l'Italia o l'Europa, se c'è.
@@ -12,7 +12,6 @@ Le 5 notizie di tech e AI più rilevanti degli ultimi 7 giorni (anche di altri t
    - titolo in 1 riga;
    - 2–3 righe di spiegazione semplice;
    - **"👉 Per te:"** una frase concreta;
-   - **Fonte** in piccolo in basso, sempre.
 7. **Chiusura** (fondo blu) — "Ci rivediamo la prossima settimana" + "Segui @scopri__ai per non perderti la prossima".
 
 ## Caption

@@ -7,8 +7,7 @@
    "sottotitolo": "La sua AI più avanzata. Ecco cosa cambia per te.",
    "visual": {
     "immagine": "media/keyart.png",
-    "posizione": "22% center",
-    "didascalia": "Immagine: Google"
+    "posizione": "22% center"
    }
   },
   {
@@ -20,10 +19,8 @@
    ],
    "visual": {
     "immagine": "media/demos.png",
-    "posizione": "center",
-    "didascalia": "Immagine: Google"
-   },
-   "fonte": "Google, SiliconANGLE"
+    "posizione": "center"
+   }
   },
   {
    "tipo": "testo",
@@ -35,7 +32,6 @@
     "✅ Nuova modalità **Task** (attività): lavora per te anche quando non sei al computer. Per ora solo in alcuni Paesi."
    ],
    "per_te": "se usi Gemini gratis, per ora non cambia niente.",
-   "fonte": "Google",
    "dimensione": 76
   },
   {
@@ -48,10 +44,8 @@
    "visual": {
     "immagine": "media/deepswe.png",
     "adatta": "contain",
-    "posizione": "center",
-    "didascalia": "Grafico: Google DeepMind"
-   },
-   "fonte": "Google DeepMind, Vals AI"
+    "posizione": "center"
+   }
   },
   {
    "tipo": "testo",
@@ -63,8 +57,7 @@
    "visual": {
     "numero": "300 TiB",
     "sotto": "di memoria liberata nei data center di Google"
-   },
-   "fonte": "Google"
+   }
   },
   {
    "tipo": "chiusura",

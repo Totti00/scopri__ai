@@ -16,7 +16,7 @@ Il JSON ha questa forma:
   "slides": [
     {"tipo": "copertina", "titolo": "Testo con *parola chiave*", "sottotitolo": "…", "visual": {…}},
     {"tipo": "testo", "titolo": "…", "testo": ["paragrafo con **grassetto**", "…"],
-     "per_te": "…", "visual": {…}, "fonte": "…"},
+     "per_te": "…", "visual": {…}},
     {"tipo": "prompt", "titolo": "…", "quando": "Quando ti serve…",
      "prompt": "Testo con [PARTI DA CAMBIARE]", "nota": "Cambia le parti in giallo."},
     {"tipo": "chiusura", "domanda": "…"}
@@ -26,6 +26,8 @@ Visual possibili:
     {"immagine": "screenshot.png", "didascalia": "…"}    file nella cartella del JSON
     {"chat": [{"chi": "tu", "testo": "…"}, {"chi": "ai", "testo": "…"}], "didascalia": "…"}
     {"numero": "20 mln $", "didascalia": "…"}
+Fonti e crediti delle immagini NON vanno sulle slide: vanno in fondo alla caption.
+La "didascalia" serve solo per avvisi come "Esempio illustrativo".
 Nei testi: *parola* = parola chiave (giallo sul blu, riquadro giallo sulla carta); **parola** = grassetto.
 Le slide vengono salvate come slide-01.png, slide-02.png… nella stessa cartella del JSON.
 """
@@ -72,12 +74,6 @@ def logo(fondo):
     return (f'<div style="display:flex;align-items:center;gap:8px;font-size:32px;font-weight:700;letter-spacing:-1px;color:{testo}">'
             f'Scopri{fumetto(bolla, scritta, 44)}</div>')
 
-
-def fonte(testo, fondo):
-    if not testo:
-        return ""
-    colore = GRIGIO_SU_BLU if fondo == "blu" else GRIGIO_SU_CARTA
-    return f'<div class="mono" style="font-size:22px;font-weight:500;color:{colore}">Fonte: {html.escape(testo)}</div>'
 
 
 def bolla_chat(chi, testo, dim):
@@ -146,8 +142,7 @@ def slide_testo(s, ctx):
 <div style="font-size:{s.get("dimensione", 64)}px;font-weight:700;line-height:1.05;letter-spacing:-2px">{evidenzia(s["titolo"], "carta")}</div>
 <div style="display:flex;flex-direction:column;gap:22px;font-size:{s.get("dimensione_testo", 34)}px;line-height:1.4">{corpo}</div>
 {per_te}
-{visual(s.get("visual"), ctx["cartella"], "carta") or '<div style="flex:1"></div>'}
-{fonte(s.get("fonte"), "carta")}''')
+{visual(s.get("visual"), ctx["cartella"], "carta") or '<div style="flex:1"></div>'}''')
 
 
 def slide_prompt(s, ctx):

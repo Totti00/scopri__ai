@@ -14,14 +14,14 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 
 ## Regole fisse (mai derogare)
 1. **Ogni notizia confermata da almeno 2 fonti affidabili** (vedi `fonti.md`). Se non ci sono, non si pubblica: si usa la rubrica di riserva ("Curiosità scientifiche").
-2. **Fonte sempre citata** per notizie, curiosità e dati: in piccolo sulla slide e in fondo alla caption. **I post di prompt non hanno fonte** (né sulle slide né in caption).
+2. **Fonte sempre citata** per notizie, curiosità e dati, **solo in fondo alla caption** (deciso il 14/10/2026: le slide restano pulite, senza fonti). **I post di prompt non hanno fonte.**
 3. **Prompt controllati, senza dirlo**: prima di pubblicare un prompt che produce testo, Claude lo esegue e controlla che il risultato sia utile; se è debole, lo riscrive. È un controllo interno: sulle slide **non** compare nessun timbro "provato".
 4. **Foto e video veri** (deciso il 14/10/2026): se si parla di una persona o di una cosa reale, si mostra quella vera, non un disegno. I disegni restano per i concetti astratti e per i prompt (la chat).
    - **Prima scelta**, senza rischi: sala stampa ufficiale (Meta, Apple, Google, OpenAI…), Wikimedia Commons, NASA ed enti pubblici, screenshot e registrazioni fatti da noi, Pexels e Unsplash.
    - **Ammesse anche** foto di agenzia (Getty, Reuters, Ansa, AP…) e clip ufficiali o di testate. Il proprietario ha accettato il rischio che Instagram rimuova il post per copyright. Si usano quando la prima scelta non basta.
    - **Foto di persone modificate con l'AI** (fotomontaggi ironici): ammesse solo se si capisce che sono finte, con la scritta "Fotomontaggio" sulla slide e l'etichetta "Info sull'AI" di Instagram attivata. Mai fotomontaggi che possano passare per veri o che mettano in bocca a qualcuno frasi mai dette.
    - **Mai:** contenuti di altri creator (le loro grafiche, i loro video, i loro fotomontaggi), fotogrammi di film. Eccezione: lo screenshot del post di X o Reddit che è esso stesso la notizia (regole in `fonti.md`, "Storie virali").
-   - Il credito va sempre in piccolo sulla slide ("Foto: Reuters") e in `fonti.md`.
+   - Il credito delle immagini va in fondo alla caption, insieme alle fonti ("Immagini: Google"), e in `fonti.md`.
 5. **Niente esagerazioni**: titoli con gancio sì, falsi o allarmisti no. Se una notizia è un'indiscrezione, si scrive al condizionale e lo si dichiara.
 6. **Mai lo stesso argomento due volte**: prima di scegliere, controllare `archivio/`.
 7. **Non copiare** testi, slogan o grafiche dei concorrenti. Si prendono le tecniche, non l'identità.
