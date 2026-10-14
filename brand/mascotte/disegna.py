@@ -1,85 +1,142 @@
-"""Disegna le 3 proposte di mascotte (stile piatto) e un esempio di slide.
+"""Disegna le 3 proposte di mascotte (illustrazione piatta con ombre e luci).
 Uso: python3 brand/mascotte/disegna.py  -> crea brand/mascotte/proposte.html
 """
+import itertools
+import pathlib
+
 B, C, G, N, W = "#2340FF", "#F4F1EA", "#FFD84D", "#121212", "#FFFFFF"
-G2 = "#F2C230"  # giallo un po' più scuro per guance e ombre
+G_OMBRA, G_LUCE = "#EDB92B", "#FFF0A8"
+B_TERRA = "#1A2FD0"
+BOCCA, LINGUA, GUANCE = "#3B1220", "#FF8FA3", "#FF9B7A"
+VETRO, VETRO_OMBRA, METALLO, METALLO_OMBRA = "#E6ECFF", "#C7D2F7", "#DDE2EA", "#C2C9D6"
+_id = itertools.count()
 
 
-def faccia(cx, cy, espr, occhi_bianchi=False):
-    s = []
+def occhio(x, y, espr, colore_palpebra):
+    rx, ry = (25, 30) if espr == "stupito" else (21, 25)
+    gx, gy = (6, -8) if espr == "pensieroso" else (0, 2)
+    s = (f'<ellipse cx="{x}" cy="{y}" rx="{rx}" ry="{ry}" fill="{W}" stroke="#0E1430" stroke-width="3"/>'
+         f'<circle cx="{x+gx}" cy="{y+gy}" r="{12 if espr == "stupito" else 14}" fill="{N}"/>'
+         f'<circle cx="{x+gx+5}" cy="{y+gy-5}" r="5" fill="{W}"/><circle cx="{x+gx-4}" cy="{y+gy+5}" r="2.5" fill="{W}"/>')
+    if espr == "pensieroso":  # palpebra abbassata
+        s += (f'<path d="M{x-rx-3} {y-4} Q{x} {y-ry-6} {x+rx+3} {y-4} L{x+rx+3} {y-ry-6} L{x-rx-3} {y-ry-6} Z" fill="{colore_palpebra}"/>'
+              f'<path d="M{x-rx} {y-4} Q{x} {y-14} {x+rx} {y-4}" stroke="#0E1430" stroke-width="3" fill="none" stroke-linecap="round"/>')
+    return s
+
+
+def faccia(cx, cy, espr, colore_pelle):
+    s = occhio(cx - 38, cy, espr, colore_pelle) + occhio(cx + 38, cy, espr, colore_pelle)
+    my = cy + 42
     if espr == "stupito":
-        for dx in (-30, 30):
-            s.append(f'<circle cx="{cx+dx}" cy="{cy}" r="17" fill="{W}" stroke="{N}" stroke-width="4"/>')
-            s.append(f'<circle cx="{cx+dx}" cy="{cy}" r="8" fill="{N}"/>')
-            s.append(f'<path d="M{cx+dx-14} {cy-28} Q{cx+dx} {cy-38} {cx+dx+14} {cy-28}" stroke="{N}" stroke-width="5" fill="none" stroke-linecap="round"/>')
-        s.append(f'<ellipse cx="{cx}" cy="{cy+40}" rx="11" ry="14" fill="{N}"/>')
+        s += (f'<path d="M{cx-66} {cy-44} Q{cx-38} {cy-62} {cx-12} {cy-46}" stroke="{N}" stroke-width="7" fill="none" stroke-linecap="round"/>'
+              f'<path d="M{cx+12} {cy-46} Q{cx+38} {cy-62} {cx+66} {cy-44}" stroke="{N}" stroke-width="7" fill="none" stroke-linecap="round"/>')
+        k = next(_id)
+        s += (f'<clipPath id="o{k}"><ellipse cx="{cx}" cy="{my+6}" rx="16" ry="20"/></clipPath>'
+              f'<ellipse cx="{cx}" cy="{my+6}" rx="16" ry="20" fill="{BOCCA}"/>'
+              f'<ellipse cx="{cx}" cy="{my+22}" rx="12" ry="8" fill="{LINGUA}" clip-path="url(#o{k})"/>')
     elif espr == "pensieroso":
-        for dx in (-30, 30):
-            if occhi_bianchi:
-                s.append(f'<circle cx="{cx+dx}" cy="{cy}" r="14" fill="{W}" stroke="{N}" stroke-width="4"/>')
-            s.append(f'<circle cx="{cx+dx+5}" cy="{cy-5}" r="9" fill="{N}"/>')
-        s.append(f'<path d="M{cx-44} {cy-26} L{cx-16} {cy-22}" stroke="{N}" stroke-width="5" stroke-linecap="round"/>')
-        s.append(f'<path d="M{cx+16} {cy-30} Q{cx+30} {cy-38} {cx+44} {cy-30}" stroke="{N}" stroke-width="5" fill="none" stroke-linecap="round"/>')
-        s.append(f'<path d="M{cx-12} {cy+38} L{cx+16} {cy+34}" stroke="{N}" stroke-width="6" stroke-linecap="round"/>')
-    else:  # contento
-        for dx in (-30, 30):
-            if occhi_bianchi:
-                s.append(f'<circle cx="{cx+dx}" cy="{cy}" r="14" fill="{W}" stroke="{N}" stroke-width="4"/>')
-            s.append(f'<circle cx="{cx+dx}" cy="{cy}" r="9" fill="{N}"/>')
-            s.append(f'<circle cx="{cx+dx+3}" cy="{cy-3}" r="3" fill="{W}"/>')
-        s.append(f'<path d="M{cx-22} {cy+28} Q{cx} {cy+50} {cx+22} {cy+28}" stroke="{N}" stroke-width="6" fill="none" stroke-linecap="round"/>')
-        s.append(f'<circle cx="{cx-50}" cy="{cy+24}" r="9" fill="{G2}"/><circle cx="{cx+50}" cy="{cy+24}" r="9" fill="{G2}"/>')
-    return "".join(s)
+        s += (f'<path d="M{cx-60} {cy-36} L{cx-20} {cy-32}" stroke="{N}" stroke-width="7" stroke-linecap="round"/>'
+              f'<path d="M{cx+16} {cy-44} Q{cx+40} {cy-58} {cx+62} {cy-42}" stroke="{N}" stroke-width="7" fill="none" stroke-linecap="round"/>'
+              f'<path d="M{cx-14} {my+4} Q{cx+6} {my} {cx+22} {my-6}" stroke="{BOCCA}" stroke-width="7" fill="none" stroke-linecap="round"/>')
+    else:
+        k = next(_id)
+        bocca = f'M{cx-30} {my-4} Q{cx} {my+44} {cx+30} {my-4} Z'
+        s += (f'<clipPath id="m{k}"><path d="{bocca}"/></clipPath><path d="{bocca}" fill="{BOCCA}"/>'
+              f'<ellipse cx="{cx}" cy="{my+24}" rx="15" ry="10" fill="{LINGUA}" clip-path="url(#m{k})"/>')
+    s += (f'<ellipse cx="{cx-66}" cy="{cy+34}" rx="16" ry="10" fill="{GUANCE}" opacity=".5"/>'
+          f'<ellipse cx="{cx+66}" cy="{cy+34}" rx="16" ry="10" fill="{GUANCE}" opacity=".5"/>')
+    return s
 
 
-def braccia(espr, sx, dx, y, chin):
-    """sx/dx = x dei fianchi; chin = (x, y) del mento per la posa pensierosa."""
-    def arm(x1, y1, x2, y2):
-        return (f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="{N}" stroke-width="8" stroke-linecap="round"/>'
-                f'<circle cx="{x2}" cy="{y2}" r="10" fill="{N}"/>')
+def braccio(d, colore, ombra, mano):
+    x, y = mano
+    return (f'<path d="{d}" stroke="{ombra}" stroke-width="26" fill="none" stroke-linecap="round"/>'
+            f'<path d="{d}" stroke="{colore}" stroke-width="17" fill="none" stroke-linecap="round"/>'
+            f'<circle cx="{x}" cy="{y}" r="21" fill="{C}"/><circle cx="{x+5}" cy="{y+5}" r="14" fill="{METALLO}" opacity=".6"/>'
+            f'<circle cx="{x-6}" cy="{y-6}" r="6" fill="{W}"/>')
+
+
+def braccia(espr, sx, dx, y, mento, colore, ombra):
     if espr == "stupito":
-        return arm(sx, y, sx - 40, y - 55) + arm(dx, y, dx + 40, y - 55)
+        return (braccio(f"M{sx} {y} Q{sx-40} {y-20} {sx-48} {y-95}", colore, ombra, (sx - 48, y - 95))
+                + braccio(f"M{dx} {y} Q{dx+40} {y-20} {dx+48} {y-95}", colore, ombra, (dx + 48, y - 95)))
+    sinistro = braccio(f"M{sx} {y} Q{sx-38} {y+22} {sx-40} {y+72}", colore, ombra, (sx - 40, y + 72))
     if espr == "pensieroso":
-        return arm(sx, y, sx - 35, y + 35) + arm(dx, y, chin[0], chin[1])
-    return arm(sx, y, sx - 35, y + 35) + arm(dx, y, dx + 42, y - 50)  # contento: saluta
+        mx, my = mento
+        return sinistro + braccio(f"M{dx} {y} Q{dx+34} {y+80} {mx} {my}", colore, ombra, (mx, my))
+    return sinistro + braccio(f"M{dx} {y} Q{dx+52} {y-12} {dx+56} {y-82}", colore, ombra, (dx + 56, y - 82))
+
+
+def gambe(x1, x2, y_da, y_a):
+    s = ""
+    for x in (x1, x2):
+        s += (f'<path d="M{x} {y_da} L{x} {y_a}" stroke="{N}" stroke-width="16" stroke-linecap="round"/>'
+              f'<path d="M{x-24} {y_a+12} Q{x-24} {y_a-6} {x+4} {y_a-6} L{x+16} {y_a-6} Q{x+34} {y_a-6} {x+34} {y_a+12} Z" fill="{N}"/>'
+              f'<rect x="{x-26}" y="{y_a+10}" width="62" height="7" rx="3.5" fill="{W}"/>')
+    return s
+
+
+def terra(cx):
+    return f'<ellipse cx="{cx}" cy="438" rx="120" ry="16" fill="{B_TERRA}"/>'
 
 
 def fumetto(espr):
-    return (f'<rect x="105" y="85" width="210" height="155" rx="48" fill="{G}"/>'
-            f'<polygon points="140,225 128,292 200,236" fill="{G}"/>'
-            + braccia(espr, 107, 313, 170, (250, 232)) + faccia(210, 158, espr))
+    k = next(_id)
+    corpo = "M190 110 H310 Q370 110 370 170 V230 Q370 290 310 290 H245 L170 345 L182 290 H190 Q130 290 130 230 V170 Q130 110 190 110 Z"
+    return (terra(255) + gambe(228, 292, 288, 412)
+            + f'<clipPath id="c{k}"><path d="{corpo}"/></clipPath><path d="{corpo}" fill="{G}"/>'
+            + f'<g clip-path="url(#c{k})"><circle cx="430" cy="380" r="205" fill="{G_OMBRA}"/></g>'
+            + f'<rect x="160" y="128" width="78" height="18" rx="9" fill="{G_LUCE}"/><circle cx="252" cy="137" r="9" fill="{G_LUCE}"/>'
+            + braccia(espr, 134, 366, 222, (300, 268), G, G_OMBRA)
+            + faccia(255, 192, espr, G))
 
 
 def lente(espr):
-    return (f'<line x1="268" y1="235" x2="330" y2="300" stroke="{G}" stroke-width="32" stroke-linecap="round"/>'
-            f'<circle cx="200" cy="160" r="98" fill="{C}" stroke="{W}" stroke-width="22"/>'
-            + braccia(espr, 100, 300, 180, (205, 228)) + faccia(200, 158, espr, occhi_bianchi=False))
+    return (terra(250)
+            + f'<path d="M322 282 L398 368" stroke="{G_OMBRA}" stroke-width="46" stroke-linecap="round"/>'
+            + f'<path d="M318 278 L392 362" stroke="{G}" stroke-width="30" stroke-linecap="round"/>'
+            + f'<path d="M306 268 L330 292" stroke="{VETRO_OMBRA}" stroke-width="54" stroke-linecap="round"/>'
+            + gambe(214, 270, 318, 412)
+            + f'<circle cx="242" cy="200" r="118" fill="{VETRO}" stroke="{W}" stroke-width="30"/>'
+            + f'<circle cx="242" cy="200" r="100" fill="none" stroke="{VETRO_OMBRA}" stroke-width="8"/>'
+            + f'<path d="M168 150 A92 92 0 0 1 226 110" stroke="{W}" stroke-width="13" fill="none" stroke-linecap="round" opacity=".9"/>'
+            + braccia(espr, 126, 358, 220, (290, 270), C, VETRO_OMBRA)
+            + faccia(242, 196, espr, VETRO))
 
 
 def lampadina(espr):
-    return (f'<circle cx="200" cy="150" r="98" fill="{G}"/>'
-            f'<rect x="160" y="228" width="80" height="26" fill="{G}"/>'
-            f'<rect x="162" y="258" width="76" height="16" rx="8" fill="{W}"/>'
-            f'<rect x="170" y="280" width="60" height="16" rx="8" fill="{W}"/>'
-            + braccia(espr, 104, 296, 175, (205, 222)) + faccia(200, 145, espr))
+    k = next(_id)
+    bulbo = "M250 58 A122 122 0 0 1 318 282 L300 302 H200 L182 282 A122 122 0 0 1 250 58 Z"
+    raggi = ""
+    if espr != "pensieroso":
+        for x1, y1, x2, y2 in ((250, 18, 250, -2), (148, 50, 134, 34), (352, 50, 366, 34), (100, 140, 80, 132), (400, 140, 420, 132)):
+            raggi += f'<path d="M{x1} {y1+12} L{x2} {y2+12}" stroke="{G}" stroke-width="11" stroke-linecap="round"/>'
+    return (terra(250) + raggi + gambe(226, 276, 360, 412)
+            + f'<clipPath id="l{k}"><path d="{bulbo}"/></clipPath><path d="{bulbo}" fill="{G}"/>'
+            + f'<g clip-path="url(#l{k})"><circle cx="400" cy="300" r="200" fill="{G_OMBRA}"/></g>'
+            + f'<ellipse cx="190" cy="118" rx="30" ry="15" fill="{G_LUCE}" transform="rotate(-35 190 118)"/>'
+            + f'<rect x="198" y="302" width="104" height="22" rx="11" fill="{METALLO}"/>'
+            + f'<rect x="204" y="324" width="92" height="20" rx="10" fill="{METALLO_OMBRA}"/>'
+            + f'<rect x="212" y="344" width="76" height="18" rx="9" fill="{METALLO}"/>'
+            + braccia(espr, 140, 360, 206, (290, 262), G, G_OMBRA)
+            + faccia(250, 180, espr, G))
 
 
 def tile(fn, espr, size=300):
-    return (f'<svg width="{size}" height="{size}" viewBox="0 0 400 400" role="img" aria-label="mascotte {espr}">'
-            f'<rect width="400" height="400" rx="28" fill="{B}"/>{fn(espr)}</svg>')
+    return (f'<svg width="{size}" height="{size}" viewBox="0 0 500 500" role="img" aria-label="mascotte {espr}">'
+            f'<rect width="500" height="500" rx="34" fill="{B}"/><g transform="translate(0 20)">{fn(espr)}</g></svg>')
 
 
 ESPR = ["contento", "stupito", "pensieroso"]
-righe = [("1 · Fumetto vivente", fumetto), ("2 · Lente detective", lente), ("3 · Lampadina", lampadina)]
+RIGHE = [("1 · Fumetto vivente", fumetto), ("2 · Lente detective", lente), ("3 · Lampadina", lampadina)]
 
 slide = f'''
 <div class="slide"><div class="s">
   <div class="top"><div class="logo">Scopri<svg width="74" height="64" viewBox="0 0 700 600"><rect width="700" height="460" rx="110" fill="{G}"/><polygon points="120,440 120,600 280,440" fill="{G}"/><text x="350" y="235" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk" font-weight="700" font-size="290" fill="{B}">AI</text></svg></div><div class="mono">07/07</div></div>
-  <svg width="620" height="620" viewBox="0 0 400 400" style="align-self:center">{fumetto("contento")}</svg>
+  <svg width="640" height="640" viewBox="0 0 500 500" style="align-self:center">{fumetto("contento")}</svg>
   <div class="h">Ti è stato utile?<br><span style="color:{G}">Seguici.</span></div>
-  <div class="p">Ogni settimana prompt pronti e notizie verificate sull'AI.</div>
   <div class="sp"></div>
-  <div class="bar"><span>Segui @scopri__ai</span><span>📌 Salva</span></div>
+  <div class="bar"><span>Segui @scopri__ai</span><span>Salva il post</span></div>
 </div></div>'''
 
 html = f'''<!doctype html><html lang="it"><head><meta charset="utf-8">
@@ -93,16 +150,15 @@ body{{margin:0;width:1700px;height:1120px;background:#fff;font-family:'Space Gro
 .s{{width:1080px;height:1350px;transform:scale(.4);transform-origin:0 0;background:{B};color:{W};box-sizing:border-box;padding:72px;display:flex;flex-direction:column;gap:30px}}
 .top{{display:flex;justify-content:space-between;align-items:center}}.logo{{display:flex;align-items:center;gap:14px;font-size:52px;font-weight:700;letter-spacing:-1px}}
 .mono{{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:700}}
-.h{{font-size:104px;font-weight:700;line-height:1;letter-spacing:-3px}}.p{{font-size:40px;line-height:1.35;color:#DDE3FF}}
+.h{{font-size:104px;font-weight:700;line-height:1;letter-spacing:-3px}}
 .sp{{flex:1}}.bar{{display:flex;justify-content:space-between;background:{G};color:{N};padding:30px 36px;font-size:42px;font-weight:700}}
 </style></head><body><div class="grid">'''
-for nome, fn in righe:
+for nome, fn in RIGHE:
     html += f'<div class="r"><div class="lab">{nome}</div>'
     for e in ESPR:
         html += f'<div class="cell">{tile(fn, e)}<span>{e}</span></div>'
     html += '</div>'
 html += f'</div>{slide}</body></html>'
 
-import pathlib
 pathlib.Path(__file__).with_name("proposte.html").write_text(html, encoding="utf-8")
 print("Creato brand/mascotte/proposte.html")
