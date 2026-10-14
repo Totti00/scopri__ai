@@ -35,7 +35,8 @@ Le storie virali (post di X o Reddit) hanno regole a parte: vedi in fondo.
   - storie curiose: r/nottheonion, r/interestingasfuck;
   - Italia: r/italy, r/ItalyInformatica.
 - **Altro:** Hacker News, Product Hunt, Google Trends.
-- **Newsletter:** The Rundown, TLDR AI, Ben's Bites, Import AI.
+- **Newsletter da controllare ogni giorno:** **TLDR** (edizioni AI e Tech, archivio su tldr.tech) e **The Rundown AI** (archivio su therundown.ai). Claude le legge online. Ogni notizia si segue fino al link originale e si conferma lì.
+- **Altre newsletter:** Ben's Bites, Import AI.
 - **Pagine internazionali:** @evolving.ai, @therundownai, @chatgptricks.
 
 Una notizia vista solo qui **non si pubblica** finché non arriva una conferma di livello 1 o 2.
