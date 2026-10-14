@@ -18,7 +18,7 @@ Ogni routine segue questo file più il file della sua attività.
 5. **Slide:** scrivi `slide.json` e lancia `python3 strumenti/carosello.py archivio/<cartella>/slide.json --completi` (se ci sono video, crea anche `slide-NN-completo.mp4` con il video intero, che il proprietario può accorciare da solo). Guarda ogni PNG (Read) e correggi testi troppo lunghi o immagini tagliate male. Niente fonti sulle slide.
 6. **Consegna:** `caption.txt` (fonti e crediti delle immagini in fondo), `fonti.md`, `note.md`.
 7. **Salva:** commit su `main` con autore `Claude <noreply@anthropic.com>` e push (`git push origin main`; se la rete fallisce riprova fino a 4 volte).
-8. **Mostra al proprietario:** manda slide e caption con `SendUserFile` (status `proactive`). Se ci sono video, manda anche i file `-completo.mp4` (non sono su GitHub) e scrivi dove inizia e finisce il pezzo scelto da te.
+8. **Mostra al proprietario:** manda slide e caption con `SendUserFile` (status `proactive`). Se ci sono video, manda anche i file `-completo.mp4` (non sono su GitHub) e scrivi dove inizia e finisce il pezzo scelto da te. Un file oltre i 30 MB non si può inviare: ricomprimilo con `ffmpeg -i in.mp4 -c:v libx264 -crf 25 -an -movflags +faststart out.mp4`.
 9. **Messaggio finale** in italiano, breve: cosa è pronto, a che ora pubblicarlo, eventuali dubbi.
 
 ## Limiti
