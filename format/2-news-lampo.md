@@ -3,7 +3,7 @@
 **Slide:** 3–5. Una sola notizia, uscita da poco, raccontata bene.
 
 ## Come si sceglie (il proprietario decide)
-1. Claude cerca le novità AI delle ultime 24–72 ore e ne propone **5**, ognuna con:
+1. Claude cerca le novità di tech e AI delle ultime 24–72 ore (qualunque tema, purché ci sia dentro un minimo di tech) e ne propone **5**, ognuna con:
    - titolo in una riga;
    - perché interessa a una persona normale (1 frase);
    - le 2 fonti che la confermano;

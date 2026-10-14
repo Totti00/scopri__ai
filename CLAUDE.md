@@ -7,6 +7,7 @@ Claude prepara i caroselli e le caption; **il proprietario pubblica a mano** su 
 - **Nome:** Scopri.AI · Intelligenza Artificiale
 - **Promessa:** "L'intelligenza artificiale che funziona davvero."
 - **Pubblico:** italiani curiosi, anche non tecnici (dai 20 ai 70 anni). Se un concetto non lo capirebbe un genitore, va riscritto.
+- **Di cosa parliamo:** tutte le notizie che toccano tecnologia e AI, anche su altri temi (lavoro, salute, sport, soldi, leggi), purché ci sia dentro un minimo di tech. Va bene se interessa a una persona normale; non va bene se è solo una voce di borsa o una lite fra miliardari senza conseguenze.
 - **Differenza dai concorrenti:** ogni notizia ha la fonte; i prompt sono controllati prima di pubblicarli.
 
 Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
@@ -15,7 +16,12 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 1. **Ogni notizia confermata da almeno 2 fonti affidabili** (vedi `fonti.md`). Se non ci sono, non si pubblica: si usa la rubrica di riserva ("Curiosità scientifiche").
 2. **Fonte sempre citata** per notizie, curiosità e dati: in piccolo sulla slide e in fondo alla caption. **I post di prompt non hanno fonte** (né sulle slide né in caption).
 3. **Prompt controllati, senza dirlo**: prima di pubblicare un prompt che produce testo, Claude lo esegue e controlla che il risultato sia utile; se è debole, lo riscrive. È un controllo interno: sulle slide **non** compare nessun timbro "provato".
-4. **Niente immagini protette**: niente foto di persone (CEO compresi), fotogrammi di film, video o grafiche di altri creator. Ammessi: grafica nostra, screenshot di prodotti presi dalle pagine ufficiali, loghi solo per identificare il prodotto di cui si parla.
+4. **Foto e video veri, presi da fonti che ne permettono l'uso** (deciso il 14/10/2026): se si parla di una persona o di una cosa reale, si mostra quella vera, non un disegno. Fonti ammesse, in quest'ordine:
+   - sala stampa ufficiale (press kit, newsroom: Meta, Apple, Google, OpenAI…), che dà le foto e i video ai giornalisti;
+   - Wikimedia Commons (licenza libera, citando l'autore), NASA e altri enti pubblici;
+   - screenshot e registrazioni dello schermo fatti da noi; clip ufficiali del prodotto, brevi e citando chi le ha fatte;
+   - banche di immagini gratuite (Pexels, Unsplash) per le cose generiche.
+   **No:** foto di agenzie (Getty, Reuters, Ansa, AP…), fotogrammi di film, contenuti di altri creator, foto di persone modificate con l'AI. Il credito va in piccolo sulla slide ("Foto: Meta") e in `fonti.md`. I disegni restano per i concetti astratti.
 5. **Niente esagerazioni**: titoli con gancio sì, falsi o allarmisti no. Se una notizia è un'indiscrezione, si scrive al condizionale e lo si dichiara.
 6. **Mai lo stesso argomento due volte**: prima di scegliere, controllare `archivio/`.
 7. **Non copiare** testi, slogan o grafiche dei concorrenti. Si prendono le tecniche, non l'identità.

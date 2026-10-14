@@ -3,7 +3,7 @@
 **Slide:** 7. **Ispirata a:** "Weekly AI Update" di @profession.ai (appuntamento fisso, fonte su ogni slide), con in più "cosa cambia per te".
 
 ## Cosa sceglie
-Le 5 notizie AI più rilevanti degli ultimi 7 giorni, ognuna confermata da 2 fonti (vedi `fonti.md`). Almeno una riguarda l'Italia o l'Europa, se c'è.
+Le 5 notizie di tech e AI più rilevanti degli ultimi 7 giorni (anche di altri temi, purché ci sia dentro un minimo di tech), ognuna confermata da 2 fonti (vedi `fonti.md`). Almeno una riguarda l'Italia o l'Europa, se c'è.
 
 ## Struttura delle slide
 1. **Copertina** (fondo blu) — "Le news AI della settimana che ti sei perso" + date (es. "6–12 ottobre"). Indice delle 5 notizie in piccolo.

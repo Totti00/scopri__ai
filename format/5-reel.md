@@ -1,6 +1,6 @@
 # Rubrica 5 — Reel (argomenti da definire)
 
-Stato: **in valutazione**. Vincolo fisso: niente video di altri creator né fotogrammi di film (regola 4 di `CLAUDE.md`).
+Stato: **in valutazione**. Video veri ammessi se vengono da fonti che ne permettono l'uso (regola 4 di `CLAUDE.md`): clip ufficiali, sale stampa, registrazioni fatte da noi. Mai video di altri creator né fotogrammi di film.
 
 ## Cosa si può produrre senza girare video
 Claude può creare video verticali (1080×1920) animando grafiche nel nostro stile; la musica la aggiunge il proprietario su Instagram.
