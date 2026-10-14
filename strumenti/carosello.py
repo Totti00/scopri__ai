@@ -171,18 +171,18 @@ font-size:{s.get("dimensione_prompt", 36)}px;font-weight:500;line-height:1.5">{s
 def slide_chiusura(s, ctx):
     rubriche = s.get("rubriche", [
         ["Lun", "Le news AI della settimana"],
-        ["Mer", "Una news lampo"],
         ["Ven", "Prompt da copiare"],
         ["Dom", "Una curiosità di scienza"],
+        ["Extra", "News lampo, quando succede qualcosa"],
     ])
     righe = "".join(
         f'<div style="display:flex;gap:28px;align-items:center;padding:22px 0;border-top:2px solid rgba(255,255,255,.25)">'
-        f'<span class="mono" style="flex:none;width:96px;color:{GIALLO};font-size:32px">{html.escape(g)}</span>'
+        f'<span class="mono" style="flex:none;width:110px;color:{GIALLO};font-size:32px">{html.escape(g)}</span>'
         f'<span style="font-size:40px;font-weight:500">{html.escape(t)}</span></div>' for g, t in rubriche)
     domanda = f'<div style="font-size:40px;font-weight:700;line-height:1.3">{evidenzia(s["domanda"], "blu")}</div>' if s.get("domanda") else ""
     return ("blu", f'''{logo("blu")}
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
-<div style="font-size:{s.get("dimensione", 92)}px;font-weight:700;line-height:1.02;letter-spacing:-3px">{evidenzia(s.get("titolo", "Ogni settimana, *4\u00a0scoperte*."), "blu")}</div>
+<div style="font-size:{s.get("dimensione", 92)}px;font-weight:700;line-height:1.02;letter-spacing:-3px">{evidenzia(s.get("titolo", "Ogni settimana, *qualcosa da\u00a0scoprire*."), "blu")}</div>
 <div>{righe}</div>
 </div>
 {domanda}

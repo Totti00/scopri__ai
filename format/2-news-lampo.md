@@ -1,22 +1,28 @@
 # Rubrica 2 — "News AI lampo"
 
 **Slide:** 3–5. Una sola notizia, uscita da poco, raccontata bene.
+**Quando:** nessun giorno fisso. Si pubblica solo se c'è una notizia davvero interessante (deciso il 14/10/2026).
 
-## Come si sceglie (il proprietario decide)
-1. Claude cerca le novità di tech e AI delle ultime 24–72 ore (qualunque tema, purché ci sia dentro un minimo di tech) e ne propone **5**, ognuna con:
-   - titolo in una riga;
-   - perché interessa a una persona normale (1 frase);
+## Ricerca di ogni giorno
+1. Ogni mattina Claude controlla le fonti di `fonti.md`: TLDR, The Rundown AI, sale stampa, testate, Reddit.
+2. Tiene solo le notizie di tech e AI delle ultime 24–48 ore che interessano o incuriosiscono una persona normale. Per ognuna scrive:
+   - il titolo in una riga;
+   - perché interessa (1 frase);
    - le 2 fonti che la confermano;
-   - un voto di "interesse" da 1 a 5, secondo Claude.
-   Tra le 5 può esserci una storia virale da X o Reddit, se rispetta le regole di `fonti.md`.
-2. Il proprietario ne sceglie **1**.
-3. Claude prepara il carosello e la caption su quella.
+   - un voto da 1 a 5.
+   Può essere anche una storia virale da X o Reddit, se rispetta le regole di `fonti.md`.
+3. **Voto 4 o 5:** Claude la propone al proprietario, che decide se pubblicarla. Se sì, Claude prepara carosello e caption.
+4. **Voto 1–3, o nessuna notizia:** non si pubblica niente. Le notizie migliori finiscono nella lista per le news del lunedì.
 
-Se nelle ultime 72 ore non ci sono notizie forti e verificate, si dice chiaramente e si propone una curiosità scientifica al suo posto (rubrica 4).
+Regole:
+- al massimo **una news lampo al giorno**;
+- orario consigliato **12:30**, oppure appena è pronta se la notizia è caldissima;
+- almeno 3 ore di distanza da un altro post;
+- la domenica sera e il lunedì mattina meglio di no: ci sono le rubriche fisse.
 
 ## Struttura delle slide
-1. **Copertina** (fondo blu) — titolo-gancio di una riga e mezza, con la parola chiave in giallo. Etichetta in alto: `NEWS LAMPO`.
-2. **Cos'è successo** (fondo carta) — 2–4 righe semplici + screenshot ufficiale del prodotto, se c'è. Fonte in basso.
+1. **Copertina** (fondo blu) — titolo-gancio di una riga e mezza, con la parola chiave in giallo. Scritta piccola in alto: `NEWS LAMPO`. Sopra, la foto o il video veri della notizia.
+2. **Cos'è successo** (fondo carta) — 2–4 righe semplici + foto, video o screenshot veri. Fonte in basso.
 3. **Cosa cambia per te** (fondo carta) — 2–3 punti concreti. Fonte in basso.
 4. *(facoltativa)* **Come provarlo** — 3 passaggi, se si può già usare.
 5. **Chiusura** (fondo blu) — domanda per i commenti + "Segui @scopri__ai".
