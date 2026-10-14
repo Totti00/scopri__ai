@@ -1,0 +1,8 @@
+{
+  "slides": [
+    {"tipo": "copertina", "etichetta": "NEWS LAMPO", "titolo": "Ora Facebook ti fa *scegliere* cosa vedere.", "sottotitolo": "Con l'AI puoi dire al tuo feed cosa vuoi di più e cosa di meno.", "barra": "Ecco come funziona"},
+    {"tipo": "testo", "etichetta": "COS'È SUCCESSO", "titolo": "Il feed lo *decidi tu*", "paragrafi": ["Meta ha lanciato «Your algorithm» su Facebook.", "Scrivi gli argomenti che ti interessano e il feed si adatta."], "per_te": "Meno contenuti inutili, più cose che ti piacciono.", "fonte": "Meta, The Verge"},
+    {"tipo": "prompt", "etichetta": "01 · LA MAIL DIFFICILE", "titolo": "Scrivi una mail *senza litigare*", "prompt": "Riscrivi questa mail in modo cortese ma deciso. Il destinatario è [CHI]. Voglio ottenere [OBIETTIVO]. Massimo 120 parole.", "nota": "Funziona con ChatGPT, Claude, Gemini"},
+    {"tipo": "chiusura", "titolo": "Ti è stato *utile*?", "testo": "Ogni settimana prompt pronti, news verificate e curiosità di scienza.", "domanda": "Tu lo useresti? Scrivilo nei commenti 👇"}
+  ]
+}
