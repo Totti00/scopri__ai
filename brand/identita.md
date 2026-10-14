@@ -45,6 +45,15 @@ Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il 
   - Le proposte scartate non sono più nel repository, ma si possono recuperare dalla cronologia di GitHub.
 - Formato slide: 1080×1350 px.
 
+## Stile dei caroselli (14/10/2026, ispirato alle pagine AI, non a RapTrend)
+Si genera con `strumenti/carosello.py`; esempio in `brand/template-esempio/`.
+- **Logo piccolo** in alto a sinistra. Niente contatore 01/05, niente barra "Scorri" in basso, niente etichette a blocco.
+- **Copertina (blu):** visual grande in alto (screenshot del prodotto o chat disegnata), titolo sotto con le parole chiave in giallo, pallino giallo con → come unico invito a scorrere.
+- **Slide interne (carta):** testo sopra (35-55 parole), visual sotto in un riquadro arrotondato: screenshot, chat o numero grande su giallo. "👉 Per te" con filetto giallo. Fonte in piccolo in fondo.
+- **Prompt:** il prompt è un messaggio blu in una finestra di chat ("Scrivi così all'AI"), con le parti da cambiare in giallo.
+- **Ultima slide (blu):** l'appuntamento della settimana (Lun, Mer, Ven, Dom) + domanda per i commenti + "Segui e salva".
+- Chat disegnate da noi: se non riproducono l'interfaccia vera, sotto va scritto "Esempio illustrativo".
+
 Da evitare perché tipico dei concorrenti: fondo nero con lilla o viola, mascotte robot, collage di CEO.
 
 ## Tono di voce

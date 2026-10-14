@@ -1,8 +1,16 @@
 {
+  "rubrica": "NEWS LAMPO",
   "slides": [
-    {"tipo": "copertina", "etichetta": "NEWS LAMPO", "titolo": "Ora Facebook ti fa *scegliere* cosa vedere.", "sottotitolo": "Con l'AI puoi dire al tuo feed cosa vuoi di più e cosa di meno.", "barra": "Ecco come funziona"},
-    {"tipo": "testo", "etichetta": "COS'È SUCCESSO", "titolo": "Il feed lo *decidi tu*", "paragrafi": ["Meta ha lanciato «Your algorithm» su Facebook.", "Scrivi gli argomenti che ti interessano e il feed si adatta."], "per_te": "Meno contenuti inutili, più cose che ti piacciono.", "fonte": "Meta, The Verge"},
-    {"tipo": "prompt", "etichetta": "01 · LA MAIL DIFFICILE", "titolo": "Scrivi una mail *senza litigare*", "prompt": "Riscrivi questa mail in modo cortese ma deciso. Il destinatario è [CHI]. Voglio ottenere [OBIETTIVO]. Massimo 120 parole.", "nota": "Funziona con ChatGPT, Claude, Gemini"},
-    {"tipo": "chiusura", "titolo": "Ti è stato *utile*?", "testo": "Ogni settimana prompt pronti, news verificate e curiosità di scienza.", "domanda": "Tu lo useresti? Scrivilo nei commenti 👇"}
+    {"tipo": "copertina", "titolo": "Ora Facebook ti fa *scegliere* cosa vedere.", "sottotitolo": "Scrivi cosa vuoi nel feed. L'AI fa il resto.",
+     "visual": {"chat": [{"chi": "tu", "testo": "Più ricette e montagna, meno politica."}, {"chi": "ai", "testo": "Fatto. Il tuo feed cambierà da *oggi*."}]}},
+    {"tipo": "testo", "titolo": "Il feed lo *decidi tu*", "testo": ["Meta ha lanciato **«Your algorithm»** su Facebook.", "Scrivi gli argomenti che ti interessano. Il feed si adatta."],
+     "per_te": "meno contenuti inutili, più cose che ti piacciono.",
+     "visual": {"chat": [{"chi": "tu", "testo": "Mostrami più video di cucina."}, {"chi": "ai", "testo": "Ok, ne vedrai di più."}, {"chi": "tu", "testo": "E meno gossip, grazie."}], "didascalia": "Esempio illustrativo"},
+     "fonte": "Meta, The Verge"},
+    {"tipo": "testo", "titolo": "Il tuo cervello è *super efficiente*", "testo": ["Per pensare usa più o meno la stessa energia di una **lampadina**.", "Un grande modello di AI, per addestrarsi, ne consuma milioni di volte di più."],
+     "visual": {"numero": "~20 W", "sotto": "l'energia che usa il cervello umano"}, "fonte": "esempio di layout"},
+    {"tipo": "prompt", "titolo": "Scrivi una mail *senza litigare*", "quando": "Quando devi dire una cosa scomoda a un collega o a un cliente.",
+     "prompt": "Riscrivi questa mail in modo cortese ma deciso. Il destinatario è [CHI]. Voglio ottenere [OBIETTIVO]. Massimo 120 parole. Ecco la mail: [INCOLLA QUI]", "nota": "Cambia le parti in giallo e invia."},
+    {"tipo": "chiusura", "domanda": "Tu lo useresti? Scrivilo nei commenti 👇"}
   ]
 }

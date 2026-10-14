@@ -3,19 +3,30 @@
 Uso:
     python3 strumenti/carosello.py archivio/<cartella-post>/slide.json
 
+Lo stile (deciso il 14/10/2026, ispirato alle pagine AI, non a RapTrend):
+- logo piccolo in alto a sinistra, nessun contatore di pagina, nessuna barra in basso;
+- copertina: visual grande in alto, titolo sotto;
+- slide interne: testo sopra, visual sotto (screenshot, chat o numero);
+- prompt dentro un fumetto di chat, come se lo scrivessi tu;
+- ultima slide: l'appuntamento della settimana.
+
 Il JSON ha questa forma:
 {
+  "rubrica": "News lampo",
   "slides": [
-    {"tipo": "copertina", "etichetta": "NEWS LAMPO", "titolo": "Testo con *parola chiave*",
-     "sottotitolo": "…", "barra": "Domanda-gancio"},
-    {"tipo": "testo", "etichetta": "COS'È SUCCESSO", "titolo": "…", "paragrafi": ["…"],
-     "punti": ["…"], "per_te": "…", "fonte": "…"},
-    {"tipo": "prompt", "etichetta": "01 · LA MAIL DIFFICILE", "titolo": "…",
-     "prompt": "Testo con [PARTI DA CAMBIARE]", "nota": "Funziona con ChatGPT, Claude, Gemini"},
-    {"tipo": "chiusura", "titolo": "…", "testo": "…", "domanda": "…"}
+    {"tipo": "copertina", "titolo": "Testo con *parola chiave*", "sottotitolo": "…", "visual": {…}},
+    {"tipo": "testo", "titolo": "…", "testo": ["paragrafo con **grassetto**", "…"],
+     "per_te": "…", "visual": {…}, "fonte": "…"},
+    {"tipo": "prompt", "titolo": "…", "quando": "Quando ti serve…",
+     "prompt": "Testo con [PARTI DA CAMBIARE]", "nota": "Cambia le parti in giallo."},
+    {"tipo": "chiusura", "domanda": "…"}
   ]
 }
-Nei testi, *parola* evidenzia la parola (giallo sul blu, riquadro giallo sulla carta).
+Visual possibili:
+    {"immagine": "screenshot.png", "didascalia": "…"}    file nella cartella del JSON
+    {"chat": [{"chi": "tu", "testo": "…"}, {"chi": "ai", "testo": "…"}], "didascalia": "…"}
+    {"numero": "20 mln $", "didascalia": "…"}
+Nei testi: *parola* = parola chiave (giallo sul blu, riquadro giallo sulla carta); **parola** = grassetto.
 Le slide vengono salvate come slide-01.png, slide-02.png… nella stessa cartella del JSON.
 """
 import html
@@ -25,107 +36,157 @@ import re
 import subprocess
 import sys
 
-BLU, CARTA, GIALLO, NERO, BIANCO = "#2340FF", "#F4F1EA", "#FFD84D", "#121212", "#FFFFFF"
-GRIGIO_SU_CARTA, GRIGIO_SU_BLU = "#55565C", "#DDE3FF"
+BLU, BLU_SCURO, CARTA, GIALLO, NERO, BIANCO = "#2340FF", "#1A30C4", "#F4F1EA", "#FFD84D", "#121212", "#FFFFFF"
+GRIGIO_SU_CARTA, GRIGIO_SU_BLU, BORDO = "#55565C", "#DDE3FF", "#E2DED3"
 RADICE = pathlib.Path(__file__).resolve().parent.parent
 
 
 def evidenzia(testo, fondo):
-    """Escapa il testo e trasforma *parola* nell'evidenziazione giusta per il fondo."""
+    """Escapa il testo; *parola* diventa parola chiave, **parola** grassetto."""
     t = html.escape(testo)
+    t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
     if fondo == "blu":
-        stile = f'color:{GIALLO}'
+        stile = f"color:{GIALLO}"
     else:
-        stile = f'background:{GIALLO};color:{NERO};padding:0 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone'
+        stile = (f"background:{GIALLO};color:{NERO};padding:0 8px;border-radius:6px;"
+                 "box-decoration-break:clone;-webkit-box-decoration-break:clone")
     return re.sub(r"\*(.+?)\*", rf'<span style="{stile}">\1</span>', t)
 
 
 def segnaposto(testo):
     """Nei prompt, evidenzia le parti tra [PARENTESI]."""
     t = html.escape(testo)
-    return re.sub(r"\[(.+?)\]", rf'<span style="background:{GIALLO};color:{NERO};padding:0 6px">[\1]</span>', t)
+    return re.sub(r"\[(.+?)\]", rf'<span style="background:{GIALLO};color:{NERO};padding:0 6px;border-radius:6px">[\1]</span>', t)
+
+
+def fumetto(colore, scritta, larghezza):
+    return (f'<svg width="{larghezza}" height="{larghezza * 6 // 7}" viewBox="0 0 700 600" aria-hidden="true">'
+            f'<rect width="700" height="460" rx="110" fill="{colore}"/><polygon points="120,440 120,600 280,440" fill="{colore}"/>'
+            f'<text x="350" y="235" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk" '
+            f'font-weight="700" font-size="290" fill="{scritta}">AI</text></svg>')
 
 
 def logo(fondo):
+    """Logo piccolo: discreto, come fanno le pagine AI."""
     testo, bolla, scritta = (BIANCO, GIALLO, BLU) if fondo == "blu" else (NERO, BLU, BIANCO)
-    return (f'<div style="display:flex;align-items:center;gap:14px;font-size:50px;font-weight:700;letter-spacing:-1.5px;color:{testo}">'
-            f'Scopri<svg width="72" height="62" viewBox="0 0 700 600" aria-hidden="true">'
-            f'<rect width="700" height="460" rx="110" fill="{bolla}"/><polygon points="120,440 120,600 280,440" fill="{bolla}"/>'
-            f'<text x="350" y="235" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk" '
-            f'font-weight="700" font-size="290" fill="{scritta}">AI</text></svg></div>')
-
-
-def testata(fondo, n, tot):
-    colore = BIANCO if fondo == "blu" else NERO
-    return (f'<div style="display:flex;justify-content:space-between;align-items:center">{logo(fondo)}'
-            f'<div class="mono" style="font-size:30px;color:{colore}">{n:02d}/{tot:02d}</div></div>')
-
-
-def etichetta(testo, fondo):
-    if not testo:
-        return ""
-    bg, fg = (GIALLO, NERO) if fondo == "blu" else (NERO, CARTA)
-    return (f'<div class="mono" style="align-self:flex-start;background:{bg};color:{fg};font-size:30px;'
-            f'padding:10px 18px;letter-spacing:2px">{html.escape(testo)}</div>')
+    return (f'<div style="display:flex;align-items:center;gap:8px;font-size:32px;font-weight:700;letter-spacing:-1px;color:{testo}">'
+            f'Scopri{fumetto(bolla, scritta, 44)}</div>')
 
 
 def fonte(testo, fondo):
     if not testo:
         return ""
     colore = GRIGIO_SU_BLU if fondo == "blu" else GRIGIO_SU_CARTA
-    return f'<div class="mono" style="font-size:24px;font-weight:500;color:{colore}">Fonte: {html.escape(testo)}</div>'
+    return f'<div class="mono" style="font-size:22px;font-weight:500;color:{colore}">Fonte: {html.escape(testo)}</div>'
 
 
-def slide_copertina(s, n, tot):
-    sotto = f'<div style="font-size:44px;line-height:1.35;color:{GRIGIO_SU_BLU}">{evidenzia(s["sottotitolo"], "blu")}</div>' if s.get("sottotitolo") else ""
-    return ("blu", f'''{testata("blu", n, tot)}
-<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:44px">
-{etichetta(s.get("etichetta"), "blu")}
-<div style="font-size:{s.get("dimensione", 124)}px;font-weight:700;line-height:1;letter-spacing:-4px">{evidenzia(s["titolo"], "blu")}</div>
+def bolla_chat(chi, testo, dim):
+    """Un messaggio di chat: il tuo a destra (blu), quello dell'AI a sinistra (carta)."""
+    if chi == "tu":
+        return (f'<div style="align-self:flex-end;max-width:82%;background:{BLU};color:{BIANCO};padding:{dim * 0.6:.0f}px {dim * 0.8:.0f}px;'
+                f'border-radius:32px 32px 8px 32px;font-size:{dim}px;line-height:1.35">{evidenzia(testo, "blu")}</div>')
+    return (f'<div style="align-self:flex-start;display:flex;gap:14px;align-items:flex-end;max-width:88%">'
+            f'<div style="flex:none">{fumetto(GIALLO, NERO, round(dim * 1.5))}</div>'
+            f'<div style="background:{CARTA};color:{NERO};padding:{dim * 0.6:.0f}px {dim * 0.8:.0f}px;border-radius:32px 32px 32px 8px;'
+            f'font-size:{dim}px;line-height:1.35">{evidenzia(testo, "carta")}</div></div>')
+
+
+def visual(v, cartella, fondo):
+    """Il riquadro arrotondato con l'immagine, la chat o il numero."""
+    if not v:
+        return ""
+    didascalia = ""
+    if v.get("didascalia"):
+        colore = GRIGIO_SU_BLU if fondo == "blu" else GRIGIO_SU_CARTA
+        didascalia = f'<div class="mono" style="font-size:22px;font-weight:500;color:{colore};margin-top:14px">{html.escape(v["didascalia"])}</div>'
+    cornice = f"flex:1;min-height:0;border-radius:36px;overflow:hidden;background:{BIANCO};border:3px solid {BORDO if fondo == 'carta' else BIANCO}"
+    if v.get("immagine"):
+        src = (cartella / v["immagine"]).resolve().as_uri()
+        adatta = v.get("adatta", "cover")
+        interno = f'<img src="{src}" style="width:100%;height:100%;object-fit:{adatta};object-position:{v.get("posizione", "top")};display:block">'
+    elif v.get("chat"):
+        dim = v.get("dimensione", 46 if fondo == "blu" else 36)
+        interno = (f'<div style="height:100%;box-sizing:border-box;padding:40px;display:flex;flex-direction:column;justify-content:center;gap:{dim * 0.8:.0f}px">'
+                   + "".join(bolla_chat(m["chi"], m["testo"], dim) for m in v["chat"]) + "</div>")
+    elif v.get("numero"):
+        interno = (f'<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;'
+                   f'background:{GIALLO};color:{NERO}"><div style="font-size:150px;font-weight:700;letter-spacing:-6px;line-height:1">'
+                   f'{html.escape(v["numero"])}</div>'
+                   + (f'<div style="font-size:36px;font-weight:500;text-align:center;max-width:80%">{html.escape(v["sotto"])}</div>' if v.get("sotto") else "")
+                   + "</div>")
+    else:
+        return ""
+    return f'<div style="flex:1;min-height:0;display:flex;flex-direction:column"><div style="{cornice}">{interno}</div>{didascalia}</div>'
+
+
+def freccia():
+    return (f'<div style="flex:none;width:96px;height:96px;border-radius:50%;background:{GIALLO};color:{NERO};'
+            f'display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:700">→</div>')
+
+
+def slide_copertina(s, ctx):
+    sotto = f'<div style="font-size:38px;line-height:1.3;color:{GRIGIO_SU_BLU}">{evidenzia(s["sottotitolo"], "blu")}</div>' if s.get("sottotitolo") else ""
+    rubrica = f'<div class="mono" style="font-size:24px;color:{GIALLO};letter-spacing:1px">{html.escape(ctx["rubrica"])}</div>' if ctx.get("rubrica") else ""
+    return ("blu", f'''<div style="display:flex;justify-content:space-between;align-items:center">{logo("blu")}{rubrica}</div>
+{visual(s.get("visual"), ctx["cartella"], "blu")}
+<div style="display:flex;align-items:flex-end;gap:36px">
+<div style="flex:1;display:flex;flex-direction:column;gap:22px">
+<div style="font-size:{s.get("dimensione", 84)}px;font-weight:700;line-height:1.02;letter-spacing:-3px">{evidenzia(s["titolo"], "blu")}</div>
 {sotto}
 </div>
-<div style="display:flex;justify-content:space-between;align-items:center;background:{GIALLO};color:{NERO};padding:32px 40px;font-size:42px;font-weight:700">
-<span>{html.escape(s.get("barra", ""))}</span><span>Scorri →</span></div>''')
+{freccia()}
+</div>''')
 
 
-def slide_testo(s, n, tot):
-    corpo = "".join(f'<p style="margin:0">{evidenzia(p, "carta")}</p>' for p in s.get("paragrafi", []))
-    if s.get("punti"):
-        corpo += '<div style="display:flex;flex-direction:column;gap:22px">' + "".join(
-            f'<div style="display:flex;gap:22px"><span style="flex:none;width:44px;height:44px;border-radius:50%;background:{BLU};color:{BIANCO};'
-            f'font-size:26px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:4px">{i}</span>'
-            f'<span>{evidenzia(p, "carta")}</span></div>' for i, p in enumerate(s["punti"], 1)) + "</div>"
-    per_te = (f'<div style="background:{BLU};color:{BIANCO};padding:34px 40px;font-size:40px;line-height:1.35">'
-              f'<b style="color:{GIALLO}">👉 Per te:</b> {html.escape(s["per_te"])}</div>') if s.get("per_te") else ""
-    return ("carta", f'''{testata("carta", n, tot)}
-{etichetta(s.get("etichetta"), "carta")}
-<div style="font-size:{s.get("dimensione", 88)}px;font-weight:700;line-height:1.05;letter-spacing:-2.5px">{evidenzia(s["titolo"], "carta")}</div>
-<div style="display:flex;flex-direction:column;gap:30px;font-size:40px;line-height:1.4">{corpo}</div>
-<div style="flex:1"></div>
+def slide_testo(s, ctx):
+    corpo = "".join(f'<p style="margin:0">{evidenzia(p, "carta")}</p>' for p in s.get("testo", []))
+    per_te = (f'<div style="border-left:8px solid {GIALLO};padding:4px 0 4px 24px;font-size:34px;line-height:1.35">'
+              f'<b>👉 Per te:</b> {evidenzia(s["per_te"], "carta")}</div>') if s.get("per_te") else ""
+    return ("carta", f'''{logo("carta")}
+<div style="font-size:{s.get("dimensione", 64)}px;font-weight:700;line-height:1.05;letter-spacing:-2px">{evidenzia(s["titolo"], "carta")}</div>
+<div style="display:flex;flex-direction:column;gap:22px;font-size:{s.get("dimensione_testo", 34)}px;line-height:1.4">{corpo}</div>
 {per_te}
+{visual(s.get("visual"), ctx["cartella"], "carta") or '<div style="flex:1"></div>'}
 {fonte(s.get("fonte"), "carta")}''')
 
 
-def slide_prompt(s, n, tot):
-    nota = f'<div class="mono" style="font-size:26px;font-weight:500;color:{GRIGIO_SU_CARTA}">{html.escape(s["nota"])}</div>' if s.get("nota") else ""
-    return ("carta", f'''{testata("carta", n, tot)}
-{etichetta(s.get("etichetta"), "carta")}
-<div style="font-size:{s.get("dimensione", 80)}px;font-weight:700;line-height:1.05;letter-spacing:-2px">{evidenzia(s["titolo"], "carta")}</div>
-<div class="mono" style="background:{BIANCO};border:4px solid {NERO};padding:44px;font-size:{s.get("dimensione_prompt", 36)}px;font-weight:500;line-height:1.5">{segnaposto(s["prompt"])}</div>
-<div style="flex:1"></div>
+def slide_prompt(s, ctx):
+    quando = f'<div style="font-size:34px;line-height:1.4">{evidenzia(s["quando"], "carta")}</div>' if s.get("quando") else ""
+    nota = f'<div class="mono" style="font-size:24px;font-weight:500;color:{GRIGIO_SU_CARTA}">{html.escape(s["nota"])}</div>' if s.get("nota") else ""
+    return ("carta", f'''{logo("carta")}
+<div style="font-size:{s.get("dimensione", 64)}px;font-weight:700;line-height:1.05;letter-spacing:-2px">{evidenzia(s["titolo"], "carta")}</div>
+{quando}
+<div style="flex:1;min-height:0;background:{BIANCO};border:3px solid {BORDO};border-radius:36px;display:flex;flex-direction:column;overflow:hidden">
+<div class="mono" style="padding:22px 36px;border-bottom:3px solid {BORDO};font-size:24px;color:{GRIGIO_SU_CARTA};display:flex;justify-content:space-between">
+<span>Scrivi così all'AI</span><span>ChatGPT · Claude · Gemini</span></div>
+<div style="flex:1;padding:40px 36px;display:flex;flex-direction:column;justify-content:center;gap:28px">
+<div class="mono" style="align-self:flex-end;max-width:92%;background:{BLU};color:{BIANCO};padding:32px 36px;border-radius:36px 36px 8px 36px;
+font-size:{s.get("dimensione_prompt", 36)}px;font-weight:500;line-height:1.5">{segnaposto(s["prompt"])}</div>
+<div style="align-self:flex-start;display:flex;gap:14px;align-items:center">{fumetto(GIALLO, NERO, 52)}
+<div style="background:{CARTA};padding:18px 26px;border-radius:28px;font-size:34px;letter-spacing:6px;color:{GRIGIO_SU_CARTA}">•••</div></div>
+</div></div>
 {nota}''')
 
 
-def slide_chiusura(s, n, tot):
-    testo = f'<div style="font-size:44px;line-height:1.35;color:{GRIGIO_SU_BLU}">{html.escape(s["testo"])}</div>' if s.get("testo") else ""
-    return ("blu", f'''{testata("blu", n, tot)}
-<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:44px">
-<div style="font-size:112px;font-weight:700;line-height:1;letter-spacing:-4px">{evidenzia(s["titolo"], "blu")}</div>
-{testo}
+def slide_chiusura(s, ctx):
+    rubriche = s.get("rubriche", [
+        ["Lun", "Le news AI della settimana"],
+        ["Mer", "Una news lampo"],
+        ["Ven", "Prompt da copiare"],
+        ["Dom", "Una curiosità di scienza"],
+    ])
+    righe = "".join(
+        f'<div style="display:flex;gap:28px;align-items:center;padding:22px 0;border-top:2px solid rgba(255,255,255,.25)">'
+        f'<span class="mono" style="flex:none;width:96px;color:{GIALLO};font-size:32px">{html.escape(g)}</span>'
+        f'<span style="font-size:40px;font-weight:500">{html.escape(t)}</span></div>' for g, t in rubriche)
+    domanda = f'<div style="font-size:40px;font-weight:700;line-height:1.3">{evidenzia(s["domanda"], "blu")}</div>' if s.get("domanda") else ""
+    return ("blu", f'''{logo("blu")}
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<div style="font-size:{s.get("dimensione", 92)}px;font-weight:700;line-height:1.02;letter-spacing:-3px">{evidenzia(s.get("titolo", "Ogni settimana, *4\u00a0scoperte*."), "blu")}</div>
+<div>{righe}</div>
 </div>
-<div style="font-size:44px;font-weight:700">{html.escape(s.get("domanda", ""))}</div>
-<div style="display:flex;justify-content:space-between;align-items:center;background:{GIALLO};color:{NERO};padding:32px 40px;font-size:42px;font-weight:700">
-<span>Segui @scopri__ai</span><span>📌 Salva il post</span></div>''')
+{domanda}
+<div style="font-size:34px;color:{GRIGIO_SU_BLU}">Segui <b style="color:{BIANCO}">@scopri__ai</b> e salva il post per ritrovarlo 📌</div>''')
 
 
 TIPI = {"copertina": slide_copertina, "testo": slide_testo, "prompt": slide_prompt, "chiusura": slide_chiusura}
@@ -135,8 +196,8 @@ def pagina(fondo, contenuto):
     bg, fg = (BLU, BIANCO) if fondo == "blu" else (CARTA, NERO)
     return f'''<!doctype html><html lang="it"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=block" rel="stylesheet">
-<style>html,body{{margin:0}}.mono{{font-family:'JetBrains Mono',monospace;font-weight:700}}</style></head>
-<body><div style="width:1080px;height:1350px;box-sizing:border-box;padding:72px;background:{bg};color:{fg};font-family:'Space Grotesk',sans-serif;display:flex;flex-direction:column;gap:44px">
+<style>html,body{{margin:0}}.mono{{font-family:'JetBrains Mono',monospace;font-weight:700}}b{{font-weight:700}}</style></head>
+<body><div style="width:1080px;height:1350px;box-sizing:border-box;padding:64px 72px;background:{bg};color:{fg};font-family:'Space Grotesk',sans-serif;display:flex;flex-direction:column;gap:40px">
 {contenuto}
 </div></body></html>'''
 
@@ -147,11 +208,12 @@ def main():
         sys.exit(1)
     spec_path = pathlib.Path(sys.argv[1]).resolve()
     cartella = spec_path.parent
-    slides = json.loads(spec_path.read_text(encoding="utf-8"))["slides"]
+    spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    ctx = {"rubrica": spec.get("rubrica", ""), "cartella": cartella}
     tmp = cartella / ".html"
     tmp.mkdir(exist_ok=True)
-    for i, s in enumerate(slides, 1):
-        fondo, contenuto = TIPI[s["tipo"]](s, i, len(slides))
+    for i, s in enumerate(spec["slides"], 1):
+        fondo, contenuto = TIPI[s["tipo"]](s, ctx)
         f = tmp / f"slide-{i:02d}.html"
         f.write_text(pagina(fondo, contenuto), encoding="utf-8")
         subprocess.run(["node", str(RADICE / "strumenti/render.cjs"), str(f), str(cartella / f"slide-{i:02d}.png"), "1080", "1350"], check=True)
