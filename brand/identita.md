@@ -52,7 +52,7 @@ Si genera con `strumenti/carosello.py`; esempio in `brand/template-esempio/`.
 - **Slide interne (carta):** testo sopra (35-55 parole), visual sotto in un riquadro arrotondato: screenshot, chat o numero grande su giallo. "👉 Per te" con filetto giallo. Fonte in piccolo in fondo.
 - **Prompt:** il prompt è un messaggio blu in una finestra di chat ("Scrivi così all'AI"), con le parti da cambiare in giallo.
 - **Ultima slide (blu):** l'appuntamento della settimana (Lun, Mer, Ven, Dom) + domanda per i commenti + "Segui e salva".
-- Se si parla di una persona o di una cosa reale, il visual è la foto o il video veri (regola 4 di `CLAUDE.md`), con il credito in piccolo ("Foto: Meta"). Le chat disegnate solo per i concetti; se non riproducono l'interfaccia vera, sotto va scritto "Esempio illustrativo".
+- Se si parla di una persona o di una cosa reale, il visual è la foto o il video veri (regola 4 di `CLAUDE.md`), con il credito in piccolo ("Foto: Meta"). La chat disegnata resta per i prompt da copiare e per i concetti; se non riproducono l'interfaccia vera, sotto va scritto "Esempio illustrativo".
 
 Da evitare perché tipico dei concorrenti: fondo nero con lilla o viola, mascotte robot, collage di CEO.
 
