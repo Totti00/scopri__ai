@@ -2,12 +2,12 @@
 
 ## Profilo Instagram
 - **Nome utente:** `scopri__ai`
-- **Nome:** Scopri.AI · Intelligenza Artificiale
+- **Nome (campo "Nome" su Instagram):** 💬 L'AI che funziona davvero
 - **Bio:**
   ```
-  🧠 L'intelligenza artificiale che funziona davvero
-  💡 Prompt pronti da copiare · Notizie verificate
-  📌 Salva, prova, scopri
+  🧠 Intelligenza artificiale senza tecnicismi
+  💡 Prompt pronti · 🗞️ News verificate · 🔬 Curiosità
+  👇 Inizia a usare l'AI meglio
   ```
 - **Tipo di account:** Creator (per vedere le statistiche).
 
