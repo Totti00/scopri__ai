@@ -21,10 +21,16 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
    - **Ammesse anche** foto di agenzia (Getty, Reuters, Ansa, AP…) e clip ufficiali o di testate. Il proprietario ha accettato il rischio che Instagram rimuova il post per copyright. Si usano quando la prima scelta non basta.
    - **Foto di persone modificate con l'AI** (fotomontaggi ironici): ammesse solo se si capisce che sono finte, con la scritta "Fotomontaggio" sulla slide e l'etichetta "Info sull'AI" di Instagram attivata. Mai fotomontaggi che possano passare per veri o che mettano in bocca a qualcuno frasi mai dette.
    - **Mai:** contenuti di altri creator (le loro grafiche, i loro video, i loro fotomontaggi), fotogrammi di film. Eccezione: lo screenshot del post di X o Reddit che è esso stesso la notizia (regole in `fonti.md`, "Storie virali").
-   - Il credito delle immagini va in fondo alla caption, insieme alle fonti ("Immagini: Google"), e in `fonti.md`.
+   - In fondo alla caption va solo "Fonti: …". Chi ha fatto foto e video si annota in `fonti.md` della cartella del post.
+   - **Video in ogni slide quando si può** (deciso il 14/10/2026): i video ufficiali si prendono dai post su X delle aziende (`https://api.fxtwitter.com/<account>/status/<id>` dà il link diretto all'MP4). YouTube da qui è bloccato.
 5. **Niente esagerazioni**: titoli con gancio sì, falsi o allarmisti no. Se una notizia è un'indiscrezione, si scrive al condizionale e lo si dichiara.
 6. **Mai lo stesso argomento due volte**: prima di scegliere, controllare `archivio/`.
 7. **Non copiare** testi, slogan o grafiche dei concorrenti. Si prendono le tecniche, non l'identità.
+
+## Come si racconta una notizia
+- Mai il post banale "è uscito X". Si cerca il **gancio**: la cosa più sorprendente o utile, quella che fa venire voglia di scorrere.
+- Ogni slide è una scoperta in più, con il suo video o la sua immagine.
+- Si dice cosa può farci una persona normale, e se è solo un esempio dell'azienda lo si dice.
 
 ## Come si scrive
 - Si dà del **tu**. Frasi corte. Una sola idea per frase.
@@ -38,7 +44,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 
 ## Cosa consegnare per ogni post
 Una cartella `archivio/AAAA-MM-GG-rubrica-argomento/` con:
-- `slide-01.png` … `slide-NN.png` (1080×1350, formato 4:5)
+- `slide-01` … `slide-NN`: PNG oppure MP4 senza audio (1080×1350, formato 4:5)
 - `caption.txt` — pronta da copiare su Instagram
 - `fonti.md` — link alle fonti usate e data di consultazione
 - `note.md` — cosa è stato provato (prompt) e ogni dubbio rimasto

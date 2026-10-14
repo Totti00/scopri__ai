@@ -49,10 +49,10 @@ Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il 
 Si genera con `strumenti/carosello.py`; esempio in `brand/template-esempio/`.
 - **Logo piccolo** in alto a sinistra. Niente contatore 01/05, niente barra "Scorri" in basso, niente etichette a blocco.
 - **Copertina (blu):** visual grande in alto (screenshot del prodotto o chat disegnata), titolo sotto con le parole chiave in giallo, pallino giallo con → come unico invito a scorrere.
-- **Slide interne (carta):** testo sopra (35-55 parole), visual sotto in un riquadro arrotondato: screenshot, chat o numero grande su giallo. "👉 Per te" con filetto giallo. Nessuna fonte sulla slide.
+- **Slide interne (carta):** testo sopra (25-40 parole, carattere grande), visual sotto, meglio se video in un riquadro arrotondato: screenshot, chat o numero grande su giallo. "👉 Per te" con filetto giallo. Nessuna fonte sulla slide.
 - **Prompt:** il prompt è un messaggio blu in una finestra di chat ("Scrivi così all'AI"), con le parti da cambiare in giallo.
 - **Ultima slide (blu):** gli appuntamenti fissi (Lun, Ven, Dom) più le news lampo + domanda per i commenti + "Segui e salva".
-- Se si parla di una persona o di una cosa reale, il visual è la foto o il video veri (regola 4 di `CLAUDE.md`), con il credito in fondo alla caption ("Immagini: Meta"). La chat disegnata resta per i prompt da copiare e per i concetti; se non riproducono l'interfaccia vera, sotto va scritto "Esempio illustrativo".
+- Se si parla di una persona o di una cosa reale, il visual è la foto o il video veri (regola 4 di `CLAUDE.md`), con chi l'ha fatta annotato in `fonti.md` del post. La chat disegnata resta per i prompt da copiare e per i concetti; se non riproducono l'interfaccia vera, sotto va scritto "Esempio illustrativo".
 
 Da evitare perché tipico dei concorrenti: fondo nero con lilla o viola, mascotte robot, collage di CEO.
 

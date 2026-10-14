@@ -35,7 +35,7 @@ Regole:
 
 👉 Cosa cambia per te: [1 frase concreta]
 
-Fonti: [aziende e testate] · Immagini: [chi le ha fatte]
+Fonti: [aziende e testate]
 
 📌 Salva il post · Tu cosa ne pensi? 👇
 #intelligenzaartificiale #[prodotto] #[tema]

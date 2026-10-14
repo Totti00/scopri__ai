@@ -26,6 +26,9 @@ Visual possibili:
     {"immagine": "screenshot.png", "didascalia": "…"}    file nella cartella del JSON
     {"chat": [{"chi": "tu", "testo": "…"}, {"chi": "ai", "testo": "…"}], "didascalia": "…"}
     {"numero": "20 mln $", "didascalia": "…"}
+    {"video": "media/clip.mp4", "inizio": 12, "durata": 8, "posizione": 0.5}
+        → la slide diventa slide-NN.mp4 (senza audio: la musica la mette il proprietario).
+          "posizione" sposta il taglio del video da sinistra (0) a destra (1).
 Fonti e crediti delle immagini NON vanno sulle slide: vanno in fondo alla caption.
 La "didascalia" serve solo per avvisi come "Esempio illustrativo".
 Nei testi: *parola* = parola chiave (giallo sul blu, riquadro giallo sulla carta); **parola** = grassetto.
@@ -96,6 +99,11 @@ def visual(v, cartella, fondo):
         colore = GRIGIO_SU_BLU if fondo == "blu" else GRIGIO_SU_CARTA
         didascalia = f'<div class="mono" style="font-size:22px;font-weight:500;color:{colore};margin-top:14px">{html.escape(v["didascalia"])}</div>'
     cornice = f"flex:1;min-height:0;border-radius:36px;overflow:hidden;background:{BIANCO};border:3px solid {BORDO if fondo == 'carta' else BIANCO}"
+    if v.get("video"):
+        # Il riquadro resta "bucato": il video viene messo sotto con ffmpeg.
+        bg = BLU if fondo == "blu" else CARTA
+        buco = f"flex:1;min-height:0;border-radius:36px;box-shadow:0 0 0 3000px {bg}"
+        return f'<div class="sotto" style="flex:1;min-height:0;display:flex;flex-direction:column"><div id="buco" style="{buco}"></div>{didascalia}</div>'
     if v.get("immagine"):
         src = (cartella / v["immagine"]).resolve().as_uri()
         adatta = v.get("adatta", "cover")
@@ -187,14 +195,39 @@ def slide_chiusura(s, ctx):
 TIPI = {"copertina": slide_copertina, "testo": slide_testo, "prompt": slide_prompt, "chiusura": slide_chiusura}
 
 
-def pagina(fondo, contenuto):
+def pagina(fondo, contenuto, con_video=False):
     bg, fg = (BLU, BIANCO) if fondo == "blu" else (CARTA, NERO)
+    sfondo = "transparent" if con_video else bg
     return f'''<!doctype html><html lang="it"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=block" rel="stylesheet">
-<style>html,body{{margin:0}}.mono{{font-family:'JetBrains Mono',monospace;font-weight:700}}b{{font-weight:700}}</style></head>
-<body><div style="width:1080px;height:1350px;box-sizing:border-box;padding:64px 72px;background:{bg};color:{fg};font-family:'Space Grotesk',sans-serif;display:flex;flex-direction:column;gap:40px">
+<style>html,body{{margin:0;background:transparent}}.mono{{font-family:'JetBrains Mono',monospace;font-weight:700}}b{{font-weight:700}}
+.pagina>*{{position:relative;z-index:1}}.pagina>.sotto{{z-index:0}}</style></head>
+<body><div class="pagina" style="width:1080px;height:1350px;box-sizing:border-box;padding:64px 72px;background:{sfondo};color:{fg};font-family:'Space Grotesk',sans-serif;display:flex;flex-direction:column;gap:40px;overflow:hidden">
 {contenuto}
 </div></body></html>'''
+
+
+def slide_video(html_file, v, fondo, cartella, uscita):
+    """Grafica trasparente sopra, video tagliato su misura sotto il "buco"."""
+    sopra = html_file.with_suffix(".png")
+    out = subprocess.run(["node", str(RADICE / "strumenti/render.cjs"), str(html_file), str(sopra), "1080", "1350", "trasparente"],
+                         check=True, capture_output=True, text=True).stdout
+    b = json.loads(out.strip().splitlines()[-1])
+    w, h, x, y = (round(b[k]) // 2 * 2 for k in ("width", "height", "x", "y"))
+    pos = float(v.get("posizione", 0.5))
+    bg = (BLU if fondo == "blu" else CARTA).lstrip("#")
+    filtro = (f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}:(iw-{w})*{pos}:(ih-{h})/2,setsar=1,fps=30[v];"
+              f"color=c=0x{bg}:s=1080x1350:r=30[base];[base][v]overlay={x}:{y}:shortest=1[b];"
+              f"[b][1:v]overlay=0:0:shortest=1,format=yuv420p")
+    comando = ["ffmpeg", "-loglevel", "error", "-y"]
+    if v.get("inizio"):
+        comando += ["-ss", str(v["inizio"])]
+    if v.get("durata"):
+        comando += ["-t", str(v["durata"])]
+    comando += ["-i", str(cartella / v["video"]), "-loop", "1", "-i", str(sopra), "-filter_complex", filtro,
+                "-an", "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-movflags", "+faststart", str(uscita)]
+    subprocess.run(comando, check=True)
+    print("Creato " + str(uscita))
 
 
 def main():
@@ -209,9 +242,15 @@ def main():
     tmp.mkdir(exist_ok=True)
     for i, s in enumerate(spec["slides"], 1):
         fondo, contenuto = TIPI[s["tipo"]](s, ctx)
+        v = s.get("visual") or {}
         f = tmp / f"slide-{i:02d}.html"
-        f.write_text(pagina(fondo, contenuto), encoding="utf-8")
-        subprocess.run(["node", str(RADICE / "strumenti/render.cjs"), str(f), str(cartella / f"slide-{i:02d}.png"), "1080", "1350"], check=True)
+        f.write_text(pagina(fondo, contenuto, con_video=bool(v.get("video"))), encoding="utf-8")
+        for vecchio in (cartella / f"slide-{i:02d}.png", cartella / f"slide-{i:02d}.mp4"):
+            vecchio.unlink(missing_ok=True)
+        if v.get("video"):
+            slide_video(f, v, fondo, cartella, cartella / f"slide-{i:02d}.mp4")
+        else:
+            subprocess.run(["node", str(RADICE / "strumenti/render.cjs"), str(f), str(cartella / f"slide-{i:02d}.png"), "1080", "1350"], check=True)
     for f in tmp.iterdir():
         f.unlink()
     tmp.rmdir()

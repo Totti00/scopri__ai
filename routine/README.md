@@ -14,7 +14,7 @@ Ogni routine segue questo file più il file della sua attività.
 1. **Repository.** Se `/home/user/scopri__ai` non esiste, aggiungi il repository con `add_repo` (owner `Totti00`, repo `scopri__ai`, accesso `push`) e clonalo lì. Poi `git pull origin main`.
 2. **Data e ora.** Usa sempre l'ora italiana: `TZ=Europe/Rome date`.
 3. **Leggi le regole:** `CLAUDE.md`, `fonti.md`, `brand/identita.md`, il file della rubrica in `format/`. Controlla `archivio/` per non ripetere argomenti (regola 6).
-4. **Immagini vere** (regola 4): prima le sale stampa ufficiali. Per leggere pagine fatte in JavaScript (blog.google, Reddit) usa `node strumenti/leggi-pagina.cjs <url>`. Per le immagini usa `curl`; le GIF e WEBP si convertono in PNG con `ffmpeg -i in.gif -frames:v 1 out.png`.
+4. **Immagini e video veri** (regola 4): prima le sale stampa ufficiali. I video ufficiali si scaricano dai post su X delle aziende con `curl https://api.fxtwitter.com/<account>/status/<id>` (dà il link MP4); YouTube è bloccato. Nel `slide.json` un visual `{"video": "media/x.mp4", "inizio": 10, "durata": 8}` crea una slide MP4. Per leggere pagine fatte in JavaScript (blog.google, Reddit) usa `node strumenti/leggi-pagina.cjs <url>`. Per le immagini usa `curl`; le GIF e WEBP si convertono in PNG con `ffmpeg -i in.gif -frames:v 1 out.png`.
 5. **Slide:** scrivi `slide.json` e lancia `python3 strumenti/carosello.py archivio/<cartella>/slide.json`. Guarda ogni PNG (Read) e correggi testi troppo lunghi o immagini tagliate male. Niente fonti sulle slide.
 6. **Consegna:** `caption.txt` (fonti e crediti delle immagini in fondo), `fonti.md`, `note.md`.
 7. **Salva:** commit su `main` con autore `Claude <noreply@anthropic.com>` e push (`git push origin main`; se la rete fallisce riprova fino a 4 volte).
