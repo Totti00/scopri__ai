@@ -12,7 +12,7 @@ Claude prepara i caroselli e le caption; **il proprietario pubblica a mano** su 
 Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 
 ## Regole fisse (mai derogare)
-1. **Ogni notizia confermata da almeno 2 fonti affidabili** (vedi `fonti.md`). Se non ci sono, non si pubblica: si usa la rubrica di riserva.
+1. **Ogni notizia confermata da almeno 2 fonti affidabili** (vedi `fonti.md`). Se non ci sono, non si pubblica: si usa la rubrica di riserva ("Curiosità scientifiche").
 2. **Fonte sempre citata** per notizie, curiosità e dati: in piccolo sulla slide e in fondo alla caption. **I post di prompt non hanno fonte** (né sulle slide né in caption).
 3. **Prompt controllati, senza dirlo**: prima di pubblicare un prompt che produce testo, Claude lo esegue e controlla che il risultato sia utile; se è debole, lo riscrive. È un controllo interno: sulle slide **non** compare nessun timbro "provato".
 4. **Niente immagini protette**: niente foto di persone (CEO compresi), fotogrammi di film, video o grafiche di altri creator. Ammessi: grafica nostra, screenshot di prodotti presi dalle pagine ufficiali, loghi solo per identificare il prodotto di cui si parla.
