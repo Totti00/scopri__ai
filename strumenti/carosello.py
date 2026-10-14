@@ -27,6 +27,7 @@ Visual possibili:
     {"chat": [{"chi": "tu", "testo": "…"}, {"chi": "ai", "testo": "…"}], "didascalia": "…"}
     {"numero": "20 mln $", "didascalia": "…"}
     {"video": "media/clip.mp4", "inizio": 12, "durata": 8, "posizione": 0.5}
+    {"video": "media/clip.mp4", "pezzi": [[12, 24], [54, 72]]}   più pezzi dello stesso video, uno dopo l'altro
         → la slide diventa slide-NN.mp4 (senza audio: la musica la mette il proprietario).
           "posizione" sposta il taglio del video da sinistra (0) a destra (1).
 Fonti e crediti delle immagini NON vanno sulle slide: vanno in fondo alla caption.
@@ -124,8 +125,10 @@ def visual(v, cartella, fondo):
 
 
 def freccia():
-    return (f'<div style="flex:none;width:96px;height:96px;border-radius:50%;background:{GIALLO};color:{NERO};'
-            f'display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:700">→</div>')
+    """Pallino giallo con la freccia disegnata, perfettamente al centro."""
+    return (f'<div style="flex:none;width:96px;height:96px;border-radius:50%;background:{GIALLO};display:flex;align-items:center;justify-content:center">'
+            f'<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><path d="M6 22h30M24 10l12 12-12 12" fill="none" stroke="{NERO}" '
+            f'stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>')
 
 
 def slide_copertina(s, ctx):
@@ -216,15 +219,16 @@ def slide_video(html_file, v, fondo, cartella, uscita):
     w, h, x, y = (round(b[k]) // 2 * 2 for k in ("width", "height", "x", "y"))
     pos = float(v.get("posizione", 0.5))
     bg = (BLU if fondo == "blu" else CARTA).lstrip("#")
-    filtro = (f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}:(iw-{w})*{pos}:(ih-{h})/2,setsar=1,fps=30[v];"
-              f"color=c=0x{bg}:s=1080x1350:r=30[base];[base][v]overlay={x}:{y}:shortest=1[b];"
-              f"[b][1:v]overlay=0:0:shortest=1,format=yuv420p")
+    pezzi = v.get("pezzi") or [[v.get("inizio", 0), v.get("inizio", 0) + v["durata"] if v.get("durata") else None]]
     comando = ["ffmpeg", "-loglevel", "error", "-y"]
-    if v.get("inizio"):
-        comando += ["-ss", str(v["inizio"])]
-    if v.get("durata"):
-        comando += ["-t", str(v["durata"])]
-    comando += ["-i", str(cartella / v["video"]), "-loop", "1", "-i", str(sopra), "-filter_complex", filtro,
+    for a, b_ in pezzi:
+        comando += ["-ss", str(a)] + (["-t", str(b_ - a)] if b_ else []) + ["-i", str(cartella / v["video"])]
+    n = len(pezzi)
+    unione = "".join(f"[{i}:v]setpts=PTS-STARTPTS,fps=30,setsar=1[p{i}];" for i in range(n)) + "".join(f"[p{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0[c];"
+    filtro = (unione + f"[c]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}:(iw-{w})*{pos}:(ih-{h})/2,setsar=1[v];"
+              f"color=c=0x{bg}:s=1080x1350:r=30[base];[base][v]overlay={x}:{y}:shortest=1[b];"
+              f"[b][{n}:v]overlay=0:0:shortest=1,format=yuv420p")
+    comando += ["-loop", "1", "-i", str(sopra), "-filter_complex", filtro,
                 "-an", "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-movflags", "+faststart", str(uscita)]
     subprocess.run(comando, check=True)
     print("Creato " + str(uscita))

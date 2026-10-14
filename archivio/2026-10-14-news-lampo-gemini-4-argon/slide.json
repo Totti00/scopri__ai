@@ -1,95 +1,21 @@
 {
  "rubrica": "NEWS LAMPO",
  "slides": [
-  {
-   "tipo": "copertina",
-   "titolo": "Un robot ha imparato a giocare *guardando un video*.",
-   "sottotitolo": "Merito della nuova AI di Google. E sa fare molto altro.",
-   "dimensione": 78,
-   "visual": {
-    "video": "media/robot.mp4",
-    "inizio": 80,
-    "durata": 10,
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Come ha *fatto*?",
-   "dimensione_testo": 38,
-   "testo": [
-    "**Gemini 4 Argon** ha guardato il video di una persona che lanciava.",
-    "Ha ricostruito la scena al computer e ha calcolato i movimenti. Risultato: **7 tiri a segno di fila**."
-   ],
-   "visual": {
-    "video": "media/robot.mp4",
-    "inizio": 11,
-    "durata": 12,
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Da uno schizzo a una *simulazione*",
-   "dimensione_testo": 38,
-   "testo": [
-    "Disegni un aquilone e scrivi «crea una simulazione».",
-    "Argon costruisce una piccola app dove lo vedi volare. **Senza scrivere codice.**"
-   ],
-   "visual": {
-    "video": "media/lancio-app.mp4",
-    "inizio": 2.5,
-    "durata": 6.5,
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Dal tuo profilo a un *vaso*",
-   "dimensione_testo": 38,
-   "testo": [
-    "Negli esempi di Google, la foto di un viso di profilo diventa un vaso.",
-    "Argon prepara il **file 3D pronto da stampare**."
-   ],
-   "visual": {
-    "video": "media/lancio-app.mp4",
-    "inizio": 24,
-    "durata": 5,
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Anche per i *lavori di casa*",
-   "dimensione_testo": 38,
-   "testo": [
-    "Fotografi il muro o il quadro elettrico e chiedi aiuto.",
-    "Argon ti mostra **come montare il tassello** o ti prepara la **tabella degli interruttori**."
-   ],
-   "visual": {
-    "video": "media/lancio-app.mp4",
-    "inizio": 29,
-    "durata": 7,
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Come si *prova*",
-   "dimensione_testo": 38,
-   "testo": [
-    "Apri l'app **Gemini**, tocca il nome del modello e scegli **4 Argon**.",
-    "Serve l'abbonamento **Google AI Pro** o **Ultra**. Arriva un po' alla volta."
-   ],
-   "per_te": "con Gemini gratis per ora non c'è.",
-   "visual": {
-    "video": "media/app3d.mp4",
-    "posizione": 0.62
-   }
-  },
-  {
-   "tipo": "chiusura",
-   "domanda": "Quale proveresti per prima? Scrivilo nei commenti 👇"
-  }
+  {"tipo": "copertina", "titolo": "Un robot ha imparato a giocare *guardando un video*.", "sottotitolo": "Merito della nuova AI di Google. E sa fare molto altro.", "dimensione": 78,
+   "visual": {"video": "media/robot.mp4", "pezzi": [[80, 85.5], [87.6, 90]], "posizione": 0.5}},
+  {"tipo": "testo", "titolo": "Come ha *fatto*?", "dimensione_testo": 38,
+   "testo": ["**Gemini 4 Argon** ha guardato il video di una persona che lanciava.", "Ha ricostruito la scena al computer e ha calcolato i movimenti. Risultato: **7 tiri a segno di fila**."],
+   "visual": {"video": "media/robot.mp4", "pezzi": [[12, 24], [54, 72], [90, 100]], "posizione": 0.5}},
+  {"tipo": "testo", "titolo": "Ti fa il lavoro *e lo spedisce*", "dimensione_testo": 38,
+   "testo": ["Gli dai una cartella piena di ricette e appunti.", "Argon crea la **presentazione per il cliente**, gliela manda per mail e tiene aggiornato l'elenco dei clienti."],
+   "per_te": "questo lo fai nell'app Gemini, con Google AI Pro o Ultra.",
+   "visual": {"video": "media/catering.mp4", "inizio": 1.5, "durata": 60, "posizione": 0.5}},
+  {"tipo": "testo", "titolo": "Da uno schizzo a un *oggetto vero*", "dimensione_testo": 38,
+   "testo": ["Parti da un disegno fatto a mano.", "Argon calcola i pezzi, li fa combaciare e prepara il **modello 3D** del dispositivo. Giorni di lavoro diventano **minuti**."],
+   "visual": {"video": "media/hardware.mp4", "inizio": 0, "durata": 31.5, "posizione": 0.5}},
+  {"tipo": "testo", "titolo": "Costruisce *mondi in 3D*", "dimensione_testo": 38,
+   "testo": ["Un tempio giapponese, foglia per foglia.", "Argon l'ha costruito **da solo** con un programma di grafica 3D, controllando e correggendo il proprio lavoro."],
+   "visual": {"video": "media/deepmind-lancio.mp4", "pezzi": [[6, 17], [24, 35], [132, 146]], "posizione": 0.5}},
+  {"tipo": "chiusura", "domanda": "Quale proveresti per prima? Scrivilo nei commenti 👇"}
  ]
 }

@@ -2,14 +2,14 @@
 
 Argon ha guardato una persona lanciare, ha ricostruito la scena al computer e ha calcolato i movimenti. Poi il robot Apollo ha fatto 7 tiri a segno di fila.
 
-Ma la parte interessante è cosa ci puoi fare tu:
-✏️ da uno schizzo crea una simulazione che si muove
-🏺 da una foto prepara un file 3D pronto da stampare
-🔧 ti aiuta con i lavori di casa, dal tassello al quadro elettrico
+E non è l'unica cosa che sa fare:
+📁 da una cartella di appunti crea la presentazione per il cliente e gliela manda per mail
+✏️ da uno schizzo fatto a mano progetta un oggetto vero, pezzo per pezzo
+🏯 costruisce da solo mondi in 3D, come un tempio giapponese
 
-Gli esempi sono quelli mostrati da Google: le prove vere le vedremo nei prossimi giorni.
+Sono esempi mostrati da Google: le prove vere le vedremo nei prossimi giorni.
 
-👉 Come provarlo: app Gemini → tocca il nome del modello → 4 Argon. Serve Google AI Pro o Ultra e arriva un po' alla volta. Con Gemini gratis, per ora, non c'è.
+👉 Come provarlo: nell'app Gemini tocca il nome del modello e scegli 4 Argon. Serve Google AI Pro o Ultra e arriva un po' alla volta. Con Gemini gratis, per ora, non c'è.
 
 E nelle classifiche? Nei test è primo, ma ChatGPT e Claude sono vicinissimi.
 
