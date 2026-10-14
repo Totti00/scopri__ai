@@ -160,5 +160,6 @@ for nome, fn in RIGHE:
     html += '</div>'
 html += f'</div>{slide}</body></html>'
 
-pathlib.Path(__file__).with_name("proposte.html").write_text(html, encoding="utf-8")
-print("Creato brand/mascotte/proposte.html")
+if __name__ == "__main__":
+    pathlib.Path(__file__).with_name("proposte.html").write_text(html, encoding="utf-8")
+    print("Creato brand/mascotte/proposte.html")
