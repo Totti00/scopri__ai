@@ -2,6 +2,9 @@
 
 Uso:
     python3 strumenti/carosello.py archivio/<cartella-post>/slide.json
+    python3 strumenti/carosello.py archivio/<cartella-post>/slide.json --completi
+        → per ogni slide con video crea anche slide-NN-completo.mp4, con il video sorgente intero
+          sotto la stessa grafica: il proprietario lo accorcia da solo (Instagram o CapCut).
 
 Lo stile (deciso il 14/10/2026, ispirato alle pagine AI, non a RapTrend):
 - logo piccolo in alto a sinistra, nessun contatore di pagina, nessuna barra in basso;
@@ -235,9 +238,12 @@ def slide_video(html_file, v, fondo, cartella, uscita):
 
 
 def main():
-    if len(sys.argv) != 2:
+    argomenti = [a for a in sys.argv[1:] if not a.startswith("--")]
+    completi = "--completi" in sys.argv
+    if len(argomenti) != 1:
         print(__doc__)
         sys.exit(1)
+    sys.argv[1] = argomenti[0]
     spec_path = pathlib.Path(sys.argv[1]).resolve()
     cartella = spec_path.parent
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
@@ -253,6 +259,9 @@ def main():
             vecchio.unlink(missing_ok=True)
         if v.get("video"):
             slide_video(f, v, fondo, cartella, cartella / f"slide-{i:02d}.mp4")
+            if completi:
+                intero = {k: x for k, x in v.items() if k not in ("inizio", "durata", "pezzi")}
+                slide_video(f, intero, fondo, cartella, cartella / f"slide-{i:02d}-completo.mp4")
         else:
             subprocess.run(["node", str(RADICE / "strumenti/render.cjs"), str(f), str(cartella / f"slide-{i:02d}.png"), "1080", "1350"], check=True)
     for f in tmp.iterdir():

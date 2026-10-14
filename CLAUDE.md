@@ -45,6 +45,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 ## Cosa consegnare per ogni post
 Una cartella `archivio/AAAA-MM-GG-rubrica-argomento/` con:
 - `slide-01` … `slide-NN`: PNG oppure MP4 senza audio (1080×1350, formato 4:5)
+- per le slide video anche `slide-NN-completo.mp4`, con il video intero: il proprietario sceglie da solo inizio e fine (vedi `strumenti/montaggio.md`)
 - `caption.txt` — pronta da copiare su Instagram
 - `fonti.md` — link alle fonti usate e data di consultazione
 - `note.md` — cosa è stato provato (prompt) e ogni dubbio rimasto

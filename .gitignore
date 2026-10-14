@@ -2,3 +2,5 @@
 archivio/**/media/*.mp4
 # Cartelle temporanee del generatore di slide
 **/.html/
+# Versioni con il video intero (pesanti): si mandano al proprietario, non vanno su GitHub
+archivio/**/*-completo.mp4
