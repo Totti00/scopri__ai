@@ -20,7 +20,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
    - **Prima scelta**, senza rischi: sala stampa ufficiale (Meta, Apple, Google, OpenAI…), Wikimedia Commons, NASA ed enti pubblici, screenshot e registrazioni fatti da noi, Pexels e Unsplash.
    - **Ammesse anche** foto di agenzia (Getty, Reuters, Ansa, AP…) e clip ufficiali o di testate. Il proprietario ha accettato il rischio che Instagram rimuova il post per copyright. Si usano quando la prima scelta non basta.
    - **Foto di persone modificate con l'AI** (fotomontaggi ironici): ammesse solo se si capisce che sono finte, con la scritta "Fotomontaggio" sulla slide e l'etichetta "Info sull'AI" di Instagram attivata. Mai fotomontaggi che possano passare per veri o che mettano in bocca a qualcuno frasi mai dette.
-   - **Mai:** contenuti di altri creator (le loro grafiche, i loro video, i loro fotomontaggi), fotogrammi di film.
+   - **Mai:** contenuti di altri creator (le loro grafiche, i loro video, i loro fotomontaggi), fotogrammi di film. Eccezione: lo screenshot del post di X o Reddit che è esso stesso la notizia (regole in `fonti.md`, "Storie virali").
    - Il credito va sempre in piccolo sulla slide ("Foto: Reuters") e in `fonti.md`.
 5. **Niente esagerazioni**: titoli con gancio sì, falsi o allarmisti no. Se una notizia è un'indiscrezione, si scrive al condizionale e lo si dichiara.
 6. **Mai lo stesso argomento due volte**: prima di scegliere, controllare `archivio/`.

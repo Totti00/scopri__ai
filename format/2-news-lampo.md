@@ -8,6 +8,7 @@
    - perché interessa a una persona normale (1 frase);
    - le 2 fonti che la confermano;
    - un voto di "interesse" da 1 a 5, secondo Claude.
+   Tra le 5 può esserci una storia virale da X o Reddit, se rispetta le regole di `fonti.md`.
 2. Il proprietario ne sceglie **1**.
 3. Claude prepara il carosello e la caption su quella.
 
