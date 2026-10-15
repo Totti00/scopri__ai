@@ -1,6 +1,6 @@
-🤖 La nuova AI di Google ha insegnato a un robot a giocare a cornhole. Le è bastato guardare un video.
+🤖 Gemini 4 Argon, la nuova intelligenza artificiale di Google, ha insegnato a un robot a fare centro. Le è bastato guardare un video.
 
-Si chiama Gemini 4 Argon. Ha guardato una persona lanciare, ha ricostruito la scena al computer e ha calcolato ogni movimento. Risultato: 7 centri di fila.
+Il gioco è il cornhole: si lanciano sacchetti dentro un buco. L'AI ha guardato una persona lanciare, ha ricostruito la scena al computer e ha calcolato ogni movimento. Risultato: 7 centri di fila.
 
 E nei primi giorni ha già fatto di tutto:
 🏛️ un museo 3D dei computer Apple, senza ricevere né foto né dati
@@ -12,8 +12,8 @@ E nei primi giorni ha già fatto di tutto:
 
 E nelle classifiche? Nei test è primo, ma ChatGPT e Claude sono vicinissimi.
 
-Quale ti ha colpito di più? Scrivilo nei commenti 👇
-📌 Salva il post e seguici per le prossime novità.
+📩 Mandalo a chi pensa che l'AI sappia solo scrivere.
+Quale ti ha colpito di più? 👇
 
 Fonti: Google, Google DeepMind, SiliconANGLE, Vals AI, post di @venturetwins, @kickingkeys e @thtbee_ su X
 

@@ -28,15 +28,18 @@ Regole:
 5. **Chiusura** (fondo blu) — domanda per i commenti + "Segui @scopri__ai".
 
 ## Caption
+Regole in `brand/crescita.md`: parole chiave nella prima riga, massimo 5 hashtag.
 ```
-⚡ [titolo-gancio]
+⚡ [titolo-gancio con prodotto/azienda + "intelligenza artificiale"]
 
 [cosa è successo, 2 paragrafi brevi]
 
 👉 Cosa cambia per te: [1 frase concreta]
 
+📩 Mandalo a [chi, preciso]
+[domanda vera sul contenuto] 👇
+
 Fonti: [aziende e testate]
 
-📌 Salva il post · Tu cosa ne pensi? 👇
 #intelligenzaartificiale #[prodotto] #[tema]
 ```

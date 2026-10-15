@@ -18,3 +18,18 @@ Non scade: si può preparare in anticipo e fa da **rubrica di riserva** quando n
 6. **Chiusura** (fondo blu) — domanda per i commenti + "Segui @scopri__ai".
 
 **Fonte obbligatoria** in fondo alla caption, non sulle slide (Nature, Science, MIT Technology Review, siti di università e centri di ricerca, Treccani per le definizioni).
+
+## Caption
+Regole in `brand/crescita.md`: parole chiave nella prima riga, massimo 5 hashtag.
+```
+🔬 [gancio con il tema: corpo, spazio, animali… + AI se c'entra]
+
+[la curiosità spiegata, 2 paragrafi brevi]
+
+📩 Mandalo a [chi, preciso]
+[domanda vera sul contenuto] 👇
+
+Fonti: [rivista o ente]
+
+#curiosità #scienza #[tema]
+```

@@ -1,0 +1,39 @@
+# Come arrivare a più persone (aggiornato il 15/10/2026)
+
+Regole per caption e pubblicazione, decise dopo aver controllato come funziona Instagram nel 2026.
+Valgono per tutti i post. Le schede in `format/` danno la struttura, queste regole vengono prima.
+
+## Cosa guarda Instagram
+- Per chi **non ci segue** conta soprattutto quante persone **mandano il post in DM** a qualcuno.
+- Per chi ci segue contano i like e il tempo passato sul post.
+- Gli hashtag **non portano visualizzazioni**: servono solo a dire di cosa parla il post.
+- Dal 30/04/2026 gli account che pubblicano **soprattutto contenuti di altri** escono dai suggerimenti.
+
+Fonti (blog di marketing che riportano le parole di Adam Mosseri, capo di Instagram; i pesi esatti non sono pubblici): kontentino.com, creatorlanehq.com, dataslayer.ai, socialync.io, later.com, rankite.com.
+
+## La caption
+1. **Prima riga = parole che la gente cerca.** Nome del prodotto o dell'azienda + "intelligenza artificiale" (o il tema: salute, lavoro…), dentro una frase-gancio. È la parte che si vede prima di "altro" e che legge la ricerca di Instagram e di Google.
+2. **Massimo 5 hashtag**, in fondo, precisi: `#intelligenzaartificiale` + prodotto + tema. Instagram ignora quelli oltre il quinto.
+3. **Un motivo per mandarlo a qualcuno**: una riga `📩 Mandalo a …` che nomina una persona precisa ("a chi pensa che l'AI sappia solo scrivere", "al collega che usa ancora Excel a mano"). Una sola per post.
+4. **Una domanda vera** per i commenti, sul contenuto. Niente "commenta SÌ", "tagga 3 amici", "commenta X e ti mando Y": Instagram li considera esche e mostra meno il post.
+5. Le **fonti** restano in fondo ("Fonti: …"), prima degli hashtag. Il "Salva" lo chiede già il terminatore: in caption non serve.
+
+## Il testo alternativo
+Per ogni post si consegna `alt-text.txt`: una riga per slide che descrive cosa si vede, con le parole chiave.
+Il proprietario lo incolla in "Impostazioni avanzate → Accessibilità → Scrivi testo alternativo" (per le slide video, se Instagram non dà il campo, si salta).
+
+## Contenuti nostri
+Per non passare da pagina che ripubblica:
+- ogni slide ha testo, titolo e commento scritti da noi, e i video sono montati da noi (tagliati, uniti, dentro il template);
+- mai un video di altri messo da solo, senza la nostra slide intorno;
+- i post del venerdì (prompt) e della domenica (curiosità) sono fatti con grafiche nostre: almeno 2 post su settimana sono interamente nostri.
+
+## Quando si pubblica (lo fa il proprietario)
+- **Musica** sul carosello: sempre.
+- **Prima ora:** rispondere a ogni commento e condividere il post nelle Storie, se possibile con un sondaggio ("Lo proveresti?").
+- **Orari:** dopo 2–3 settimane si guardano in Statistiche le ore in cui i follower sono online e si aggiorna `calendario.md`.
+- **Collaborazioni:** con la funzione "Collabora" insieme a pagine vicine ma non concorrenti (tech, scuola, lavoro, risparmio). Mai con le pagine di notizie AI.
+- **Mai:** comprare follower, gruppi di like reciproci, segui/smetti di seguire.
+
+## Rimandato
+- **Reel** (deciso il 15/10/2026: per ora no). Arrivano a più persone che non ci seguono; i video li abbiamo già. Da riprendere quando il proprietario vorrà.

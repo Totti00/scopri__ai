@@ -43,6 +43,13 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 - Tono: amichevole, concreto, curioso. Mai saccente, mai da venditore.
 - "AI" scritto sempre maiuscolo.
 
+## Per arrivare a più persone
+Regole complete in `brand/crescita.md` (15/10/2026). In breve:
+- prima riga della caption con le parole che la gente cerca (prodotto, azienda, "intelligenza artificiale");
+- **massimo 5 hashtag**: Instagram ignora gli altri;
+- una riga `📩 Mandalo a …` e una domanda vera; mai esche come "commenta SÌ" o "tagga 3 amici";
+- mai un contenuto di altri messo da solo: sempre dentro le nostre slide, con i nostri testi.
+
 ## Rubriche e calendario
 - Rubriche: `format/` (una scheda per rubrica, con struttura delle slide e della caption).
 - Calendario: `calendario.md`.
@@ -52,5 +59,6 @@ Una cartella `archivio/AAAA-MM-GG-rubrica-argomento/` con:
 - `slide-01` … `slide-NN`: PNG oppure MP4 senza audio (1080×1350, formato 4:5)
 - per le slide video anche `slide-NN-completo.mp4`, con il video intero: il proprietario sceglie da solo inizio e fine (vedi `strumenti/montaggio.md`)
 - `caption.txt` — pronta da copiare su Instagram
+- `alt-text.txt` — il testo alternativo, una riga per slide (vedi `brand/crescita.md`)
 - `fonti.md` — link alle fonti usate e data di consultazione
 - `note.md` — cosa è stato provato (prompt) e ogni dubbio rimasto

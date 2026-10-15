@@ -15,6 +15,7 @@ Le 5 notizie di tech e AI più rilevanti degli ultimi 7 giorni (anche di altri t
 7. **Chiusura** (fondo blu) — "Ci rivediamo la prossima settimana" + "Segui @scopri__ai per non perderti la prossima".
 
 ## Caption
+Regole in `brand/crescita.md`: parole chiave nella prima riga, massimo 5 hashtag.
 ```
 🗞️ Le news AI della settimana che ti sei perso ([date])
 
@@ -23,8 +24,10 @@ Le 5 notizie di tech e AI più rilevanti degli ultimi 7 giorni (anche di altri t
 
 La più importante per te: [quale e perché, 1 frase]
 
+📩 Mandalo a [chi, preciso]
+Quale ti ha sorpreso di più? 👇
+
 Fonti: [elenco breve]
 
-📌 Salva il post · Quale ti ha sorpreso di più? 👇
-#intelligenzaartificiale #notizie #ai
+#intelligenzaartificiale #notizie #[tema della settimana]
 ```

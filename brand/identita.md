@@ -2,14 +2,15 @@
 
 ## Profilo Instagram
 - **Nome utente:** `scopri__ai`
-- **Nome (campo "Nome" su Instagram):** 💬 L'AI che funziona davvero
+- **Nome (campo "Nome" su Instagram):** Intelligenza Artificiale 🤖 (dal 15/10/2026: il campo Nome viene cercato, quindi ci va la parola che la gente scrive; massimo 30 caratteri, si cambia al massimo 2 volte in 14 giorni). Lo slogan "L'AI che funziona davvero" resta lo slogan della pagina.
 - **Bio:**
   ```
   🧠 Intelligenza artificiale senza tecnicismi
   💡 Prompt pronti · 🗞️ News verificate · 🔬 Curiosità
   👇 Inizia a usare l'AI meglio
   ```
-- **Tipo di account:** Creator (per vedere le statistiche).
+- **Tipo di account:** Creator (statistiche, tutta la musica di Instagram; l'account Business ha solo musica senza diritti).
+- **Crescita:** regole per caption e pubblicazione in `brand/crescita.md`.
 
 ## Posizionamento
 "L'AI che funziona davvero, spiegata da chi la usa per lavoro."
