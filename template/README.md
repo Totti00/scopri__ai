@@ -18,9 +18,9 @@ Il font è lo stesso per tutti i template: **Bricolage Grotesque** (scelto il 15
 ## Template E: colore di partenza a rotazione (deciso il 15/10/2026)
 Il template E esiste in tre colori di partenza: **blu** (`E-foto-piena/`), **bianco** (`E-foto-piena-bianco/`) e **giallo** (`E-foto-piena-giallo/`). Cambiano fondo, velo, testo, evidenziatore, fumetto e freccia; nel bianco e nel giallo le slide interne alternano le altre tinte. Il testo ha sempre contrasto almeno 4.5:1 (controllato dallo script).
 
-**Regola: ogni post sceglie template E e colore di partenza (blu, bianco, giallo) a rotazione: non iniziare due post di fila con lo stesso colore.** Così il profilo non parte sempre dal blu.
+**Regola: il colore di partenza del template E (blu, bianco, giallo) lo sceglie il `costruttore-post`, non il proprietario.** Guarda i post già fatti e non ripete il colore dell'ultimo; tra gli altri prende quello che sta meglio con la notizia e con le immagini, e scrive il motivo in una riga. Così il profilo non parte sempre dal blu. Nella bozza E compare in quel solo colore (gli altri restano salvati qui sotto).
 
-**Ultimo colore usato: bianco** (post Google Play, 15/10/2026). Aggiornare questa riga a ogni post che usa il template E. Prossimo post: blu o giallo.
+**Ultimo colore usato: bianco** (post Google Play, 15/10/2026). Aggiornare questa riga a ogni post che usa il template E (lo fa il `costruttore-post` a bozza fatta). Prossimo post: blu o giallo.
 
 Per cambiare palette o aggiungere un colore si tocca un solo punto: le costanti `TINTE` e `VARIANTI` in testa a `strumenti/varianti-e.py` (`python3 strumenti/varianti-e.py <cartella-bozza>` rigenera E, EB ed EG nella bozza e controlla i contrasti).
 
