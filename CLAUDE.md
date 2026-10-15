@@ -36,6 +36,9 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 - La seconda slide deve collegarsi alla copertina: se la copertina dice "guarda cosa sa fare", la seconda mostra subito la prima cosa che sa fare.
 - Le slide nuove si preparano prima **senza video** su Claude Design, in **ogni template** di `template/`; il proprietario sceglie il template e corregge. I video si inseriscono solo quando approva (procedimento in `template/README.md`).
 - Si dice cosa può farci una persona normale, e se è solo un esempio dell'azienda lo si dice.
+- **5 tipi di gancio** per la copertina, **tipi di carosello** (scoperte, storia, prima/dopo, lista di strumenti) e **il meglio alla fine** (dalla terza slide si va in crescendo): `format/ganci-e-tipi.md`.
+- Copertina sempre con la pillola gialla **"Scorri →"**.
+- Prima di consegnare, si passa il **controllo finale**: `brand/controllo-finale.md`.
 
 ## Come si scrive
 - Si dà del **tu**. Frasi corte. Una sola idea per frase.

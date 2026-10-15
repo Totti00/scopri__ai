@@ -22,7 +22,7 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e la **cartella** del post.
 ## Modo "finale" (seconda fermata superata: il proprietario ha scelto il template e corretto)
 1. Applica a `slide.json` il template scelto (`"stile"`) e **tutte** le correzioni del proprietario che il regista ti passa (testi, ordine, immagini).
 2. Lancia `python3 strumenti/carosello.py <cartella>/slide.json --completi`.
-3. Guarda ogni slide (Read sui PNG; per gli MP4 estrai 2–3 fotogrammi): testi tagliati, immagini storte, fonti sulle slide → correggi e rifai con `--solo=N`.
+3. Guarda ogni slide (Read sui PNG; per gli MP4 estrai 2–3 fotogrammi) e passa **tutto** il controllo di `brand/controllo-finale.md`: ogni errore trovato si corregge e si rifà la slide con `--solo=N`.
 4. Scrivi:
    - `caption.txt` secondo `brand/crescita.md` e la scheda della rubrica: prima riga con le parole chiave, `📩 Mandalo a …`, una domanda vera, "Fonti: …" in fondo (non per i prompt), massimo 5 hashtag;
    - `alt-text.txt`: una riga per slide ("Slide N: …");

@@ -49,7 +49,7 @@ Prima di andare avanti rileggi il canvas (Artifact `read` del suo url, compreso 
 
 ## Fase C — post e Reel finali
 1. `costruttore-post` (modo `finale`) e `costruttore-reel` (modo `finale`) **in parallelo**, passando a ognuno il template scelto e tutte le correzioni.
-2. Controlla tu il risultato (qualche slide e qualche fotogramma del Reel).
+2. Controlla tu il risultato (qualche slide e qualche fotogramma del Reel) con `brand/controllo-finale.md`.
 3. Commit su `main` con autore `Claude <noreply@anthropic.com>` e push (se la rete fallisce riprova fino a 4 volte). Se il push su `main` viene rifiutato, fai push sul ramo della sessione (`git push -u origin HEAD:<ramo>`) e scrivi al proprietario il nome del ramo: il lavoro va poi unito a `main`. I file `media/*.mp4` e `*-completo.mp4` non vanno su GitHub (sono in `.gitignore`).
 4. **Consegna il pacchetto** con SendUserFile (status `proactive`):
    - le slide (`slide-NN.png` / `.mp4`) e i `slide-NN-completo.mp4`;

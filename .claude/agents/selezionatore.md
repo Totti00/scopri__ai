@@ -27,4 +27,8 @@ In `notizie/AAAA-MM-GG.md` la sezione:
 ```
 
 I testi seguono "Come si racconta una notizia" e "Come si scrive" di `CLAUDE.md`: cosa ha fatto l'AI, mai cosa le hanno chiesto; la seconda slide si collega alla copertina.
+Usa `format/ganci-e-tipi.md`:
+- nella proposta scrivi il **tipo di carosello** (scoperte, storia, prima/dopo, lista di strumenti);
+- per la copertina dai **due titoli con due tipi di gancio diversi** (scrivi quali), il migliore per primo;
+- ordina le slide in **crescendo**: dalla terza in poi, la più forte per ultima.
 Non creare slide e non scaricare video. Alla fine rispondi al regista con la proposta in 5 righe, pronta da mandare al proprietario.

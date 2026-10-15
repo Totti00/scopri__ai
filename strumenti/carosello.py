@@ -137,10 +137,14 @@ def visual(v, cartella, fondo):
     return f'<div style="flex:1;min-height:0;display:flex;flex-direction:column"><div style="{cornice}">{interno}</div>{didascalia}</div>'
 
 
+SCRITTA_SCORRI = "Scorri"  # invito a scorrere sulla copertina (reintrodotto il 15/10/2026)
+
+
 def freccia():
-    """Pallino giallo con la freccia disegnata, perfettamente al centro."""
-    return (f'<div style="flex:none;width:96px;height:96px;border-radius:50%;background:{GIALLO};display:flex;align-items:center;justify-content:center">'
-            f'<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><path d="M6 22h30M24 10l12 12-12 12" fill="none" stroke="{NERO}" '
+    """Pillola gialla "Scorri →" in basso a destra della copertina."""
+    return (f'<div style="flex:none;display:flex;align-items:center;gap:12px;height:96px;box-sizing:border-box;padding:0 30px 0 36px;'
+            f'border-radius:999px;background:{GIALLO};color:{NERO};font-size:38px;font-weight:800;letter-spacing:-1px">{SCRITTA_SCORRI}'
+            f'<svg width="40" height="40" viewBox="0 0 44 44" aria-hidden="true"><path d="M6 22h30M24 10l12 12-12 12" fill="none" stroke="{NERO}" '
             f'stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>')
 
 
