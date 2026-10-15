@@ -29,7 +29,7 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e la **cartella** del post.
    - `caption.txt` secondo `brand/crescita.md` e la scheda della rubrica: prima riga con le parole chiave, `📩 Mandalo a …`, una domanda vera, "Fonti: …" in fondo (non per i prompt), massimo 5 hashtag;
    - `alt-text.txt`: una riga per slide ("Slide N: …");
    - `fonti.md`: link, data di consultazione, chi ha fatto foto e video;
-   - `note.md`: dubbi rimasti, prove dei prompt se ci sono, **"## Musica consigliata"** con 2–3 brani strumentali (regole in `brand/crescita.md`) e gli orari consigliati.
+   - `note.md`: dubbi rimasti, prove dei prompt se ci sono, **"## Musica consigliata"** con 2–3 brani strumentali (regole in `brand/crescita.md`; **prima leggi `brand/musica-usata.md` e non riproporre brani già usati, né lo stesso artista dell'ultimo post**; indica nel messaggio il brano che consigli di più; dopo la pubblicazione il brano scelto si scrive in `brand/musica-usata.md`) e gli orari consigliati.
 5. Rispondi al regista con l'elenco dei file e i dubbi.
 
 Non pubblicare niente su Instagram e non fare commit: lo fa il regista.

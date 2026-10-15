@@ -43,3 +43,6 @@
 2. **Justice – Genesis**: entrata potente, da far partire dal colpo di batteria.
 3. **Daft Punk – End of Line** (sempre da Tron: Legacy), più tranquilla.
 Se non ci sono: cercare "instrumental" o "strumentale" nella libreria e preferire i brani con la freccia ↗.
+
+## Musica usata
+Daft Punk – Derezzed.

@@ -33,3 +33,6 @@ Controlla che ci siano nella libreria di Instagram; se tra le canzoni con ↗ ce
 - Carosello: **domani 16/10 alle 12:30**, oppure appena pronto se vuoi sfruttare la notizia ancora calda.
 - Almeno 3 ore da un altro post. Nella prima ora rispondi ai commenti e condividi nelle Storie con un sondaggio ("Lo proveresti?").
 - Prima di pubblicare: incolla `alt-text.txt` in Accessibilità.
+
+## Musica usata
+Da confermare dal proprietario (consigliato: Justice – Genesis). Non ripetere Derezzed (già usato il 14/10). Lista: `brand/musica-usata.md`.
