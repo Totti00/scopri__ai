@@ -1,0 +1,65 @@
+{
+ "rubrica": "NEWS LAMPO",
+ "stile": "B",
+ "slides": [
+  {
+   "tipo": "copertina",
+   "titolo": "E se esistesse *un'app fatta apposta per te*?",
+   "sottotitolo": "Google Play ora ci prova. Per ora solo negli USA.",
+   "visual": {
+    "immagine": "../../media/PersonalApps_desktop_16x9_Static.png"
+   }
+  },
+  {
+   "tipo": "testo",
+   "fondo": "carta",
+   "titolo": "Ha trasformato una *descrizione* in un'app",
+   "testo": [
+    "Hai un'idea? La scrivi in Google AI Studio e l'AI costruisce l'app per te, senza che tu debba programmare."
+   ],
+   "commento": "Solo a parole.",
+   "visual": {
+    "immagine": "../../media/PersonalApps_desktop_16x9_Static.png"
+   }
+  },
+  {
+   "tipo": "testo",
+   "fondo": "giallo",
+   "titolo": "Ha messo l'app sul tuo *telefono*",
+   "testo": [
+    "L'app arriva in una sezione privata di Google Play: la vedi e la installi solo tu. Google non la controlla."
+   ],
+   "commento": "Solo tua.",
+   "visual": {
+    "immagine": "../../media/PersonalApps_mobile_1X1_Static.png"
+   }
+  },
+  {
+   "tipo": "testo",
+   "fondo": "blu",
+   "titolo": "Per ora è solo per *maggiorenni negli USA*",
+   "testo": [
+    "All'inizio possono provarla soltanto gli adulti che vivono negli Stati Uniti. Per l'Italia non c'è ancora una data."
+   ],
+   "commento": "Poi tocca a noi.",
+   "visual": {
+    "immagine": "../img/num-usa.png"
+   }
+  },
+  {
+   "tipo": "testo",
+   "fondo": "carta",
+   "titolo": "Presto potrai *condividerla* con gli amici",
+   "testo": [
+    "Google dice che la condivisione arriva nei prossimi mesi. Una data precisa non c'è ancora."
+   ],
+   "commento": "Nei prossimi mesi.",
+   "visual": {
+    "immagine": "../img/num-presto.png"
+   }
+  },
+  {
+   "tipo": "chiusura"
+  }
+ ]
+}

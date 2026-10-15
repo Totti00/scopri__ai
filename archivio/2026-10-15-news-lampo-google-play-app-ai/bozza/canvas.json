@@ -1,0 +1,150 @@
+{
+ "v": 3,
+ "attachments": {},
+ "boards": {
+  "A1-copertina.dc.html": {
+   "file": "A1-copertina.dc.html",
+   "x": 0,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina"
+  },
+  "A2-app.dc.html": {
+   "file": "A2-app.dc.html",
+   "x": 1160,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A2 · app"
+  },
+  "A3-telefono.dc.html": {
+   "file": "A3-telefono.dc.html",
+   "x": 2320,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A3 · telefono"
+  },
+  "A4-usa-18.dc.html": {
+   "file": "A4-usa-18.dc.html",
+   "x": 3480,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A4 · usa-18"
+  },
+  "A5-condivisione.dc.html": {
+   "file": "A5-condivisione.dc.html",
+   "x": 4640,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A5 · condivisione"
+  },
+  "A6-chiusura.dc.html": {
+   "file": "A6-chiusura.dc.html",
+   "x": 5800,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A6 · Chiusura"
+  },
+  "B1-copertina.dc.html": {
+   "file": "B1-copertina.dc.html",
+   "x": 0,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina"
+  },
+  "B2-app.dc.html": {
+   "file": "B2-app.dc.html",
+   "x": 1160,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B2 · app"
+  },
+  "B3-telefono.dc.html": {
+   "file": "B3-telefono.dc.html",
+   "x": 2320,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B3 · telefono"
+  },
+  "B4-usa-18.dc.html": {
+   "file": "B4-usa-18.dc.html",
+   "x": 3480,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B4 · usa-18"
+  },
+  "B5-condivisione.dc.html": {
+   "file": "B5-condivisione.dc.html",
+   "x": 4640,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B5 · condivisione"
+  },
+  "B6-chiusura.dc.html": {
+   "file": "B6-chiusura.dc.html",
+   "x": 5800,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B6 · Chiusura"
+  },
+  "A1-copertina-titolo-a.dc.html": {
+   "file": "A1-copertina-titolo-a.dc.html",
+   "x": 0,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina (titolo-a)"
+  },
+  "A1-copertina-titolo-c.dc.html": {
+   "file": "A1-copertina-titolo-c.dc.html",
+   "x": 1160,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina (titolo-c)"
+  },
+  "A1-copertina-video-telefono.dc.html": {
+   "file": "A1-copertina-video-telefono.dc.html",
+   "x": 2320,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina (video-telefono)"
+  },
+  "B1-copertina-titolo-a.dc.html": {
+   "file": "B1-copertina-titolo-a.dc.html",
+   "x": 0,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina (titolo-a)"
+  },
+  "B1-copertina-titolo-c.dc.html": {
+   "file": "B1-copertina-titolo-c.dc.html",
+   "x": 1160,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina (titolo-c)"
+  },
+  "B1-copertina-video-telefono.dc.html": {
+   "file": "B1-copertina-video-telefono.dc.html",
+   "x": 2320,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina (video-telefono)"
+  }
+ }
+}
