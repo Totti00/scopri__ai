@@ -1,0 +1,49 @@
+{
+ "scene": [
+  {
+   "tipo": "gancio",
+   "etichetta": "NEWS LAMPO",
+   "titolo": "Guarda cosa sa fare la *nuova AI di Google*",
+   "commento": "Si chiama Gemini 4 Argon.",
+   "video": "media/robot.mp4",
+   "inizio": 97,
+   "durata": 3
+  },
+  {
+   "tipo": "scoperta",
+   "titolo": "Ha insegnato a un robot a *giocare*",
+   "commento": "7 centri di fila.",
+   "video": "media/robot.mp4",
+   "inizio": 22,
+   "durata": 3.5
+  },
+  {
+   "tipo": "scoperta",
+   "titolo": "Ha costruito un *museo dei Mac*",
+   "commento": "Tutto da solo.",
+   "video": "media/museo-apple.mp4",
+   "inizio": 2,
+   "durata": 3.5
+  },
+  {
+   "tipo": "scoperta",
+   "titolo": "Ha dipinto *534 quadri* con il codice",
+   "commento": "Arte programmata.",
+   "video": "media/dipinti.mp4",
+   "inizio": 0,
+   "durata": 3
+  },
+  {
+   "tipo": "scoperta",
+   "titolo": "Ha creato un *elicottero 3D* da zero",
+   "commento": "Da videogioco.",
+   "video": "media/elicottero.mp4",
+   "inizio": 40,
+   "durata": 4
+  },
+  {
+   "tipo": "finale",
+   "durata": 3
+  }
+ ]
+}
