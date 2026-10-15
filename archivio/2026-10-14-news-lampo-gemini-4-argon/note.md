@@ -36,7 +36,8 @@
 - Chiusura: la slide fissa con lo smartphone e la notifica (scelta tra 4 idee il 15/10/2026). Il post è completo: 6 video + chiusura.
 - Notifica della chiusura: scelta la variante con un solo "AI" (avatar con tre puntini, "Scopri.AI", "🔔 Nuovo post: vieni a scoprirlo!").
 
-## Musica consigliata
-1. **Daft Punk – Harder, Better, Faster, Stronger**: parla di una macchina che migliora, perfetta per il robot. Da far partire dal ritornello.
-2. Una traccia **elettronica di tendenza** (freccia ↗) nella libreria di Instagram.
-3. **Daft Punk – Around the World**, se la prima non c'è.
+## Musica consigliata (solo strumentale)
+1. **Daft Punk – Derezzed** (colonna sonora di Tron: Legacy): elettronica carica e futuristica, dura meno di 2 minuti.
+2. **Justice – Genesis**: entrata potente, da far partire dal colpo di batteria.
+3. **Daft Punk – End of Line** (sempre da Tron: Legacy), più tranquilla.
+Se non ci sono: cercare "instrumental" o "strumentale" nella libreria e preferire i brani con la freccia ↗.

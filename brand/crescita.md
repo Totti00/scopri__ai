@@ -30,8 +30,8 @@ Per non passare da pagina che ripubblica:
 
 ## Quando si pubblica (lo fa il proprietario)
 - **Musica** sul carosello: sempre. In `note.md` di ogni post Claude suggerisce 2–3 brani (il proprietario controlla che ci siano nella libreria di Instagram e sceglie). Regole:
-  - meglio **strumentale** o con poche parole: la gente sta leggendo;
-  - se tra le canzoni con la freccia **↗ (di tendenza)** ce n'è una adatta, ha la precedenza;
+  - **solo strumentale**, senza voce (deciso il 15/10/2026): la gente sta leggendo;
+  - se tra le canzoni con la freccia **↗ (di tendenza)** ce n'è una strumentale adatta, ha la precedenza;
   - si sceglie il **pezzo più energico** (il punto in cui parte il ritmo), non l'inizio lento;
   - umore per rubrica: news lampo = elettronica carica; news del lunedì = pop allegro; prompt del venerdì = lo-fi tranquillo; curiosità della domenica sera = musica da film, di meraviglia.
 - **Prima ora:** rispondere a ogni commento e condividere il post nelle Storie, se possibile con un sondaggio ("Lo proveresti?").
