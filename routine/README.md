@@ -15,11 +15,12 @@ Ogni routine segue questo file più il file della sua attività.
 2. **Data e ora.** Usa sempre l'ora italiana: `TZ=Europe/Rome date`.
 3. **Leggi le regole:** `CLAUDE.md`, `fonti.md`, `brand/identita.md`, il file della rubrica in `format/`. Controlla `archivio/` per non ripetere argomenti (regola 6).
 4. **Immagini e video veri** (regola 4): prima le sale stampa ufficiali. I video ufficiali si scaricano dai post su X delle aziende con `curl https://api.fxtwitter.com/<account>/status/<id>` (dà il link MP4); YouTube è bloccato. Nel `slide.json` un visual `{"video": "media/x.mp4", "inizio": 10, "durata": 8}` crea una slide MP4. Per leggere pagine fatte in JavaScript (blog.google, Reddit) usa `node strumenti/leggi-pagina.cjs <url>`. Per le immagini usa `curl`; le GIF e WEBP si convertono in PNG con `ffmpeg -i in.gif -frames:v 1 out.png`.
-5. **Slide:** scrivi `slide.json` e lancia `python3 strumenti/carosello.py archivio/<cartella>/slide.json --completi` (se ci sono video, crea anche `slide-NN-completo.mp4` con il video intero, che il proprietario può accorciare da solo). Guarda ogni PNG (Read) e correggi testi troppo lunghi o immagini tagliate male. Niente fonti sulle slide.
-6. **Consegna:** `caption.txt` (fonti e crediti delle immagini in fondo), `fonti.md`, `note.md`.
-7. **Salva:** commit su `main` con autore `Claude <noreply@anthropic.com>` e push (`git push origin main`; se la rete fallisce riprova fino a 4 volte).
-8. **Mostra al proprietario:** manda slide e caption con `SendUserFile` (status `proactive`). Se ci sono video, manda anche i file `-completo.mp4` (non sono su GitHub) e scrivi dove inizia e finisce il pezzo scelto da te. Un file oltre i 30 MB non si può inviare: ricomprimilo con `ffmpeg -i in.mp4 -c:v libx264 -crf 25 -an -movflags +faststart out.mp4`.
-9. **Messaggio finale** in italiano, breve: cosa è pronto, a che ora pubblicarlo, eventuali dubbi.
+5. **Bozza:** prima delle slide vere crea un canvas su Claude Design con le slide in ogni template (vedi `template/README.md`) e manda il link. Se la routine prepara un post da pubblicare subito (venerdì, domenica), fai comunque anche le slide vere nel template indicato nel file della rubrica, o in A se non c'è.
+6. **Slide:** scrivi `slide.json` e lancia `python3 strumenti/carosello.py archivio/<cartella>/slide.json --completi` (se ci sono video, crea anche `slide-NN-completo.mp4` con il video intero, che il proprietario può accorciare da solo). Guarda ogni PNG (Read) e correggi testi troppo lunghi o immagini tagliate male. Niente fonti sulle slide.
+7. **Consegna:** `caption.txt` (fonti e crediti delle immagini in fondo), `fonti.md`, `note.md`.
+8. **Salva:** commit su `main` con autore `Claude <noreply@anthropic.com>` e push (`git push origin main`; se la rete fallisce riprova fino a 4 volte).
+9. **Mostra al proprietario:** manda slide e caption con `SendUserFile` (status `proactive`). Se ci sono video, manda anche i file `-completo.mp4` (non sono su GitHub) e scrivi dove inizia e finisce il pezzo scelto da te. Un file oltre i 30 MB non si può inviare: ricomprimilo con `ffmpeg -i in.mp4 -c:v libx264 -crf 25 -an -movflags +faststart out.mp4`.
+10. **Messaggio finale** in italiano, breve: cosa è pronto, a che ora pubblicarlo, eventuali dubbi.
 
 ## Limiti
 - Mai pubblicare su Instagram: lo fa il proprietario.

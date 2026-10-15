@@ -15,6 +15,10 @@ Lo stile (deciso il 14/10/2026, ispirato alle pagine AI, non a RapTrend):
 - prompt dentro un fumetto di chat, come se lo scrivessi tu;
 - ultima slide: l'appuntamento della settimana.
 
+Template: "stile": "A" (classico, quello di partenza) oppure "B" (fascia: immagine a tutta larghezza
+in alto e fascia di colore sotto, che gira blu → carta → giallo). Ogni slide di testo può avere un
+"commento" di due o tre parole, mostrato nel fumetto. Il font si cambia nella costante FONT.
+
 Il JSON ha questa forma:
 {
   "rubrica": "News lampo",
@@ -51,6 +55,8 @@ import sys
 BLU, BLU_SCURO, CARTA, GIALLO, NERO, BIANCO = "#2340FF", "#1A30C4", "#F4F1EA", "#FFD84D", "#121212", "#FFFFFF"
 GRIGIO_SU_CARTA, GRIGIO_SU_BLU, BORDO = "#55565C", "#DDE3FF", "#E2DED3"
 RADICE = pathlib.Path(__file__).resolve().parent.parent
+SFONDO = {"blu": (BLU, BIANCO), "carta": (CARTA, NERO), "giallo": (GIALLO, NERO)}
+FONT = "Space Grotesk"  # font dei testi: si cambia qui per tutti i template
 
 
 def evidenzia(testo, fondo):
@@ -159,7 +165,15 @@ def slide_testo(s, ctx):
 <div style="font-size:{s.get("dimensione", 64)}px;font-weight:700;line-height:1.05;letter-spacing:-2px">{evidenzia(s["titolo"], "carta")}</div>
 <div style="display:flex;flex-direction:column;gap:22px;font-size:{s.get("dimensione_testo", 34)}px;line-height:1.4">{corpo}</div>
 {per_te}
+{commento_a(s)}
 {visual(s.get("visual"), ctx["cartella"], "carta") or '<div style="flex:1"></div>'}''')
+
+
+def commento_a(s):
+    if not s.get("commento"):
+        return ""
+    return (f'<div style="align-self:flex-start;background:{GIALLO};color:{NERO};padding:18px 30px;border-radius:30px 30px 30px 6px;'
+            f'font-size:38px;font-weight:700">{html.escape(s["commento"])}</div>')
 
 
 def slide_prompt(s, ctx):
@@ -205,14 +219,95 @@ def slide_chiusura(s, ctx):
 TIPI = {"copertina": slide_copertina, "testo": slide_testo, "prompt": slide_prompt, "chiusura": slide_chiusura}
 
 
-def pagina(fondo, contenuto, con_video=False):
-    bg, fg = (BLU, BIANCO) if fondo == "blu" else (CARTA, NERO)
+# ---------- Template B ("fascia"): immagine a tutta larghezza in alto, fascia di colore sotto ----------
+GIRO_B = ["blu", "carta", "giallo"]
+
+
+def evidenzia_b(testo, fondo):
+    """Parola chiave: gialla sul blu, riquadro giallo sulla carta, riquadro bianco sul giallo."""
+    t = html.escape(testo)
+    t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
+    stile = {"blu": f"color:{GIALLO}",
+             "carta": f"background:{GIALLO};padding:0 8px;border-radius:6px",
+             "giallo": f"background:{BIANCO};padding:0 8px;border-radius:6px"}[fondo]
+    return re.sub(r"\*(.+?)\*", rf'<span style="{stile}">\1</span>', t)
+
+
+def chip_b(fondo):
+    testo, bolla, scritta = (BIANCO, GIALLO, BLU) if fondo == "blu" else (NERO, BLU, BIANCO)
+    return (f'<div class="ass" style="top:48px;left:56px;display:flex;align-items:center;gap:8px;background:{SFONDO[fondo][0]};color:{testo};'
+            f'padding:12px 20px;border-radius:999px;font-size:30px;font-weight:700;letter-spacing:-1px">Scopri{fumetto(bolla, scritta, 40)}</div>')
+
+
+def visual_b(v, cartella, fondo, altezza):
+    """Immagine o video a tutta larghezza in alto, senza angoli arrotondati."""
+    if v.get("video"):
+        return (f'<div class="sotto ass" id="buco" style="top:0;left:0;width:1080px;height:{altezza}px;'
+                f'box-shadow:0 0 0 3000px {SFONDO[fondo][0]}"></div>')
+    if v.get("immagine"):
+        src = (cartella / v["immagine"]).resolve().as_uri()
+        adatta = v.get("adatta", "cover")
+        return (f'<div class="ass" style="top:0;left:0;width:1080px;height:{altezza}px;background:{NERO}">'
+                f'<img src="{src}" style="width:100%;height:100%;object-fit:{adatta};object-position:{v.get("posizione", "center")};display:block"></div>')
+    return ""
+
+
+def b_copertina(s, ctx):
+    rubrica = (f'<div class="ass mono" style="top:56px;right:56px;background:{GIALLO};color:{NERO};padding:12px 20px;border-radius:999px;'
+               f'font-size:24px;letter-spacing:1px">{html.escape(ctx["rubrica"])}</div>') if ctx.get("rubrica") else ""
+    sotto = f'<div style="font-size:36px;color:{GRIGIO_SU_BLU}">{evidenzia_b(s["sottotitolo"], "blu")}</div>' if s.get("sottotitolo") else ""
+    return ("blu", f'''{visual_b(s.get("visual") or {}, ctx["cartella"], "blu", 900)}
+{chip_b("blu")}{rubrica}
+<div class="ass" style="left:0;right:0;bottom:0;height:450px;box-sizing:border-box;padding:56px 72px 64px;background:{BLU};display:flex;align-items:flex-end;gap:36px">
+<div style="flex:1;display:flex;flex-direction:column;gap:22px">
+<div style="font-size:{s.get("dimensione", 92)}px;font-weight:700;line-height:1;letter-spacing:-3px">{evidenzia_b(s["titolo"], "blu")}</div>
+{sotto}</div>{freccia()}</div>''')
+
+
+def b_testo(s, ctx):
+    fondo = s.get("fondo") or GIRO_B[(ctx["indice"] - 2) % 3]
+    fg = SFONDO[fondo][1]
+    secondario = GRIGIO_SU_BLU if fondo == "blu" else fg
+    corpo = "".join(f'<p style="margin:0">{evidenzia_b(p, fondo)}</p>' for p in s.get("testo", []))
+    bolla_bg, bolla_fg = (GIALLO, NERO) if fondo == "blu" else (BLU, BIANCO)
+    commento = (f'<div class="ass" style="top:738px;left:72px;background:{bolla_bg};color:{bolla_fg};padding:18px 32px;'
+                f'border-radius:32px 32px 32px 6px;font-size:42px;font-weight:700">{html.escape(s["commento"])}</div>') if s.get("commento") else ""
+    return (fondo, f'''{visual_b(s.get("visual") or {}, ctx["cartella"], fondo, 780)}
+{chip_b(fondo)}
+<div class="ass" style="left:0;right:0;top:780px;bottom:0;box-sizing:border-box;padding:92px 72px 64px;background:{SFONDO[fondo][0]};display:flex;flex-direction:column;gap:24px">
+<div style="font-size:{s.get("dimensione", 72)}px;font-weight:700;line-height:1.02;letter-spacing:-2.5px">{evidenzia_b(s["titolo"], fondo)}</div>
+<div style="display:flex;flex-direction:column;gap:16px;font-size:{s.get("dimensione_testo", 36)}px;line-height:1.35;color:{secondario}">{corpo}</div>
+</div>{commento}''')
+
+
+def b_chiusura(s, ctx):
+    rubriche = s.get("rubriche", [["Lun", "Le news AI della settimana"], ["Ven", "Prompt da copiare"],
+                                   ["Dom", "Una curiosità di scienza"], ["Extra", "News lampo, quando succede qualcosa"]])
+    righe = "".join(
+        f'<div style="display:flex;gap:28px;align-items:center;padding:20px 0;border-top:2px solid rgba(18,18,18,.25)">'
+        f'<span class="mono" style="flex:none;width:110px;color:{BLU};font-size:30px">{html.escape(g)}</span>'
+        f'<span style="font-size:38px;font-weight:500">{html.escape(t)}</span></div>' for g, t in rubriche)
+    domanda = s.get("domanda", "Quale ti ha colpito di più?")
+    return ("giallo", f'''{logo("carta")}
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:44px">
+<div style="align-self:flex-start;background:{BLU};color:{BIANCO};padding:22px 36px;border-radius:40px 40px 40px 8px;font-size:56px;font-weight:700;line-height:1.1">{html.escape(domanda)}</div>
+<div style="font-size:44px;line-height:1.3;font-weight:500">{html.escape(s.get("sotto", "Scrivilo nei commenti. Le leggiamo tutte."))}</div>
+<div style="margin-top:24px">{righe}</div></div>
+<div style="font-size:34px">Segui <b>@scopri__ai</b> e salva il post per ritrovarlo.</div>''')
+
+
+TIPI_B = {"copertina": b_copertina, "testo": b_testo, "prompt": slide_prompt, "chiusura": b_chiusura}
+
+
+def pagina(fondo, contenuto, con_video=False, assoluta=False):
+    bg, fg = SFONDO[fondo]
     sfondo = "transparent" if con_video else bg
+    disposizione = ("position:relative" if assoluta else "box-sizing:border-box;padding:64px 72px;display:flex;flex-direction:column;gap:40px")
     return f'''<!doctype html><html lang="it"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family={FONT.replace(" ", "+")}:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=block" rel="stylesheet">
 <style>html,body{{margin:0;background:transparent}}.mono{{font-family:'JetBrains Mono',monospace;font-weight:700}}b{{font-weight:700}}
-.pagina>*{{position:relative;z-index:1}}.pagina>.sotto{{z-index:0}}</style></head>
-<body><div class="pagina" style="width:1080px;height:1350px;box-sizing:border-box;padding:64px 72px;background:{sfondo};color:{fg};font-family:'Space Grotesk',sans-serif;display:flex;flex-direction:column;gap:40px;overflow:hidden">
+.pagina>*{{position:relative;z-index:1}}.pagina>.sotto{{z-index:0}}.pagina>.ass{{position:absolute}}</style></head>
+<body><div class="pagina" style="width:1080px;height:1350px;{disposizione};background:{sfondo};color:{fg};font-family:'{FONT}',sans-serif;overflow:hidden">
 {contenuto}
 </div></body></html>'''
 
@@ -225,7 +320,7 @@ def slide_video(html_file, v, fondo, cartella, uscita):
     b = json.loads(out.strip().splitlines()[-1])
     w, h, x, y = (round(b[k]) // 2 * 2 for k in ("width", "height", "x", "y"))
     pos = float(v.get("posizione", 0.5))
-    bg = (BLU if fondo == "blu" else CARTA).lstrip("#")
+    bg = SFONDO[fondo][0].lstrip("#")
     pezzi = v.get("pezzi") or [[v.get("inizio", 0), v.get("inizio", 0) + v["durata"] if v.get("durata") else None]]
     comando = ["ffmpeg", "-loglevel", "error", "-y"]
     for a, b_ in pezzi:
@@ -257,15 +352,19 @@ def main():
     cartella = spec_path.parent
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
     ctx = {"rubrica": spec.get("rubrica", ""), "cartella": cartella}
+    stile_b = spec.get("stile", "A") == "B"
     tmp = cartella / ".html"
     tmp.mkdir(exist_ok=True)
     for i, s in enumerate(spec["slides"], 1):
         if solo and i not in solo:
             continue
-        fondo, contenuto = TIPI[s["tipo"]](s, ctx)
+        ctx["indice"] = i
+        tipi = TIPI_B if stile_b else TIPI
+        fondo, contenuto = tipi[s["tipo"]](s, ctx)
         v = s.get("visual") or {}
         f = tmp / f"slide-{i:02d}.html"
-        f.write_text(pagina(fondo, contenuto, con_video=bool(v.get("video"))), encoding="utf-8")
+        assoluta = stile_b and s["tipo"] in ("copertina", "testo")
+        f.write_text(pagina(fondo, contenuto, con_video=bool(v.get("video")), assoluta=assoluta), encoding="utf-8")
         for vecchio in (cartella / f"slide-{i:02d}.png", cartella / f"slide-{i:02d}.mp4", cartella / f"slide-{i:02d}-completo.mp4"):
             vecchio.unlink(missing_ok=True)
         if v.get("video"):

@@ -34,7 +34,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 - Dalla seconda slide in poi si spiega: ogni slide è una scoperta in più, con il suo video o la sua immagine.
 - Ogni slide dice in poche parole **cosa ha fatto l'AI** ("Ha costruito…", "Ha insegnato…"), mai cosa le hanno chiesto. Poi un **commento di due o tre parole** sul risultato, nel fumetto ("7 centri di fila.", "Tutto da solo.").
 - La seconda slide deve collegarsi alla copertina: se la copertina dice "guarda cosa sa fare", la seconda mostra subito la prima cosa che sa fare.
-- Le slide nuove si preparano prima **senza video** su Claude Design; i video si inseriscono solo quando il proprietario approva le slide.
+- Le slide nuove si preparano prima **senza video** su Claude Design, in **ogni template** di `template/`; il proprietario sceglie il template e corregge. I video si inseriscono solo quando approva (procedimento in `template/README.md`).
 - Si dice cosa può farci una persona normale, e se è solo un esempio dell'azienda lo si dice.
 
 ## Come si scrive
