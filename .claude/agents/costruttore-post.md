@@ -16,7 +16,8 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e la **cartella** del post.
    - le immagini vanno copiate in `bozza/img/` e richiamate con `src="img/<nome>.png"` (al posto dei `/_blob/…` dei template);
    - l'ultima slide di ogni riga è il terminatore attuale (`template/terminatori/`);
    - `canvas.json` con `{"v":3,"attachments":{},"boards":{…}}`: ogni board 1080×1350, `x` = 1160 × posizione, `y` = 0 per la riga A, 1770 per la B, 3540 per la C…, `title` tipo "A2 · Robot".
-5. Rispondi al regista con l'elenco dei file della bozza.
+5. Crea anche le **anteprime PNG** di ogni template: `bozza/A/slide.json` e `bozza/B/slide.json` (copie di `slide.json` con `"stile"` A o B e, al posto di ogni video, `{"immagine": "../../media/<fotogramma>.png"}`), poi `python3 strumenti/carosello.py bozza/A/slide.json` e lo stesso per B. Guardale (Read). Servono se Claude Design non è disponibile e per il controllo.
+6. Rispondi al regista con l'elenco dei file della bozza.
 
 ## Modo "finale" (seconda fermata superata: il proprietario ha scelto il template e corretto)
 1. Applica a `slide.json` il template scelto (`"stile"`) e **tutte** le correzioni del proprietario che il regista ti passa (testi, ordine, immagini).

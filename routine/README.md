@@ -41,7 +41,8 @@ Non costruire niente finché non risponde. Se dice di cambiare, aggiorna la scel
 1. `costruttore-post` (modo `bozza`) e `costruttore-reel` (modo `bozza`) **in parallelo**, con la stessa cartella.
 2. Pubblica la bozza del post su **Claude Design**: Artifact `quickstart` con intent `design`, crea il canvas dal tipo "Design" con il titolo del post, poi pubblica nel suo `url` i file di `<cartella>/bozza/` (le pagine `.dc.html`, `canvas.json` e `img/`), seguendo le istruzioni del tipo.
 3. Commit e push.
-4. Manda al proprietario: il link del canvas e `reel-anteprima.png` (SendUserFile). Chiedi: **"Quale template scegli? Correggi pure sul canvas, poi scrivimi."**
+   Se lo strumento Artifact non è disponibile in questa sessione, salta il canvas: manda le anteprime PNG di `bozza/A/` e `bozza/B/` e il proprietario sceglie da lì.
+4. Manda al proprietario: il link del canvas (o le anteprime PNG) e `reel-anteprima.png` (SendUserFile). Chiedi: **"Quale template scegli? Correggi pure sul canvas, poi scrivimi."**
 
 ### 🛑 Fermata 2 — aspetta la scelta del template e le correzioni
 Prima di andare avanti rileggi il canvas (Artifact `read` del suo url, compreso `canvas.json`): le correzioni fatte a mano dal proprietario valgono quanto quelle scritte in chat.
@@ -49,7 +50,7 @@ Prima di andare avanti rileggi il canvas (Artifact `read` del suo url, compreso 
 ## Fase C — post e Reel finali
 1. `costruttore-post` (modo `finale`) e `costruttore-reel` (modo `finale`) **in parallelo**, passando a ognuno il template scelto e tutte le correzioni.
 2. Controlla tu il risultato (qualche slide e qualche fotogramma del Reel).
-3. Commit su `main` con autore `Claude <noreply@anthropic.com>` e push (se la rete fallisce riprova fino a 4 volte). I file `media/*.mp4` e `*-completo.mp4` non vanno su GitHub (sono in `.gitignore`).
+3. Commit su `main` con autore `Claude <noreply@anthropic.com>` e push (se la rete fallisce riprova fino a 4 volte). Se il push su `main` viene rifiutato, fai push sul ramo della sessione (`git push -u origin HEAD:<ramo>`) e scrivi al proprietario il nome del ramo: il lavoro va poi unito a `main`. I file `media/*.mp4` e `*-completo.mp4` non vanno su GitHub (sono in `.gitignore`).
 4. **Consegna il pacchetto** con SendUserFile (status `proactive`):
    - le slide (`slide-NN.png` / `.mp4`) e i `slide-NN-completo.mp4`;
    - `reel.mp4`;
