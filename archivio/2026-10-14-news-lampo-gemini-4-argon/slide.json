@@ -2,23 +2,100 @@
  "rubrica": "NEWS LAMPO",
  "stile": "B",
  "slides": [
-  {"tipo": "copertina", "titolo": "Guarda cosa sa fare la *nuova AI di Google*.", "sottotitolo": "Si chiama Gemini 4 Argon. Scorri.",
-   "visual": {"video": "media/robot.mp4", "posizione": 0.5}},
-  {"tipo": "testo", "fondo": "blu", "titolo": "Ha insegnato a un robot a *giocare*",
-   "testo": ["Ha guardato una persona lanciare, ha ricostruito la scena e ha calcolato ogni movimento."], "commento": "7 centri di fila.",
-   "visual": {"video": "media/robot.mp4", "pezzi": [[12, 24], [54, 72], [90, 100]], "posizione": 0.5}},
-  {"tipo": "testo", "fondo": "giallo", "titolo": "Ha costruito un *museo dei Mac*",
-   "testo": ["Senza foto né dati: ha trovato le immagini d'archivio, le ha ripulite e ha raccolto 50 anni di modelli."], "commento": "Tutto da solo.",
-   "visual": {"video": "media/museo-apple.mp4", "posizione": 0.5}},
-  {"tipo": "testo", "fondo": "blu", "titolo": "Ha dipinto *534 quadri* con il codice",
-   "testo": ["Niente pennelli: per ogni quadro ha scritto il codice che lo disegna."], "commento": "Arte programmata.",
-   "visual": {"video": "media/dipinti.mp4", "adatta": "contain"}},
-  {"tipo": "testo", "fondo": "carta", "titolo": "Ha creato un *elicottero 3D* da zero",
-   "testo": ["Forme, dettagli e paesaggi scritti in codice e migliorati giro dopo giro. Aspetta il finale."], "commento": "Da videogioco.",
-   "visual": {"video": "media/elicottero.mp4", "inizio": 11.5, "durata": 60, "posizione": 0.5}},
-  {"tipo": "testo", "fondo": "giallo", "titolo": "Ha trasformato uno schizzo in un *oggetto vero*",
-   "testo": ["Da un disegno a mano ha calcolato i pezzi, li ha fatti combaciare e ha preparato il modello 3D."], "commento": "Giorni in minuti.",
-   "visual": {"video": "media/hardware.mp4", "inizio": 0, "durata": 31.5, "posizione": 0.5}},
-  {"tipo": "chiusura", "domanda": "Quale ti ha colpito di più?"}
+  {
+   "tipo": "copertina",
+   "titolo": "Guarda cosa sa fare la *nuova AI di Google*.",
+   "sottotitolo": "Si chiama Gemini 4 Argon. Scorri.",
+   "visual": {
+    "video": "media/robot.mp4",
+    "posizione": 0.5
+   }
+  },
+  {
+   "tipo": "testo",
+   "fondo": "blu",
+   "titolo": "Ha insegnato a un robot a *giocare*",
+   "testo": [
+    "Ha guardato una persona lanciare, ha ricostruito la scena e ha calcolato ogni movimento."
+   ],
+   "commento": "7 centri di fila.",
+   "visual": {
+    "video": "media/robot.mp4",
+    "pezzi": [
+     [
+      12,
+      24
+     ],
+     [
+      54,
+      72
+     ],
+     [
+      90,
+      100
+     ]
+    ],
+    "posizione": 0.5
+   }
+  },
+  {
+   "tipo": "testo",
+   "fondo": "giallo",
+   "titolo": "Ha costruito un *museo dei Mac*",
+   "testo": [
+    "Senza foto né dati: ha trovato le immagini d'archivio, le ha ripulite e ha raccolto 50 anni di modelli."
+   ],
+   "commento": "Tutto da solo.",
+   "visual": {
+    "video": "media/museo-apple.mp4",
+    "posizione": 0.5
+   }
+  },
+  {
+   "tipo": "testo",
+   "fondo": "blu",
+   "titolo": "Ha dipinto *534 quadri* con il codice",
+   "testo": [
+    "Niente pennelli: per ogni quadro ha scritto il codice che lo disegna."
+   ],
+   "commento": "Arte programmata.",
+   "visual": {
+    "video": "media/dipinti.mp4",
+    "adatta": "contain"
+   }
+  },
+  {
+   "tipo": "testo",
+   "fondo": "carta",
+   "titolo": "Ha creato un *elicottero 3D* da zero",
+   "testo": [
+    "Forme, dettagli e paesaggi scritti in codice e migliorati giro dopo giro. Aspetta il finale."
+   ],
+   "commento": "Da videogioco.",
+   "visual": {
+    "video": "media/elicottero.mp4",
+    "inizio": 11.5,
+    "durata": 60,
+    "posizione": 0.5
+   }
+  },
+  {
+   "tipo": "testo",
+   "fondo": "giallo",
+   "titolo": "Ha trasformato uno schizzo in un *oggetto vero*",
+   "testo": [
+    "Da un disegno a mano ha calcolato i pezzi, li ha fatti combaciare e ha preparato il modello 3D."
+   ],
+   "commento": "Giorni in minuti.",
+   "visual": {
+    "video": "media/hardware.mp4",
+    "inizio": 0,
+    "durata": 31.5,
+    "posizione": 0.5
+   }
+  },
+  {
+   "tipo": "chiusura"
+  }
  ]
 }

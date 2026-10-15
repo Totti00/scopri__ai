@@ -51,7 +51,7 @@ Si genera con `strumenti/carosello.py`; esempio in `brand/template-esempio/`.
 - **Copertina (blu):** visual grande in alto (screenshot del prodotto o chat disegnata), titolo sotto con le parole chiave in giallo, pallino giallo con → come unico invito a scorrere.
 - **Slide interne (carta):** testo sopra (25-40 parole, carattere grande), visual sotto, meglio se video in un riquadro arrotondato: screenshot, chat o numero grande su giallo. "👉 Per te" con filetto giallo. Nessuna fonte sulla slide.
 - **Prompt:** il prompt è un messaggio blu in una finestra di chat ("Scrivi così all'AI"), con le parti da cambiare in giallo.
-- **Ultima slide (blu):** gli appuntamenti fissi (Lun, Ven, Dom) più le news lampo + domanda per i commenti + "Segui e salva".
+- **Ultima slide (fissa, scelta il 15/10/2026):** fondo carta, disegno dello smartphone con la notifica di Scopri.AI, "Le novità sull'AI, appena escono.", "🔔 Segui @scopri__ai e attiva le notifiche" e "📌 E salva il post per ritrovarlo". Niente mascotte né animazioni.
 - Se si parla di una persona o di una cosa reale, il visual è la foto o il video veri (regola 4 di `CLAUDE.md`), con chi l'ha fatta annotato in `fonti.md` del post. La chat disegnata resta per i prompt da copiare e per i concetti; se non riproducono l'interfaccia vera, sotto va scritto "Esempio illustrativo".
 
 Da evitare perché tipico dei concorrenti: fondo nero con lilla o viola, mascotte robot, collage di CEO.

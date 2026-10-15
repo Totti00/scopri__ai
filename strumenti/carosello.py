@@ -28,7 +28,8 @@ Il JSON ha questa forma:
      "per_te": "…", "visual": {…}},
     {"tipo": "prompt", "titolo": "…", "quando": "Quando ti serve…",
      "prompt": "Testo con [PARTI DA CAMBIARE]", "nota": "Cambia le parti in giallo."},
-    {"tipo": "chiusura", "domanda": "…"}
+    {"tipo": "chiusura"}   la chiusura fissa con la notifica ("titolo" e "inviti" facoltativi;
+                           il vecchio calendario resta come "chiusura-calendario")
   ]
 }
 Visual possibili:
@@ -216,7 +217,42 @@ def slide_chiusura(s, ctx):
 <div style="font-size:34px;color:{GRIGIO_SU_BLU}">Segui <b style="color:{BIANCO}">@scopri__ai</b> e salva il post per ritrovarlo 📌</div>''')
 
 
-TIPI = {"copertina": slide_copertina, "testo": slide_testo, "prompt": slide_prompt, "chiusura": slide_chiusura}
+SVG_NOTIFICA = f'''<svg width="700" height="660" viewBox="0 0 700 660" aria-hidden="true">
+<circle cx="350" cy="330" r="290" fill="{GIALLO}"/>
+<g transform="rotate(-8 350 330)">
+<rect x="210" y="60" width="280" height="540" rx="44" fill="{NERO}"/><rect x="226" y="78" width="248" height="504" rx="32" fill="{BLU}"/>
+<rect x="310" y="92" width="80" height="18" rx="9" fill="{NERO}"/>
+<text x="350" y="190" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="64" fill="{BIANCO}">09:41</text>
+<rect x="240" y="240" width="220" height="110" rx="22" fill="{BIANCO}"/><rect x="256" y="258" width="34" height="30" rx="8" fill="{BLU}"/>
+<text x="273" y="279" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="16" fill="{BIANCO}">AI</text>
+<rect x="300" y="262" width="110" height="12" rx="6" fill="{NERO}"/><rect x="256" y="300" width="180" height="12" rx="6" fill="#B9B6AE"/>
+<rect x="256" y="322" width="140" height="12" rx="6" fill="#B9B6AE"/><rect x="240" y="364" width="220" height="80" rx="22" fill="{BIANCO}" opacity=".35"/>
+</g>
+<g transform="translate(520 120) rotate(18)">
+<path d="M0 -60 C 34 -60, 52 -34, 52 0 V 34 L 66 54 H -66 L -52 34 V 0 C -52 -34, -34 -60, 0 -60 Z" fill="{BIANCO}" stroke="{NERO}" stroke-width="8"/>
+<circle cx="0" cy="68" r="14" fill="{NERO}"/><circle cx="0" cy="-66" r="8" fill="{NERO}"/>
+</g>
+<path d="M610 60 L640 40 M630 110 L668 104 M600 20 L610 -6" stroke="{NERO}" stroke-width="8" stroke-linecap="round"/>
+<path d="M80 470 l10 28 28 10 -28 10 -10 28 -10 -28 -28 -10 28 -10z" fill="{BLU}"/>
+</svg>'''
+
+
+def chiusura_notifica(s, ctx):
+    """Chiusura fissa di tutti i post (scelta il 15/10/2026): lo smartphone con la notifica."""
+    titolo = s.get("titolo", "Le novità sull'AI, *appena escono*.")
+    righe = s.get("inviti", ["🔔 Segui @scopri__ai e attiva le notifiche", "📌 E salva il post per ritrovarlo"])
+    inviti = "".join(
+        f'<div style="background:{BLU if i == 0 else BIANCO};color:{BIANCO if i == 0 else NERO};border-radius:28px;padding:22px 30px;'
+        f'font-size:38px;font-weight:700">{html.escape(r)}</div>' for i, r in enumerate(righe))
+    return ("carta", f'''<div style="align-self:stretch">{logo("carta")}</div>
+<div style="align-self:center">{SVG_NOTIFICA}</div>
+<div style="font-size:80px;font-weight:800;line-height:1;letter-spacing:-3px;text-align:center">{evidenzia(titolo, "carta")}</div>
+<div style="flex:1"></div>
+<div style="display:flex;flex-direction:column;gap:14px">{inviti}</div>''')
+
+
+TIPI = {"copertina": slide_copertina, "testo": slide_testo, "prompt": slide_prompt, "chiusura": chiusura_notifica,
+        "chiusura-calendario": slide_chiusura}
 
 
 # ---------- Template B ("fascia"): immagine a tutta larghezza in alto, fascia di colore sotto ----------
@@ -296,7 +332,8 @@ def b_chiusura(s, ctx):
 <div style="font-size:34px">Segui <b>@scopri__ai</b> e salva il post per ritrovarlo.</div>''')
 
 
-TIPI_B = {"copertina": b_copertina, "testo": b_testo, "prompt": slide_prompt, "chiusura": b_chiusura}
+TIPI_B = {"copertina": b_copertina, "testo": b_testo, "prompt": slide_prompt, "chiusura": chiusura_notifica,
+          "chiusura-calendario": b_chiusura}
 
 
 def pagina(fondo, contenuto, con_video=False, assoluta=False):

@@ -32,3 +32,5 @@
 ## Versione 5 (15/10/2026) — definitiva
 - Bozza rivista su Claude Design (https://claude.ai/artifact/UD5TAg44jgWMUH71UWX4x2): scelto il template B (fascia), font Bricolage Grotesque, tolta la slide della presentazione.
 - Testi: ogni slide dice cosa ha fatto Argon + commento di due-tre parole; nessun nome di autore sulle slide (solo in "Fonti").
+
+- Chiusura: la slide fissa con lo smartphone e la notifica (scelta tra 4 idee il 15/10/2026). Il post è completo: 6 video + chiusura.
