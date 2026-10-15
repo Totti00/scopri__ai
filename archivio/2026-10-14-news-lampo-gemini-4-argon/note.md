@@ -34,3 +34,4 @@
 - Testi: ogni slide dice cosa ha fatto Argon + commento di due-tre parole; nessun nome di autore sulle slide (solo in "Fonti").
 
 - Chiusura: la slide fissa con lo smartphone e la notifica (scelta tra 4 idee il 15/10/2026). Il post è completo: 6 video + chiusura.
+- Notifica della chiusura: scelta la variante con un solo "AI" (avatar con tre puntini, "Scopri.AI", "🔔 Nuovo post: vieni a scoprirlo!").

@@ -223,10 +223,13 @@ SVG_NOTIFICA = f'''<svg width="700" height="660" viewBox="0 0 700 660" aria-hidd
 <rect x="210" y="60" width="280" height="540" rx="44" fill="{NERO}"/><rect x="226" y="78" width="248" height="504" rx="32" fill="{BLU}"/>
 <rect x="310" y="92" width="80" height="18" rx="9" fill="{NERO}"/>
 <text x="350" y="190" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="64" fill="{BIANCO}">09:41</text>
-<rect x="240" y="240" width="220" height="110" rx="22" fill="{BIANCO}"/><rect x="256" y="258" width="34" height="30" rx="8" fill="{BLU}"/>
-<text x="273" y="279" text-anchor="middle" font-family="Space Grotesk" font-weight="700" font-size="16" fill="{BIANCO}">AI</text>
-<rect x="300" y="262" width="110" height="12" rx="6" fill="{NERO}"/><rect x="256" y="300" width="180" height="12" rx="6" fill="#B9B6AE"/>
-<rect x="256" y="322" width="140" height="12" rx="6" fill="#B9B6AE"/><rect x="240" y="364" width="220" height="80" rx="22" fill="{BIANCO}" opacity=".35"/>
+<rect x="234" y="232" width="232" height="138" rx="22" fill="{BIANCO}"/>
+<g transform="translate(248 250) scale(0.066)"><rect width="700" height="460" rx="110" fill="{BLU}"/><polygon points="120,440 120,600 280,440" fill="{BLU}"/><circle cx="220" cy="230" r="46" fill="{BIANCO}"/><circle cx="350" cy="230" r="46" fill="{BIANCO}"/><circle cx="480" cy="230" r="46" fill="{BIANCO}"/></g>
+<text x="304" y="275" font-family="Bricolage Grotesque" font-weight="800" font-size="22" fill="{NERO}">Scopri.AI</text>
+<text x="452" y="274" text-anchor="end" font-family="Bricolage Grotesque" font-weight="500" font-size="14" fill="#8A877F">ora</text>
+<text x="250" y="322" font-family="Bricolage Grotesque" font-weight="700" font-size="21" fill="{NERO}">🔔 Nuovo post:</text>
+<text x="250" y="350" font-family="Bricolage Grotesque" font-weight="700" font-size="21" fill="{NERO}">vieni a scoprirlo!</text>
+<rect x="234" y="384" width="232" height="80" rx="22" fill="{BIANCO}" opacity=".35"/>
 </g>
 <g transform="translate(520 120) rotate(18)">
 <path d="M0 -60 C 34 -60, 52 -34, 52 0 V 34 L 66 54 H -66 L -52 34 V 0 C -52 -34, -34 -60, 0 -60 Z" fill="{BIANCO}" stroke="{NERO}" stroke-width="8"/>
