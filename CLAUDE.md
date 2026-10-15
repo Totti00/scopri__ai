@@ -20,7 +20,8 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
    - **Prima scelta**, senza rischi: sala stampa ufficiale (Meta, Apple, Google, OpenAI…), Wikimedia Commons, NASA ed enti pubblici, screenshot e registrazioni fatti da noi, Pexels e Unsplash.
    - **Ammesse anche** foto di agenzia (Getty, Reuters, Ansa, AP…) e clip ufficiali o di testate. Il proprietario ha accettato il rischio che Instagram rimuova il post per copyright. Si usano quando la prima scelta non basta.
    - **Foto di persone modificate con l'AI** (fotomontaggi ironici): ammesse solo se si capisce che sono finte, con la scritta "Fotomontaggio" sulla slide e l'etichetta "Info sull'AI" di Instagram attivata. Mai fotomontaggi che possano passare per veri o che mettano in bocca a qualcuno frasi mai dette.
-   - **Mai:** contenuti di altri creator (le loro grafiche, i loro video, i loro fotomontaggi), fotogrammi di film. Eccezione: lo screenshot del post di X o Reddit che è esso stesso la notizia (regole in `fonti.md`, "Storie virali").
+   - **Progetti fatti dalle persone con l'AI** (deciso il 15/10/2026): si possono mostrare i video di chi ha creato qualcosa con un'AI, presi **dal post originale dell'autore**. L'autore si nomina sulla slide ("@nome ha creato…") e in "Fonti". Mai dalle ripubblicazioni di altre pagine (raccolte su X, concorrenti): da lì si prende solo lo spunto e si risale all'originale.
+   - **Mai:** grafiche, video e fotomontaggi delle pagine concorrenti o di altri creator di notizie, fotogrammi di film. Eccezione: lo screenshot del post di X o Reddit che è esso stesso la notizia (regole in `fonti.md`, "Storie virali").
    - In fondo alla caption va solo "Fonti: …". Chi ha fatto foto e video si annota in `fonti.md` della cartella del post.
    - **Video in ogni slide quando si può** (deciso il 14/10/2026): i video ufficiali si prendono dai post su X delle aziende (`https://api.fxtwitter.com/<account>/status/<id>` dà il link diretto all'MP4). YouTube da qui è bloccato.
 5. **Niente esagerazioni**: titoli con gancio sì, falsi o allarmisti no. Se una notizia è un'indiscrezione, si scrive al condizionale e lo si dichiara.
@@ -29,7 +30,8 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 
 ## Come si racconta una notizia
 - Mai il post banale "è uscito X". Si cerca il **gancio**: la cosa più sorprendente o utile, quella che fa venire voglia di scorrere.
-- Ogni slide è una scoperta in più, con il suo video o la sua immagine.
+- **La copertina serve solo ad attirare l'attenzione**: un video breve e d'effetto (consegnato intero, lo taglia il proprietario) e un titolo che incuriosisce. Non spiega ancora niente.
+- Dalla seconda slide in poi si spiega: ogni slide è una scoperta in più, con il suo video o la sua immagine.
 - Si dice cosa può farci una persona normale, e se è solo un esempio dell'azienda lo si dice.
 
 ## Come si scrive

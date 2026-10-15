@@ -20,3 +20,11 @@
 - Nuove slide 3–5 con video ufficiali lunghi: presentazione e mail (60 s), schizzo → dispositivo (31 s), tempio 3D (36 s).
 - Instagram accetta video fino a 60 secondi per slide (secondo guide di terzi; Meta non lo conferma da nessuna parte ufficiale): la slide 3 è proprio al limite.
 - Il videogioco arcade non è stato usato per non ripetere il taglio di ai__facile.
+
+## Versione 4 (15/10/2026)
+- Il proprietario vuole anche i progetti fatti dalle persone. Aggiunti 3 progetti presi dai post originali degli autori (museo Apple, 534 quadri, elicottero 3D), con l'autore nominato sulla slide e in "Fonti".
+- Non usati: tavolo-pista, tennis e scacchi (li ha già usati ai__facile) e i video ripubblicati da @minchoi e @chetaslua (non sono gli autori).
+- Tolta la slide del tempio (doppione del 3D, ora c'è l'elicottero).
+- I quadri sono un video quadrato: mostrato intero con bande scure ai lati.
+
+- Copertina: titolo che incuriosisce senza spiegare ("Guarda cosa sa fare la nuova AI di Google") e video del robot intero (1:43): lo taglia il proprietario. La spiegazione del robot parte dalla slide 2.

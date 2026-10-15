@@ -3,6 +3,8 @@
 Uso:
     python3 strumenti/carosello.py archivio/<cartella-post>/slide.json
     python3 strumenti/carosello.py archivio/<cartella-post>/slide.json --completi
+    python3 strumenti/carosello.py archivio/<cartella-post>/slide.json --solo=1,8
+        → rifà solo le slide indicate (si può unire a --completi)
         → per ogni slide con video crea anche slide-NN-completo.mp4, con il video sorgente intero
           sotto la stessa grafica: il proprietario lo accorcia da solo (Instagram o CapCut).
 
@@ -32,7 +34,8 @@ Visual possibili:
     {"video": "media/clip.mp4", "inizio": 12, "durata": 8, "posizione": 0.5}
     {"video": "media/clip.mp4", "pezzi": [[12, 24], [54, 72]]}   più pezzi dello stesso video, uno dopo l'altro
         → la slide diventa slide-NN.mp4 (senza audio: la musica la mette il proprietario).
-          "posizione" sposta il taglio del video da sinistra (0) a destra (1).
+          "posizione" sposta il taglio del video da sinistra (0) a destra (1);
+          "adatta": "contain" mostra il video intero con bande scure ai lati.
 Fonti e crediti delle immagini NON vanno sulle slide: vanno in fondo alla caption.
 La "didascalia" serve solo per avvisi come "Esempio illustrativo".
 Nei testi: *parola* = parola chiave (giallo sul blu, riquadro giallo sulla carta); **parola** = grassetto.
@@ -189,9 +192,10 @@ def slide_chiusura(s, ctx):
         f'<span class="mono" style="flex:none;width:110px;color:{GIALLO};font-size:32px">{html.escape(g)}</span>'
         f'<span style="font-size:40px;font-weight:500">{html.escape(t)}</span></div>' for g, t in rubriche)
     domanda = f'<div style="font-size:40px;font-weight:700;line-height:1.3">{evidenzia(s["domanda"], "blu")}</div>' if s.get("domanda") else ""
+    titolo = evidenzia(s.get("titolo", "Ogni settimana, *qualcosa da\u00a0scoprire*."), "blu")
     return ("blu", f'''{logo("blu")}
 <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px">
-<div style="font-size:{s.get("dimensione", 92)}px;font-weight:700;line-height:1.02;letter-spacing:-3px">{evidenzia(s.get("titolo", "Ogni settimana, *qualcosa da\u00a0scoprire*."), "blu")}</div>
+<div style="font-size:{s.get("dimensione", 92)}px;font-weight:700;line-height:1.02;letter-spacing:-3px">{titolo}</div>
 <div>{righe}</div>
 </div>
 {domanda}
@@ -228,7 +232,11 @@ def slide_video(html_file, v, fondo, cartella, uscita):
         comando += ["-ss", str(a)] + (["-t", str(b_ - a)] if b_ else []) + ["-i", str(cartella / v["video"])]
     n = len(pezzi)
     unione = "".join(f"[{i}:v]setpts=PTS-STARTPTS,fps=30,setsar=1[p{i}];" for i in range(n)) + "".join(f"[p{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0[c];"
-    filtro = (unione + f"[c]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}:(iw-{w})*{pos}:(ih-{h})/2,setsar=1[v];"
+    if v.get("adatta") == "contain":  # video intero, con bande scure ai lati (es. video quadrati)
+        misura = f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:color=0x121212"
+    else:  # riempie il riquadro tagliando i bordi
+        misura = f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}:(iw-{w})*{pos}:(ih-{h})/2"
+    filtro = (unione + f"[c]{misura},setsar=1[v];"
               f"color=c=0x{bg}:s=1080x1350:r=30[base];[base][v]overlay={x}:{y}:shortest=1[b];"
               f"[b][{n}:v]overlay=0:0:shortest=1,format=yuv420p")
     comando += ["-loop", "1", "-i", str(sopra), "-filter_complex", filtro,
@@ -240,6 +248,7 @@ def slide_video(html_file, v, fondo, cartella, uscita):
 def main():
     argomenti = [a for a in sys.argv[1:] if not a.startswith("--")]
     completi = "--completi" in sys.argv
+    solo = next((set(int(n) for n in a.split("=", 1)[1].split(",")) for a in sys.argv if a.startswith("--solo=")), None)
     if len(argomenti) != 1:
         print(__doc__)
         sys.exit(1)
@@ -251,11 +260,13 @@ def main():
     tmp = cartella / ".html"
     tmp.mkdir(exist_ok=True)
     for i, s in enumerate(spec["slides"], 1):
+        if solo and i not in solo:
+            continue
         fondo, contenuto = TIPI[s["tipo"]](s, ctx)
         v = s.get("visual") or {}
         f = tmp / f"slide-{i:02d}.html"
         f.write_text(pagina(fondo, contenuto, con_video=bool(v.get("video"))), encoding="utf-8")
-        for vecchio in (cartella / f"slide-{i:02d}.png", cartella / f"slide-{i:02d}.mp4"):
+        for vecchio in (cartella / f"slide-{i:02d}.png", cartella / f"slide-{i:02d}.mp4", cartella / f"slide-{i:02d}-completo.mp4"):
             vecchio.unlink(missing_ok=True)
         if v.get("video"):
             slide_video(f, v, fondo, cartella, cartella / f"slide-{i:02d}.mp4")
