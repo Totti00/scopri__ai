@@ -29,7 +29,11 @@ Per non passare da pagina che ripubblica:
 - i post del venerdì (prompt) e della domenica (curiosità) sono fatti con grafiche nostre: almeno 2 post su settimana sono interamente nostri.
 
 ## Quando si pubblica (lo fa il proprietario)
-- **Musica** sul carosello: sempre.
+- **Musica** sul carosello: sempre. In `note.md` di ogni post Claude suggerisce 2–3 brani (il proprietario controlla che ci siano nella libreria di Instagram e sceglie). Regole:
+  - meglio **strumentale** o con poche parole: la gente sta leggendo;
+  - se tra le canzoni con la freccia **↗ (di tendenza)** ce n'è una adatta, ha la precedenza;
+  - si sceglie il **pezzo più energico** (il punto in cui parte il ritmo), non l'inizio lento;
+  - umore per rubrica: news lampo = elettronica carica; news del lunedì = pop allegro; prompt del venerdì = lo-fi tranquillo; curiosità della domenica sera = musica da film, di meraviglia.
 - **Prima ora:** rispondere a ogni commento e condividere il post nelle Storie, se possibile con un sondaggio ("Lo proveresti?").
 - **Orari:** dopo 2–3 settimane si guardano in Statistiche le ore in cui i follower sono online e si aggiorna `calendario.md`.
 - **Collaborazioni:** con la funzione "Collabora" insieme a pagine vicine ma non concorrenti (tech, scuola, lavoro, risparmio). Mai con le pagine di notizie AI.
