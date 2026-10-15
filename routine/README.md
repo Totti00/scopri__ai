@@ -14,7 +14,7 @@ Le routine sono sessioni di Claude che partono da sole a un orario fisso. Ogni r
 |---|---|---|
 | `ricercatore` | 1. Ricerca contenuti | `notizie/AAAA-MM-GG.md` → "1. Ricerca" |
 | `analista` | 2. Analisi | → "2. Analisi" (fonti, gancio, media, voto) |
-| `selezionatore` | 3. Scelta | → "3. Scelta" (la proposta) |
+| `selezionatore` | 3. Menu | → "3. Menu" (tante opzioni + un consiglio; sceglie il proprietario) |
 | `costruttore-post` | 4. Costruzione post | `archivio/<cartella>/`: bozza, poi slide, caption, testo alternativo, fonti, note |
 | `costruttore-reel` | 5. Costruzione Reel | `archivio/<cartella>/`: `reel.json`, anteprima, poi `reel.mp4`, `caption-reel.txt` |
 
@@ -31,18 +31,17 @@ Gli agenti non fanno commit e non parlano con il proprietario: lo fa il regista.
 ## Fase A — ricerca, analisi, scelta (da sola)
 1. `ricercatore` → poi `analista` → poi `selezionatore`, uno dopo l'altro (ognuno usa il lavoro del precedente).
 2. Commit e push di `notizie/AAAA-MM-GG.md`.
-3. Se la scelta è "Oggi niente": manda al proprietario una riga ("Oggi niente news lampo: la migliore era … voto N") e **finisci**.
-4. Altrimenti manda la proposta (titolo, perché, copertina, slide, Reel, orari, alternative) e chiedi: **"Va bene? Rispondi sì, no, oppure dimmi cosa cambiare."**
+3. Manda al proprietario il **menu in versione corta** (lo prepara il `selezionatore`): per ogni notizia titolo, voto e i 3 titoli di copertina (a, b, c), i tipi di carosello e il consiglio. Anche nei giorni senza notizie da 4–5: il consiglio sarà "oggi niente", ma decide lui. Chiedi: **"Cosa scegli? Rispondi con un codice (es. "2 b storia"), mescola pure, oppure "niente"."**
 
 ### 🛑 Fermata 1 — aspetta la risposta del proprietario
-Non costruire niente finché non risponde. Se dice di cambiare, aggiorna la scelta (anche con il `selezionatore`) e richiedi l'ok. Se dice no, finisci.
+Non costruire niente finché non risponde. Scrivi la sua scelta in `notizie/AAAA-MM-GG.md`, sezione "4. Scelta del proprietario" (notizia, titolo, tipo di carosello, eventuali modifiche), commit e push. Se chiede altre opzioni, rifai il menu con il `selezionatore`. Se dice "niente", finisci.
 
 ## Fase B — bozza (dopo il sì)
-1. `costruttore-post` (modo `bozza`) e `costruttore-reel` (modo `bozza`) **in parallelo**, con la stessa cartella.
+1. `costruttore-post` (modo `bozza`) e `costruttore-reel` (modo `bozza`) **in parallelo**, con la stessa cartella. Più soluzioni possibili: ogni template, le copertine con i titoli rimasti in gioco, due versioni del Reel.
 2. Pubblica la bozza del post su **Claude Design**: Artifact `quickstart` con intent `design`, crea il canvas dal tipo "Design" con il titolo del post, poi pubblica nel suo `url` i file di `<cartella>/bozza/` (le pagine `.dc.html`, `canvas.json` e `img/`), seguendo le istruzioni del tipo.
 3. Commit e push.
    Se lo strumento Artifact non è disponibile in questa sessione, salta il canvas: manda le anteprime PNG di `bozza/A/` e `bozza/B/` e il proprietario sceglie da lì.
-4. Manda al proprietario: il link del canvas (o le anteprime PNG) e `reel-anteprima.png` (SendUserFile). Chiedi: **"Quale template scegli? Correggi pure sul canvas, poi scrivimi."**
+4. Manda al proprietario: il link del canvas (o le anteprime PNG) e le anteprime del Reel `reel-anteprima.png` e `reel-anteprima-b.png` (SendUserFile). Chiedi: **"Quale template, quale copertina e quale Reel scegli? Correggi pure sul canvas, poi scrivimi."**
 
 ### 🛑 Fermata 2 — aspetta la scelta del template e le correzioni
 Prima di andare avanti rileggi il canvas (Artifact `read` del suo url, compreso `canvas.json`): le correzioni fatte a mano dal proprietario valgono quanto quelle scritte in chat.

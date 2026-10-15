@@ -54,7 +54,7 @@ Regole complete in `brand/crescita.md` (15/10/2026). In breve:
 - mai un contenuto di altri messo da solo: sempre dentro le nostre slide, con i nostri testi.
 
 ## La squadra di agenti
-Il lavoro è diviso in fasi, ognuna con il suo agente in `.claude/agents/` (deciso il 15/10/2026): `ricercatore` → `analista` → `selezionatore` → `costruttore-post` e `costruttore-reel`. Li coordina la routine (il "regista", `routine/README.md`), che si ferma due volte ad aspettare il proprietario: dopo la scelta della notizia e dopo la bozza. **La pubblicazione la fa il proprietario.**
+Il lavoro è diviso in fasi, ognuna con il suo agente in `.claude/agents/` (deciso il 15/10/2026): `ricercatore` → `analista` → `selezionatore` → `costruttore-post` e `costruttore-reel`. Li coordina la routine (il "regista", `routine/README.md`), che si ferma due volte ad aspettare il proprietario: dopo il **menu** (tante notizie, titoli e tipi di carosello tra cui scegliere) e dopo la bozza (ogni template, più copertine, due Reel). Regola generale: **tante soluzioni sul tavolo, poi sceglie il proprietario**. **La pubblicazione la fa il proprietario.**
 
 ## Rubriche e calendario
 - Rubriche: `format/` (una scheda per rubrica, con struttura delle slide e della caption).

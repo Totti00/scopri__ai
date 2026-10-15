@@ -3,7 +3,7 @@
 Idee prese da una guida sui caroselli trovata online (inference.sh, "social-media-carousel") e adattate a noi: niente testi copiati, niente programmi esterni.
 
 ## I 5 tipi di gancio per la copertina
-La copertina deve fermare il pollice. Il `selezionatore` propone il titolo usando uno di questi tipi e ne aggiunge un secondo come alternativa.
+La copertina deve fermare il pollice. Il `selezionatore` propone per ogni notizia **3 titoli con 3 tipi di gancio diversi**; il proprietario sceglie.
 
 | Tipo | Come funziona | Esempio per noi |
 |---|---|---|
@@ -16,7 +16,7 @@ La copertina deve fermare il pollice. Il `selezionatore` propone il titolo usand
 Sempre nel rispetto della regola 5 di `CLAUDE.md`: gancio sì, falsi o allarmisti no. Il numero deve essere vero.
 
 ## Tipi di carosello
-Oltre alla struttura delle rubriche (`format/1…4`), il `selezionatore` può scegliere uno di questi schemi quando la notizia o il tema lo chiedono.
+Oltre alla struttura delle rubriche (`format/1…4`), il `selezionatore` propone per ogni notizia **2 di questi schemi** con la scaletta; il proprietario sceglie.
 
 | Tipo | Quando | Slide |
 |---|---|---|
