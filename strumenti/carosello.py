@@ -56,7 +56,7 @@ BLU, BLU_SCURO, CARTA, GIALLO, NERO, BIANCO = "#2340FF", "#1A30C4", "#F4F1EA", "
 GRIGIO_SU_CARTA, GRIGIO_SU_BLU, BORDO = "#55565C", "#DDE3FF", "#E2DED3"
 RADICE = pathlib.Path(__file__).resolve().parent.parent
 SFONDO = {"blu": (BLU, BIANCO), "carta": (CARTA, NERO), "giallo": (GIALLO, NERO)}
-FONT = "Space Grotesk"  # font dei testi: si cambia qui per tutti i template
+FONT = "Bricolage Grotesque"  # font dei testi (scelto il 15/10/2026; il logo resta in Space Grotesk): si cambia qui per tutti i template
 
 
 def evidenzia(testo, fondo):
@@ -87,7 +87,7 @@ def fumetto(colore, scritta, larghezza):
 def logo(fondo):
     """Logo piccolo: discreto, come fanno le pagine AI."""
     testo, bolla, scritta = (BIANCO, GIALLO, BLU) if fondo == "blu" else (NERO, BLU, BIANCO)
-    return (f'<div style="display:flex;align-items:center;gap:8px;font-size:32px;font-weight:700;letter-spacing:-1px;color:{testo}">'
+    return (f'<div class="logo" style="display:flex;align-items:center;gap:8px;font-size:32px;font-weight:700;letter-spacing:-1px;color:{testo}">'
             f'Scopri{fumetto(bolla, scritta, 44)}</div>')
 
 
@@ -235,7 +235,7 @@ def evidenzia_b(testo, fondo):
 
 def chip_b(fondo):
     testo, bolla, scritta = (BIANCO, GIALLO, BLU) if fondo == "blu" else (NERO, BLU, BIANCO)
-    return (f'<div class="ass" style="top:48px;left:56px;display:flex;align-items:center;gap:8px;background:{SFONDO[fondo][0]};color:{testo};'
+    return (f'<div class="ass logo" style="top:48px;left:56px;display:flex;align-items:center;gap:8px;background:{SFONDO[fondo][0]};color:{testo};'
             f'padding:12px 20px;border-radius:999px;font-size:30px;font-weight:700;letter-spacing:-1px">Scopri{fumetto(bolla, scritta, 40)}</div>')
 
 
@@ -260,7 +260,7 @@ def b_copertina(s, ctx):
 {chip_b("blu")}{rubrica}
 <div class="ass" style="left:0;right:0;bottom:0;height:450px;box-sizing:border-box;padding:56px 72px 64px;background:{BLU};display:flex;align-items:flex-end;gap:36px">
 <div style="flex:1;display:flex;flex-direction:column;gap:22px">
-<div style="font-size:{s.get("dimensione", 92)}px;font-weight:700;line-height:1;letter-spacing:-3px">{evidenzia_b(s["titolo"], "blu")}</div>
+<div style="font-size:{s.get("dimensione", 92)}px;font-weight:800;line-height:1;letter-spacing:-3px">{evidenzia_b(s["titolo"], "blu")}</div>
 {sotto}</div>{freccia()}</div>''')
 
 
@@ -275,7 +275,7 @@ def b_testo(s, ctx):
     return (fondo, f'''{visual_b(s.get("visual") or {}, ctx["cartella"], fondo, 780)}
 {chip_b(fondo)}
 <div class="ass" style="left:0;right:0;top:780px;bottom:0;box-sizing:border-box;padding:92px 72px 64px;background:{SFONDO[fondo][0]};display:flex;flex-direction:column;gap:24px">
-<div style="font-size:{s.get("dimensione", 72)}px;font-weight:700;line-height:1.02;letter-spacing:-2.5px">{evidenzia_b(s["titolo"], fondo)}</div>
+<div style="font-size:{s.get("dimensione", 72)}px;font-weight:800;line-height:1.02;letter-spacing:-2.5px">{evidenzia_b(s["titolo"], fondo)}</div>
 <div style="display:flex;flex-direction:column;gap:16px;font-size:{s.get("dimensione_testo", 36)}px;line-height:1.35;color:{secondario}">{corpo}</div>
 </div>{commento}''')
 
@@ -304,9 +304,9 @@ def pagina(fondo, contenuto, con_video=False, assoluta=False):
     sfondo = "transparent" if con_video else bg
     disposizione = ("position:relative" if assoluta else "box-sizing:border-box;padding:64px 72px;display:flex;flex-direction:column;gap:40px")
     return f'''<!doctype html><html lang="it"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family={FONT.replace(" ", "+")}:wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family={FONT.replace(" ", "+")}:wght@400;500;700;800&amp;family=Space+Grotesk:wght@700&amp;family=JetBrains+Mono:wght@500;700&amp;display=block" rel="stylesheet">
 <style>html,body{{margin:0;background:transparent}}.mono{{font-family:'JetBrains Mono',monospace;font-weight:700}}b{{font-weight:700}}
-.pagina>*{{position:relative;z-index:1}}.pagina>.sotto{{z-index:0}}.pagina>.ass{{position:absolute}}</style></head>
+.pagina>*{{position:relative;z-index:1}}.pagina>.sotto{{z-index:0}}.pagina>.ass{{position:absolute}}.logo{{font-family:'Space Grotesk',sans-serif}}</style></head>
 <body><div class="pagina" style="width:1080px;height:1350px;{disposizione};background:{sfondo};color:{fg};font-family:'{FONT}',sans-serif;overflow:hidden">
 {contenuto}
 </div></body></html>'''

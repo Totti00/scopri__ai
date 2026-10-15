@@ -7,7 +7,7 @@ Ogni post può usare un template diverso. Si sceglie post per post.
 | **A · Classico** | Logo in alto, titolo e testo sopra, immagine o video in un riquadro arrotondato sotto. Slide interne color carta. | `"stile": "A"` |
 | **B · Fascia** | Immagine o video a tutta larghezza in alto, fascia di colore sotto (blu → carta → giallo, a giro), commento nel fumetto a cavallo tra le due. Chiusura gialla. | `"stile": "B"` |
 
-Il font è lo stesso per tutti i template: si cambia nella costante `FONT` di `strumenti/carosello.py` (in attesa di scelta, vedi il confronto su Claude Design).
+Il font è lo stesso per tutti i template: **Bricolage Grotesque** (scelto il 15/10/2026), nella costante `FONT` di `strumenti/carosello.py`. Il logo resta in Space Grotesk.
 
 ## Come si lavora a un post (deciso il 15/10/2026)
 1. Si decide la notizia e Claude scrive i testi: cosa ha fatto l'AI, in poche parole, più un commento di due o tre parole per slide.

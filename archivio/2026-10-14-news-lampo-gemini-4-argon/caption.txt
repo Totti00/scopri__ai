@@ -1,15 +1,12 @@
-🤖 Un robot ha imparato a giocare a cornhole guardando un video. Il merito è di Gemini 4 Argon, la nuova AI di Google.
+🤖 La nuova AI di Google ha insegnato a un robot a giocare a cornhole. Le è bastato guardare un video.
 
-Argon ha guardato una persona lanciare, ha ricostruito la scena al computer e ha calcolato i movimenti. Poi il robot Apollo ha fatto 7 tiri a segno di fila.
+Si chiama Gemini 4 Argon. Ha guardato una persona lanciare, ha ricostruito la scena al computer e ha calcolato ogni movimento. Risultato: 7 centri di fila.
 
-E nei primi giorni la gente ci ha già fatto di tutto:
-🏛️ un museo 3D dei computer Apple, senza dargli né foto né dati
+E nei primi giorni ha già fatto di tutto:
+🏛️ un museo 3D dei computer Apple, senza ricevere né foto né dati
 🎨 534 quadri disegnati solo con il codice
 🚁 un elicottero futuristico in 3D, nato da zero
-
-E per il lavoro di tutti i giorni:
-📁 da una cartella di appunti crea la presentazione per il cliente e gliela manda per mail
-✏️ da uno schizzo fatto a mano progetta un oggetto vero, pezzo per pezzo
+✏️ da uno schizzo a mano, il progetto 3D di un oggetto vero
 
 👉 Come provarlo: nell'app Gemini tocca il nome del modello e scegli 4 Argon. Serve Google AI Pro o Ultra e arriva un po' alla volta. Con Gemini gratis, per ora, non c'è.
 

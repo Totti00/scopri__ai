@@ -28,3 +28,7 @@
 - I quadri sono un video quadrato: mostrato intero con bande scure ai lati.
 
 - Copertina: titolo che incuriosisce senza spiegare ("Guarda cosa sa fare la nuova AI di Google") e video del robot intero (1:43): lo taglia il proprietario. La spiegazione del robot parte dalla slide 2.
+
+## Versione 5 (15/10/2026) — definitiva
+- Bozza rivista su Claude Design (https://claude.ai/artifact/UD5TAg44jgWMUH71UWX4x2): scelto il template B (fascia), font Bricolage Grotesque, tolta la slide della presentazione.
+- Testi: ogni slide dice cosa ha fatto Argon + commento di due-tre parole; nessun nome di autore sulle slide (solo in "Fonti").

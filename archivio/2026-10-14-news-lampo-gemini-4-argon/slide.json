@@ -1,118 +1,24 @@
 {
  "rubrica": "NEWS LAMPO",
+ "stile": "B",
  "slides": [
-  {
-   "tipo": "copertina",
-   "titolo": "Guarda cosa sa fare la *nuova AI di Google*.",
-   "sottotitolo": "Si chiama Gemini 4 Argon. Scorri: un esempio per slide.",
-   "dimensione": 78,
-   "visual": {
-    "video": "media/robot.mp4",
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Come ha *fatto*?",
-   "dimensione_testo": 38,
-   "testo": [
-    "**Gemini 4 Argon** ha guardato il video di una persona che lanciava.",
-    "Ha ricostruito la scena al computer e ha calcolato i movimenti. Risultato: **7 tiri a segno di fila**."
-   ],
-   "visual": {
-    "video": "media/robot.mp4",
-    "pezzi": [
-     [
-      12,
-      24
-     ],
-     [
-      54,
-      72
-     ],
-     [
-      90,
-      100
-     ]
-    ],
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Ti fa il lavoro *e lo spedisce*",
-   "dimensione_testo": 38,
-   "testo": [
-    "Gli dai una cartella piena di ricette e appunti.",
-    "Argon crea la **presentazione per il cliente**, gliela manda per mail e tiene aggiornato l'elenco dei clienti."
-   ],
-   "per_te": "questo lo fai nell'app Gemini, con Google AI Pro o Ultra.",
-   "visual": {
-    "video": "media/catering.mp4",
-    "inizio": 1.5,
-    "durata": 60,
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Un museo *senza dargli niente*",
-   "dimensione_testo": 38,
-   "testo": [
-    "**@venturetwins** ha chiesto ad Argon un museo dei computer Apple. **Senza foto e senza dati.**",
-    "Argon ha trovato da solo le foto d'archivio, le ha ripulite e ha raccolto 50 anni di caratteristiche."
-   ],
-   "visual": {
-    "video": "media/museo-apple.mp4",
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "534 quadri *fatti di codice*",
-   "dimensione_testo": 38,
-   "testo": [
-    "Il designer **@kickingkeys** ha creato con Argon 534 quadri.",
-    "Argon non li ha dipinti: ha scritto il **codice** che li disegna, uno per uno."
-   ],
-   "visual": {
-    "video": "media/dipinti.mp4",
-    "adatta": "contain"
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Un elicottero *nato dal codice*",
-   "dimensione_testo": 38,
-   "testo": [
-    "**@thtbee_** ha fatto costruire ad Argon un elicottero futuristico in 3D.",
-    "Tutto generato da zero, migliorato giro dopo giro. **Guarda il finale.**"
-   ],
-   "visual": {
-    "video": "media/elicottero.mp4",
-    "inizio": 11.5,
-    "durata": 60,
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "testo",
-   "titolo": "Da uno schizzo a un *oggetto vero*",
-   "dimensione_testo": 38,
-   "testo": [
-    "Parti da un disegno fatto a mano.",
-    "Argon calcola i pezzi, li fa combaciare e prepara il **modello 3D** del dispositivo. Giorni di lavoro diventano **minuti**."
-   ],
-   "visual": {
-    "video": "media/hardware.mp4",
-    "inizio": 0,
-    "durata": 31.5,
-    "posizione": 0.5
-   }
-  },
-  {
-   "tipo": "chiusura",
-   "domanda": "Quale ti ha colpito di più? Scrivilo nei commenti 👇"
-  }
+  {"tipo": "copertina", "titolo": "Guarda cosa sa fare la *nuova AI di Google*.", "sottotitolo": "Si chiama Gemini 4 Argon. Scorri.",
+   "visual": {"video": "media/robot.mp4", "posizione": 0.5}},
+  {"tipo": "testo", "fondo": "blu", "titolo": "Ha insegnato a un robot a *giocare*",
+   "testo": ["Ha guardato una persona lanciare, ha ricostruito la scena e ha calcolato ogni movimento."], "commento": "7 centri di fila.",
+   "visual": {"video": "media/robot.mp4", "pezzi": [[12, 24], [54, 72], [90, 100]], "posizione": 0.5}},
+  {"tipo": "testo", "fondo": "giallo", "titolo": "Ha costruito un *museo dei Mac*",
+   "testo": ["Senza foto né dati: ha trovato le immagini d'archivio, le ha ripulite e ha raccolto 50 anni di modelli."], "commento": "Tutto da solo.",
+   "visual": {"video": "media/museo-apple.mp4", "posizione": 0.5}},
+  {"tipo": "testo", "fondo": "blu", "titolo": "Ha dipinto *534 quadri* con il codice",
+   "testo": ["Niente pennelli: per ogni quadro ha scritto il codice che lo disegna."], "commento": "Arte programmata.",
+   "visual": {"video": "media/dipinti.mp4", "adatta": "contain"}},
+  {"tipo": "testo", "fondo": "carta", "titolo": "Ha creato un *elicottero 3D* da zero",
+   "testo": ["Forme, dettagli e paesaggi scritti in codice e migliorati giro dopo giro. Aspetta il finale."], "commento": "Da videogioco.",
+   "visual": {"video": "media/elicottero.mp4", "inizio": 11.5, "durata": 60, "posizione": 0.5}},
+  {"tipo": "testo", "fondo": "giallo", "titolo": "Ha trasformato uno schizzo in un *oggetto vero*",
+   "testo": ["Da un disegno a mano ha calcolato i pezzi, li ha fatti combaciare e ha preparato il modello 3D."], "commento": "Giorni in minuti.",
+   "visual": {"video": "media/hardware.mp4", "inizio": 0, "durata": 31.5, "posizione": 0.5}},
+  {"tipo": "chiusura", "domanda": "Quale ti ha colpito di più?"}
  ]
 }
