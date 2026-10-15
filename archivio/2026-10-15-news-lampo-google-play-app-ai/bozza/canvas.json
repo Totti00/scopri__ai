@@ -337,6 +337,102 @@
    "width": 1080,
    "height": 1350,
    "title": "F6 · Chiusura"
+  },
+  "EB1-copertina.dc.html": {
+   "file": "EB1-copertina.dc.html",
+   "x": 0,
+   "y": 12960,
+   "width": 1080,
+   "height": 1350,
+   "title": "EB1 · Copertina (bianco)"
+  },
+  "EB2-app.dc.html": {
+   "file": "EB2-app.dc.html",
+   "x": 1160,
+   "y": 12960,
+   "width": 1080,
+   "height": 1350,
+   "title": "EB2 · app"
+  },
+  "EB3-telefono.dc.html": {
+   "file": "EB3-telefono.dc.html",
+   "x": 2320,
+   "y": 12960,
+   "width": 1080,
+   "height": 1350,
+   "title": "EB3 · telefono"
+  },
+  "EB4-usa-18.dc.html": {
+   "file": "EB4-usa-18.dc.html",
+   "x": 3480,
+   "y": 12960,
+   "width": 1080,
+   "height": 1350,
+   "title": "EB4 · usa-18"
+  },
+  "EB5-condivisione.dc.html": {
+   "file": "EB5-condivisione.dc.html",
+   "x": 4640,
+   "y": 12960,
+   "width": 1080,
+   "height": 1350,
+   "title": "EB5 · condivisione"
+  },
+  "EB6-chiusura.dc.html": {
+   "file": "EB6-chiusura.dc.html",
+   "x": 5800,
+   "y": 12960,
+   "width": 1080,
+   "height": 1350,
+   "title": "EB6 · Chiusura"
+  },
+  "EG1-copertina.dc.html": {
+   "file": "EG1-copertina.dc.html",
+   "x": 0,
+   "y": 14730,
+   "width": 1080,
+   "height": 1350,
+   "title": "EG1 · Copertina (giallo)"
+  },
+  "EG2-app.dc.html": {
+   "file": "EG2-app.dc.html",
+   "x": 1160,
+   "y": 14730,
+   "width": 1080,
+   "height": 1350,
+   "title": "EG2 · app"
+  },
+  "EG3-telefono.dc.html": {
+   "file": "EG3-telefono.dc.html",
+   "x": 2320,
+   "y": 14730,
+   "width": 1080,
+   "height": 1350,
+   "title": "EG3 · telefono"
+  },
+  "EG4-usa-18.dc.html": {
+   "file": "EG4-usa-18.dc.html",
+   "x": 3480,
+   "y": 14730,
+   "width": 1080,
+   "height": 1350,
+   "title": "EG4 · usa-18"
+  },
+  "EG5-condivisione.dc.html": {
+   "file": "EG5-condivisione.dc.html",
+   "x": 4640,
+   "y": 14730,
+   "width": 1080,
+   "height": 1350,
+   "title": "EG5 · condivisione"
+  },
+  "EG6-chiusura.dc.html": {
+   "file": "EG6-chiusura.dc.html",
+   "x": 5800,
+   "y": 14730,
+   "width": 1080,
+   "height": 1350,
+   "title": "EG6 · Chiusura"
   }
  }
 }

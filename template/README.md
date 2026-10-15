@@ -15,6 +15,15 @@ Per C, D, E, F (aggiunti il 15/10/2026, su richiesta del proprietario: "troppi p
 
 Il font è lo stesso per tutti i template: **Bricolage Grotesque** (scelto il 15/10/2026), nella costante `FONT` di `strumenti/carosello.py`. Il logo resta in Space Grotesk.
 
+## Template E: colore di partenza a rotazione (deciso il 15/10/2026)
+Il template E esiste in tre colori di partenza: **blu** (`E-foto-piena/`), **bianco** (`E-foto-piena-bianco/`) e **giallo** (`E-foto-piena-giallo/`). Cambiano fondo, velo, testo, evidenziatore, fumetto e freccia; nel bianco e nel giallo le slide interne alternano le altre tinte. Il testo ha sempre contrasto almeno 4.5:1 (controllato dallo script).
+
+**Regola: ogni post sceglie template E e colore di partenza (blu, bianco, giallo) a rotazione: non iniziare due post di fila con lo stesso colore.** Così il profilo non parte sempre dal blu.
+
+**Ultimo colore usato: bianco** (post Google Play, 15/10/2026). Aggiornare questa riga a ogni post che usa il template E. Prossimo post: blu o giallo.
+
+Per cambiare palette o aggiungere un colore si tocca un solo punto: le costanti `TINTE` e `VARIANTI` in testa a `strumenti/varianti-e.py` (`python3 strumenti/varianti-e.py <cartella-bozza>` rigenera E, EB ed EG nella bozza e controlla i contrasti).
+
 ## Ultima slide: il terminatore
 Tutti i post finiscono con il **terminatore attuale**, in qualsiasi template. I terminatori (attuale e vecchi) sono in `terminatori/`, con le istruzioni per cambiarlo.
 
@@ -25,7 +34,7 @@ Tutti i post finiscono con il **terminatore attuale**, in qualsiasi template. I 
 4. Solo quando il proprietario dice che va bene, Claude crea le slide vere con `strumenti/carosello.py` (`"stile"` scelto, video veri, `--completi`).
 
 ## I file di questa cartella
-- `A-classico/`, `B-fascia/`, `C-telefono-grande/`, `D-numero-gigante/`, `E-foto-piena/` e `F-carta-blocchi/`: le slide in formato Claude Design (`.dc.html`) da copiare in un nuovo canvas, più le anteprime PNG. Le cartelle C-F hanno `copertina`, `slide` (con immagine), `slide-numero` (con cifra grande) e `chiusura`, e una cartella `img/` con le immagini d'esempio, richiamate con `src="img/…"`.
+- `A-classico/`, `B-fascia/`, `C-telefono-grande/`, `D-numero-gigante/`, `E-foto-piena/` (più `E-foto-piena-bianco/` e `E-foto-piena-giallo/`) e `F-carta-blocchi/`: le slide in formato Claude Design (`.dc.html`) da copiare in un nuovo canvas, più le anteprime PNG. Le cartelle C-F hanno `copertina`, `slide` (con immagine), `slide-numero` (con cifra grande) e `chiusura`, e una cartella `img/` con le immagini d'esempio, richiamate con `src="img/…"`.
 - Le immagini dentro i `.dc.html` puntano agli allegati del canvas del 15/10 (`/_blob/…`): in un canvas nuovo vanno caricate di nuovo e sostituite.
 
 Esempio: canvas del post su Gemini 4 Argon — https://claude.ai/artifact/UD5TAg44jgWMUH71UWX4x2
