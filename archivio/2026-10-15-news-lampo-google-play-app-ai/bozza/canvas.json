@@ -145,6 +145,198 @@
    "width": 1080,
    "height": 1350,
    "title": "B1 · Copertina (video-telefono)"
+  },
+  "C1-copertina.dc.html": {
+   "file": "C1-copertina.dc.html",
+   "x": 0,
+   "y": 6780,
+   "width": 1080,
+   "height": 1350,
+   "title": "C1 · Copertina"
+  },
+  "C2-app.dc.html": {
+   "file": "C2-app.dc.html",
+   "x": 1160,
+   "y": 6780,
+   "width": 1080,
+   "height": 1350,
+   "title": "C2 · app"
+  },
+  "C3-telefono.dc.html": {
+   "file": "C3-telefono.dc.html",
+   "x": 2320,
+   "y": 6780,
+   "width": 1080,
+   "height": 1350,
+   "title": "C3 · telefono"
+  },
+  "C4-usa-18.dc.html": {
+   "file": "C4-usa-18.dc.html",
+   "x": 3480,
+   "y": 6780,
+   "width": 1080,
+   "height": 1350,
+   "title": "C4 · usa-18"
+  },
+  "C5-condivisione.dc.html": {
+   "file": "C5-condivisione.dc.html",
+   "x": 4640,
+   "y": 6780,
+   "width": 1080,
+   "height": 1350,
+   "title": "C5 · condivisione"
+  },
+  "C6-chiusura.dc.html": {
+   "file": "C6-chiusura.dc.html",
+   "x": 5800,
+   "y": 6780,
+   "width": 1080,
+   "height": 1350,
+   "title": "C6 · Chiusura"
+  },
+  "D1-copertina.dc.html": {
+   "file": "D1-copertina.dc.html",
+   "x": 0,
+   "y": 8250,
+   "width": 1080,
+   "height": 1350,
+   "title": "D1 · Copertina"
+  },
+  "D2-app.dc.html": {
+   "file": "D2-app.dc.html",
+   "x": 1160,
+   "y": 8250,
+   "width": 1080,
+   "height": 1350,
+   "title": "D2 · app"
+  },
+  "D3-telefono.dc.html": {
+   "file": "D3-telefono.dc.html",
+   "x": 2320,
+   "y": 8250,
+   "width": 1080,
+   "height": 1350,
+   "title": "D3 · telefono"
+  },
+  "D4-usa-18.dc.html": {
+   "file": "D4-usa-18.dc.html",
+   "x": 3480,
+   "y": 8250,
+   "width": 1080,
+   "height": 1350,
+   "title": "D4 · usa-18"
+  },
+  "D5-condivisione.dc.html": {
+   "file": "D5-condivisione.dc.html",
+   "x": 4640,
+   "y": 8250,
+   "width": 1080,
+   "height": 1350,
+   "title": "D5 · condivisione"
+  },
+  "D6-chiusura.dc.html": {
+   "file": "D6-chiusura.dc.html",
+   "x": 5800,
+   "y": 8250,
+   "width": 1080,
+   "height": 1350,
+   "title": "D6 · Chiusura"
+  },
+  "E1-copertina.dc.html": {
+   "file": "E1-copertina.dc.html",
+   "x": 0,
+   "y": 9720,
+   "width": 1080,
+   "height": 1350,
+   "title": "E1 · Copertina"
+  },
+  "E2-app.dc.html": {
+   "file": "E2-app.dc.html",
+   "x": 1160,
+   "y": 9720,
+   "width": 1080,
+   "height": 1350,
+   "title": "E2 · app"
+  },
+  "E3-telefono.dc.html": {
+   "file": "E3-telefono.dc.html",
+   "x": 2320,
+   "y": 9720,
+   "width": 1080,
+   "height": 1350,
+   "title": "E3 · telefono"
+  },
+  "E4-usa-18.dc.html": {
+   "file": "E4-usa-18.dc.html",
+   "x": 3480,
+   "y": 9720,
+   "width": 1080,
+   "height": 1350,
+   "title": "E4 · usa-18"
+  },
+  "E5-condivisione.dc.html": {
+   "file": "E5-condivisione.dc.html",
+   "x": 4640,
+   "y": 9720,
+   "width": 1080,
+   "height": 1350,
+   "title": "E5 · condivisione"
+  },
+  "E6-chiusura.dc.html": {
+   "file": "E6-chiusura.dc.html",
+   "x": 5800,
+   "y": 9720,
+   "width": 1080,
+   "height": 1350,
+   "title": "E6 · Chiusura"
+  },
+  "F1-copertina.dc.html": {
+   "file": "F1-copertina.dc.html",
+   "x": 0,
+   "y": 11190,
+   "width": 1080,
+   "height": 1350,
+   "title": "F1 · Copertina"
+  },
+  "F2-app.dc.html": {
+   "file": "F2-app.dc.html",
+   "x": 1160,
+   "y": 11190,
+   "width": 1080,
+   "height": 1350,
+   "title": "F2 · app"
+  },
+  "F3-telefono.dc.html": {
+   "file": "F3-telefono.dc.html",
+   "x": 2320,
+   "y": 11190,
+   "width": 1080,
+   "height": 1350,
+   "title": "F3 · telefono"
+  },
+  "F4-usa-18.dc.html": {
+   "file": "F4-usa-18.dc.html",
+   "x": 3480,
+   "y": 11190,
+   "width": 1080,
+   "height": 1350,
+   "title": "F4 · usa-18"
+  },
+  "F5-condivisione.dc.html": {
+   "file": "F5-condivisione.dc.html",
+   "x": 4640,
+   "y": 11190,
+   "width": 1080,
+   "height": 1350,
+   "title": "F5 · condivisione"
+  },
+  "F6-chiusura.dc.html": {
+   "file": "F6-chiusura.dc.html",
+   "x": 5800,
+   "y": 11190,
+   "width": 1080,
+   "height": 1350,
+   "title": "F6 · Chiusura"
   }
  }
 }
