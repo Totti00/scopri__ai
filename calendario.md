@@ -17,7 +17,7 @@ Il proprietario pubblica a mano all'orario indicato.
 - Regole complete: `format/2-news-lampo.md`.
 
 **Sabato:** niente post fissi (una news lampo solo se è eccezionale).
-**Reel (quando pronti):** martedì alle 20:00, la fascia dei reel migliori di ai__facile.
+**Reel** (dal 15/10/2026): ogni post ha la sua versione Reel di 20 secondi, alle **20:00** (la fascia dei reel migliori di ai__facile): news lampo lo stesso giorno, lunedì → martedì, venerdì → sabato, domenica → lunedì. Dettagli in `format/5-reel.md`.
 
 ## Partenza
 - Venerdì 16/10, 15:30: prompt efficaci.

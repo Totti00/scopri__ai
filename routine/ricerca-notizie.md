@@ -1,6 +1,6 @@
 # Routine: ricerca notizie (ogni giorno, 07:45)
 
-Segui prima i passi comuni di `routine/README.md`.
+Il regista segue `routine/README.md`. Qui ci sono le indicazioni per questa rubrica (`news`). La sezione 1 la usa il `ricercatore`.
 
 ## 1. Cerca (notizie delle ultime 24–48 ore)
 Nell'ordine:
@@ -10,21 +10,9 @@ Nell'ordine:
 4. **Reddit** (con `strumenti/leggi-pagina.cjs`): r/technology, r/artificial, r/OpenAI, r/ChatGPT, r/singularity, r/nottheonion (top del giorno).
 5. Ricerca web per confermare e per completare.
 
-## 2. Scegli e vota
-Tieni solo notizie di tech e AI che interessano o incuriosiscono una persona normale (vedi `CLAUDE.md`, "Di cosa parliamo"). Per ognuna:
-- titolo in una riga;
-- perché interessa (1 frase);
-- 2 fonti che la confermano (almeno una di livello 1 o 2);
-- voto da 1 a 5;
-- se è già in `archivio/`.
-
-Salva tutto in `notizie/AAAA-MM-GG.md` (anche se il voto è basso: servono per le news del lunedì).
-
-## 3. Se c'è una notizia da 4 o 5
-- Prendi la migliore (una sola) e prepara la news lampo seguendo `format/2-news-lampo.md`.
-- Cartella: `archivio/AAAA-MM-GG-news-lampo-<argomento>/`.
-- In `note.md` scrivi: "Bozza da approvare: il proprietario decide se pubblicarla."
-- Nel messaggio finale: titolo, perché vale 4–5, orario consigliato (12:30), e le altre notizie da 4–5 in una riga ciascuna.
-
-## 4. Se nessuna arriva a 4
-Salva solo `notizie/AAAA-MM-GG.md`, fai commit e push, e scrivi in una riga: "Oggi niente news lampo" con la notizia migliore e il suo voto.
+## 2. Analisi e scelta
+Le fanno l'`analista` e il `selezionatore` (vedi `.claude/agents/`), con queste regole:
+- solo notizie di tech e AI che interessano o incuriosiscono una persona normale (`CLAUDE.md`, "Di cosa parliamo");
+- tutto finisce in `notizie/AAAA-MM-GG.md`, anche le notizie con voto basso: servono per le news del lunedì;
+- news lampo solo con voto **4 o 5**, al massimo una al giorno, cartella `archivio/AAAA-MM-GG-news-lampo-<argomento>/`;
+- orari consigliati: carosello 12:30, Reel 20:00 dello stesso giorno.

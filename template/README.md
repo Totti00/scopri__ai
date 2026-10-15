@@ -14,7 +14,7 @@ Tutti i post finiscono con il **terminatore attuale**, in qualsiasi template. I 
 
 ## Come si lavora a un post (deciso il 15/10/2026)
 1. Si decide la notizia e Claude scrive i testi: cosa ha fatto l'AI, in poche parole, più un commento di due o tre parole per slide.
-2. **Bozza su Claude Design, senza video.** Claude crea un canvas con le slide del post in **ogni template** (un fotogramma al posto del video) e manda il link.
+2. **Bozza su Claude Design, senza video.** Claude crea un canvas con le slide del post in **ogni template** (un fotogramma al posto del video) e manda il link, insieme all'anteprima del Reel (`reel-anteprima.png`).
 3. Il proprietario sceglie il template e corregge testi e grafica sul canvas.
 4. Solo quando il proprietario dice che va bene, Claude crea le slide vere con `strumenti/carosello.py` (`"stile"` scelto, video veri, `--completi`).
 

@@ -39,5 +39,5 @@ Per non passare da pagina che ripubblica:
 - **Collaborazioni:** con la funzione "Collabora" insieme a pagine vicine ma non concorrenti (tech, scuola, lavoro, risparmio). Mai con le pagine di notizie AI.
 - **Mai:** comprare follower, gruppi di like reciproci, segui/smetti di seguire.
 
-## Rimandato
-- **Reel** (deciso il 15/10/2026: per ora no). Arrivano a più persone che non ci seguono; i video li abbiamo già. Da riprendere quando il proprietario vorrà.
+## Reel
+Attivi dal 15/10/2026: ogni post ha la sua versione Reel in motion graphics di circa 20 secondi (`format/5-reel.md`). Arrivano a più persone che non ci seguono.

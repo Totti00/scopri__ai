@@ -50,6 +50,9 @@ Regole complete in `brand/crescita.md` (15/10/2026). In breve:
 - una riga `📩 Mandalo a …` e una domanda vera; mai esche come "commenta SÌ" o "tagga 3 amici";
 - mai un contenuto di altri messo da solo: sempre dentro le nostre slide, con i nostri testi.
 
+## La squadra di agenti
+Il lavoro è diviso in fasi, ognuna con il suo agente in `.claude/agents/` (deciso il 15/10/2026): `ricercatore` → `analista` → `selezionatore` → `costruttore-post` e `costruttore-reel`. Li coordina la routine (il "regista", `routine/README.md`), che si ferma due volte ad aspettare il proprietario: dopo la scelta della notizia e dopo la bozza. **La pubblicazione la fa il proprietario.**
+
 ## Rubriche e calendario
 - Rubriche: `format/` (una scheda per rubrica, con struttura delle slide e della caption).
 - Calendario: `calendario.md`.
@@ -60,5 +63,6 @@ Una cartella `archivio/AAAA-MM-GG-rubrica-argomento/` con:
 - per le slide video anche `slide-NN-completo.mp4`, con il video intero: il proprietario sceglie da solo inizio e fine (vedi `strumenti/montaggio.md`)
 - `caption.txt` — pronta da copiare su Instagram
 - `alt-text.txt` — il testo alternativo, una riga per slide (vedi `brand/crescita.md`)
+- `reel.json`, `reel.mp4` e `caption-reel.txt` — la versione Reel di 20 secondi (vedi `format/5-reel.md`)
 - `fonti.md` — link alle fonti usate e data di consultazione
 - `note.md` — cosa è stato provato (prompt) e ogni dubbio rimasto
