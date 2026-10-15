@@ -28,6 +28,7 @@ Il JSON ha questa forma:
      "per_te": "…", "visual": {…}},
     {"tipo": "prompt", "titolo": "…", "quando": "Quando ti serve…",
      "prompt": "Testo con [PARTI DA CAMBIARE]", "nota": "Cambia le parti in giallo."},
+    {"tipo": "chiusura", "colore": "blu"}   colore di partenza della chiusura attuale: blu, bianco (default) o giallo
     {"tipo": "chiusura"}   il terminatore attuale (TERMINATORE_ATTUALE); per usarne un altro:
                            {"tipo": "chiusura", "terminatore": "calendario"}
   ]
@@ -221,8 +222,13 @@ def slide_chiusura(s, ctx):
 <div style="font-size:34px;color:{GRIGIO_SU_BLU}">Segui <b style="color:{BIANCO}">@scopri__ai</b> e salva il post per ritrovarlo 📌</div>''')
 
 
-SVG_NOTIFICA = f'''<svg width="700" height="660" viewBox="0 0 700 660" aria-hidden="true">
-<circle cx="350" cy="330" r="290" fill="{GIALLO}"/>
+def svg_notifica(colore="bianco"):
+    """Smartphone con la notifica; cambiano cerchio, scintille e stelline col colore della slide."""
+    cerchio = BIANCO if colore == "giallo" else GIALLO
+    stella = GIALLO if colore == "blu" else BLU
+    righette = BIANCO if colore == "blu" else NERO
+    return f'''<svg width="700" height="660" viewBox="0 0 700 660" aria-hidden="true">
+<circle cx="350" cy="330" r="290" fill="{cerchio}"/>
 <g transform="rotate(-8 350 330)">
 <rect x="210" y="60" width="280" height="540" rx="44" fill="{NERO}"/><rect x="226" y="78" width="248" height="504" rx="32" fill="{BLU}"/>
 <rect x="310" y="92" width="80" height="18" rx="9" fill="{NERO}"/>
@@ -239,21 +245,34 @@ SVG_NOTIFICA = f'''<svg width="700" height="660" viewBox="0 0 700 660" aria-hidd
 <path d="M0 -60 C 34 -60, 52 -34, 52 0 V 34 L 66 54 H -66 L -52 34 V 0 C -52 -34, -34 -60, 0 -60 Z" fill="{BIANCO}" stroke="{NERO}" stroke-width="8"/>
 <circle cx="0" cy="68" r="14" fill="{NERO}"/><circle cx="0" cy="-66" r="8" fill="{NERO}"/>
 </g>
-<path d="M610 60 L640 40 M630 110 L668 104 M600 20 L610 -6" stroke="{NERO}" stroke-width="8" stroke-linecap="round"/>
-<path d="M80 470 l10 28 28 10 -28 10 -10 28 -10 -28 -28 -10 28 -10z" fill="{BLU}"/>
+<path d="M610 60 L640 40 M630 110 L668 104 M600 20 L610 -6" stroke="{righette}" stroke-width="8" stroke-linecap="round"/>
+<path d="M80 470 l10 28 28 10 -28 10 -10 28 -10 -28 -28 -10 28 -10z" fill="{stella}"/>
 </svg>'''
 
 
+SVG_NOTIFICA = svg_notifica()
+
+
 def chiusura_notifica(s, ctx):
-    """Chiusura fissa di tutti i post (scelta il 15/10/2026): lo smartphone con la notifica."""
+    """Chiusura fissa di tutti i post (scelta il 15/10/2026): lo smartphone con la notifica.
+    Colore di partenza a scelta (il costruttore ruota): {"tipo": "chiusura", "colore": "blu" | "bianco" | "giallo"}.
+    Senza "colore" resta carta (bianco), come prima."""
+    colore = {"carta": "bianco"}.get(s.get("colore", "bianco"), s.get("colore", "bianco"))
+    fondo = {"bianco": "carta", "blu": "blu", "giallo": "giallo"}[colore]
     titolo = s.get("titolo", "Le novità sull'AI, *appena escono*.")
     righe = s.get("inviti", ["🔔 Segui @scopri__ai e attiva le notifiche", "📌 E salva il post per ritrovarlo"])
+    primo = (GIALLO, NERO) if colore == "blu" else (BLU, BIANCO)
     inviti = "".join(
-        f'<div style="background:{BLU if i == 0 else BIANCO};color:{BIANCO if i == 0 else NERO};border-radius:28px;padding:22px 30px;'
+        f'<div style="background:{primo[0] if i == 0 else BIANCO};color:{primo[1] if i == 0 else NERO};border-radius:28px;padding:22px 30px;'
         f'font-size:38px;font-weight:700">{html.escape(r)}</div>' for i, r in enumerate(righe))
-    return ("carta", f'''<div style="align-self:stretch">{logo("carta")}</div>
-<div style="align-self:center">{SVG_NOTIFICA}</div>
-<div style="font-size:80px;font-weight:800;line-height:1;letter-spacing:-3px;text-align:center">{evidenzia(titolo, "carta")}</div>
+    ev = {"bianco": f"background:{GIALLO};color:{NERO}", "blu": f"background:{GIALLO};color:{NERO}",
+          "giallo": f"background:{BLU};color:{BIANCO}"}[colore] + ";padding:0 10px;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone"
+    t = html.escape(titolo)
+    t = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", t)
+    t = re.sub(r"\*(.+?)\*", rf'<span style="{ev}">\1</span>', t)
+    return (fondo, f'''<div style="align-self:stretch">{logo("blu" if colore == "blu" else "carta")}</div>
+<div style="align-self:center">{svg_notifica(colore)}</div>
+<div style="font-size:80px;font-weight:800;line-height:1;letter-spacing:-3px;text-align:center">{t}</div>
 <div style="flex:1"></div>
 <div style="display:flex;flex-direction:column;gap:14px">{inviti}</div>''')
 

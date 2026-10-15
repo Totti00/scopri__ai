@@ -12,8 +12,11 @@ Ogni cartella contiene:
 - `slide.png`: com'è la slide;
 - `claude-design.dc.html`: la versione da aprire e modificare su Claude Design.
 
+**Colori della chiusura `notifica`** (deciso il 15/10/2026): esiste in tre colori di partenza, in `2026-10-15-notifica/`: `claude-design-bianco.dc.html` (carta, quella di prima, uguale a `claude-design.dc.html`), `claude-design-blu.dc.html` e `claude-design-giallo.dc.html`, con i rispettivi `slide-bianco.png`, `slide-blu.png`, `slide-giallo.png`. Il colore lo sceglie il `costruttore-post` a rotazione (vedi `template/README.md`). Si rigenerano con `python3 strumenti/varianti-colori.py chiusura`.
+
 ## Come si usa
 - Nel `slide.json` del post: `{"tipo": "chiusura"}` usa il terminatore **attuale**.
+- Con colore di partenza: `{"tipo": "chiusura", "colore": "blu"}` (blu, bianco o giallo; senza `colore` è bianco/carta).
 - Per usarne un altro solo in un post: `{"tipo": "chiusura", "terminatore": "calendario"}`.
 
 ## Come se ne aggiunge uno nuovo
