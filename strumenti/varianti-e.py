@@ -139,7 +139,7 @@ def copertina(t):
     h = (f'E se esistesse {ev(t, "un&#39;app fatta apposta per te", 12, 12)}?').replace("&#39;", "'")
     dentro = (fondo(t, c["cerchio"], c["img"], c["pos"]) +
         f'<div style="position:absolute;top:60px;right:56px;font-family:\'JetBrains Mono\',monospace;font-weight:700;font-size:26px;color:{t["badge_news"]};letter-spacing:1px;background:{t["badge_sfondo"]};padding:10px 22px;border-radius:999px">NEWS LAMPO</div>'
-        f'<div style="position:absolute;left:64px;right:64px;bottom:64px"><h1 style="margin:0;font-size:104px;font-weight:800;line-height:1;letter-spacing:-4px">{h}</h1>'
+        f'<div style="position:absolute;left:64px;right:64px;bottom:64px"><h1 style="margin:0;font-size:104px;font-weight:800;line-height:1.2;letter-spacing:-4px">{h}</h1>'
         f'<p style="margin:26px 0 0;font-size:38px;line-height:1.25;color:{t["sotto"]};font-weight:500;width:640px">Google Play ora ci prova. Per ora solo negli USA.</p></div>'
         f'<div style="display:flex;align-items:center;gap:12px;height:96px;box-sizing:border-box;padding:0 30px 0 36px;border-radius:999px;background:{t["pill_sfondo"]};color:{t["pill_testo"]};font-size:38px;font-weight:800;letter-spacing:-1px;position:absolute;right:64px;bottom:64px;box-shadow:8px 8px 0 {t["pill_ombra"]}">Scorri{freccia(t["pill_testo"])}</div>')
     return cornice(t, dentro)
