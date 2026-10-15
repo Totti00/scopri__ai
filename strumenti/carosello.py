@@ -28,8 +28,8 @@ Il JSON ha questa forma:
      "per_te": "…", "visual": {…}},
     {"tipo": "prompt", "titolo": "…", "quando": "Quando ti serve…",
      "prompt": "Testo con [PARTI DA CAMBIARE]", "nota": "Cambia le parti in giallo."},
-    {"tipo": "chiusura"}   la chiusura fissa con la notifica ("titolo" e "inviti" facoltativi;
-                           il vecchio calendario resta come "chiusura-calendario")
+    {"tipo": "chiusura"}   il terminatore attuale (TERMINATORE_ATTUALE); per usarne un altro:
+                           {"tipo": "chiusura", "terminatore": "calendario"}
   ]
 }
 Visual possibili:
@@ -254,8 +254,19 @@ def chiusura_notifica(s, ctx):
 <div style="display:flex;flex-direction:column;gap:14px">{inviti}</div>''')
 
 
-TIPI = {"copertina": slide_copertina, "testo": slide_testo, "prompt": slide_prompt, "chiusura": chiusura_notifica,
-        "chiusura-calendario": slide_chiusura}
+# Terminatori: l'ultima slide di ogni post. Possono cambiare nel tempo (vedi template/terminatori/).
+TERMINATORE_ATTUALE = "notifica"
+
+
+def chiusura(s, ctx):
+    """Usa il terminatore scelto nel JSON ("terminatore": "…") o quello attuale."""
+    nome = s.get("terminatore", TERMINATORE_ATTUALE)
+    if nome == "calendario":
+        return (b_chiusura if ctx.get("stile_b") else slide_chiusura)(s, ctx)
+    return chiusura_notifica(s, ctx)
+
+
+TIPI = {"copertina": slide_copertina, "testo": slide_testo, "prompt": slide_prompt, "chiusura": chiusura}
 
 
 # ---------- Template B ("fascia"): immagine a tutta larghezza in alto, fascia di colore sotto ----------
@@ -335,8 +346,7 @@ def b_chiusura(s, ctx):
 <div style="font-size:34px">Segui <b>@scopri__ai</b> e salva il post per ritrovarlo.</div>''')
 
 
-TIPI_B = {"copertina": b_copertina, "testo": b_testo, "prompt": slide_prompt, "chiusura": chiusura_notifica,
-          "chiusura-calendario": b_chiusura}
+TIPI_B = {"copertina": b_copertina, "testo": b_testo, "prompt": slide_prompt, "chiusura": chiusura}
 
 
 def pagina(fondo, contenuto, con_video=False, assoluta=False):
@@ -393,6 +403,7 @@ def main():
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
     ctx = {"rubrica": spec.get("rubrica", ""), "cartella": cartella}
     stile_b = spec.get("stile", "A") == "B"
+    ctx["stile_b"] = stile_b
     tmp = cartella / ".html"
     tmp.mkdir(exist_ok=True)
     for i, s in enumerate(spec["slides"], 1):

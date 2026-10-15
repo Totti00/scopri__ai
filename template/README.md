@@ -9,8 +9,8 @@ Ogni post può usare un template diverso. Si sceglie post per post.
 
 Il font è lo stesso per tutti i template: **Bricolage Grotesque** (scelto il 15/10/2026), nella costante `FONT` di `strumenti/carosello.py`. Il logo resta in Space Grotesk.
 
-## Chiusura fissa (scelta il 15/10/2026)
-Tutti i post, in qualsiasi template, finiscono con la stessa slide: lo smartphone con la notifica di Scopri.AI, "Le novità sull'AI, appena escono." e gli inviti "🔔 Segui @scopri__ai e attiva le notifiche" / "📌 E salva il post per ritrovarlo". Nel JSON: `{"tipo": "chiusura"}`. File: `chiusura-notifica.dc.html`, anteprima `chiusura-notifica.png`.
+## Ultima slide: il terminatore
+Tutti i post finiscono con il **terminatore attuale**, in qualsiasi template. I terminatori (attuale e vecchi) sono in `terminatori/`, con le istruzioni per cambiarlo.
 
 ## Come si lavora a un post (deciso il 15/10/2026)
 1. Si decide la notizia e Claude scrive i testi: cosa ha fatto l'AI, in poche parole, più un commento di due o tre parole per slide.
