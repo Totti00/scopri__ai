@@ -14,6 +14,7 @@
 ## Foto e video
 - `media/roadster1.mp4` — Tesla, video pubblicato da @elonmusk su X (https://x.com/elonmusk/status/2110913107094606330), scaricato via api.fxtwitter.com il 16/10/2026.
 - `media/roadster2.mp4` — Tesla Live, video pubblicato da @elonmusk su X (https://x.com/elonmusk/status/2110923689797808453), scaricato via api.fxtwitter.com il 16/10/2026.
+- `media/tesla-kickflip.mp4` — Tesla, "Do a kickflip!" (44 s, 4K, con audio), dal post di @Tesla su X (https://x.com/Tesla/status/2110926164306931860), indicato dal proprietario e scaricato via api.fxtwitter.com il 16/10/2026: è il video del Reel.
 - `media/*.png` — fotogrammi estratti da noi dai due video.
 - Non usati: il video di Reddit (v.redd.it, ripubblicazione) e il video di Alef (non scaricato: andrebbe preso dal post originale di Alef).
 

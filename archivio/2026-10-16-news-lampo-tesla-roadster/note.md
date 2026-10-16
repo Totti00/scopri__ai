@@ -46,3 +46,6 @@ reel.json (A) e reel-b.json (B), formato "video bomba". Le acrobazie programmate
   2. Kavinsky – Testarossa Autodrive (strumentale): atmosfera notturna da auto, va bene con il video girato al buio
   3. Gesaffelstein – Pursuit (quasi tutta strumentale: controllare che il pezzo scelto non abbia la voce)
 - Caption del Reel: `caption-reel.txt` (passa `caption_check.py`: CAPTION PRONTA).
+
+## Reel rifatto (richiesta del proprietario)
+Video intero di @Tesla "Do a kickflip!" (43,9 s) **con l'audio originale**, invece del pezzo di 10 s senza audio. reel.json senza inizio/durata, copertina a 8,5 s; audio unito con ffmpeg (-map 1:a). Niente reel-completo.mp4: il Reel è già il video intero. La versione di 10 s è sostituita.
