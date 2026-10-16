@@ -1,10 +1,10 @@
-# Scopri.AI — istruzioni per Claude
+# Scopri AI — istruzioni per Claude
 
-Questo repository produce i contenuti della pagina Instagram **Scopri.AI** (`@scopri__ai`).
+Questo repository produce i contenuti della pagina Instagram **Scopri AI** (`@scopri__ai`).
 Claude prepara i caroselli e le caption; **il proprietario pubblica a mano** su Instagram.
 
 ## Chi siamo
-- **Nome:** Scopri.AI · Intelligenza Artificiale
+- **Nome:** Scopri AI · Intelligenza Artificiale
 - **Promessa:** "L'intelligenza artificiale che funziona davvero."
 - **Pubblico:** italiani curiosi, anche non tecnici (dai 20 ai 70 anni). Se un concetto non lo capirebbe un genitore, va riscritto.
 - **Di cosa parliamo:** tutte le notizie che toccano tecnologia e AI, anche su altri temi (lavoro, salute, sport, soldi, leggi), purché ci sia dentro un minimo di tech. Va bene se interessa a una persona normale o le fa venire curiosità; non va bene se è solo una voce di borsa o una lite fra miliardari senza conseguenze.

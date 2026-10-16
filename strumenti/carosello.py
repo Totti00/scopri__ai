@@ -1,4 +1,4 @@
-"""Crea le slide di un carosello Scopri.AI a partire da un file JSON.
+"""Crea le slide di un carosello Scopri AI a partire da un file JSON.
 
 Uso:
     python3 strumenti/carosello.py archivio/<cartella-post>/slide.json
@@ -238,7 +238,7 @@ def svg_notifica(colore="bianco"):
 <text x="350" y="190" text-anchor="middle" font-family="Inter Tight" font-weight="800" font-size="64" fill="{BIANCO}">09:41</text>
 <rect x="234" y="232" width="232" height="138" rx="22" fill="{BIANCO}"/>
 <g transform="translate(248 250) scale(0.066)"><rect width="700" height="460" rx="110" fill="{BLU}"/><polygon points="120,440 120,600 280,440" fill="{BLU}"/><circle cx="220" cy="230" r="46" fill="{BIANCO}"/><circle cx="350" cy="230" r="46" fill="{BIANCO}"/><circle cx="480" cy="230" r="46" fill="{BIANCO}"/></g>
-<text x="304" y="275" font-family="Inter Tight" font-weight="800" font-size="22" fill="{NERO}">Scopri.AI</text>
+<text x="304" y="275" font-family="Inter Tight" font-weight="800" font-size="22" fill="{NERO}">Scopri AI</text>
 <text x="452" y="274" text-anchor="end" font-family="Inter Tight" font-weight="500" font-size="14" fill="#8A877F">ora</text>
 <text x="250" y="322" font-family="Inter Tight" font-weight="700" font-size="21" fill="{NERO}">🔔 Nuovo post:</text>
 <text x="250" y="350" font-family="Inter Tight" font-weight="700" font-size="21" fill="{NERO}">vieni a scoprirlo!</text>

@@ -1,4 +1,4 @@
-"""Crea un Reel Scopri.AI in motion graphics (1080×1920, 30 fps, senza audio) a partire da un file JSON.
+"""Crea un Reel Scopri AI in motion graphics (1080×1920, 30 fps, senza audio) a partire da un file JSON.
 
 Uso:
     python3 strumenti/reel.py archivio/<cartella-post>/reel.json
@@ -153,7 +153,7 @@ def scena_finale(s, fondo, dopo):
 <div style="position:absolute;top:430px;left:0;right:0;display:flex;justify-content:center">
   <div style="animation:rimbalza .6s cubic-bezier(.2,.9,.3,1.3) .3s both">{fumetto(GIALLO, BLU, 380)}</div>
 </div>
-<div class="logo entra" style="position:absolute;top:820px;left:0;right:0;text-align:center;font-size:110px;font-weight:700;letter-spacing:-4px;animation-delay:.45s">Scopri.AI</div>
+<div class="logo entra" style="position:absolute;top:820px;left:0;right:0;text-align:center;font-size:110px;font-weight:700;letter-spacing:-4px;animation-delay:.45s">Scopri AI</div>
 <div style="position:absolute;top:990px;left:110px;right:110px;text-align:center;font-size:76px;font-weight:800;line-height:1.05;letter-spacing:-2.5px">{titolo}</div>
 <div style="position:absolute;top:1260px;left:0;right:0;display:flex;justify-content:center">
   <div class="pop" style="animation-delay:{fine + 0.1:.2f}s;transform-origin:50% 50%">

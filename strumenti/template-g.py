@@ -5,7 +5,7 @@ Uso:
     python3 strumenti/template-g.py          # rifà i 6 .dc.html e anteprima.png
 
 Da dove viene: il design system "Electric Mono" mandato dal proprietario (in inglese, in
-ispirazione/electric-mono.md), ADATTATO a Scopri.AI:
+ispirazione/electric-mono.md), ADATTATO a Scopri AI:
 - tre fondi che si alternano: SCURO (quasi nero), CHIARO (la nostra carta) e ACCENTO (il nostro blu #2340FF);
 - accento: il nostro blu sul chiaro, il nostro giallo sullo scuro e sul blu (niente viola né lilla, vedi brand/identita.md);
 - foto e video VERI (regola 4), ma in bianco e nero con la luce blu dietro: è il "monocromo" di Electric Mono;
@@ -244,7 +244,7 @@ def slide6():
              f'<div style="position:absolute;left:24px;right:24px;top:220px;padding:22px;border-radius:28px;background:linear-gradient(180deg,#17171F 0%,#101015 100%);'
              f'border:2px solid rgba(255,255,255,.08);box-shadow:0 40px 120px -20px rgba(35,64,255,.6)">'
              f'<div style="display:flex;align-items:center;gap:12px">{fumetto(BLU, BIANCO, 42, "•••")}'
-             f'<span style="font-size:24px;font-weight:700;color:{SNOW}">Scopri.AI</span><span style="margin-left:auto;font-family:\'JetBrains Mono\',monospace;font-size:18px;color:{GRIGIO_SCURO_META}">ora</span></div>'
+             f'<span style="font-size:24px;font-weight:700;color:{SNOW}">Scopri AI</span><span style="margin-left:auto;font-family:\'JetBrains Mono\',monospace;font-size:18px;color:{GRIGIO_SCURO_META}">ora</span></div>'
              f'<div style="margin-top:14px;font-size:24px;line-height:1.3;color:{GRIGIO_SCURO_TESTO}">🔔 Nuovo post: vieni a scoprirlo!</div></div>'
              f'<div style="position:absolute;left:24px;right:24px;top:380px;height:90px;border-radius:28px;background:#17171F;opacity:.6"></div></div>')
     corpo = (

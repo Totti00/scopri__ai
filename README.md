@@ -1,4 +1,4 @@
-# Scopri.AI
+# Scopri AI
 
 Contenuti per la pagina Instagram **[@scopri__ai](https://www.instagram.com/scopri__ai/)**: l'intelligenza artificiale che funziona davvero.
 

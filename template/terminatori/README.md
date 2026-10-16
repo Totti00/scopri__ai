@@ -5,7 +5,7 @@ Il **terminatore** è l'ultima slide di ogni post: non parla del post, rappresen
 
 | Data | Nome | Stato | Com'è |
 |---|---|---|---|
-| 15/10/2026 | `notifica` | **attuale** | Fondo carta, smartphone con la notifica di Scopri.AI (avatar: fumetto blu con tre puntini; "Scopri.AI"; "🔔 Nuovo post: vieni a scoprirlo!") e campanella. "Le novità sull'AI, appena escono." + un solo invito per post (dal 16/10/2026): `{"tipo": "chiusura", "invito": "manda" | "salva" | "segui"}` oppure `"invito_testo": "📩 Mandalo a …"`. Nei `.dc.html` si lascia un solo bottone. |
+| 15/10/2026 | `notifica` | **attuale** | Fondo carta, smartphone con la notifica di Scopri AI (avatar: fumetto blu con tre puntini; "Scopri AI"; "🔔 Nuovo post: vieni a scoprirlo!") e campanella. "Le novità sull'AI, appena escono." + un solo invito per post (dal 16/10/2026): `{"tipo": "chiusura", "invito": "manda" | "salva" | "segui"}` oppure `"invito_testo": "📩 Mandalo a …"`. Nei `.dc.html` si lascia un solo bottone. |
 | 14/10/2026 | `calendario` | archiviato | Gli appuntamenti della settimana (Lun, Ven, Dom, Extra) + domanda per i commenti. |
 
 Ogni cartella contiene:

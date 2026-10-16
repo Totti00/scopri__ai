@@ -38,7 +38,7 @@ Regola: **prendiamo le tecniche, non l'identità.**
 - Italia: @hackwithantonio (175K), @simorizzo_ai (124K), @gianlucontent (123K), @learnwithvalerio (525K, in inglese), @geopop (4,2M, scienza).
 - Estero: @evolving.ai (4,8M), @chatgptricks (2,7M), @gptprompts.ai (932K), @dailyprompter (728K), @therundownai (634K).
 
-## Lo spazio libero per Scopri.AI
+## Lo spazio libero per Scopri AI
 Nessuno unisce **velocità + fonti verificate + utilità pratica**: chi è veloce non cita le fonti, chi le cita è lento.
 La nostra firma: **"Fonte:"** su ogni notizia (non sui prompt).
 
