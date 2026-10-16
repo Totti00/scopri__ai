@@ -29,7 +29,9 @@ Il JSON ha questa forma:
     {"tipo": "prompt", "titolo": "…", "quando": "Quando ti serve…",
      "prompt": "Testo con [PARTI DA CAMBIARE]", "nota": "Cambia le parti in giallo."},
     {"tipo": "chiusura", "colore": "blu"}   colore di partenza della chiusura attuale: blu, bianco (default) o giallo
-    {"tipo": "chiusura"}   il terminatore attuale (TERMINATORE_ATTUALE); per usarne un altro:
+    {"tipo": "riepilogo", "titolo": "In breve", "punti": ["…", "…"], "fondo": "giallo"}   slide da salvare (max 5 punti)
+    {"tipo": "chiusura", "invito": "manda" | "salva" | "segui"}   un solo invito (o "invito_testo": "📩 Mandalo a …");
+                           il terminatore attuale (TERMINATORE_ATTUALE); per usarne un altro:
                            {"tipo": "chiusura", "terminatore": "calendario"}
   ]
 }
@@ -45,6 +47,7 @@ Visual possibili:
 Fonti e crediti delle immagini NON vanno sulle slide: vanno in fondo alla caption.
 La "didascalia" serve solo per avvisi come "Esempio illustrativo".
 Nei testi: *parola* = parola chiave (giallo sul blu, riquadro giallo sulla carta); **parola** = grassetto.
+Tutte le slide tranne la copertina hanno il contatore "N/totale" in alto a destra ("contatore": false per toglierlo).
 Le slide vengono salvate come slide-01.png, slide-02.png… nella stessa cartella del JSON.
 """
 import html
@@ -253,6 +256,11 @@ def svg_notifica(colore="bianco"):
 SVG_NOTIFICA = svg_notifica()
 
 
+INVITI = {"segui": "🔔 Segui @scopri__ai e attiva le notifiche",
+          "salva": "📌 Salva il post per ritrovarlo",
+          "manda": "📩 Mandalo a un amico curioso"}
+
+
 def chiusura_notifica(s, ctx):
     """Chiusura fissa di tutti i post (scelta il 15/10/2026): lo smartphone con la notifica.
     Colore di partenza a scelta (il costruttore ruota): {"tipo": "chiusura", "colore": "blu" | "bianco" | "giallo"}.
@@ -260,7 +268,8 @@ def chiusura_notifica(s, ctx):
     colore = {"carta": "bianco"}.get(s.get("colore", "bianco"), s.get("colore", "bianco"))
     fondo = {"bianco": "carta", "blu": "blu", "giallo": "giallo"}[colore]
     titolo = s.get("titolo", "Le novità sull'AI, *appena escono*.")
-    righe = s.get("inviti", ["🔔 Segui @scopri__ai e attiva le notifiche", "📌 E salva il post per ritrovarlo"])
+    # Un solo invito per post (deciso il 16/10/2026), scelto per tipo: notizie → "manda", prompt e liste → "salva".
+    righe = s.get("inviti") or [s.get("invito_testo") or INVITI[s.get("invito", "segui")]]
     primo = (GIALLO, NERO) if colore == "blu" else (BLU, BIANCO)
     inviti = "".join(
         f'<div style="background:{primo[0] if i == 0 else BIANCO};color:{primo[1] if i == 0 else NERO};border-radius:28px;padding:22px 30px;'
@@ -289,7 +298,23 @@ def chiusura(s, ctx):
     return chiusura_notifica(s, ctx)
 
 
-TIPI = {"copertina": slide_copertina, "testo": slide_testo, "prompt": slide_prompt, "chiusura": chiusura}
+def slide_riepilogo(s, ctx):
+    """Slide "da salvare" prima della chiusura (guida-caroselli, 16/10/2026): titolo + massimo 5 punti brevi."""
+    fondo = s.get("fondo", "giallo")
+    bg, fg = SFONDO[fondo]
+    num_bg, num_fg = (GIALLO, NERO) if fondo == "blu" else (BLU, BIANCO)
+    punti = "".join(
+        f'<div style="display:flex;gap:28px;align-items:center"><div style="flex:none;width:84px;height:84px;border-radius:50%;'
+        f'background:{num_bg};color:{num_fg};display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800">{n}</div>'
+        f'<div style="font-size:46px;font-weight:700;line-height:1.15;letter-spacing:-1px">{evidenzia_b(p, fondo)}</div></div>'
+        for n, p in enumerate(s.get("punti", [])[:5], 1))
+    return (fondo, f'''{logo("blu" if fondo == "blu" else "carta")}
+<div style="font-size:{s.get("dimensione", 88)}px;font-weight:800;line-height:1.05;letter-spacing:-3px">{evidenzia_b(s.get("titolo", "In breve"), fondo)}</div>
+<div style="display:flex;flex-direction:column;gap:40px;margin-top:20px">{punti}</div>
+<div style="flex:1"></div>''')
+
+
+TIPI = {"copertina": slide_copertina, "testo": slide_testo, "prompt": slide_prompt, "riepilogo": slide_riepilogo, "chiusura": chiusura}
 
 
 # ---------- Template B ("fascia"): immagine a tutta larghezza in alto, fascia di colore sotto ----------
@@ -369,7 +394,14 @@ def b_chiusura(s, ctx):
 <div style="font-size:34px">Segui <b>@scopri__ai</b> e salva il post per ritrovarlo.</div>''')
 
 
-TIPI_B = {"copertina": b_copertina, "testo": b_testo, "prompt": slide_prompt, "chiusura": chiusura}
+TIPI_B = {"copertina": b_copertina, "testo": b_testo, "prompt": slide_prompt, "riepilogo": slide_riepilogo, "chiusura": chiusura}
+
+
+def contatore(i, totale, fondo):
+    """Numero di slide "3/7" in alto a destra, su tutte tranne la copertina (guida-caroselli, 16/10/2026)."""
+    bg, fg = SFONDO[fondo]
+    return (f'<div class="ass mono" style="top:52px;right:56px;background:{bg};color:{fg};padding:12px 20px;border-radius:999px;'
+            f'font-size:26px;letter-spacing:1px">{i}/{totale}</div>')
 
 
 def pagina(fondo, contenuto, con_video=False, assoluta=False):
@@ -435,6 +467,8 @@ def main():
         ctx["indice"] = i
         tipi = TIPI_B if stile_b else TIPI
         fondo, contenuto = tipi[s["tipo"]](s, ctx)
+        if i > 1 and spec.get("contatore", True):
+            contenuto += contatore(i, len(spec["slides"]), fondo)
         v = s.get("visual") or {}
         f = tmp / f"slide-{i:02d}.html"
         assoluta = stile_b and s["tipo"] in ("copertina", "testo")

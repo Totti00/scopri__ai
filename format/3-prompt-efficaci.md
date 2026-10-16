@@ -18,7 +18,7 @@ Un bisogno concreto della vita di tutti i giorni o del lavoro: scrivere una mail
 Prima di consegnare, Claude esegue ogni prompt che produce testo e annota in `note.md` cosa è uscito. Se un prompt dà risultati deboli, lo riscrive o lo sostituisce.
 
 ## Caption
-Regole in `brand/crescita.md`: parole chiave nella prima riga, massimo 5 hashtag.
+Regole in `brand/crescita.md` e `format/guida-caroselli.md` §8–9: gancio e parole chiave nei primi ~125 caratteri, la caption aggiunge e non ripete le slide, un solo invito (lo stesso della chiusura), massimo 5 hashtag.
 ```
 📌 [titolo]
 
@@ -30,7 +30,7 @@ I 5 prompt:
 
 Copia, cambia le parti tra [parentesi] e incolla.
 
-📩 Mandalo a [chi, preciso]
+📌 Salvalo per [la prossima volta che…]
 Quale provi per primo? 👇
 
 #prompt #chatgpt #intelligenzaartificiale

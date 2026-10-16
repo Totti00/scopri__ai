@@ -28,7 +28,7 @@ Regole:
 5. **Chiusura** (fondo blu) — domanda per i commenti + "Segui @scopri__ai".
 
 ## Caption
-Regole in `brand/crescita.md`: parole chiave nella prima riga, massimo 5 hashtag.
+Regole in `brand/crescita.md` e `format/guida-caroselli.md` §8–9: gancio e parole chiave nei primi ~125 caratteri, la caption aggiunge e non ripete le slide, un solo invito (lo stesso della chiusura), massimo 5 hashtag.
 ```
 ⚡ [titolo-gancio con prodotto/azienda + "intelligenza artificiale"]
 

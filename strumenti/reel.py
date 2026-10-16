@@ -17,7 +17,7 @@ Il JSON ha questa forma:
      "commento": "Si chiama Gemini 4 Argon.", "video": "media/robot.mp4", "inizio": 12, "durata": 3.5},
     {"tipo": "scoperta", "titolo": "Ha insegnato a un robot a *giocare*", "commento": "7 centri di fila.",
      "video": "media/robot.mp4", "inizio": 54, "durata": 3.5, "fondo": "giallo", "posizione": 0.5},
-    {"tipo": "finale", "durata": 2.5}
+    {"tipo": "finale", "durata": 2.5, "invito_testo": "📩 Mandalo a un amico"}   (un solo invito, come nel post; senza: "🔔 Segui @scopri__ai")
   ]
 }
 - "fondo": blu, giallo o carta (se manca, gira blu → giallo → carta; il finale è sempre blu);
@@ -158,7 +158,7 @@ def scena_finale(s, fondo, dopo):
 <div style="position:absolute;top:1260px;left:0;right:0;display:flex;justify-content:center">
   <div class="pop" style="animation-delay:{fine + 0.1:.2f}s;transform-origin:50% 50%">
     <div style="background:{GIALLO};color:{NERO};font-size:52px;font-weight:800;padding:24px 44px;border-radius:999px;
-     animation:batte .8s ease-in-out {fine + 0.6:.2f}s infinite">🔔 Segui @scopri__ai</div>
+     animation:batte .8s ease-in-out {fine + 0.6:.2f}s infinite">{html.escape(s.get("invito_testo", "🔔 Segui @scopri__ai"))}</div>
   </div>
 </div>'''
     return base(contenuto, fondo, dopo, s["durata"])
