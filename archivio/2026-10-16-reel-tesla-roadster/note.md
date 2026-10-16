@@ -1,3 +1,10 @@
+# Reel Tesla Roadster (16/10/2026) — SOLO REEL
+
+**Stato:** il carosello è stato scartato dal proprietario (16/10): bozza, slide e fotogrammi cancellati. Resta solo il Reel: `reel.mp4` (video ufficiale @Tesla "Do a kickflip!", 43,9 s, con audio originale) e `caption-reel.txt` (CAPTION PRONTA). Uscita: oggi alle 20:00.
+Le note qui sotto sulla bozza del carosello sono solo storiche.
+
+---
+
 # Note — Tesla Roadster che salta, si capovolge e "vola" (bozza, 16/10/2026)
 
 ## Scelta del proprietario
