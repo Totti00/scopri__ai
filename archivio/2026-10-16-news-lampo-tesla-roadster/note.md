@@ -30,3 +30,6 @@
 - `media/roadster2.mp4` (48 s, 1398×782, Tesla Live, post di @elonmusk): 8–11 s derapata con i getti (slide 5), 12–15 s rampa a C a testa in giù (slide 3), 26–31 s capriola sopra il Tesla Semi (slide 2 e seconda idea di copertina), 39–45 s auto sollevata dai getti (sfondo di E6).
 - Fotogrammi usati nella bozza: `media/*.png` (copiati in `bozza/img/`).
 - La bozza si rigenera con `python3 bozza/genera-bozza.py` (testi in testa al file).
+
+## Canvas Claude Design (bozza)
+https://claude.ai/artifact/QJ6gs6b2BU61NaHichhKNZ
