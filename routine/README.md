@@ -53,7 +53,9 @@ Un sì chiaro ("va bene", "approvato") approva tutto quello che non viene citato
    - `reel.mp4`;
    - i file di `carousels/<slug>/pubblicazione/` (caption, testi alternativi, commenti fissati) e `caption-reel.txt`.
    Un file oltre i 30 MB non si può inviare: ricomprimilo con `ffmpeg -i in.mp4 -c:v libx264 -crf 25 -an -movflags +faststart out.mp4`.
-5. **Messaggio finale** in italiano, breve: cosa è pronto, quando pubblicare carosello e Reel, musica consigliata, eventuali dubbi.
+5. **Messaggio finale** in italiano, breve: cosa è pronto, quando pubblicare carosello e Reel, musica consigliata, eventuali dubbi, e le **ricevute delle caption** (carosello e Reel), per esempio:
+   `✅ CAPTION PRONTA · carosello · notizia — 1092/2200 caratteri · 5 hashtag · invito: 📩 Mandalo a … · domanda: sì · fonti: sì`
+   Se una caption non è PRONTA, rilancia `npm run publish` dopo averla corretta; se resta un avviso, scrivi quale e perché.
 
 ## Limiti
 - Mai pubblicare su Instagram: lo fa il proprietario.

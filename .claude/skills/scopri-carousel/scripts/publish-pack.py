@@ -1,11 +1,23 @@
 """Writes the publishing texts as separate .txt files and checks Instagram's limits.
-Input:  <carousel-dir>/publish.json  {"caption": "...", "alt": ["slide 1", ...], "pinned": ["comment 1", ...]}
+Input:  <carousel-dir>/publish.json  {"caption": "...", "alt": ["slide 1", ...], "pinned": ["comment 1", ...],
+                                     "tipo": "notizia|curiosita|prompt|lista|serie", "parole": ["gemini", "google"]}
+        (tipo: optional, default from the folder name; parole: what people search, checked in the first 125 characters)
 Output: <carousel-dir>/pubblicazione/01-caption.txt, 02-alt-text-slide-XX.txt, 03-commento-fissato-N.txt
+The caption (and caption-reel.txt, when present) goes through caption_check.py, the Scopri AI caption rules:
+an error there stops the pack. Ends with the "CAPTION PRONTA" receipt(s) for the final message.
 Usage:  python publish-pack.py <carousel-dir>"""
 import json
 import re
 import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import caption_check as cc  # noqa: E402
+
+try:
+    sys.stdout.reconfigure(encoding='utf-8')   # Windows console and emoji
+except AttributeError:
+    pass
 
 LIMIT = 2200            # caption and each comment
 ALT_SOFT = 140          # what worked; guides say ≤125–256, the API allows 1,000
@@ -20,9 +32,15 @@ if n_slides and len(alts) != n_slides:
     errors.append(f'{len(alts)} alt texts for {n_slides} slides')
 if len(caption) > LIMIT:
     errors.append(f'caption is {len(caption)} characters (limit {LIMIT})')
-tags = re.findall(r'(?<!\w)#\w+', caption)
-if not 3 <= len(tags) <= 5:
-    warns.append(f'{len(tags)} hashtags (guide: 3–5)')
+tipo = data.get('tipo') or cc.tipo_da_cartella(base.resolve().name)
+parole = data.get('parole', [])
+checks = [('caption del carosello', cc.check(caption, tipo, 'carosello', parole))]
+reel = base / 'caption-reel.txt'
+if reel.exists():
+    checks.append(('caption-reel.txt', cc.check(reel.read_text(encoding='utf-8'), tipo, 'reel', parole)))
+for name, r in checks:
+    print(f'— {name} —\n{cc.render(r)}\n')
+    errors += [f"{name}: {c['controllo']}: {c['messaggio']}" for c in r['controlli'] if c['esito'] == 'errore']
 for i, p in enumerate(pinned, 1):
     if len(p) > LIMIT:
         errors.append(f'pinned comment {i} is {len(p)} characters (limit {LIMIT})')
@@ -44,6 +62,8 @@ files.update({f'03-commento-fissato-{i}.txt': p for i, p in enumerate(pinned, 1)
 for name, text in files.items():
     (out / name).write_text(text + '\n', encoding='utf-8', newline='\n')
     print(f'{name:30s} {len(text):5d} caratteri')
-print(f'\nFirst 125 characters of the caption (shown before "altro"):\n  {caption[:125]}')
 for w in warns:
     print('warning:', w)
+print()
+for name, r in checks:
+    print(cc.ricevuta(r))

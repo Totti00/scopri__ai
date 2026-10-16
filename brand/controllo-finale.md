@@ -27,6 +27,6 @@ Tabella adattata alle nostre regole; completa la lista di `format/carousel-copy.
 | Esagerazioni o indiscrezioni date per certe | Regola 5 | Condizionale, e lo si dichiara |
 | Formato quadrato | Occupa meno schermo | Sempre 1080×1350 (Reel 1080×1920) |
 | Testi del Reel sotto i pulsanti di Instagram | Non si leggono | `reel.py` li tiene nelle zone libere: non spostarli |
-| Caption senza gancio e parole chiave nei primi ~125 caratteri, più di 5 hashtag | Meno persone raggiunte | Regole in `brand/crescita.md` |
+| Caption senza gancio e parole chiave nei primi ~125 caratteri, più di 5 hashtag | Meno persone raggiunte | Regole in `brand/crescita.md`; `npm run publish` la controlla e deve dire "CAPTION PRONTA" |
 | Evidenziatore su più righe che taglia le code di p, g, q, y | La riga sotto copre le lettere della riga sopra | `line-height` del titolo almeno 1.2; guarda le code sulla prima riga |
 | Manca l'ultima slide (terminatore) | Niente invito a seguire | `{"tipo": "chiusura"}` alla fine |

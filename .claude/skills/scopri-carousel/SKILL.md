@@ -66,7 +66,7 @@ Read `references/carousel-copy.md`, `references/brand-scopri-ai.md` §1, `refere
 8. End with **one** CTA, usually Salva, tied to the value ("Salvalo per la prossima offerta").
 9. Include one honest line that the AI can be wrong and the reader should check (caption or CTA lead).
 10. **Prompt carousels:** each prompt is a complete, working ~100-word prompt: role → context (what's attached, personal data hidden) → 3–4 numbered tasks → output rules with an anti-hallucination clause. Mark the parts to replace with `[parentesi quadre]`. Plan pinned comments, because full prompts don't fit in a caption. See `lessons-learned.md` §1.
-11. Draft the caption: hook in the first 125 characters, emoji at the start of blocks, context, CTA repeated, 3–5 hashtags.
+11. Draft the caption: hook in the first 125 characters, emoji at the start of blocks, context, CTA repeated, 3–5 hashtags. In Scopri AI `npm run publish` checks it with `scripts/caption_check.py` (see `references/publishing.md`).
 
 **Present it in this shape, then stop and wait:**
 
@@ -185,7 +185,8 @@ If the feedback is a rule for every future carousel (a brand, frame or copy habi
 | `scripts/new-carousel.mjs` | scaffold `carousels/<slug>/`, copy the logo kit, install shared deps |
 | `assets/template/` | `index.html` layout library + `engine/` (CSS/JS: frame, thread, glows, lens, motion, QA) + `export.mjs` + `export-video.mjs` |
 | `scripts/previews.py` | contact sheet, strip (seam check), cover at 360 px |
-| `scripts/publish-pack.py` | `publish.json` → `pubblicazione/*.txt` with Instagram limit checks |
+| `scripts/publish-pack.py` | `publish.json` → `pubblicazione/*.txt` with Instagram limit checks and the caption check |
+| `scripts/caption_check.py` | Scopri AI caption rules (Italian), carousel or Reel; prints the "CAPTION PRONTA" receipt |
 | `assets/3d/` | three.js glass & chrome renderer (magnifier, hourglass, add more) → transparent PNGs |
 | `scripts/asset-check.py` | composite assets on DARK / ACCENT / LIGHT for review |
 | `scripts/replicate.mjs` | optional Replicate generation + background removal (token from env only) |

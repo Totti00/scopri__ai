@@ -29,8 +29,8 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e lo **slug** del post: `AAA
 ## Modo "finale" (dopo la seconda fermata)
 1. Applica **tutte** le correzioni del proprietario a `copy.md` e `index.html` (e la copertina scelta).
 2. `npm run export`, `npm run media -- --full` (MP4 delle slide con video e versioni intere `-completo`), `npm run previews`. Guarda il risultato (contact sheet + 2–3 fotogrammi di ogni MP4) e passa `brand/controllo-finale.md` e la lista del §8 di `build-guide.md`.
-3. Scrivi `publish.json` (caption con "Fonti: …" in fondo per notizie e curiosità, un testo alternativo per slide, commenti fissati se servono) e lancia `npm run publish` → cartella `pubblicazione/`.
+3. Scrivi `publish.json` (caption con "Fonti: …" in fondo per notizie e curiosità, un testo alternativo per slide, commenti fissati se servono, `"tipo"` e `"parole"`: le 2–3 parole che la gente cerca, es. `["gemini", "google"]`) e lancia `npm run publish` → cartella `pubblicazione/`. Il comando controlla la caption con le nostre regole (`scripts/caption_check.py`, anche `caption-reel.txt` se c'è già): se trova un errore non scrive niente, correggi e rilancia. Gli avvisi correggili, o spiega perché restano.
 4. Scrivi `fonti.md` (link, data, chi ha fatto foto e video) e `note.md` (dubbi, prove dei prompt, **"## Musica consigliata"**: 2–3 brani strumentali, mai già usati né dello stesso artista dell'ultimo post, vedi `brand/musica-usata.md`; orari consigliati).
-5. Rispondi al regista con l'elenco dei file e i dubbi.
+5. Rispondi al regista con l'elenco dei file, i dubbi e la **ricevuta della caption** (la riga "✅ CAPTION PRONTA …" stampata da `npm run publish`).
 
 Non pubblicare niente su Instagram e non fare commit: lo fa il regista. Le correzioni che valgono per sempre vanno in `references/brand-scopri-ai.md` o `references/lessons-learned.md` della skill (lo dice la skill stessa).

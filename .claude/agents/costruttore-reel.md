@@ -26,7 +26,8 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e la **cartella** del post. 
 1. Applica a `reel.json` le correzioni del proprietario che ti passa il regista.
 2. Lancia `python3 strumenti/reel.py <cartella>/reel.json` → `reel.mp4`.
 3. Controlla 6–8 fotogrammi (all'inizio, a metà e alla fine di ogni scena): testi completi, niente tagli brutti. Passa anche il controllo di `brand/controllo-finale.md` per le voci che riguardano il Reel.
-4. Scrivi `caption-reel.txt`: versione corta della caption del post (prima riga con le parole chiave, 2–3 righe, lo stesso unico invito del post, "Fonti: …" se è una notizia, massimo 5 hashtag).
-5. Rispondi al regista con la durata e i file.
+4. Scrivi `caption-reel.txt` (regole in `brand/crescita.md`, "Caption del carosello e caption del Reel"). Chi guarda il Reel **non ha visto le slide**: caption corta, 2–4 righe, prima riga con le parole che la gente cerca e il gancio, lo stesso unico invito del post, una domanda, "Fonti: …" se è una notizia, massimo 5 hashtag.
+   Controllala: `python .claude/skills/scopri-carousel/scripts/caption_check.py <cartella>/caption-reel.txt --parole "prodotto,azienda"` e correggi finché non dice **CAPTION PRONTA** (gli avvisi che restano spiegali al regista).
+5. Rispondi al regista con la durata, i file e la ricevuta della caption.
 
 Non pubblicare niente e non fare commit: lo fa il regista.

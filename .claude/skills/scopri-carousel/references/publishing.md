@@ -33,18 +33,22 @@ This writes `pubblicazione/01-caption.txt`, `02-alt-text-slide-XX.txt` (one per 
 - the caption and each comment are ≤ 2,200 characters;
 - there is one alt text per exported slide;
 - there are ≤ 3 pinned comments;
-- 3–5 hashtags;
-- alt texts are ≤ 140 characters.
+- alt texts are ≤ 140 characters;
+- **the caption rules of Scopri AI**, through `scripts/caption_check.py` (also on `caption-reel.txt` when it exists): what shows before "altro", search words, ≤ 5 hashtags all at the end, "Fonti: …" before the hashtags for news and curiosità (never on prompt posts), one invite of the right kind, no engagement bait ("commenta PAROLA", "tagga un amico", "link in bio"), one real question, no links, emoji density, the name "Scopri AI". An error stops the pack.
+
+Put `"tipo"` (`notizia`, `curiosita`, `prompt`, `lista`, `serie`; default from the folder name) and `"parole"` (the 2–3 words people search, e.g. `["gemini", "google"]`) in `publish.json`. The run ends with the receipt line(s) `✅ CAPTION PRONTA · …`: paste them in the final message to the user.
+Standalone: `python scripts/caption_check.py caption-reel.txt --parole "gemini,google"` (exit 0 only when PRONTA).
 
 ## 2. Caption
 
 Italian, following `carousel-copy.md` §9, plus the Scopri AI habits:
 
-- **The first ~125 characters are the hook.** It complements slide 1 without repeating it, and ends with 👇.
+- **Carousel caption vs Reel caption.** The carousel caption is read by people who saw the slides: it adds context and never repeats them. The Reel caption is read by people who saw no slide: 2–4 short lines that stand alone (hook with search words, what you see, the invite, the question, sources, hashtags).
+- **The first ~125 characters are the hook.** It complements slide 1 without repeating it.
 - **Emoji:** about one per block, at the start of a line (🧠 📌 💬 🔒 ✍️ 📅 ⚠️ 🔖 style). The user asked for them.
 - **Body:** the context the slides don't hold, such as why it works, how to use it, practical tips and verified facts with their limits.
 - **One honesty line about AI**, e.g. "⚠️ L'AI spiega, ma può sbagliare. Verifica sempre…".
-- **The CTA repeated at the end**, the same single ask as the closing slide (usually "🔖 Salva il post: ti servirà…").
+- **The CTA at the end**, the same single ask as the closing slide, chosen by type: news → "📩 Mandalo a …", prompts and lists → "📌 Salvalo …", series → "🔔 Seguici". Then one real question. For news and curiosità, "Fonti: …" right before the hashtags.
 - **3–5 specific hashtags** at the very end.
 - Natural search keywords the audience would type, in plain Italian.
 
