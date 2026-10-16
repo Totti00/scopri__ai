@@ -1,0 +1,74 @@
+{
+ "rubrica": "Prompt efficaci",
+ "stile": "A",
+ "slides": [
+  {
+   "tipo": "copertina",
+   "titolo": "5 prompt per capire *bolletta e contratti* prima di firmare",
+   "sottotitolo": "Copia e incolla."
+  },
+  {
+   "tipo": "prompt",
+   "etichetta": "01 · CLAUSOLE RISCHIOSE",
+   "titolo": "Trova le *clausole rischiose*",
+   "quando": "Incolla il contratto prima di firmare. L'AI cita la frase esatta e ti dice cosa chiedere di cambiare.",
+   "commento": "Prima di firmare.",
+   "prompt": "Leggi questo contratto e dimmi le 5 clausole più rischiose per me (penali, rinnovo automatico, disdetta, aumenti di prezzo). Per ognuna: cita la frase esatta, spiegala in una riga e dimmi cosa chiedere di cambiare. Se manca un'informazione importante, dimmelo. [INCOLLA IL TESTO, SENZA I TUOI DATI PERSONALI]",
+   "nota": "Funziona con: ChatGPT, Claude, Gemini"
+  },
+  {
+   "tipo": "prompt",
+   "etichetta": "02 · LA BOLLETTA, VOCE PER VOCE",
+   "titolo": "La bolletta *voce per voce*",
+   "quando": "Incolla il testo, senza i tuoi dati. L'AI spiega ogni voce in parole semplici.",
+   "commento": "In due minuti.",
+   "prompt": "Spiegami questa bolletta voce per voce, con parole semplici come se fossi un ragazzino. Per ogni voce dimmi: cosa paga, se dipende dai miei consumi, e in euro quanto pesa. Se non capisci una cifra, chiedimelo invece di indovinare. [INCOLLA IL TESTO DELLA BOLLETTA, SENZA NOME, INDIRIZZO, CODICE CLIENTE, POD/PDR]",
+   "nota": "Funziona con: ChatGPT, Claude, Gemini"
+  },
+  {
+   "tipo": "prompt",
+   "etichetta": "03 · FISSO O VARIABILE?",
+   "titolo": "Cosa paghi sempre e *cosa no*",
+   "quando": "Scopri quali costi non cambiano, quali dipendono dai tuoi consumi e dove puoi risparmiare.",
+   "commento": "Dove risparmiare.",
+   "prompt": "Guarda questa bolletta: quali costi sono fissi e quali dipendono dai miei consumi? Dove posso risparmiare? Se ti manca un dato, chiedimelo invece di indovinare. [INCOLLA IL TESTO DELLA BOLLETTA, SENZA DATI PERSONALI]",
+   "nota": "Funziona con: ChatGPT, Claude, Gemini"
+  },
+  {
+   "tipo": "prompt",
+   "etichetta": "04 · DOMANDE PRIMA DI FIRMARE",
+   "titolo": "Le domande da fare *prima di firmare*",
+   "quando": "Stai per cambiare offerta? L'AI prepara le domande per il servizio clienti.",
+   "commento": "Chiedile prima.",
+   "prompt": "Sto per cambiare offerta [LUCE / GAS / TELEFONO]. Fammi 5 domande da fare al servizio clienti prima di firmare: per quanto tempo il prezzo è bloccato, costi di uscita, cosa cambia quando finisce la promozione, costi fissi e come si disdice.",
+   "nota": "Funziona con: ChatGPT, Claude, Gemini"
+  },
+  {
+   "tipo": "prompt",
+   "etichetta": "05 · LA DISDETTA",
+   "titolo": "La lettera di *disdetta*, senza litigare",
+   "quando": "Breve, cortese, ma ferma. Niente leggi inventate: se servono, ti dice di controllarle.",
+   "commento": "Cortese ma ferma.",
+   "prompt": "Scrivimi una lettera di disdetta per [AZIENDA], contratto [TIPO], breve e cortese ma ferma. Non citare leggi o articoli: se servono, dimmi solo di controllarli.",
+   "nota": "Funziona con: ChatGPT, Claude, Gemini"
+  },
+  {
+   "tipo": "riepilogo",
+   "titolo": "In breve",
+   "punti": [
+    "Clausole rischiose: frase esatta",
+    "Bolletta spiegata voce per voce",
+    "Costi fissi o variabili?",
+    "Domande prima di firmare",
+    "Disdetta cortese ma ferma"
+   ],
+   "fondo": "giallo"
+  },
+  {
+   "tipo": "chiusura",
+   "colore": "blu",
+   "invito": "salva",
+   "invito_testo": "📌 Salvalo per quando arriva la prossima bolletta"
+  }
+ ]
+}

@@ -39,13 +39,13 @@ In `carosello.py` la chiusura accetta `{"tipo": "chiusura", "colore": "blu|bianc
 ### Ultimo colore usato (lo aggiorna il `costruttore-post` a bozza fatta)
 | Template | Ultimo colore usato | Dove |
 |---|---|---|
-| A · Classico | non ancora usato | — |
-| B · Fascia | blu | post Gemini 4 Argon, 14/10/2026 |
-| C · Telefono grande | non ancora usato | — |
-| D · Numero gigante | non ancora usato | — |
-| E · Foto a tutta slide | bianco | post Google Play, 15/10/2026 |
-| F · Carta a blocchi | non ancora usato | — |
-| Chiusura (notifica) | carta (bianco) | tutti i post finora |
+| A · Classico | giallo | post prompt bolletta/contratti, 16/10/2026 |
+| B · Fascia | giallo | post prompt bolletta/contratti, 16/10/2026 |
+| C · Telefono grande | giallo | post prompt bolletta/contratti, 16/10/2026 |
+| D · Numero gigante | giallo | post prompt bolletta/contratti, 16/10/2026 |
+| E · Foto a tutta slide | giallo | post prompt bolletta/contratti, 16/10/2026 |
+| F · Carta a blocchi | giallo | post prompt bolletta/contratti, 16/10/2026 |
+| Chiusura (notifica) | blu | post prompt bolletta/contratti, 16/10/2026 |
 
 Prossimo post: per ogni template, uno dei due colori diversi dall'ultimo (E: blu o giallo; B: bianco o giallo; chiusura: blu o giallo).
 
