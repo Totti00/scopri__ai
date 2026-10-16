@@ -1,0 +1,204 @@
+/* Scopri AI carousel engine: Electric Mono (design-system.md) with the Scopri AI brand layer.
+   Shared by every carousel. Put slide-specific CSS in the carousel's own index.html, not here. */
+
+/* ===== Tokens (design-system.md §15, accent swapped to the brand blue: brand-scopri-ai.md §2) ===== */
+:root{
+  --ink-950:#0A0A0D; --ink-900:#121218; --ink-850:#17171F; --ink-700:#2A2A33;
+  --gray-600:#5E5E6A; --gray-500:#6E6E7A; --gray-450:#7E7E8A; --gray-400:#8B8B97; --gray-300:#A1A1AC;
+  --paper-50:#F7F7FA; --paper-100:#F2F2F5; --paper-200:#E4E5EB;
+  --snow:#F5F5F7; --white:#FFFFFF;
+  --accent-100:#E0E4FF; --accent-300:#8595FF; --accent-500:#2340FF; --accent-700:#0F26BD;
+  --accent-rgb:35,64,255; --accent-300-rgb:133,149,255;
+  --accent-gradient:linear-gradient(120deg,#6F52FF 0%,#2340FF 50%,#1F8EFF 100%);
+  --signal-500:#3DDC84;
+  --font-primary:"Inter Tight","Inter","Helvetica Neue",Arial,sans-serif;
+  --font-meta:"JetBrains Mono","IBM Plex Mono",ui-monospace,monospace;
+  --ease-out:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#15151b}
+body{font-family:var(--font-primary);color:#e9e9ee;min-height:100vh}
+
+/* ===== Dev UI: outside every slide, hidden in export modes ===== */
+.devbar{position:sticky;top:0;z-index:100;display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:14px 24px;background:rgba(14,14,18,.94);border-bottom:1px solid #2a2a33;font:500 13px/1.3 var(--font-meta);letter-spacing:.04em}
+.devbar h1{font:600 16px/1.2 var(--font-primary);letter-spacing:-.01em;margin-right:auto;color:#f5f5f7}
+.devbar h1 small{display:block;font:500 12px/1.4 var(--font-meta);color:#8b8b97;letter-spacing:.04em}
+.devbar button{font:inherit;color:#f5f5f7;background:#1d1d25;border:1px solid #33333d;border-radius:999px;padding:8px 14px;cursor:pointer}
+.devbar button[aria-pressed="true"]{background:var(--accent-500);border-color:var(--accent-500)}
+.qa{padding:12px 24px 0;font:500 13px/1.6 var(--font-meta);white-space:pre-wrap;color:#a1a1ac}
+.qa.ok{color:#3DDC84}.qa.bad{color:#ff8080}
+.deck{--s:.4;display:flex;flex-wrap:wrap;gap:32px;padding:32px 24px 80px}
+.deck.strip{--s:.3;flex-wrap:nowrap;gap:0;overflow-x:auto}
+.slot{width:calc(1080px * var(--s));height:calc(1350px * var(--s));flex:none;position:relative}
+.slot>.slide{position:absolute;left:0;top:0;transform:scale(var(--s));transform-origin:0 0}
+body.export .devbar,body.export .qa{display:none}
+body.export .deck{--s:1;display:block;padding:0}
+body.export .slot>.slide{transform:none}
+body.export:not(.video) *{animation:none!important}          /* static PNGs show the final state */
+body.video.solo .slot{display:none}                         /* one slide at a time, only once capture starts: */
+body.video.solo .slot.on{display:block}                     /* the engine measures layout with every slide visible */
+body.video *{animation-play-state:paused!important}           /* frames are seeked, never played */
+
+/* ===== Slide canvas and background modes (§4.3) ===== */
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;isolation:isolate;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.mode-dark{--tp:var(--snow);--body:var(--gray-300);--meta:var(--gray-400);--acc:var(--accent-300);--recede:var(--gray-500);--hair:rgba(255,255,255,.12);--line:var(--accent-500);--ghost:rgba(255,255,255,.06);--card-shadow:0 40px 120px -20px rgba(var(--accent-rgb),.35)}
+.mode-light{--tp:var(--ink-950);--body:var(--gray-600);--meta:var(--gray-600);--acc:var(--accent-500);--recede:var(--gray-450);--hair:rgba(10,10,13,.12);--line:var(--accent-500);--ghost:rgba(10,10,13,.05);--card-shadow:0 48px 96px -24px rgba(10,10,20,.40),0 12px 32px -8px rgba(10,10,20,.18)}
+.mode-accent{--tp:var(--white);--body:var(--white);--meta:var(--white);--acc:var(--ink-950);--hair:rgba(255,255,255,.24);--line:var(--white);--ghost:rgba(255,255,255,.12);--card-shadow:0 40px 100px -24px rgba(16,20,90,.55)}
+
+/* Layer order (§9.7): bg → pattern → super-shape → ghost → glow → thread → hero → text → grain → frame */
+.layer{position:absolute;left:0;top:0;width:1080px;height:1350px;pointer-events:none}
+.bg{z-index:0}
+.mode-dark .bg{background:radial-gradient(80% 60% at var(--hx,70%) var(--hy,70%),#1A1C2E 0%,transparent 70%),radial-gradient(120% 100% at 50% 50%,transparent 60%,rgba(0,0,0,.45) 100%),#0A0A0D}
+.mode-light .bg{background:radial-gradient(70% 50% at 10% 0%,rgba(255,255,255,.9) 0%,transparent 70%),linear-gradient(160deg,#F7F7FA 0%,#ECEDF1 55%,#E4E5EB 100%)}
+.mode-accent .bg{background:radial-gradient(70% 50% at 10% 0%,rgba(255,255,255,.14) 0%,transparent 70%),linear-gradient(150deg,#4760FF 0%,#2340FF 45%,#1A32D1 100%)}
+/* Atmosphere patterns (§8.7), max one per slide */
+.rings{z-index:1;background:repeating-radial-gradient(circle at var(--rx,540px) var(--ry,675px),transparent 0 54px,rgba(255,255,255,.08) 54px 56px);-webkit-mask-image:radial-gradient(circle at var(--rx,540px) var(--ry,675px),#000 0,transparent 600px);mask-image:radial-gradient(circle at var(--rx,540px) var(--ry,675px),#000 0,transparent 600px)}
+.mode-light .rings{background:repeating-radial-gradient(circle at var(--rx,540px) var(--ry,675px),transparent 0 54px,rgba(10,10,13,.06) 54px 56px)}
+.dots{z-index:1;background-image:radial-gradient(circle,var(--hair) 2px,transparent 2.4px);background-size:32px 32px;opacity:.8}
+/* Super-shape (§8.9): circle, huge and cropped */
+.supershape{position:absolute;z-index:2;border-radius:50%;background:var(--accent-500)}
+.mode-accent .supershape{background:var(--ink-950)}
+/* Ghost type (§5.6): fill treatment */
+.ghost{position:absolute;z-index:3;color:var(--ghost);font-family:var(--font-primary);font-weight:200;line-height:.8;letter-spacing:-.05em;white-space:nowrap;pointer-events:none}
+.ghost.num{font-size:460px;right:-72px;top:176px}
+.ghost.word{font-weight:800;text-transform:uppercase}
+/* Glow (§6.5): place with data-for="<selector>" and the engine centres it on the target */
+.glow{position:absolute;z-index:4;width:0;height:0}
+.glow::before,.glow::after{content:"";position:absolute;left:0;top:0;border-radius:50%;transform:translate(-50%,-50%)}
+.glow::before{width:900px;height:900px}
+.glow::after{width:320px;height:320px}
+.mode-dark .glow::before{background:radial-gradient(circle,rgba(var(--accent-rgb),.40) 0%,rgba(var(--accent-rgb),0) 60%)}
+.mode-dark .glow::after{background:radial-gradient(circle,rgba(var(--accent-300-rgb),.45) 0%,rgba(var(--accent-300-rgb),0) 70%)}
+.mode-accent .glow::before{background:radial-gradient(circle,rgba(255,255,255,.18) 0%,rgba(255,255,255,0) 60%)}
+.mode-accent .glow::after{background:radial-gradient(circle,rgba(255,255,255,.30) 0%,rgba(255,255,255,0) 70%)}
+.mode-light .glow::before{background:radial-gradient(circle,rgba(var(--accent-rgb),.10) 0%,rgba(var(--accent-rgb),0) 60%)}
+.mode-light .glow::after{display:none}
+.thread{z-index:5;overflow:visible}
+.hero{z-index:6}
+.asset{position:absolute;z-index:6;display:block;pointer-events:none}   /* rendered or generated images */
+.grain{z-index:8}
+.mode-dark .grain{opacity:.07;mix-blend-mode:overlay}
+.mode-light .grain{opacity:.05;mix-blend-mode:multiply}
+.mode-accent .grain{opacity:.08;mix-blend-mode:overlay}
+
+/* ===== Frame (§3 + brand overrides): logo lockup, counter, handle, swipe cue ===== */
+.f-logo{position:absolute;left:96px;top:96px;height:40px;width:auto;z-index:9;display:block}
+.f-count{position:absolute;right:96px;top:106px;height:20px;font:500 20px/20px var(--font-meta);letter-spacing:.08em;margin-right:-.08em;color:var(--meta);white-space:nowrap;z-index:9}
+.f-count b{font-weight:500;color:var(--tp)}
+.f-handle{position:absolute;left:96px;top:1223px;height:20px;font:500 20px/20px var(--font-meta);letter-spacing:.04em;color:var(--meta);white-space:nowrap;z-index:9}
+.f-cue{position:absolute;left:928px;top:1198px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;z-index:9}
+.f-cue::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--tp);opacity:.3}
+.f-cue svg{position:relative;width:24px;height:24px;fill:none;stroke:var(--tp);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.f-cue.filled::before{display:none}
+.mode-dark .f-cue.filled,.mode-light .f-cue.filled{background:var(--accent-500)}
+.mode-dark .f-cue.filled svg,.mode-light .f-cue.filled svg{stroke:#fff}
+.mode-accent .f-cue.filled{background:#fff}
+.mode-accent .f-cue.filled svg{stroke:var(--accent-700)}
+
+/* ===== Type (§5.2) ===== */
+.txt{position:absolute;z-index:7}
+.pill{position:absolute;left:96px;top:192px;z-index:7;height:48px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;font:500 20px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.pill::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--dot);flex:none}
+.mode-dark .pill{background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);color:var(--snow);--dot:var(--accent-300)}
+.mode-light .pill{background:var(--ink-950);color:var(--snow);--dot:var(--accent-300)}
+.mode-accent .pill{background:#fff;color:var(--accent-700);--dot:var(--accent-500)}
+.display{font-weight:600;font-size:128px;line-height:.95;letter-spacing:-.045em;color:var(--tp)}
+.h1{font-weight:600;font-size:96px;line-height:1;letter-spacing:-.035em;color:var(--tp)}
+.h2{font-weight:600;font-size:64px;line-height:1.05;letter-spacing:-.025em;color:var(--tp)}
+.h3{font-weight:500;font-size:42px;line-height:1.15;letter-spacing:-.015em;color:var(--tp)}
+.lead{font-weight:400;font-size:35px;line-height:1.3;letter-spacing:-.01em;color:var(--body);text-wrap:pretty}
+.body{font-weight:400;font-size:29px;line-height:1.4;letter-spacing:-.005em;color:var(--body);text-wrap:pretty}
+.body+.body{margin-top:24px}
+.em{color:var(--acc)}
+.rc{color:var(--recede)}
+.bar{border-radius:6px;padding:.08em .2em;-webkit-box-decoration-break:clone;box-decoration-break:clone;background:var(--accent-500);color:#fff}
+.mode-accent .bar{background:#fff;color:var(--accent-700)}
+/* Text stack on the shared axis: x 96, headline top 288 (§2.3) */
+.stack{position:absolute;left:96px;top:288px;width:888px;display:flex;flex-direction:column;align-items:flex-start;z-index:7}
+.stack>.body,.stack>.lead{margin-top:40px}
+.stack>.body+.body{margin-top:24px}
+/* Centred stack (T10 only) */
+.cstack{position:absolute;left:96px;width:888px;top:560px;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:7}
+.cstack .lead{text-wrap:balance;margin-top:40px}
+
+/* ===== UI card (§8.2) and sticker pill (§8.1) ===== */
+.card{background:linear-gradient(180deg,#17171F 0%,#101015 100%);border-radius:28px;border:2px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),var(--card-shadow);color:var(--snow)}
+.card.abs{position:absolute;z-index:6;padding:32px}
+.ui{font:500 24px/1.3 var(--font-primary);color:var(--gray-300)}           /* UI text 20–26px, non-essential only */
+.ui-meta{font:500 20px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400)}
+.sticker{position:absolute;top:-24px;height:48px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;font:500 20px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;z-index:2}
+.sticker::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--dot);flex:none}
+.sticker.check::before{display:none}
+.sticker svg{width:20px;height:20px;fill:none;stroke:var(--signal-500);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.mode-dark .sticker{background:#22232C;border:2px solid rgba(255,255,255,.14);color:var(--snow);--dot:var(--accent-300)}
+.mode-light .sticker{background:var(--ink-950);border:2px solid rgba(255,255,255,.16);color:var(--snow);--dot:var(--accent-300)}
+.mode-accent .sticker{background:#fff;color:var(--accent-700);--dot:var(--accent-500)}
+
+/* Prompt card (T5 prompt series): the prompt is essential text, so it is body size (≥28px), not UI size.
+   ~100-word prompts fit with card bottom ≤ 1100 when the H2 is 1–2 lines. */
+.pcard{position:relative;width:888px;margin-top:56px;padding:40px 44px 42px;font-size:28px;line-height:1.36;letter-spacing:-.005em;font-weight:400;color:var(--snow);z-index:6}
+.pcard .sticker{right:40px;transform:rotate(-3deg)}
+.pcard.alt .sticker{transform:rotate(3deg)}
+.pcard p,.pcard li>span:last-child{text-wrap:pretty}
+.pcard ol{list-style:none;display:flex;flex-direction:column;gap:6px;margin:18px 0}
+.pcard li{display:flex;align-items:baseline}
+.pcard li .n{flex:none;width:40px;font:500 24px/1 var(--font-meta);color:var(--gray-400)}
+.pcard .out{color:var(--gray-300)}
+.ph{color:var(--accent-300);background:rgba(var(--accent-rgb),.18);border-radius:6px;padding:0 .16em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* ===== T7 hairline rows (§8.4) ===== */
+.rows{position:absolute;left:96px;width:888px;z-index:7}
+.row{height:96px;display:flex;align-items:center;border-top:2px solid var(--hair)}
+.row:last-child{border-bottom:2px solid var(--hair)}
+.row .idx{width:76px;flex:none;font:500 20px/1 var(--font-meta);letter-spacing:.08em;color:var(--acc)}
+.mode-accent .row .idx{color:var(--white)}
+.row .t{font:500 42px/1.15 var(--font-primary);letter-spacing:-.015em;color:var(--tp)}
+.row .m{margin-left:auto;font:500 20px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;color:var(--meta)}
+
+/* ===== T4 big number (§5.2 Numeral XXL) + end-point chip (§8.6) ===== */
+.numeral{position:absolute;left:88px;top:272px;z-index:7;font-weight:200;font-size:380px;line-height:.85;letter-spacing:-.06em;background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.mode-accent .numeral{background:none;color:var(--white)}
+.numeral .suf{font-size:.55em;letter-spacing:-.02em}
+.chip{position:absolute;z-index:7;height:44px;padding:0 18px;border-radius:999px;display:inline-flex;align-items:center;font:500 20px/1 var(--font-meta);letter-spacing:.06em;white-space:nowrap;transform:translate(-50%,-100%)}
+.mode-dark .chip{background:#22232C;border:2px solid rgba(var(--accent-300-rgb),.5);color:var(--snow)}
+.mode-light .chip{background:var(--ink-950);color:var(--snow)}
+.mode-accent .chip{background:#fff;color:var(--accent-700)}
+
+/* ===== T6 comparison cards ===== */
+.cmp{position:absolute;left:96px;top:560px;width:888px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;z-index:6}
+.cmp .card{position:relative;padding:40px 36px;display:flex;flex-direction:column;gap:20px;min-height:400px;max-height:540px}
+.cmp .c-tag{font:500 20px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400)}
+.cmp .c-title{font:500 42px/1.15 var(--font-primary);letter-spacing:-.015em;color:var(--snow)}
+.cmp .c-body{font:400 28px/1.4 var(--font-primary);color:var(--gray-300);text-wrap:pretty}
+.cmp .muted .c-title,.cmp .muted .c-body{color:var(--gray-500)}
+.cmp .win{border-color:var(--accent-500);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 40px 120px -20px rgba(var(--accent-rgb),.45)}
+.mode-accent .cmp .win{border-color:#fff}
+.cmp .win .c-tag{color:var(--accent-300)}
+.cmp .ok{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(61,220,132,.14)}
+.cmp .ok svg{width:22px;height:22px;fill:none;stroke:var(--signal-500);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== CSS glass object (§7.5 fallback when no rendered asset is used) ===== */
+.glassobj{position:absolute;z-index:6}
+.glassobj i{position:absolute;display:block;border-radius:50%;background:linear-gradient(150deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.06) 55%,rgba(var(--accent-300-rgb),.12) 100%);border:2px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(24px);backdrop-filter:blur(24px);box-shadow:inset 0 2px 0 rgba(255,255,255,.35),inset 0 -24px 60px rgba(var(--accent-rgb),.35)}
+.glassobj i.sq{border-radius:56px}
+.mode-light .glassobj i{border-color:rgba(10,10,13,.10);background:linear-gradient(150deg,rgba(255,255,255,.7) 0%,rgba(255,255,255,.25) 55%,rgba(var(--accent-300-rgb),.25) 100%);box-shadow:inset 0 2px 0 #fff,0 48px 96px -24px rgba(10,10,20,.35)}
+
+/* ===== Magnifier zoom (see brand cover): a live HTML copy, enlarged inside a circle ===== */
+.lens{position:absolute;width:300px;height:300px;border-radius:50%;z-index:6;box-shadow:0 36px 90px -18px rgba(var(--accent-rgb),.55)}
+.lens .glass{position:absolute;inset:14px;border-radius:50%;overflow:hidden;background:#101015}
+.lens .glass>*{box-shadow:none!important}
+
+/* ===== T10 closing slide ===== */
+.logo-full{position:absolute;left:0;width:1080px;top:324px;height:112px;display:flex;justify-content:center;align-items:center;z-index:7}
+.logo-full img{display:block;height:100%;width:auto}
+.actions{position:absolute;left:0;width:1080px;top:956px;display:flex;justify-content:center;gap:16px;z-index:7}
+.apill{height:56px;padding:0 28px 0 24px;border-radius:999px;border:2px solid var(--tp);border-color:color-mix(in srgb,var(--tp) 30%,transparent);display:inline-flex;align-items:center;gap:12px;font:500 20px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;color:var(--tp)}
+.apill svg{width:24px;height:24px;fill:none;stroke:var(--tp);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== Motion (animated carousels only; the engine assigns these, see references/animation.md) ===== */
+@keyframes a-rise{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+@keyframes a-fade{from{opacity:0}to{opacity:1}}
+@keyframes a-scale{from{opacity:0;scale:.96}to{opacity:1;scale:1}}
+@keyframes a-draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+@keyframes a-float{from{translate:0 0}to{translate:0 -8px}}
+@keyframes a-breathe{from{opacity:.82}to{opacity:1}}
