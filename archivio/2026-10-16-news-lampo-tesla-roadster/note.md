@@ -36,3 +36,13 @@ https://claude.ai/artifact/QJ6gs6b2BU61NaHichhKNZ
 
 ## Reel (chiesto dal proprietario dopo la bozza)
 reel.json (A) e reel-b.json (B), formato "video bomba". Le acrobazie programmate su pista SpaceX vanno nella caption del Reel. Lanciare reel.py con /usr/bin/python3 (Pillow).
+
+## Reel finale (16/10/2026)
+- Versione **A** scelta dal proprietario, senza correzioni: `reel.json` (`media/roadster1.mp4` da 1,3 s, 10,1 s). File: `reel.mp4` (10,1 s, 1080×1920, senza audio), `reel-completo.mp4` (15,4 s, il video intero) e `reel-copertina.jpg` (a 1,6 s).
+- Primo fotogramma: l'auto è già in aria sopra la cabina, con la capriola in corso. Nessun bordo né scritta del video originale (niente zoom).
+- **Orario:** alle **20:00** di oggi, 16/10/2026 (`format/5-reel.md`).
+- **Musica consigliata** (solo strumentali, elettronica carica come per le news lampo; nessuna in `brand/musica-usata.md`; si parte dal punto in cui entra il ritmo; se tra le ↗ di tendenza c'è una strumentale adatta, ha la precedenza):
+  1. The Chemical Brothers – Escape Velocity (strumentale; partire da dove entra il ritmo, dopo l'introduzione)
+  2. Kavinsky – Testarossa Autodrive (strumentale): atmosfera notturna da auto, va bene con il video girato al buio
+  3. Gesaffelstein – Pursuit (quasi tutta strumentale: controllare che il pezzo scelto non abbia la voce)
+- Caption del Reel: `caption-reel.txt` (passa `caption_check.py`: CAPTION PRONTA).
