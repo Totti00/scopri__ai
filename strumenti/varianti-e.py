@@ -83,8 +83,8 @@ INTERNE = [
 ]
 
 # ---------------------------------------------------------------- COSTRUZIONE
-FONTS = ('<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Bricolage+Grotesque:'
-         'wght@400;500;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">')
+FONTS = ('<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter+Tight:'
+         'wght@200;400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">')
 LOGO = ('<svg width="40" height="35" viewBox="0 0 700 600" aria-hidden="true"><rect width="700" height="460" rx="110" fill="#2340FF"></rect>'
         '<polygon points="120,440 120,600 280,440" fill="#2340FF"></polygon><text x="350" y="235" text-anchor="middle" '
         'dominant-baseline="central" font-family="Space Grotesk" font-weight="700" font-size="290" fill="#FFFFFF">AI</text></svg>')
@@ -132,7 +132,7 @@ class Component extends DCLogic {{
 
 def cornice(t, dentro):
     return (f'<div style="width:1080px;height:1350px;position:relative;overflow:hidden;background:{t["base"]};color:{t["testo"]};'
-            f'font-family:\'Bricolage Grotesque\',sans-serif;">{dentro}</div>')
+            f'font-family:\'Inter Tight\',sans-serif;">{dentro}</div>')
 
 def copertina(t):
     c = COPERTINA

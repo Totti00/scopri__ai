@@ -9,11 +9,12 @@ Ogni post può usare un template diverso. Si sceglie post per post.
 | **C · Telefono grande** | Telefono o computer ufficiale grande, inclinato, che esce dal bordo in basso, su un cerchio di colore. Sopra titolo e testo breve, numero di slide (02/06) e barra di avanzamento. Fumetto sul bordo del telefono. Fondi: carta, giallo, blu. | solo Claude Design (`.dc.html`) |
 | **D · Numero gigante** | Una parola o una cifra enorme è la protagonista ("IDEA → APP", "SOLO TU", "18+ USA", "Presto"); testo corto sotto, ritagli con bordo e ombra (stile adesivo), stelline, etichette gialle. Fondi: carta, giallo, blu. | solo Claude Design (`.dc.html`) |
 | **E · Foto a tutta slide** | Immagine a pieno campo (anche ingrandita su un dettaglio) con sfumatura blu in basso, titolo grande sovrapposto con evidenziatore giallo sulla parola chiave, fumetto e freccia di scorrimento. | solo Claude Design (`.dc.html`) |
+| **G · Electric** (16/10/2026) | Da "Electric Mono" (`ispirazione/electric-mono.md`), adattato: fondi che si alternano scuro → carta → scuro → blu → carta → scuro, un protagonista per slide con tanto spazio vuoto, foto vere in bianco e nero con la luce blu dietro, numeri giganti sottili, adesivo giallo per il commento, cornice fissa (fumetto, contatore `02 / 06`, `@scopri__ai`, freccia), grana e un filo che passa da una slide all'altra. Chiusura: la notifica in versione scura. | solo Claude Design (`.dc.html`), si rifà con `python3 strumenti/template-g.py` |
 | **F · Carta a blocchi** | Fondo carta a quadretti, blocchi arrotondati con bordo nero e ombra (titolo con icona, testo, immagine con nastro adesivo), passi numerati 1-2-3-4 in alto, commento come adesivo. Copertina blu a quadretti. | solo Claude Design (`.dc.html`) |
 
 Per C, D, E, F (aggiunti il 15/10/2026, su richiesta del proprietario: "troppi pochi template") le anteprime sono in `template/<cartella>/anteprima.png`; `strumenti/carosello.py` per ora sa fare solo A e B, quindi le slide finali di questi quattro si costruiscono dal `.dc.html` (da portare in `carosello.py` solo se il proprietario ne sceglie uno).
 
-Il font è lo stesso per tutti i template: **Bricolage Grotesque** (scelto il 15/10/2026), nella costante `FONT` di `strumenti/carosello.py`. Il logo resta in Space Grotesk.
+Il font è lo stesso per tutti i template: **Inter Tight** (per tutti i post dal 16/10/2026; prima Bricolage Grotesque), nella costante `FONT` di `strumenti/carosello.py` e nei `.dc.html`. Il logo resta in Space Grotesk.
 
 ## Colori di partenza: tutti i template in blu, bianco e giallo (deciso il 15/10/2026)
 Ogni template (A, B, C, D, E, F) e la slide di chiusura esistono in **tre colori di partenza**: **blu**, **bianco** (carta) e **giallo**. Cambiano solo i colori (fondo, cerchi, evidenziatori, fumetti, frecce, testo, logo); il disegno è lo stesso. Il testo ha sempre contrasto almeno 4.5:1 (scuro su bianco e giallo, chiaro su blu). Nelle slide interne le tinte alternano (non sono tutte uguali), come nel template E.
@@ -27,6 +28,7 @@ Ogni template (A, B, C, D, E, F) e la slide di chiusura esistono in **tre colori
 | **C · Telefono grande** | `C-telefono-grande/` | `C-telefono-grande-bianco/` | `C-telefono-grande-giallo/` | come B |
 | **D · Numero gigante** | `D-numero-gigante/` | `D-numero-gigante-bianco/` | `D-numero-gigante-giallo/` | come B |
 | **E · Foto a tutta slide** | `E-foto-piena/` | `E-foto-piena-bianco/` | `E-foto-piena-giallo/` | blu → blu · bianco → blu, giallo, blu, giallo · giallo → blu, carta, blu, giallo |
+| **G · Electric** (16/10/2026) | Da "Electric Mono" (`ispirazione/electric-mono.md`), adattato: fondi che si alternano scuro → carta → scuro → blu → carta → scuro, un protagonista per slide con tanto spazio vuoto, foto vere in bianco e nero con la luce blu dietro, numeri giganti sottili, adesivo giallo per il commento, cornice fissa (fumetto, contatore `02 / 06`, `@scopri__ai`, freccia), grana e un filo che passa da una slide all'altra. Chiusura: la notifica in versione scura. | solo Claude Design (`.dc.html`), si rifà con `python3 strumenti/template-g.py` |
 | **F · Carta a blocchi** | `F-carta-blocchi/` | `F-carta-blocchi-bianco/` | `F-carta-blocchi-giallo/` | come A |
 | **Chiusura (notifica)** | `terminatori/2026-10-15-notifica/claude-design-blu.dc.html` | `…/claude-design-bianco.dc.html` (quello attuale) | `…/claude-design-giallo.dc.html` | — |
 
@@ -48,6 +50,14 @@ In `carosello.py` la chiusura accetta `{"tipo": "chiusura", "colore": "blu|bianc
 | Chiusura (notifica) | carta (bianco) | tutti i post finora |
 
 Prossimo post: per ogni template, uno dei due colori diversi dall'ultimo (E: blu o giallo; B: bianco o giallo; chiusura: blu o giallo).
+
+## Principi Electric: un'opzione per tutti i template (16/10/2026)
+Tre strati che si possono aggiungere a **qualsiasi** template senza cambiarne il disegno:
+- **cornice fissa**: `@scopri__ai` in basso a sinistra e la freccia in basso a destra, sempre nello stesso punto (contatore in alto a destra se manca);
+- **grana**: un velo fine su tutta la slide, così i fondi non sembrano piatti;
+- **filo**: una linea sottile che corre in basso da una slide all'altra alla stessa altezza (gialla sui fondi scuri e blu, blu su carta e giallo).
+Si aggiungono con `python3 strumenti/principi-electric.py <prefisso> <slide1.dc.html> …` (crea una riga nuova, es. `BE1…BE6`, più l'anteprima). Nella bozza il `costruttore-post` aggiunge una riga "con principi" accanto al template consigliato, così il proprietario sceglie con o senza.
+Esempio: canvas https://claude.ai/artifact/D62GNYZ8fAfRKaE8AkDaRg (G, B con i principi, B normale).
 
 ## Ultima slide: il terminatore
 Tutti i post finiscono con il **terminatore attuale**, in qualsiasi template. I terminatori (attuale e vecchi) sono in `terminatori/`, con le istruzioni per cambiarlo.

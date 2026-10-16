@@ -38,7 +38,7 @@ Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il 
 - Su fondo carta, il logo usa il blu (non il giallo, che sparirebbe).
 
 ## Grafica
-- Font: **Bricolage Grotesque** (titoli e testo, scelto il 15/10/2026), **JetBrains Mono** (etichette e prompt). Il logo resta in **Space Grotesk**.
+- Font: **Inter Tight** (titoli e testo, per tutti i post dal 16/10/2026; prima Bricolage Grotesque), **JetBrains Mono** (etichette, contatore e prompt). Il logo resta in **Space Grotesk**.
 - **Logo ufficiale (scelto il 13/10/2026): "Scopri" + fumetto con "AI".**
   - Foto profilo: `brand/logo/ufficiale/foto-profilo.png` (fumetto giallo con "AI" blu su fondo blu).
   - Logo su fondo blu: `brand/logo/ufficiale/logo-su-blu.png` (testo bianco, fumetto giallo).
