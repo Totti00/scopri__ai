@@ -31,7 +31,7 @@ Gli agenti non fanno commit e non parlano con il proprietario: lo fa il regista.
 ## Fase A — ricerca, analisi, scelta (da sola)
 1. `ricercatore` → poi `analista` → poi `selezionatore`, uno dopo l'altro (ognuno usa il lavoro del precedente).
 2. Commit e push di `notizie/AAAA-MM-GG.md`.
-3. Manda al proprietario il **menu in versione corta** (lo prepara il `selezionatore`): per ogni notizia titolo, voto e i 3 titoli di copertina (a, b, c), i tipi di carosello e il consiglio. Anche nei giorni senza notizie da 4–5: il consiglio sarà "oggi niente", ma decide lui. Chiedi: **"Cosa scegli? Rispondi con un codice (es. "2 b storia"), mescola pure, oppure "niente"."**
+3. Manda al proprietario il **menu in versione corta** (lo prepara il `selezionatore`): per ogni notizia titolo, voto e i 3 titoli di copertina (a, b, c), gli schemi di carosello, l'invito e il consiglio. Anche nei giorni senza notizie da 4–5: il consiglio sarà "oggi niente", ma decide lui. Chiedi: **"Cosa scegli? Rispondi con un codice (es. "2 b storia"), mescola pure, oppure "niente"."**
 
 ### 🛑 Fermata 1 — aspetta la risposta del proprietario
 Non costruire niente finché non risponde. Scrivi la sua scelta in `notizie/AAAA-MM-GG.md`, sezione "4. Scelta del proprietario" (notizia, titolo, tipo di carosello, eventuali modifiche), commit e push. Se chiede altre opzioni, rifai il menu con il `selezionatore`. Se dice "niente", finisci.

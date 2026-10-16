@@ -12,9 +12,10 @@ Valgono per tutti i post. Le schede in `format/` danno la struttura, queste rego
 Fonti (blog di marketing che riportano le parole di Adam Mosseri, capo di Instagram; i pesi esatti non sono pubblici): kontentino.com, creatorlanehq.com, dataslayer.ai, socialync.io, later.com, rankite.com.
 
 ## La caption
+Regole complete in `format/carousel-copy.md` §9: i primi ~125 caratteri sono il gancio, la caption aggiunge e non ripete le slide.
 1. **Prima riga = parole che la gente cerca.** Nome del prodotto o dell'azienda + "intelligenza artificiale" (o il tema: salute, lavoro…), dentro una frase-gancio. È la parte che si vede prima di "altro" e che legge la ricerca di Instagram e di Google.
 2. **Massimo 5 hashtag**, in fondo, precisi: `#intelligenzaartificiale` + prodotto + tema. Instagram ignora quelli oltre il quinto.
-3. **Un motivo per mandarlo a qualcuno**: una riga `📩 Mandalo a …` che nomina una persona precisa ("a chi pensa che l'AI sappia solo scrivere", "al collega che usa ancora Excel a mano"). Una sola per post.
+3. **Un solo invito, lo stesso della chiusura** (16/10/2026, `format/carousel-copy.md` §8): per le notizie `📩 Mandalo a …` con una persona precisa ("a chi pensa che l'AI sappia solo scrivere", "al collega che usa ancora Excel a mano"); per prompt e liste `📌 Salvalo per …`; per le serie `🔔 Seguici`.
 4. **Una domanda vera** per i commenti, sul contenuto. Niente "commenta SÌ", "tagga 3 amici", "commenta X e ti mando Y": Instagram li considera esche e mostra meno il post.
 5. Le **fonti** restano in fondo ("Fonti: …"), prima degli hashtag. Il "Salva" lo chiede già il terminatore: in caption non serve.
 

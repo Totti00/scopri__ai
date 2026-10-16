@@ -15,7 +15,7 @@ Le 5 notizie di tech e AI più rilevanti degli ultimi 7 giorni (anche di altri t
 7. **Chiusura** (fondo blu) — "Ci rivediamo la prossima settimana" + "Segui @scopri__ai per non perderti la prossima".
 
 ## Caption
-Regole in `brand/crescita.md`: parole chiave nella prima riga, massimo 5 hashtag.
+Regole in `brand/crescita.md` e `format/carousel-copy.md` §8–9: gancio e parole chiave nei primi ~125 caratteri, la caption aggiunge e non ripete le slide, un solo invito (lo stesso della chiusura), massimo 5 hashtag.
 ```
 🗞️ Le news AI della settimana che ti sei perso ([date])
 

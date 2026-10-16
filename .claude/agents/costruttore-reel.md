@@ -11,7 +11,7 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e la **cartella** del post. 
 - **Circa 20 secondi**, verticale 1080×1920, senza audio (la musica strumentale la mette il proprietario).
 - Struttura: **gancio** (3 secondi, il momento video più forte) → **3–4 scoperte** (3–4 secondi l'una) → **finale** (2,5–3 secondi).
 - Titoli di massimo 8 parole, commento di 2–3 parole: devono leggersi in 3 secondi.
-- Stessi testi del carosello quando possibile, per coerenza. Ordine in crescendo dopo il gancio (`format/ganci-e-tipi.md`).
+- Stessi testi del carosello quando possibile, per coerenza. Dopo il gancio, subito la scena più forte (`format/carousel-copy.md` §5.3: il meglio all'inizio).
 - Per scegliere i momenti video: estrai una griglia di fotogrammi ogni secondo (ffmpeg) e guardala (Read). Evita schermate con loghi o titoli di altri, persone che parlano in camera, transizioni.
 - Senza video (prompt, curiosità): scene con `"immagine"` o solo testo (vedi `strumenti/reel.py`).
 
@@ -26,7 +26,7 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e la **cartella** del post. 
 1. Applica a `reel.json` le correzioni del proprietario che ti passa il regista.
 2. Lancia `python3 strumenti/reel.py <cartella>/reel.json` → `reel.mp4`.
 3. Controlla 6–8 fotogrammi (all'inizio, a metà e alla fine di ogni scena): testi completi, niente tagli brutti. Passa anche il controllo di `brand/controllo-finale.md` per le voci che riguardano il Reel.
-4. Scrivi `caption-reel.txt`: versione corta della caption del post (prima riga con le parole chiave, 2–3 righe, `📩 Mandalo a …`, "Fonti: …" se è una notizia, massimo 5 hashtag).
+4. Scrivi `caption-reel.txt`: versione corta della caption del post (prima riga con le parole chiave, 2–3 righe, lo stesso unico invito del post, "Fonti: …" se è una notizia, massimo 5 hashtag).
 5. Rispondi al regista con la durata e i file.
 
 Non pubblicare niente e non fare commit: lo fa il regista.
