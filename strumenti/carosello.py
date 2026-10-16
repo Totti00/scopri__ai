@@ -299,7 +299,7 @@ def chiusura(s, ctx):
 
 
 def slide_riepilogo(s, ctx):
-    """Slide "da salvare" prima della chiusura (guida-caroselli, 16/10/2026): titolo + massimo 5 punti brevi."""
+    """Slide "da salvare" prima della chiusura (carousel-copy, 16/10/2026): titolo + massimo 5 punti brevi."""
     fondo = s.get("fondo", "giallo")
     bg, fg = SFONDO[fondo]
     num_bg, num_fg = (GIALLO, NERO) if fondo == "blu" else (BLU, BIANCO)
@@ -398,7 +398,7 @@ TIPI_B = {"copertina": b_copertina, "testo": b_testo, "prompt": slide_prompt, "r
 
 
 def contatore(i, totale, fondo):
-    """Numero di slide "3/7" in alto a destra, su tutte tranne la copertina (guida-caroselli, 16/10/2026)."""
+    """Numero di slide "3/7" in alto a destra, su tutte tranne la copertina (carousel-copy, 16/10/2026)."""
     bg, fg = SFONDO[fondo]
     return (f'<div class="ass mono" style="top:52px;right:56px;background:{bg};color:{fg};padding:12px 20px;border-radius:999px;'
             f'font-size:26px;letter-spacing:1px">{i}/{totale}</div>')

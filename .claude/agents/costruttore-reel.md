@@ -11,7 +11,7 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e la **cartella** del post. 
 - **Circa 20 secondi**, verticale 1080×1920, senza audio (la musica strumentale la mette il proprietario).
 - Struttura: **gancio** (3 secondi, il momento video più forte) → **3–4 scoperte** (3–4 secondi l'una) → **finale** (2,5–3 secondi).
 - Titoli di massimo 8 parole, commento di 2–3 parole: devono leggersi in 3 secondi.
-- Stessi testi del carosello quando possibile, per coerenza. Dopo il gancio, subito la scena più forte (`format/guida-caroselli.md` §5.3: il meglio all'inizio).
+- Stessi testi del carosello quando possibile, per coerenza. Dopo il gancio, subito la scena più forte (`format/carousel-copy.md` §5.3: il meglio all'inizio).
 - Per scegliere i momenti video: estrai una griglia di fotogrammi ogni secondo (ffmpeg) e guardala (Read). Evita schermate con loghi o titoli di altri, persone che parlano in camera, transizioni.
 - Senza video (prompt, curiosità): scene con `"immagine"` o solo testo (vedi `strumenti/reel.py`).
 

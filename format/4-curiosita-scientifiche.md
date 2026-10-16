@@ -20,7 +20,7 @@ Non scade: si può preparare in anticipo e fa da **rubrica di riserva** quando n
 **Fonte obbligatoria** in fondo alla caption, non sulle slide (Nature, Science, MIT Technology Review, siti di università e centri di ricerca, Treccani per le definizioni).
 
 ## Caption
-Regole in `brand/crescita.md` e `format/guida-caroselli.md` §8–9: gancio e parole chiave nei primi ~125 caratteri, la caption aggiunge e non ripete le slide, un solo invito (lo stesso della chiusura), massimo 5 hashtag.
+Regole in `brand/crescita.md` e `format/carousel-copy.md` §8–9: gancio e parole chiave nei primi ~125 caratteri, la caption aggiunge e non ripete le slide, un solo invito (lo stesso della chiusura), massimo 5 hashtag.
 ```
 🔬 [gancio con il tema: corpo, spazio, animali… + AI se c'entra]
 
