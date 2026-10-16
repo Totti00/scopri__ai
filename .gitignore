@@ -5,3 +5,12 @@ archivio/**/media/*.mp4
 # Versioni con il video intero (pesanti): si mandano al proprietario, non vanno su GitHub
 archivio/**/*-completo.mp4
 __pycache__/
+
+# Dipendenze della skill scopri-carousel (si reinstallano da sole)
+node_modules/
+assets/generated/raw/
+assets/generated/*-check.png
+# Caroselli fatti con la skill: video sorgente e versioni intere restano fuori da GitHub
+carousels/**/media/*.mp4
+carousels/**/exports/*-completo.mp4
+carousels/**/*-completo.mp4

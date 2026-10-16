@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>A giallo slide-numero</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Inter+Tight:wght@200;400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>body{margin:0}</style>
+</helmet>
+<div style="width: 1080px; height: 1350px; box-sizing: border-box; padding: 64px 72px; background: #2340FF; color: #FFFFFF; font-family: 'Space Grotesk', sans-serif; display: flex; flex-direction: column; gap: 32px">
+  <div style="display: flex; align-items: center; gap: 8px; font-size: 32px; font-weight: 700; letter-spacing: -1px">Scopri<svg width="44" height="38" viewBox="0 0 700 600" aria-hidden="true"><rect width="700" height="460" rx="110" fill="#FFD84D"></rect><polygon points="120,440 120,600 280,440" fill="#FFD84D"></polygon><text x="350" y="235" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk" font-weight="700" font-size="290" fill="#2340FF">AI</text></svg></div>
+  <h2 style="margin: 0; font-size: 68px; font-weight: 700; line-height: 1.05; letter-spacing: -2px">Per ora è solo per <span style="background: #FFD84D; padding: 0 8px; border-radius: 6px; color: #121212">maggiorenni negli USA</span></h2>
+  <p style="margin: 0; font-size: 38px; line-height: 1.35">All'inizio possono provarla soltanto gli adulti che vivono negli Stati Uniti. Per l'Italia non c'è ancora una data.</p>
+  <div style="align-self: flex-start; background: #FFD84D; padding: 18px 30px; border-radius: 30px 30px 30px 6px; font-size: 38px; font-weight: 700; color: #121212">Poi tocca a noi.</div>
+  <div style="flex: 1; min-height: 0; width: 100%; box-sizing: border-box; background: #FFD84D; color: #121212; border-radius: 36px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; padding: 0 60px"><div style="font-size: 190px; font-weight: 800; letter-spacing: -6px; line-height: 1">18+ · USA</div><div style="font-size: 44px; font-weight: 700; line-height: 1.2">Per ora, solo qui</div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1080,"height":1350}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

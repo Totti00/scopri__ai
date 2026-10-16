@@ -1,4 +1,4 @@
-"""Crea le slide di un carosello Scopri.AI a partire da un file JSON.
+"""Crea le slide di un carosello Scopri AI a partire da un file JSON.
 
 Uso:
     python3 strumenti/carosello.py archivio/<cartella-post>/slide.json
@@ -61,7 +61,7 @@ BLU, BLU_SCURO, CARTA, GIALLO, NERO, BIANCO = "#2340FF", "#1A30C4", "#F4F1EA", "
 GRIGIO_SU_CARTA, GRIGIO_SU_BLU, BORDO = "#55565C", "#DDE3FF", "#E2DED3"
 RADICE = pathlib.Path(__file__).resolve().parent.parent
 SFONDO = {"blu": (BLU, BIANCO), "carta": (CARTA, NERO), "giallo": (GIALLO, NERO)}
-FONT = "Bricolage Grotesque"  # font dei testi (scelto il 15/10/2026; il logo resta in Space Grotesk): si cambia qui per tutti i template
+FONT = "Inter Tight"  # font dei testi (Inter Tight dal 16/10/2026, prima Bricolage Grotesque; il logo resta in Space Grotesk): si cambia qui per tutti i template
 
 
 def evidenzia(testo, fondo):
@@ -235,13 +235,13 @@ def svg_notifica(colore="bianco"):
 <g transform="rotate(-8 350 330)">
 <rect x="210" y="60" width="280" height="540" rx="44" fill="{NERO}"/><rect x="226" y="78" width="248" height="504" rx="32" fill="{BLU}"/>
 <rect x="310" y="92" width="80" height="18" rx="9" fill="{NERO}"/>
-<text x="350" y="190" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="64" fill="{BIANCO}">09:41</text>
+<text x="350" y="190" text-anchor="middle" font-family="Inter Tight" font-weight="800" font-size="64" fill="{BIANCO}">09:41</text>
 <rect x="234" y="232" width="232" height="138" rx="22" fill="{BIANCO}"/>
 <g transform="translate(248 250) scale(0.066)"><rect width="700" height="460" rx="110" fill="{BLU}"/><polygon points="120,440 120,600 280,440" fill="{BLU}"/><circle cx="220" cy="230" r="46" fill="{BIANCO}"/><circle cx="350" cy="230" r="46" fill="{BIANCO}"/><circle cx="480" cy="230" r="46" fill="{BIANCO}"/></g>
-<text x="304" y="275" font-family="Bricolage Grotesque" font-weight="800" font-size="22" fill="{NERO}">Scopri.AI</text>
-<text x="452" y="274" text-anchor="end" font-family="Bricolage Grotesque" font-weight="500" font-size="14" fill="#8A877F">ora</text>
-<text x="250" y="322" font-family="Bricolage Grotesque" font-weight="700" font-size="21" fill="{NERO}">🔔 Nuovo post:</text>
-<text x="250" y="350" font-family="Bricolage Grotesque" font-weight="700" font-size="21" fill="{NERO}">vieni a scoprirlo!</text>
+<text x="304" y="275" font-family="Inter Tight" font-weight="800" font-size="22" fill="{NERO}">Scopri AI</text>
+<text x="452" y="274" text-anchor="end" font-family="Inter Tight" font-weight="500" font-size="14" fill="#8A877F">ora</text>
+<text x="250" y="322" font-family="Inter Tight" font-weight="700" font-size="21" fill="{NERO}">🔔 Nuovo post:</text>
+<text x="250" y="350" font-family="Inter Tight" font-weight="700" font-size="21" fill="{NERO}">vieni a scoprirlo!</text>
 <rect x="234" y="384" width="232" height="80" rx="22" fill="{BIANCO}" opacity=".35"/>
 </g>
 <g transform="translate(520 120) rotate(18)">

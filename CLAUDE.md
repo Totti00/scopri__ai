@@ -1,10 +1,10 @@
-# Scopri.AI — istruzioni per Claude
+# Scopri AI — istruzioni per Claude
 
-Questo repository produce i contenuti della pagina Instagram **Scopri.AI** (`@scopri__ai`).
+Questo repository produce i contenuti della pagina Instagram **Scopri AI** (`@scopri__ai`).
 Claude prepara i caroselli e le caption; **il proprietario pubblica a mano** su Instagram.
 
 ## Chi siamo
-- **Nome:** Scopri.AI · Intelligenza Artificiale
+- **Nome:** Scopri AI · Intelligenza Artificiale
 - **Promessa:** "L'intelligenza artificiale che funziona davvero."
 - **Pubblico:** italiani curiosi, anche non tecnici (dai 20 ai 70 anni). Se un concetto non lo capirebbe un genitore, va riscritto.
 - **Di cosa parliamo:** tutte le notizie che toccano tecnologia e AI, anche su altri temi (lavoro, salute, sport, soldi, leggi), purché ci sia dentro un minimo di tech. Va bene se interessa a una persona normale o le fa venire curiosità; non va bene se è solo una voce di borsa o una lite fra miliardari senza conseguenze.
@@ -23,25 +23,32 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
    - **Progetti fatti dalle persone con l'AI** (deciso il 15/10/2026): si possono mostrare i video di chi ha creato qualcosa con un'AI, presi **dal post originale dell'autore**. L'autore si nomina **solo in "Fonti"** in fondo alla caption, mai sulle slide. Mai dalle ripubblicazioni di altre pagine (raccolte su X, concorrenti): da lì si prende solo lo spunto e si risale all'originale.
    - **Mai:** grafiche, video e fotomontaggi delle pagine concorrenti o di altri creator di notizie, fotogrammi di film. Eccezione: lo screenshot del post di X o Reddit che è esso stesso la notizia (regole in `fonti.md`, "Storie virali").
    - In fondo alla caption va solo "Fonti: …". Chi ha fatto foto e video si annota in `fonti.md` della cartella del post.
-   - **Video in ogni slide quando si può** (deciso il 14/10/2026): i video ufficiali si prendono dai post su X delle aziende (`https://api.fxtwitter.com/<account>/status/<id>` dà il link diretto all'MP4). YouTube da qui è bloccato.
+   - **Video in ogni slide quando si può** (deciso il 14/10/2026): i video ufficiali si prendono dai post su X delle aziende (`https://api.fxtwitter.com/<account>/status/<id>` dà il link diretto all'MP4). YouTube da qui è bloccato. Nelle slide vanno in bianco e nero con il tono blu (il "monocromo" del design), dentro un riquadro. **Nei Reel invece sempre a colori**, sotto il titolo, con sopra solo il logo (16/10/2026, `format/5-reel.md`).
+   - **Immagini create da noi** (deciso il 16/10/2026): quando non c'è niente di vero da mostrare (concetti, prompt, consigli), le immagini le crea Claude col codice: schede di interfaccia e oggetti 3D di vetro e cromo (`.claude/skills/scopri-carousel/assets/3d/`). I **meme con persone vere** si fanno solo partendo da una foto vera, con le regole dei fotomontaggi qui sopra. Niente generatori esterni.
 5. **Niente esagerazioni**: titoli con gancio sì, falsi o allarmisti no. Se una notizia è un'indiscrezione, si scrive al condizionale e lo si dichiara.
-6. **Mai lo stesso argomento due volte**: prima di scegliere, controllare `archivio/`.
+6. **Mai lo stesso argomento due volte**: prima di scegliere, controllare `archivio/` e `carousels/`.
 7. **Non copiare** testi, slogan o grafiche dei concorrenti. Si prendono le tecniche, non l'identità.
 
 ## Come si racconta una notizia
 - Mai il post banale "è uscito X". Si cerca il **gancio**: la cosa più sorprendente o utile, quella che fa venire voglia di scorrere.
 - **La copertina serve solo ad attirare l'attenzione**: un video breve e d'effetto (consegnato intero, lo taglia il proprietario) e un titolo che incuriosisce. Non spiega ancora niente.
 - Dalla seconda slide in poi si spiega: ogni slide è una scoperta in più, con il suo video o la sua immagine.
-- Ogni slide dice in poche parole **cosa ha fatto l'AI** ("Ha costruito…", "Ha insegnato…"), mai cosa le hanno chiesto. Poi un **commento di due o tre parole** sul risultato, nel fumetto ("7 centri di fila.", "Tutto da solo.").
+- Ogni slide dice in poche parole **cosa ha fatto l'AI** ("Ha costruito…", "Ha insegnato…"), mai cosa le hanno chiesto. Poi un **commento di due o tre parole** sul risultato, nell'adesivo ("7 centri di fila.", "Tutto da solo.").
 - La seconda slide deve collegarsi alla copertina: se la copertina dice "guarda cosa sa fare", la seconda mostra subito la prima cosa che sa fare.
-- Le slide nuove si preparano prima **senza video** su Claude Design, in **ogni template** di `template/`; il proprietario sceglie il template e corregge. I video si inseriscono solo quando approva (procedimento in `template/README.md`).
+- Le slide si costruiscono con la skill **`scopri-carousel`** (vedi "Design" qui sotto): prima testi completi e slide statiche da approvare (con le copertine alternative), poi i video veri e il pacchetto di pubblicazione.
 - Si dice cosa può farci una persona normale, e se è solo un esempio dell'azienda lo si dice.
 - **Guida di scrittura dei caroselli** (adottata il 16/10/2026): `format/carousel-copy.md` (in inglese, com'è nell'originale; **i post si scrivono sempre in italiano**) — limiti di parole per slide, test del gancio, 12 tipi di gancio, 11 schemi di carosello, slide 2 che funziona anche da sola, riepilogo da salvare, caption che aggiunge e non ripete. Le regole di questo file vengono prima.
 - **Il meglio all'inizio** (16/10/2026): la cosa più forte nella slide 2 o 3, non in fondo.
-- **Contatore "3/7"** in alto a destra su tutte le slide tranne la copertina (16/10/2026).
+- **Contatore "03 / 08"** in alto a destra: conta le slide di contenuto, la chiusura non ha contatore (lo fa la skill).
 - **Un solo invito per post**, scelto per tipo: notizie → "📩 Mandalo a…", prompt e liste → "📌 Salvalo…", serie → "🔔 Seguici" (16/10/2026).
-- Copertina sempre con la pillola gialla **"Scorri →"**.
+- Copertina con la **freccia piena** in basso a destra (cornice della skill).
 - Prima di consegnare, si passa il **controllo finale**: `brand/controllo-finale.md`.
+
+## Design (dal 16/10/2026)
+- **Un solo stile: Electric Mono adattato a Scopri AI**, con la skill `.claude/skills/scopri-carousel/` (motore, layout, oggetti 3D, controlli, anteprime, pacchetto di pubblicazione). Le sue regole di brand sono in `references/brand-scopri-ai.md` della skill; le lezioni imparate in `references/lessons-learned.md`.
+- Fondi **scuro, chiaro e blu** che si alternano, un solo colore d'accento: il blu `#2340FF`. **Niente giallo.** Font **Inter Tight** (e JetBrains Mono per le scritte piccole).
+- Logo **"Scopri AI" con la campana** (`brand/logo/ufficiale/`), nome sempre "Scopri AI".
+- I vecchi template A–G e il vecchio programma delle slide sono in `_vecchio/` (non si usano più, si possono riprendere).
 
 ## Come si scrive
 - Si dà del **tu**. Frasi corte. Una sola idea per frase.
@@ -57,18 +64,18 @@ Regole complete in `brand/crescita.md` (15/10/2026). In breve:
 - mai un contenuto di altri messo da solo: sempre dentro le nostre slide, con i nostri testi.
 
 ## La squadra di agenti
-Il lavoro è diviso in fasi, ognuna con il suo agente in `.claude/agents/` (deciso il 15/10/2026): `ricercatore` → `analista` → `selezionatore` → `costruttore-post` e `costruttore-reel`. Li coordina la routine (il "regista", `routine/README.md`), che si ferma due volte ad aspettare il proprietario: dopo il **menu** (tante notizie, titoli e tipi di carosello tra cui scegliere) e dopo la bozza (ogni template, più copertine, due Reel). Regola generale: **tante soluzioni sul tavolo, poi sceglie il proprietario**. **La pubblicazione la fa il proprietario.**
+Il lavoro è diviso in fasi, ognuna con il suo agente in `.claude/agents/` (deciso il 15/10/2026): `ricercatore` → `analista` → `selezionatore` → `costruttore-post` e `costruttore-reel`. Li coordina la routine (il "regista", `routine/README.md`), che si ferma due volte ad aspettare il proprietario: dopo il **menu** (tante notizie, titoli e tipi di carosello tra cui scegliere) e dopo la bozza (testi completi e slide statiche, più copertine, due Reel). Regola generale: **tante soluzioni sul tavolo, poi sceglie il proprietario**. **La pubblicazione la fa il proprietario.**
 
 ## Rubriche e calendario
 - Rubriche: `format/` (una scheda per rubrica, con struttura delle slide e della caption).
 - Calendario: `calendario.md`.
 
 ## Cosa consegnare per ogni post
-Una cartella `archivio/AAAA-MM-GG-rubrica-argomento/` con:
-- `slide-01` … `slide-NN`: PNG oppure MP4 senza audio (1080×1350, formato 4:5)
-- per le slide video anche `slide-NN-completo.mp4`, con il video intero: il proprietario sceglie da solo inizio e fine (vedi `strumenti/montaggio.md`)
-- `caption.txt` — pronta da copiare su Instagram
-- `alt-text.txt` — il testo alternativo, una riga per slide (vedi `brand/crescita.md`)
-- `reel.json`, `reel.mp4` e `caption-reel.txt` — la versione Reel di 20 secondi (vedi `format/5-reel.md`)
+Dal 16/10/2026 una cartella `carousels/AAAA-MM-GG-rubrica-argomento/` (fatta dalla skill; i post di prima restano in `archivio/`, e per la regola 6 si guardano tutte e due) con:
+- `exports/slide-01` … `slide-NN`: PNG oppure MP4 senza audio (1080×1350, formato 4:5), più `contact-sheet.jpg` e le copertine alternative
+- per le slide video anche `exports/slide-NN-completo.mp4`, con il video intero: il proprietario sceglie da solo inizio e fine (vedi `strumenti/montaggio.md`)
+- `pubblicazione/`: caption, un testo alternativo per slide, commenti fissati (file `.txt` pronti da incollare, fatti da `npm run publish`)
+- `copy.md` (i testi approvati) e `publish.json`
+- **solo se c'è un video vero che è una bomba**: `reel.json`, `reel.mp4`, `reel-completo.mp4`, `reel-copertina.jpg` e `caption-reel.txt` — il Reel semplice, un titolo e sotto il video (deciso il 16/10/2026, vedi `format/5-reel.md`)
 - `fonti.md` — link alle fonti usate e data di consultazione
 - `note.md` — cosa è stato provato (prompt) e ogni dubbio rimasto

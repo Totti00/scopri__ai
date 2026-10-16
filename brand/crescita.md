@@ -19,6 +19,15 @@ Regole complete in `format/carousel-copy.md` §9: i primi ~125 caratteri sono il
 4. **Una domanda vera** per i commenti, sul contenuto. Niente "commenta SÌ", "tagga 3 amici", "commenta X e ti mando Y": Instagram li considera esche e mostra meno il post.
 5. Le **fonti** restano in fondo ("Fonti: …"), prima degli hashtag. Il "Salva" lo chiede già il terminatore: in caption non serve.
 
+### Caption del carosello e caption del Reel (16/10/2026)
+Sono due lavori diversi:
+- **Carosello**: chi legge la caption ha già visto le slide. La caption **aggiunge** (contesto, come provarlo, limiti) e non ripete.
+- **Reel**: chi lo vede di solito non ci segue e non ha visto nessuna slide. Caption **corta, 2–4 righe**: prima riga con le parole che la gente cerca e il gancio, una riga che dice cosa si vede, lo stesso invito del carosello, la domanda, "Fonti: …" per le notizie, massimo 5 hashtag.
+
+### Controllo automatico
+Prima della consegna ogni caption passa `caption_check.py` (nella skill, lo lancia da solo `npm run publish`, anche su `caption-reel.txt`). Controlla: 2.200 caratteri, cosa si vede prima di "altro" (125), parole cercate, massimo 5 hashtag e tutti in fondo, "Fonti: …" per notizie e curiosità (prima degli hashtag; mai nei prompt), un solo invito e quello giusto per il tipo, niente esche ("commenta PAROLA", "tagga", "link in bio", "metti like"), una domanda, niente link, poche emoji, nome "Scopri AI".
+Se c'è un errore il pacchetto non si scrive. Alla fine stampa la ricevuta **"✅ CAPTION PRONTA"**, che va nel messaggio finale al proprietario.
+
 ## Il testo alternativo
 Per ogni post si consegna `alt-text.txt`: una riga per slide che descrive cosa si vede, con le parole chiave.
 Il proprietario lo incolla in "Impostazioni avanzate → Accessibilità → Scrivi testo alternativo" (per le slide video, se Instagram non dà il campo, si salta).
@@ -42,4 +51,4 @@ Per non passare da pagina che ripubblica:
 - **Mai:** comprare follower, gruppi di like reciproci, segui/smetti di seguire.
 
 ## Reel
-Attivi dal 15/10/2026: ogni post ha la sua versione Reel in motion graphics di circa 20 secondi (`format/5-reel.md`). Arrivano a più persone che non ci seguono.
+Dal 16/10/2026 il Reel si fa **solo quando c'è un video vero che è una bomba**: una schermata con il titolo e sotto il video, niente scene (`format/5-reel.md`). Arrivano a più persone che non ci seguono, ma solo se il primo secondo cattura.

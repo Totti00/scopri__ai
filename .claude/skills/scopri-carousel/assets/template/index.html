@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scopri AI · __TITLE__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
+<link rel="stylesheet" href="engine/carousel.css">
+<style>
+/* ===== Slide-specific CSS for this carousel goes here (the engine stays untouched) ===== */
+.chat{left:470px;top:704px;width:560px;padding:32px 32px 30px}
+.chat .msg{margin-top:18px;padding:18px 22px;border-radius:16px;background:rgba(255,255,255,.05);font:500 24px/1.35 var(--font-primary);color:var(--gray-300)}
+.chat .msg.me{background:rgba(var(--accent-rgb),.22);color:var(--snow);margin-left:72px}
+.chat .foot{margin-top:22px;display:flex;align-items:center;gap:12px}
+.chat .dot{width:10px;height:10px;border-radius:50%;background:var(--signal-500)}
+.chat .send{margin-left:auto;height:44px;padding:0 20px;border-radius:999px;background:#fff;color:var(--ink-950);display:inline-flex;align-items:center;font:600 22px/1 var(--font-primary)}
+</style>
+</head>
+<body>
+
+<!-- Shared SVG filters: grain (§6.6) and the thread glow (userSpaceOnUse, or a horizontal line loses its blur) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <filter id="lineglow" filterUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1350">
+    <feGaussianBlur stdDeviation="4"/>
+  </filter>
+</svg>
+
+<header class="devbar">
+  <h1>Scopri AI · __TITLE__<small>1080 × 1350 · npm run export (PNG) · npm run export:video (MP4)</small></h1>
+  <button id="btn-grid" aria-pressed="true">Griglia</button>
+  <button id="btn-strip" aria-pressed="false">Striscia (giunture)</button>
+  <button id="btn-play" hidden>Riproduci animazioni</button>
+  <button id="btn-qa">Esegui QA</button>
+</header>
+<div class="qa" id="qa-out"></div>
+
+<main class="deck" id="deck">
+<!--
+  LAYOUT LIBRARY. Every slide below is a proven layout from design-system.md §10, written in the brand style.
+  Their sample copy only describes the layout. Replace it with the approved copy, delete the slides you don't need,
+  duplicate the ones you need more of. Then re-derive the mode sequence (§11.1) and the thread table in CAROUSEL.
+  Mark every text element that QA must keep inside the live area with class "qa-text"; add data-lines="N"
+  where a headline must wrap to exactly N lines.
+-->
+
+<!-- ============ T1 · COVER · DARK ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:820px;--ry:900px"></div>
+  <div class="glow" data-for=".glassobj"></div>
+  <div class="glassobj" style="left:600px;top:660px;width:520px;height:470px">
+    <i style="left:40px;top:90px;width:330px;height:330px"></i>
+    <i class="sq" style="left:230px;top:10px;width:250px;height:250px"></i>
+    <i style="left:300px;top:290px;width:150px;height:150px"></i>
+  </div>
+  <div class="pill qa-text">Esempio · layout T1</div>
+  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="3"><span class="em">Hook in</span><br>sei parole<br>al massimo</h2>
+  <p class="txt lead qa-text" style="left:96px;top:1020px;width:356px" data-lines="2">Sotto-titolo breve, otto parole massimo.</p>
+</section></div>
+
+<!-- ============ T2 · HEADLINE + OBJECT · LIGHT ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="card abs chat">
+    <div class="ui-meta">Esempio · card UI</div>
+    <div class="msg">Le card sono sempre scure, anche su sfondo chiaro.</div>
+    <div class="msg me">Il testo essenziale non va mai solo nelle card.</div>
+    <div class="foot"><span class="dot"></span><span class="ui">Bozza pronta</span><span class="send">Invia</span></div>
+  </div>
+  <div class="pill qa-text">Re-hook · T2</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="width:736px" data-lines="2"><span class="rc">La slide 2</span><br>regge da sola</h2>
+    <p class="body qa-text" style="width:432px">Instagram la mostra anche a chi ha saltato la copertina: deve funzionare come secondo hook.</p>
+  </div>
+</section></div>
+
+<!-- ============ T4 · BIG NUMBER · DARK (the thread becomes the chart line) ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="glow" data-for=".numeral"></div>
+  <div class="pill qa-text">Il dato · T4</div>
+  <div class="numeral qa-text">1080</div>
+  <h2 class="txt h2 qa-text" style="left:96px;top:632px;width:584px" data-lines="2">pixel di larghezza,<br><span class="rc">su ogni slide</span></h2>
+  <p class="txt body qa-text" style="left:96px;top:806px;width:432px">Numero XXL: peso 200, gradiente d'accento. Un solo dato per slide.</p>
+  <span class="chip" style="left:840px;top:946px">1350 px</span>
+</section></div>
+
+<!-- ============ T9 · MANIFESTO · ACCENT ============ -->
+<div class="slot"><section class="slide mode-accent">
+  <div class="layer bg"></div>
+  <div class="supershape" style="left:350px;top:800px;width:1600px;height:1600px"></div>
+  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="4">Una slide,<br>un'idea.<br><span class="em">Il resto</span><br>è rumore.</h2>
+</section></div>
+
+<!-- ============ T5 · NUMBERED POINT · LIGHT ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="layer dots"></div>
+  <div class="ghost num">01</div>
+  <div class="pill qa-text">Punto 01</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" style="width:660px" data-lines="2">Titolo che si legge<br><span class="rc">anche da solo</span></h2>
+    <p class="body qa-text" style="width:584px">Poi una o due frasi brevi. Sopra le 40 parole, dividi il punto su due slide invece di rimpicciolire il testo.</p>
+  </div>
+</section></div>
+
+<!-- ============ T5 · PROMPT CARD · DARK (prompt carousels: ~100-word structured prompts) ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="ghost num">02</div>
+  <div class="glow" data-for=".pcard"></div>
+  <div class="pill qa-text">Prompt 02</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" data-lines="1">Riassumi <span class="rc">il thread di email</span></h2>
+    <div class="pcard card qa-text">
+      <div class="sticker">Allega: email</div>
+      <p>Agisci come un assistente che prepara riassunti per chi ha poco tempo. Ti incollo un thread di email <span class="ph">[argomento]</span>, con i dati personali oscurati.</p>
+      <ol>
+        <li><span class="n">1.</span><span>Riassumi in tre righe cosa è stato deciso e da chi.</span></li>
+        <li><span class="n">2.</span><span>Elenca le domande rimaste aperte e chi deve rispondere.</span></li>
+        <li><span class="n">3.</span><span>Indica le scadenze citate, con la data esatta.</span></li>
+        <li><span class="n">4.</span><span>Proponi la prossima mossa per me, in una frase.</span></li>
+      </ol>
+      <p class="out">Usa elenchi puntati. Se un'informazione non è nel thread, scrivi «non indicato»: non inventarla.</p>
+    </div>
+  </div>
+</section></div>
+
+<!-- ============ T7 · LIST ROWS · LIGHT ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="pill qa-text">Checklist · T7</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="width:736px" data-lines="2">Prima di inviare,<br><span class="rc">controlla</span></h2>
+  </div>
+  <div class="rows qa-text" style="top:600px">
+    <div class="row"><span class="idx">01</span><span class="t">Destinatario giusto</span></div>
+    <div class="row"><span class="idx">02</span><span class="t">Tono adatto</span></div>
+    <div class="row"><span class="idx">03</span><span class="t">Dati sensibili tolti</span></div>
+    <div class="row"><span class="idx">04</span><span class="t">Fatti verificati</span></div>
+    <div class="row"><span class="idx">05</span><span class="t">Una sola richiesta</span></div>
+  </div>
+</section></div>
+
+<!-- ============ T6 · COMPARISON · ACCENT ============ -->
+<div class="slot"><section class="slide mode-accent">
+  <div class="layer bg"></div>
+  <div class="pill qa-text">Prima / dopo · T6</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="width:888px" data-lines="2">Prompt vago,<br><span class="em">risposta vaga</span></h2>
+  </div>
+  <div class="cmp">
+    <div class="card muted qa-text">
+      <span class="c-tag">Prima</span>
+      <span class="c-title">«Scrivi una mail»</span>
+      <span class="c-body">Nessun ruolo e nessun contesto: l'AI tira a indovinare.</span>
+    </div>
+    <div class="card win qa-text">
+      <span class="c-tag">Dopo</span>
+      <span class="c-title">Ruolo e contesto</span>
+      <span class="c-body">Chi deve essere, cosa le dai, che formato vuoi: risposta usabile.</span>
+      <span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+    </div>
+  </div>
+</section></div>
+
+<!-- ============ T3 · OBJECT + HEADLINE · LIGHT ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="glow" data-for=".glassobj"></div>
+  <div class="glassobj" style="left:400px;top:200px;width:520px;height:470px">
+    <i class="sq" style="left:0;top:40px;width:300px;height:300px"></i>
+    <i style="left:220px;top:120px;width:300px;height:300px"></i>
+  </div>
+  <h2 class="txt h1 qa-text" style="left:96px;top:888px;width:584px" data-lines="2">Salva le slide<br><span class="em">che ti servono</span></h2>
+  <p class="txt body qa-text" style="left:704px;top:986px;width:280px" data-lines="2">Il riepilogo è la slide da salvare.</p>
+</section></div>
+
+<!-- ============ T10 · CLOSING · DARK (no corner logo, no counter, no swipe cue) ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:540px;--ry:380px"></div>
+  <div class="glow" style="left:540px;top:380px"></div>
+  <div class="logo-full qa-text" data-logo></div>
+  <div class="cstack">
+    <h2 class="h1 qa-text" style="max-width:736px" data-lines="2">Salvalo per<br><span class="em">il prossimo post</span></h2>
+    <p class="lead qa-text" style="max-width:584px" data-lines="2">Un carosello, una sola azione. Ricordala anche nella caption.</p>
+  </div>
+  <div class="actions"><span class="apill qa-text"><svg viewBox="0 0 24 24"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Salva</span></div>
+</section></div>
+
+</main>
+
+<script>
+/* ===== Carousel config: the only script you edit ===== */
+window.CAROUSEL = {
+  title: '__TITLE__',
+  format: '__FORMAT__',            // 'static' | 'animated'
+  handle: '@scopri__ai',
+  // Thread line: seams[k] = y at the seam between slide k+1 and k+2 (exit of one = entry of the next).
+  seams:  [1150, 1150, 900, 1150, 1150, 360, 1150, 1150, 1150],
+  routes: ['start', 'straight',
+           { d: 'M0 1150 H140 C330 1150 400 1090 540 1068 S760 990 840 962 S1000 912 1080 900', nodes: [[840, 962]] },   // T4: thread = chart
+           { d: 'M0 900 H24 Q48 900 48 924 V1126 Q48 1150 72 1150 H1080' },                                           // drop down the left margin
+           'straight', 'rightUp', 'leftDown', 'straight', 'straight', 'end'],
+  threadStart: 600,
+};
+</script>
+<script src="engine/carousel.js"></script>
+</body>
+</html>

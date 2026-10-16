@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<title>3D asset renderer</title>
+<style>html,body{margin:0;background:#222}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"}}</script>
+</head>
+<body>
+<script type="module">
+// Glass & Chrome 3D objects (design-system.md §7.2 family A), rendered procedurally.
+// Each asset is rendered twice, over black and over white, and the two frames are
+// difference-matted into one PNG whose glass is genuinely see-through.
+import * as THREE from 'three';
+
+const BLUE = '#2340FF', BLUE_300 = '#8595FF';
+const q = new URLSearchParams(location.search);
+const ASSET = q.get('asset') || 'magnifier';   // a key of OBJECTS below
+const SS = +(q.get('ss') || 3);   // supersampling, undone later with a Lanczos downscale
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1);
+renderer.toneMapping = THREE.NoToneMapping;          // keeps compositing linear, so the matte is exact
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+
+/* Studio lighting baked into an environment map: big softbox top-left (the system's light
+   direction), a vertical strip for the right rim, a low fill and an electric-blue kicker. */
+function studio() {
+  const s = new THREE.Scene();
+  // Gradient dome: light ceiling, mid-grey horizon, dark floor. Chrome is a mirror, so this is what it shows.
+  const dome = new THREE.SphereGeometry(20, 64, 32), col = [];
+  for (let i = 0; i < dome.attributes.position.count; i++) {
+    const y = dome.attributes.position.getY(i) / 20;
+    const v = y > 0 ? 0.16 + 0.5 * Math.pow(y, 1.4) : 0.16 * Math.pow(1 + y, 2.2) + 0.012;
+    col.push(v, v, v * 1.04);
+  }
+  dome.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+  s.add(new THREE.Mesh(dome, new THREE.MeshBasicMaterial({ vertexColors: true, side: THREE.BackSide })));
+  const panel = (w, h, hex, k, pos) => {
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h),
+      new THREE.MeshBasicMaterial({ color: new THREE.Color(hex).multiplyScalar(k), side: THREE.DoubleSide }));
+    m.position.set(...pos); m.lookAt(0, 0, 0); s.add(m);
+  };
+  panel(9, 6, 0xffffff, 4.0, [-6, 7, 6]);     // key softbox, top-left (the system's light direction)
+  panel(1.6, 11, 0xffffff, 2.4, [8, 1, 3]);   // vertical strip, right rim
+  panel(12, 2, 0xffffff, 0.9, [0, -7, 5]);    // low fill
+  panel(6, 6, BLUE, 2.6, [5, -4, -6]);        // electric-blue kicker behind
+  panel(4, 4, 0xffffff, 1.4, [-3, 2, -9]);    // small back highlight
+  return s;
+}
+const env = new THREE.PMREMGenerator(renderer).fromScene(studio(), 0.015).texture;
+
+const chrome = new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 1, roughness: 0.07 });
+const glass = new THREE.MeshPhysicalMaterial({
+  color: 0xffffff, roughness: 0.02, transmission: 1, thickness: 0.35, ior: 1.5,
+  attenuationColor: new THREE.Color(BLUE_300), attenuationDistance: 1.4,
+  clearcoat: 1, clearcoatRoughness: 0.02, side: THREE.DoubleSide });
+const blueGlass = new THREE.MeshPhysicalMaterial({
+  color: new THREE.Color(BLUE), roughness: 0.18, transmission: 0.4, thickness: 0.8, ior: 1.45,
+  attenuationColor: new THREE.Color(BLUE), attenuationDistance: 0.6, clearcoat: 1, clearcoatRoughness: 0.04 });
+const sand = new THREE.MeshPhysicalMaterial({ color: new THREE.Color(BLUE_300), roughness: 0.7, sheen: 0.5, sheenColor: new THREE.Color(0xffffff) });
+
+const scene = new THREE.Scene();
+scene.environment = env;
+let camera, meta = {};
+
+/* Object library. Each builder adds meshes to the scene and sets the camera and canvas size.
+   All objects share the studio and the materials above, so every asset in a carousel looks like one set.
+   To add an object: copy a builder, keep the materials, change the geometry, render, check it on all three
+   background modes. Use an orthographic, face-on camera when the object must line up with HTML
+   (the magnifier's lens sits over a live HTML zoom); otherwise a perspective camera with a slight top-down tilt. */
+const OBJECTS = {
+  magnifier() {
+    // Face-on orthographic view so the lens stays a perfect circle that lines up with the HTML zoom behind it.
+    const g = new THREE.Group();
+    g.add(new THREE.Mesh(new THREE.TorusGeometry(1.0, 0.075, 64, 256), chrome));
+    const lens = new THREE.Mesh(new THREE.SphereGeometry(0.97, 128, 64), glass);
+    lens.scale.set(1, 1, 0.1); g.add(lens);
+    const a = -30 * Math.PI / 180, d = new THREE.Vector3(Math.cos(a), Math.sin(a), 0), rot = a - Math.PI / 2;
+    const collar = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.12, 0.32, 64), chrome);
+    collar.position.copy(d.clone().multiplyScalar(1.04 + 0.16)); collar.rotation.z = rot; g.add(collar);
+    const grip = new THREE.Mesh(new THREE.CapsuleGeometry(0.105, 1.15, 16, 64), blueGlass);
+    grip.position.copy(d.clone().multiplyScalar(1.04 + 0.32 + 0.105 + 0.575)); grip.rotation.z = rot; g.add(grip);
+    scene.add(g);
+    const PPU = 150 / 1.075;                         // rim outer radius = 150 px on the slide
+    const L = -1.25, R = 2.65, T = 1.25, B = -1.62;
+    camera = new THREE.OrthographicCamera(L, R, T, B, 0.1, 50);
+    camera.position.set(0, 0, 10);
+    renderer.setSize(Math.round((R - L) * PPU * SS), Math.round((T - B) * PPU * SS));
+    meta = { ppu: PPU, lensCenter: [-L * PPU, T * PPU], rimInner: (1.0 - 0.075) * PPU, rimOuter: 150 };
+  },
+  hourglass() {
+    // Hourglass: lathe-turned glass bulbs, chrome caps and posts, electric-blue sand.
+    const g = new THREE.Group();
+    const pts = [[0.50, -1.0], [0.60, -0.84], [0.62, -0.64], [0.53, -0.40], [0.30, -0.18], [0.085, -0.04], [0.065, 0],
+                 [0.085, 0.04], [0.30, 0.18], [0.53, 0.40], [0.62, 0.64], [0.60, 0.84], [0.50, 1.0]].map(([x, y]) => new THREE.Vector2(x, y));
+    const profile = new THREE.SplineCurve(pts).getPoints(160);
+    g.add(new THREE.Mesh(new THREE.LatheGeometry(profile, 160), glass));
+    // Caps with a rounded rim, so the edges catch highlights like polished metal
+    const e = 0.07, hh = 0.08, capPts = [new THREE.Vector2(0.001, -hh)];
+    for (let i = 0; i <= 16; i++) { const t = -Math.PI / 2 + Math.PI * i / 16; capPts.push(new THREE.Vector2(0.8 - e + e * Math.cos(t), (hh - e) * Math.sign(Math.sin(t)) * 0 + e * Math.sin(t) * (hh / e))); }
+    capPts.push(new THREE.Vector2(0.001, hh));
+    for (const y of [-1.07, 1.07]) {
+      const cap = new THREE.Mesh(new THREE.LatheGeometry(capPts, 128), chrome);
+      cap.position.y = y; g.add(cap);
+    }
+    for (const deg of [60, 180, 300]) {
+      const t = deg * Math.PI / 180, post = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 2.0, 32), chrome);
+      post.position.set(0.72 * Math.cos(t), 0, 0.72 * Math.sin(t)); g.add(post);
+    }
+    const base = new THREE.Mesh(new THREE.CylinderGeometry(0.49, 0.5, 0.1, 96), sand); base.position.y = -0.95; g.add(base);
+    const pile = new THREE.Mesh(new THREE.ConeGeometry(0.47, 0.42, 96), sand); pile.position.y = -0.69; g.add(pile);
+    const top = new THREE.Mesh(new THREE.ConeGeometry(0.40, 0.34, 96), sand); top.rotation.x = Math.PI; top.position.y = 0.23; g.add(top);
+    const stream = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.52, 16), sand); stream.position.y = -0.22; g.add(stream);
+    g.rotation.set(0.15, 0.35, -0.17);
+    scene.add(g);
+    camera = new THREE.PerspectiveCamera(24, 0.74, 0.1, 50);
+    camera.position.set(0, 0.3, 8); camera.lookAt(0, 0, 0);
+    renderer.setSize(Math.round(560 * SS), Math.round(760 * SS));
+  },
+};
+if (!OBJECTS[ASSET]) throw new Error(`Unknown asset "${ASSET}". Known: ${Object.keys(OBJECTS).join(', ')}`);
+OBJECTS[ASSET]();
+
+const srgbToLin = c => { c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+const linToSrgb = c => Math.round(255 * (c <= 0.0031308 ? 12.92 * c : 1.055 * Math.pow(c, 1 / 2.4) - 0.055));
+const LUT = Float32Array.from({ length: 256 }, (_, i) => srgbToLin(i));
+
+function frame(bgHex) {
+  scene.background = new THREE.Color(bgHex);
+  renderer.render(scene, camera);
+  const c = document.createElement('canvas'); c.width = renderer.domElement.width; c.height = renderer.domElement.height;
+  const ctx = c.getContext('2d'); ctx.drawImage(renderer.domElement, 0, 0);
+  return ctx.getImageData(0, 0, c.width, c.height);
+}
+
+window.renderAsset = () => {
+  const black = frame(0x000000), white = frame(0xffffff);
+  const out = new ImageData(black.width, black.height), b = black.data, w = white.data, o = out.data;
+  for (let i = 0; i < b.length; i += 4) {
+    // linear compositing: black = a·C, white = a·C + (1 − a)  →  a = 1 − mean(white − black)
+    const lb = [LUT[b[i]], LUT[b[i + 1]], LUT[b[i + 2]]], lw = [LUT[w[i]], LUT[w[i + 1]], LUT[w[i + 2]]];
+    const a = Math.min(1, Math.max(0, 1 - ((lw[0] - lb[0]) + (lw[1] - lb[1]) + (lw[2] - lb[2])) / 3));
+    if (a < 1 / 255) { o[i + 3] = 0; continue; }
+    o[i] = linToSrgb(Math.min(1, lb[0] / a)); o[i + 1] = linToSrgb(Math.min(1, lb[1] / a)); o[i + 2] = linToSrgb(Math.min(1, lb[2] / a));
+    o[i + 3] = Math.round(a * 255);
+  }
+  const c = document.createElement('canvas'); c.width = out.width; c.height = out.height;
+  c.getContext('2d').putImageData(out, 0, 0);
+  return { png: c.toDataURL('image/png'), ss: SS, meta, gl: renderer.capabilities.isWebGL2 };
+};
+window.__ready = true;
+</script>
+</body>
+</html>
