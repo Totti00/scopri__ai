@@ -48,11 +48,11 @@ Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il 
 
 ## Stile dei caroselli (14/10/2026, ispirato alle pagine AI, non a RapTrend)
 Si genera con `strumenti/carosello.py`; esempio in `brand/template-esempio/`.
-- **Logo piccolo** in alto a sinistra. Niente contatore 01/05, niente etichette a blocco.
+- **Logo piccolo** in alto a sinistra; **contatore "3/7"** piccolo in alto a destra su tutte le slide tranne la copertina (16/10/2026). Niente etichette a blocco.
 - **Copertina (blu):** visual grande in alto (screenshot del prodotto o chat disegnata), titolo sotto con le parole chiave in giallo, pillola gialla "Scorri →" in basso a destra come invito a scorrere (reintrodotta il 15/10/2026; la scritta è nella costante `SCRITTA_SCORRI` di `strumenti/carosello.py`).
 - **Slide interne (carta):** testo sopra (25-40 parole, carattere grande), visual sotto, meglio se video in un riquadro arrotondato: screenshot, chat o numero grande su giallo. "👉 Per te" con filetto giallo. Nessuna fonte sulla slide.
 - **Prompt:** il prompt è un messaggio blu in una finestra di chat ("Scrivi così all'AI"), con le parti da cambiare in giallo.
-- **Ultima slide, il "terminatore"** (attuale dal 15/10/2026, storico in `template/terminatori/`): fondo carta, disegno dello smartphone con la notifica di Scopri.AI (avatar: fumetto blu con tre puntini; "Scopri.AI"; "🔔 Nuovo post: vieni a scoprirlo!"), "Le novità sull'AI, appena escono.", "🔔 Segui @scopri__ai e attiva le notifiche" e "📌 E salva il post per ritrovarlo". Niente mascotte né animazioni.
+- **Ultima slide, il "terminatore"** (attuale dal 15/10/2026, storico in `template/terminatori/`): fondo carta, disegno dello smartphone con la notifica di Scopri.AI (avatar: fumetto blu con tre puntini; "Scopri.AI"; "🔔 Nuovo post: vieni a scoprirlo!"), "Le novità sull'AI, appena escono.", e **un solo invito**, scelto per post (dal 16/10/2026: "📩 Mandalo a…" per le notizie, "📌 Salvalo…" per prompt e liste, "🔔 Segui @scopri__ai e attiva le notifiche" per le serie). Niente mascotte né animazioni.
 - Se si parla di una persona o di una cosa reale, il visual è la foto o il video veri (regola 4 di `CLAUDE.md`), con chi l'ha fatta annotato in `fonti.md` del post. La chat disegnata resta per i prompt da copiare e per i concetti; se non riproducono l'interfaccia vera, sotto va scritto "Esempio illustrativo".
 
 Da evitare perché tipico dei concorrenti: fondo nero con lilla o viola, mascotte robot, collage di CEO.

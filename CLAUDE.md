@@ -36,7 +36,10 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 - La seconda slide deve collegarsi alla copertina: se la copertina dice "guarda cosa sa fare", la seconda mostra subito la prima cosa che sa fare.
 - Le slide nuove si preparano prima **senza video** su Claude Design, in **ogni template** di `template/`; il proprietario sceglie il template e corregge. I video si inseriscono solo quando approva (procedimento in `template/README.md`).
 - Si dice cosa può farci una persona normale, e se è solo un esempio dell'azienda lo si dice.
-- **5 tipi di gancio** per la copertina, **tipi di carosello** (scoperte, storia, prima/dopo, lista di strumenti) e **il meglio alla fine** (dalla terza slide si va in crescendo): `format/ganci-e-tipi.md`.
+- **Guida di scrittura dei caroselli** (adottata il 16/10/2026): `format/carousel-copy.md` (in inglese, com'è nell'originale; **i post si scrivono sempre in italiano**) — limiti di parole per slide, test del gancio, 12 tipi di gancio, 11 schemi di carosello, slide 2 che funziona anche da sola, riepilogo da salvare, caption che aggiunge e non ripete. Le regole di questo file vengono prima.
+- **Il meglio all'inizio** (16/10/2026): la cosa più forte nella slide 2 o 3, non in fondo.
+- **Contatore "3/7"** in alto a destra su tutte le slide tranne la copertina (16/10/2026).
+- **Un solo invito per post**, scelto per tipo: notizie → "📩 Mandalo a…", prompt e liste → "📌 Salvalo…", serie → "🔔 Seguici" (16/10/2026).
 - Copertina sempre con la pillola gialla **"Scorri →"**.
 - Prima di consegnare, si passa il **controllo finale**: `brand/controllo-finale.md`.
 
@@ -50,7 +53,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 Regole complete in `brand/crescita.md` (15/10/2026). In breve:
 - prima riga della caption con le parole che la gente cerca (prodotto, azienda, "intelligenza artificiale");
 - **massimo 5 hashtag**: Instagram ignora gli altri;
-- una riga `📩 Mandalo a …` e una domanda vera; mai esche come "commenta SÌ" o "tagga 3 amici";
+- lo stesso unico invito della chiusura (`📩 Mandalo a …` per le notizie, `📌 Salvalo …` per prompt e liste) e una domanda vera; mai esche come "commenta SÌ" o "tagga 3 amici";
 - mai un contenuto di altri messo da solo: sempre dentro le nostre slide, con i nostri testi.
 
 ## La squadra di agenti
