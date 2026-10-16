@@ -1,0 +1,8 @@
+{"scene":[
+{"tipo":"gancio","etichetta":"PROMPT","titolo":"Capisci davvero la *tua bolletta*?","commento":"L'AI la traduce.","immagine":"media/bolletta.png","durata":3},
+{"tipo":"scoperta","titolo":"Ha trovato le *clausole rischiose*","commento":"Prima di firmare.","immagine":"media/clausole.png","durata":4},
+{"tipo":"scoperta","titolo":"Ha spiegato la bolletta in *parole semplici*","commento":"Voce per voce.","immagine":"media/spiegazione.png","durata":3.5},
+{"tipo":"scoperta","titolo":"Ha scritto la *lettera di disdetta*","commento":"Cortese, ma ferma.","durata":3.5},
+{"tipo":"scoperta","titolo":"Ha preparato le *domande* per il servizio clienti","commento":"Cinque, precise.","durata":3.5},
+{"tipo":"finale","durata":2.5,"invito_testo":"📌 Salvalo per la prossima bolletta"}
+]}

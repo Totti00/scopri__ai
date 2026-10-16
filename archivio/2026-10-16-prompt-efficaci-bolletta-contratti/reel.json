@@ -1,0 +1,8 @@
+{"scene":[
+{"tipo":"gancio","etichetta":"PROMPT","titolo":"Firmi il contratto *senza leggerlo*?","commento":"Fallo leggere all'AI.","immagine":"media/contratto.png","durata":3},
+{"tipo":"scoperta","titolo":"Ha trovato le *clausole rischiose*","commento":"Con la frase esatta.","immagine":"media/clausole.png","durata":4},
+{"tipo":"scoperta","titolo":"Ha spiegato la bolletta *voce per voce*","commento":"Parole semplici.","immagine":"media/spiegazione.png","durata":3.5},
+{"tipo":"scoperta","titolo":"Ha preparato le *domande* da fare prima di firmare","commento":"Cinque, precise.","durata":3.5},
+{"tipo":"scoperta","titolo":"Ha scritto la *lettera di disdetta*","commento":"Cortese, ma ferma.","durata":3.5},
+{"tipo":"finale","durata":2.5,"invito_testo":"📌 Salvalo per la prossima bolletta"}
+]}

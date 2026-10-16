@@ -1,0 +1,486 @@
+{
+ "v": 3,
+ "attachments": {},
+ "boards": {
+  "A1-copertina.dc.html": {
+   "file": "A1-copertina.dc.html",
+   "x": 0,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina (titolo c)"
+  },
+  "A2-clausole.dc.html": {
+   "file": "A2-clausole.dc.html",
+   "x": 1160,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A2 · clausole"
+  },
+  "A3-bolletta.dc.html": {
+   "file": "A3-bolletta.dc.html",
+   "x": 2320,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A3 · bolletta"
+  },
+  "A4-fisso-variabile.dc.html": {
+   "file": "A4-fisso-variabile.dc.html",
+   "x": 3480,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A4 · fisso-variabile"
+  },
+  "A5-domande.dc.html": {
+   "file": "A5-domande.dc.html",
+   "x": 4640,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A5 · domande"
+  },
+  "A6-disdetta.dc.html": {
+   "file": "A6-disdetta.dc.html",
+   "x": 5800,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A6 · disdetta"
+  },
+  "A7-in-breve.dc.html": {
+   "file": "A7-in-breve.dc.html",
+   "x": 6960,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A7 · in-breve"
+  },
+  "A8-chiusura.dc.html": {
+   "file": "A8-chiusura.dc.html",
+   "x": 8120,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A8 · Chiusura (blu)"
+  },
+  "A1-copertina-titolo-a.dc.html": {
+   "file": "A1-copertina-titolo-a.dc.html",
+   "x": 9280,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina (titolo a)"
+  },
+  "A1-copertina-titolo-b.dc.html": {
+   "file": "A1-copertina-titolo-b.dc.html",
+   "x": 10440,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina (titolo b)"
+  },
+  "B1-copertina.dc.html": {
+   "file": "B1-copertina.dc.html",
+   "x": 0,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina (titolo c)"
+  },
+  "B2-clausole.dc.html": {
+   "file": "B2-clausole.dc.html",
+   "x": 1160,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B2 · clausole"
+  },
+  "B3-bolletta.dc.html": {
+   "file": "B3-bolletta.dc.html",
+   "x": 2320,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B3 · bolletta"
+  },
+  "B4-fisso-variabile.dc.html": {
+   "file": "B4-fisso-variabile.dc.html",
+   "x": 3480,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B4 · fisso-variabile"
+  },
+  "B5-domande.dc.html": {
+   "file": "B5-domande.dc.html",
+   "x": 4640,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B5 · domande"
+  },
+  "B6-disdetta.dc.html": {
+   "file": "B6-disdetta.dc.html",
+   "x": 5800,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B6 · disdetta"
+  },
+  "B7-in-breve.dc.html": {
+   "file": "B7-in-breve.dc.html",
+   "x": 6960,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B7 · in-breve"
+  },
+  "B8-chiusura.dc.html": {
+   "file": "B8-chiusura.dc.html",
+   "x": 8120,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B8 · Chiusura (blu)"
+  },
+  "B1-copertina-titolo-a.dc.html": {
+   "file": "B1-copertina-titolo-a.dc.html",
+   "x": 9280,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina (titolo a)"
+  },
+  "B1-copertina-titolo-b.dc.html": {
+   "file": "B1-copertina-titolo-b.dc.html",
+   "x": 10440,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina (titolo b)"
+  },
+  "C1-copertina.dc.html": {
+   "file": "C1-copertina.dc.html",
+   "x": 0,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C1 · Copertina (titolo c)"
+  },
+  "C2-clausole.dc.html": {
+   "file": "C2-clausole.dc.html",
+   "x": 1160,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C2 · clausole"
+  },
+  "C3-bolletta.dc.html": {
+   "file": "C3-bolletta.dc.html",
+   "x": 2320,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C3 · bolletta"
+  },
+  "C4-fisso-variabile.dc.html": {
+   "file": "C4-fisso-variabile.dc.html",
+   "x": 3480,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C4 · fisso-variabile"
+  },
+  "C5-domande.dc.html": {
+   "file": "C5-domande.dc.html",
+   "x": 4640,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C5 · domande"
+  },
+  "C6-disdetta.dc.html": {
+   "file": "C6-disdetta.dc.html",
+   "x": 5800,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C6 · disdetta"
+  },
+  "C7-in-breve.dc.html": {
+   "file": "C7-in-breve.dc.html",
+   "x": 6960,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C7 · in-breve"
+  },
+  "C8-chiusura.dc.html": {
+   "file": "C8-chiusura.dc.html",
+   "x": 8120,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C8 · Chiusura (blu)"
+  },
+  "C1-copertina-titolo-a.dc.html": {
+   "file": "C1-copertina-titolo-a.dc.html",
+   "x": 9280,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C1 · Copertina (titolo a)"
+  },
+  "C1-copertina-titolo-b.dc.html": {
+   "file": "C1-copertina-titolo-b.dc.html",
+   "x": 10440,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C1 · Copertina (titolo b)"
+  },
+  "D1-copertina.dc.html": {
+   "file": "D1-copertina.dc.html",
+   "x": 0,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D1 · Copertina (titolo c)"
+  },
+  "D2-clausole.dc.html": {
+   "file": "D2-clausole.dc.html",
+   "x": 1160,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D2 · clausole"
+  },
+  "D3-bolletta.dc.html": {
+   "file": "D3-bolletta.dc.html",
+   "x": 2320,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D3 · bolletta"
+  },
+  "D4-fisso-variabile.dc.html": {
+   "file": "D4-fisso-variabile.dc.html",
+   "x": 3480,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D4 · fisso-variabile"
+  },
+  "D5-domande.dc.html": {
+   "file": "D5-domande.dc.html",
+   "x": 4640,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D5 · domande"
+  },
+  "D6-disdetta.dc.html": {
+   "file": "D6-disdetta.dc.html",
+   "x": 5800,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D6 · disdetta"
+  },
+  "D7-in-breve.dc.html": {
+   "file": "D7-in-breve.dc.html",
+   "x": 6960,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D7 · in-breve"
+  },
+  "D8-chiusura.dc.html": {
+   "file": "D8-chiusura.dc.html",
+   "x": 8120,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D8 · Chiusura (blu)"
+  },
+  "D1-copertina-titolo-a.dc.html": {
+   "file": "D1-copertina-titolo-a.dc.html",
+   "x": 9280,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D1 · Copertina (titolo a)"
+  },
+  "D1-copertina-titolo-b.dc.html": {
+   "file": "D1-copertina-titolo-b.dc.html",
+   "x": 10440,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D1 · Copertina (titolo b)"
+  },
+  "E1-copertina.dc.html": {
+   "file": "E1-copertina.dc.html",
+   "x": 0,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E1 · Copertina (titolo c)"
+  },
+  "E2-clausole.dc.html": {
+   "file": "E2-clausole.dc.html",
+   "x": 1160,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E2 · clausole"
+  },
+  "E3-bolletta.dc.html": {
+   "file": "E3-bolletta.dc.html",
+   "x": 2320,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E3 · bolletta"
+  },
+  "E4-fisso-variabile.dc.html": {
+   "file": "E4-fisso-variabile.dc.html",
+   "x": 3480,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E4 · fisso-variabile"
+  },
+  "E5-domande.dc.html": {
+   "file": "E5-domande.dc.html",
+   "x": 4640,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E5 · domande"
+  },
+  "E6-disdetta.dc.html": {
+   "file": "E6-disdetta.dc.html",
+   "x": 5800,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E6 · disdetta"
+  },
+  "E7-in-breve.dc.html": {
+   "file": "E7-in-breve.dc.html",
+   "x": 6960,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E7 · in-breve"
+  },
+  "E8-chiusura.dc.html": {
+   "file": "E8-chiusura.dc.html",
+   "x": 8120,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E8 · Chiusura (blu)"
+  },
+  "E1-copertina-titolo-a.dc.html": {
+   "file": "E1-copertina-titolo-a.dc.html",
+   "x": 9280,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E1 · Copertina (titolo a)"
+  },
+  "E1-copertina-titolo-b.dc.html": {
+   "file": "E1-copertina-titolo-b.dc.html",
+   "x": 10440,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E1 · Copertina (titolo b)"
+  },
+  "F1-copertina.dc.html": {
+   "file": "F1-copertina.dc.html",
+   "x": 0,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F1 · Copertina (titolo c)"
+  },
+  "F2-clausole.dc.html": {
+   "file": "F2-clausole.dc.html",
+   "x": 1160,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F2 · clausole"
+  },
+  "F3-bolletta.dc.html": {
+   "file": "F3-bolletta.dc.html",
+   "x": 2320,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F3 · bolletta"
+  },
+  "F4-fisso-variabile.dc.html": {
+   "file": "F4-fisso-variabile.dc.html",
+   "x": 3480,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F4 · fisso-variabile"
+  },
+  "F5-domande.dc.html": {
+   "file": "F5-domande.dc.html",
+   "x": 4640,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F5 · domande"
+  },
+  "F6-disdetta.dc.html": {
+   "file": "F6-disdetta.dc.html",
+   "x": 5800,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F6 · disdetta"
+  },
+  "F7-in-breve.dc.html": {
+   "file": "F7-in-breve.dc.html",
+   "x": 6960,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F7 · in-breve"
+  },
+  "F8-chiusura.dc.html": {
+   "file": "F8-chiusura.dc.html",
+   "x": 8120,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F8 · Chiusura (blu)"
+  },
+  "F1-copertina-titolo-a.dc.html": {
+   "file": "F1-copertina-titolo-a.dc.html",
+   "x": 9280,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F1 · Copertina (titolo a)"
+  },
+  "F1-copertina-titolo-b.dc.html": {
+   "file": "F1-copertina-titolo-b.dc.html",
+   "x": 10440,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F1 · Copertina (titolo b)"
+  }
+ }
+}
