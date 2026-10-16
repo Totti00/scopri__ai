@@ -51,4 +51,4 @@ Per non passare da pagina che ripubblica:
 - **Mai:** comprare follower, gruppi di like reciproci, segui/smetti di seguire.
 
 ## Reel
-Attivi dal 15/10/2026: ogni post ha la sua versione Reel in motion graphics di circa 20 secondi (`format/5-reel.md`). Arrivano a più persone che non ci seguono.
+Dal 16/10/2026 il Reel si fa **solo quando c'è un video vero che è una bomba**: una schermata con il titolo e sotto il video, niente scene (`format/5-reel.md`). Arrivano a più persone che non ci seguono, ma solo se il primo secondo cattura.

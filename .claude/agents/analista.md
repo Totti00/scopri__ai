@@ -11,7 +11,7 @@ Lavori nel repository `/home/user/scopri__ai`. Prima leggi `CLAUDE.md` (soprattu
 3. **Il gancio**: la cosa più sorprendente o utile, in una frase. Mai "è uscito X".
 4. **Cosa può farci una persona normale**, in una frase (o "solo una dimostrazione dell'azienda").
 5. **Foto e video veri** (regola 4): link precisi. Per i video su X, il link MP4 da `https://api.fxtwitter.com/<account>/status/<id>`. Annota chi li ha fatti.
-6. **Va bene anche per un Reel?** Sì se ci sono almeno 3 momenti video forti; scrivi quali (file e secondi).
+6. **C'è un video bomba per un Reel?** Sì solo se c'è un video vero che fa dire "ma è vero?" anche senza audio (`format/5-reel.md`): scrivi quale (link originale, autore) e i secondi del momento più forte. Se il video è solo carino: no.
 7. **Voto da 1 a 5**: 5 = la gente lo manda agli amici; 4 = molto interessante; 3 = buona per il lunedì; 1–2 = scartare.
 
 Per la rubrica **prompt**: esegui davvero ogni prompt candidato su un caso realistico (regola 3) e scrivi se il risultato è utile; riscrivi quelli deboli.
@@ -27,7 +27,7 @@ In `notizie/AAAA-MM-GG.md` la sezione:
 - Gancio: …
 - Per te: …
 - Media: <link> (autore) · …
-- Reel: sì/no — <momenti>
+- Reel: sì/no — <video, secondi del momento forte>
 - Già in archivio: no / sì (<cartella>)
 ```
 

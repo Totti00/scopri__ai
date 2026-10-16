@@ -13,3 +13,4 @@ assets/generated/*-check.png
 # Caroselli fatti con la skill: video sorgente e versioni intere restano fuori da GitHub
 carousels/**/media/*.mp4
 carousels/**/exports/*-completo.mp4
+carousels/**/*-completo.mp4
