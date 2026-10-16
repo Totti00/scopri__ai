@@ -198,3 +198,24 @@ These need no further approval, but list them in your summary when they occur:
 - Ghost numerals on every slide of a numbered series, even if that's slightly over 50%.
 - The swipe cue sitting on top of a super-shape (as in the design system's own worked example).
 - The frame logo as the full lockup, and the CTA with one action pill (brand rules).
+
+## 11. Real videos inside slides (Scopri AI news, added 16 Oct 2026)
+
+News carousels show the real thing: official clips (from X via `https://api.fxtwitter.com/<account>/status/<id>`) or the author's original post. Put the file in `carousels/<slug>/media/` and place a box on the slide:
+
+```html
+<div class="video-box" data-video="media/robot.mp4" data-start="97" data-dur="4"
+     style="left:96px;top:600px;width:888px;height:520px"></div>
+```
+
+| Attribute | Default | Meaning |
+|---|---|---|
+| `data-start` / `data-dur` | 0 / 8 | the piece to keep, in seconds |
+| `data-fit` | `cover` | `contain` shows the whole frame with dark bands |
+| `data-pos` | `.5` | horizontal crop, 0 = left, 1 = right |
+| `data-tone` | `mono` | black and white with the brand-blue tint (Electric Mono's "monochrome imagery"); `color` keeps the colours |
+| `border-radius` (style) | 56 px | `r-lg` panel radius; `0` for a full-bleed box |
+
+Then, after `npm run export`: `npm run media` (trimmed clips) or `npm run media -- --full` (also `slide-XX-completo.mp4` with the whole source video, which the owner trims in Instagram). It writes a poster frame into the box, so `slide-XX.png` and the previews show the clip, and stacks: full slide → video → everything in front of it (the frame, and any text, pill, sticker or card that overlaps the box: these are kept in front automatically; add class `over-video` to force it). Output: 1080 × 1350, 30 fps, H.264, no audio.
+
+Credit whoever made the clip in `fonti.md` and in "Fonti: …" at the end of the caption, never on the slide.

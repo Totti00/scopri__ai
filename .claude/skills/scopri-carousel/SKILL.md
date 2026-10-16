@@ -192,3 +192,7 @@ If the feedback is a rule for every future carousel (a brand, frame or copy habi
 | `assets/brand/` | fallback copy of the Coperchio logo kit |
 
 Requirements: Node 18+, Python 3 with Pillow and numpy, Google Chrome (or set `CHROME_PATH`), and an internet connection for Google Fonts and three.js.
+
+## In the Scopri AI repository (Totti00/scopri__ai)
+
+The team's `costruttore-post` agent drives this skill from the scheduled routines (`.claude/agents/costruttore-post.md`, `routine/README.md`). There, the project's `CLAUDE.md` rules come first: no format gate (static by default; slides with a real video become MP4 via `npm run media`, `build-guide.md` §11), news rubrics follow CLAUDE.md (2 sources, real photos and videos, sources only in the caption) instead of "keep it evergreen", and the two owner stops are the menu and the copy + static draft. In the cloud the scripts find Chromium at `/opt/pw-browsers/chromium` and add `--no-sandbox` when running as root.
