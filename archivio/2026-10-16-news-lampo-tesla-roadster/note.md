@@ -33,3 +33,6 @@
 
 ## Canvas Claude Design (bozza)
 https://claude.ai/artifact/QJ6gs6b2BU61NaHichhKNZ
+
+## Reel (chiesto dal proprietario dopo la bozza)
+reel.json (A) e reel-b.json (B), formato "video bomba". Le acrobazie programmate su pista SpaceX vanno nella caption del Reel. Lanciare reel.py con /usr/bin/python3 (Pillow).
