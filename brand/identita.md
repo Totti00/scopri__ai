@@ -21,21 +21,17 @@ Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il 
 - Logo **Scopri AI** in ogni slide.
 - Nessun timbro "provato" o simili sulle slide.
 
-## Palette (scelta il 13/10/2026: "blu pieno, carta e giallo")
+## Palette (dal 16/10/2026: Electric Mono con il nostro blu, **niente giallo**)
 | Ruolo | Colore | Hex |
 |---|---|---|
-| Fondo principale (copertine, notizie, foto profilo) | Blu pieno | `#2340FF` |
-| Fondo chiaro (prompt, tutorial, schede) | Carta | `#F4F1EA` |
-| Accento (parole chiave, etichette, barre di invito) | Giallo | `#FFD84D` |
-| Testo sul blu | Bianco | `#FFFFFF` |
-| Testo sulla carta e sul giallo | Quasi nero | `#121212` |
+| Fondo scuro (copertina, chiusura, slide forti) | Quasi nero | `#0A0A0D` |
+| Fondo chiaro | Carta fredda | `#F2F2F5` |
+| Fondo blu e unico colore d'accento | Blu Scopri AI | `#2340FF` |
+| Accento sul fondo scuro | Azzurro | `#8595FF` |
+| Testo sul chiaro | Quasi nero | `#0A0A0D` / `#121212` |
+| Testo sullo scuro | Bianco morbido | `#F5F5F7` |
 
-**Regole d'uso (per la leggibilità):**
-- Sul **blu**: testo bianco; parole chiave in **giallo** (si leggono bene).
-- Sulla **carta**: testo quasi nero; le parole chiave si evidenziano con un **riquadro giallo** dietro (testo nero), mai scritte in giallo.
-- Sul **giallo**: testo sempre quasi nero.
-- Mai rosso sul blu: illeggibile.
-- Su fondo carta, il logo usa il blu (non il giallo, che sparirebbe).
+Regole complete (contrasti, sfumature, grana, quanto accento per slide): `references/brand-scopri-ai.md` e `references/design-system.md` della skill `.claude/skills/scopri-carousel/`. Il giallo `#FFD84D` della palette del 13/10 non si usa più nei caroselli.
 
 ## Grafica
 - Font: **Inter Tight** (titoli e testo, per tutti i post dal 16/10/2026; prima Bricolage Grotesque), **JetBrains Mono** (etichette, contatore e prompt).
@@ -48,16 +44,15 @@ Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il 
   - PNG trasparenti 1538×600 (il logo) e 1080×1080 (la foto profilo). Le versioni precedenti (fumetto giallo del 13/10, fumetto bianco del 16/10 mattina) sono in `brand/logo/ufficiale/precedenti/`.
 - Formato slide: 1080×1350 px.
 
-## Stile dei caroselli (14/10/2026, ispirato alle pagine AI, non a RapTrend)
-Si genera con `strumenti/carosello.py`; esempio in `brand/template-esempio/`.
-- **Logo piccolo** in alto a sinistra; **contatore "3/7"** piccolo in alto a destra su tutte le slide tranne la copertina (16/10/2026). Niente etichette a blocco.
-- **Copertina (blu):** visual grande in alto (screenshot del prodotto o chat disegnata), titolo sotto con le parole chiave in giallo, pillola gialla "Scorri →" in basso a destra come invito a scorrere (reintrodotta il 15/10/2026; la scritta è nella costante `SCRITTA_SCORRI` di `strumenti/carosello.py`).
-- **Slide interne (carta):** testo sopra (25-40 parole, carattere grande), visual sotto, meglio se video in un riquadro arrotondato: screenshot, chat o numero grande su giallo. "👉 Per te" con filetto giallo. Nessuna fonte sulla slide.
-- **Prompt:** il prompt è un messaggio blu in una finestra di chat ("Scrivi così all'AI"), con le parti da cambiare in giallo.
-- **Ultima slide, il "terminatore"** (attuale dal 15/10/2026, storico in `template/terminatori/`): fondo carta, disegno dello smartphone con la notifica di Scopri AI (avatar: fumetto blu con tre puntini; "Scopri AI"; "🔔 Nuovo post: vieni a scoprirlo!"), "Le novità sull'AI, appena escono.", e **un solo invito**, scelto per post (dal 16/10/2026: "📩 Mandalo a…" per le notizie, "📌 Salvalo…" per prompt e liste, "🔔 Segui @scopri__ai e attiva le notifiche" per le serie). Niente mascotte né animazioni.
-- Se si parla di una persona o di una cosa reale, il visual è la foto o il video veri (regola 4 di `CLAUDE.md`), con chi l'ha fatta annotato in `fonti.md` del post. La chat disegnata resta per i prompt da copiare e per i concetti; se non riproducono l'interfaccia vera, sotto va scritto "Esempio illustrativo".
-
-Da evitare perché tipico dei concorrenti: fondo nero con lilla o viola, mascotte robot, collage di CEO.
+## Stile dei caroselli (dal 16/10/2026)
+Si fanno con la skill `.claude/skills/scopri-carousel/` (design Electric Mono adattato a Scopri AI). In breve:
+- **Cornice fissa** su ogni slide: logo in alto a sinistra, contatore in alto a destra (la chiusura non conta e non ce l'ha), `@scopri__ai` in basso a sinistra, freccia in basso a destra (piena sulla copertina).
+- **Fondi che si alternano** scuro / chiaro / blu, con sfumature e grana; un **filo** blu che passa da una slide all'altra.
+- **Un protagonista per slide**: titolo grande, numero gigante sottile, oggetto 3D di vetro e cromo, scheda di interfaccia, oppure **video o foto veri** (in bianco e nero con il tono blu, dentro un riquadro).
+- **Prompt** dentro una scheda scura, con le parti da cambiare `[tra parentesi]` in azzurro.
+- **Chiusura**: logo grande al centro, frase legata al post, **un solo** bottone (di solito SALVA; per le notizie "Mandalo a…"). Il vecchio terminatore con il telefono è in `_vecchio/template/terminatori/`.
+- Niente fonti sulle slide (regola 2), niente mascotte, niente emoji sulle slide.
+- Esempio: `.claude/skills/scopri-carousel/examples/bollette-contratti/contact-sheet.jpg`.
 
 ## Tono di voce
 | Sì | No |

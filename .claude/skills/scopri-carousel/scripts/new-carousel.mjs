@@ -21,7 +21,7 @@ if (existsSync(dest)) { console.error(`${path.relative(root, dest)} already exis
 const tpl = path.join(skill, 'assets', 'template');
 await mkdir(dest, { recursive: true });
 await cp(path.join(tpl, 'engine'), path.join(dest, 'engine'), { recursive: true });
-for (const f of ['export.mjs', 'export-video.mjs']) await copyFile(path.join(tpl, f), path.join(dest, f));
+for (const f of ['export.mjs', 'export-video.mjs', 'export-media.mjs']) await copyFile(path.join(tpl, f), path.join(dest, f));
 const html = (await readFile(path.join(tpl, 'index.html'), 'utf8'))
   .replaceAll('__TITLE__', title || slug.replace(/-/g, ' ')).replaceAll('__FORMAT__', format);
 await writeFile(path.join(dest, 'index.html'), html);
@@ -38,6 +38,7 @@ await writeFile(path.join(dest, 'package.json'), JSON.stringify({
   scripts: {
     export: 'node export.mjs',
     'export:video': 'node export-video.mjs',
+    media: 'node export-media.mjs',
     previews: `python ${scripts}/previews.py .`,
     publish: `python ${scripts}/publish-pack.py .`,
   },

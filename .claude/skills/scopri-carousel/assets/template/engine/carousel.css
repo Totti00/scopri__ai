@@ -202,3 +202,11 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 @keyframes a-draw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
 @keyframes a-float{from{translate:0 0}to{translate:0 -8px}}
 @keyframes a-breathe{from{opacity:.82}to{opacity:1}}
+
+/* ===== Real videos inside slides (export-media.mjs, added for Scopri AI news) ===== */
+.video-box{position:absolute;z-index:6;overflow:hidden;border-radius:56px;background:#0A0A0D center/cover no-repeat;box-shadow:var(--card-shadow)}
+/* Second capture: only the frame and .over-video elements, on transparency (they are stacked on top of the video) */
+html:has(body.overlay-pass),body.overlay-pass{background:transparent!important}
+body.overlay-pass .slide *{visibility:hidden!important}
+body.overlay-pass .slide .over-video,body.overlay-pass .slide .over-video *,
+body.overlay-pass .slide .f-logo,body.overlay-pass .slide .f-count,body.overlay-pass .slide .f-handle,body.overlay-pass .slide .f-cue,body.overlay-pass .slide .f-cue *{visibility:visible!important}

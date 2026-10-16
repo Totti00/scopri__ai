@@ -36,25 +36,22 @@ Gli agenti non fanno commit e non parlano con il proprietario: lo fa il regista.
 ### 🛑 Fermata 1 — aspetta la risposta del proprietario
 Non costruire niente finché non risponde. Scrivi la sua scelta in `notizie/AAAA-MM-GG.md`, sezione "4. Scelta del proprietario" (notizia, titolo, tipo di carosello, eventuali modifiche), commit e push. Se chiede altre opzioni, rifai il menu con il `selezionatore`. Se dice "niente", finisci.
 
-## Fase B — bozza (dopo il sì)
-1. `costruttore-post` (modo `bozza`) e `costruttore-reel` (modo `bozza`) **in parallelo**, con la stessa cartella. Più soluzioni possibili: ogni template, le copertine con i titoli rimasti in gioco, due versioni del Reel.
-2. Pubblica la bozza del post su **Claude Design**: Artifact `quickstart` con intent `design`, crea il canvas dal tipo "Design" con il titolo del post, poi pubblica nel suo `url` i file di `<cartella>/bozza/` (le pagine `.dc.html`, `canvas.json` e `img/`), seguendo le istruzioni del tipo.
-3. Commit e push.
-   Se lo strumento Artifact non è disponibile in questa sessione, salta il canvas: manda le anteprime PNG di `bozza/A/` e `bozza/B/` e il proprietario sceglie da lì.
-4. Manda al proprietario: il link del canvas (o le anteprime PNG) e le anteprime del Reel `reel-anteprima.png` e `reel-anteprima-b.png` (SendUserFile). Chiedi: **"Quale template, quale copertina e quale Reel scegli? Correggi pure sul canvas, poi scrivimi."**
+## Fase B — bozza (dopo la scelta)
+1. `costruttore-post` (modo `bozza`, con lo **slug** `AAAA-MM-GG-<rubrica>-<argomento>`) e `costruttore-reel` (modo `bozza`) **in parallelo**. Il costruttore del post usa la skill `scopri-carousel`: testi completi in `carousels/<slug>/copy.md`, slide statiche esportate, copertine alternative.
+2. Commit e push.
+3. Manda al proprietario (SendUserFile): `exports/contact-sheet.jpg`, le copertine alternative (`exports/copertina-*.png`), le anteprime del Reel (`reel-anteprima.png`, `reel-anteprima-b.png`) e i testi di `copy.md` in versione corta (titolo e testo di ogni slide, caption). Chiedi: **"Va bene così? Dimmi quale copertina e quale Reel, e cosa cambiare."**
 
-### 🛑 Fermata 2 — aspetta la scelta del template e le correzioni
-Prima di andare avanti rileggi il canvas (Artifact `read` del suo url, compreso `canvas.json`): le correzioni fatte a mano dal proprietario valgono quanto quelle scritte in chat.
+### 🛑 Fermata 2 — aspetta l'approvazione e le correzioni
+Un sì chiaro ("va bene", "approvato") approva tutto quello che non viene citato: applica le modifiche chieste e vai avanti, senza richiedere l'approvazione.
 
 ## Fase C — post e Reel finali
-1. `costruttore-post` (modo `finale`) e `costruttore-reel` (modo `finale`) **in parallelo**, passando a ognuno il template scelto e tutte le correzioni.
-2. Controlla tu il risultato (qualche slide e qualche fotogramma del Reel) con `brand/controllo-finale.md`.
-3. Commit su `main` con autore `Claude <noreply@anthropic.com>` e push (se la rete fallisce riprova fino a 4 volte). Se il push su `main` viene rifiutato, fai push sul ramo della sessione (`git push -u origin HEAD:<ramo>`) e scrivi al proprietario il nome del ramo: il lavoro va poi unito a `main`. I file `media/*.mp4` e `*-completo.mp4` non vanno su GitHub (sono in `.gitignore`).
+1. `costruttore-post` (modo `finale`) e `costruttore-reel` (modo `finale`) **in parallelo**, passando a ognuno tutte le correzioni.
+2. Controlla tu il risultato (contact sheet, qualche fotogramma degli MP4 e del Reel) con `brand/controllo-finale.md`.
+3. Commit su `main` con autore `Claude <noreply@anthropic.com>` e push (se la rete fallisce riprova fino a 4 volte). Se il push su `main` viene rifiutato, fai push sul ramo della sessione (`git push -u origin HEAD:<ramo>`) e scrivi al proprietario il nome del ramo. I video sorgente (`media/*.mp4`) e i `*-completo.mp4` non vanno su GitHub (`.gitignore`).
 4. **Consegna il pacchetto** con SendUserFile (status `proactive`):
-   - le slide (`slide-NN.png` / `.mp4`) e i `slide-NN-completo.mp4`;
+   - le slide di `carousels/<slug>/exports/` (`slide-NN.png` / `.mp4`) e i `slide-NN-completo.mp4`;
    - `reel.mp4`;
-   - `caption.txt` e `caption-reel.txt`;
-   - `alt-text.txt`.
+   - i file di `carousels/<slug>/pubblicazione/` (caption, testi alternativi, commenti fissati) e `caption-reel.txt`.
    Un file oltre i 30 MB non si può inviare: ricomprimilo con `ffmpeg -i in.mp4 -c:v libx264 -crf 25 -an -movflags +faststart out.mp4`.
 5. **Messaggio finale** in italiano, breve: cosa è pronto, quando pubblicare carosello e Reel, musica consigliata, eventuali dubbi.
 
