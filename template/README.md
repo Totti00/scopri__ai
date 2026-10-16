@@ -39,15 +39,15 @@ In `carosello.py` la chiusura accetta `{"tipo": "chiusura", "colore": "blu|bianc
 ### Ultimo colore usato (lo aggiorna il `costruttore-post` a bozza fatta)
 | Template | Ultimo colore usato | Dove |
 |---|---|---|
-| A · Classico | non ancora usato | — |
-| B · Fascia | blu | post Gemini 4 Argon, 14/10/2026 |
-| C · Telefono grande | non ancora usato | — |
-| D · Numero gigante | non ancora usato | — |
-| E · Foto a tutta slide | bianco | post Google Play, 15/10/2026 |
-| F · Carta a blocchi | non ancora usato | — |
-| Chiusura (notifica) | carta (bianco) | tutti i post finora |
+| A · Classico | giallo | bozza Tesla Roadster, 16/10/2026 |
+| B · Fascia | giallo | bozza Tesla Roadster, 16/10/2026 (prima: blu, Gemini 4 Argon, 14/10) |
+| C · Telefono grande | giallo | bozza Tesla Roadster, 16/10/2026 |
+| D · Numero gigante | giallo | bozza Tesla Roadster, 16/10/2026 |
+| E · Foto a tutta slide | giallo | bozza Tesla Roadster, 16/10/2026 (prima: bianco, Google Play, 15/10) |
+| F · Carta a blocchi | giallo | bozza Tesla Roadster, 16/10/2026 |
+| Chiusura (notifica) | blu | bozza Tesla Roadster, 16/10/2026 (prima: carta/bianco, tutti i post fino al 15/10) |
 
-Prossimo post: per ogni template, uno dei due colori diversi dall'ultimo (E: blu o giallo; B: bianco o giallo; chiusura: blu o giallo).
+Prossimo post: per ogni template, uno dei due colori diversi dall'ultimo, preferendo quello usato meno di recente (A, C, D, F: blu o bianco; B: bianco; E: blu; chiusura: giallo).
 
 ## Ultima slide: il terminatore
 Tutti i post finiscono con il **terminatore attuale**, in qualsiasi template. I terminatori (attuale e vecchi) sono in `terminatori/`, con le istruzioni per cambiarlo.

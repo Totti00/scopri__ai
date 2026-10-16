@@ -1,0 +1,102 @@
+{
+ "rubrica": "NEWS LAMPO",
+ "stile": "DA-SCEGLIERE",
+ "colore_partenza": "giallo",
+ "slides": [
+  {
+   "tipo": "copertina",
+   "titolo": "*10 getti d'aria* da razzo: guarda cosa fa la nuova Tesla",
+   "visual": {
+    "video": "media/roadster1.mp4",
+    "inizio": 0,
+    "durata": 4,
+    "posizione": 0.5
+   }
+  },
+  {
+   "tipo": "testo",
+   "titolo": "Ha fatto una *capriola* sopra un camion",
+   "testo": [
+    "È la nuova Tesla Roadster, spinta da 10 getti d'aria compressa."
+   ],
+   "commento": "Nessuno a bordo.",
+   "visual": {
+    "video": "media/roadster2.mp4",
+    "inizio": 26,
+    "durata": 5,
+    "posizione": 0.7
+   }
+  },
+  {
+   "tipo": "testo",
+   "titolo": "Si è fermata *a testa in giù*",
+   "testo": [
+    "Su una rampa a forma di C. Delle ventole aspirano l'aria sotto l'auto e la tengono incollata."
+   ],
+   "commento": "Come una ventosa.",
+   "visual": {
+    "video": "media/roadster2.mp4",
+    "inizio": 12,
+    "durata": 4,
+    "posizione": 0.7
+   }
+  },
+  {
+   "tipo": "testo",
+   "titolo": "È scesa piano *con i getti* accesi",
+   "testo": [
+    "Dopo il salto sopra le auto parcheggiate, i getti l'hanno tenuta in aria per farla scendere piano."
+   ],
+   "commento": "Atterraggio morbido.",
+   "visual": {
+    "video": "media/roadster1.mp4",
+    "inizio": 6,
+    "durata": 5,
+    "posizione": 0.1
+   }
+  },
+  {
+   "tipo": "testo",
+   "titolo": "Ha derapato *spinta dall'aria*",
+   "testo": [
+    "I getti usano aria compressa chiusa in bombole, con una tecnica presa dai razzi di SpaceX."
+   ],
+   "commento": "Come un razzo.",
+   "visual": {
+    "video": "media/roadster2.mp4",
+    "inizio": 8,
+    "durata": 4,
+    "posizione": 0.5
+   }
+  },
+  {
+   "tipo": "testo",
+   "titolo": "Per ora è solo uno *spettacolo*",
+   "testo": [
+    "Era una prova su una pista di SpaceX, in Texas. La versione con i getti si prenota con 250.000 dollari."
+   ],
+   "commento": "Non per strada.",
+   "visual": {
+    "numero": "2028",
+    "sotto": "inizio della produzione"
+   }
+  },
+  {
+   "tipo": "riepilogo",
+   "titolo": "In breve",
+   "punti": [
+    "Capriola sopra un camion",
+    "Ferma a testa in giù",
+    "10 getti d'aria compressa",
+    "Poca AI: acrobazie programmate",
+    "Produzione dal 2028"
+   ],
+   "fondo": "giallo"
+  },
+  {
+   "tipo": "chiusura",
+   "colore": "blu",
+   "invito_testo": "📩 Mandalo a chi sogna le auto volanti"
+  }
+ ]
+}

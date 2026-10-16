@@ -1,0 +1,534 @@
+{
+ "v": 3,
+ "attachments": {},
+ "boards": {
+  "A1-copertina.dc.html": {
+   "file": "A1-copertina.dc.html",
+   "x": 0,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina"
+  },
+  "A2-capriola.dc.html": {
+   "file": "A2-capriola.dc.html",
+   "x": 1160,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A2 · Capriola"
+  },
+  "A3-testa-in-giu.dc.html": {
+   "file": "A3-testa-in-giu.dc.html",
+   "x": 2320,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A3 · Testa in giu"
+  },
+  "A4-getti.dc.html": {
+   "file": "A4-getti.dc.html",
+   "x": 3480,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A4 · Getti"
+  },
+  "A5-derapata.dc.html": {
+   "file": "A5-derapata.dc.html",
+   "x": 4640,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A5 · Derapata"
+  },
+  "A6-2028.dc.html": {
+   "file": "A6-2028.dc.html",
+   "x": 5800,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A6 · 2028"
+  },
+  "A7-in-breve.dc.html": {
+   "file": "A7-in-breve.dc.html",
+   "x": 6960,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A7 · In breve"
+  },
+  "A8-chiusura.dc.html": {
+   "file": "A8-chiusura.dc.html",
+   "x": 8120,
+   "y": 0,
+   "width": 1080,
+   "height": 1350,
+   "title": "A8 · Chiusura"
+  },
+  "B1-copertina.dc.html": {
+   "file": "B1-copertina.dc.html",
+   "x": 0,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina"
+  },
+  "B2-capriola.dc.html": {
+   "file": "B2-capriola.dc.html",
+   "x": 1160,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B2 · Capriola"
+  },
+  "B3-testa-in-giu.dc.html": {
+   "file": "B3-testa-in-giu.dc.html",
+   "x": 2320,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B3 · Testa in giu"
+  },
+  "B4-getti.dc.html": {
+   "file": "B4-getti.dc.html",
+   "x": 3480,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B4 · Getti"
+  },
+  "B5-derapata.dc.html": {
+   "file": "B5-derapata.dc.html",
+   "x": 4640,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B5 · Derapata"
+  },
+  "B6-2028.dc.html": {
+   "file": "B6-2028.dc.html",
+   "x": 5800,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B6 · 2028"
+  },
+  "B7-in-breve.dc.html": {
+   "file": "B7-in-breve.dc.html",
+   "x": 6960,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B7 · In breve"
+  },
+  "B8-chiusura.dc.html": {
+   "file": "B8-chiusura.dc.html",
+   "x": 8120,
+   "y": 1770,
+   "width": 1080,
+   "height": 1350,
+   "title": "B8 · Chiusura"
+  },
+  "C1-copertina.dc.html": {
+   "file": "C1-copertina.dc.html",
+   "x": 0,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C1 · Copertina"
+  },
+  "C2-capriola.dc.html": {
+   "file": "C2-capriola.dc.html",
+   "x": 1160,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C2 · Capriola"
+  },
+  "C3-testa-in-giu.dc.html": {
+   "file": "C3-testa-in-giu.dc.html",
+   "x": 2320,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C3 · Testa in giu"
+  },
+  "C4-getti.dc.html": {
+   "file": "C4-getti.dc.html",
+   "x": 3480,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C4 · Getti"
+  },
+  "C5-derapata.dc.html": {
+   "file": "C5-derapata.dc.html",
+   "x": 4640,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C5 · Derapata"
+  },
+  "C6-2028.dc.html": {
+   "file": "C6-2028.dc.html",
+   "x": 5800,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C6 · 2028"
+  },
+  "C7-in-breve.dc.html": {
+   "file": "C7-in-breve.dc.html",
+   "x": 6960,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C7 · In breve"
+  },
+  "C8-chiusura.dc.html": {
+   "file": "C8-chiusura.dc.html",
+   "x": 8120,
+   "y": 3540,
+   "width": 1080,
+   "height": 1350,
+   "title": "C8 · Chiusura"
+  },
+  "D1-copertina.dc.html": {
+   "file": "D1-copertina.dc.html",
+   "x": 0,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D1 · Copertina"
+  },
+  "D2-capriola.dc.html": {
+   "file": "D2-capriola.dc.html",
+   "x": 1160,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D2 · Capriola"
+  },
+  "D3-testa-in-giu.dc.html": {
+   "file": "D3-testa-in-giu.dc.html",
+   "x": 2320,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D3 · Testa in giu"
+  },
+  "D4-getti.dc.html": {
+   "file": "D4-getti.dc.html",
+   "x": 3480,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D4 · Getti"
+  },
+  "D5-derapata.dc.html": {
+   "file": "D5-derapata.dc.html",
+   "x": 4640,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D5 · Derapata"
+  },
+  "D6-2028.dc.html": {
+   "file": "D6-2028.dc.html",
+   "x": 5800,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D6 · 2028"
+  },
+  "D7-in-breve.dc.html": {
+   "file": "D7-in-breve.dc.html",
+   "x": 6960,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D7 · In breve"
+  },
+  "D8-chiusura.dc.html": {
+   "file": "D8-chiusura.dc.html",
+   "x": 8120,
+   "y": 5310,
+   "width": 1080,
+   "height": 1350,
+   "title": "D8 · Chiusura"
+  },
+  "E1-copertina.dc.html": {
+   "file": "E1-copertina.dc.html",
+   "x": 0,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E1 · Copertina"
+  },
+  "E2-capriola.dc.html": {
+   "file": "E2-capriola.dc.html",
+   "x": 1160,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E2 · Capriola"
+  },
+  "E3-testa-in-giu.dc.html": {
+   "file": "E3-testa-in-giu.dc.html",
+   "x": 2320,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E3 · Testa in giu"
+  },
+  "E4-getti.dc.html": {
+   "file": "E4-getti.dc.html",
+   "x": 3480,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E4 · Getti"
+  },
+  "E5-derapata.dc.html": {
+   "file": "E5-derapata.dc.html",
+   "x": 4640,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E5 · Derapata"
+  },
+  "E6-2028.dc.html": {
+   "file": "E6-2028.dc.html",
+   "x": 5800,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E6 · 2028"
+  },
+  "E7-in-breve.dc.html": {
+   "file": "E7-in-breve.dc.html",
+   "x": 6960,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E7 · In breve"
+  },
+  "E8-chiusura.dc.html": {
+   "file": "E8-chiusura.dc.html",
+   "x": 8120,
+   "y": 7080,
+   "width": 1080,
+   "height": 1350,
+   "title": "E8 · Chiusura"
+  },
+  "F1-copertina.dc.html": {
+   "file": "F1-copertina.dc.html",
+   "x": 0,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F1 · Copertina"
+  },
+  "F2-capriola.dc.html": {
+   "file": "F2-capriola.dc.html",
+   "x": 1160,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F2 · Capriola"
+  },
+  "F3-testa-in-giu.dc.html": {
+   "file": "F3-testa-in-giu.dc.html",
+   "x": 2320,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F3 · Testa in giu"
+  },
+  "F4-getti.dc.html": {
+   "file": "F4-getti.dc.html",
+   "x": 3480,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F4 · Getti"
+  },
+  "F5-derapata.dc.html": {
+   "file": "F5-derapata.dc.html",
+   "x": 4640,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F5 · Derapata"
+  },
+  "F6-2028.dc.html": {
+   "file": "F6-2028.dc.html",
+   "x": 5800,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F6 · 2028"
+  },
+  "F7-in-breve.dc.html": {
+   "file": "F7-in-breve.dc.html",
+   "x": 6960,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F7 · In breve"
+  },
+  "F8-chiusura.dc.html": {
+   "file": "F8-chiusura.dc.html",
+   "x": 8120,
+   "y": 8850,
+   "width": 1080,
+   "height": 1350,
+   "title": "F8 · Chiusura"
+  },
+  "A1-copertina-titolo-a.dc.html": {
+   "file": "A1-copertina-titolo-a.dc.html",
+   "x": 0,
+   "y": 10620,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina (titolo a)"
+  },
+  "A1-copertina-titolo-b.dc.html": {
+   "file": "A1-copertina-titolo-b.dc.html",
+   "x": 1160,
+   "y": 10620,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina (titolo b)"
+  },
+  "A1-copertina-video-2.dc.html": {
+   "file": "A1-copertina-video-2.dc.html",
+   "x": 2320,
+   "y": 10620,
+   "width": 1080,
+   "height": 1350,
+   "title": "A1 · Copertina (video 2)"
+  },
+  "B1-copertina-titolo-a.dc.html": {
+   "file": "B1-copertina-titolo-a.dc.html",
+   "x": 0,
+   "y": 12390,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina (titolo a)"
+  },
+  "B1-copertina-titolo-b.dc.html": {
+   "file": "B1-copertina-titolo-b.dc.html",
+   "x": 1160,
+   "y": 12390,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina (titolo b)"
+  },
+  "B1-copertina-video-2.dc.html": {
+   "file": "B1-copertina-video-2.dc.html",
+   "x": 2320,
+   "y": 12390,
+   "width": 1080,
+   "height": 1350,
+   "title": "B1 · Copertina (video 2)"
+  },
+  "C1-copertina-titolo-a.dc.html": {
+   "file": "C1-copertina-titolo-a.dc.html",
+   "x": 0,
+   "y": 14160,
+   "width": 1080,
+   "height": 1350,
+   "title": "C1 · Copertina (titolo a)"
+  },
+  "C1-copertina-titolo-b.dc.html": {
+   "file": "C1-copertina-titolo-b.dc.html",
+   "x": 1160,
+   "y": 14160,
+   "width": 1080,
+   "height": 1350,
+   "title": "C1 · Copertina (titolo b)"
+  },
+  "C1-copertina-video-2.dc.html": {
+   "file": "C1-copertina-video-2.dc.html",
+   "x": 2320,
+   "y": 14160,
+   "width": 1080,
+   "height": 1350,
+   "title": "C1 · Copertina (video 2)"
+  },
+  "D1-copertina-titolo-a.dc.html": {
+   "file": "D1-copertina-titolo-a.dc.html",
+   "x": 0,
+   "y": 15930,
+   "width": 1080,
+   "height": 1350,
+   "title": "D1 · Copertina (titolo a)"
+  },
+  "D1-copertina-titolo-b.dc.html": {
+   "file": "D1-copertina-titolo-b.dc.html",
+   "x": 1160,
+   "y": 15930,
+   "width": 1080,
+   "height": 1350,
+   "title": "D1 · Copertina (titolo b)"
+  },
+  "D1-copertina-video-2.dc.html": {
+   "file": "D1-copertina-video-2.dc.html",
+   "x": 2320,
+   "y": 15930,
+   "width": 1080,
+   "height": 1350,
+   "title": "D1 · Copertina (video 2)"
+  },
+  "E1-copertina-titolo-a.dc.html": {
+   "file": "E1-copertina-titolo-a.dc.html",
+   "x": 0,
+   "y": 17700,
+   "width": 1080,
+   "height": 1350,
+   "title": "E1 · Copertina (titolo a)"
+  },
+  "E1-copertina-titolo-b.dc.html": {
+   "file": "E1-copertina-titolo-b.dc.html",
+   "x": 1160,
+   "y": 17700,
+   "width": 1080,
+   "height": 1350,
+   "title": "E1 · Copertina (titolo b)"
+  },
+  "E1-copertina-video-2.dc.html": {
+   "file": "E1-copertina-video-2.dc.html",
+   "x": 2320,
+   "y": 17700,
+   "width": 1080,
+   "height": 1350,
+   "title": "E1 · Copertina (video 2)"
+  },
+  "F1-copertina-titolo-a.dc.html": {
+   "file": "F1-copertina-titolo-a.dc.html",
+   "x": 0,
+   "y": 19470,
+   "width": 1080,
+   "height": 1350,
+   "title": "F1 · Copertina (titolo a)"
+  },
+  "F1-copertina-titolo-b.dc.html": {
+   "file": "F1-copertina-titolo-b.dc.html",
+   "x": 1160,
+   "y": 19470,
+   "width": 1080,
+   "height": 1350,
+   "title": "F1 · Copertina (titolo b)"
+  },
+  "F1-copertina-video-2.dc.html": {
+   "file": "F1-copertina-video-2.dc.html",
+   "x": 2320,
+   "y": 19470,
+   "width": 1080,
+   "height": 1350,
+   "title": "F1 · Copertina (video 2)"
+  }
+ }
+}
