@@ -1,0 +1,16 @@
+{
+  "scene": [
+    {"tipo": "gancio", "etichetta": "NEWS LAMPO", "titolo": "Hai tre divani aperti in *tre schede*?",
+     "video": "media/zoom-schede-gancio.mp4", "inizio": 2.5, "durata": 3},
+    {"tipo": "scoperta", "titolo": "Prima: copiavi tutto *in ChatGPT*.", "commento": "Scheda per scheda.", "durata": 2.5},
+    {"tipo": "scoperta", "titolo": "Ora ChatGPT *legge le tue schede*.", "commento": "Niente copia-incolla.",
+     "video": "media/zoom-divani.mp4", "inizio": 1.5, "durata": 3.5},
+    {"tipo": "scoperta", "titolo": "Confronta misure, prezzi e *materiali*.", "commento": "Tabella pronta.",
+     "video": "media/zoom-tabella.mp4", "inizio": 0.8, "durata": 3.5},
+    {"tipo": "scoperta", "titolo": "In modalità Work *compila i moduli*.", "commento": "Ti chiede conferma.",
+     "video": "media/chatgpt2.mp4", "inizio": 40.5, "durata": 3.5, "posizione": 0.45},
+    {"tipo": "scoperta", "etichetta": "SERVE L'APP CHATGPT PER COMPUTER", "titolo": "C'è già in Italia, *anche gratis*.",
+     "commento": "Work forse a pagamento.", "durata": 3},
+    {"tipo": "finale", "durata": 2.5, "invito_testo": "📩 Mandalo a chi è indeciso"}
+  ]
+}
