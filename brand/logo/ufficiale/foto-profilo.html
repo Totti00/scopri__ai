@@ -1,1 +1,69 @@
-<!doctype html><html lang="it"><head><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&amp;display=block" rel="stylesheet"><style>html,body{margin:0;width:1080px;height:1080px}svg{display:block}</style></head><body><svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1080" fill="#2340FF"/><rect x="200" y="250" width="680" height="470" rx="120" fill="#FFD84D"/><polygon points="330,700 330,860 490,700" fill="#FFD84D"/><text x="540" y="485" font-family="Space Grotesk" font-weight="700" text-anchor="middle" dominant-baseline="central" font-size="300" fill="#2340FF" letter-spacing="-8">AI</text></svg></body></html>
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scopri AI · Profilo A · Campo blu</title>
+<style>
+/* Direction A · ACCENT field (design-system.md §4.3, ramp retuned to #2340FF): white mark, white glow, lift shadow */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#15151b}
+body{min-height:100vh;display:grid;place-items:center;padding:32px}
+.view{position:relative;width:calc(1080px * var(--s,.6));height:calc(1080px * var(--s,.6))}
+.view>.pfp{position:absolute;left:0;top:0;transform:scale(var(--s,.6));transform-origin:0 0}
+.guide{position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 2px rgba(255,255,255,.5),0 0 0 9999px rgba(21,21,27,.55);pointer-events:none}
+body.export{padding:0;display:block}
+body.export .view{--s:1}
+body.export .guide{display:none}
+
+.pfp{position:relative;width:1080px;height:1080px;overflow:hidden;isolation:isolate}
+.layer{position:absolute;left:0;top:0;width:1080px;height:1080px;pointer-events:none}
+.bg{background:radial-gradient(70% 50% at 10% 0%,rgba(255,255,255,.14) 0%,transparent 70%),linear-gradient(150deg,#4760FF 0%,#2340FF 45%,#1A32D1 100%)}
+.mark{position:absolute;display:block;overflow:visible}
+.mark .lift{fill:#0B1680;opacity:.45;filter:url(#lift)}
+.mark .ink{fill:#FFFFFF}
+.grain{opacity:.08;mix-blend-mode:overlay}
+</style>
+</head>
+<body>
+<div class="view">
+  <div class="pfp" id="pfp">
+    <div class="layer bg"></div>
+    <svg class="mark" id="mark" viewBox="0 0 100 89.6" aria-label="Scopri AI">
+      <defs>
+        <!-- White glow centred on the bubble body (y 34.5), not on the tail -->
+        <radialGradient id="halo" gradientUnits="userSpaceOnUse" cx="50" cy="34.5" r="95"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".5" stop-color="#fff" stop-opacity=".10"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <filter id="lift" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4.5"/></filter>
+        <!-- Glow and shadow are masked to outside the bubble, so the "AI" cutout shows the clean field colour -->
+        <mask id="outside" maskUnits="userSpaceOnUse" x="-60" y="-60" width="220" height="210"><rect x="-60" y="-60" width="220" height="210" fill="#fff"/><path fill="#000" d="M17 0H83A17 17 0 0 1 100 17V52A17 17 0 0 1 83 69H40L19 89.6V69H17A17 17 0 0 1 0 52V17A17 17 0 0 1 17 0Z"/></mask>
+      </defs>
+      <g mask="url(#outside)"><circle cx="50" cy="34.5" r="95" fill="url(#halo)"/><path class="lift" transform="translate(0 5)" d="M17 0H83A17 17 0 0 1 100 17V52A17 17 0 0 1 83 69H40L19 89.6V69H17A17 17 0 0 1 0 52V17A17 17 0 0 1 17 0Z"/></g>
+      <path class="ink" id="mark-path" fill-rule="evenodd" d="M17 0H83A17 17 0 0 1 100 17V52A17 17 0 0 1 83 69H40L19 89.6V69H17A17 17 0 0 1 0 52V17A17 17 0 0 1 17 0ZM32.2 50L40.3 18.9H50.2L58.3 50H51.65L49.8 42.9H40.7L38.85 50ZM45.25 25.4L48.45 37.7H42.05ZM61.3 18.9H67V50H61.3Z"/>
+    </svg>
+    <svg class="layer grain" viewBox="0 0 1080 1080">
+      <filter id="grain" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+      <rect width="1080" height="1080" filter="url(#grain)"/>
+    </svg>
+  </div>
+  <div class="guide"></div>
+</div>
+<script>
+/* Mark geometry: width in px, and which mark y (in viewBox units, 0–89.6) sits on the canvas centre.
+   y 41 puts the tail tip and the top corners at the same distance from the centre, so the bubble sits evenly in the circle. */
+const MARK_W = 560, ANCHOR_Y = 41;
+
+if (new URLSearchParams(location.search).has('export')) document.body.classList.add('export');
+const s = MARK_W / 100, mark = document.getElementById('mark');
+Object.assign(mark.style, { width: MARK_W + 'px', height: 89.6 * s + 'px', left: 540 - 50 * s + 'px', top: 540 - ANCHOR_Y * s + 'px' });
+
+/* Reach: farthest point of the mark from the centre, as a fraction of the crop radius (540) */
+window.runQA = () => {
+  const p = document.getElementById('mark-path'), L = p.getTotalLength(), ox = 540 - 50 * s, oy = 540 - ANCHOR_Y * s;
+  let max = 0;
+  for (let d = 0; d <= L; d += 0.25) { const q = p.getPointAtLength(d); max = Math.max(max, Math.hypot(ox + q.x * s - 540, oy + q.y * s - 540)); }
+  return { reach: max / 540, markW: MARK_W };
+};
+window.__ready = true;
+</script>
+</body>
+</html>

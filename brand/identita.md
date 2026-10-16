@@ -40,7 +40,7 @@ Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il 
 ## Grafica
 - Font: **Inter Tight** (titoli e testo, per tutti i post dal 16/10/2026; prima Bricolage Grotesque), **JetBrains Mono** (etichette, contatore e prompt). Il logo resta in **Space Grotesk**.
 - **Logo ufficiale (scelto il 13/10/2026): "Scopri" + fumetto con "AI".**
-  - Foto profilo: `brand/logo/ufficiale/foto-profilo.png` (fumetto giallo con "AI" blu su fondo blu).
+  - Foto profilo (dal 16/10/2026): `brand/logo/ufficiale/foto-profilo.png` (fumetto bianco con "AI" traforato su campo blu `#2340FF` sfumato, con grana; sorgente `foto-profilo.html`, si esporta aprendola con `?export`). Le versioni del 13/10 (fumetto giallo) sono in `brand/logo/ufficiale/precedenti/`.
   - Logo su fondo blu: `brand/logo/ufficiale/logo-su-blu.png` (testo bianco, fumetto giallo).
   - Logo su fondo carta: `brand/logo/ufficiale/logo-su-carta.png` (testo nero, fumetto blu).
   - Le proposte scartate non sono più nel repository, ma si possono recuperare dalla cronologia di GitHub.
