@@ -36,7 +36,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 - La seconda slide deve collegarsi alla copertina: se la copertina dice "guarda cosa sa fare", la seconda mostra subito la prima cosa che sa fare.
 - Le slide nuove si preparano prima **senza video** su Claude Design, in **ogni template** di `template/`; il proprietario sceglie il template e corregge. I video si inseriscono solo quando approva (procedimento in `template/README.md`).
 - Si dice cosa può farci una persona normale, e se è solo un esempio dell'azienda lo si dice.
-- **Guida di scrittura dei caroselli** (adottata il 16/10/2026): `format/carousel-copy.md` — limiti di parole per slide, test del gancio, 12 tipi di gancio, 11 schemi di carosello, slide 2 che funziona anche da sola, riepilogo da salvare, caption che aggiunge e non ripete. Le regole di questo file vengono prima.
+- **Guida di scrittura dei caroselli** (adottata il 16/10/2026): `format/carousel-copy.md` (in inglese, com'è nell'originale; **i post si scrivono sempre in italiano**) — limiti di parole per slide, test del gancio, 12 tipi di gancio, 11 schemi di carosello, slide 2 che funziona anche da sola, riepilogo da salvare, caption che aggiunge e non ripete. Le regole di questo file vengono prima.
 - **Il meglio all'inizio** (16/10/2026): la cosa più forte nella slide 2 o 3, non in fondo.
 - **Contatore "3/7"** in alto a destra su tutte le slide tranne la copertina (16/10/2026).
 - **Un solo invito per post**, scelto per tipo: notizie → "📩 Mandalo a…", prompt e liste → "📌 Salvalo…", serie → "🔔 Seguici" (16/10/2026).
