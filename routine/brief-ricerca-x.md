@@ -25,4 +25,4 @@ Risultato: scrivi una tabella in notizie/<<AAAA-MM-GG>>.md, sezione "5. Video tr
 ```
 
 ## Dopo
-Torna nella sessione della routine e scrivi "fatto, guarda la sezione 5": il regista legge i video trovati, scarica gli MP4 usabili in `media/` e li mette nelle slide e nel Reel.
+Torna nella sessione della routine e scrivi "fatto, guarda la sezione 5": il regista legge i video trovati, scarica gli MP4 usabili in `media/` e li mette nelle slide e, se uno è una bomba, nel Reel (`format/5-reel.md`).
