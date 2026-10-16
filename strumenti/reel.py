@@ -6,7 +6,7 @@ Si fa solo quando c'è un video vero che vale da solo (vedi format/5-reel.md). 1
 Uso:
     python3 strumenti/reel.py carousels/<slug>/reel.json               → reel.mp4 + reel-copertina.jpg
                                                                           (+ reel-completo.mp4 se c'è "inizio" o "durata")
-    python3 strumenti/reel.py carousels/<slug>/reel.json --anteprima   → reel-anteprima.png (in pochi secondi)
+    python3 strumenti/reel.py carousels/<slug>/reel.json --anteprima   → reel-anteprima.png (in pochi secondi, col primo fotogramma)
     (il file si chiama come il JSON: reel-b.json → reel-b.mp4, reel-b-anteprima.png)
 
 Il JSON:
@@ -16,14 +16,14 @@ Il JSON:
   "inizio": 0,              (facoltativo, secondi)
   "durata": 20,             (facoltativo: senza, il video intero; con inizio/durata esce il pezzo migliore come reel.mp4
                              e il video intero come reel-completo.mp4, così il proprietario può tagliare da solo)
-  "etichetta": "NEWS LAMPO",(facoltativo: piccola etichetta sopra il titolo)
   "fondo": "scuro",         (scuro, chiaro o blu; di solito scuro)
-  "tono": "colore",         (colore, oppure mono = bianco e nero col tono blu, come nelle slide)
   "formato": "originale",   (originale, 1:1, 4:5 o 16:9: come tagliare il video nel riquadro)
   "posizione": 0.5,         (taglio orizzontale, da 0 = sinistra a 1 = destra)
   "zoom": 1.0,              (ingrandisce il video nel riquadro: 1.2 toglie bordi o scritte ai lati del video originale)
   "copertina": 1.0          (secondo del video da usare per reel-copertina.jpg)
 }
+In alto c'è solo il logo, con spazio prima del titolo: niente etichette come "NEWS LAMPO" (deciso il 16/10/2026).
+Il video è **sempre a colori** (deciso il 16/10/2026): niente bianco e nero col blu, quello resta per le slide.
 Nel titolo *parola* = parola chiave, in blu. Il titolo dice la cosa sorprendente (cosa ha fatto l'AI), al massimo 22 parole,
 al massimo 4 righe. I testi stanno nella zona sicura (y 230–1440; sotto y 1000 anche a sinistra di x 850): se escono, si ferma.
 """
@@ -41,18 +41,17 @@ BRAND = RADICE / ".claude/skills/scopri-carousel/assets/brand"
 FPS = 30
 X, LARGHEZZA, FONDO_MAX = 64, 952, 1760     # margine, larghezza del riquadro, fin dove può scendere il video
 MAX_PAROLE, MAX_RIGHE = 22, 4
-TONO_MONO = "hue=s=0,eq=contrast=1.08,colorbalance=bs=.10:bm=.07:bh=.03"   # come export-media.mjs delle slide
+SPAZIO_LOGO = 96                            # spazio tra il logo e il titolo
 MODI = {
     "scuro": dict(pieno="#0A0A0D", testo="#F5F5F7", chiave="#8595FF", logo="negativo", bordo="rgba(255,255,255,.14)",
-                  alone="rgba(35,64,255,.40)", pill="background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);color:#F5F5F7",
-                  punto="#8595FF", fondo="radial-gradient(70% 40% at 50% 62%,#1A1C2E 0%,transparent 70%),"
+                  alone="rgba(35,64,255,.40)", fondo="radial-gradient(70% 40% at 50% 62%,#1A1C2E 0%,transparent 70%),"
                   "radial-gradient(120% 100% at 50% 50%,transparent 60%,rgba(0,0,0,.45) 100%),#0A0A0D"),
     "chiaro": dict(pieno="#F2F2F5", testo="#0A0A0D", chiave="#2340FF", logo="colore", bordo="rgba(10,10,13,.10)",
-                   alone="rgba(10,10,20,.25)", pill="background:#0A0A0D;color:#F5F5F7", punto="#8595FF",
+                   alone="rgba(10,10,20,.25)",
                    fondo="radial-gradient(70% 40% at 10% 0%,rgba(255,255,255,.9) 0%,transparent 70%),"
                    "linear-gradient(160deg,#F7F7FA 0%,#ECEDF1 55%,#E4E5EB 100%)"),
     "blu": dict(pieno="#2340FF", testo="#FFFFFF", chiave="#0A0A0D", logo="bianco", bordo="rgba(255,255,255,.24)",
-                alone="rgba(16,20,90,.55)", pill="background:#FFFFFF;color:#0F26BD", punto="#2340FF",
+                alone="rgba(16,20,90,.55)",
                 fondo="radial-gradient(70% 40% at 10% 0%,rgba(255,255,255,.14) 0%,transparent 70%),"
                 "linear-gradient(150deg,#4760FF 0%,#2340FF 45%,#1A32D1 100%)"),
 }
@@ -88,7 +87,6 @@ def titolo_html(testo):
 
 def pagina(r, m, rapporto):
     logo = (BRAND / f"scopri-ai-logo-{m['logo']}.png").as_uri()
-    pill = (f'<div class="pill mono testo">{html.escape(r["etichetta"])}</div>' if r.get("etichetta") else "")
     return f'''<!doctype html><html lang="it"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=block" rel="stylesheet">
 <style>
@@ -97,18 +95,14 @@ html,body{{margin:0;background:{m["pieno"]}}}
 .bg{{position:absolute;inset:0;background:{m["fondo"]}}}
 .grana{{position:absolute;inset:0;background:{GRANA};opacity:.07;mix-blend-mode:overlay}}
 .colonna{{position:absolute;left:{X}px;top:250px;width:{LARGHEZZA}px;display:flex;flex-direction:column;align-items:flex-start}}
-.mono{{font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:.08em;text-transform:uppercase}}
-.pill{{height:56px;padding:0 26px;border-radius:999px;display:inline-flex;align-items:center;gap:14px;font-size:24px;margin-top:34px;{m["pill"]}}}
-.pill::before{{content:"";width:12px;height:12px;border-radius:50%;background:{m["punto"]}}}
-#titolo{{margin-top:40px;font-size:66px;font-weight:600;line-height:1.08;letter-spacing:-.03em;text-wrap:pretty;width:{LARGHEZZA}px}}
+#titolo{{margin-top:{SPAZIO_LOGO}px;font-size:66px;font-weight:600;line-height:1.08;letter-spacing:-.03em;text-wrap:pretty;width:{LARGHEZZA}px}}
 .chiave{{color:{m["chiave"]};font-weight:700}}
 #buco{{margin-top:56px;width:{LARGHEZZA}px;aspect-ratio:{rapporto};max-height:var(--max);border-radius:44px;
   box-shadow:inset 0 0 0 2px {m["bordo"]},0 60px 160px -30px {m["alone"]}}}
 </style></head><body><div class="pg">
 <div class="bg"></div><div class="grana"></div>
 <div class="colonna">
-  <img class="testo" src="{logo}" style="height:56px">
-  {pill}
+  <img class="testo" src="{logo}" style="height:64px">
   <div id="titolo" class="testo">{titolo_html(r["titolo"])}</div>
   <div id="buco"></div>
 </div>
@@ -133,6 +127,8 @@ def main():
     sorgente = pathlib.Path(args[0]).resolve()
     cartella, nome = sorgente.parent, sorgente.stem
     r = json.loads(sorgente.read_text(encoding="utf-8"))
+    if r.get("etichetta"):
+        print("avviso: \"etichetta\" non si usa più (nel Reel c'è solo il logo): la ignoro")
     if "scene" in r:
         sys.exit("Questo reel.json è nel formato a scene, che non si usa più: scrivi \"titolo\" e \"video\" (vedi in cima a questo file).")
     m = MODI[r.get("fondo", "scuro")]
@@ -167,18 +163,20 @@ def main():
         pos, zoom = float(r.get("posizione", 0.5)), float(r.get("zoom", 1.0))
         zw, zh = round(w * zoom / 2) * 2, round(h * zoom / 2) * 2
         adatta = f"scale={zw}:{zh}:force_original_aspect_ratio=increase,crop={w}:{h}:(iw-{w})*{pos}:(ih-{h})/2,setsar=1"
-        tono = "," + TONO_MONO if r.get("tono") == "mono" else ""
         mask = tmp / "maschera.png"
         maschera(w, h, 44, mask)
-        filtro = (f"[1:v]fps={FPS},{adatta}{tono},format=rgba[v];[2:v]format=gray,scale={w}:{h}[m];[v][m]alphamerge[vm];"
-                  f"[0:v][vm]overlay={b['x']}:{b['y']}:shortest=1,format=yuv420p[out]")
+        def filtro(taglio=""):   # il taglio si fa nel filtro: con -ss prima del video a volte partiva qualche secondo prima
+            return (f"[1:v]{taglio}fps={FPS},{adatta},format=rgba[v];[2:v]format=gray,scale={w}:{h}[m];[v][m]alphamerge[vm];"
+                    f"[0:v][vm]overlay={b['x']}:{b['y']}:shortest=1,format=yuv420p[out]")
 
         if "--anteprima" in sys.argv:
-            istante = inizio + min(float(r.get("copertina", 1.0)), durata / 2)
+            istante = inizio + 0.05   # il primo fotogramma: è quello che deve catturare subito
             dest = cartella / f"{nome}-anteprima.png"
-            esegui(["ffmpeg", "-y", "-v", "error", "-i", str(fondo), "-ss", str(istante), "-i", str(video), "-i", str(mask),
-                    "-filter_complex", filtro.replace(",format=yuv420p[out]", ",scale=540:960[out]"),
-                    "-map", "[out]", "-frames:v", "1", str(dest)])
+            fermo = tmp / "fermo.png"    # prima un fotogramma fermo: con il video diretto ffmpeg a volte non lo sovrappone
+            esegui(["ffmpeg", "-y", "-v", "error", "-ss", str(istante), "-i", str(video), "-frames:v", "1", str(fermo)])
+            esegui(["ffmpeg", "-y", "-v", "error", "-i", str(fondo), "-i", str(fermo), "-i", str(mask),
+                    "-filter_complex", filtro().replace(",format=yuv420p[out]", ",scale=540:960[out]"),
+                    "-map", "[out]", "-frames:v", "1", "-update", "1", str(dest)])
             print(f"Creato {dest} (video {durata:.1f} s, riquadro {w}×{h})")
             return
 
@@ -188,8 +186,8 @@ def main():
             uscite.append((cartella / f"{nome}-completo.mp4", 0, totale))
         for file, da, quanto in uscite:
             esegui(["ffmpeg", "-y", "-v", "error", "-loop", "1", "-framerate", str(FPS), "-i", str(fondo),
-                    "-ss", str(da), "-t", str(quanto), "-i", str(video), "-loop", "1", "-i", str(mask),
-                    "-filter_complex", filtro, "-map", "[out]", "-t", str(quanto), "-r", str(FPS),
+                    "-i", str(video), "-loop", "1", "-i", str(mask),
+                    "-filter_complex", filtro(f"trim=start={da}:duration={quanto},setpts=PTS-STARTPTS,"), "-map", "[out]", "-t", str(quanto), "-r", str(FPS),
                     "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-an", "-movflags", "+faststart", str(file)])
             print(f"Creato {file.name} ({quanto:.1f} secondi)")
         copertina = cartella / f"{nome}-copertina.jpg"
