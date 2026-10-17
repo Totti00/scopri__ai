@@ -213,9 +213,14 @@ News carousels show the real thing: official clips (from X via `https://api.fxtw
 | `data-start` / `data-dur` | 0 / 8 | the piece to keep, in seconds |
 | `data-fit` | `cover` | `contain` shows the whole frame with dark bands |
 | `data-pos` | `.5` | horizontal crop, 0 = left, 1 = right |
-| `data-tone` | `mono` | black and white with the brand-blue tint (Electric Mono's "monochrome imagery"); `color` keeps the colours |
+| `data-tone` | `mono` | black and white with the brand-blue tint (Electric Mono's "monochrome imagery"); `color` keeps the colours. The poster frame in `slide-XX.png` gets the same tone (17 Oct 2026) |
+| `data-full` | = `data-video` | another file for `slide-XX-completo.mp4`. Use it when the source is minutes long and the owner caps the slide at 60 s: cut a ≤ 60 s montage for the completo and a tighter one for the slide (17 Oct 2026, Anthropic's 5-minute animation) |
 | `border-radius` (style) | 56 px | `r-lg` panel radius; `0` for a full-bleed box |
 
 Then, after `npm run export`: `npm run media` (trimmed clips) or `npm run media -- --full` (also `slide-XX-completo.mp4` with the whole source video, which the owner trims in Instagram). It writes a poster frame into the box, so `slide-XX.png` and the previews show the clip, and stacks: full slide → video → everything in front of it (the frame, and any text, pill, sticker or card that overlaps the box: these are kept in front automatically; add class `over-video` to force it). Output: 1080 × 1350, 30 fps, H.264, no audio.
 
 Credit whoever made the clip in `fonti.md` and in "Fonti: …" at the end of the caption, never on the slide.
+
+**Long sources (explainer animations, keynotes).** When the owner caps a video slide ("massimo 60 secondi", 17 Oct 2026), the `-completo` follows the same cap instead of carrying the whole file. Cut a montage of the scenes that match the slide's text with ffmpeg (one `-ss … -t … -i` input per scene, never `trim` on one decoded input: it buffers minutes of 1080p frames and gets killed), 0.5 s fades between scenes, a hard cut only on blank frames. Crop away burned-in subtitles in another language and progress bars, and crop each scene so its content fits the box ratio (e.g. 888 × 420 → 2.11:1). Save the montage in `media/` and point `data-video` / `data-full` at it. Example: `carousels/2026-10-17-news-claude-numeri-nsa/montaggio-video.py`.
+
+A sticker or label that overlaps a video box needs `z-index` above the box (the box is 6), or the static PNG shows it behind the poster even though the MP4 puts it in front.

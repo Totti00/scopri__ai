@@ -7,7 +7,8 @@
 // with class "over-video"), on a transparent background; 3) ffmpeg stacks: full slide → video (rounded corners,
 // optional mono tone) → top layer. No audio: the user adds music in Instagram.
 // Box attributes: data-video (path from this folder), data-start (s, default 0), data-dur (s, default 8),
-// data-fit="cover|contain" (default cover), data-pos (0–1 horizontal crop, default .5), data-tone="mono|color" (default mono).
+// data-fit="cover|contain" (default cover), data-pos (0–1 horizontal crop, default .5), data-tone="mono|color" (default mono),
+// data-full (optional: another file for slide-XX-completo.mp4, e.g. a ≤ 60 s montage when the source is minutes long; default data-video).
 import puppeteer from 'puppeteer-core';
 import { mkdir, writeFile, rm } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -20,6 +21,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.join(here, 'exports');
 const full = process.argv.includes('--full');
 const FPS = 30;
+const MONO = 'hue=s=0,eq=contrast=1.08,colorbalance=bs=.10:bm=.07:bh=.03';   // Electric Mono: black and white with the brand-blue tint
 const executablePath = [process.env.CHROME_PATH, '/opt/pw-browsers/chromium', 'C:/Program Files/Google/Chrome/Application/chrome.exe',
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/usr/bin/google-chrome'].filter(Boolean).find(p => existsSync(p));
 if (!executablePath) throw new Error('Chrome not found: set CHROME_PATH');
@@ -51,7 +53,7 @@ try {
   const boxes = await page.evaluate(() => [...document.querySelectorAll('.slide')].flatMap((sl, i) =>
     [...sl.querySelectorAll('.video-box[data-video]')].map((b, k) => {
       const r = b.getBoundingClientRect(), s = sl.getBoundingClientRect();
-      return { slide: i, k, video: b.dataset.video, start: +(b.dataset.start || 0), dur: +(b.dataset.dur || 8),
+      return { slide: i, k, video: b.dataset.video, full: b.dataset.full || '', start: +(b.dataset.start || 0), dur: +(b.dataset.dur || 8),
         fit: b.dataset.fit || 'cover', pos: +(b.dataset.pos ?? .5), tone: b.dataset.tone || 'mono',
         x: Math.round(r.left - s.left), y: Math.round(r.top - s.top), w: Math.round(r.width), h: Math.round(r.height),
         radius: parseFloat(getComputedStyle(b).borderTopLeftRadius) || 0 };
@@ -61,8 +63,11 @@ try {
     const src = path.join(here, b.video);
     if (!existsSync(src)) throw new Error(`Missing video ${b.video} (slide ${b.slide + 1})`);
     b.src = src;
+    b.fullSrc = b.full ? path.join(here, b.full) : src;
+    if (!existsSync(b.fullSrc)) throw new Error(`Missing video ${b.full} (data-full, slide ${b.slide + 1})`);
     b.poster = path.join(outDir, `poster-${String(b.slide + 1).padStart(2, '0')}-${b.k + 1}.jpg`);
-    run(ffmpeg, ['-y', '-loglevel', 'error', '-ss', String(b.start + Math.min(1, b.dur / 2)), '-i', src, '-frames:v', '1', '-q:v', '3', b.poster]);
+    run(ffmpeg, ['-y', '-loglevel', 'error', '-ss', String(b.start + Math.min(1, b.dur / 2)), '-i', src, '-frames:v', '1',
+      ...(b.tone === 'mono' ? ['-vf', MONO] : []), '-q:v', '3', b.poster]);   // same tone as the MP4, so the PNG and the previews match it
   }
   await page.evaluate(list => list.forEach(b => {
     const box = document.querySelectorAll('.slide')[b.slide].querySelectorAll('.video-box[data-video]')[b.k];
@@ -103,18 +108,18 @@ try {
     // 3) ffmpeg: one pass per output (trimmed, and the whole clip with --full)
     const mine = boxes.filter(b => b.slide === i);
     for (const whole of full ? [false, true] : [false]) {
-      const D = whole ? Math.max(...mine.map(b => duration(b.src))) : Math.max(...mine.map(b => b.dur));
+      const D = whole ? Math.max(...mine.map(b => duration(b.fullSrc))) : Math.max(...mine.map(b => b.dur));
       const args = ['-y', '-loglevel', 'error', '-loop', '1', '-framerate', String(FPS), '-t', String(D), '-i', base];
       let filter = '', last = '[0:v]';
       mine.forEach((b, j) => {
         const mask = path.join(tmp, `mask-${nn}-${j}.png`);
         run(PY, ['-c', `import sys\nfrom PIL import Image, ImageDraw\nw,h,r=int(sys.argv[1]),int(sys.argv[2]),int(float(sys.argv[3]))\nm=Image.new('L',(w,h),0)\nImageDraw.Draw(m).rounded_rectangle([0,0,w-1,h-1],radius=r,fill=255)\nm.save(sys.argv[4])`, String(b.w), String(b.h), String(b.radius), mask]);
-        args.push(...(whole ? [] : ['-ss', String(b.start), '-t', String(b.dur)]), '-i', b.src, '-loop', '1', '-i', mask);
+        args.push(...(whole ? [] : ['-ss', String(b.start), '-t', String(b.dur)]), '-i', whole ? b.fullSrc : b.src, '-loop', '1', '-i', mask);
         const vi = 1 + j * 2, mi = 2 + j * 2;
         const fit = b.fit === 'contain'
           ? `scale=${b.w}:${b.h}:force_original_aspect_ratio=decrease,pad=${b.w}:${b.h}:(ow-iw)/2:(oh-ih)/2:color=0x0A0A0D`
           : `scale=${b.w}:${b.h}:force_original_aspect_ratio=increase,crop=${b.w}:${b.h}:(iw-${b.w})*${b.pos}:(ih-${b.h})/2`;
-        const tone = b.tone === 'mono' ? ',hue=s=0,eq=contrast=1.08,colorbalance=bs=.10:bm=.07:bh=.03' : '';
+        const tone = b.tone === 'mono' ? ',' + MONO : '';
         filter += `[${vi}:v]fps=${FPS},${fit}${tone},setpts=PTS-STARTPTS,tpad=stop_mode=clone:stop_duration=${D},format=rgba[v${j}];` +
                   `[${mi}:v]format=gray,scale=${b.w}:${b.h}[m${j}];[v${j}][m${j}]alphamerge[vm${j}];` +
                   `${last}[vm${j}]overlay=${b.x}:${b.y}:shortest=0[b${j}];`;

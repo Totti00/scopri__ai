@@ -1,0 +1,18 @@
+Slide 01: Copertina: «Claude ne ha risolto un altro». Il simbolo di Claude in 3D davanti ai numeri della NSA. Stavolta un giallo lungo 25 anni.
+
+Slide 02: «La NSA dà dei numeri. Non dice da dove vengono.» Scheda con il numero della curva P-256: C49D3608 86E70493… Etichetta: Mistero.
+
+Slide 03: «Claude l'ha risolto in meno di mezz'ora.» Animazione di Anthropic: un uomo al computer nel 1997, la data, l'ora che ha generato i numeri.
+
+Slide 04: «Un momento: sono in un test?» Il dubbio di Claude davanti alla soluzione, poi «È vero.» Il simbolo di Claude in 3D su fondo blu.
+
+Slide 05: «La vecchia storia era sbagliata.» Foglietto con la frase barrata «Give Bob and Jerry a raise»: i numeri non venivano da lì.
+
+Slide 06: «36.864 $ di taglia. Regalati al lucchetto del web.» Il premio va all'ente che gestisce Let's Encrypt. Etichetta: Donato.
+
+Slide 07: «Nessun trucco. Anzi.» Curva ellittica di cromo e vetro. Claude non ha rotto la crittografia: ha scoperto come erano scelti i numeri.
+
+Slide 08: «Il giallo in 4 righe»: numeri della NSA di origine ignota, Claude risolve in mezz'ora, erano l'ora di un computer, nessun trucco.
+
+Slide 09: Logo Scopri AI. «Mandalo a chi ama i gialli. E a chi non si fida della NSA.» Pulsante Manda.
+

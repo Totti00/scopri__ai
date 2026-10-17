@@ -1,18 +1,14 @@
-# Bozza · Claude e i numeri della NSA (17/10)
+# Finale · Claude e i numeri della NSA (17/10)
 
-Da guardare dal telefono. Rispondi con: quale copertina (A, B, C o D) e cosa cambiare.
-
-## Copertine alternative
-![Confronto copertine](exports/copertine-confronto.jpg)
-
-| A (consigliata) | B |
-|---|---|
-| ![A](exports/copertina-a.png) | ![B](exports/copertina-b.png) |
-| **C** | **D** |
-| ![C](exports/copertina-c.png) | ![D](exports/copertina-d.png) |
+Pronto da pubblicare (lo pubblica il proprietario). Copertina A, slide 3 con il video di Anthropic.
 
 ## Tutte le slide
 ![Contact sheet](exports/contact-sheet.jpg)
 
-## Testi e caption
-Vedi [copy.md](copy.md). Dubbi in [note.md](note.md), fonti in [fonti.md](fonti.md).
+## Cosa caricare su Instagram, in ordine
+1. `exports/slide-01.png`
+2. `exports/slide-02.png`
+3. `exports/slide-03.mp4` (video, 47 s, senza audio; versione lunga: `slide-03-completo.mp4`, 59,5 s, solo sul computer)
+4. `exports/slide-04.png` … 9. `exports/slide-09.png`
+
+Caption e testi alternativi: cartella [pubblicazione/](pubblicazione/). Musica e orari: [note.md](note.md). Fonti: [fonti.md](fonti.md). Testi approvati: [copy.md](copy.md).

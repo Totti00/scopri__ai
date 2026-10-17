@@ -1,0 +1,16 @@
+🔐 Claude, l'intelligenza artificiale di Anthropic, ha risolto in mezz'ora un mistero della crittografia vecchio di 25 anni.
+
+🧩 Il caso: alla fine degli anni '90 la NSA, l'agenzia americana che si occupa di spionaggio elettronico, consegnò i "semi" da cui nascono le curve ellittiche P-256 e sorelle. È la matematica che protegge connessioni, pagamenti e firme digitali. Come li avesse scelti, non l'ha mai spiegato.
+
+💰 Nel 2023 il crittografo italiano Filippo Valsorda aveva messo una taglia sulla risposta. L'ha riscossa il 15 ottobre la squadra di Anthropic, e Valsorda ha rifatto il calcolo da solo: torna.
+
+👉 Cosa cambia per te: niente da fare. Sono le stesse curve di sempre, con un sospetto in meno.
+
+⚠️ La ricerca è di Anthropic, l'azienda che fa Claude, e qualche dettaglio resta aperto: per questo conta la verifica di un esperto esterno.
+
+📩 Mandalo a chi ama i gialli (e a chi non si fida della NSA)
+Quale altro mistero faresti risolvere a un'AI? 👇
+
+Fonti: Anthropic, Filippo Valsorda (words.filippo.io), Tom's Hardware, CoinDesk
+
+#intelligenzaartificiale #claude #anthropic #crittografia #sicurezzainformatica

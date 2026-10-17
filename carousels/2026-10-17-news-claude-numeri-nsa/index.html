@@ -19,18 +19,16 @@
 .seed .hex{margin-top:20px;font:500 46px/1.35 var(--font-meta);letter-spacing:.04em;color:var(--snow)}
 .seed .hex span{color:var(--accent-300)}
 .seed .sticker{right:44px;transform:rotate(-3deg)}
-/* flow card (slide 3) */
-.flow{left:96px;top:742px;width:888px;padding:56px 40px 36px;display:flex;flex-direction:column;gap:0}
-.flow .stp{display:flex;align-items:center;gap:20px;height:68px}
-.flow .ic{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;background:rgba(var(--accent-rgb),.25);border:2px solid rgba(var(--accent-300-rgb),.5)}
-.flow .ic svg{width:24px;height:24px;fill:none;stroke:var(--snow);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.flow .ic.ok{background:rgba(61,220,132,.16);border-color:rgba(61,220,132,.6)}
-.flow .ic.ok svg{stroke:var(--signal-500)}
-.flow .t1{font:500 30px/1.2 var(--font-primary);color:var(--snow)}
-.flow .t2{margin-left:auto;font:500 22px/1 var(--font-meta);letter-spacing:.06em;color:var(--gray-400)}
-.flow .hexs{font:500 30px/1.2 var(--font-meta);letter-spacing:.04em;color:var(--snow)}
-.flow .arr{height:22px;margin-left:21px;border-left:2px dashed rgba(255,255,255,.22)}
-.flow .sticker{right:40px;transform:rotate(-3deg)}
+/* slide 3: Anthropic's animation in a video box + the three steps in one row */
+.s3 .video-box{left:96px;top:584px;width:888px;height:420px;border-radius:40px}
+.s3 .sticker-v{position:absolute;z-index:8;left:712px;top:560px;transform:rotate(-3deg)}
+.steps{left:96px;top:1024px;width:888px;height:76px;padding:0 28px;display:flex;align-items:center;justify-content:space-between}
+.steps .st{display:flex;align-items:center;gap:14px;font:500 28px/1 var(--font-primary);color:var(--snow);white-space:nowrap}
+.steps .ic{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;background:rgba(var(--accent-rgb),.25);border:2px solid rgba(var(--accent-300-rgb),.5)}
+.steps .ic svg{width:24px;height:24px;fill:none;stroke:var(--snow);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.steps .ic.ok{background:rgba(61,220,132,.16);border-color:rgba(61,220,132,.6)}
+.steps .ic.ok svg{stroke:var(--signal-500)}
+.steps .sep{width:28px;height:28px;flex:none;fill:none;stroke:var(--gray-400);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 /* quote slide (4) */
 .quote-src{font:500 22px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8)}
 .s4 .sticker-free{position:absolute;left:96px;top:1052px;transform:rotate(-3deg)}
@@ -98,22 +96,24 @@ D09E8800 291CB853</div>
   </div>
 </section></div>
 
-<!-- ============ 03 · LA SOLUZIONE · DARK ============ -->
-<div class="slot"><section class="slide mode-dark">
+<!-- ============ 03 · LA SOLUZIONE · DARK · Anthropic's animation (mono) ============ -->
+<div class="slot"><section class="slide mode-dark s3">
   <div class="layer bg"></div>
-  <div class="glow" data-for=".flow"></div>
+  <div class="glow" data-for=".video-box"></div>
   <div class="pill qa-text">La soluzione</div>
   <div class="stack">
     <h2 class="h2 qa-text" style="width:760px" data-lines="2">Claude l'ha risolto<br><span class="em">in meno di mezz'ora.</span></h2>
     <p class="body qa-text" style="width:720px">Erano numeri a caso, presi da un vecchio programma partendo dall'ora del computer, nel 1997 e 1998.</p>
   </div>
-  <div class="card abs flow">
-    <div class="sticker">Solo un orario</div>
-    <div class="stp"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="t1">Ora del computer</span><span class="t2">1997</span></div>
-    <div class="arr"></div>
-    <div class="stp"><span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2"/><circle cx="15" cy="15" r="1.2"/><circle cx="15" cy="9" r="1.2"/><circle cx="9" cy="15" r="1.2"/></svg></span><span class="t1">Programma di numeri a caso</span></div>
-    <div class="arr"></div>
-    <div class="stp"><span class="ic ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="hexs">C49D3608 86E70493…</span><span class="t2">Coincide</span></div>
+  <!-- montage of Anthropic's video (1997 at night → the computer's time → srand48(time)): 47.1 s; the -completo version is a 59.5 s montage -->
+  <div class="video-box" data-video="media/anthropic-montaggio.mp4" data-start="0" data-dur="47.1" data-full="media/anthropic-montaggio-60s.mp4" data-tone="mono"></div>
+  <div class="sticker sticker-v qa-text">Solo un orario</div>
+  <div class="card abs steps qa-text">
+    <span class="st"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Ora del computer</span>
+    <svg class="sep" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <span class="st"><span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2"/><circle cx="15" cy="15" r="1.2"/><circle cx="15" cy="9" r="1.2"/><circle cx="9" cy="15" r="1.2"/></svg></span>Numeri a caso</span>
+    <svg class="sep" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <span class="st"><span class="ic ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Coincide</span>
   </div>
 </section></div>
 
