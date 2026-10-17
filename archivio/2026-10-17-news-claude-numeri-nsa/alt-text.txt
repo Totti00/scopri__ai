@@ -1,6 +1,6 @@
 Slide 01: Copertina: «Claude ne ha risolto un altro». Il simbolo di Claude in 3D davanti ai numeri della NSA. Stavolta un giallo lungo 25 anni.
 
-Slide 02: «La NSA dà dei numeri. Non dice da dove vengono.» Scheda con il numero della curva P-256: C49D3608 86E70493… Etichetta: Mistero.
+Slide 02: «La NSA dà dei numeri. Non dice da dove vengono.» Etichetta: la NSA è l'agenzia di spionaggio americana. Sotto, il numero della curva P-256.
 
 Slide 03: «Claude l'ha risolto in meno di mezz'ora.» Animazione di Anthropic: un uomo al computer nel 1997, la data, l'ora che ha generato i numeri.
 

@@ -16,6 +16,7 @@ Modi delle slide: D L D A L D L A D (copertina e chiusura scure).
 ### 02 — Il caso (LIGHT)
 - **Pill:** Il caso · **Titolo:** La NSA dà dei numeri. *Non dice da dove vengono.*
 - **Testo:** Dal 2000 servono a proteggere siti, pagamenti e firme digitali. In tanti temevano un trucco nascosto.
+- **Etichetta:** NSA = l'agenzia di spionaggio americana (aggiunta il 17/10 dopo l'approvazione).
 - **Visual (scheda):** "Curva P-256 · numero dato dalla NSA" con il numero vero `C49D3608 86E70493 6A6678E1 139D26B7 819F7E90` · **Adesivo:** Mistero.
 
 ### 03 — La soluzione (DARK) — la cosa più forte · MP4

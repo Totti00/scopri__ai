@@ -29,6 +29,13 @@
 .steps .ic.ok{background:rgba(61,220,132,.16);border-color:rgba(61,220,132,.6)}
 .steps .ic.ok svg{stroke:var(--signal-500)}
 .steps .sep{width:28px;height:28px;flex:none;fill:none;stroke:var(--gray-400);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* "what is the NSA" label (slide 2) */
+.defn{position:absolute;z-index:7;left:96px;top:580px;height:84px;padding:0 34px 0 14px;border-radius:999px;display:inline-flex;align-items:center;gap:18px;background:#fff;border:2px solid rgba(var(--accent-rgb),.35);box-shadow:0 18px 40px -18px rgba(var(--accent-rgb),.55),0 2px 6px rgba(10,10,13,.06);transform:rotate(-2deg);white-space:nowrap}
+.defn .ic{width:56px;height:56px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--accent-500)}
+.defn .ic svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.defn b{font:800 32px/1 var(--font-meta);letter-spacing:.06em;color:var(--accent-500)}
+.defn .eq{font:500 28px/1 var(--font-meta);color:var(--gray-400)}
+.defn span.t{font:500 30px/1 var(--font-primary);color:#0A0A0D}
 /* quote slide (4) */
 .quote-src{font:500 22px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8)}
 .s4 .sticker-free{position:absolute;left:96px;top:1052px;transform:rotate(-3deg)}
@@ -89,6 +96,7 @@ D09E8800 291CB853</div>
     <h2 class="h2 qa-text" style="width:860px" data-lines="2">La NSA dà dei numeri.<br><span class="rc">Non dice da dove vengono.</span></h2>
     <p class="body qa-text" style="width:640px">Dal 2000 servono a proteggere siti, pagamenti e firme digitali. In tanti temevano un trucco nascosto.</p>
   </div>
+  <div class="defn qa-text"><span class="ic"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span><b>NSA</b><span class="eq">=</span><span class="t">l'agenzia di spionaggio americana</span></div>
   <div class="card abs seed">
     <div class="sticker">Mistero</div>
     <div class="ui-meta">Curva P-256 · numero dato dalla NSA</div>
