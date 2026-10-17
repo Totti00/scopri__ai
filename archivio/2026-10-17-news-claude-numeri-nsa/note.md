@@ -52,6 +52,7 @@ Il video occupa il posto della scheda verticale. I tre passaggi restano, in una 
 Passato: seconda slide collegata alla copertina e in piedi da sola; il meglio in slide 3; titoli che in fila raccontano la storia; contatore 01/08 … 08/08, niente sulla chiusura; un solo invito (Manda) uguale in caption; slide "In breve"; cosa ha fatto l'AI + adesivi di 2–3 parole; nessuna fonte o nome sulle slide; due fonti (livello 1 + livello 2); 1080×1350; controllo automatico (QA) passato; caption PRONTA; logo giusto per ogni fondo; niente giallo; giunture della striscia pulite. Unico punto aperto: le 14 parole della copertina (dubbio 3).
 
 ## Musica consigliata
+**Scelta "da giallo" chiesta dal proprietario (17/10):** Henry Mancini – The Pink Panther Theme (strumentale, il giallo per eccellenza, ironico come "Claude ne ha risolto un altro"). Alternativa a tema spionaggio: Lalo Schifrin – Mission: Impossible Theme. Le tre qui sotto restano di riserva.
 Umore news lampo: elettronica carica, strumentale. Già usati (`brand/musica-usata.md`): Daft Punk – Derezzed, Justice – Genesis; per il Reel della Tesla Roadster (16/10, l'ultimo post) erano consigliati Chemical Brothers, Kavinsky, Gesaffelstein: nessuno di questi artisti qui.
 1. **Moderat – A New Error** (strumentale; cresce, aria da "indagine" notturna: partire da dove entra il ritmo)
 2. **Jon Hopkins – Open Eye Signal** (strumentale; pulsante e misteriosa, va bene con la stanza di notte del video)
