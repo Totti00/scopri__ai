@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scopri AI · copertine alternative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
+<link rel="stylesheet" href="engine/carousel.css">
+<style>
+/* ===== Slide-specific CSS for this carousel ===== */
+/* faint wall of the real NIST seeds behind the cover objects (decoration, not reading text) */
+.hexbg{position:absolute;z-index:3;font:500 30px/1.75 var(--font-meta);letter-spacing:.06em;color:rgba(var(--accent-300-rgb),.3);white-space:pre;pointer-events:none;
+  -webkit-mask-image:radial-gradient(60% 60% at 60% 50%,#000 30%,transparent 100%);mask-image:radial-gradient(60% 60% at 60% 50%,#000 30%,transparent 100%)}
+.mode-light .hexbg{color:rgba(10,10,13,.10)}
+/* seed card (slide 2) */
+.seed{left:96px;top:716px;width:888px;padding:56px 44px 40px}
+.seed .hex{margin-top:20px;font:500 46px/1.35 var(--font-meta);letter-spacing:.04em;color:var(--snow)}
+.seed .hex span{color:var(--accent-300)}
+.seed .sticker{right:44px;transform:rotate(-3deg)}
+/* flow card (slide 3) */
+.flow{left:96px;top:742px;width:888px;padding:56px 40px 36px;display:flex;flex-direction:column;gap:0}
+.flow .stp{display:flex;align-items:center;gap:20px;height:68px}
+.flow .ic{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;background:rgba(var(--accent-rgb),.25);border:2px solid rgba(var(--accent-300-rgb),.5)}
+.flow .ic svg{width:24px;height:24px;fill:none;stroke:var(--snow);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow .ic.ok{background:rgba(61,220,132,.16);border-color:rgba(61,220,132,.6)}
+.flow .ic.ok svg{stroke:var(--signal-500)}
+.flow .t1{font:500 30px/1.2 var(--font-primary);color:var(--snow)}
+.flow .t2{margin-left:auto;font:500 22px/1 var(--font-meta);letter-spacing:.06em;color:var(--gray-400)}
+.flow .hexs{font:500 30px/1.2 var(--font-meta);letter-spacing:.04em;color:var(--snow)}
+.flow .arr{height:22px;margin-left:21px;border-left:2px dashed rgba(255,255,255,.22)}
+.flow .sticker{right:40px;transform:rotate(-3deg)}
+/* quote slide (4) */
+.quote-src{font:500 22px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.s4 .sticker-free{position:absolute;left:96px;top:1052px;transform:rotate(-3deg)}
+/* note card (slide 5) */
+.note{left:96px;top:760px;width:888px;padding:56px 44px 44px}
+.note .phrase{margin-top:18px;font:500 42px/1.3 var(--font-meta);letter-spacing:.01em;color:var(--snow);text-decoration:line-through;text-decoration-color:var(--accent-300);text-decoration-thickness:5px}
+.note .sticker{right:40px;transform:rotate(3deg)}
+/* free sticker (no card) */
+.sticker.free{position:absolute;top:auto}
+.seedD{left:440px;top:720px;width:514px;padding:36px 32px 32px}
+.seedD .hex{margin-top:14px;font:500 34px/1.4 var(--font-meta);letter-spacing:.04em;color:var(--snow)}
+.seedD .target{color:var(--accent-300)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <filter id="lineglow" filterUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1350">
+    <feGaussianBlur stdDeviation="4"/>
+  </filter>
+</svg>
+
+<header class="devbar">
+  <h1>Scopri AI · Claude ne ha risolto un altro<small>1080 × 1350 · npm run export (PNG)</small></h1>
+  <button id="btn-grid" aria-pressed="true">Griglia</button>
+  <button id="btn-strip" aria-pressed="false">Striscia (giunture)</button>
+  <button id="btn-play" hidden>Riproduci animazioni</button>
+  <button id="btn-qa">Esegui QA</button>
+</header>
+<div class="qa" id="qa-out"></div>
+
+<main class="deck" id="deck">
+<!-- ============ COVER A · DARK · Claude spark hero ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:790px;--ry:840px"></div>
+  <div class="hexbg" style="left:430px;top:560px">3045AE6F C8422F64
+ED579528 D38120EA
+BD713447 99D5C7FC
+C49D3608 86E70493
+6A6678E1 139D26B7
+A335926A A319A27A
+D09E8800 291CB853</div>
+  <div class="glow" data-for="#spark1"></div>
+  <img class="asset" id="spark1" src="../../assets/generated/spark.png" alt="" style="left:500px;top:548px;width:540px;height:562px">
+  <div class="pill qa-text">News AI</div>
+  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="3">Claude ne<br>ha risolto<br><span class="em">un altro.</span></h2>
+  <p class="txt lead qa-text" style="left:96px;top:1000px;width:380px" data-lines="2">Stavolta un giallo della NSA lungo 25 anni.</p>
+</section></div>
+
+<!-- ============ COVER B · spark + chrome curve ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:780px;--ry:830px"></div>
+  <div class="hexbg" style="left:440px;top:720px">3045AE6F C8422F64
+ED579528 D38120EA
+BD713447 99D5C7FC
+C49D3608 86E70493
+6A6678E1 139D26B7
+A335926A A319A27A
+D09E8800 291CB853</div>
+  <div class="glow" data-for="#curveB"></div>
+  <img class="asset" id="curveB" src="../../assets/generated/curve.png" alt="" style="left:520px;top:640px;width:440px;height:501px">
+  <img class="asset" id="sparkB" src="../../assets/generated/spark.png" alt="" style="left:560px;top:760px;width:280px;height:292px">
+  <div class="pill qa-text">News AI</div>
+  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="3">Claude contro<br><span class="em">i numeri</span><br>della NSA.</h2>
+  <p class="txt lead qa-text" style="left:96px;top:1000px;width:380px" data-lines="2">Tempo per risolvere il caso: mezz'ora.</p>
+</section></div>
+<!-- ============ COVER C · big chrome curve ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:760px;--ry:820px"></div>
+  <div class="hexbg" style="left:430px;top:700px">3045AE6F C8422F64
+ED579528 D38120EA
+BD713447 99D5C7FC
+C49D3608 86E70493
+6A6678E1 139D26B7
+A335926A A319A27A
+D09E8800 291CB853</div>
+  <div class="glow" data-for="#curveC"></div>
+  <img class="asset" id="curveC" src="../../assets/generated/curve.png" alt="" style="left:590px;top:680px;width:400px;height:455px">
+  <div class="pill qa-text">News AI</div>
+  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="3">25 anni<br>di mistero.<br><span class="em">30 minuti.</span></h2>
+  <p class="txt lead qa-text" style="left:96px;top:1000px;width:380px" data-lines="2">L'investigatore? Un'intelligenza artificiale.</p>
+</section></div>
+<!-- ============ COVER D · magnifier on the NSA number + spark ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" data-follow style="--rx:700px;--ry:800px"></div>
+  <div class="card abs seedD" id="seedD">
+    <div class="ui-meta">Curva P-256 · dato dalla NSA</div>
+    <div class="hex">C49D3608 86E70493<br>6A6678E1 <span class="target">139D26B7</span><br>819F7E90</div>
+  </div>
+  <div class="lens" data-source="#seedD" data-target=".target" data-zoom="1.35" data-asset="#magD"><div class="glass"></div></div>
+  <img class="asset" id="magD" src="../../assets/generated/magnifier.png" alt="" data-lens-x="154.42" data-lens-y="154.42" style="width:489px;height:356px">
+  <img class="asset" id="sparkD" src="../../assets/generated/spark.png" alt="" style="left:96px;top:742px;width:220px;height:229px">
+  <div class="pill qa-text">News AI</div>
+  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="3">Claude fa<br><span class="em">il detective.</span><br>Di nuovo.</h2>
+  <p class="txt lead qa-text" style="left:96px;top:1000px;width:380px" data-lines="2">Il caso: i numeri misteriosi della NSA.</p>
+</section></div>
+<!-- dummy closing slide so the engine frames every cover like slide 1 (not exported) -->
+<div class="slot"><section class="slide mode-dark"><div class="layer bg"></div></section></div>
+</main>
+<script>
+window.CAROUSEL = { title: 'Copertine alternative', format: 'static', handle: '@scopri__ai', seams: [], routes: [] };
+</script>
+<script src="engine/carousel.js"></script>
+</body>
+</html>

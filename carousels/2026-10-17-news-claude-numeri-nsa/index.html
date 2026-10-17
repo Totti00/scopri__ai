@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scopri AI · Claude ne ha risolto un altro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
+<link rel="stylesheet" href="engine/carousel.css">
+<style>
+/* ===== Slide-specific CSS for this carousel ===== */
+/* faint wall of the real NIST seeds behind the cover objects (decoration, not reading text) */
+.hexbg{position:absolute;z-index:3;font:500 30px/1.75 var(--font-meta);letter-spacing:.06em;color:rgba(var(--accent-300-rgb),.3);white-space:pre;pointer-events:none;
+  -webkit-mask-image:radial-gradient(60% 60% at 60% 50%,#000 30%,transparent 100%);mask-image:radial-gradient(60% 60% at 60% 50%,#000 30%,transparent 100%)}
+.mode-light .hexbg{color:rgba(10,10,13,.10)}
+/* seed card (slide 2) */
+.seed{left:96px;top:716px;width:888px;padding:56px 44px 40px}
+.seed .hex{margin-top:20px;font:500 46px/1.35 var(--font-meta);letter-spacing:.04em;color:var(--snow)}
+.seed .hex span{color:var(--accent-300)}
+.seed .sticker{right:44px;transform:rotate(-3deg)}
+/* flow card (slide 3) */
+.flow{left:96px;top:742px;width:888px;padding:56px 40px 36px;display:flex;flex-direction:column;gap:0}
+.flow .stp{display:flex;align-items:center;gap:20px;height:68px}
+.flow .ic{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;background:rgba(var(--accent-rgb),.25);border:2px solid rgba(var(--accent-300-rgb),.5)}
+.flow .ic svg{width:24px;height:24px;fill:none;stroke:var(--snow);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.flow .ic.ok{background:rgba(61,220,132,.16);border-color:rgba(61,220,132,.6)}
+.flow .ic.ok svg{stroke:var(--signal-500)}
+.flow .t1{font:500 30px/1.2 var(--font-primary);color:var(--snow)}
+.flow .t2{margin-left:auto;font:500 22px/1 var(--font-meta);letter-spacing:.06em;color:var(--gray-400)}
+.flow .hexs{font:500 30px/1.2 var(--font-meta);letter-spacing:.04em;color:var(--snow)}
+.flow .arr{height:22px;margin-left:21px;border-left:2px dashed rgba(255,255,255,.22)}
+.flow .sticker{right:40px;transform:rotate(-3deg)}
+/* quote slide (4) */
+.quote-src{font:500 22px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8)}
+.s4 .sticker-free{position:absolute;left:96px;top:1052px;transform:rotate(-3deg)}
+/* note card (slide 5) */
+.note{left:96px;top:760px;width:888px;padding:56px 44px 44px}
+.note .phrase{margin-top:18px;font:500 42px/1.3 var(--font-meta);letter-spacing:.01em;color:var(--snow);text-decoration:line-through;text-decoration-color:var(--accent-300);text-decoration-thickness:5px}
+.note .sticker{right:40px;transform:rotate(3deg)}
+/* free sticker (no card) */
+.sticker.free{position:absolute;top:auto}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <filter id="lineglow" filterUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1350">
+    <feGaussianBlur stdDeviation="4"/>
+  </filter>
+</svg>
+
+<header class="devbar">
+  <h1>Scopri AI · Claude ne ha risolto un altro<small>1080 × 1350 · npm run export (PNG)</small></h1>
+  <button id="btn-grid" aria-pressed="true">Griglia</button>
+  <button id="btn-strip" aria-pressed="false">Striscia (giunture)</button>
+  <button id="btn-play" hidden>Riproduci animazioni</button>
+  <button id="btn-qa">Esegui QA</button>
+</header>
+<div class="qa" id="qa-out"></div>
+
+<main class="deck" id="deck">
+
+<!-- ============ 01 · COVER A · DARK · Claude spark hero ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:790px;--ry:840px"></div>
+  <div class="hexbg" style="left:430px;top:560px">3045AE6F C8422F64
+ED579528 D38120EA
+BD713447 99D5C7FC
+C49D3608 86E70493
+6A6678E1 139D26B7
+A335926A A319A27A
+D09E8800 291CB853</div>
+  <div class="glow" data-for="#spark1"></div>
+  <img class="asset" id="spark1" src="../../assets/generated/spark.png" alt="" style="left:500px;top:548px;width:540px;height:562px">
+  <div class="pill qa-text">News AI</div>
+  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="3">Claude ne<br>ha risolto<br><span class="em">un altro.</span></h2>
+  <p class="txt lead qa-text" style="left:96px;top:1000px;width:380px" data-lines="2">Stavolta un giallo della NSA lungo 25 anni.</p>
+</section></div>
+
+<!-- ============ 02 · IL CASO · LIGHT ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="pill qa-text">Il caso</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" style="width:860px" data-lines="2">La NSA dà dei numeri.<br><span class="rc">Non dice da dove vengono.</span></h2>
+    <p class="body qa-text" style="width:640px">Dal 2000 servono a proteggere siti, pagamenti e firme digitali. In tanti temevano un trucco nascosto.</p>
+  </div>
+  <div class="card abs seed">
+    <div class="sticker">Mistero</div>
+    <div class="ui-meta">Curva P-256 · numero dato dalla NSA</div>
+    <div class="hex">C49D3608 86E70493<br>6A6678E1 139D26B7<br><span>819F7E90</span></div>
+  </div>
+</section></div>
+
+<!-- ============ 03 · LA SOLUZIONE · DARK ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="glow" data-for=".flow"></div>
+  <div class="pill qa-text">La soluzione</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" style="width:760px" data-lines="2">Claude l'ha risolto<br><span class="em">in meno di mezz'ora.</span></h2>
+    <p class="body qa-text" style="width:720px">Erano numeri a caso, presi da un vecchio programma partendo dall'ora del computer, nel 1997 e 1998.</p>
+  </div>
+  <div class="card abs flow">
+    <div class="sticker">Solo un orario</div>
+    <div class="stp"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="t1">Ora del computer</span><span class="t2">1997</span></div>
+    <div class="arr"></div>
+    <div class="stp"><span class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2"/><circle cx="15" cy="15" r="1.2"/><circle cx="15" cy="9" r="1.2"/><circle cx="9" cy="15" r="1.2"/></svg></span><span class="t1">Programma di numeri a caso</span></div>
+    <div class="arr"></div>
+    <div class="stp"><span class="ic ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="hexs">C49D3608 86E70493…</span><span class="t2">Coincide</span></div>
+  </div>
+</section></div>
+
+<!-- ============ 04 · LA REAZIONE · ACCENT ============ -->
+<div class="slot"><section class="slide mode-accent s4">
+  <div class="layer bg"></div>
+  <div class="supershape" style="left:560px;top:820px;width:1500px;height:1500px"></div>
+  <img class="asset" id="spark4" src="../../assets/generated/spark.png" alt="" style="left:700px;top:750px;width:300px;height:312px">
+  <div class="pill qa-text">Il ragionamento di Claude</div>
+  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px;font-size:112px" data-lines="3">«Un momento:<br><span class="em">sono in<br>un test?»</span></h2>
+  <p class="txt body qa-text" style="left:96px;top:700px;width:560px">Davanti alla soluzione, Claude ha dubitato perfino di sé. Poi ha rifatto i conti: «È vero.»</p>
+  <div class="sticker free qa-text" style="left:96px;top:930px;transform:rotate(-3deg)">Stupito pure lui</div>
+</section></div>
+
+<!-- ============ 05 · COLPO DI SCENA · LIGHT ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="layer dots"></div>
+  <div class="pill qa-text">Colpo di scena</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" style="width:760px" data-lines="2">La vecchia storia<br><span class="rc">era sbagliata.</span></h2>
+    <p class="body qa-text" style="width:700px">Si raccontava che i numeri nascessero da una frase scherzosa: «Date un aumento a Bob e Jerry». Non c'entrava niente.</p>
+  </div>
+  <div class="card abs note">
+    <div class="sticker">Niente frase</div>
+    <div class="ui-meta">La vecchia ipotesi, in inglese</div>
+    <div class="phrase">"Give Bob and Jerry a raise"</div>
+  </div>
+</section></div>
+
+<!-- ============ 06 · IL PREMIO · DARK (T4: the thread is the chart line) ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="glow" data-for=".numeral"></div>
+  <div class="pill qa-text">Il premio</div>
+  <div class="numeral qa-text" style="font-size:250px;top:300px">36.864<span class="suf"> $</span></div>
+  <h2 class="txt h2 qa-text" style="left:96px;top:560px;width:780px" data-lines="2">di taglia. Regalati<br><span class="rc">al lucchetto del web.</span></h2>
+  <p class="txt body qa-text" style="left:96px;top:730px;width:640px">Il crittografo italiano che l'aveva messa ha rifatto il calcolo: torna. Il premio va all'ente di Let's Encrypt, che dà gratis il lucchetto ai siti.</p>
+  <span class="chip" style="left:840px;top:946px">Donato</span>
+</section></div>
+
+<!-- ============ 07 · PER TE · LIGHT · chrome curve hero ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <img class="asset" id="curve7" src="../../assets/generated/curve.png" alt="" style="left:520px;top:236px;width:420px;height:478px">
+  <div class="pill qa-text">Per te</div>
+  <h2 class="txt h1 qa-text" style="left:96px;top:740px;width:888px" data-lines="1">Nessun trucco. <span class="rc">Anzi.</span></h2>
+  <p class="txt body qa-text" style="left:96px;top:870px;width:760px">Claude non ha «rotto» la crittografia: ha scoperto come erano stati scelti i numeri. Per siti e pagamenti è una buona notizia.</p>
+</section></div>
+
+<!-- ============ 08 · IN BREVE · ACCENT ============ -->
+<div class="slot"><section class="slide mode-accent">
+  <div class="layer bg"></div>
+  <div class="pill qa-text">In breve</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="width:888px" data-lines="2">Il giallo<br><span class="em">in 4 righe</span></h2>
+  </div>
+  <div class="rows qa-text" style="top:560px">
+    <div class="row"><span class="idx">01</span><span class="t">Numeri della NSA, origine ignota</span></div>
+    <div class="row"><span class="idx">02</span><span class="t">Claude risolve in mezz'ora</span></div>
+    <div class="row"><span class="idx">03</span><span class="t">Erano l'ora di un computer</span></div>
+    <div class="row"><span class="idx">04</span><span class="t">Nessun trucco nascosto</span></div>
+  </div>
+</section></div>
+
+<!-- ============ 09 · CHIUSURA · DARK (no corner logo, no counter, no swipe cue) ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:540px;--ry:380px"></div>
+  <div class="glow" style="left:540px;top:380px"></div>
+  <div class="logo-full qa-text" data-logo></div>
+  <div class="cstack">
+    <h2 class="h1 qa-text" style="max-width:800px" data-lines="2">Mandalo a chi<br><span class="em">ama i gialli</span></h2>
+    <p class="lead qa-text" style="max-width:584px" data-lines="1">E a chi non si fida della NSA.</p>
+  </div>
+  <div class="actions"><span class="apill qa-text"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>Manda</span></div>
+</section></div>
+
+</main>
+
+<script>
+window.CAROUSEL = {
+  title: 'Claude ne ha risolto un altro',
+  format: 'static',
+  handle: '@scopri__ai',
+  seams:  [1150, 1150, 1150, 1150, 1150, 900, 1150, 1150],
+  routes: ['start', 'straight', 'straight', 'straight', 'straight',
+           { d: 'M0 1150 H140 C330 1150 400 1090 540 1068 S760 990 840 962 S1000 912 1080 900', nodes: [[840, 962]] },   // T4: thread = chart
+           { d: 'M0 900 H24 Q48 900 48 924 V1126 Q48 1150 72 1150 H1080' },
+           'straight', 'end'],
+  threadStart: 600,
+};
+</script>
+<script src="engine/carousel.js"></script>
+</body>
+</html>
