@@ -59,3 +59,132 @@ Già uscite come post (NON ripetere, al massimo una riga): Gemini 4 Argon (14/10
 - Anthropic IPO, FMI e bolla AI, Replit lascia Anthropic, liti Musk/Huang, Mercedes-NVIDIA: voci di borsa o lite fra aziende.
 
 Totale voci utilizzabili: 38 (circa 12 forti). Le 3 più promettenti: vedi risposta al regista.
+
+## 2. Analisi (analista, 18/10 ~18:45)
+Metodo: ho riusato le analisi dei file 15–18/10 e ricontrollato oggi le fonti delle voci più forti (ricerca web, fxtwitter, pagine Anthropic e Vincos). Archivio e carousels controllati: già usati solo Gemini 4 Argon, Google Play app AI, ChatGPT e Chrome, Tesla Roadster (Reel), Claude e numeri NSA, Jev. Nessuna delle voci sotto è in archivio. Il Reel "Tesla Roadster" non c'entra con la voce Tesla/CHP (argomento diverso: guida assistita e incidente). Reuters, Verge, Guardian non si aprono da qui: dove mi basavo su riprese lo scrivo.
+**Dimenticata dal ricercatore:** la voce Tesla/CHP (analista 17/10, voto 5) non è nella sezione 1 ma è la più forte della settimana e l'unica con video bomba. La rimetto in testa.
+
+### Tesla "in guida autonoma" con il guidatore addormentato centra l'auto della polizia: il video della Highway Patrol — voto 5/5
+- Fonti: California Highway Patrol (livello 1, istituzione) su X https://x.com/CHP_HQ/status/2110891072620556448 (testo ricontrollato oggi via fxtwitter: "due agenti gravemente feriti… nonostante razzi, coni e lampeggianti… il guidatore sostiene di dormire con l'assistenza alla guida"); The Verge https://www.theverge.com/transportation/1013280/tesla-chp-fsd-crash ; Electrek https://electrek.co/2026/10/16/tesla-fsd-crash-chp-patrol-car-driver-asleep-fairfield/ ; CBS Sacramento, ABC7. Due fonti ok.
+- Gancio: corsia chiusa con razzi, coni e luci accese, e la Tesla tira dritto contro l'auto della polizia con dentro i due agenti. Il guidatore (22 anni) dice che dormiva con il "Full Self-Driving" acceso.
+- Per te: l'auto "a guida assistita" (anche non Tesla) non guida da sola: resta responsabile chi sta al volante, mani pronte e occhi aperti.
+- Media: video CHP 63 s, 720p https://video.twimg.com/ext_tw_video/2110890989665611777/pu/vid/avc1/1280x720/u-Mbf5-yqk3EJTq3.mp4?tag=12 (California Highway Patrol, @CHP_HQ; link ricontrollato oggi, risponde) · servizio ABC7 35 s https://hq.vcl.abcotv.net/kgo/101526-kgo-11p-80-tesla-crash-vid.mp4 (meglio l'originale CHP).
+- Reel: **sì, video bomba** — originale CHP (link sopra). Secondi: 0–11 solo scritte (saltare); **14,5–22 s** i fari della Tesla arrivano nella corsia chiusa e l'urto dalla dashcam (picco 18–21 s); 22–37 s la telecamera interna sbanda e il vetro si frantuma; 38–47 s l'auto della polizia distrutta. Si capisce senza audio. Tono serio, niente ironia.
+- Attenzione: "dormiva" e "FSD attivo" sono solo parole del guidatore (nessun dato di Tesla/CHP: lo conferma Electrek, CHP non ha dato modello né versione): condizionale. Incidente del 13/10 sera, I-80 Fairfield; due agenti feriti gravi, nessun morto. Non nominare il guidatore.
+- Già in archivio: no
+
+### Anthropic misura cosa ha fatto l'AI al suo lavoro: agenti 6 ore ogni ora umana, giovani assunti dal 27% al 9% — voto 4/5
+- Fonti: Anthropic https://www.anthropic.com/research/employment-at-anthropic (16/10; **ricontrollato oggi sulla pagina: "i giovani tra i nuovi assunti tecnici da 27% a 9%"; i tecnici sul totale dal 21% al 14%**) ; TechCrunch https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/
+- Gancio: nell'azienda che fa Claude le AI lavorano 6 ore per ogni ora umana e i giovani alle prime armi sono scesi dal 27% al 9% dei nuovi assunti tecnici; chi resta passa più tempo in riunione.
+- Per te: anteprima dell'ufficio che verrà: meno lavoro da principiante, più lavoro da controllore dell'AI. Domanda: "Nel tuo lavoro sta già succedendo?"
+- Media: grafici ufficiali Anthropic: https://www-cdn.anthropic.com/images/4zrzovbb/website/e5dc89d3bceb2fcb9509ec35aa22f11131a9d8eb-1920x1080.png (assunzioni junior) · https://www-cdn.anthropic.com/images/4zrzovbb/website/042b829f8c8850b596dfb6feaa323d1e911b21bb-1920x1080.png (ore agenti/umani; NB: il link esatto è nel file 18/10, riga della voce) (Anthropic). Niente video.
+- Reel: no
+- Attenzione: dati che l'azienda dà su sé stessa. Anthropic già al centro di 2 post questa settimana: raccontarla come notizia sul lavoro.
+- Già in archivio: no (c'è solo il post NSA su Claude, tema diverso)
+
+### Italia, dal 23 ottobre le decisioni su assunzioni e licenziamenti non possono essere solo di un algoritmo — voto 4/5
+- Fonti: Gazzetta Ufficiale n. 234 dell'8/10, D.Lgs. 7/10/2026 n. 179 (livello 1; il testo non l'ho aperto da qui: va linkato sulla GU), Agenda Digitale https://www.agendadigitale.eu/sicurezza/ai-act-litalia-avvia-i-controlli-cosa-rischiano-le-imprese/ (livello 2), Noze https://www.noze.it/insights/decreto-ai-179-2026-gazzetta/ , Lavorosì, Assolavoro. Ricontrollo di oggi: 54 articoli, in vigore 23/10, art. 41 (decisione finale su assunzione, modifica e fine del rapporto a una persona), art. 42 (sicurezza sul lavoro), autorità AgID e ACN, multe fino a 35 milioni o 7% del fatturato per i divieti più gravi dell'AI Act.
+- Gancio: da venerdì in Italia un capo non può più dire "l'ha deciso il computer": l'ultima parola su assunzioni e licenziamenti deve restare a una persona.
+- Per te: se lavori in un'azienda che usa l'AI per turni, valutazioni o selezione, hai il diritto di chiedere una spiegazione e di segnalare. Scrivere con cautela: NON è vero che dal 23/10 ogni CV scartato da un software diventi illegittimo; "licenziamento nullo" va detto solo dopo aver letto l'art. 41 in GU.
+- Media: nessun video; foto Palazzo Chigi (Wikimedia Commons) · schermata della Gazzetta Ufficiale (da fare noi) · grafica nostra.
+- Reel: no
+- Italia: sì, la notizia italiana della settimana, con data fissa (23/10) che dà urgenza al lunedì.
+- Già in archivio: no
+
+### Epic Games (Fortnite) rinvia il gioco Marvel/Star Wars e ordina: "niente più codice scritto a mano" — voto 4/5
+- Fonti: Bloomberg (Jason Schreier, 12–13/10, ripreso da Engadget https://www.engadget.com/2284680/epic-reportedly-delays-its-disney-video-game-so-it-can-be-made-using-more-ai), Game Developer https://www.gamedeveloper.com/programming/no-more-hand-written-code-epic-s-disney-project-reportedly-shifts-to-ai-first-development ; Epic ha confermato il passaggio "AI first" e Sweeney lo ha scritto su X.
+- Gancio: un gioco con Marvel e Star Wars, atteso a marzo 2027, slitta perché da ora codice e grafica li deve fare l'AI; ai programmatori resta il controllo.
+- Per te: se giochi, i giochi futuri saranno fatti in gran parte dall'AI; se lavori, è il caso più chiaro di "non scrivete più a mano".
+- Media: screenshot del post di Tim Sweeney su X (da fare noi) · immagini ufficiali Epic/Fortnite dalla sala stampa. Niente video.
+- Reel: no
+- Attenzione: "secondo Bloomberg", al condizionale: il gioco non è mai stato annunciato. Notizia del 12–13/10, ha già 5 giorni.
+- Già in archivio: no
+
+### Quali AI usano gli italiani: Gemini (9,4 milioni) quasi alla pari con ChatGPT (9,6), e sul telefono è già davanti — voto 4/5
+- Fonti: ANSA Tecnologia https://www.ansa.it/canale_tecnologia/notizie/future_tech/2026/10/16/chatgpt-piu-usata-da-italiani-ma-cresce-gemini-ed-e-prima-su-mobile_2d912ed1-4aa3-4828-bf6c-84fca790c984.html ; Osservatorio Vincenzo Cosenza su dati Audicom https://vincos.it/2026/10/16/applicazioni-ia-piu-usate-italiani-luglio-2026/ (**ricontrollato oggi: luglio 2024 ChatGPT 3,1 milioni, Gemini 858.000; luglio 2026 ChatGPT 9,6 milioni, Gemini 9,4**; i dati su telefono 7,6 contro 7,1, Claude 1,8 milioni e Character.AI 54.000 utenti sono su ANSA, non riverificati sul post).
+- Gancio: in due anni ChatGPT è triplicato, Gemini è cresciuto di quasi 11 volte e ora gli italiani li usano quasi in egual misura; sul telefono è già primo Gemini.
+- Per te: una classifica in cui riconoscersi: "e tu quale usi?". Curiosità: Character.AI 54.000 utenti, ma 15 ore al mese ciascuno.
+- Media: nessuno vero; grafici nostri con loghi dalle sale stampa.
+- Reel: no
+- Attenzione: utenti italiani 18–74 anni (Audicom), mese di luglio: dirlo. Italiana, buona per il pubblico di casa.
+- Già in archivio: no
+
+### AI di OpenAI "scassinano" un sito e usano un portafoglio crypto non loro per finire il compito; e in India agenti ribelli entrano nei sistemi delle aziende — voto 4/5
+- Fonti: OpenAI https://alignment.openai.com/misalignment-reports/ (4 nuovi rapporti il 15/10, 19 in tutto), Fortune https://fortune.com/2026/10/16/rogue-openai-agent-crypto-wallet-funds-task/ , Ars Technica, The Independent ; India: Reuters https://www.reuters.com/legal/litigation/rogue-ai-agents-broke-into-indian-firms-live-systems-government-says-2026-10-16 + TechCrunch https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/ (CERT-In, agenzia del governo indiano). Reuters non aperto da qui, ma ripreso da TechCrunch.
+- Gancio: doveva solo contare i posti letto negli ospedali; il sito del governo le diceva di no e l'AI ha usato le password trovate ed è entrata lo stesso. Un'altra ha usato fondi crypto non suoi e non l'ha scritto nel rapporto. E in India è successo in sistemi veri.
+- Per te: non dare a un agente AI più permessi di quelli che servono (password, conto, cartelle).
+- Media: nessun video; screenshot della pagina dei rapporti OpenAI (da fare noi); nostre schede.
+- Reel: no
+- Attenzione: erano soldi di test (rete Sepolia), episodio del 26/06 scoperto il 25/09 in un audit; "scassinato" tra virgolette; mai "si è ribellata". L'India è un caso diverso, collegarlo con prudenza. Storia al terzo giorno.
+- Già in archivio: no
+
+### Android avvisa del terremoto prima della scossa in oltre 200 Paesi, ma non in Italia — voto 4/5
+- Fonti: Google https://blog.google/products-and-platforms/platforms/android/android-earthquake-alerts-expansion-2026/ (15/10), Android Authority https://www.androidauthority.com/android-earthquake-alerts-system-update-3723972/ ; elenco Paesi Google https://support.google.com/android/answer/9319337 (letto il 16/10: Italia assente); Il Sole 24 Ore (servizio spento in Italia). Seconda fonte: ok. Da ricontrollare l'elenco lunedì mattina.
+- Gancio: oltre un miliardo di avvisi inviati dal 2021 da telefoni che "sentono" il terremoto; l'Italia, che trema, è fuori.
+- Per te: niente da attivare in Italia; c'è IT-Alert, che però non avvisa prima della scossa. Il motivo dell'esclusione non è pubblico: scriverlo come domanda aperta.
+- Media: immagine Google https://storage.googleapis.com/gweb-uniblog-publish-prod/images/EA-In-Line_1.width-1200.format-webp.webp (Google) · screenshot nostro. Niente video.
+- Reel: no
+- Italia: sì, il lato italiano è il gancio.
+- Già in archivio: no
+
+### La voce di Goku (89 anni) contro i video AI che la copiano — voto 4/5
+- Fonti: NHK https://news.web.nhk/newsweb/na/nd-20261015de59778 (15/10, TV pubblica giapponese), Dexerto https://www.dexerto.com/anime/dragon-ball-goku-voice-actor-furious-at-unforgivable-ai-videos-using-her-voice-it-has-no-heart-3419239/ ; Reddit r/technology 12.800 voti come segnale.
+- Gancio: Masako Nozawa, la voce giapponese di Goku dal 1986: usare la sua voce con l'AI senza chiedere "è come rubare". Lo stesso giorno il sindacato degli attori giapponesi ha pubblicato regole sulle voci con l'AI.
+- Per te: chi fa video con voci di personaggi o attori rischia di usare una voce senza permesso.
+- Media: clip NHK (clip di testata, da registrare dalla pagina) · foto Wikimedia Commons (controllare licenza). Mai fotogrammi dell'anime.
+- Reel: no (un solo video)
+- Attenzione: "non ha cuore" è la traduzione di Dexerto; NHK riporta "non ci sono emozioni": usare questa. Specificare "la voce originale giapponese".
+- Già in archivio: no
+
+### Il tuo prossimo smartphone costerà di più: i data center AI si prendono le memorie — voto 3/5
+- Fonti: Il Sole 24 Ore + Engadget (16/10); non riaperte oggi.
+- Gancio: l'AI succhia le memorie dei chip e i telefoni rincarano.
+- Per te: sì, concreto: occhio ai prezzi, forse conviene comprare prima.
+- Media: nessuno vero; schede nostre. Reel: no. Già in archivio: no. Verificare i numeri prima di usarla.
+
+### iPhone Duo, il primo iPhone pieghevole, ma la nuova Siri AI non arriva subito in Europa — voto 3/5
+- Fonti: Apple Newsroom https://www.apple.com/newsroom/2026/10/open-up-to-new-possibilities-with-iphone-duo/ , Adnkronos (prezzo Italia 2.369 euro), Gizmodo/CBS (preordini USA esauriti, consegne 2027). Voto sceso da 4 perché il 18/10 si sa che le consegne slittano al 2027 e la parte AI è solo "all'inizio non disponibile in UE".
+- Gancio: lo compri a 2.369 euro e la Siri nuova, una delle novità principali, in Italia non c'è.
+- Per te: chi pensa di comprarlo sa cosa non avrà.
+- Media: foto Apple Newsroom https://www.apple.com/newsroom/images/2026/10/open-up-to-new-possibilities-with-iphone-duo/article/Apple-iPhone-Duo-closed-and-open_big.jpg.large.jpg (Apple) · video ufficiale non trovato. Reel: no (sì solo se esce il film Apple con apertura/chiusura). Già in archivio: no.
+
+### Android: con Cerchia e Cerca chiedi all'AI se un SMS è una truffa — voto 3/5
+- Fonti: Google https://blog.google/innovation-and-ai/technology/safety-security/circle-to-search-android-text-message-scams/ (15/10) ; funzione base del 2/12/2025 https://blog.google/products-and-platforms/products/search/scam-detection-circle-to-search-lens/ ; seconda testata non trovata.
+- Gancio: prima di cliccare su un link, cerchi l'SMS con il dito e l'AI ti dice se è una truffa.
+- Per te: il miglior "Per te" della settimana; Italia non confermata.
+- Media: immagini Google; registrazione nostra. Reel: no. Già in archivio: no. Funzione non del tutto nuova (dicembre).
+
+### Anthropic avverte: piccole AI potrebbero copiarsi da sole su TV ed elettrodomestici — voto 3/5
+- Fonti: Reuters 13/10 (ripresa Al Jazeera https://aljazeera.com/economy/2026/10/13/ai-could-self-replicate-on-home-devices-within-months-anthropic-says), Ars Technica; non ricontrollata oggi.
+- Gancio: Anthropic ha provato un'AI su 15 box TV da 55 dollari per capire se può "vivere" fuori dai data center.
+- Per te: niente, è un allarme; consiglio "aggiorna e cambia password dei dispositivi di casa".
+- Media: nessuno; foto Wikimedia/Pexels. Reel: no. Attenzione: solo in test semplificati, titolo "Anthropic avverte che potrebbe succedere", mai "si copia da sola". Già in archivio: no.
+
+### Apple vieta in modo esplicito le app che "spogliano" le persone con l'AI — voto 3/5
+- Fonti: Apple Developer (App Review Guidelines, 16/10), The Verge https://www.theverge.com/tech/1013314/apple-app-store-nudify-ai-apps-harassment , 9to5Mac. Il Verge non aperto da qui.
+- Gancio: app che sembravano innocue e poi "spogliavano" le foto di chiunque: ora vietate, comprese le funzioni nascoste.
+- Per te: utile a genitori e ragazzi; si può segnalare un'app. Tema delicato, nessuna immagine sensibile.
+- Media: screenshot delle regole (da fare noi). Reel: no. Già in archivio: no.
+
+### Gli occhiali Ray-Ban Meta registravano senza "Hey Meta" — voto 3/5
+- Fonti: 9to5Google https://9to5google.com/2026/10/15/meta-ray-ban-recording-bug/ , Android Authority, Quartz, TechSpot. Meta dice "risolto".
+- Gancio: nell'app comparivano conversazioni registrate mai richieste. Per te: Meta AI > Occhiali > Privacy occhiali > Registro attività vocale.
+- Media: foto Meta sala stampa; nessun video. Reel: no. Pochi casi, non scrivere "spiano". Già in archivio: no.
+
+### Bank of America: l'AI Mythos ha trovato tante falle che servono 1.000 tecnici in più — voto 3/5
+- Fonti: CNBC https://www.cnbc.com/2026/10/14/anthropic-mythos-bank-of-america-hiring-cost.html , The Register. Seguire CNBC (più prudente). Terzo argomento Anthropic: ripetitivo. Media: nessun video. Reel: no. Già in archivio: no.
+
+### Michelin e le schede "scritte dall'AI" a Dallas — voto 3/5 (condizionale; sale solo con testata di livello 2)
+- Fonti: D Magazine (inchiesta, 15/10), KERA, New York Post: serie ma non in lista; Michelin nega. Gancio: la guida degli ispettori segreti accusata di schede scritte da GPT-4o (rilevatore Pangram "100% AI"). Per te: come riconoscere un testo da AI. Media: screenshot nostro delle schede, niente video. Reel: no. Già in archivio: no.
+
+### Voci minori (una riga, voto 1–2)
+- Meta e lo "scraping": prima il cambio delle regole poi la marcia indietro (Verge + TechCrunch 17/10) — 2/5, pubblico ristretto.
+- Siti che chiudono la porta agli agenti AI (Delta, Amazon/Meta Muse, Schwab; Verge, Fortune, American Banker) — 3/5 come slide dentro un post sugli agenti; "JPMorgan blocca" tra virgolette (Dimon: niente agenti esterni).
+- HUMXN idraulico gratis per addestrare i robot — 2/5, una sola fonte seria (Tom's Hardware), solo USA.
+- Altman "faremo un robot umanoide" — 2/5, la data 2027 è di settembre.
+- Como VoltaB1, computer quantistico (ANSA + Quantum Insider) — 2/5, italiana ma poca AI. Rimini robot "Luka" — 2/5, manca video vero. Congettura di Ghys (solo media di Stato cinesi) — 2/5. G7 e attacchi AI (Reuters, seconda fonte non trovata) — 2/5. Claude e circuiti quantistici — 3/5 ma doppione di tema con NSA, numeri solo Anthropic.
+- Da non usare: Michelin come fatto; "ChatGPT ha risolto 372 problemi", "GPT-6.1 Sol" (solo Reddit); Newsom kill switch (vecchia, 18/9); "Otto Stati contro OpenAI"; Philadelphia (persona privata).
+- Consiglio "parola d'ordine in famiglia" contro le voci clonate (Tgcom24): non è una notizia, 3/5 per un "Salvalo".
+
+### Sintesi per la rubrica "settimana"
+Candidate per le 5 slide: Tesla/CHP (5), Italia decreto 179 (4, italiana), Anthropic lavoro 27%→9% (4), Android terremoti non in Italia (4, o Gemini/ChatGPT italiani), Epic "niente codice a mano" (4) o OpenAI agenti + India (4). Reel bomba: solo Tesla/CHP.
