@@ -23,3 +23,109 @@ Legenda: SOLIDA = 2+ fonti serie già lette; DA CONFERMARE = serve una seconda f
 
 ## Riepilogo per il regista
 10 voci + 2 non verificate. Pronte con almeno 2 fonti serie: Voyager 1, Venere, suoni di Marte, cervello 20 W (con AI), corpo che si rinnova, specchio Webb, Luna che si allontana, stella di neutroni. Servono controlli: Gemini (documento Google), tardigradi (livello 1), polpo (seconda fonte). Reel: il migliore è Marte (video/audio NASA veri su Commons).
+
+## 2. Analisi (analista, ore 15:40)
+
+Controlli fatti oggi sulle pagine originali (NASA, Google, ESA/Cell Press via ScienceDaily, Smithsonian). Archivio: `archivio/` e `carousels/` non contengono nessuna di queste curiosità (nessun conflitto).
+Attenzione: Wikimedia Commons mi ha dato errore 429 (troppe richieste) e non ho potuto scaricare il video di Marte né guardare i fotogrammi. Il costruttore deve scaricarlo e guardarlo prima di decidere.
+
+### Su Marte gli acuti arrivano prima dei bassi (e a 8 metri non senti più niente) — voto 4/5
+- Fonti: NASA/JPL (https://www.jpl.nasa.gov/news/what-sounds-captured-by-nasas-perseverance-rover-reveal-about-mars/), studio su Nature del 1/4/2022 (citato da NASA/JPL), CNRS (https://www.cnrs.fr/en/perseverance-records-first-ever-sounds-mars). Numeri letti sulla pagina JPL: suoni gravi circa 240 m/s, suoni acuti circa 250 m/s, sulla Terra circa 343 m/s; su Marte il suono si spegne a circa 8 m, sulla Terra a circa 65 m; gli acuti a 8 m sono persi del tutto.
+- CORREZIONE alla ricerca: la ricerca diceva "i toni gravi arrivano prima di quelli acuti". È l'opposto. Gli ACUTI sono più veloci (250 m/s) e arrivano PRIMA dei gravi (240 m/s). Scrivere così nelle slide.
+- Gancio: su Marte un concerto lo sentiresti "stonato": prima arrivano gli acuti, poi i bassi, e oltre 8 metri non senti quasi niente. Lo sappiamo perché un rover ha un microfono.
+- Per te: niente da farci, ma puoi ascoltare le registrazioni vere (gratis, NASA). Curiosità pura, effetto "ma davvero?".
+- Media: video NASA/JPL su Commons, "NASA - Sounds On Mars - Perseverance Rover - April 1, 2022", 1 min 29 s, 1920x1080, video+audio, pubblico dominio (autore NASA/JPL-Caltech/ASU/MSSS/LANL/CNES/IRAP; caricato da Drbogdan) · pagina: https://commons.wikimedia.org/wiki/File:NASA-SoundsOnMars-PerseveranceRover-20220401.webm · file diretto: https://upload.wikimedia.org/wikipedia/commons/4/46/NASA-SoundsOnMars-PerseveranceRover-20220401.webm (non scaricabile da qui oggi per 429, ritentare). Secondo video utile: NASA, "Perseverance Captures Video, Audio of Fourth Ingenuity Flight" (30/4/2021): https://www.nasa.gov/centers-and-facilities/jpl/nasas-perseverance-captures-video-audio-of-fourth-ingenuity-flight (verificare licenza/link MP4).
+- Reel: NO (voto prudente, da rivedere dopo aver visto i fotogrammi). Il punto forte del video è l'AUDIO ("senti il suono di Marte"), ma i Reel di `format/5-reel.md` sono senza audio (la musica la mette il proprietario) e devono far dire "ma è vero?" anche in silenzio. Dalla descrizione, il file è una raccolta di registrazioni (soffi, vento, elicottero, laser) e non ho potuto verificare che le immagini siano spettacolari. Se il costruttore vede un momento forte (es. l'elicottero Ingenuity che vola), può riproporlo: ma resta un "carino", non una bomba. Se si vuole un Reel su Marte, l'idea migliore è il video del volo di Ingenuity ripreso da Perseverance, non questo.
+- Già in archivio: no
+
+### Su Venere il giorno dura più dell'anno e il Sole sorge a ovest — voto 4/5
+- Fonti: NASA (https://science.nasa.gov/venus/venus-facts/), NASA Space Place (https://spaceplace.nasa.gov/all-about-venus/en/), ESA Venus Express (https://sci.esa.int/web/venus-express/-/34067-venus-vs-earth). Numeri letti sulla pagina NASA: giorno (rotazione) 243 giorni terrestri, anno 225, il Sole sorge a ovest perché gira al contrario, 467 °C, pressione 93 volte la nostra, venti nelle nuvole fino a 360 km/h.
+- Attenzione: NASA scrive "sunrise to sunset 117 giorni"; il valore 117 è il giorno solare (da alba ad alba). Scrivere "da un'alba all'altra passano circa 117 giorni", mai "alba-tramonto" senza spiegare. Non mischiare 243 e 117.
+- Gancio: su Venere il giorno (243 giorni) dura più dell'anno (225): tra due compleanni non fa nemmeno in tempo ad arrivare la sera. E il Sole sorge a ovest.
+- Per te: niente da farci; curiosità pura, facilissima da capire anche da un genitore.
+- Media: immagini NASA/ESA (Magellan, Akatsuki, Venus Express) su Commons e nel sito NASA, pubblico dominio / uso ESA con credito; link precisi da prendere dalla galleria https://science.nasa.gov/venus/ (da fare in costruzione). Autore: NASA/JPL, ESA, JAXA.
+- Reel: no (nessun video verificato).
+- Già in archivio: no
+
+### Il telescopio Webb: 18 esagoni di berillio con 50 grammi d'oro in tutto, quanto una pallina da golf — voto 4/5
+- Fonti: NASA Webb (https://science.nasa.gov/mission/webb/science-overview/science-explainers/telescope-overview/), ESA (https://sci.esa.int/web/jwst/-/59659-jwsts-golden-mirror). Numeri letti sulla pagina NASA: 18 segmenti esagonali, strato d'oro circa 100 nm (circa 1/1000 di un foglio di carta), circa 50 g d'oro (massa di una pallina da golf), specchio 6,6 m, berillio.
+- Gancio: lo specchio più grande mai mandato nello spazio è rivestito d'oro, ma ce n'è così poco che sta in una pallina da golf. E lo strato è mille volte più sottile di un foglio.
+- Per te: niente da farci. Fa vedere "cosa c'è dentro" le foto di Webb che la gente già conosce.
+- Media: foto NASA/ESA/STScI dello specchio (pubblico dominio NASA; crediti da annotare); video NASA dell'apertura dello specchio da cercare in costruzione (https://science.nasa.gov/mission/webb/). Autore: NASA/STScI.
+- Reel: no (bello ma non verificato come "bomba").
+- Già in archivio: no
+
+### Voyager 1 arriva a "un giorno luce" dalla Terra il 18 novembre 2026 — voto 4/5
+- Fonti: NASA (https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/), NASA "Where Are Voyager 1 and 2 Now?" (https://science.nasa.gov/mission/voyager/where-are-voyager-1-and-voyager-2-now/). Letto sulla pagina: 18 novembre 2026, ore 5:16:07 EST (11:16 in Italia), 16.094.799.096 miglia = 25.902.068.356 km. Il tempo di 24 ore a senso unico non è scritto così su NASA: è la definizione di giorno luce (una domanda e la risposta = circa 48 ore).
+- Gancio: tra un mese un messaggio a Voyager 1 impiegherà un giorno intero ad arrivare, e un altro per tornare: la risposta a una domanda fatta lunedì arriva mercoledì. Ed è una sonda del 1977 ancora in contatto.
+- Per te: niente da farci. Si può seguire la posizione in tempo reale sul sito NASA.
+- Media: animazioni e foto NASA/JPL (pubblico dominio), pagina NASA sopra e Commons. Link MP4 specifici da cercare in costruzione. Autore: NASA/JPL-Caltech.
+- Reel: no.
+- Nota per il regista: è un tema con data; se si usa oggi, il 18/11 non si può rifare (regola 6). Resta valido anche prima e dopo, ma poteva avere più forza come notizia a metà novembre. Se si preferisce tenere il 18/11, scartarlo ora.
+- Già in archivio: no
+
+### Una domanda a Gemini consuma meno energia di 9 secondi di TV — voto 4/5
+- Fonti: Google, blog ufficiale, 21/8/2025 (https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference), Axios (https://www.axios.com/2025/08/21/google-gemini-apps-energy-use-costs) e DCD (https://www.datacenterdynamics.com/en/news/google-median-gemini-prompt-uses-024-watt-hours-of-power-and-consumes-026ml-of-water/). Confermato sull'originale Google: domanda mediana di testo 0,24 Wh ("meno di nove secondi di TV"), 0,26 mL d'acqua ("circa cinque gocce"), 0,03 g CO2e; da maggio 2024 a maggio 2025 energia -33 volte e CO2 totale -44 volte.
+- Attenzione: il 33 vale per l'energia, il 44 per la CO2. Sono dati di Google stessa (non verificati da terzi), solo domanda mediana di testo (non foto/video), coprono tutta l'infrastruttura (solo i chip attivi: 0,10 Wh). Critiche di ricercatori (es. UC Riverside) sul calcolo dell'acqua. Nessun aggiornamento 2026 trovato: dire "dati Google, agosto 2025".
+- Gancio: ogni volta che chiedi qualcosa a Gemini, consuma meno energia di 9 secondi di TV e 5 gocce d'acqua, e in un anno il consumo è sceso di 33 volte. (Dire che sono cifre di Google.)
+- Per te: sì, concreto: dà una risposta alla domanda "quanto inquina usare l'AI?". Ottimo per i commenti.
+- Media: grafiche nostre (oggetti 3D, schede di interfaccia); niente foto vere necessarie; eventuale screenshot del blog Google come fonte.
+- Reel: no.
+- Già in archivio: no (ma c'è Gemini 4 in `archivio/2026-10-14-news-lampo-gemini-4-argon`: argomento diverso).
+
+### Il tuo corpo sostituisce circa 330 miliardi di cellule al giorno — voto 4/5
+- Fonti: Scientific American (https://www.scientificamerican.com/article/our-bodies-replace-billions-of-cells-every-day/), Sender e Milo, Nature Medicine, gennaio 2021 (studio originale). Letto su SciAm: circa 330 miliardi di cellule al giorno, circa l'1%; intestino meno di una settimana; sangue 3-120 giorni; grasso circa 12 anni e muscolo circa 50 anni (nell'articolo "12 to 50 years respectively").
+- Non confermato da me: "nuovo corpo in 80-100 giorni" (calcolo della ricerca, non l'ho trovato sulla pagina) e i neuroni (la pagina non ne parla). Usarli solo dopo averli letti nel paper, oppure toglierli. Il mito dei 7 anni non è trattato: se si smonta, serve una fonte.
+- Gancio: oggi hai perso e rifatto 330 miliardi di cellule. Il tuo intestino si rifà ogni settimana, il tuo grasso ogni 12 anni.
+- Per te: niente da fare, ma cambia come si pensa al proprio corpo. Nessun legame diretto con l'AI.
+- Media: Wikimedia Commons (microscopia, da scegliere con licenza), grafiche nostre.
+- Reel: no.
+- Già in archivio: no
+
+### La Luna si allontana di 3,8 cm all'anno (lo misuriamo con i laser sugli specchi Apollo) — voto 4/5
+- Fonti: NASA (https://www.nasa.gov/missions/laser-beams-reflected-between-earth-and-moon-boost-science/), NASA/JPL (https://www.jpl.nasa.gov/news/apollo-11-experiment-continues-to-return-valuable-data/). Letto: 3,8 cm (1,5 pollici) all'anno; riflettori su Apollo 11 (1969), 14 e 15 (1971) e Lunokhod 1 e 2; il laser torna in circa 2,5 s e si misura la distanza con precisione di pochi millimetri.
+- Gancio: gli specchi lasciati dagli astronauti nel 1969 funzionano ancora, e con quelli misuriamo la Luna che scappa: 3,8 cm all'anno, la velocità con cui crescono le unghie.
+- (La frase "come le unghie" è un confronto nostro: controllare prima di usarlo; non è su NASA. Se non si trova, toglierlo.)
+- Per te: niente da fare. Aggancio fortissimo con la "tecnologia vecchia che funziona ancora".
+- Media: foto Apollo e animazioni NASA (pubblico dominio); link specifici in costruzione. Autore: NASA.
+- Reel: no (video del laser da cercare, nulla di verificato).
+- Già in archivio: no
+
+### Il cervello consuma circa 20 watt, come una lampadina piccola — voto 3/5
+- Fonti: arXiv 2003.04711 (review "Physics for Neuromorphic Computing"), Communications of the ACM (https://cacm.acm.org/news/controlling-ais-growing-energy-needs). Non riletto oggi: le due fonti sono quelle della ricerca. Il confronto con BERT (80 ore su 64 GPU) è del 2020, quindi vecchio: da non usare se non si trovano dati recenti.
+- Gancio: il tuo cervello usa 20 watt, una lampadina piccola; un data center per l'AI ne usa milioni.
+- Per te: nessuna azione. Il collegamento con l'AI (consumi) è forte ma il dato "lampadina" è molto diffuso: il pubblico potrebbe averlo già sentito.
+- Media: grafiche nostre; Commons per il cervello.
+- Reel: no.
+- Già in archivio: no
+
+### Un cucchiaino di stella di neutroni pesa circa un miliardo di tonnellate — voto 3/5
+- Fonti: Astronomy (https://www.astronomy.com/astronomy-for-beginners/astronomy-101-neutron-stars/), Science News (https://sciencenews.org/?p=34824). NASA: non ho trovato la cifra del cucchiaino su una pagina NASA (solo sui riassunti secondari); la pagina citata nella ricerca non contiene il confronto del cucchiaino come l'ho letto. Le cifre variano (1, 2, 3, 4 miliardi): stima, non misura.
+- Gancio: un cucchiaino di una stella di neutroni pesa quanto una montagna (circa un miliardo di tonnellate, forse di più).
+- Per te: niente. Dato famosissimo, quindi poco sorprendente.
+- Media: animazioni NASA SVS (https://svs.gsfc.nasa.gov, pubblico dominio).
+- Reel: no.
+- Già in archivio: no
+
+### Il polpo ha tre cuori e il sangue blu (rame) — voto 3/5
+- Fonti: Science Focus (https://www.sciencefocus.com/nature/why-does-an-octopus-have-more-than-one-heart), Smithsonian Magazine (https://www.smithsonianmag.com/science-nature/ten-wild-facts-about-octopuses-they-have-three-hearts-big-brains-and-blue-blood-7625828/, aggiornato 13/3/2024: letto, conferma tre cuori, due per le branchie e uno per il corpo, emocianina a base di rame, utile in acque fredde con poco ossigeno). Seconda fonte trovata, ma non è né NOAA né una rivista di ricerca: le due sono divulgative (livello 2 scarso). NOAA e Britannica non raggiunti (Britannica 403).
+- Gancio: il polpo ha tre cuori e il sangue blu; con il rame, non col ferro.
+- Per te: niente. Molto noto già a molti.
+- Media: Wikimedia Commons, NOAA Ocean Exploration (da cercare).
+- Reel: no (nessun video verificato).
+- Già in archivio: no
+
+### I tardigradi sono sopravvissuti nello spazio — voto 2/5 (se si usa, solo in forma qualitativa)
+- Fonti: ScienceDaily (https://www.sciencedaily.com/releases/2008/09/080908135906.htm), NBC (https://www.nbcnews.com/id/wbna26613502), Current Biology 9/9/2008, Jönsson et al., "Tardigrades survive exposure to space in low Earth orbit" (citato dalle due fonti, paper non letto direttamente). Le due pagine confermano: FOTON-M3 (ESA, settembre 2007), circa 270 km di quota, "la maggior parte è sopravvissuta a vuoto e raggi cosmici", "alcuni anche ai raggi UV del Sole (oltre 1000 volte più forti che a terra)", i sopravvissuti si sono riprodotti.
+- NON CONFERMATO: il "10% sopravvissuto" della ricerca. Né ScienceDaily né NBC danno percentuali, e "10 giorni" lo danno altre testate (Discover, National Geographic). Non scrivere percentuali. Livello 1 (paper o sito ESA) non letto. Voto basso finché non si legge l'abstract.
+- Gancio: un animale microscopico è sopravvissuto nudo nello spazio, e poi ha fatto figli.
+- Per te: nessuna azione.
+- Media: Commons (microscopia); ESA da verificare.
+- Reel: no.
+- Già in archivio: no
+
+## Riepilogo per il regista (analista)
+Voci 4/5 (pronte, 2+ fonti, numeri letti): Marte (suono), Venere, Webb (oro), Voyager 1, Gemini consumi, corpo che si rinnova, Luna che si allontana.
+Mie correzioni: (1) Marte: gli ACUTI arrivano prima (250 m/s) dei gravi (240 m/s), la ricerca diceva il contrario. (2) Venere: 117 giorni = da alba ad alba (giorno solare), non alba-tramonto. (3) Gemini: 33x è l'energia, 44x la CO2; dati Google 2025. (4) Tardigradi: il 10% non è confermato. (5) Corpo: "80-100 giorni" e neuroni non letti, da togliere o verificare.
+Reel Marte: NO per ora. Il punto forte è l'audio, mentre i Reel sono senza audio; non ho potuto vedere i fotogrammi (Wikimedia 429). Da riprovare nel download: se c'è un momento visivo forte, rivalutare; altrimenti niente Reel.
+Consiglio d'ordine: Venere o Marte per l'effetto "non lo sapevo" universale; Gemini se si vuole il legame con l'AI.
