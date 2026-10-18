@@ -1,4 +1,4 @@
-# Ha aiutato a creare ChatGPT. Ora fa un'AI che non scrive — copy (BOZZA, da approvare)
+# Ha aiutato a creare ChatGPT. Ora fa un'AI che non scrive — copy (APPROVATO il 18/10/2026, copertina a)
 
 _Copy in italiano · formato: statico (slide 1 e 5 diventano MP4 con il video vero) · 8 slide + chiusura (il contatore va da 01/08 a 08/08)_
 
@@ -33,7 +33,7 @@ Modi delle slide: D A L D L D L A D (copertina e chiusura scure).
 ### 05 — La demo (LIGHT) · MP4
 - **Pill:** Demo di un programmatore · **Titolo:** Ha navigato da sola. *10 scelte in 3 secondi.*
 - **Testo:** In un sito di prova ha deciso a ogni passo dove cliccare, fino al risultato giusto. E ogni volta ha detto quanto era sicura.
-- **Video vero:** la demo dal post originale dello sviluppatore (X, 16/9), ingrandita sulle pagine del sito di prova (8–19 s), in monocromo. Il `-completo` è la demo intera (25 s), con il registro finale: «10 Jev requests in 3121ms», ogni passo con la sua sicurezza.
+- **Video vero:** la demo dal post originale dello sviluppatore (X, 16/9), ingrandita sulle pagine del sito di prova (8–17,5 s, finisce su «Integration tests passed»), in monocromo. Il `-completo` è la demo intera (25 s), con il registro finale: «10 Jev requests in 3121ms», ogni passo con la sua sicurezza.
 - **Adesivo:** Senza esitare.
 
 ### 06 — Chi l'ha fatta (DARK)

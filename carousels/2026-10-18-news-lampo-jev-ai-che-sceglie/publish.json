@@ -1,0 +1,17 @@
+{
+  "tipo": "notizia",
+  "parole": ["chatgpt", "jev", "intelligenza artificiale"],
+  "caption": "⚡ Jev è l'intelligenza artificiale di uno dei ricercatori che hanno creato ChatGPT. Non scrive niente: sceglie.\n\n🧠 Le dai una domanda e le risposte possibili. Lei ne sceglie una in una frazione di secondo e ti dice quanto è sicura. Niente frasi, niente chiacchiere: è fatta per i programmi, non per parlare con te.\n\n📈 L'ha presentata TypeSafe AI il 15 settembre. Il 16 ottobre Vercel ha fatto sapere che è il modello adottato più in fretta di sempre sulla sua piattaforma: in due settimane l'ha usata il 35% dei team che pagano.\n\n⚠️ I numeri su velocità e costi («da 20 a 200 volte più veloce») sono dell'azienda. E una risposta in ordine può comunque essere la scelta sbagliata.\n\n👉 Cosa cambia per te: niente da scaricare. Se funziona, la troverai dietro l'assistenza clienti e le app che smistano al posto tuo.\n\n📩 Mandalo a chi pensa che l'AI sia solo ChatGPT\nTi fideresti di un'AI che decide al posto tuo in un attimo? 👇\n\nFonti: TechCrunch, Bloomberg, The Register, TypeSafe AI, Vercel; prove e demo su X di Pranit (Vercel), Nikhil Mudholkar (Bryo AI) e Filip (Neriousy)\n\n#intelligenzaartificiale #chatgpt #jev #typesafeai #tecnologia",
+  "alt": [
+    "Copertina: «Ha aiutato a creare ChatGPT. Ora fa un'AI che non scrive.» Video: due finestre in gara, Jev ha già finito, la chat no.",
+    "«Ha letto il messaggio. E ha scelto.» Esempio: messaggio all'assistenza, Jev sceglie «problema tecnico» all'85%, sicura all'82%.",
+    "«Ha fatto il buttafuori. Da 5 a 18 volte più veloce.» Tabella della prova di Vercel: Jev 98,6% giuste in 312 ms, l'altro 96,7%.",
+    "«Ha smistato 1.565 email. Quasi come Gemini.» Riquadro: 96,4% giuste, 0,08 dollari ogni 1.000 email, 737 risposte sicure senza errori.",
+    "«Ha navigato da sola. 10 scelte in 3 secondi.» Video della demo: Jev sceglie dove cliccare in un sito di prova fino al test superato.",
+    "«Uno dei ricercatori che hanno creato ChatGPT.» Foto dei tre cofondatori di TypeSafe AI; Diogo Almeida è a destra.",
+    "«Tu non la apri. La incontri.» Scheda «Il limite»: risponde sempre nel formato giusto, ma la scelta può essere sbagliata.",
+    "«Jev in 4 righe»: non scrive, sceglie; dice quanto è sicura; veloce ed economica, dice l'azienda; la usano le aziende, non tu.",
+    "Logo Scopri AI. «Mandalo a chi pensa che l'AI sia solo ChatGPT. Ce n'è una che decide in silenzio.» Pulsante Manda."
+  ],
+  "pinned": []
+}

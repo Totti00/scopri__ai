@@ -1,0 +1,16 @@
+⚡ Jev è l'intelligenza artificiale di uno dei ricercatori che hanno creato ChatGPT. Non scrive niente: sceglie.
+
+🧠 Le dai una domanda e le risposte possibili. Lei ne sceglie una in una frazione di secondo e ti dice quanto è sicura. Niente frasi, niente chiacchiere: è fatta per i programmi, non per parlare con te.
+
+📈 L'ha presentata TypeSafe AI il 15 settembre. Il 16 ottobre Vercel ha fatto sapere che è il modello adottato più in fretta di sempre sulla sua piattaforma: in due settimane l'ha usata il 35% dei team che pagano.
+
+⚠️ I numeri su velocità e costi («da 20 a 200 volte più veloce») sono dell'azienda. E una risposta in ordine può comunque essere la scelta sbagliata.
+
+👉 Cosa cambia per te: niente da scaricare. Se funziona, la troverai dietro l'assistenza clienti e le app che smistano al posto tuo.
+
+📩 Mandalo a chi pensa che l'AI sia solo ChatGPT
+Ti fideresti di un'AI che decide al posto tuo in un attimo? 👇
+
+Fonti: TechCrunch, Bloomberg, The Register, TypeSafe AI, Vercel; prove e demo su X di Pranit (Vercel), Nikhil Mudholkar (Bryo AI) e Filip (Neriousy)
+
+#intelligenzaartificiale #chatgpt #jev #typesafeai #tecnologia
