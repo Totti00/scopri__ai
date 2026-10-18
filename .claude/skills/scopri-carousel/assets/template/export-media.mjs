@@ -8,6 +8,7 @@
 // optional mono tone) → top layer. No audio: the user adds music in Instagram.
 // Box attributes: data-video (path from this folder), data-start (s, default 0), data-dur (s, default 8),
 // data-fit="cover|contain" (default cover), data-pos (0–1 horizontal crop, default .5), data-tone="mono|color" (default mono),
+// data-poster (optional: second of the source used for the poster frame in slide-XX.png, default start + 1 s; 18 Oct 2026),
 // data-full (optional: another file for slide-XX-completo.mp4, e.g. a ≤ 60 s montage when the source is minutes long; default data-video).
 import puppeteer from 'puppeteer-core';
 import { mkdir, writeFile, rm } from 'node:fs/promises';
@@ -54,7 +55,7 @@ try {
     [...sl.querySelectorAll('.video-box[data-video]')].map((b, k) => {
       const r = b.getBoundingClientRect(), s = sl.getBoundingClientRect();
       return { slide: i, k, video: b.dataset.video, full: b.dataset.full || '', start: +(b.dataset.start || 0), dur: +(b.dataset.dur || 8),
-        fit: b.dataset.fit || 'cover', pos: +(b.dataset.pos ?? .5), tone: b.dataset.tone || 'mono',
+        posterAt: b.dataset.poster === undefined ? null : +b.dataset.poster, fit: b.dataset.fit || 'cover', pos: +(b.dataset.pos ?? .5), tone: b.dataset.tone || 'mono',
         x: Math.round(r.left - s.left), y: Math.round(r.top - s.top), w: Math.round(r.width), h: Math.round(r.height),
         radius: parseFloat(getComputedStyle(b).borderTopLeftRadius) || 0 };
     })));
@@ -66,7 +67,7 @@ try {
     b.fullSrc = b.full ? path.join(here, b.full) : src;
     if (!existsSync(b.fullSrc)) throw new Error(`Missing video ${b.full} (data-full, slide ${b.slide + 1})`);
     b.poster = path.join(outDir, `poster-${String(b.slide + 1).padStart(2, '0')}-${b.k + 1}.jpg`);
-    run(ffmpeg, ['-y', '-loglevel', 'error', '-ss', String(b.start + Math.min(1, b.dur / 2)), '-i', src, '-frames:v', '1',
+    run(ffmpeg, ['-y', '-loglevel', 'error', '-ss', String(b.posterAt ?? (b.start + Math.min(1, b.dur / 2))), '-i', src, '-frames:v', '1',
       ...(b.tone === 'mono' ? ['-vf', MONO] : []), '-q:v', '3', b.poster]);   // same tone as the MP4, so the PNG and the previews match it
   }
   await page.evaluate(list => list.forEach(b => {

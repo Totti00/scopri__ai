@@ -214,6 +214,7 @@ News carousels show the real thing: official clips (from X via `https://api.fxtw
 | `data-fit` | `cover` | `contain` shows the whole frame with dark bands |
 | `data-pos` | `.5` | horizontal crop, 0 = left, 1 = right |
 | `data-tone` | `mono` | black and white with the brand-blue tint (Electric Mono's "monochrome imagery"); `color` keeps the colours. The poster frame in `slide-XX.png` gets the same tone (17 Oct 2026) |
+| `data-poster` | start + 1 s | the second of the source shown as poster in `slide-XX.png` (and the previews). Use it when the clip starts on an empty frame and the telling moment comes later, e.g. a race whose result appears after 6 s (18 Oct 2026) |
 | `data-full` | = `data-video` | another file for `slide-XX-completo.mp4`. Use it when the source is minutes long and the owner caps the slide at 60 s: cut a ≤ 60 s montage for the completo and a tighter one for the slide (17 Oct 2026, Anthropic's 5-minute animation) |
 | `border-radius` (style) | 56 px | `r-lg` panel radius; `0` for a full-bleed box |
 

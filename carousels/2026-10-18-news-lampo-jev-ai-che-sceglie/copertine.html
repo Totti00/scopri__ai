@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scopri AI · copertine alternative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
+<link rel="stylesheet" href="engine/carousel.css">
+<style>
+/* ===== Slide-specific CSS for this carousel ===== */
+/* still images (real screenshots and photos, pre-toned mono in media/*-mono.jpg): same look as a video box */
+.img-box{position:absolute;z-index:6;overflow:hidden;border-radius:40px;background:#0A0A0D center/cover no-repeat;box-shadow:var(--card-shadow)}
+.mode-light .img-box{box-shadow:0 30px 60px -30px rgba(10,10,13,.45),0 2px 6px rgba(10,10,13,.08)}
+.sticker.free{position:absolute;top:auto;z-index:8}
+/* slide 2: one decision, as an interface card */
+.pick{left:96px;top:640px;width:888px;padding:58px 44px 40px}
+.pick .sticker{right:44px;transform:rotate(-3deg)}
+.pick .q{margin-top:14px;font:500 34px/1.3 var(--font-primary);color:var(--snow)}
+.pick .opts{margin-top:30px;display:flex;flex-direction:column;gap:16px}
+.pick .o{display:grid;grid-template-columns:270px 1fr 86px;align-items:center;gap:20px;font:500 28px/1 var(--font-primary);color:var(--gray-300)}
+.pick .o .tr{height:16px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.pick .o .tr i{display:block;height:100%;border-radius:999px;background:rgba(255,255,255,.28)}
+.pick .o .v{font:500 24px/1 var(--font-meta);text-align:right;color:var(--gray-400)}
+.pick .o.win{color:var(--snow)}
+.pick .o.win .tr i{background:var(--accent-300)}
+.pick .o.win .v{color:var(--snow)}
+.pick .foot{margin-top:30px;padding-top:24px;border-top:2px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:14px;font:500 24px/1 var(--font-meta);letter-spacing:.06em;text-transform:uppercase;color:var(--gray-400)}
+.pick .foot b{color:var(--snow);font-weight:500}
+.pick .foot .ok{width:14px;height:14px;border-radius:50%;background:var(--signal-500)}
+/* slide 7: "da sapere" card */
+.know{left:96px;top:820px;width:888px;padding:52px 44px 40px}
+.know .t{margin-top:14px;font:500 32px/1.35 var(--font-primary);color:var(--snow)}
+.know .t span{color:var(--gray-400)}
+/* cover: the two windows of the race, labelled in Italian (in front of the video) */
+.lbl{position:absolute;z-index:8;height:46px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font:500 21px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;background:#22232C;border:2px solid rgba(255,255,255,.16);color:var(--snow)}
+.lbl::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--gray-400)}
+.lbl.ok::before{background:var(--signal-500)}
+.vbg{position:absolute;z-index:6;overflow:hidden;border-radius:40px;background:#0A0A0D center/cover no-repeat;box-shadow:var(--card-shadow)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <filter id="lineglow" filterUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1350">
+    <feGaussianBlur stdDeviation="4"/>
+  </filter>
+</svg>
+
+<header class="devbar">
+  <h1>Scopri AI · Ha aiutato a creare ChatGPT<small>1080 × 1350 · npm run export (PNG) · npm run media (MP4 delle slide con video)</small></h1>
+  <button id="btn-grid" aria-pressed="true">Griglia</button>
+  <button id="btn-strip" aria-pressed="false">Striscia (giunture)</button>
+  <button id="btn-play" hidden>Riproduci animazioni</button>
+  <button id="btn-qa">Esegui QA</button>
+</header>
+<div class="qa" id="qa-out"></div>
+
+<main class="deck" id="deck">
+
+<!-- ============ A · titolo b + gara (= slide 1) ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:540px;--ry:900px"></div>
+  <div class="glow" data-for=".vbg"></div>
+  <div class="pill qa-text">News lampo</div>
+  <h2 class="txt display qa-text" style="left:96px;top:276px;width:888px;font-size:96px;line-height:1.02" data-lines="4">Ha aiutato a<br>creare ChatGPT.<br>Ora fa un'AI<br><span class="em">che non scrive.</span></h2>
+  <div class="vbg" style="left:96px;top:720px;width:888px;height:384px;background-image:url(media/frame-gara-72.jpg);background-position:50% 50%"></div>
+  <span class="lbl ok qa-text" style="left:126px;top:1036px">Jev · finito</span>
+  <span class="lbl qa-text" style="left:570px;top:1036px">Chat · scrive ancora</span>
+</section></div>
+
+<!-- ============ B · titolo b + gara più grande, a 1:07 (Jev ha finito, l'altra non è ancora partita) ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:540px;--ry:900px"></div>
+  <div class="glow" data-for=".vbg"></div>
+  <div class="pill qa-text">News lampo</div>
+  <h2 class="txt display qa-text" style="left:96px;top:264px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Ha aiutato a<br>creare ChatGPT.<br>Ora fa un'AI<br><span class="em">che non scrive.</span></h2>
+  <div class="vbg" style="left:96px;top:664px;width:888px;height:440px;background-image:url(media/frame-gara-67.jpg);background-position:50% 40%"></div>
+  <span class="lbl ok qa-text" style="left:126px;top:1036px">Jev · finito</span>
+  <span class="lbl qa-text" style="left:570px;top:1036px">Chat · ancora niente</span>
+</section></div>
+
+<!-- ============ C · titolo a + gara ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:540px;--ry:900px"></div>
+  <div class="glow" data-for=".vbg"></div>
+  <div class="pill qa-text">News lampo</div>
+  <h2 class="txt display qa-text" style="left:96px;top:276px;width:888px;font-size:104px;line-height:1.02" data-lines="3">Questa AI non<br>sa dire «ciao».<br><span class="em">Vale 7,5 miliardi.</span></h2>
+  <div class="vbg" style="left:96px;top:690px;width:888px;height:414px;background-image:url(media/frame-gara-72.jpg);background-position:50% 50%"></div>
+  <span class="lbl ok qa-text" style="left:126px;top:1036px">Jev · finito</span>
+  <span class="lbl qa-text" style="left:570px;top:1036px">Chat · scrive ancora</span>
+</section></div>
+
+<!-- ============ D · titolo c + gara ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:540px;--ry:900px"></div>
+  <div class="glow" data-for=".vbg"></div>
+  <div class="pill qa-text">News lampo</div>
+  <h2 class="txt display qa-text" style="left:96px;top:276px;width:888px;font-size:112px;line-height:1.02" data-lines="3">ChatGPT scrive.<br>Questa AI<br><span class="em">invece sceglie.</span></h2>
+  <div class="vbg" style="left:96px;top:700px;width:888px;height:404px;background-image:url(media/frame-gara-72.jpg);background-position:50% 50%"></div>
+  <span class="lbl ok qa-text" style="left:126px;top:1036px">Jev · finito</span>
+  <span class="lbl qa-text" style="left:570px;top:1036px">Chat · scrive ancora</span>
+</section></div>
+
+<!-- ============ E · titolo b + Diogo Almeida (video di lancio, 2:14) ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:540px;--ry:900px"></div>
+  <div class="glow" data-for=".vbg"></div>
+  <div class="pill qa-text">News lampo</div>
+  <h2 class="txt display qa-text" style="left:96px;top:276px;width:888px;font-size:96px;line-height:1.02" data-lines="4">Ha aiutato a<br>creare ChatGPT.<br>Ora fa un'AI<br><span class="em">che non scrive.</span></h2>
+  <div class="vbg" style="left:96px;top:720px;width:888px;height:384px;background-image:url(media/frame-almeida-134.jpg);background-position:100% 30%"></div>
+</section></div>
+
+<!-- dummy closing slide so the engine frames every cover like slide 1 (not exported) -->
+<div class="slot"><section class="slide mode-dark"><div class="layer bg"></div></section></div>
+</main>
+<script>
+window.CAROUSEL = { title: 'Copertine alternative', format: 'static', handle: '@scopri__ai', seams: [], routes: [] };
+</script>
+<script src="engine/carousel.js"></script>
+</body>
+</html>
