@@ -129,3 +129,140 @@ Voci 4/5 (pronte, 2+ fonti, numeri letti): Marte (suono), Venere, Webb (oro), Vo
 Mie correzioni: (1) Marte: gli ACUTI arrivano prima (250 m/s) dei gravi (240 m/s), la ricerca diceva il contrario. (2) Venere: 117 giorni = da alba ad alba (giorno solare), non alba-tramonto. (3) Gemini: 33x è l'energia, 44x la CO2; dati Google 2025. (4) Tardigradi: il 10% non è confermato. (5) Corpo: "80-100 giorni" e neuroni non letti, da togliere o verificare.
 Reel Marte: NO per ora. Il punto forte è l'audio, mentre i Reel sono senza audio; non ho potuto vedere i fotogrammi (Wikimedia 429). Da riprovare nel download: se c'è un momento visivo forte, rivalutare; altrimenti niente Reel.
 Consiglio d'ordine: Venere o Marte per l'effetto "non lo sapevo" universale; Gemini se si vuole il legame con l'AI.
+
+## 3. Menu (selezionatore, ore 16:10)
+
+**Il mio consiglio:** 1 · b · Scoperte, senza Reel. Venere è la curiosità col "non lo sapevo" più universale (la capisce anche un genitore), ha 3 fonti NASA/ESA, nessun rischio di dato dubbio, e la domanda in copertina ("dove il Sole sorge a ovest?") si regge anche da sola. Gemini (4) è la seconda scelta se vuoi il legame con l'AI e molti commenti.
+
+Fuori dal menu (e perché):
+- **Voyager 1:** tema con data (18/11/2026, ore 11:16 italiane). Tenerlo per novembre (uscita consigliata intorno al 15-16/11, così la regola 6 non lo brucia).
+- **Corpo che si rinnova:** "80-100 giorni" e neuroni non letti nel paper; da sistemare prima di usarlo. Pronto per un'altra domenica.
+- **Cervello 20 W, stella di neutroni, polpo (3/5), tardigradi (2/5):** voto basso o fonte debole.
+- **Reel su Marte:** onesto, no (vedi sotto).
+
+Orari per tutte: carosello **domenica 18/10 ore 21:00**. Reel: nessuno.
+Nota per il costruttore: tutte e cinque le curiosità non hanno "cosa ha fatto l'AI": vale la versione per le curiosità ("Ha…" diventa un fatto: "Gira al contrario.") più il commento di 2-3 parole nell'adesivo. Fonti solo in fondo alla caption.
+
+### 1. Su Venere il giorno dura più dell'anno e il Sole sorge a ovest — voto 4/5
+Perché: la domanda "sorge a ovest?" funziona da sola e il paradosso 243 contro 225 si capisce in due secondi · Fonti: NASA (venus-facts), NASA Space Place, ESA Venus Express · Video: nessuno verificato; immagini NASA/ESA (Magellan, Akatsuki, Venus Express)
+Titoli di copertina:
+  a) Su Venere il giorno dura più dell'anno (affermazione forte)
+  b) Su quale pianeta il Sole sorge a ovest? (domanda)
+  c) Un giorno di 243 giorni e un anno di 225 (numero + paradosso)
+  Scartati (restano nel file): "Su Venere compi un anno prima che faccia sera" (falso: la sera arriva dopo circa 58 giorni, il 117 è alba-alba); "Il pianeta più caldo non è il più vicino al Sole" (contrario/mito, vero ma è un altro tema); "Un pianeta dove non vorresti mai aspettare l'alba" (storia, debole).
+Schema di carosello:
+  Scoperte (6 slide + chiusura): copertina → **2** "Gira su sé stesso in 243 giorni. Intorno al Sole ne ha 225." + commento "Giorno più lungo dell'anno." → **3** "Il Sole sorge a ovest. Gira al contrario." + "Al contrario." → 4 "Da un'alba all'altra passano circa 117 giorni." + "Quattro mesi." (spiega la differenza tra 243 e 117 in una riga) → 5 "In superficie ci sono 467 °C. Più caldo di Mercurio." + "Più vicino non vuol dire più caldo." → 6 In breve (4 punti ≤6 parole) → chiusura
+  Dati e numeri (data-driven): copertina → **2** "243 contro 225" (il paradosso, numeri grandi) → 3 perché: gira lentissima e al contrario → 4 cosa vedresti: Sole a ovest, alba ogni 117 giorni → 5 il resto del pianeta (467 °C, pressione 93 volte la nostra, come 930 m sott'acqua) → 6 In breve → chiusura
+Copertina video: (1) animazione NASA/JPL di Venere (Magellan) che gira, primo momento con il pianeta pieno · (2) immagine/animazione ESA Venus Express o JAXA Akatsuki delle nuvole in movimento (da cercare nella galleria NASA/ESA, scelta in costruzione)
+Invito: manda — "📩 Mandalo a chi pensa che un giorno duri sempre 24 ore"
+Reel: no — nessun video verificato
+Formato consigliato: carosello
+Orari: carosello domenica 18/10 21:00 · Reel nessuno
+Cartella: carousels/2026-10-18-curiosita-venere/
+
+### 2. Su Marte il suono viaggia più piano e a 8 metri gli acuti spariscono — voto 4/5
+Perché: l'idea "su Marte il suono è diverso" è immediata e il materiale vero (microfono di Perseverance) è unico · Fonti: NASA/JPL, Nature (1/4/2022, citato da JPL), CNRS · Video: 1 candidato su Commons (NASA Sounds On Mars, 1:29, pubblico dominio), non ancora visto; secondo: volo di Ingenuity ripreso da Perseverance
+CORREZIONE dell'analista applicata: gli ACUTI (circa 250 m/s) arrivano PRIMA dei gravi (circa 240 m/s); sulla Terra 343 m/s; a 8 m su Marte gli acuti sono persi (sulla Terra a 65 m).
+Titoli di copertina:
+  a) Su Marte il suono viaggia più piano che da noi (affermazione forte)
+  b) Perché su Marte il suono ha due velocità? (domanda)
+  c) A 8 metri, su Marte, non senti più gli acuti (numero + specifico)
+  Scartati: "Su Marte un concerto lo sentiresti stonato" (immagine suggestiva, ma lo scarto tra 240 e 250 m/s su pochi metri è minimo: rischio esagerazione, regola 5; eventualmente solo come frase della slide, al condizionale); "Il suono di Marte non è quello che pensi" (gap, vago); "240 contro 343: il suono su Marte" (secco, poco chiaro).
+Schema di carosello:
+  Scoperte (6 + chiusura): copertina → **2** "Su Marte il suono corre a circa 240 m/s. Da noi a 343." + "Più lento." → **3** "I suoni acuti sono un po' più veloci dei gravi: arrivano prima." + "Due velocità." → 4 "A 8 metri gli acuti spariscono. Da noi servono 65 metri." + "Quasi muto." → 5 "Come lo sappiamo? Il rover Perseverance ha un microfono." + "Registrato davvero." (link a ascoltare le registrazioni NASA, gratis) → 6 In breve → chiusura
+  Confronto Terra contro Marte: copertina → **2** velocità (343 contro 240) → 3 acuti e gravi (Terra: stessa velocità, Marte: due) → 4 distanza (65 m contro 8 m) → 5 il microfono di Perseverance e dove ascoltare → 6 In breve → chiusura
+Copertina video: (1) fotogramma/clip NASA di Perseverance sulla superficie di Marte (Sounds On Mars, da guardare per scegliere il secondo) · (2) il volo di Ingenuity ripreso da Perseverance (NASA, 30/4/2021; licenza e MP4 da verificare)
+Invito: manda — "📩 Mandalo a chi non smette mai di parlare (su Marte non lo sentiresti)" (tono leggero, controllare in costruzione)
+Reel: **no**, onesto. Il punto forte del video è l'audio e i Reel di `format/5-reel.md` sono senza audio; il file è una raccolta di registrazioni e nessuno ha visto i fotogrammi (Commons ha dato 429 all'analista). Resta un "carino", non una bomba. Se il costruttore, scaricando il file, trova un momento visivo da "ma è vero?" (es. Ingenuity in volo), lo ripropone alla bozza come seconda versione.
+Formato consigliato: carosello
+Orari: carosello domenica 18/10 21:00 · Reel nessuno
+Cartella: carousels/2026-10-18-curiosita-marte-suono/
+
+### 3. Il telescopio Webb: 50 grammi d'oro, quanto una pallina da golf — voto 4/5
+Perché: tutti hanno visto le foto di Webb, pochi sanno com'è fatto lo specchio, e "mille volte più sottile di un foglio" è un'immagine forte · Fonti: NASA Webb, ESA (golden mirror) · Video: nessuno verificato; foto NASA/ESA/STScI dello specchio, video NASA dell'apertura dello specchio da cercare
+Titoli di copertina:
+  a) Lo specchio più grande nello spazio è rivestito d'oro (affermazione forte)
+  b) Quanto oro serve per uno specchio da 6,6 metri? (domanda)
+  c) Webb vede l'universo con 50 grammi d'oro (numero + promessa)
+  Scartati: "L'oro di Webb? Sta in una pallina da golf" (regala la risposta); "Perché l'occhio di Webb è d'oro?" (domanda, valida come riserva).
+Schema di carosello:
+  Scoperte (6 + chiusura): copertina → **2** "Lo specchio ha 18 esagoni di berillio, coperti d'oro." + "Tutti d'oro." → **3** "L'oro è spesso 100 nanometri: circa 1/1000 di un foglio." + "Sottilissimo." → 4 "In tutto sono circa 50 grammi: una pallina da golf." + "Una pallina." → 5 "Perché l'oro? Riflette bene l'infrarosso, la luce che Webb cerca." + "Fatto per vedere il caldo." → 6 In breve → chiusura
+  Problema e soluzione: copertina → **2** il problema (la luce delle prime galassie arriva come infrarosso debolissimo) → 3 la soluzione (specchio d'oro) → 4 quanto oro (100 nm, 50 g) → 5 perché berillio (rigido, leggero, stabile al freddo) → 6 In breve → chiusura
+Copertina video: (1) foto/clip NASA dello specchio in sala pulita, gli esagoni dorati che riflettono · (2) video NASA dell'apertura dello specchio nello spazio (da cercare su science.nasa.gov/mission/webb)
+Invito: manda — "📩 Mandalo a chi ha una pallina da golf in casa"... meglio: "📩 Mandalo a chi ama le foto di Webb" (scelta finale in costruzione)
+Reel: no — bello ma non verificato come bomba
+Formato consigliato: carosello
+Orari: carosello domenica 18/10 21:00 · Reel nessuno
+Cartella: carousels/2026-10-18-curiosita-webb-oro/
+
+### 4. Una domanda a Gemini consuma meno energia di 9 secondi di TV (dati Google) — voto 4/5
+Perché: risponde a "quanto inquina usare l'AI?" ed è il tema con più commenti · Fonti: blog Google (21/8/2025, letto dall'analista), Axios, DCD · Video: nessuno (grafiche nostre, oggetti 3D e schede di interfaccia)
+Attenzione obbligatoria nei testi: sono cifre di Google stessa, domanda mediana di testo (non foto/video), agosto 2025, non verificate da terzi; il 33 è l'energia (da maggio 2024 a maggio 2025), il 44 la CO2; il calcolo dell'acqua è criticato da alcuni ricercatori. Dirlo in una slide.
+Titoli di copertina:
+  a) Secondo Google, una domanda a Gemini costa 9 secondi di TV (affermazione/dato)
+  b) Quanto consuma davvero una domanda all'AI? (domanda)
+  c) 5 gocce d'acqua: il costo di una domanda a Gemini (numero + promessa)
+  Scartati: "Usare l'AI inquina meno di quanto credi" (contrario, esagerato: i dati sono dell'azienda); "33 volte meno in un anno" (secco).
+Schema di carosello:
+  Dati e numeri (6 + chiusura): copertina → **2** "Una domanda a Gemini usa 0,24 Wh: meno di 9 secondi di TV." + "Pochissimo." (dire "secondo Google") → **3** "Ci vogliono circa 5 gocce d'acqua (0,26 ml) e 0,03 g di CO2." + "Cinque gocce." → 4 "In un anno l'energia per domanda è scesa di 33 volte." + "In dodici mesi." → 5 "Attenzione: dati di Google, solo testo, non foto o video." + "Va detto." → 6 In breve → chiusura
+  Mito e fatto: copertina → **2** mito "Ogni domanda all'AI consuma un sacco" / fatto "0,24 Wh, secondo Google" → 3 acqua (5 gocce) → 4 miglioramento (33 volte in un anno) → 5 i limiti dei dati → 6 In breve → chiusura
+Copertina video: nessun video vero: (1) oggetto 3D di vetro e cromo (lampadina o goccia) animato nel formato della skill · (2) scheda di interfaccia nostra con una domanda e il contatore "0,24 Wh" (non uno screenshot di Gemini)
+Invito: manda — "📩 Mandalo a chi dice che l'AI consuma troppo"
+Reel: no
+Formato consigliato: carosello
+Orari: carosello domenica 18/10 21:00 · Reel nessuno
+Cartella: carousels/2026-10-18-curiosita-gemini-consumi/
+
+### 5. La Luna si allontana di 3,8 cm all'anno, misurata con i laser sugli specchi Apollo — voto 4/5
+Perché: "tecnologia del 1969 che funziona ancora" è un gancio forte, e si lega a tecnologia · Fonti: NASA (laser Terra-Luna), NASA/JPL (Apollo 11) · Video: nessuno verificato; foto Apollo e animazioni NASA
+Titoli di copertina:
+  a) Gli specchi lasciati sulla Luna nel 1969 funzionano ancora (affermazione forte)
+  b) Come si misura la distanza della Luna al millimetro? (domanda)
+  c) 3,8 cm all'anno: la Luna si allontana da noi (numero + promessa)
+  Scartati: "La Luna ci sta lasciando" (allarmista); "Con la velocità delle unghie" (il confronto con le unghie non è su NASA: da non usare finché non ha una fonte).
+Schema di carosello:
+  Storia (6 + chiusura): copertina → **2** "Nel 1969 gli astronauti di Apollo 11 hanno lasciato uno specchio sulla Luna. Funziona ancora." + "Dopo oltre 50 anni." → **3** "Si punta un laser dalla Terra: torna in circa 2,5 secondi." + "Un rimbalzo." → 4 "Dal tempo del ritorno si calcola la distanza, con precisione di pochi millimetri." + "Millimetri." → 5 "Risultato: la Luna si allontana di 3,8 cm all'anno." + "Piano piano." (causa: maree degli oceani) → 6 In breve → chiusura
+  Scoperte: copertina → **2** 3,8 cm all'anno → 3 gli specchi (Apollo 11, 14, 15, più Lunokhod) → 4 il laser e il millimetro → 5 perché (maree; il ritmo non è costante) → 6 In breve → chiusura
+Copertina video: (1) foto Apollo 11 dello specchio sulla superficie lunare (NASA, pubblico dominio) · (2) animazione/foto NASA del raggio laser verso la Luna (da cercare su nasa.gov, link nell'analisi)
+Invito: manda — "📩 Mandalo a chi pensa che la tecnologia vecchia non serva più"
+Reel: no — video del laser da cercare, nulla di verificato (se ne trovi uno vero e spettacolare, rivalutare)
+Formato consigliato: carosello
+Orari: carosello domenica 18/10 21:00 · Reel nessuno
+Cartella: carousels/2026-10-18-curiosita-luna-specchi/
+
+### Versione corta (da mandare al proprietario)
+
+Curiosità di stasera (domenica 18/10, ore 21:00). Il mio consiglio: 1 b scoperte.
+
+1. VENERE: il giorno dura più dell'anno, il Sole sorge a ovest (4/5)
+   a) Su Venere il giorno dura più dell'anno
+   b) Su quale pianeta il Sole sorge a ovest?
+   c) Un giorno di 243 giorni e un anno di 225
+   Tipi: scoperte · dati e numeri
+
+2. MARTE: il suono viaggia più piano, a 8 metri gli acuti spariscono (4/5)
+   a) Su Marte il suono viaggia più piano che da noi
+   b) Perché su Marte il suono ha due velocità?
+   c) A 8 metri, su Marte, non senti più gli acuti
+   Tipi: scoperte · confronto · Reel: no (l'audio è il pezzo forte, i Reel sono muti)
+
+3. WEBB: 50 grammi d'oro nello specchio, una pallina da golf (4/5)
+   a) Lo specchio più grande nello spazio è rivestito d'oro
+   b) Quanto oro serve per uno specchio da 6,6 metri?
+   c) Webb vede l'universo con 50 grammi d'oro
+   Tipi: scoperte · problema e soluzione
+
+4. GEMINI: una domanda costa meno di 9 secondi di TV, dati Google (4/5)
+   a) Secondo Google, una domanda a Gemini costa 9 secondi di TV
+   b) Quanto consuma davvero una domanda all'AI?
+   c) 5 gocce d'acqua: il costo di una domanda a Gemini
+   Tipi: dati e numeri · mito e fatto
+
+5. LUNA: si allontana di 3,8 cm all'anno, misurata con gli specchi Apollo (4/5)
+   a) Gli specchi lasciati sulla Luna nel 1969 funzionano ancora
+   b) Come si misura la distanza della Luna al millimetro?
+   c) 3,8 cm all'anno: la Luna si allontana da noi
+   Tipi: storia · scoperte
+
+Nessun Reel stasera. Voyager 1 tenuto per metà novembre (la data è il 18/11).
+Rispondi con un codice, per esempio: "1 b scoperte", "4 a dati", "5 c storia, ma cambia il titolo così: …".
