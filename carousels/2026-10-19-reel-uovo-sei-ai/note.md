@@ -52,3 +52,6 @@ Se tra i brani ↗ di tendenza c'è uno strumentale adatto, ha la precedenza. Il
 
 ## Orario
 Oggi 19/10/2026 alle **20:00**.
+
+## Correzione del proprietario (19/10, dopo il finale)
+- Vuole il video tutto dentro il riquadro, senza tagli: `formato` "originale", zoom 1.0. `reel.py` ora stringe il riquadro quando il video è alto (riquadro 526×935). Così si leggono anche le etichette dell'autore con il nome di ogni AI. Rifatti reel.mp4 (42 MB), reel-invio.mp4 (19 MB) e reel-copertina.jpg (101,6 s).

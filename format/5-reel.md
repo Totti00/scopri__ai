@@ -24,6 +24,7 @@ Lo fa `strumenti/reel.py` (istruzioni in cima al file) dal file `reel.json`, nel
 - **Video vero e originale** (regola 4 di `CLAUDE.md`): dal post dell'azienda o dell'autore, mai da pagine che ripubblicano. Se il video ha bordi o scritte sue, si tolgono con `zoom`.
 - **Zona sicura:** i testi stanno tra y 230 e y 1440 (sotto y 1000 anche lontano dal bordo destro, dove ci sono i pulsanti). Il programma si ferma se un testo esce.
 - **Tecnica presa da altre pagine, identità nostra:** il formato "titolo + video" lo usano anche altri (es. ai__facile); da noi grafica Electric Mono, logo, parole e titoli nostri (regola 7).
+- **Il video si vede intero** (deciso il 19/10/2026): `"formato": "originale"`, niente tagli sopra e sotto. Se il video è verticale il riquadro si stringa in larghezza (lo fa `reel.py`). Gli altri formati (4:5, 1:1) solo se lo chiede il proprietario.
 - **Due versioni** nella bozza: due titoli diversi (o due momenti del video) → `reel.json` e `reel-b.json`, sceglie il proprietario.
 
 ## Quando esce

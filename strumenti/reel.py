@@ -108,7 +108,9 @@ html,body{{margin:0;background:{m["pieno"]}}}
 </div>
 <script>   // il video non scende oltre y {FONDO_MAX}; poi il blocco si centra in verticale (mai sopra y 250)
 const b=document.getElementById('buco'),c=document.querySelector('.colonna');
-b.style.setProperty('--max',({FONDO_MAX}-b.getBoundingClientRect().top)+'px');
+const max={FONDO_MAX}-b.getBoundingClientRect().top,[rw,rh]='{rapporto}'.split('/').map(Number);
+b.style.setProperty('--max',max+'px');
+if({LARGHEZZA}*rh/rw>max){{b.style.width=Math.floor(max*rw/rh/2)*2+'px';b.style.alignSelf='center';}}  // video alto: si stringa, non si taglia
 c.style.top=Math.max(250,Math.round((1920-c.offsetHeight)/2-80))+'px';
 </script>
 </div></body></html>'''

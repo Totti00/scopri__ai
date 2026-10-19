@@ -1,2 +1,8 @@
-{"titolo": "*Claude* ha progettato una capsula che salva un uovo da *6 metri*. Le altre cinque AI l'hanno rotto *molto prima*.",
- "video": "media/uovo.mp4", "fondo": "scuro", "formato": "4:5", "zoom": 1.0, "posizione": 0.5, "copertina": 101.6}
+{
+ "titolo": "*Claude* ha progettato una capsula che salva un uovo da *6 metri*. Le altre cinque AI l'hanno rotto *molto prima*.",
+ "video": "media/uovo.mp4",
+ "fondo": "scuro",
+ "formato": "originale",
+ "zoom": 1.0,
+ "copertina": 101.6
+}
