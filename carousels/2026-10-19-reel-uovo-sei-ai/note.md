@@ -12,11 +12,11 @@ Solo Reel, niente carosello. Fonte unica accettata dal proprietario: prova di un
 - Le altre cinque: Gemini, Grok, Meta e GPT-6 crepati, Qwen spiaccicato. "Rotto" regge; "molto prima" perché hanno ceduto a 1,2 m (GPT-6 a 2,4 m).
 - Restano le scritte piccole dell'autore al centro ("UNSCATHED EGG", "EGG SURVIVED", "20 FEET"): sono sottotitoli in inglese, non si tolgono con lo zoom senza perdere l'uovo.
 
-## Bozza caption Reel (passa caption_check: CAPTION PRONTA, 438 caratteri)
+## Bozza caption Reel (19/10, dopo le correzioni: tutte e 6 le AI nella prima riga; CAPTION PRONTA, 445 caratteri)
 ```
-Claude, ChatGPT, Gemini: sei intelligenze artificiali hanno progettato una capsula per salvare un uovo in caduta.
+Claude, ChatGPT, Gemini, Grok, Meta AI e Qwen: sei intelligenze artificiali hanno progettato una capsula per salvare un uovo che cade.
 
-Stessa plastica, 20 batuffoli di cotone. Claude regge da 6 metri, GPT-6 da 2,4, le altre da 1,2. Solo la prova di un creator.
+Stessi materiali per tutte. Claude regge da 6 metri, ChatGPT da 2,4, le altre da 1,2. È la prova di un creator.
 
 📩 Mandalo a chi dice che le AI sono tutte uguali. Su quale avresti scommesso?
 
@@ -24,6 +24,11 @@ Fonti: Roberto Nickson (@rpnickson) su X, "Agent Wars" ep. 3
 
 #intelligenzaartificiale #claude #chatgpt #stampa3d #ai
 ```
+
+## Scelta del proprietario (fermata 2)
+- Versione B, con *Claude* in blu nel titolo oltre a *6 metri* e *molto prima*.
+- Caption: nominare tutte e 6 le AI all'inizio.
+- Prima del finale vuole sapere quanto dura il video intero (109,8 s).
 
 ## Uscita
 Oggi 19/10 alle 20:00. Musica: strumentale, elettronica carica o "suspense che esplode" (da scegliere in finale, controllando `brand/musica-usata.md`).
