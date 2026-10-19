@@ -20,7 +20,9 @@ Il JSON:
   "formato": "originale",   (originale, 1:1, 4:5 o 16:9: come tagliare il video nel riquadro)
   "posizione": 0.5,         (taglio orizzontale, da 0 = sinistra a 1 = destra)
   "zoom": 1.0,              (ingrandisce il video nel riquadro: 1.2 toglie bordi o scritte ai lati del video originale)
-  "copertina": 1.0          (secondo del video da usare per reel-copertina.jpg)
+  "copertina": 1.0,         (secondo del video da usare per reel-copertina.jpg)
+  "compatto": true          (facoltativo, 19/10/2026: tutto più in alto e video più grande, fino quasi al fondo;
+                             per i video verticali da mostrare interi)
 }
 In alto c'è solo il logo, con spazio prima del titolo: niente etichette come "NEWS LAMPO" (deciso il 16/10/2026).
 Il video è **sempre a colori** (deciso il 16/10/2026): niente bianco e nero col blu, quello resta per le slide.
@@ -86,6 +88,8 @@ def titolo_html(testo):
 
 
 def pagina(r, m, rapporto):
+    # compatto: logo al bordo della zona sicura, spazi stretti, il video scende fino a y 1880 e il blocco non si centra
+    alto, spazio, stacco, fine = (232, 40, 32, 1880) if r.get("compatto") else (250, SPAZIO_LOGO, 56, FONDO_MAX)
     logo = (BRAND / f"scopri-ai-logo-{m['logo']}.png").as_uri()
     return f'''<!doctype html><html lang="it"><head><meta charset="utf-8">
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=block" rel="stylesheet">
@@ -94,10 +98,10 @@ html,body{{margin:0;background:{m["pieno"]}}}
 .pg{{position:relative;width:1080px;height:1920px;overflow:hidden;color:{m["testo"]};font-family:'Inter Tight','Noto Color Emoji',sans-serif;-webkit-font-smoothing:antialiased}}
 .bg{{position:absolute;inset:0;background:{m["fondo"]}}}
 .grana{{position:absolute;inset:0;background:{GRANA};opacity:.07;mix-blend-mode:overlay}}
-.colonna{{position:absolute;left:{X}px;top:250px;width:{LARGHEZZA}px;display:flex;flex-direction:column;align-items:flex-start}}
-#titolo{{margin-top:{SPAZIO_LOGO}px;font-size:66px;font-weight:600;line-height:1.08;letter-spacing:-.03em;text-wrap:pretty;width:{LARGHEZZA}px}}
+.colonna{{position:absolute;left:{X}px;top:{alto}px;width:{LARGHEZZA}px;display:flex;flex-direction:column;align-items:flex-start}}
+#titolo{{margin-top:{spazio}px;font-size:66px;font-weight:600;line-height:1.08;letter-spacing:-.03em;text-wrap:pretty;width:{LARGHEZZA}px}}
 .chiave{{color:{m["chiave"]};font-weight:700}}
-#buco{{margin-top:56px;width:{LARGHEZZA}px;aspect-ratio:{rapporto};max-height:var(--max);border-radius:44px;
+#buco{{margin-top:{stacco}px;width:{LARGHEZZA}px;aspect-ratio:{rapporto};max-height:var(--max);border-radius:44px;
   box-shadow:inset 0 0 0 2px {m["bordo"]},0 60px 160px -30px {m["alone"]}}}
 </style></head><body><div class="pg">
 <div class="bg"></div><div class="grana"></div>
@@ -108,10 +112,10 @@ html,body{{margin:0;background:{m["pieno"]}}}
 </div>
 <script>   // il video non scende oltre y {FONDO_MAX}; poi il blocco si centra in verticale (mai sopra y 250)
 const b=document.getElementById('buco'),c=document.querySelector('.colonna');
-const max={FONDO_MAX}-b.getBoundingClientRect().top,[rw,rh]='{rapporto}'.split('/').map(Number);
+const max={fine}-b.getBoundingClientRect().top,[rw,rh]='{rapporto}'.split('/').map(Number);
 b.style.setProperty('--max',max+'px');
 if({LARGHEZZA}*rh/rw>max){{b.style.width=Math.floor(max*rw/rh/2)*2+'px';b.style.alignSelf='center';}}  // video alto: si stringa, non si taglia
-c.style.top=Math.max(250,Math.round((1920-c.offsetHeight)/2-80))+'px';
+if(!{'true' if r.get('compatto') else 'false'})c.style.top=Math.max(250,Math.round((1920-c.offsetHeight)/2-80))+'px';
 </script>
 </div></body></html>'''
 

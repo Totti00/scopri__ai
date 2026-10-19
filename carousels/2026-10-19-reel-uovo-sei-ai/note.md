@@ -55,3 +55,4 @@ Oggi 19/10/2026 alle **20:00**.
 
 ## Correzione del proprietario (19/10, dopo il finale)
 - Vuole il video tutto dentro il riquadro, senza tagli: `formato` "originale", zoom 1.0. `reel.py` ora stringe il riquadro quando il video è alto (riquadro 526×935). Così si leggono anche le etichette dell'autore con il nome di ogni AI. Rifatti reel.mp4 (42 MB), reel-invio.mp4 (19 MB) e reel-copertina.jpg (101,6 s).
+- Seconda correzione: "più grande, tutto più in alto" → `"compatto": true` (logo a y 232, spazi stretti, video fino a y 1880). Riquadro 650×1156. Larghezza piena (952) col video intero non ci sta: servirebbero 1692 px di altezza.

@@ -4,5 +4,6 @@
  "fondo": "scuro",
  "formato": "originale",
  "zoom": 1.0,
- "copertina": 101.6
+ "copertina": 101.6,
+ "compatto": true
 }
