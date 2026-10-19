@@ -56,3 +56,8 @@ Oggi 19/10/2026 alle **20:00**.
 ## Correzione del proprietario (19/10, dopo il finale)
 - Vuole il video tutto dentro il riquadro, senza tagli: `formato` "originale", zoom 1.0. `reel.py` ora stringe il riquadro quando il video è alto (riquadro 526×935). Così si leggono anche le etichette dell'autore con il nome di ogni AI. Rifatti reel.mp4 (42 MB), reel-invio.mp4 (19 MB) e reel-copertina.jpg (101,6 s).
 - Seconda correzione: "più grande, tutto più in alto" → `"compatto": true` (logo a y 232, spazi stretti, video fino a y 1880). Riquadro 650×1156. Larghezza piena (952) col video intero non ci sta: servirebbero 1692 px di altezza.
+
+## Audio originale (controllato il 19/10)
+- Il video dell'autore ha l'audio: voce fuori campo in inglese che racconta la prova dall'inizio alla fine (trascritta con Whisper), probabilmente con musica sotto. A 100,5 s c'è un'imprecazione ("Holy s**t").
+- Dalla trascrizione: a 1,2 m (4 piedi) cedono Gemini (crepa), Qwen (uovo distrutto), Grok (crepa), Muse Wonder di Meta (crepa); passano Claude e GPT-6. A 2,4 m GPT-6 si stacca e l'uovo si rompe; Claude passa 2,4, 3,6 e 6 m.
+- Corretta la caption: "ChatGPT da 2,4" si poteva leggere come "regge da 2,4" → "ChatGPT cede a 2,4".
