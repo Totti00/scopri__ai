@@ -32,3 +32,23 @@ Fonti: Roberto Nickson (@rpnickson) su X, "Agent Wars" ep. 3
 
 ## Uscita
 Oggi 19/10 alle 20:00. Musica: strumentale, elettronica carica o "suspense che esplode" (da scegliere in finale, controllando `brand/musica-usata.md`).
+
+## Finale (19/10/2026)
+- Scelta: versione B. `reel-b.json` è diventato il file del Reel finale ed è copiato identico in `reel.json` (da cui escono `reel.mp4` e `reel-copertina.jpg`). La vecchia versione A (inizio 96,1 s, zoom 1.12) è in `reel-a.json` / `reel-a-anteprima.png`. `reel-b-anteprima.png` mostra ancora il pezzo 92 s della bozza.
+- Video **intero** (109,8 s, dall'inizio alla scheda finale dell'autore): niente `inizio`/`durata`, quindi niente `reel-completo.mp4` (`reel.mp4` è già il video intero). Taglia il proprietario.
+- Zoom 1.0, posizione 0.5 (al posto di 1.3 / 0.9, scelti solo per 92–104 s): su tutto il video le capsule e le uova restano dentro. Il riquadro è 952×938 e il video sorgente è verticale (9:16): il programma taglia sopra e sotto al centro, quindi si vede la fascia centrale (~55% dell'altezza). Si perdono le etichette dell'autore in alto ("Anthropic · Claude Opus 5.5", altezza "20ft"); restano i suoi sottotitoli al centro e il riquadrino con la ripresa da un'altra angolazione in basso o in alto a sinistra in alcuni pezzi (anche a 101 s, in alto a sinistra).
+- Copertina: 101,6 s (uovo intatto in mano, "EGG SURVIVED"), più nitida di 101,0 s (mano mossa).
+- Senza audio. `reel.mp4` pesa ~64 MB: per mandarlo c'è `reel-invio.mp4` (ricompresso, CRF 25, fuori da git con `.git/info/exclude`).
+- Caption: `caption-reel.txt`, CAPTION PRONTA (445 caratteri, 5 hashtag).
+
+## Musica consigliata (solo strumentale; né Daft Punk né Justice, già usati)
+1. **M83 – Outro**: parte lenta e cresce fino a esplodere ("suspense che esplode"), perfetta per la caduta da 6 metri; usare il pezzo dove entra la batteria.
+2. **Moderat – A New Error**: elettronica carica, strumentale, ritmo dall'inizio.
+3. **Kavinsky – Rampage**: synth carico, strumentale.
+Se tra i brani ↗ di tendenza c'è uno strumentale adatto, ha la precedenza. Il brano scelto va scritto in `brand/musica-usata.md`.
+
+## Musica usata
+- da confermare (consigliato: M83 – Outro)
+
+## Orario
+Oggi 19/10/2026 alle **20:00**.
