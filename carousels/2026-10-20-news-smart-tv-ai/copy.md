@@ -19,7 +19,6 @@ _Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slid
 ### 03 — Il prima (ACCENT)
 - **Pill:** Il prima · **Titolo:** Ha tolto la pubblicità / *prima di Netflix.* (barra bianca)
 - **Testo:** Prima, appena accesa, la TV mostrava un annuncio. Sotto, file di consigli e app mai usate. Ora restano solo le app dei genitori.
-- **Didascalia sotto:** Prima: l'annuncio. Ora è sparito.
 - **Visual:** schermo "prima" di Gathin, grande (si legge "Sponsored").
 
 ### 04 — Un'altra TV (LIGHT)
@@ -47,7 +46,7 @@ _Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slid
 ### 08 — Chiusura (DARK)
 - **Titolo:** Mandalo a chi / si lamenta della / *pubblicità sulla TV*
 - **Pulsante pieno blu** (aereo di carta): Mandalo a un amico
-- **Riga sotto, più piccola** (campana del logo): Seguici per non perdere le prossime notizie
+- **Riga sotto, più piccola** (campana del logo inclinata, con due lineette curve per lato, come una notifica che suona): Seguici per non perdere le prossime notizie
 - Niente @handle (tolto da tutte le slide).
 
 ### Caption
