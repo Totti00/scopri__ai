@@ -26,6 +26,7 @@ try {
     document.querySelectorAll('.slide').forEach(sl => {
       const c = sl.querySelector('.f-count'); if (c) c.innerHTML = `<b>01</b> / ${total}`;
       sl.querySelector('.f-cue')?.classList.add('filled');
+      if (sl.querySelector('.display') && !sl.querySelector('.f-swipe')) sl.insertAdjacentHTML('beforeend', '<div class="f-swipe">Scorri per scoprire</div>');   // cover swipe invite (20 Oct 2026)
       if (sl.querySelector('.display')) sl.insertAdjacentHTML('beforeend',
         `<svg class="layer thread" viewBox="0 0 1080 1350"><path d="M600 1150 H1080" style="fill:none;stroke:var(--line);stroke-width:8;stroke-linecap:round;opacity:.5" filter="url(#lineglow)"/><path d="M600 1150 H1080" style="fill:none;stroke:var(--line);stroke-width:3;stroke-linecap:round"/><circle cx="600" cy="1150" r="6" style="fill:var(--line)"/></svg>`);
     });

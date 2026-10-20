@@ -59,7 +59,9 @@
         `<svg class="layer grain" viewBox="0 0 1080 1350"><rect width="1080" height="1350" filter="url(#grain)"/></svg>` +
         (last ? '' : `<img class="f-logo" src="${C.logos[mode]}" alt="Scopri AI">`) +
         (last ? '' : `<div class="f-count"><b>${pad(n)}</b> / ${pad(N - 1)}</div>`) +
-        (last ? '' : `<div class="f-cue${cover ? ' filled' : ''}">${ARROW}</div>`));
+        (last ? '' : `<div class="f-cue${cover ? ' filled' : ''}">${ARROW}</div>`) +
+        // cover only: swipe invite bottom-left, aligned with the filled arrow; no dots (Instagram draws them) (owner, 20 Oct 2026)
+        (cover && C.swipe !== false ? `<div class="f-swipe">${C.swipe || 'Scorri per scoprire'}</div>` : ''));
       sl.querySelectorAll('[data-logo]').forEach(el => { el.innerHTML = `<img src="${C.logos[mode]}" alt="Scopri AI">`; });
       // closing slide, second invite (20 Oct 2026): "🔔 Seguici per non perdere …" with the logo's lid as the bell
       sl.querySelectorAll('.follow').forEach(el => {
@@ -217,7 +219,7 @@
     slides.forEach((sl, i) => {
       const n = 'S' + pad(i + 1), boxOnly = el => el.matches('.pcard,.card,.cmp,.rows,.logo-full');
       if (sl.offsetWidth !== 1080 || sl.offsetHeight !== 1350) { errors.push(`${n}: canvas ${sl.offsetWidth}×${sl.offsetHeight} (not laid out?)`); return; }
-      const zones = [...sl.querySelectorAll('.f-logo,.f-count,.f-handle,.f-cue')].map(el => grow(rel(el, sl), 24));
+      const zones = [...sl.querySelectorAll('.f-logo,.f-count,.f-handle,.f-cue,.f-swipe')].map(el => grow(rel(el, sl), 24));
       const texts = [...sl.querySelectorAll('.qa-text')];
       const measure = el => el.matches('[data-logo]') && el.querySelector('img') ? rel(el.querySelector('img'), sl) : boxOnly(el) ? rel(el, sl) : textRect(el, sl);
       texts.forEach(el => {

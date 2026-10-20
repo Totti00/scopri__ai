@@ -93,6 +93,9 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 .mode-dark .f-cue.filled,.mode-light .f-cue.filled{background:var(--accent-500)}
 .mode-dark .f-cue.filled svg,.mode-light .f-cue.filled svg{stroke:#fff}
 .mode-accent .f-cue.filled{background:#fff}
+/* Cover only: swipe invite bottom-left, optically centred on the 56 px filled arrow (centre y 1226). Words only, no dots:
+   Instagram already draws them (owner, 20 Oct 2026). Text from CAROUSEL.swipe (default «Scorri per scoprire»; false = none). */
+.f-swipe{position:absolute;left:96px;top:1213px;height:26px;font:500 23px/26px var(--font-meta);letter-spacing:.16em;text-transform:uppercase;color:var(--tp);opacity:.82;white-space:nowrap;z-index:9}
 .mode-accent .f-cue.filled svg{stroke:var(--accent-700)}
 
 /* ===== Type (§5.2) ===== */
@@ -232,4 +235,4 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 html:has(body.overlay-pass),body.overlay-pass{background:transparent!important}
 body.overlay-pass .slide *{visibility:hidden!important}
 body.overlay-pass .slide .over-video,body.overlay-pass .slide .over-video *,
-body.overlay-pass .slide .f-logo,body.overlay-pass .slide .f-count,body.overlay-pass .slide .f-handle,body.overlay-pass .slide .f-cue,body.overlay-pass .slide .f-cue *{visibility:visible!important}
+body.overlay-pass .slide .f-logo,body.overlay-pass .slide .f-count,body.overlay-pass .slide .f-handle,body.overlay-pass .slide .f-cue,body.overlay-pass .slide .f-cue *,body.overlay-pass .slide .f-swipe{visibility:visible!important}
