@@ -128,7 +128,13 @@
     if (type && typeof type === 'object') return { d: type.d, nodes: type.nodes || [] };
     switch (type) {
       case 'none': return null;
-      case 'start': return { d: `M${C.threadStart} ${yout} H1080`, nodes: [[C.threadStart, yout]] };
+      case 'start': {
+        // cover with the swipe invite (owner, 20 Oct 2026): a short line at the arrow's height, starting 24 px after its tip, with the start node
+        const a = sl.querySelector('.f-swipe svg');
+        if (a) { const p = rel(a, sl), y = Math.round(p.cy * 2) / 2, x0 = Math.round(p.r - (p.r - p.l) * 3 / 34 + 24);
+                 return { d: `M${x0} ${y} H${x0 + (C.swipeLine || 160)}`, nodes: [[x0, y]] }; }
+        return { d: `M${C.threadStart} ${yout} H1080`, nodes: [[C.threadStart, yout]] };
+      }
       case 'straight': return { d: `M0 ${yin} H1080`, nodes: [] };
       case 'rightUp': case 'rightDown': { const x = 1032, s = yout < yin ? -1 : 1; return { d: `M0 ${yin} H${x - r} Q${x} ${yin} ${x} ${yin + s * r} V${yout - s * r} Q${x} ${yout} ${x + r} ${yout} H1080`, nodes: [] }; }
       case 'leftDown': case 'leftUp': { const x = 48, s = yout < yin ? -1 : 1; return { d: `M0 ${yin} H${x - r} Q${x} ${yin} ${x} ${yin + s * r} V${yout - s * r} Q${x} ${yout} ${x + r} ${yout} H1080`, nodes: [] }; }
@@ -222,7 +228,7 @@
     slides.forEach((sl, i) => {
       const n = 'S' + pad(i + 1), boxOnly = el => el.matches('.pcard,.card,.cmp,.rows,.logo-full');
       if (sl.offsetWidth !== 1080 || sl.offsetHeight !== 1350) { errors.push(`${n}: canvas ${sl.offsetWidth}×${sl.offsetHeight} (not laid out?)`); return; }
-      const zones = [...sl.querySelectorAll('.f-logo,.f-count,.f-handle,.f-cue,.f-swipe')].map(el => grow(rel(el, sl), 24));
+      const zones = [...sl.querySelectorAll('.f-logo,.f-count,.f-handle,.f-cue,.f-swipe')].map(el => grow(rel(el, sl), el.matches('.f-swipe') ? 16 : 24))   /* the swipe invite is text: text margin (16), so the cover's short line can start 24 px after its arrow */;
       const texts = [...sl.querySelectorAll('.qa-text')];
       const measure = el => el.matches('[data-logo]') && el.querySelector('img') ? rel(el.querySelector('img'), sl) : boxOnly(el) ? rel(el, sl) : textRect(el, sl);
       texts.forEach(el => {
@@ -256,6 +262,7 @@
     });
     for (let k = 0; k < ends.length - 1; k++) {
       const A = ends[k], B = ends[k + 1]; if (B.i !== A.i + 1) continue;
+      if (slides[A.i].querySelector('.f-swipe')) continue;   // the cover's short line by the swipe invite stops before the seam on purpose (20 Oct 2026)
       if (Math.abs(A.b.x - 1080) > 0.5 || Math.abs(B.a.x) > 0.5 || Math.abs(A.b.y - B.a.y) > 0.5) errors.push(`Seam ${A.i + 1}/${B.i + 1}: exit (${A.b.x.toFixed(0)},${A.b.y.toFixed(0)}) ≠ entry (${B.a.x.toFixed(0)},${B.a.y.toFixed(0)})`);
     }
     return { errors, info };

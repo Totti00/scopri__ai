@@ -96,7 +96,8 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 /* Cover only: swipe invite centred at the bottom, caps centre ≈ y 1175, ABOVE the carousel dots that Instagram mobile draws inside the image at ≈ y 1232
    (band 1205–1350 stays free; keep the cover thread start right of the invite, threadStart ≥ 760). Words + thin blue arrow, no dots (owner, 20 Oct 2026).
    Text from CAROUSEL.swipe (default «Scorri per scoprire»; false = none). */
-.f-swipe{position:absolute;left:50%;top:1162px;transform:translateX(-50%);height:30px;display:flex;align-items:center;gap:14px;white-space:nowrap;z-index:9;
+.f-swipe{position:absolute;left:50%;top:1162px;transform:translateX(calc(-50% + 24px));   /* optical centring: the WORDS sit on x 540, the arrow (34 px + 14 px gap) hangs to the right */
+  height:30px;display:flex;align-items:center;gap:14px;white-space:nowrap;z-index:9;
   font:600 25px/30px var(--font-primary);letter-spacing:.12em;text-transform:uppercase;color:var(--tp);text-shadow:0 0 14px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.45)}
 .f-swipe span{margin-right:-.12em}
 .f-swipe svg{width:34px;height:16px;flex:none;position:relative;top:-1px;   /* centred on the capitals (cap height), measured to ±0.5 px (20 Oct 2026) */
