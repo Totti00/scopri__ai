@@ -33,6 +33,19 @@ This file records what happened between the original brief and the approved caro
 | Replicate failed (invalid token). The user said: "genera tu le immagini, lascio stare replicate". | In-house 3D renders (three.js, difference-matted transparent PNGs) are the default way to get Family A glass & chrome objects. See `imagery.md`. |
 | I placed handle and logo as placeholders after asking twice for them. | For Scopri AI both are known now (`@scopri__ai`, Coperchio kit). Never ship placeholders. If a brand detail is unknown, ask once, together with the copy, so it doesn't block later. |
 
+### 20 Oct 2026 — "Prima e dopo: la TV ripulita dall'AI" (news, owner's draft review)
+
+| What happened | Rule it produced |
+|---|---|
+| Real before/after photos and the video were toned mono-blue. The owner: everything in colour, video included. | Real photos and videos stay in **colour** (`data-tone="color"`, plain `.img-box`). |
+| The cover carried the "NEWS LAMPO" pill. | **No rubric label on the cover**, ever. Content slides keep their eyebrow, now a plain mono label with an accent dash (no box, no dot). |
+| `@scopri__ai` printed bottom-left on every slide. | **No handle** in the frame (engine). |
+| The closing pill "MANDA" (small, outlined, uppercase mono) wasn't understood. | Filled blue button with icon and words ("Mandalo a un amico"), then a smaller **🔔 Seguici per non perdere le prossime notizie** line with the logo's lid as the bell. Hierarchy: headline → button → follow line. Text per type from `CAROUSEL.tipo`. |
+| Round pills with a coloured dot over images and cards ("Prima", "Dopo", "Sparita", "Vola", "Fai-da-te"…) looked cheap. | **Captions under the image** (`.cap[data-under]`), same gap and style on every slide; centred under both images when it applies to both. Stickers are no longer used on Scopri AI slides. |
+| Caption: only the main invite. | Every caption also has a `🔔 Seguici per non perdere …` line before Fonti/hashtags (not in *serie*). `caption_check.py` warns when it is missing and doesn't count it as a second invite. |
+| `python` in `/usr/local/bin` (cloud) has a broken Pillow; `npm run previews` / `npm run media` failed. | Run them with `PATH=/usr/bin:$PATH`. |
+| The cover headline at top 200 measured 191 (font ascent) and failed the live-area QA. | Without a pill, start the cover headline at **y 216**. |
+
 ## 3. Publishing-stage feedback
 
 | What happened | Rule it produced |

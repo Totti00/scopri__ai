@@ -97,11 +97,22 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 
 /* ===== Type (§5.2) ===== */
 .txt{position:absolute;z-index:7}
-.pill{position:absolute;left:96px;top:192px;z-index:7;height:48px;padding:0 22px;border-radius:999px;display:inline-flex;align-items:center;gap:12px;font:500 20px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
-.pill::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--dot);flex:none}
-.mode-dark .pill{background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.14);color:var(--snow);--dot:var(--accent-300)}
-.mode-light .pill{background:var(--ink-950);color:var(--snow);--dot:var(--accent-300)}
-.mode-accent .pill{background:#fff;color:var(--accent-700);--dot:var(--accent-500)}
+/* Eyebrow (20 Oct 2026): plain mono label with a short accent dash, no rounded box and no dot (owner: the dot pills clashed).
+   Never on the cover: no rubric label on slide 1. */
+.pill{position:absolute;left:96px;top:192px;z-index:7;height:48px;padding:0;display:inline-flex;align-items:center;gap:14px;font:500 21px/1 var(--font-meta);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--tp)}
+.pill::before{content:"";width:28px;height:4px;border-radius:2px;background:var(--dash);flex:none}
+/* Real photo / screenshot box (news): same frame as .video-box; caption goes under it with .cap */
+.img-box{position:absolute;z-index:6;overflow:hidden;border-radius:32px;background:#0A0A0D center/cover no-repeat;box-shadow:var(--card-shadow)}
+.mode-light .img-box{box-shadow:0 30px 60px -30px rgba(10,10,13,.45),0 2px 6px rgba(10,10,13,.08)}
+/* Caption under an image or card (20 Oct 2026): replaces stickers and labels laid over images. Positioned by the engine
+   (data-under), CAP_GAP px below, same style everywhere; carries the 2–3-word comment ("Vola.", "Prima: 192 MB"). */
+.cap{position:absolute;z-index:7;margin:0;display:flex;align-items:center;gap:16px;font:500 30px/1.2 var(--font-primary);letter-spacing:-.01em;color:var(--tp);white-space:nowrap}
+.cap::before{content:"";width:32px;height:4px;border-radius:2px;background:var(--dash);flex:none}
+.cap.mid{justify-content:center}
+.cap .rc{color:var(--recede)}
+.mode-dark{--dash:var(--accent-300)}
+.mode-light{--dash:var(--accent-500)}
+.mode-accent{--dash:#fff}
 .display{font-weight:600;font-size:128px;line-height:.95;letter-spacing:-.045em;color:var(--tp)}
 .h1{font-weight:600;font-size:96px;line-height:1;letter-spacing:-.035em;color:var(--tp)}
 .h2{font-weight:600;font-size:64px;line-height:1.05;letter-spacing:-.025em;color:var(--tp)}

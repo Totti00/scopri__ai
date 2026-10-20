@@ -16,7 +16,7 @@ This file adapts `design-system.md` (Electric Mono) to the Scopri AI brand. **Wh
 ## 1. Identity and voice
 
 - **Brand:** Scopri AI. An Italian Instagram account that teaches non-technical people how to use AI in everyday life: bills, contracts, work, study.
-- **Handle:** `@scopri__ai` (two underscores). It is printed bottom-left on every slide.
+- **Handle:** `@scopri__ai` (two underscores). Since 20 Oct 2026 it is **not printed** on the slides (owner: "via per sempre"); it lives only in the Instagram profile.
 - **Language:** slides, caption, alt text and pinned comments are written in **Italian** unless the user asks otherwise. Talk to the user in the language they write in, which has been Italian.
 - **Voice:** "tu", direct, practical and friendly. Explain technical terms the first time (kWh, POD/PDR, scheda sintetica…). No corporate tone, no hype.
 - **Honesty line:** carousels about using AI include one honest reminder that the AI can be wrong and the user must check, e.g. "L'AI spiega, ma può sbagliare: verifica sempre…". Put it in the caption, the CTA lead or both.
@@ -63,15 +63,24 @@ These differ from `design-system.md` §3. Each one is the user's correction from
 
 - **Top-left: the full logo lockup**, not the symbol alone, 40 px tall, in the mode's kit variant. The user said "hai messo la foto profilo nelle slide, non il logo. io voglio il logo (scopri AI)".
 - **The progress counter counts content slides only.** With N slides the counter runs `01 / N−1` … `N−1 / N−1`. The closing slide has no counter. The user said the counter should not count the last slide, and the closing slide shouldn't show it.
-- **Closing slide:** no corner logo (the big centred logo is already there, and the user flagged the repetition), no counter, no swipe cue. The handle stays.
-- Everything else in the frame stays as the design system describes: positions, sizes, the swipe cue filled on the cover, the handle bottom-left.
+- **Closing slide:** no corner logo (the big centred logo is already there, and the user flagged the repetition), no counter, no swipe cue.
+- **No handle anywhere** (20 Oct 2026): the frame no longer prints `@scopri__ai` bottom-left. The footer keeps only the swipe cue on the right.
+- **No rubric label on the cover** (20 Oct 2026): no pill ("News lampo", "Prompt"…) on slide 1, ever. The headline starts at y ≈ 216.
+- **Eyebrow pills on content slides** are plain mono labels with a short accent dash: no rounded box, no coloured dot (the dot pills clashed with the new captions).
+- **No stickers or labels laid over images or cards** (20 Oct 2026). Text that belongs to an image goes **under** it as a caption (`.cap`, see §6).
+- Everything else in the frame stays as the design system describes: positions, sizes, the swipe cue filled on the cover.
 
 ## 5. Closing slide (CTA)
 
-- Same mode as the cover (DARK by default), centred, layout T10.
-- Big centred logo lockup, about **112 px** tall, in the mode's variant.
-- H1 with one accent phrase, then a lead of at most 2 lines, then **one** action pill. Usually **SALVA** with a bookmark icon. T10 suggests 2–3 pills, but the copy guide asks for one CTA, and one pill matched the approved copy.
-- The thread line ends in a node just left of the action pill.
+Redesigned on 20 Oct 2026 (owner: "il pulsante MANDA non si capisce").
+
+- Same mode as the cover (DARK by default), centred, layout T10. No handle, no counter, no corner logo.
+- Big centred logo lockup (~112 px, top ≈ 236), then the hierarchy **headline → button → follow line**:
+  1. H1 with the **one** main invite and one accent phrase (news: "Mandalo a chi …"; prompts and lists: "Salvalo per …").
+  2. A **filled button** a 70-year-old reads as a button: brand-blue pill, 96 px tall, Inter Tight 38 px, icon + words. News/curiosità: paper plane + "Mandalo a un amico"; prompt/lista: bookmark + "Salvalo per dopo"; serie: bell + "Segui Scopri AI".
+  3. A smaller **🔔 follow line** under it: the lid of the logo as a bell + "Seguici per non perdere le prossime notizie" (prompt: "i prossimi prompt", curiosità: "le prossime curiosità", lista: "i prossimi consigli"). The engine writes it from `CAROUSEL.tipo`. Not in a *serie*, where following is already the main invite. On Instagram you "segui", never "iscriviti".
+- No lead is needed; if one is used, keep it to one line between headline and button.
+- The thread rises at x 120 (`threadEndX`) and ends in a node left of the button.
 
 ## 6. Imagery defaults
 
@@ -80,6 +89,8 @@ These differ from `design-system.md` §3. Each one is the user's correction from
 - **Material look that worked:** polished chrome lit by a bright gradient studio dome, so it reads as silver, not black. Clear glass with a faint `#8595FF` tint. Accent details in electric-blue glass or blue "sand". Key light from the top-left.
 - **Real photos and videos are always in full colour** (owner, 20 Oct 2026): `data-tone="color"` on every `video-box`, no black-and-white or blue duotone on real footage, posters and covers included. This overrides the "no full-color photography" rule of `design-system.md`.
 - Prompt slides get **no** imagery. The prompt card is the hero, and anything else costs legibility.
+- **Real photos and videos are in colour** (owner, 20 Oct 2026): `.img-box` with the original image, `.video-box` with `data-tone="color"`. The mono tone is no longer the default for news.
+- **Captions under images, never on them** (20 Oct 2026). `<p class="cap" data-under="#img">Prima: pubblicità</p>`: Inter Tight 500 30 px with a 32 px accent dash, placed by the engine 28 px under the element, left-aligned with it. One caption for two side-by-side images: `data-under="#a,#b"` centres it under both. Each image with its own caption (Prima / Dopo): one `.cap` per image, they line up at the same height. The CLAUDE.md "2–3-word comment" becomes this caption ("Vola.", "Rischio vero."). Leave room: image bottom ≤ ~1060 so the caption ends before the thread at 1150.
 
 ## 7. Per-carousel dials (defaults)
 

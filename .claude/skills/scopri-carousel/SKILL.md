@@ -63,7 +63,7 @@ Read `references/carousel-copy.md`, `references/brand-scopri-ai.md` §1, `refere
 7. Don't add meta slides ("perché funziona", "come usare questo carosello") unless the content needs them. The user removed one.
    - A **recap/checklist slide** is different: it's the most save-worthy slide for long listicles and step-by-steps. Don't add it by default. Offer it in *Note sui contenuti* ("vuoi una checklist finale da salvare?"), and include it straight away only for checklist or cheat-sheet carousels.
    - **Technical topics** (Claude Code, Codex, terminals, git): the audience is non-programmers. Explain every technical term in plain Italian the first time ("il «contesto», cioè…"), prefer what to do over how it works, and leave advanced features out unless asked.
-8. End with **one** CTA, usually Salva, tied to the value ("Salvalo per la prossima offerta").
+8. End with **one** CTA, usually Salva, tied to the value ("Salvalo per la prossima offerta"). The closing slide then adds the smaller 🔔 follow line, and the caption the `🔔 Seguici per non perdere …` line (not in *serie*; `brand-scopri-ai.md` §5).
 9. Include one honest line that the AI can be wrong and the reader should check (caption or CTA lead).
 10. **Prompt carousels:** each prompt is a complete, working ~100-word prompt: role → context (what's attached, personal data hidden) → 3–4 numbered tasks → output rules with an anti-hallucination clause. Mark the parts to replace with `[parentesi quadre]`. Plan pinned comments, because full prompts don't fit in a caption. See `lessons-learned.md` §1.
 11. Draft the caption: hook in the first 125 characters, emoji at the start of blocks, context, CTA repeated, 3–5 hashtags. In Scopri AI `npm run publish` checks it with `scripts/caption_check.py` (see `references/publishing.md`).
@@ -135,7 +135,7 @@ Read `references/build-guide.md`. Then:
 
    Check every asset on all three backgrounds with `scripts/asset-check.py` before placing it.
 
-4. **Write the slides** in `index.html` from the layout library. Replace all sample copy, mark text with `qa-text`, and pin headline line counts with `data-lines`. Set `CAROUSEL.seams/routes` for the thread. Keep slide-specific CSS in the page's `<style>`, not in `engine/`.
+4. **Write the slides** in `index.html` from the layout library. No pill on the cover, no handle (the engine no longer prints it), no stickers over images or cards: text about an image goes under it as `<p class="cap" data-under="#id">` (20 Oct 2026). Set `tipo` in `CAROUSEL` (the scaffold does it from the slug). Replace all sample copy, mark text with `qa-text`, and pin headline line counts with `data-lines`. Set `CAROUSEL.seams/routes` for the thread. Keep slide-specific CSS in the page's `<style>`, not in `engine/`.
 
 5. **Export and check**, from `carousels/<slug>/`:
 

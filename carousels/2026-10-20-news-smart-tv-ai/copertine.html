@@ -10,30 +10,18 @@
 <link rel="stylesheet" href="engine/carousel.css">
 <style>
 /* ===== Slide-specific CSS for this carousel ===== */
-/* real TV screens (cropped from the authors' before/after posts, in colour, owner 20/10) */
-.img-box{position:absolute;z-index:6;overflow:hidden;border-radius:32px;background:#0A0A0D center/cover no-repeat;box-shadow:var(--card-shadow)}
-.mode-light .img-box{box-shadow:0 30px 60px -30px rgba(10,10,13,.45),0 2px 6px rgba(10,10,13,.08)}
-.img-box.front{z-index:7;outline:6px solid var(--ink-950)}
-.mode-light .img-box.front{outline-color:#F4F4F6}
-.sticker.free{position:absolute;top:auto;z-index:9}
-/* "Prima" / "Dopo" labels, in front of the screens */
-.lbl{position:absolute;z-index:9;height:46px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;font:500 21px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;background:#22232C;border:2px solid rgba(255,255,255,.16);color:var(--snow)}
-.lbl::before{content:"";width:10px;height:10px;border-radius:50%;background:#FF5A5A}
-.lbl.ok::before{background:var(--signal-500)}
+/* images: engine .img-box (colour, owner 20/10); captions: engine .cap under each image (no labels over images) */
 /* slide 6: how it works, as an interface card */
-.steps{left:96px;top:640px;width:888px;padding:58px 44px 36px}
-.steps .sticker{right:44px;transform:rotate(-3deg)}
+.steps{left:96px;top:640px;width:888px;padding:40px 44px 40px}
 .steps ol{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
 .steps li{display:grid;grid-template-columns:56px 1fr;align-items:baseline;font:500 29px/1.3 var(--font-primary);color:var(--snow)}
 .steps li b{font:500 24px/1 var(--font-meta);color:var(--accent-300)}
-.steps .foot{margin-top:24px;padding-top:20px;border-top:2px solid rgba(255,255,255,.08);font:500 28px/1.35 var(--font-primary);color:var(--gray-400)}
 /* slide 7: the risks */
-.risk{left:96px;top:660px;width:888px;padding:58px 44px 36px}
-.risk .sticker{right:44px;transform:rotate(3deg)}
-.risk .r{margin-top:16px;display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:baseline;font:500 29px/1.3 var(--font-primary);color:var(--snow)}
+.risk{left:96px;top:640px;width:888px;padding:40px 44px 40px}
+.risk .r{margin-top:16px;display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:baseline;font:500 29px/1.3 var(--font-primary);color:var(--gray-400)}
 .risk .r i{width:14px;height:14px;border-radius:50%;background:#FF5A5A;display:block}
 .risk .r.ok i{background:var(--signal-500)}
-.risk .r span{color:var(--gray-400)}
+.risk .r b{color:var(--snow);font-weight:500}
 </style>
 </head>
 <body>
@@ -61,51 +49,50 @@
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
   <div class="layer rings" style="--rx:540px;--ry:900px"></div>
-  <div class="glow" data-for=".img-box.front"></div>
-  <h2 class="txt display qa-text" style="left:96px;top:200px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Prima e dopo:<br>la stessa TV,<br><span class="em">ripulita dall'AI</span><br>in un pomeriggio.</h2>
-  <div class="img-box" style="left:96px;top:606px;width:620px;height:334px;background-image:url(media/gathin-prima.jpg);background-position:0 30%"></div>
-  <div class="img-box front" style="left:364px;top:760px;width:620px;height:334px;background-image:url(media/gathin-dopo.jpg);background-position:30% 50%"></div>
-  <span class="lbl qa-text" style="left:120px;top:630px">Prima</span>
-  <span class="lbl ok qa-text" style="left:836px;top:784px">Dopo</span>
+  <div class="glow" data-for="#c-dopo"></div>
+  <h2 class="txt display qa-text" style="left:96px;top:216px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Prima e dopo:<br>la stessa TV,<br><span class="em">ripulita dall'AI</span><br>in un pomeriggio.</h2>
+  <div class="img-box" id="c-prima" style="left:96px;top:636px;width:432px;height:340px;background-image:url(media/gathin-prima.jpg);background-position:0 30%"></div>
+  <div class="img-box" id="c-dopo" style="left:552px;top:636px;width:432px;height:340px;background-image:url(media/gathin-dopo.jpg);background-position:0 50%"></div>
+  <p class="cap qa-text" data-under="#c-prima">Prima: pubblicità</p>
+  <p class="cap qa-text" data-under="#c-dopo">Dopo: solo le app</p>
 </section></div>
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
   <div class="layer rings" style="--rx:540px;--ry:900px"></div>
-  <div class="glow" data-for=".img-box"></div>
-  <h2 class="txt display qa-text" style="left:96px;top:200px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Prima e dopo:<br>la stessa TV,<br><span class="em">ripulita dall'AI</span><br>in un pomeriggio.</h2>
-  <div class="img-box" style="left:96px;top:606px;width:888px;height:492px;background-image:url(media/doyle-frame-1s.jpg);background-position:50% 50%"></div>
-  <span class="lbl ok qa-text" style="left:120px;top:1028px">Dopo · il menu nuovo</span>
-  <span class="lbl qa-text" style="left:806px;top:1028px;padding:0 18px">▶ Video</span>
+  <div class="glow" data-for="#c-video"></div>
+  <h2 class="txt display qa-text" style="left:96px;top:216px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Prima e dopo:<br>la stessa TV,<br><span class="em">ripulita dall'AI</span><br>in un pomeriggio.</h2>
+  <div class="img-box" id="c-video" style="left:96px;top:636px;width:888px;height:400px;background-image:url(media/doyle-frame-1s.jpg);background-position:50% 50%"></div>
+  <p class="cap qa-text" data-under="#c-video">Dopo: il menu nuovo, nel video.</p>
 </section></div>
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
   <div class="layer rings" style="--rx:540px;--ry:900px"></div>
-  <div class="glow" data-for=".img-box.front"></div>
-  <h2 class="txt display qa-text" style="left:96px;top:200px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Prima e dopo:<br>la stessa TV,<br><span class="em">ripulita dall'AI</span><br>in un pomeriggio.</h2>
-  <div class="img-box" style="left:96px;top:606px;width:620px;height:334px;background-image:url(media/mihir-prima.jpg);background-position:0 30%"></div>
-  <div class="img-box front" style="left:364px;top:760px;width:620px;height:334px;background-image:url(media/mihir-dopo.jpg);background-position:0 50%"></div>
-  <span class="lbl qa-text" style="left:120px;top:630px">Prima</span>
-  <span class="lbl ok qa-text" style="left:836px;top:784px">Dopo</span>
+  <div class="glow" data-for="#c-dopo"></div>
+  <h2 class="txt display qa-text" style="left:96px;top:216px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Prima e dopo:<br>la stessa TV,<br><span class="em">ripulita dall'AI</span><br>in un pomeriggio.</h2>
+  <div class="img-box" id="c-prima" style="left:96px;top:636px;width:432px;height:340px;background-image:url(media/mihir-prima.jpg);background-position:0 30%"></div>
+  <div class="img-box" id="c-dopo" style="left:552px;top:636px;width:432px;height:340px;background-image:url(media/mihir-dopo.jpg);background-position:0 50%"></div>
+  <p class="cap qa-text" data-under="#c-prima">Prima: pubblicità</p>
+  <p class="cap qa-text" data-under="#c-dopo">Dopo: solo le app</p>
 </section></div>
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
   <div class="layer rings" style="--rx:540px;--ry:900px"></div>
-  <div class="glow" data-for=".img-box.front"></div>
-  <h2 class="txt display qa-text" style="left:96px;top:200px;width:888px;font-size:88px;line-height:1.02" data-lines="4">La TV dei suoi<br>mostrava pubblicità<br>prima di Netflix.<br><span class="em">Non più.</span></h2>
-  <div class="img-box" style="left:96px;top:606px;width:620px;height:334px;background-image:url(media/gathin-prima.jpg);background-position:0 30%"></div>
-  <div class="img-box front" style="left:364px;top:760px;width:620px;height:334px;background-image:url(media/gathin-dopo.jpg);background-position:30% 50%"></div>
-  <span class="lbl qa-text" style="left:120px;top:630px">Prima</span>
-  <span class="lbl ok qa-text" style="left:836px;top:784px">Dopo</span>
+  <div class="glow" data-for="#c-dopo"></div>
+  <h2 class="txt display qa-text" style="left:96px;top:216px;width:888px;font-size:88px;line-height:1.02" data-lines="4">La TV dei suoi<br>mostrava pubblicità<br>prima di Netflix.<br><span class="em">Non più.</span></h2>
+  <div class="img-box" id="c-prima" style="left:96px;top:636px;width:432px;height:340px;background-image:url(media/gathin-prima.jpg);background-position:0 30%"></div>
+  <div class="img-box" id="c-dopo" style="left:552px;top:636px;width:432px;height:340px;background-image:url(media/gathin-dopo.jpg);background-position:0 50%"></div>
+  <p class="cap qa-text" data-under="#c-prima">Prima: pubblicità</p>
+  <p class="cap qa-text" data-under="#c-dopo">Dopo: solo le app</p>
 </section></div>
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
   <div class="layer rings" style="--rx:540px;--ry:900px"></div>
-  <div class="glow" data-for=".img-box.front"></div>
-  <h2 class="txt display qa-text" style="left:96px;top:200px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Pubblicità<br>sulla tua smart TV?<br>C'è chi la toglie<br><span class="em">con l'AI.</span></h2>
-  <div class="img-box" style="left:96px;top:606px;width:620px;height:334px;background-image:url(media/gathin-prima.jpg);background-position:0 30%"></div>
-  <div class="img-box front" style="left:364px;top:760px;width:620px;height:334px;background-image:url(media/gathin-dopo.jpg);background-position:30% 50%"></div>
-  <span class="lbl qa-text" style="left:120px;top:630px">Prima</span>
-  <span class="lbl ok qa-text" style="left:836px;top:784px">Dopo</span>
+  <div class="glow" data-for="#c-dopo"></div>
+  <h2 class="txt display qa-text" style="left:96px;top:216px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Pubblicità<br>sulla tua smart TV?<br>C'è chi la toglie<br><span class="em">con l'AI.</span></h2>
+  <div class="img-box" id="c-prima" style="left:96px;top:636px;width:432px;height:340px;background-image:url(media/gathin-prima.jpg);background-position:0 30%"></div>
+  <div class="img-box" id="c-dopo" style="left:552px;top:636px;width:432px;height:340px;background-image:url(media/gathin-dopo.jpg);background-position:0 50%"></div>
+  <p class="cap qa-text" data-under="#c-prima">Prima: pubblicità</p>
+  <p class="cap qa-text" data-under="#c-dopo">Dopo: solo le app</p>
 </section></div>
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>

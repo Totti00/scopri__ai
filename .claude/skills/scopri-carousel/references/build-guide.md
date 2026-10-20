@@ -74,13 +74,15 @@ Write this table into your notes first. It prevents most rework.
 | `.supershape` | §8.9 circle; accent on D/L, ink on A | 1.2–2× canvas, 15–35% visible |
 | `.ghost.num` / `.ghost.word` | ghost type, fill treatment | ≤ 1 per slide, about 30–50% of slides |
 | `.glow[data-for="sel"]` | hero light (§6.5) | engine centres it; also lifts the DARK background |
-| `.pill.qa-text` | eyebrow at (96,192) | 1–3 words, uppercased by CSS |
+| `.pill.qa-text` | eyebrow at (96,192) | 1–3 words, uppercased; plain mono + accent dash (20 Oct 2026). **Never on the cover** |
 | `.stack` | text column at x 96, top 288 | children `.h1/.h2/.display`, then `.body/.lead` with a 40 px gap |
 | `.display` 128 · `.h1` 96 · `.h2` 64 · `.h3` 42 | type scale §5.2 | set font-size inline within the ranges |
 | `.lead` 35 · `.body` 29 | body text, ≥ 28 px | max width 508 (584 for 1–2 lines) |
 | `.em` / `.rc` / `.bar` | accent phrase / recede / highlight bar | one emphasis per headline |
 | `.card` (+ `.abs`) | dark UI card, every mode | padding 32, radius 28; `.ui` / `.ui-meta` = UI text (non-essential only) |
-| `.sticker` | rotated pill on a card corner | max 1 per slide; give the card ≥ 48 px top padding |
+| `.sticker` | rotated pill on a card corner | **not used on Scopri AI slides since 20 Oct 2026**: use `.cap` under the card |
+| `.img-box` | real photo/screenshot box (engine) | `background-image:url(media/x.jpg)`, colour; radius 32 |
+| `.cap[data-under]` | caption under an image, video or card | engine places it 28 px below, left-aligned; several targets → centred under all. 30 px, accent dash. Keep the target's bottom ≤ ~1060 |
 | `.pcard` + `.ph` | prompt composer card + `[placeholder]` | see §6 |
 | `.rows > .row > .idx/.t/.m` | T7 hairline rows, 96 px | starts around y 600 |
 | `.numeral` (+ `.suf`) + `.chip` | T4 Numeral XXL + end-point chip | the chart line is the thread (custom route) |
@@ -88,7 +90,7 @@ Write this table into your notes first. It prevents most rework.
 | `.glassobj > i(.sq)` | CSS frosted-glass object | fallback hero when no rendered asset fits |
 | `.asset` | rendered or generated PNG | absolute; see `imagery.md` |
 | `.lens[data-source][data-target]` | magnifier zoom of live HTML | §7 |
-| `.logo-full[data-logo]`, `.cstack`, `.actions > .apill` | T10 closing slide | the engine fills the logo per mode |
+| `.logo-full[data-logo]`, `.cstack > h1 + .actions > .apill + .follow` | T10 closing slide | the engine fills the logo per mode and the `.follow` text from `CAROUSEL.tipo`; `.apill` is a filled button with icon + words |
 
 - Mark every text element that must stay in the live area (x 96–984, y 192–1134) with `qa-text`.
 - Add `data-lines="N"` to headlines whose line breaks matter: QA fails if they wrap differently.
@@ -113,7 +115,7 @@ Patterns that worked:
 - **y 1150 under the content.** It clears the footer zone, which starts at y 1174. The content must end by about y 1100, because QA keeps a 12–16 px buffer.
 - **Prompt series:** `rightUp` 1150 → 360 on one slide, then `leftDown` 360 → 1150 on the next. The line wraps each card like a bracket and crosses the seam at y 360.
 - **T4:** the line *is* the chart, rising to a node with the value chip.
-- **Closing slide:** the line rises at x 200 and ends at the action pill.
+- **Closing slide:** the line rises at x 120 (`threadEndX`, left of the centred follow line) and ends at the button.
 
 QA checks that every seam's exit equals the next entry. It also samples the path and fails if it touches text, a card, an asset or a frame zone.
 
@@ -220,8 +222,14 @@ News carousels show the real thing: official clips (from X via `https://api.fxtw
 
 Then, after `npm run export`: `npm run media` (trimmed clips) or `npm run media -- --full` (also `slide-XX-completo.mp4` with the whole source video, which the owner trims in Instagram). It writes a poster frame into the box, so `slide-XX.png` and the previews show the clip, and stacks: full slide → video → everything in front of it (the frame, and any text, pill, sticker or card that overlaps the box: these are kept in front automatically; add class `over-video` to force it). Output: 1080 × 1350, 30 fps, H.264, no audio.
 
+Put any text about the clip **under** the box as `<p class="cap" data-under="#v">Vola.</p>`, never over it (20 Oct 2026).
+
 Credit whoever made the clip in `fonti.md` and in "Fonti: …" at the end of the caption, never on the slide.
 
 **Long sources (explainer animations, keynotes).** When the owner caps a video slide ("massimo 60 secondi", 17 Oct 2026), the `-completo` follows the same cap instead of carrying the whole file. Cut a montage of the scenes that match the slide's text with ffmpeg (one `-ss … -t … -i` input per scene, never `trim` on one decoded input: it buffers minutes of 1080p frames and gets killed), 0.5 s fades between scenes, a hard cut only on blank frames. Crop away burned-in subtitles in another language and progress bars, and crop each scene so its content fits the box ratio (e.g. 888 × 420 → 2.11:1). Save the montage in `media/` and point `data-video` / `data-full` at it. Example: `carousels/2026-10-17-news-claude-numeri-nsa/montaggio-video.py`.
 
 A sticker or label that overlaps a video box needs `z-index` above the box (the box is 6), or the static PNG shows it behind the poster even though the MP4 puts it in front.
+
+## 12. Cloud note (20 Oct 2026)
+
+If `python` resolves to a build with a broken Pillow (`cannot import name '_imaging'`), run `PATH=/usr/bin:$PATH npm run previews` and `PATH=/usr/bin:$PATH npm run media`.
