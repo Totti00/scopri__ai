@@ -15,13 +15,13 @@ Consultate il 20/10/2026.
 ## Foto e video usati nelle slide (post originali degli autori, via api.fxtwitter.com)
 | File in `media/` | Slide | Autore | Post originale |
 |---|---|---|---|
-| `gathin-prima-dopo.jpg` → `gathin-prima(-mono).jpg`, `gathin-dopo(-mono).jpg` | 1, 2, 3 (e copertine a, b, e, f) | Gathin T. (@gathint) | https://x.com/gathint/status/2111379569030939102 (17/10, ~30.000 like, 6,29 mln visualizzazioni); stessa immagine nel README di cleanyourtv (`docs/stock-vs-new-side.jpg`) |
-| `mihir-menu.jpg` → `mihir-prima(-mono).jpg`, `mihir-dopo(-mono).jpg` | 4 (e copertina d) | Mihir Gupta (@0900mihir) | https://x.com/0900mihir/status/2111746030228455883 (18/10) |
-| `doyle-tv-veloce.mp4` (13 s, verticale) → `doyle-frame-1s(-mono).jpg` | 5 (e copertina c) | Ryan Doyle (@doooyle) | https://x.com/doooyle/status/2111247627748565091 (17/10) |
+| `gathin-prima-dopo.jpg` → `gathin-prima.jpg`, `gathin-dopo.jpg` | 1, 2, 3 (e copertine a, e, f) | Gathin T. (@gathint) | https://x.com/gathint/status/2111379569030939102 (17/10, ~30.000 like, 6,29 mln visualizzazioni); stessa immagine nel README di cleanyourtv (`docs/stock-vs-new-side.jpg`) |
+| `mihir-menu.jpg` → `mihir-prima.jpg`, `mihir-dopo.jpg` | 4 (e copertina d) | Mihir Gupta (@0900mihir) | https://x.com/0900mihir/status/2111746030228455883 (18/10) |
+| `doyle-tv-veloce.mp4` (13 s, verticale) → `doyle-frame-1s.jpg` | 5 (e copertina c) | Ryan Doyle (@doooyle) | https://x.com/doooyle/status/2111247627748565091 (17/10) |
 
 Scaricati ma non usati (per il finale, se servono): `doyle-screensaver.jpg` (Ryan Doyle, https://x.com/doooyle/status/2111196679680540724, 16/10), `dumbtv.mp4` (28 s, Muzzammil Sabuwala, https://x.com/DevMuzzammil/status/2111912547318395338, 18/10), `muzzammil-tv.jpg` (https://x.com/DevMuzzammil/status/2111595814099591535, 17/10).
 
-Ritagli: solo lo schermo della TV, tolte le scritte inglesi "BEFORE / AFTER" e le didascalie; etichette "Prima / Dopo" nostre. Tono monocromo blu (stesso filtro di `export-media.mjs`).
+Ritagli: solo lo schermo della TV, tolte le scritte inglesi "BEFORE / AFTER" e le didascalie; etichette "Prima / Dopo" nostre. Tutto a colori, anche il video (proprietario, 20/10). Le versioni `-mono.jpg` in `media/` non si usano più.
 
 ## Testimonianze sui rischi (citate da TechCrunch)
 - TV bloccata: @jihadsinwar, 19/10 — https://x.com/jihadsinwar/status/2112135188733989173

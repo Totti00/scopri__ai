@@ -2,7 +2,7 @@ _Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slid
 
 **In una frase:** per chi ha una smart TV piena di pubblicità: mostra il prima e il dopo di TV vere ripulite con un'AI, avvisa che è un fai-da-te rischioso; invito: mandarlo a chi si lamenta della pubblicità sulla TV. · **Struttura:** Prima → Dopo → Ponte (scelta del proprietario), con la scoperta più forte (il dopo) subito in slide 2.
 
-**Immagini:** tutte vere, prese dai post originali degli autori su X (non dalla ripubblicazione di Evolving AI): schermo della TV ritagliato, in monocromo blu, con le nostre etichette "Prima" / "Dopo" al posto delle scritte inglesi. Autori solo in "Fonti".
+**Immagini:** tutte vere, prese dai post originali degli autori su X (non dalla ripubblicazione di Evolving AI): schermo della TV ritagliato, **a colori** (correzione del proprietario, 20/10: niente monocromo, video compreso), con le nostre etichette "Prima" / "Dopo" al posto delle scritte inglesi. Autori solo in "Fonti".
 
 ### 01 — Copertina (DARK)
 - **Pill:** News lampo
@@ -32,7 +32,7 @@ _Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slid
 - **Pill:** Più veloce · **Titolo:** Ha reso / la TV / *velocissima.*
 - **Testo:** Un altro ancora ha mandato all'AI la scheda della sua TV e ha chiesto: «Puoi sistemarla?». L'AI l'ha guidato passo passo. — *Nel video: il menu dopo la pulizia.*
 - **Adesivo:** Vola
-- **Visual:** video verticale di Ryan Doyle (13 s, intero), telecomando in mano e menu che scorre veloce. → `slide-05.mp4`
+- **Visual:** video verticale di Ryan Doyle (13 s, intero, a colori), telecomando in mano e menu che scorre veloce. → `slide-05.mp4` + `slide-05-completo.mp4`
 
 ### 06 — Si può fare? (LIGHT)
 - **Pill:** Si può fare? · **Titolo:** Solo su alcune TV. / *E con un computer.*
@@ -71,20 +71,20 @@ _Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slid
 
 Controllo automatico (bozza): ✅ CAPTION PRONTA · carosello · notizia — 1480/2200 caratteri · 5 hashtag · invito: 📩 Mandalo a … · domanda: sì · fonti: sì
 
-### Copertine (in `exports/`)
-- **copertina-a** = slide 1: titolo c, prima/dopo di Gathin in monocromo (consigliata).
-- **copertina-b**: titolo c, stessa foto **a colori** (il rosso del "dopo" e la pubblicità del "prima" si vedono meglio; esce dallo standard mono).
+### Copertine (in `exports/`, tutte a colori; confronto in `copertine-confronto.jpg`)
+- **copertina-a** = slide 1: titolo c, prima/dopo di Gathin (consigliata).
 - **copertina-c**: titolo c, fotogramma del **video di Ryan Doyle** (si può fare MP4 della copertina con la sua clip in finale).
 - **copertina-d**: titolo c, prima/dopo di **Mihir Gupta**.
 - **copertina-e**: titolo a) «La TV dei suoi mostrava pubblicità prima di Netflix. *Non più.*»
 - **copertina-f**: titolo b) «Pubblicità sulla tua smart TV? C'è chi la toglie *con l'AI.*»
+- (la vecchia b, versione a colori della a, è tolta: ora sarebbe un doppione)
 
 **Hook alternativi:** La TV dei suoi mostrava pubblicità prima di Netflix. Non più. · Pubblicità sulla tua smart TV? C'è chi la toglie con l'AI. · Ha dato all'AI il modello della TV. Ecco com'è diventata.
 
 **Note sui contenuti:**
 - Fenomeno confermato da 2 testate: TechCrunch (19/10, Sarah Perez) e Punto Informatico (2/9, il caso di Mert Cobanov). I dettagli dei singoli progetti (25 app, 192→83 MB, "migliaia in due giorni") sono di TechCrunch + post originali degli autori. "Migliaia" è una frase di Gathin, per questo in caption c'è "racconta lui". Altre testate lo riportano (Mashable, It's FOSS, Frandroid, elenco nel README di cleanyourtv): non lette per intero.
 - "Ha spento 25 app": Gathin scrive "removed 25 Xiaomi packages"; il suo progetto però usa `pm disable-user` (spegne, non cancella). Ho scritto "spento" per coerenza con la slide 7.
-- Slide 4: la TV di Mihir Gupta è una Google TV (nella foto c'è la scheda "TCL"), ma lui non dice la marca: scritto solo "Google TV".
+- Slide 4: la locandina del film nello schermo "prima" va bene (proprietario, 20/10). La TV di Mihir Gupta è una Google TV (nella foto c'è la scheda "TCL"), ma lui non dice la marca: scritto solo "Google TV".
 - Slide 5: Doyle ha chiesto «can you hack this?» → reso «Puoi sistemarla?». Se preferisci la citazione letterale: «Puoi hackerarla?» (ma in caption diciamo che a volte l'AI rifiuta proprio quella parola).
 - Slide 6: "Samsung e LG usano un altro sistema" (Tizen e webOS): le guide sono per Android TV e Google TV. Gathin dice che c'è chi l'ha fatto anche su LG e Fire TV: non verificato, lasciato fuori. Marche dall'elenco di dumbtv (TechCrunch).
 - Slide 7: "TV bloccata" = risposta su X di un utente (@jihadsinwar, 19/10: "Claude bricked my tv… uninstalled the os"), citata da TechCrunch; "Fire TV a metà" = @SpencerFlah (19/10), citato da TechCrunch. Sono testimonianze singole, non verificate oltre.
