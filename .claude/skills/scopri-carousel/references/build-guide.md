@@ -186,7 +186,7 @@ This writes `contact-sheet.jpg`, `strip-preview.jpg` and `cover-360.png`. **Read
 
 Then send the user the contact sheet (and the cover). Lead with anything not yet done.
 
-**Cover (Scopri AI, owner 20 Oct 2026).** Check slide-01 at full size: the «SCORRI PER SCOPRIRE» invite bottom-left sits on the same line as the filled arrow and doesn't touch images or captions (keep the cover's content above y ≈ 1180). Make **only slide-01**: no alternative covers (`copertina-*.png`), no separate cover page or video cover, unless the owner asks. Old helper scripts such as `export-copertine.mjs` in past carousels can stay but are not run by default.
+**Cover (Scopri AI, owner 20 Oct 2026).** Check slide-01 and the alternative covers at full size: the «SCORRI PER SCOPRIRE» invite is centred at the bottom (baseline ≈ y 1282, last ~60 px free for Instagram's dots), on one row with the filled arrow (lowered on the cover to centre y 1273), clear of the captions (keep the cover's content above y ≈ 1180).
 
 ## 9. Revisions
 

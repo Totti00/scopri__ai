@@ -6,8 +6,11 @@
 - Nessun prompt nel post (è una notizia): niente da provare.
 
 ## Copertina
-- Si usa solo `exports/slide-01.png` (schermi sovrapposti, «Prima: pubblicità» / «Dopo: solo le app»), ora con l'invito **«SCORRI PER SCOPRIRE»** in basso a sinistra, allineato con la freccia piena (proprietario, 20/10; niente pallini: li mette Instagram).
-- Copertine alternative: il proprietario non le usa (20/10). I file `copertina-a/c/d/e/f.png`, `copertina-video.*` e `copertine-confronto.jpg` restano in `exports/` ma non vanno pubblicati. Sono stati riesportati una volta con la scritta «SCORRI PER SCOPRIRE» prima che arrivasse questa decisione; dopo non li ho più toccati.
+- Copertina approvata: `exports/slide-01.png` (schermi sovrapposti, «Prima: pubblicità» / «Dopo: solo le app»).
+- Invito a scorrere (proprietario, 20/10): «SCORRI PER SCOPRIRE» centrato in basso (linea di base ~y 1282, così su Instagram sta sopra i pallini; ultimi ~60 px liberi), Inter Tight semibold 25 px maiuscolo, bianco con leggero bagliore, freccina sottile blu dopo il testo. Niente pallini (li mette Instagram). La freccia piena resta a destra, abbassata sulla stessa riga della scritta.
+- Alternative (stessa scritta): `copertina-a.png` (= slide 1), `copertina-c.png` (fotogramma di Ryan Doyle, senza didascalia), `copertina-d.png` (Mihir Gupta), `copertina-e.png` (titolo «La TV dei suoi mostrava pubblicità prima di Netflix. Non più.»), `copertina-f.png` (titolo «Pubblicità sulla tua smart TV? C'è chi la toglie con l'AI.»); confronto in `copertine-confronto.jpg`.
+- **Copertina video**: `copertina-video.mp4` (6 s) + `copertina-video-completo.mp4` (13 s) + `copertina-video.png`. Video vero di Ryan Doyle con il titolo f; ho scartato «Prima e dopo: la stessa TV» perché il video mostra solo il dopo, e di un'altra TV. Se la si usa, lo stesso video torna in slide 5 (pezzi diversi). Testo alternativo: «Copertina: «Pubblicità sulla tua smart TV? C'è chi la toglie con l'AI». Video vero: menu di una TV ripulita che scorre.»
+- `dumbtv.mp4` scartato come copertina: animazione grafica con scritte in inglese, non una ripresa vera.
 
 ## Dubbi rimasti
 - «Ha spento 25 app»: Gathin scrive "removed", ma il suo progetto spegne (`pm disable-user`), non cancella. Scelto "spento" per coerenza con la slide 7.

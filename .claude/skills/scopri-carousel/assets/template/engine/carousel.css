@@ -93,9 +93,16 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 .mode-dark .f-cue.filled,.mode-light .f-cue.filled{background:var(--accent-500)}
 .mode-dark .f-cue.filled svg,.mode-light .f-cue.filled svg{stroke:#fff}
 .mode-accent .f-cue.filled{background:#fff}
-/* Cover only: swipe invite bottom-left, optically centred on the 56 px filled arrow (centre y 1226). Words only, no dots:
-   Instagram already draws them (owner, 20 Oct 2026). Text from CAROUSEL.swipe (default «Scorri per scoprire»; false = none). */
-.f-swipe{position:absolute;left:96px;top:1213px;height:26px;font:500 23px/26px var(--font-meta);letter-spacing:.16em;text-transform:uppercase;color:var(--tp);opacity:.82;white-space:nowrap;z-index:9}
+/* Cover only: swipe invite centred at the bottom, baseline ≈ y 1282, so on Instagram it sits right above the carousel dots
+   (drawn by Instagram ~20–40 px from the bottom: the last ~60 px stay free). Words + thin blue arrow, no dots (owner, 20 Oct 2026).
+   Text from CAROUSEL.swipe (default «Scorri per scoprire»; false = none). */
+.f-swipe{position:absolute;left:50%;top:1258px;transform:translateX(-50%);height:30px;display:flex;align-items:center;gap:14px;white-space:nowrap;z-index:9;
+  font:600 25px/30px var(--font-primary);letter-spacing:.12em;text-transform:uppercase;color:var(--tp);text-shadow:0 0 14px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.45)}
+.f-swipe span{margin-right:-.12em}
+.f-swipe svg{width:34px;height:16px;flex:none;fill:none;stroke:var(--accent-300);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(var(--accent-rgb),.6))}
+/* on the cover the filled arrow drops onto the invite line (centre y 1273), so the two read as one row; the dots are centred, the arrow is at the right */
+.slide:has(.f-swipe) .f-cue{top:1245px}
+.mode-light .f-swipe{text-shadow:none}.mode-light .f-swipe svg{stroke:var(--accent-500);filter:none}.mode-accent .f-swipe svg{stroke:#fff}
 .mode-accent .f-cue.filled svg{stroke:var(--accent-700)}
 
 /* ===== Type (§5.2) ===== */
@@ -235,4 +242,4 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 html:has(body.overlay-pass),body.overlay-pass{background:transparent!important}
 body.overlay-pass .slide *{visibility:hidden!important}
 body.overlay-pass .slide .over-video,body.overlay-pass .slide .over-video *,
-body.overlay-pass .slide .f-logo,body.overlay-pass .slide .f-count,body.overlay-pass .slide .f-handle,body.overlay-pass .slide .f-cue,body.overlay-pass .slide .f-cue *,body.overlay-pass .slide .f-swipe{visibility:visible!important}
+body.overlay-pass .slide .f-logo,body.overlay-pass .slide .f-count,body.overlay-pass .slide .f-handle,body.overlay-pass .slide .f-cue,body.overlay-pass .slide .f-cue *,body.overlay-pass .slide .f-swipe,body.overlay-pass .slide .f-swipe *{visibility:visible!important}

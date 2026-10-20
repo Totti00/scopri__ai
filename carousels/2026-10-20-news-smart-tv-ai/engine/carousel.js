@@ -47,6 +47,8 @@
   /* The lid of the Coperchio logo, used as the "bell" of the follow line: the plain small lid, as slanted as in the logo,
      no vibration lines (owner, 20 Oct 2026: the ringing version with curved lines was removed) */
   const BELL = '<svg class="bell" viewBox="0 0 600 340" aria-hidden="true"><path d="M88 140C110 70 200 35 310 40C420 50 545 140 528 262Z"/><path d="M42 160L555 312" style="fill:none;stroke:currentColor;stroke-width:64;stroke-linecap:round"/><path d="M335 22L378 35" style="fill:none;stroke:currentColor;stroke-width:46;stroke-linecap:round"/></svg>';
+  /* thin brand-blue arrow after the cover's swipe invite (20 Oct 2026) */
+  const SWIPE_ARROW = '<svg viewBox="0 0 34 16" aria-hidden="true"><path d="M1 8H31M24 1.5L31 8L24 14.5"/></svg>';
   const FOLLOW = { notizia: 'Seguici per non perdere le prossime notizie', curiosita: 'Seguici per non perdere le prossime curiosità',
     prompt: 'Seguici per non perdere i prossimi prompt', lista: 'Seguici per non perdere i prossimi consigli', serie: 'Seguici per la prossima puntata' };
 
@@ -60,8 +62,8 @@
         (last ? '' : `<img class="f-logo" src="${C.logos[mode]}" alt="Scopri AI">`) +
         (last ? '' : `<div class="f-count"><b>${pad(n)}</b> / ${pad(N - 1)}</div>`) +
         (last ? '' : `<div class="f-cue${cover ? ' filled' : ''}">${ARROW}</div>`) +
-        // cover only: swipe invite bottom-left, aligned with the filled arrow; no dots (Instagram draws them) (owner, 20 Oct 2026)
-        (cover && C.swipe !== false ? `<div class="f-swipe">${C.swipe || 'Scorri per scoprire'}</div>` : ''));
+        // cover only: swipe invite centred at the bottom, right above Instagram's dots; no dots drawn (owner, 20 Oct 2026)
+        (cover && C.swipe !== false ? `<div class="f-swipe"><span>${C.swipe || 'Scorri per scoprire'}</span>${SWIPE_ARROW}</div>` : ''));
       sl.querySelectorAll('[data-logo]').forEach(el => { el.innerHTML = `<img src="${C.logos[mode]}" alt="Scopri AI">`; });
       // closing slide, second invite (20 Oct 2026): "🔔 Seguici per non perdere …" with the logo's lid as the bell
       sl.querySelectorAll('.follow').forEach(el => {
