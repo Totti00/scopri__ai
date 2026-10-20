@@ -48,7 +48,7 @@ Regole complete (contrasti, sfumature, grana, quanto accento per slide): `refere
 Si fanno con la skill `.claude/skills/scopri-carousel/` (design Electric Mono adattato a Scopri AI). In breve:
 - **Cornice fissa** su ogni slide: logo in alto a sinistra, contatore in alto a destra (la chiusura non conta e non ce l'ha), `@scopri__ai` in basso a sinistra, freccia in basso a destra (piena sulla copertina).
 - **Fondi che si alternano** scuro / chiaro / blu, con sfumature e grana; un **filo** blu che passa da una slide all'altra.
-- **Un protagonista per slide**: titolo grande, numero gigante sottile, oggetto 3D di vetro e cromo, scheda di interfaccia, oppure **video o foto veri** (in bianco e nero con il tono blu, dentro un riquadro).
+- **Un protagonista per slide**: titolo grande, numero gigante sottile, oggetto 3D di vetro e cromo, scheda di interfaccia, oppure **video o foto veri** (sempre a colori, dentro un riquadro — deciso il 20/10/2026).
 - **Prompt** dentro una scheda scura, con le parti da cambiare `[tra parentesi]` in azzurro.
 - **Chiusura**: logo grande al centro, frase legata al post, **un solo** bottone (di solito SALVA; per le notizie "Mandalo a…"). Il vecchio terminatore con il telefono è in `_vecchio/template/terminatori/`.
 - Niente fonti sulle slide (regola 2), niente mascotte, niente emoji sulle slide.

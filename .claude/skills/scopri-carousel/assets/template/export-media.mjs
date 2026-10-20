@@ -7,7 +7,7 @@
 // with class "over-video"), on a transparent background; 3) ffmpeg stacks: full slide → video (rounded corners,
 // optional mono tone) → top layer. No audio: the user adds music in Instagram.
 // Box attributes: data-video (path from this folder), data-start (s, default 0), data-dur (s, default 8),
-// data-fit="cover|contain" (default cover), data-pos (0–1 horizontal crop, default .5), data-tone="mono|color" (default mono),
+// data-fit="cover|contain" (default cover), data-pos (0–1 horizontal crop, default .5), data-tone="color|mono" (default color: real footage stays in colour, 20 Oct 2026),
 // data-poster (optional: second of the source used for the poster frame in slide-XX.png, default start + 1 s; 18 Oct 2026),
 // data-full (optional: another file for slide-XX-completo.mp4, e.g. a ≤ 60 s montage when the source is minutes long; default data-video).
 import puppeteer from 'puppeteer-core';
@@ -55,7 +55,7 @@ try {
     [...sl.querySelectorAll('.video-box[data-video]')].map((b, k) => {
       const r = b.getBoundingClientRect(), s = sl.getBoundingClientRect();
       return { slide: i, k, video: b.dataset.video, full: b.dataset.full || '', start: +(b.dataset.start || 0), dur: +(b.dataset.dur || 8),
-        posterAt: b.dataset.poster === undefined ? null : +b.dataset.poster, fit: b.dataset.fit || 'cover', pos: +(b.dataset.pos ?? .5), tone: b.dataset.tone || 'mono',
+        posterAt: b.dataset.poster === undefined ? null : +b.dataset.poster, fit: b.dataset.fit || 'cover', pos: +(b.dataset.pos ?? .5), tone: b.dataset.tone || 'color',
         x: Math.round(r.left - s.left), y: Math.round(r.top - s.top), w: Math.round(r.width), h: Math.round(r.height),
         radius: parseFloat(getComputedStyle(b).borderTopLeftRadius) || 0 };
     })));

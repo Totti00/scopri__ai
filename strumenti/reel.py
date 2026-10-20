@@ -25,7 +25,7 @@ Il JSON:
                              per i video verticali da mostrare interi)
 }
 In alto c'è solo il logo, con spazio prima del titolo: niente etichette come "NEWS LAMPO" (deciso il 16/10/2026).
-Il video è **sempre a colori** (deciso il 16/10/2026): niente bianco e nero col blu, quello resta per le slide.
+Il video è **sempre a colori** (deciso il 16/10/2026; dal 20/10/2026 anche nelle slide): niente bianco e nero col blu.
 Nel titolo *parola* = parola chiave, in blu. Il titolo dice la cosa sorprendente (cosa ha fatto l'AI), al massimo 22 parole,
 al massimo 4 righe. I testi stanno nella zona sicura (y 230–1440; sotto y 1000 anche a sinistra di x 850): se escono, si ferma.
 """

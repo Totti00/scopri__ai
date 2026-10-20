@@ -78,6 +78,7 @@ These differ from `design-system.md` §3. Each one is the user's correction from
 - **Primary family for AI and prompt topics: C (interface fragments).** These are dark UI cards, chat-composer cards, redacted documents and contract cards, built in HTML/CSS. They suit "how to use AI" content and need no image generation.
 - **Secondary family: A (Glass & Chrome 3D)**, for 1–2 hero objects per carousel: the cover and/or a peak slide. Render them with the in-house three.js renderer (`assets/3d/`, see `imagery.md`). The user chose this after Replicate failed: "genera tu le immagini, lascio stare replicate". Use Replicate only when a valid token is configured and the subject really needs a generative model, such as Family B photographic cutouts.
 - **Material look that worked:** polished chrome lit by a bright gradient studio dome, so it reads as silver, not black. Clear glass with a faint `#8595FF` tint. Accent details in electric-blue glass or blue "sand". Key light from the top-left.
+- **Real photos and videos are always in full colour** (owner, 20 Oct 2026): `data-tone="color"` on every `video-box`, no black-and-white or blue duotone on real footage, posters and covers included. This overrides the "no full-color photography" rule of `design-system.md`.
 - Prompt slides get **no** imagery. The prompt card is the hero, and anything else costs legibility.
 
 ## 7. Per-carousel dials (defaults)

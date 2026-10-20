@@ -7,7 +7,7 @@ Non è più "ogni post ha il suo Reel": può esserci un carosello senza Reel, un
 Una sola schermata 1080×1920, niente scene e niente animazioni:
 - in alto **solo il logo** Scopri AI, con un po' di spazio prima del titolo: **niente etichette** come "NEWS LAMPO" (deciso il 16/10/2026);
 - un **titolo** che dice la cosa sorprendente, in una o due frasi (al massimo 22 parole, 4 righe), con 1–2 parole chiave in blu (`*così*`). Dice **cosa ha fatto l'AI**, come le slide;
-- sotto, il **video vero**, **sempre a colori** (16/10/2026: il bianco e nero col blu resta solo per le slide), in un riquadro con gli angoli arrotondati; il blocco sta al centro dello schermo;
+- sotto, il **video vero**, **sempre a colori** (16/10/2026; dal 20/10/2026 a colori anche nelle slide), in un riquadro con gli angoli arrotondati; il blocco sta al centro dello schermo;
 - senza audio: la musica strumentale la mette il proprietario.
 
 Lo fa `strumenti/reel.py` (istruzioni in cima al file) dal file `reel.json`, nella cartella del post (`carousels/<slug>/`):

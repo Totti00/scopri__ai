@@ -33,7 +33,7 @@ This file is the only source of truth. Someone following it can build new carous
 2. **One hero per slide.** Each slide has exactly one dominant element: an oversized headline, a giant ultra-thin numeral, or one isolated object. Everything else is clearly secondary.
 3. **Extreme scale contrast.** Huge type and objects sit next to small, quiet body text and tiny meta text. The gap between levels is dramatic, not gradual.
 4. **Air.** At least 35% of every slide is empty. Emptiness is a design element.
-5. **Sculptural, desaturated imagery.** Imagery is glass and chrome 3D objects, grayscale cutouts or dark interface cards. All of it is monochrome or tinted with the accent. There are no full-color photos.
+5. **Sculptural, desaturated imagery.** Imagery is glass and chrome 3D objects, grayscale cutouts or dark interface cards. All of it is monochrome or tinted with the accent. There are no full-color photos. *(Scopri AI override, 20 Oct 2026: real photos and videos are always shown in full colour — see `brand-scopri-ai.md`.)*
 6. **Atmosphere, never flat.** Every background has a subtle tonal gradient, ambient light, an accent glow behind the hero, and fine film grain.
 7. **Alternating rhythm.** Dark, light and accent slides alternate, so the carousel pulses as you swipe.
 8. **A fixed frame.** Logo, progress counter, handle and swipe cue sit in exactly the same place on every slide.
@@ -326,7 +326,7 @@ A full-canvas monochrome noise overlay on every slide (see section 4.3 for opaci
 ## 7. Imagery
 
 ### 7.1 Universal image rules
-- **No full-color photography.** All imagery is **grayscale**, **accent-duotone**, or **neutral plus accent** (3D renders). The accent is the only chroma allowed.
+- **No full-color photography** *(not for Scopri AI: real photos and videos stay in full colour, owner decision 20 Oct 2026)*. All imagery is **grayscale**, **accent-duotone**, or **neutral plus accent** (3D renders). The accent is the only chroma allowed.
 - **Isolated subjects.** Objects are cut out or rendered on nothing, and float in space. No busy scenes.
 - **One hero image per slide**, at most two small supporting elements.
 - **Symbolic, slightly surreal subjects** work best: abstract forms (spheres, rings, ribbons, cubes, arrows, waves), hands (human or robotic), classical busts, vintage or modern hardware, everyday objects reimagined in glass or chrome. Avoid literal stock clichés (handshakes, people pointing at screens).
