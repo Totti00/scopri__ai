@@ -2,7 +2,7 @@
 Input:  <carousel-dir>/publish.json  {"caption": "...", "alt": ["slide 1", ...], "pinned": ["comment 1", ...],
                                      "tipo": "notizia|curiosita|prompt|lista|serie", "parole": ["gemini", "google"]}
         (tipo: optional, default from the folder name; parole: what people search, checked in the first 125 characters)
-Output: <carousel-dir>/pubblicazione/01-caption.txt, 02-alt-text-slide-XX.txt, 03-commento-fissato-N.txt
+Output: <carousel-dir>/pubblicazione/01-caption.txt, 02-testi-alternativi.txt (all slides in one file, numbered), 03-commento-fissato-N.txt
 The caption (and caption-reel.txt, when present) goes through caption_check.py, the Scopri AI caption rules:
 an error there stops the pack. Ends with the "CAPTION PRONTA" receipt(s) for the final message.
 Usage:  python publish-pack.py <carousel-dir>"""
@@ -57,7 +57,9 @@ out.mkdir(exist_ok=True)
 for old in out.glob('*.txt'):
     old.unlink()
 files = {'01-caption.txt': caption}
-files.update({f'02-alt-text-slide-{i:02d}.txt': a for i, a in enumerate(alts, 1)})
+# one file with every alt text, labelled by slide number (owner, 20 Oct 2026)
+if alts:
+    files['02-testi-alternativi.txt'] = '\n\n'.join(f'Slide {i}\n{a}' for i, a in enumerate(alts, 1))
 files.update({f'03-commento-fissato-{i}.txt': p for i, p in enumerate(pinned, 1)})
 for name, text in files.items():
     (out / name).write_text(text + '\n', encoding='utf-8', newline='\n')

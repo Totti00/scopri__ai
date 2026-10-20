@@ -29,7 +29,7 @@ Then, from the carousel folder:
 npm run publish
 ```
 
-This writes `pubblicazione/01-caption.txt`, `02-alt-text-slide-XX.txt` (one per slide) and `03-commento-fissato-N.txt`, each holding only the text to paste. It also checks:
+This writes `pubblicazione/01-caption.txt`, `02-testi-alternativi.txt` (one file with every alt text, each under a "Slide N" line; owner, 20 Oct 2026) and `03-commento-fissato-N.txt`, each holding only the text to paste. It also checks:
 - the caption and each comment are ≤ 2,200 characters;
 - there is one alt text per exported slide;
 - there are ≤ 3 pinned comments;

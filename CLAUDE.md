@@ -75,7 +75,7 @@ Il lavoro è diviso in fasi, ognuna con il suo agente in `.claude/agents/` (deci
 Dal 16/10/2026 una cartella `carousels/AAAA-MM-GG-rubrica-argomento/` (fatta dalla skill; i post di prima restano in `archivio/`, e per la regola 6 si guardano tutte e due) con:
 - `exports/slide-01` … `slide-NN`: PNG oppure MP4 senza audio (1080×1350, formato 4:5), più `contact-sheet.jpg` e le copertine alternative
 - per le slide video anche `exports/slide-NN-completo.mp4`, con il video intero: il proprietario sceglie da solo inizio e fine (vedi `strumenti/montaggio.md`)
-- `pubblicazione/`: caption, un testo alternativo per slide, commenti fissati (file `.txt` pronti da incollare, fatti da `npm run publish`)
+- `pubblicazione/`: caption, **un solo file** `02-testi-alternativi.txt` con tutti i testi alternativi, ognuno sotto "Slide N" (deciso il 20/10/2026), commenti fissati (file `.txt` pronti da incollare, fatti da `npm run publish`)
 - `copy.md` (i testi approvati) e `publish.json`
 - **solo se c'è un video vero che è una bomba**: `reel.json`, `reel.mp4`, `reel-completo.mp4`, `reel-copertina.jpg` e `caption-reel.txt` — il Reel semplice, un titolo e sotto il video (deciso il 16/10/2026, vedi `format/5-reel.md`)
 - `fonti.md` — link alle fonti usate e data di consultazione

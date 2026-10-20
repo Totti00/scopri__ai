@@ -57,7 +57,7 @@ This file records what happened between the original brief and the approved caro
 |---|---|
 | The user asked "caption? e testo alternativo?" after the build. | Always deliver caption **and** alt text with the finished carousel, without being asked. |
 | The user asked "niente emoji nella caption?" | Captions use emoji, about one per block or line start (👇 🧠 📌 💬 🔒 ✍️ 📅 ⚠️ 🔖 style). Prompts in pinned comments stay emoji-free, because people paste them into an AI. |
-| The user asked for the texts as separate `.txt` files. | Write a `pubblicazione/` folder: `01-caption.txt`, `02-alt-text-slide-XX.txt` (one per slide), `03-commento-fissato-N.txt`. Each file holds only the text to paste. `scripts/publish-pack.py` does this and checks the limits. |
+| The user asked for the texts as separate `.txt` files. | Write a `pubblicazione/` folder: `01-caption.txt`, `02-testi-alternativi.txt` (all alt texts in one file, each under "Slide N"; owner, 20 Oct 2026, replacing one file per slide), `03-commento-fissato-N.txt`. Each file holds only the text to paste. `scripts/publish-pack.py` does this and checks the limits. |
 | Five 100-word prompts (about 2,870 characters) don't fit in a caption (2,200 limit). | Put the full prompts in pinned comments, each ≤ 2,200 characters (Instagram pins up to 3). The caption points to them ("Copiali dai commenti fissati qui sotto…") and mentions screenshot text-copy as a fallback. |
 
 ## 4. Recurring mistakes and their fixes
