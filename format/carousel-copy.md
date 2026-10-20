@@ -4,7 +4,7 @@ La guida qui sotto resta **in inglese, com'è nell'originale** (mandata dal prop
 
 ## Come la usiamo a Scopri AI (questa parte vale prima della guida)
 - **I post si scrivono sempre in italiano.** Gli esempi della guida sono in inglese: si prende il meccanismo, poi si scrive in italiano, con le regole di "Come si scrive" di `CLAUDE.md` (si dà del tu, parole semplici, frasi corte).
-- **Le regole di Scopri AI vengono prima** (come dice la guida stessa: "the brand file wins"): `CLAUDE.md` (2 fonti, foto e video veri, niente esagerazioni, "cosa ha fatto l'AI" più il commento di 2–3 parole), `brand/identita.md`, `brand/crescita.md`.
+- **Le regole di Scopri AI vengono prima** (come dice la guida stessa: "the brand file wins"): `CLAUDE.md` (2 fonti, foto e video veri, niente esagerazioni, "cosa ha fatto l'AI", niente scritte sotto le immagini tranne Prima/Dopo), `brand/identita.md`, `brand/crescita.md`.
 - **Decisioni del proprietario (16/10/2026):**
   - **il meglio all'inizio** (§5.3): la cosa più forte nella slide 2 o 3; in fondo vanno riepilogo e invito;
   - **contatore "3/7"** (§5.4) in alto a destra su tutte le slide tranne la copertina: `carosello.py` lo mette da solo (stili A e B), negli altri template lo aggiunge il `costruttore-post`;
