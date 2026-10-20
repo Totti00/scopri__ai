@@ -61,7 +61,8 @@
         `<svg class="layer grain" viewBox="0 0 1080 1350"><rect width="1080" height="1350" filter="url(#grain)"/></svg>` +
         (last ? '' : `<img class="f-logo" src="${C.logos[mode]}" alt="Scopri AI">`) +
         (last ? '' : `<div class="f-count"><b>${pad(n)}</b> / ${pad(N - 1)}</div>`) +
-        (last ? '' : `<div class="f-cue${cover ? ' filled' : ''}">${ARROW}</div>`) +
+        // the cover has no filled arrow: its swipe invite «SCORRI PER SCOPRIRE →» replaces it (owner, 20 Oct 2026)
+        (last || (cover && C.swipe !== false) ? '' : `<div class="f-cue${cover ? ' filled' : ''}">${ARROW}</div>`) +
         // cover only: swipe invite centred at the bottom, right above Instagram's dots; no dots drawn (owner, 20 Oct 2026)
         (cover && C.swipe !== false ? `<div class="f-swipe"><span>${C.swipe || 'Scorri per scoprire'}</span>${SWIPE_ARROW}</div>` : ''));
       sl.querySelectorAll('[data-logo]').forEach(el => { el.innerHTML = `<img src="${C.logos[mode]}" alt="Scopri AI">`; });
