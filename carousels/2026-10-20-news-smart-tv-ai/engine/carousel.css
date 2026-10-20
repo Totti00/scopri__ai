@@ -83,7 +83,7 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 
 /* ===== Frame (§3 + brand overrides): logo lockup, counter, handle, swipe cue ===== */
 .f-logo{position:absolute;left:96px;top:96px;height:40px;width:auto;z-index:9;display:block}
-.f-count{position:absolute;right:96px;top:106px;height:20px;font:500 20px/20px var(--font-meta);letter-spacing:.08em;margin-right:-.08em;color:var(--meta);white-space:nowrap;z-index:9}
+.f-count{display:none!important;position:absolute;right:96px;top:106px;height:20px;font:500 20px/20px var(--font-meta);letter-spacing:.08em;margin-right:-.08em;color:var(--meta);white-space:nowrap;z-index:9}
 .f-count b{font-weight:500;color:var(--tp)}
 .f-handle{display:none}   /* the handle is no longer printed (owner, 20 Oct 2026) */
 .f-cue{position:absolute;left:928px;top:1198px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;z-index:9}

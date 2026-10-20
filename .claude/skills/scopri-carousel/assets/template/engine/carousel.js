@@ -58,7 +58,7 @@
       sl.insertAdjacentHTML('beforeend',
         `<svg class="layer grain" viewBox="0 0 1080 1350"><rect width="1080" height="1350" filter="url(#grain)"/></svg>` +
         (last ? '' : `<img class="f-logo" src="${C.logos[mode]}" alt="Scopri AI">`) +
-        (last ? '' : `<div class="f-count"><b>${pad(n)}</b> / ${pad(N - 1)}</div>`) +
+        // no slide counter on any slide (owner, 20 Oct 2026)
         // the cover has no filled arrow: its swipe invite «SCORRI PER SCOPRIRE» replaces it (owner, 20 Oct 2026)
         (last || (cover && C.swipe !== false) ? '' : `<div class="f-cue${cover ? ' filled' : ''}">${ARROW}</div>`) +
         // cover only: swipe invite «SCORRI PER SCOPRIRE» (words only) centred on x 540 above Instagram's dots (owner, 20 Oct 2026)
