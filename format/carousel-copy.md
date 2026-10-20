@@ -8,7 +8,7 @@ La guida qui sotto resta **in inglese, com'è nell'originale** (mandata dal prop
 - **Decisioni del proprietario (16/10/2026):**
   - **il meglio all'inizio** (§5.3): la cosa più forte nella slide 2 o 3; in fondo vanno riepilogo e invito;
   - **contatore "3/7"** (§5.4) in alto a destra su tutte le slide tranne la copertina: `carosello.py` lo mette da solo (stili A e B), negli altri template lo aggiunge il `costruttore-post`;
-  - **un solo invito per post** (§8), scelto per tipo, nella chiusura e uguale in caption (più una domanda per i commenti):
+  - **un solo invito principale per post** (§8), scelto per tipo, nella chiusura e uguale in caption (più una domanda per i commenti); **in più, sempre** (20/10/2026), la riga "🔔 Seguici per non perdere le prossime notizie" sotto l'invito nella chiusura e in caption:
 
     | Post | Invito | Nel JSON della chiusura |
     |---|---|---|

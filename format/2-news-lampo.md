@@ -21,11 +21,11 @@ Regole:
 - la domenica sera e il lunedì mattina meglio di no: ci sono le rubriche fisse.
 
 ## Struttura delle slide
-1. **Copertina** (fondo blu) — titolo-gancio di una riga e mezza, con la parola chiave in giallo. Scritta piccola in alto: `NEWS LAMPO`. Sopra, la foto o il video veri della notizia.
+1. **Copertina** (fondo blu) — titolo-gancio di una riga e mezza, con la parola chiave in giallo. Niente scritta `NEWS LAMPO` (tolta il 20/10/2026). Sopra, la foto o il video veri della notizia.
 2. **Cos'è successo** (fondo carta) — 2–4 righe semplici + foto, video o screenshot veri.
 3. **Cosa cambia per te** (fondo carta) — 2–3 punti concreti.
 4. *(facoltativa)* **Come provarlo** — 3 passaggi, se si può già usare.
-5. **Chiusura** (fondo blu) — domanda per i commenti + "Segui @scopri__ai".
+5. **Chiusura** (fondo blu) — domanda per i commenti + "🔔 Seguici per non perdere …" (riga con la campanella, 20/10/2026).
 
 ## Caption
 Regole in `brand/crescita.md` e `format/carousel-copy.md` §8–9: gancio e parole chiave nei primi ~125 caratteri, la caption aggiunge e non ripete le slide, un solo invito (lo stesso della chiusura), massimo 5 hashtag.

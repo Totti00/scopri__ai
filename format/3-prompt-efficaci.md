@@ -12,7 +12,7 @@ Un bisogno concreto della vita di tutti i giorni o del lavoro: scrivere una mail
    - il prompt completo in carattere monospazio, con le parti da personalizzare tra parentesi quadre: `[IL TUO BUDGET]`, `[LA CITTÀ]`;
    - una riga "Funziona con: ChatGPT, Claude, Gemini".
    - Niente timbri e niente fonte su queste slide.
-7. **Chiusura** (fondo blu) — "Salva il post: ti servirà" + "Segui @scopri__ai".
+7. **Chiusura** (fondo blu) — "Salva il post: ti servirà" + "🔔 Seguici per non perdere …" (riga con la campanella, 20/10/2026).
 
 ## Controllo interno (non si vede)
 Prima di consegnare, Claude esegue ogni prompt che produce testo e annota in `note.md` cosa è uscito. Se un prompt dà risultati deboli, lo riscrive o lo sostituisce.

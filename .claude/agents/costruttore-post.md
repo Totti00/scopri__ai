@@ -16,7 +16,7 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e lo **slug** del post: `AAA
   3. **oggetti 3D di vetro e cromo** creati da noi con `node .claude/skills/scopri-carousel/assets/3d/render-assets.mjs <oggetto>` (1–2 per carosello; controllali con `scripts/asset-check.py`); in `assets/generated/` ci sono già lente e clessidra;
   4. **meme con persone vere**: solo partendo da una **foto vera** (sala stampa, Wikimedia), con scritta "Fotomontaggio" sulla slide; mai frasi messe in bocca a qualcuno.
   Mai Replicate o altri generatori esterni, salvo richiesta esplicita del proprietario.
-- **Logo, colori, cornice e chiusura**: quelli della skill (`references/brand-scopri-ai.md`): logo a campana, blu `#2340FF`, **niente giallo**, contatore che non conta la chiusura, chiusura con logo grande e **un solo invito** (notizie → "Mandalo a…", prompt e liste → "Salva").
+- **Logo, colori, cornice e chiusura**: quelli della skill (`references/brand-scopri-ai.md`): logo a campana, blu `#2340FF`, **niente giallo**, contatore che non conta la chiusura, chiusura con logo grande, **un solo invito principale** (notizie → "Mandalo a…", prompt e liste → "Salva") con un pulsante chiaro, e sotto la riga **"🔔 Seguici per non perdere le prossime notizie"** (anche in caption). **Niente "NEWS LAMPO" o altre etichette di rubrica sulla copertina, niente `@scopri__ai` in basso a sinistra** (20/10/2026).
 
 ## Modo "bozza" (dopo la prima fermata)
 1. Scaffold: `node .claude/skills/scopri-carousel/scripts/new-carousel.mjs <slug> --title "…" --format static`.

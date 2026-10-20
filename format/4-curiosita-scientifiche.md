@@ -15,7 +15,7 @@ Non scade: si può preparare in anticipo e fa da **rubrica di riserva** quando n
 1. **Copertina** (fondo blu) — domanda-gancio con la parola chiave in giallo.
 2–4. **Spiegazione a passi** (fondo carta) — un'idea per slide, con un esempio della vita quotidiana.
 5. **"Quindi…"** — cosa ci si porta a casa, in una frase.
-6. **Chiusura** (fondo blu) — domanda per i commenti + "Segui @scopri__ai".
+6. **Chiusura** (fondo blu) — domanda per i commenti + "🔔 Seguici per non perdere …" (riga con la campanella, 20/10/2026).
 
 **Fonte obbligatoria** in fondo alla caption, non sulle slide (Nature, Science, MIT Technology Review, siti di università e centri di ricerca, Treccani per le definizioni).
 
