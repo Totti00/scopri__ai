@@ -22,8 +22,18 @@ const tpl = path.join(skill, 'assets', 'template');
 await mkdir(dest, { recursive: true });
 await cp(path.join(tpl, 'engine'), path.join(dest, 'engine'), { recursive: true });
 for (const f of ['export.mjs', 'export-video.mjs', 'export-media.mjs']) await copyFile(path.join(tpl, f), path.join(dest, f));
-const html = (await readFile(path.join(tpl, 'index.html'), 'utf8'))
-  .replaceAll('__TITLE__', title || slug.replace(/-/g, ' ')).replaceAll('__FORMAT__', format);
+// Post type from the slug (same rule as caption_check.py): it sets the closing button and the 🔔 follow line (20 Oct 2026)
+const tipo = [['-curiosita-', 'curiosita'], ['-prompt-', 'prompt'], ['-lista-', 'lista'], ['-serie-', 'serie']]
+  .find(([k]) => `-${slug}-`.includes(k))?.[1] || 'notizia';
+let html = (await readFile(path.join(tpl, 'index.html'), 'utf8'))
+  .replaceAll('__TITLE__', title || slug.replace(/-/g, ' ')).replaceAll('__FORMAT__', format)
+  .replace("tipo: 'prompt',", `tipo: '${tipo}',`);
+if (tipo === 'notizia' || tipo === 'curiosita') html = html
+  .replace('<path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Salvalo per dopo', '<path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>Mandalo a un amico')
+  .replace('Salvalo per<br><span class="em">il prossimo post</span>', 'Mandalo a<br><span class="em">chi [persona precisa]</span>');
+if (tipo === 'serie') html = html
+  .replace('<p class="follow qa-text" data-lines="1"></p>', '')
+  .replace('<path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Salvalo per dopo', '<path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>Segui Scopri AI');
 await writeFile(path.join(dest, 'index.html'), html);
 
 // Brand logo kit: the project copy is the source of truth, the skill copy is the fallback

@@ -9,6 +9,8 @@ publish-pack.py lo importa: check(...) → dict, render(dict) → testo, ricevut
 Tipi:  notizia e curiosita → servono "Fonti: …" e l'invito 📩 Mandalo a …
        prompt e lista      → niente fonti, invito 📌 Salvalo …
        serie               → invito 🔔 Seguici
+Riga 🔔 Seguici (20/10/2026): in tutti gli altri tipi, oltre all'unico invito, serve anche una riga che inizia con 🔔
+       ("🔔 Seguici per non perdere le prossime notizie."), prima di "Fonti: …" e degli hashtag. Non conta come secondo invito.
 Formati: carosello (la caption aggiunge alle slide) · reel (corta: 2–4 righe, chi la legge non ha visto slide)."""
 import argparse
 import json
@@ -34,8 +36,12 @@ CONCRETE_RE = re.compile(r'\d|(?<=[a-zàèéìòù,:] )[A-Z][\w-]+|\b(?:ChatGPT|
 INVITI = {
     'manda': re.compile(r'\b(?:mandal[oa]|invial[oa]|condividil[oa]|giral[oa])\b(?:\s+\w+){0,2}\s+(?:a|al|alla|allo|ai|agli|alle)\b', re.I),
     'salva': re.compile(r'\bsalval[oa]\b|\bsalva\s+(?:il\s+)?(?:post|carosello|lista|prompt)\b', re.I),
-    'segui': re.compile(r'\bseguici\b|\bsegui\s+(?:la\s+pagina|@scopri__ai)\b', re.I),
+    'segui': re.compile(r'\bseguici\b|\bsegui\s+(?:la\s+pagina|@scopri__ai|scopri\s+ai)\b', re.I),
 }
+# riga "🔔 Seguici per non perdere …" (20/10/2026): richiesta in aggiunta all'invito principale, tranne nelle serie
+FOLLOW_RE = re.compile(r'^[ \t]*🔔[^\n]*?\b(?:seguici|segui\s+scopri\s+ai)\b[^\n]*$', re.I | re.M)
+FOLLOW_TESTO = {'notizia': 'le prossime notizie', 'curiosita': 'le prossime curiosità', 'prompt': 'i prossimi prompt',
+                'lista': 'i prossimi consigli'}
 INVITO_GIUSTO = {'notizia': 'manda', 'curiosita': 'manda', 'prompt': 'salva', 'lista': 'salva', 'serie': 'segui'}
 NOME_INVITO = {'manda': '📩 Mandalo a …', 'salva': '📌 Salvalo …', 'segui': '🔔 Seguici'}
 
@@ -160,8 +166,10 @@ def check(text, tipo='notizia', formato='carosello', parole=()):
     elif fonti:
         add('FONTI', 'avviso', 'I post di prompt non hanno fonte (regola 2): togli "Fonti: …".')
 
-    # 8. un solo invito
-    trovati = {k: len(r.findall(text)) for k, r in INVITI.items()}
+    # 8. un solo invito (la riga 🔔 Seguici non conta, tranne nelle serie dove è l'invito)
+    follow = FOLLOW_RE.findall(text)
+    testo_inviti = text if tipo == 'serie' else FOLLOW_RE.sub('', text)
+    trovati = {k: len(r.findall(testo_inviti)) for k, r in INVITI.items()}
     tipi = [k for k, v in trovati.items() if v]
     giusto = INVITO_GIUSTO.get(tipo)
     if len(tipi) > 1:
@@ -174,6 +182,18 @@ def check(text, tipo='notizia', formato='carosello', parole=()):
         add('UN SOLO INVITO', 'avviso', f'{NOME_INVITO[tipi[0]]} compare {trovati[tipi[0]]} volte: basta una.')
     else:
         add('UN SOLO INVITO', 'ok', NOME_INVITO[tipi[0]] + '.')
+
+    # 8b. riga 🔔 Seguici, in aggiunta all'invito (20/10/2026)
+    if tipo != 'serie':
+        atteso = f'🔔 Seguici per non perdere {FOLLOW_TESTO.get(tipo, "i prossimi post")}.'
+        if not follow:
+            add('SEGUICI', 'avviso', f'Manca la riga "{atteso}" (prima di Fonti e hashtag).')
+        elif len(follow) > 1:
+            add('SEGUICI', 'avviso', f'La riga 🔔 Seguici compare {len(follow)} volte: basta una.')
+        elif fonti and text.find(follow[0]) > fonti[-1].start():
+            add('SEGUICI', 'avviso', 'La riga 🔔 Seguici va prima di "Fonti: …".')
+        else:
+            add('SEGUICI', 'ok', follow[0].strip()[:70])
 
     # 9. esche
     esche = sorted({nome for r, nome in ESCHE if r.search(text)})
@@ -218,7 +238,7 @@ def check(text, tipo='notizia', formato='carosello', parole=()):
     verdetto = 'DA SISTEMARE' if errori else 'DA RICONTROLLARE' if avvisi else 'PRONTA'
     return {'verdetto': verdetto, 'tipo': tipo, 'formato': formato, 'caratteri': n, 'hashtag': len(tags),
             'invito': NOME_INVITO[tipi[0]] if len(tipi) == 1 else None, 'domanda': bool(domande),
-            'fonti': bool(fonti), 'visibile': window, 'tagliata': cut, 'controlli': res}
+            'fonti': bool(fonti), 'seguici': bool(follow) if tipo != 'serie' else None, 'visibile': window, 'tagliata': cut, 'controlli': res}
 
 
 def box(window, cut):
@@ -243,7 +263,8 @@ def ricevuta(r):
     icona = {'PRONTA': '✅', 'DA RICONTROLLARE': '⚠️', 'DA SISTEMARE': '❌'}[r['verdetto']]
     return (f"{icona} CAPTION {r['verdetto']} · {r['formato']} · {r['tipo']} — {r['caratteri']}/{LIMIT} caratteri · "
             f"{r['hashtag']} hashtag · invito: {r['invito'] or 'nessuno'} · domanda: {'sì' if r['domanda'] else 'no'}"
-            + (f" · fonti: {'sì' if r['fonti'] else 'no'}" if r['tipo'] in ('notizia', 'curiosita') else ''))
+            + (f" · fonti: {'sì' if r['fonti'] else 'no'}" if r['tipo'] in ('notizia', 'curiosita') else '')
+            + (f" · seguici: {'sì' if r.get('seguici') else 'no'}" if r.get('seguici') is not None else ''))
 
 
 def render(r):

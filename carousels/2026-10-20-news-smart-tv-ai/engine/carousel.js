@@ -1,15 +1,17 @@
 /* Scopri AI carousel engine. Reads window.CAROUSEL (set in index.html before this script) and builds:
-   frame (logo lockup, counter, handle, swipe cue), grain, glows, magnifier zooms, the thread line,
+   frame (logo lockup, counter, swipe cue; no handle since 20 Oct 2026), grain, glows, magnifier zooms, the thread line,
    optional motion, QA, dev controls. URL modes: ?export=1 (static PNG capture), ?export=1&video=1 (MP4 frames). */
 (() => {
   const C = Object.assign({
-    handle: '@scopri__ai',
+    handle: '@scopri__ai',            // kept for reference only: the frame no longer prints it (owner, 20 Oct 2026)
+    tipo: 'notizia',                  // 'notizia' | 'curiosita' | 'prompt' | 'lista' | 'serie': picks the 🔔 follow line on the closing slide
     format: 'static',                 // 'static' | 'animated'
     logos: { dark: 'brand/scopri-ai-logo-negativo.png', light: 'brand/scopri-ai-logo-colore.png', accent: 'brand/scopri-ai-logo-bianco.png' },
     seams: [],                        // seams[k] = y where the thread crosses the seam between slide k+1 and k+2
     routes: [],                       // per slide: 'start' | 'straight' | 'rightUp' | 'leftDown' | 'end' | 'none' | { d, nodes }
     threadStart: 600,                 // x of the start node on the cover
     threadEnd: '.apill',              // element on the last slide the thread ends next to
+    threadEndX: 120,                  // x of the vertical run on the closing slide (left of the centred follow line)
     slideDuration: 5000,              // ms per slide in animated carousels (override per slide with data-duration)
   }, window.CAROUSEL || {});
 
@@ -42,6 +44,11 @@
     return bottoms.reduce((n, b, i) => n + (i === 0 || b - bottoms[i - 1] > 12 ? 1 : 0), 0);
   }
 
+  /* The lid of the Coperchio logo, used as the "bell" of the follow line */
+  const BELL = '<svg class="bell" viewBox="0 0 600 340" aria-hidden="true"><path d="M88 140C110 70 200 35 310 40C420 50 545 140 528 262Z"/><path d="M42 160L555 312" style="fill:none;stroke:currentColor;stroke-width:64;stroke-linecap:round"/><path d="M335 22L378 35" style="fill:none;stroke:currentColor;stroke-width:46;stroke-linecap:round"/></svg>';
+  const FOLLOW = { notizia: 'Seguici per non perdere le prossime notizie', curiosita: 'Seguici per non perdere le prossime curiosità',
+    prompt: 'Seguici per non perdere i prossimi prompt', lista: 'Seguici per non perdere i prossimi consigli', serie: 'Seguici per la prossima puntata' };
+
   /* Frame (brand overrides): full logo lockup top-left, no logo/counter/cue on the closing slide,
      counter counts content slides only (N − 1). */
   function buildFrame() {
@@ -51,9 +58,13 @@
         `<svg class="layer grain" viewBox="0 0 1080 1350"><rect width="1080" height="1350" filter="url(#grain)"/></svg>` +
         (last ? '' : `<img class="f-logo" src="${C.logos[mode]}" alt="Scopri AI">`) +
         (last ? '' : `<div class="f-count"><b>${pad(n)}</b> / ${pad(N - 1)}</div>`) +
-        `<div class="f-handle">${C.handle}</div>` +
         (last ? '' : `<div class="f-cue${cover ? ' filled' : ''}">${ARROW}</div>`));
       sl.querySelectorAll('[data-logo]').forEach(el => { el.innerHTML = `<img src="${C.logos[mode]}" alt="Scopri AI">`; });
+      // closing slide, second invite (20 Oct 2026): "🔔 Seguici per non perdere …" with the logo's lid as the bell
+      sl.querySelectorAll('.follow').forEach(el => {
+        if (!el.textContent.trim()) el.textContent = FOLLOW[C.tipo] || FOLLOW.notizia;
+        el.insertAdjacentHTML('afterbegin', BELL);
+      });
     });
   }
 
@@ -100,8 +111,8 @@
       case 'rightUp': case 'rightDown': { const x = 1032, s = yout < yin ? -1 : 1; return { d: `M0 ${yin} H${x - r} Q${x} ${yin} ${x} ${yin + s * r} V${yout - s * r} Q${x} ${yout} ${x + r} ${yout} H1080`, nodes: [] }; }
       case 'leftDown': case 'leftUp': { const x = 48, s = yout < yin ? -1 : 1; return { d: `M0 ${yin} H${x - r} Q${x} ${yin} ${x} ${yin + s * r} V${yout - s * r} Q${x} ${yout} ${x + r} ${yout} H1080`, nodes: [] }; }
       case 'end': {
-        const el = sl.querySelector(C.threadEnd); if (!el) return { d: `M0 ${yin} H200`, nodes: [] };
-        const p = rel(el, sl), ex = Math.round(p.l - 30), ey = Math.round(p.cy), x = 200, s = ey < yin ? -1 : 1;
+        const el = sl.querySelector(C.threadEnd); if (!el) return { d: `M0 ${yin} H${C.threadEndX}`, nodes: [] };
+        const p = rel(el, sl), ex = Math.round(p.l - 30), ey = Math.round(p.cy), x = C.threadEndX, s = ey < yin ? -1 : 1;
         return { d: `M0 ${yin} H${x - r} Q${x} ${yin} ${x} ${yin + s * r} V${ey - s * r} Q${x} ${ey} ${x + r} ${ey} H${ex}`, nodes: [[ex, ey]] };
       }
     }

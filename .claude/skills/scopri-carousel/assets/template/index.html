@@ -59,8 +59,8 @@
     <i class="sq" style="left:230px;top:10px;width:250px;height:250px"></i>
     <i style="left:300px;top:290px;width:150px;height:150px"></i>
   </div>
-  <div class="pill qa-text">Esempio · layout T1</div>
-  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="3"><span class="em">Hook in</span><br>sei parole<br>al massimo</h2>
+  <!-- No pill on the cover: never a rubric label ("News lampo" …) on slide 1 (owner, 20 Oct 2026). Headline starts at y 192. -->
+  <h2 class="txt display qa-text" style="left:96px;top:200px;width:888px" data-lines="3"><span class="em">Hook in</span><br>sei parole<br>al massimo</h2>
   <p class="txt lead qa-text" style="left:96px;top:1020px;width:356px" data-lines="2">Sotto-titolo breve, otto parole massimo.</p>
 </section></div>
 
@@ -182,17 +182,20 @@
   <p class="txt body qa-text" style="left:704px;top:986px;width:280px" data-lines="2">Il riepilogo è la slide da salvare.</p>
 </section></div>
 
-<!-- ============ T10 · CLOSING · DARK (no corner logo, no counter, no swipe cue) ============ -->
+<!-- ============ T10 · CLOSING · DARK (no corner logo, no counter, no swipe cue, no handle) ============
+     Hierarchy (owner, 20 Oct 2026): big headline with the ONE main invite → filled button → smaller 🔔 follow line.
+     Button by type: notizia/curiosita → paper plane + "Mandalo a un amico"; prompt/lista → bookmark + "Salvalo per dopo";
+     serie → no .follow (the follow is the main invite). The .follow text comes from CAROUSEL.tipo (engine), or write your own. -->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
-  <div class="layer rings" style="--rx:540px;--ry:380px"></div>
-  <div class="glow" style="left:540px;top:380px"></div>
+  <div class="layer rings" style="--rx:540px;--ry:300px"></div>
+  <div class="glow" style="left:540px;top:290px"></div>
   <div class="logo-full qa-text" data-logo></div>
   <div class="cstack">
-    <h2 class="h1 qa-text" style="max-width:736px" data-lines="2">Salvalo per<br><span class="em">il prossimo post</span></h2>
-    <p class="lead qa-text" style="max-width:584px" data-lines="2">Un carosello, una sola azione. Ricordala anche nella caption.</p>
+    <h2 class="h1 qa-text" style="max-width:880px" data-lines="2">Salvalo per<br><span class="em">il prossimo post</span></h2>
+    <div class="actions"><span class="apill qa-text"><svg viewBox="0 0 24 24"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Salvalo per dopo</span></div>
+    <p class="follow qa-text" data-lines="1"></p>
   </div>
-  <div class="actions"><span class="apill qa-text"><svg viewBox="0 0 24 24"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Salva</span></div>
 </section></div>
 
 </main>
@@ -202,7 +205,7 @@
 window.CAROUSEL = {
   title: '__TITLE__',
   format: '__FORMAT__',            // 'static' | 'animated'
-  handle: '@scopri__ai',
+  tipo: 'prompt',                  // notizia | curiosita | prompt | lista | serie → the 🔔 follow line on the closing slide
   // Thread line: seams[k] = y at the seam between slide k+1 and k+2 (exit of one = entry of the next).
   seams:  [1150, 1150, 900, 1150, 1150, 360, 1150, 1150, 1150],
   routes: ['start', 'straight',

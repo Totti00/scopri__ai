@@ -85,7 +85,7 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 .f-logo{position:absolute;left:96px;top:96px;height:40px;width:auto;z-index:9;display:block}
 .f-count{position:absolute;right:96px;top:106px;height:20px;font:500 20px/20px var(--font-meta);letter-spacing:.08em;margin-right:-.08em;color:var(--meta);white-space:nowrap;z-index:9}
 .f-count b{font-weight:500;color:var(--tp)}
-.f-handle{position:absolute;left:96px;top:1223px;height:20px;font:500 20px/20px var(--font-meta);letter-spacing:.04em;color:var(--meta);white-space:nowrap;z-index:9}
+.f-handle{display:none}   /* the handle is no longer printed (owner, 20 Oct 2026) */
 .f-cue{position:absolute;left:928px;top:1198px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;z-index:9}
 .f-cue::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--tp);opacity:.3}
 .f-cue svg{position:relative;width:24px;height:24px;fill:none;stroke:var(--tp);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -118,7 +118,7 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 .stack>.body,.stack>.lead{margin-top:40px}
 .stack>.body+.body{margin-top:24px}
 /* Centred stack (T10 only) */
-.cstack{position:absolute;left:96px;width:888px;top:560px;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:7}
+.cstack{position:absolute;left:96px;width:888px;top:440px;display:flex;flex-direction:column;align-items:center;text-align:center;z-index:7}
 .cstack .lead{text-wrap:balance;margin-top:40px}
 
 /* ===== UI card (§8.2) and sticker pill (§8.1) ===== */
@@ -189,11 +189,19 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 .lens .glass>*{box-shadow:none!important}
 
 /* ===== T10 closing slide ===== */
-.logo-full{position:absolute;left:0;width:1080px;top:324px;height:112px;display:flex;justify-content:center;align-items:center;z-index:7}
+.logo-full{position:absolute;left:0;width:1080px;top:236px;height:112px;display:flex;justify-content:center;align-items:center;z-index:7}
 .logo-full img{display:block;height:100%;width:auto}
 .actions{position:absolute;left:0;width:1080px;top:956px;display:flex;justify-content:center;gap:16px;z-index:7}
-.apill{height:56px;padding:0 28px 0 24px;border-radius:999px;border:2px solid var(--tp);border-color:color-mix(in srgb,var(--tp) 30%,transparent);display:inline-flex;align-items:center;gap:12px;font:500 20px/1 var(--font-meta);letter-spacing:.08em;text-transform:uppercase;color:var(--tp)}
-.apill svg{width:24px;height:24px;fill:none;stroke:var(--tp);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cstack .actions{position:static;width:auto;margin-top:64px}
+/* Closing action (20 Oct 2026): a filled button a 70-year-old reads as a button, e.g. paper plane + "Mandalo a un amico" */
+.apill{height:96px;padding:0 48px 0 40px;border-radius:999px;background:var(--accent-500);display:inline-flex;align-items:center;gap:18px;font:600 38px/1 var(--font-primary);letter-spacing:-.01em;color:#fff;box-shadow:0 24px 60px -16px rgba(var(--accent-rgb),.7)}
+.apill svg{width:38px;height:38px;fill:none;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.mode-accent .apill{background:#fff;color:var(--accent-700);box-shadow:0 24px 60px -16px rgba(16,20,90,.5)}
+.mode-accent .apill svg{stroke:var(--accent-700)}
+/* Second, smaller invite under the button: the lid of the logo as a bell + "Seguici per non perdere …" */
+.follow{margin-top:44px;display:inline-flex;align-items:center;gap:16px;font:500 30px/1.25 var(--font-primary);color:var(--body);text-wrap:balance}
+.follow .bell{flex:none;width:44px;height:25px;fill:currentColor;color:var(--acc)}
+.mode-accent .follow .bell{color:#fff}
 
 /* ===== Motion (animated carousels only; the engine assigns these, see references/animation.md) ===== */
 @keyframes a-rise{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
