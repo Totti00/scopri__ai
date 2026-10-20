@@ -82,7 +82,7 @@ Write this table into your notes first. It prevents most rework.
 | `.card` (+ `.abs`) | dark UI card, every mode | padding 32, radius 28; `.ui` / `.ui-meta` = UI text (non-essential only) |
 | `.sticker` | rotated pill on a card corner | **not used on Scopri AI slides since 20 Oct 2026**: use `.cap` under the card |
 | `.img-box` | real photo/screenshot box (engine) | `background-image:url(media/x.jpg)`, colour; radius 32 |
-| `.cap[data-under]` | **only "Prima" / "Dopo"** under an image in a before/after (no comments) | engine places it 28 px below, left-aligned, text width. 30 px, accent dash. Keep the image bottom ≤ ~1060 |
+| `.cap[data-under]` | **only comparison captions «Prima: …» / «Dopo: …»** (1–3 words on what changes) under the images of a before/after; nothing else | engine places it 28 px below, left-aligned, text width. 30 px, accent dash. Keep the image bottom ≤ ~1060 |
 | `.img-box.front` | the "after" screen in front of the "before" one (cover collage) | outlined in the background colour, z above the back screen |
 | `.pcard` + `.ph` | prompt composer card + `[placeholder]` | see §6 |
 | `.rows > .row > .idx/.t/.m` | T7 hairline rows, 96 px | starts around y 600 |

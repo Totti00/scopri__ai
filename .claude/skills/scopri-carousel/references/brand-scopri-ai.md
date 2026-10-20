@@ -67,7 +67,7 @@ These differ from `design-system.md` §3. Each one is the user's correction from
 - **No handle anywhere** (20 Oct 2026): the frame no longer prints `@scopri__ai` bottom-left. The footer keeps only the swipe cue on the right.
 - **No rubric label on the cover** (20 Oct 2026): no pill ("News lampo", "Prompt"…) on slide 1, ever. The headline starts at y ≈ 216.
 - **Eyebrow pills on content slides** are plain mono labels with a short accent dash: no rounded box, no coloured dot (the dot pills clashed with the new captions).
-- **No stickers or labels laid over images or cards** (20 Oct 2026). The only text tied to an image is a plain **"Prima" / "Dopo"** caption under it, in a before/after comparison (`.cap`, see §6).
+- **No stickers or labels laid over images or cards** (20 Oct 2026). The only text tied to an image is a comparison caption under it, **«Prima: …» / «Dopo: …»** (`.cap`, see §6).
 - Everything else in the frame stays as the design system describes: positions, sizes, the swipe cue filled on the cover.
 
 ## 5. Closing slide (CTA)
@@ -90,7 +90,7 @@ Redesigned on 20 Oct 2026 (owner: "il pulsante MANDA non si capisce").
 - **Real photos and videos are always in full colour** (owner, 20 Oct 2026): `data-tone="color"` on every `video-box`, no black-and-white or blue duotone on real footage, posters and covers included. This overrides the "no full-color photography" rule of `design-system.md`.
 - Prompt slides get **no** imagery. The prompt card is the hero, and anything else costs legibility.
 - **Real photos and videos are in colour** (owner, 20 Oct 2026): `.img-box` with the original image, `.video-box` with `data-tone="color"`. The mono tone is no longer the default for news.
-- **Captions: only "Prima" and "Dopo"** (owner, 20 Oct 2026, second review). No comment under images (no "Vola.", "Rischio vero.", "Sembra una Apple TV."), no stickers, no labels over images. When a slide shows a before or an after (or both), each image gets a plain `<p class="cap" data-under="#img">Prima</p>` / `Dopo` (just the word): Inter Tight 500 30 px with a 32 px accent dash, placed by the engine 28 px under the image, left-aligned; side-by-side captions line up at the same height. Leave room: image bottom ≤ ~1060.
+- **Captions: only comparison captions, «Prima: …» / «Dopo: …»** (owner, 20 Oct 2026). The word Prima or Dopo, a colon, then 1–3 words saying what changes («Prima: pubblicità», «Dopo: solo le app», «Prima: lentissima», «Dopo: meno della metà»). Nothing else under images (no "Vola.", "Rischio vero.", "Sembra una Apple TV."), no stickers, no labels over images, and no caption on an image that isn't part of a before/after. Each image of the comparison gets its own `<p class="cap" data-under="#img">Prima: …</p>`: Inter Tight 500 30 px with a 32 px accent dash, placed by the engine 28 px under the image, left-aligned; side-by-side captions line up at the same height. Leave room: image bottom ≤ ~1060.
 - **Before/after on the cover**: the two screens overlap, "Prima" behind top-left, "Dopo" in front bottom-right (`.img-box.front`, outlined), slightly offset; "Prima" sits under the visible bottom-left edge of the back screen, "Dopo" under the front one.
 - **Before/after pairs inside the carousel**: show the whole screenshots, at their original ratio (no crop), side by side.
 

@@ -2,32 +2,31 @@ _Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slid
 
 **In una frase:** per chi ha una smart TV piena di pubblicità: mostra il prima e il dopo di TV vere ripulite con un'AI, avvisa che è un fai-da-te rischioso; invito: mandarlo a chi si lamenta della pubblicità sulla TV. · **Struttura:** Prima → Dopo → Ponte (scelta del proprietario), con la scoperta più forte (il dopo) subito in slide 2.
 
-**Immagini:** tutte vere, prese dai post originali degli autori su X (non dalla ripubblicazione di Evolving AI): schermo della TV ritagliato, **a colori** (correzione del proprietario, 20/10: niente monocromo, video compreso), senza le scritte inglesi; sotto le immagini solo le didascalie **«Prima» / «Dopo»** (trattino blu), niente commenti e niente etichette sopra (proprietario, 20/10). Autori solo in "Fonti".
+**Immagini:** tutte vere, prese dai post originali degli autori su X (non dalla ripubblicazione di Evolving AI): schermo della TV ritagliato, **a colori** (correzione del proprietario, 20/10: niente monocromo, video compreso), senza le scritte inglesi; sotto le immagini solo didascalie di confronto **«Prima: …» / «Dopo: …»** (trattino blu), nient'altro e niente etichette sopra (proprietario, 20/10). Autori solo in "Fonti".
 
 ### 01 — Copertina (DARK)
 - **Titolo:** Prima e dopo: / la stessa TV, / *ripulita dall'AI* / in un pomeriggio. (accento: «ripulita dall'AI»)
 - Nessuna etichetta di rubrica in copertina.
 - **Visual:** foto vere della TV dei genitori di Gathin, sovrapposte: il prima (annuncio sponsorizzato) dietro in alto a sinistra, il dopo (menu pulito) davanti in basso a destra.
-- **Didascalie sotto:** «Prima» · «Dopo»
+- **Didascalie sotto:** «Prima: pubblicità» · «Dopo: solo le app»
 - **Alternative rese:** vedi in fondo, "Copertine".
 
 ### 02 — Il dopo (LIGHT)
 - **Pill:** Il dopo · **Titolo:** Ha spento 25 app / *e rifatto il menu.*
 - **Testo:** Un ragazzo ha dato a Claude Code, un'AI che lavora sul computer, il modello della TV dei suoi genitori. L'AI l'ha trovata in Wi-Fi e ha fatto il resto.
-- **Didascalia sotto:** Dopo
 - **Visual:** schermo "dopo" di Gathin, grande.
 
 ### 03 — Il prima (ACCENT)
 - **Pill:** Il prima · **Titolo:** Ha tolto la pubblicità / *prima di Netflix.* (barra bianca)
 - **Testo:** Prima, appena accesa, la TV mostrava un annuncio. Sotto, file di consigli e app mai usate. Ora restano solo le app dei genitori.
-- **Didascalia sotto:** Prima
+- **Didascalia sotto:** Prima: l'annuncio. Ora è sparito.
 - **Visual:** schermo "prima" di Gathin, grande (si legge "Sponsored").
 
 ### 04 — Un'altra TV (LIGHT)
 - **Pill:** Un'altra TV · **Titolo:** Ha alleggerito il menu: / *da 192 a 83 MB.*
 - **Testo:** Un altro utente ci ha provato sulla sua Google TV, diventata lentissima: 25 app spente e una schermata nuova con sfondi che cambiano.
 - **Visual:** prima/dopo di Mihir Gupta, due schermi affiancati, interi (non ritagliati).
-- **Didascalie sotto:** «Prima» · «Dopo»
+- **Didascalie sotto:** «Prima: lentissima» · «Dopo: meno della metà»
 
 ### 05 — Più veloce (DARK) · VIDEO
 - **Pill:** Più veloce · **Titolo:** Ha reso / la TV / *velocissima.*
@@ -75,7 +74,7 @@ _Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slid
 Controllo automatico (bozza): ✅ CAPTION PRONTA · carosello · notizia — 1527/2200 caratteri · 5 hashtag · invito: 📩 Mandalo a … · domanda: sì · fonti: sì · seguici: sì
 
 ### Copertine (in `exports/`, tutte a colori; confronto in `copertine-confronto.jpg`)
-- Tutte senza etichetta di rubrica, con «Prima» / «Dopo» sotto le immagini; a, d, e, f con gli schermi sovrapposti.
+- Tutte senza etichetta di rubrica, con le didascalie di confronto sotto le immagini; a, d, e, f con gli schermi sovrapposti (d: «Prima: lentissima» / «Dopo: meno della metà»; c: «Dopo: il menu nuovo, nel video.»).
 - **copertina-a** = slide 1: titolo c, prima/dopo di Gathin (consigliata).
 - **copertina-c**: titolo c, fotogramma del **video di Ryan Doyle** (si può fare MP4 della copertina con la sua clip in finale).
 - **copertina-d**: titolo c, prima/dopo di **Mihir Gupta**.

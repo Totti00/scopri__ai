@@ -135,7 +135,7 @@ Read `references/build-guide.md`. Then:
 
    Check every asset on all three backgrounds with `scripts/asset-check.py` before placing it.
 
-4. **Write the slides** in `index.html` from the layout library. No pill on the cover, no handle (the engine no longer prints it), no stickers or labels over images or cards, no comment captions: the only caption is a plain "Prima" / "Dopo" under the image in a before/after, `<p class="cap" data-under="#id">Prima</p>` (20 Oct 2026). Set `tipo` in `CAROUSEL` (the scaffold does it from the slug). Replace all sample copy, mark text with `qa-text`, and pin headline line counts with `data-lines`. Set `CAROUSEL.seams/routes` for the thread. Keep slide-specific CSS in the page's `<style>`, not in `engine/`.
+4. **Write the slides** in `index.html` from the layout library. No pill on the cover, no handle (the engine no longer prints it), no stickers or labels over images or cards, no comment captions: the only captions are comparison ones under the images of a before/after, «Prima: …» / «Dopo: …» with 1–3 words on what changes, `<p class="cap" data-under="#id">Prima: pubblicità</p>` (20 Oct 2026). Set `tipo` in `CAROUSEL` (the scaffold does it from the slug). Replace all sample copy, mark text with `qa-text`, and pin headline line counts with `data-lines`. Set `CAROUSEL.seams/routes` for the thread. Keep slide-specific CSS in the page's `<style>`, not in `engine/`.
 
 5. **Export and check**, from `carousels/<slug>/`:
 
