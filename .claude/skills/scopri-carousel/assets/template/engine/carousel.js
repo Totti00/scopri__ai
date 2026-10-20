@@ -9,7 +9,7 @@
     logos: { dark: 'brand/scopri-ai-logo-negativo.png', light: 'brand/scopri-ai-logo-colore.png', accent: 'brand/scopri-ai-logo-bianco.png' },
     seams: [],                        // seams[k] = y where the thread crosses the seam between slide k+1 and k+2
     routes: [],                       // per slide: 'start' | 'straight' | 'rightUp' | 'leftDown' | 'end' | 'none' | { d, nodes }
-    threadStart: 600,                 // x of the start node on the cover
+    threadStart: 780,                 // x of the start node on the cover (right of the centred swipe invite, 20 Oct 2026)
     threadEnd: '.apill',              // element on the last slide the thread ends next to
     threadEndX: 120,                  // x of the vertical run on the closing slide (left of the centred follow line)
     slideDuration: 5000,              // ms per slide in animated carousels (override per slide with data-duration)
