@@ -35,7 +35,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 - Dalla seconda slide in poi si spiega: ogni slide è una scoperta in più, con il suo video o la sua immagine.
 - Ogni slide dice in poche parole **cosa ha fatto l'AI** ("Ha costruito…", "Ha insegnato…"), mai cosa le hanno chiesto. **Niente scritte sotto le immagini** (deciso il 20/10/2026): l'unica eccezione è il confronto, con "Prima: …" e "Dopo: …" (1–3 parole su cosa cambia, es. "Prima: pubblicità" / "Dopo: solo le app") sotto ciascuna immagine, fuori dall'immagine. Mai etichette tonde col pallino appoggiate sopra le immagini. Le immagini si vedono **intere**, non tagliate.
 - La seconda slide deve collegarsi alla copertina: se la copertina dice "guarda cosa sa fare", la seconda mostra subito la prima cosa che sa fare.
-- Le slide si costruiscono con la skill **`scopri-carousel`** (vedi "Design" qui sotto): prima testi completi e slide statiche da approvare (con le copertine alternative), poi i video veri e il pacchetto di pubblicazione.
+- Le slide si costruiscono con la skill **`scopri-carousel`** (vedi "Design" qui sotto): prima testi completi e slide statiche da approvare (**niente copertine alternative**: il proprietario non le usa, deciso il 20/10/2026), poi i video veri e il pacchetto di pubblicazione.
 - Si dice cosa può farci una persona normale, e se è solo un esempio dell'azienda lo si dice.
 - **Guida di scrittura dei caroselli** (adottata il 16/10/2026): `format/carousel-copy.md` (in inglese, com'è nell'originale; **i post si scrivono sempre in italiano**) — limiti di parole per slide, test del gancio, 12 tipi di gancio, 11 schemi di carosello, slide 2 che funziona anche da sola, riepilogo da salvare, caption che aggiunge e non ripete. Le regole di questo file vengono prima.
 - **Il meglio all'inizio** (16/10/2026): la cosa più forte nella slide 2 o 3, non in fondo.
@@ -65,7 +65,7 @@ Regole complete in `brand/crescita.md` (15/10/2026). In breve:
 - mai un contenuto di altri messo da solo: sempre dentro le nostre slide, con i nostri testi.
 
 ## La squadra di agenti
-Il lavoro è diviso in fasi, ognuna con il suo agente in `.claude/agents/` (deciso il 15/10/2026): `ricercatore` → `analista` → `selezionatore` → `costruttore-post` e `costruttore-reel`. Li coordina la routine (il "regista", `routine/README.md`), che si ferma due volte ad aspettare il proprietario: dopo il **menu** (tante notizie, titoli e tipi di carosello tra cui scegliere) e dopo la bozza (testi completi e slide statiche, più copertine, due Reel). Regola generale: **tante soluzioni sul tavolo, poi sceglie il proprietario**. **La pubblicazione la fa il proprietario.**
+Il lavoro è diviso in fasi, ognuna con il suo agente in `.claude/agents/` (deciso il 15/10/2026): `ricercatore` → `analista` → `selezionatore` → `costruttore-post` e `costruttore-reel`. Li coordina la routine (il "regista", `routine/README.md`), che si ferma due volte ad aspettare il proprietario: dopo il **menu** (tante notizie, titoli e tipi di carosello tra cui scegliere) e dopo la bozza (testi completi e slide statiche, due Reel). Regola generale: **tante soluzioni sul tavolo, poi sceglie il proprietario**. **La pubblicazione la fa il proprietario.**
 
 ## Rubriche e calendario
 - Rubriche: `format/` (una scheda per rubrica, con struttura delle slide e della caption).
@@ -73,7 +73,7 @@ Il lavoro è diviso in fasi, ognuna con il suo agente in `.claude/agents/` (deci
 
 ## Cosa consegnare per ogni post
 Dal 16/10/2026 una cartella `carousels/AAAA-MM-GG-rubrica-argomento/` (fatta dalla skill; i post di prima restano in `archivio/`, e per la regola 6 si guardano tutte e due) con:
-- `exports/slide-01` … `slide-NN`: PNG oppure MP4 senza audio (1080×1350, formato 4:5), più `contact-sheet.jpg` e le copertine alternative
+- `exports/slide-01` … `slide-NN`: PNG oppure MP4 senza audio (1080×1350, formato 4:5), più `contact-sheet.jpg`; la copertina è solo `slide-01`, con in basso la scritta per invitare a scorrere (20/10/2026)
 - per le slide video anche `exports/slide-NN-completo.mp4`, con il video intero: il proprietario sceglie da solo inizio e fine (vedi `strumenti/montaggio.md`)
 - `pubblicazione/`: caption, **un solo file** `02-testi-alternativi.txt` con tutti i testi alternativi, ognuno sotto "Slide N" (deciso il 20/10/2026), commenti fissati (file `.txt` pronti da incollare, fatti da `npm run publish`)
 - `copy.md` (i testi approvati) e `publish.json`

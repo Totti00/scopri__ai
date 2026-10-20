@@ -37,9 +37,9 @@ Gli agenti non fanno commit e non parlano con il proprietario: lo fa il regista.
 Non costruire niente finché non risponde. Scrivi la sua scelta in `notizie/AAAA-MM-GG.md`, sezione "4. Scelta del proprietario" (notizia, titolo, tipo di carosello, eventuali modifiche), commit e push. Se chiede altre opzioni, rifai il menu con il `selezionatore`. Se dice "niente", finisci.
 
 ## Fase B — bozza (dopo la scelta)
-1. `costruttore-post` (modo `bozza`, con lo **slug** `AAAA-MM-GG-<rubrica>-<argomento>`) e, **solo se il proprietario ha scelto un Reel**, `costruttore-reel` (modo `bozza`, stessa cartella) **in parallelo**. Se ha scelto "solo Reel", lavora solo il `costruttore-reel`. Il costruttore del post usa la skill `scopri-carousel`: testi completi in `carousels/<slug>/copy.md`, slide statiche esportate, copertine alternative.
+1. `costruttore-post` (modo `bozza`, con lo **slug** `AAAA-MM-GG-<rubrica>-<argomento>`) e, **solo se il proprietario ha scelto un Reel**, `costruttore-reel` (modo `bozza`, stessa cartella) **in parallelo**. Se ha scelto "solo Reel", lavora solo il `costruttore-reel`. Il costruttore del post usa la skill `scopri-carousel`: testi completi in `carousels/<slug>/copy.md`, slide statiche esportate (niente copertine alternative, 20/10/2026).
 2. Commit e push.
-3. Manda al proprietario (SendUserFile): `exports/contact-sheet.jpg`, le copertine alternative (`exports/copertina-*.png`), le anteprime del Reel se c'è (`reel-anteprima.png`, `reel-b-anteprima.png`) e i testi di `copy.md` in versione corta (titolo e testo di ogni slide, caption). Chiedi: **"Va bene così? Dimmi quale copertina e quale Reel, e cosa cambiare."**
+3. Manda al proprietario (SendUserFile): `exports/contact-sheet.jpg`, le anteprime del Reel se c'è (`reel-anteprima.png`, `reel-b-anteprima.png`) e i testi di `copy.md` in versione corta (titolo e testo di ogni slide, caption). Chiedi: **"Va bene così? Dimmi quale Reel e cosa cambiare."**
 
 ### 🛑 Fermata 2 — aspetta l'approvazione e le correzioni
 Un sì chiaro ("va bene", "approvato") approva tutto quello che non viene citato: applica le modifiche chieste e vai avanti, senza richiedere l'approvazione.
