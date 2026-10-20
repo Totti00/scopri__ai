@@ -47,8 +47,6 @@
   /* The lid of the Coperchio logo, used as the "bell" of the follow line: the plain small lid, as slanted as in the logo,
      no vibration lines (owner, 20 Oct 2026: the ringing version with curved lines was removed) */
   const BELL = '<svg class="bell" viewBox="0 0 600 340" aria-hidden="true"><path d="M88 140C110 70 200 35 310 40C420 50 545 140 528 262Z"/><path d="M42 160L555 312" style="fill:none;stroke:currentColor;stroke-width:64;stroke-linecap:round"/><path d="M335 22L378 35" style="fill:none;stroke:currentColor;stroke-width:46;stroke-linecap:round"/></svg>';
-  /* thin brand-blue arrow after the cover's swipe invite (20 Oct 2026) */
-  const SWIPE_ARROW = '<svg viewBox="0 0 34 16" aria-hidden="true"><path d="M1 8H31M24 1.5L31 8L24 14.5"/></svg>';
   const FOLLOW = { notizia: 'Seguici per non perdere le prossime notizie', curiosita: 'Seguici per non perdere le prossime curiosità',
     prompt: 'Seguici per non perdere i prossimi prompt', lista: 'Seguici per non perdere i prossimi consigli', serie: 'Seguici per la prossima puntata' };
 
@@ -61,10 +59,10 @@
         `<svg class="layer grain" viewBox="0 0 1080 1350"><rect width="1080" height="1350" filter="url(#grain)"/></svg>` +
         (last ? '' : `<img class="f-logo" src="${C.logos[mode]}" alt="Scopri AI">`) +
         (last ? '' : `<div class="f-count"><b>${pad(n)}</b> / ${pad(N - 1)}</div>`) +
-        // the cover has no filled arrow: its swipe invite «SCORRI PER SCOPRIRE →» replaces it (owner, 20 Oct 2026)
+        // the cover has no filled arrow: its swipe invite «SCORRI PER SCOPRIRE» replaces it (owner, 20 Oct 2026)
         (last || (cover && C.swipe !== false) ? '' : `<div class="f-cue${cover ? ' filled' : ''}">${ARROW}</div>`) +
-        // cover only: swipe invite centred at the bottom, right above Instagram's dots; no dots drawn (owner, 20 Oct 2026)
-        (cover && C.swipe !== false ? `<div class="f-swipe"><span>${C.swipe || 'Scorri per scoprire'}</span>${SWIPE_ARROW}</div>` : ''));
+        // cover only: swipe invite «SCORRI PER SCOPRIRE» (words only) centred on x 540 above Instagram's dots (owner, 20 Oct 2026)
+        (cover && C.swipe !== false ? `<div class="f-swipe"><span>${C.swipe || 'Scorri per scoprire'}</span></div>` : ''));
       sl.querySelectorAll('[data-logo]').forEach(el => { el.innerHTML = `<img src="${C.logos[mode]}" alt="Scopri AI">`; });
       // closing slide, second invite (20 Oct 2026): "🔔 Seguici per non perdere …" with the logo's lid as the bell
       sl.querySelectorAll('.follow').forEach(el => {
@@ -131,8 +129,8 @@
       case 'start': {
         // cover with the swipe invite (owner, 20 Oct 2026): a short line (C.swipeLine, 160 px) at the arrow's height that ends ON the
         // right edge and carries on into slide 2; start node on its left end. Its y becomes the cover's seam (seams[0]).
-        const a = sl.querySelector('.f-swipe svg');
-        if (a) { const y = Math.round(rel(a, sl).cy * 2) / 2, x0 = 1080 - (C.swipeLine || 160);
+        const a = sl.querySelector('.f-swipe span');   // words only, no arrow (owner, 20 Oct 2026); y = centre of the capitals (box centre − 1.5 px)
+        if (a) { const y = Math.round((rel(a, sl).cy - 1.5) * 2) / 2, x0 = 1080 - (C.swipeLine || 160);
                  return { d: `M${x0} ${y} H1080`, nodes: [[x0, y]], yout: y }; }
         return { d: `M${C.threadStart} ${yout} H1080`, nodes: [[C.threadStart, yout]] };
       }

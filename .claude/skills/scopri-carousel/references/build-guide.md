@@ -186,7 +186,7 @@ This writes `contact-sheet.jpg`, `strip-preview.jpg` and `cover-360.png`. **Read
 
 Then send the user the contact sheet (and the cover). Lead with anything not yet done.
 
-**Cover (Scopri AI, owner 20 Oct 2026).** Instagram mobile draws the carousel dots inside the image at ~y 1232/1350; the swipe line must sit above them, centre ~y 1175. Check slide-01 and the alternative covers at full size and zoom on the invite: «SCORRI PER SCOPRIRE →» centred (caps y ≈ 1167–1184), band 1205–1350 free, the blue arrow's vertical centre on the capitals' centre (±1 px: measure the white cap pixels and the blue arrow pixels), no filled arrow bottom-right on the cover, the words alone centred on x 540 ±2 (measure the white cap pixels), the short cover line (160 px, x 920 → 1080) at the arrow's centre y, touching the right edge and continuing into slide 2 (check the strip), images and captions ending by y ≈ 1120. To check, paste 4 dots (14 px, gap 10 px) centred at x 540, y 1232 on a scratch copy of slide-01.
+**Cover (Scopri AI, owner 20 Oct 2026).** Instagram mobile draws the carousel dots inside the image at ~y 1232/1350; the swipe line must sit above them, centre ~y 1175. Check slide-01 and the alternative covers at full size and zoom on the invite: «SCORRI PER SCOPRIRE» (words only, no arrow) centred on x 540 ±2 (measure the white cap pixels), caps y ≈ 1167–1184, band 1205–1350 free, no filled arrow bottom-right on the cover, the short cover line (160 px, x 920 → 1080) at the capitals' centre y (±1), touching the right edge and continuing into slide 2 (check the strip), images and captions ending by y ≈ 1120. To check, paste 4 dots (14 px, gap 10 px) centred at x 540, y 1232 on a scratch copy of slide-01.
 
 ## 9. Revisions
 
