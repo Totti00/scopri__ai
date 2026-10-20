@@ -42,8 +42,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 - **Contatore "03 / 08"** in alto a destra: conta le slide di contenuto, la chiusura non ha contatore (lo fa la skill).
 - **Un invito principale per post**, scelto per tipo: notizie → "📩 Mandalo a…", prompt e liste → "📌 Salvalo…", serie → "🔔 Seguici" (16/10/2026). **In più, sempre**, nella chiusura e in fondo alla caption, la riga con la campanella "🔔 Seguici per non perdere le prossime notizie" (o "i prossimi prompt"…) (deciso il 20/10/2026).
 - **Niente etichetta di rubrica sulla copertina** (niente "NEWS LAMPO") e **niente `@scopri__ai` in basso a sinistra** sulle slide (deciso il 20/10/2026).
-- Copertina con la **freccia piena** in basso a destra (cornice della skill).
-- **Invito a scorrere** sulla copertina (20/10/2026): «SCORRI PER SCOPRIRE» centrato in basso, così su Instagram sta proprio sopra i pallini del carosello. Solo sulla prima slide (e sulle copertine alternative).
+- **Invito a scorrere** sulla copertina (20/10/2026): «SCORRI PER SCOPRIRE →» centrato in basso, con la freccina blu centrata sulle maiuscole, così su Instagram sta proprio sopra i pallini del carosello. Sulla copertina **niente cerchio blu con la freccia** in basso a destra (le altre slide lo tengono). Solo sulla prima slide (e sulle copertine alternative).
 - Prima di consegnare, si passa il **controllo finale**: `brand/controllo-finale.md`.
 
 ## Design (dal 16/10/2026)
