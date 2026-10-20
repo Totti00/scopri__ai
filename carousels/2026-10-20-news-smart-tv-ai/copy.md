@@ -72,7 +72,7 @@ _Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slid
 
 Controllo automatico (bozza): ✅ CAPTION PRONTA · carosello · notizia — 1527/2200 caratteri · 5 hashtag · invito: 📩 Mandalo a … · domanda: sì · fonti: sì · seguici: sì
 
-### Copertine (in `exports/`, tutte a colori; confronto in `copertine-confronto.jpg`)
+### Copertine (in `exports/`) — NON USATE: il proprietario usa solo la slide 1 (20/10). Slide 1 con «SCORRI PER SCOPRIRE» in basso a sinistra.
 - Tutte senza etichetta di rubrica, con le didascalie di confronto sotto le immagini; a, d, e, f con gli schermi sovrapposti (d: «Prima: lentissima» / «Dopo: meno della metà»; c: «Dopo: il menu nuovo, nel video.»).
 - **copertina-a** = slide 1: titolo c, prima/dopo di Gathin (consigliata).
 - **copertina-c**: titolo c, fotogramma del **video di Ryan Doyle** (nel finale tolta la didascalia «Dopo: il menu nuovo, nel video.»: non era un confronto).

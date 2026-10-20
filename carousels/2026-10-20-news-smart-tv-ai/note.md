@@ -6,12 +6,8 @@
 - Nessun prompt nel post (è una notizia): niente da provare.
 
 ## Copertina
-- Copertina approvata: `exports/slide-01.png` (schermi sovrapposti, «Prima: pubblicità» / «Dopo: solo le app»).
-- Alternative statiche tenute: `copertina-a.png` (= slide 1), `copertina-c.png`, `copertina-d.png`, `copertina-e.png`, `copertina-f.png` (confronto in `copertine-confronto.jpg`). Nella `c` ho tolto nel finale la didascalia «Dopo: il menu nuovo, nel video.» (non era un confronto Prima/Dopo, regola del 20/10).
-- **Nuova alternativa video**: `copertina-video.mp4` (6 s, a colori) + `copertina-video-completo.mp4` (13 s, il video intero) + `copertina-video.png` (fotogramma). Video vero di Ryan Doyle (telecomando in mano, menu ripulito che scorre), titolo «Pubblicità sulla tua smart TV? C'è chi la toglie *con l'AI.*» (il titolo f, già nel menu): non ho tenuto «Prima e dopo: la stessa TV» perché il video mostra solo il dopo, ed è una TV diversa da quella della slide 2. Nessuna didascalia sotto il video.
-  - Se si usa la copertina video, lo stesso video compare anche in slide 5: si ripete. Si può accettare (sono due pezzi diversi: 0–6 s in copertina, il video intero in slide 5) oppure tenere la copertina statica.
-  - Testo alternativo per la copertina video: «Copertina: «Pubblicità sulla tua smart TV? C'è chi la toglie con l'AI». Video vero: menu di una TV ripulita che scorre.»
-  - `dumbtv.mp4` (28 s) scartato come copertina: è un'animazione grafica con scritte in inglese, non una ripresa vera di prima e dopo.
+- Si usa solo `exports/slide-01.png` (schermi sovrapposti, «Prima: pubblicità» / «Dopo: solo le app»), ora con l'invito **«SCORRI PER SCOPRIRE»** in basso a sinistra, allineato con la freccia piena (proprietario, 20/10; niente pallini: li mette Instagram).
+- Copertine alternative: il proprietario non le usa (20/10). I file `copertina-a/c/d/e/f.png`, `copertina-video.*` e `copertine-confronto.jpg` restano in `exports/` ma non vanno pubblicati. Sono stati riesportati una volta con la scritta «SCORRI PER SCOPRIRE» prima che arrivasse questa decisione; dopo non li ho più toccati.
 
 ## Dubbi rimasti
 - «Ha spento 25 app»: Gathin scrive "removed", ma il suo progetto spegne (`pm disable-user`), non cancella. Scelto "spento" per coerenza con la slide 7.
@@ -32,5 +28,5 @@ Il proprietario controlla che ci siano nella libreria di Instagram; se tra le ca
 - Prima ora: rispondere ai commenti; Storia con sondaggio «Ci proveresti sulla tua TV?».
 
 ## Pubblicazione
-- Caption, testi alternativi (uno per slide) in `pubblicazione/`. Nessun commento fissato (non serve: niente prompt).
+- `pubblicazione/01-caption.txt` e `02-testi-alternativi.txt` (tutti i testi alternativi in un file, sotto «Slide N»). Nessun commento fissato (non serve: niente prompt).
 - Slide 5 è un MP4 (`exports/slide-05.mp4`, 13 s; intero in `slide-05-completo.mp4`): il proprietario taglia inizio e fine se vuole.
