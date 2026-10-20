@@ -61,7 +61,7 @@ Write this table into your notes first. It prevents most rework.
   - 9: `D A L D L D L A D` (the first carousel)
   - 10: `D L D A L D L A L D`
 - **Templates** (§11.2). Never repeat a template back to back, except a T5 series, which must alternate modes. Zig-zag the hero position. Within any 3 slides, use at least two hero types. Follow a big hero with a calmer slide.
-- **The closing slide is not counted.** With N slides the counter shows `/ N−1`. The engine handles this, but say so when you present the plan.
+- **No slide counter** (owner, 20 Oct 2026): the engine no longer prints «01 / N» on any slide.
 - **Accent budget:** at most 2 accent instances per slide. A typical pair is the accent phrase plus the thread line. When a slide already has accent elements, such as placeholders in a prompt card or redaction bars, use **recede split** for the headline instead. On ACCENT slides, the emphasis is an `ink-950` phrase (display sizes only) or a white highlight bar.
 
 ## 4. Components (class → design-system role)
@@ -178,7 +178,7 @@ This writes `contact-sheet.jpg`, `strip-preview.jpg` and `cover-360.png`. **Read
 - a hero object touching text, or text over busy image detail;
 - the lens or an object hiding something the reader needs;
 - ghost numerals readable but quiet;
-- the logo variant matching the mode; no corner logo, counter or cue on the closing slide; the counter reading `/ N−1`;
+- the logo variant matching the mode; no corner logo or cue on the closing slide; no slide counter anywhere, and the top-right corner not looking oddly empty;
 - the cover reading at 360 px;
 - accent count ≤ 2 per slide; one emphasis per headline;
 - the strip reading as one panorama, with no slivers at the seams;

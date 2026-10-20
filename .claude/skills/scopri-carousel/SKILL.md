@@ -58,7 +58,7 @@ Read `references/carousel-copy.md`, `references/brand-scopri-ai.md` §1, `refere
 3. Write 5–10 hooks and run them through the hook test (copy guide §3.2). Pick one and keep 2–3 alternatives. The **cover headline holds ≤ 6 words**, about 13 characters per line, 3 lines (design-system §11.5). The copy guide's "≤ 12 words" is the cover's total budget, headline plus sottotitolo (≤ 8 words).
 4. Write slide 2 as a standalone second hook.
 5. Keep density within copy guide §2: one idea per slide; split, don't cram.
-6. Let the content decide the slide count, usually 7–10. Include the closing slide, which is not counted in the progress counter.
+6. Let the content decide the slide count, usually 7–10. Include the closing slide. There is **no slide counter** on any slide (owner, 20 Oct 2026).
    - **A number in the request is a promise.** "7 tips" means exactly 7 value slides, one per tip, plus cover, optional re-hook and closing slide: about 9–10 slides. If 7 don't fit the material, say so instead of silently changing the number.
 7. Don't add meta slides ("perché funziona", "come usare questo carosello") unless the content needs them. The user removed one.
    - A **recap/checklist slide** is different: it's the most save-worthy slide for long listicles and step-by-steps. Don't add it by default. Offer it in *Note sui contenuti* ("vuoi una checklist finale da salvare?"), and include it straight away only for checklist or cheat-sheet carousels.
@@ -71,7 +71,7 @@ Read `references/carousel-copy.md`, `references/brand-scopri-ai.md` §1, `refere
 **Present it in this shape, then stop and wait:**
 
 ```markdown
-_Copy in italiano · formato: statico · 8 slide + chiusura (il contatore va da 01/08 a 08/08)_
+_Copy in italiano · formato: statico · 8 slide + chiusura_
 
 **In una frase:** who it's for, what they get, the one action · **Struttura:** framework (copy guide §6)
 

@@ -1,4 +1,4 @@
-_Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slide + chiusura (il contatore va da 01/07 a 07/07) · FINALE (approvato dal proprietario il 20/10: «ok, top»)_
+_Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slide + chiusura (niente contatore sulle slide, proprietario 20/10) · FINALE (approvato dal proprietario il 20/10: «ok, top»)_
 
 **In una frase:** per chi ha una smart TV piena di pubblicità: mostra il prima e il dopo di TV vere ripulite con un'AI, avvisa che è un fai-da-te rischioso; invito: mandarlo a chi si lamenta della pubblicità sulla TV. · **Struttura:** Prima → Dopo → Ponte (scelta del proprietario), con la scoperta più forte (il dopo) subito in slide 2.
 

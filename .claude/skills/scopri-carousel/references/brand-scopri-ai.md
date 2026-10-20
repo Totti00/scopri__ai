@@ -62,8 +62,8 @@ The logo keeps its brand colours (blue "AI" on light and dark). This overrides t
 These differ from `design-system.md` §3. Each one is the user's correction from the first carousel.
 
 - **Top-left: the full logo lockup**, not the symbol alone, 40 px tall, in the mode's kit variant. The user said "hai messo la foto profilo nelle slide, non il logo. io voglio il logo (scopri AI)".
-- **The progress counter counts content slides only.** With N slides the counter runs `01 / N−1` … `N−1 / N−1`. The closing slide has no counter. The user said the counter should not count the last slide, and the closing slide shouldn't show it.
-- **Closing slide:** no corner logo (the big centred logo is already there, and the user flagged the repetition), no counter, no swipe cue.
+- **No slide counter** (owner, 20 Oct 2026): no «01 / 07» top-right on any slide. The frame keeps the logo top-left; the top-right corner stays empty.
+- **Closing slide:** no corner logo (the big centred logo is already there, and the user flagged the repetition), no swipe cue.
 - **No handle anywhere** (20 Oct 2026): the frame no longer prints `@scopri__ai` bottom-left. The footer keeps only the swipe cue on the right.
 - **Swipe invite on the cover only, instead of the filled arrow** (owner, 20 Oct 2026): «SCORRI PER SCOPRIRE» — **words only, no arrow** — centred exactly on x 540, **above Instagram's carousel dots**. Instagram mobile draws the carousel dots inside the image at ~y 1232/1350 (band ~1215–1250, checked on the owner's phone): the swipe line must sit above them, **caps centre ~y 1175** (`.f-swipe` top 1162 → caps y 1167–1184), ~40 px clear of the dots; the band 1205–1350 stays free. Inter Tight 600, 25 px, uppercase, letter-spacing .12em, white with a soft dark glow. **No dots**, no arrow after the words, and **no filled arrow bottom-right on the cover**; every other content slide keeps its outlined arrow. **Cover line:** a short blue line (160 px, `CAROUSEL.swipeLine`) at the capitals' centre y that **touches the right edge** (x 920 → 1080, start node on its left end) and carries on into slide 2: the engine makes its y the first seam, and slide 2's `straight` thread eases back to its own exit y with a soft S-bend at x 760–880. The seam check stays on. The engine adds the invite to slide 1 (`.f-swipe`) and to the alternative covers; `CAROUSEL.swipe` changes the words, `false` removes it and brings the filled arrow back. Keep the cover's content (images, captions) above y ≈ 1120.
 - **No rubric label on the cover** (20 Oct 2026): no pill ("News lampo", "Prompt"…) on slide 1, ever. The headline starts at y ≈ 216.
@@ -75,7 +75,7 @@ These differ from `design-system.md` §3. Each one is the user's correction from
 
 Redesigned on 20 Oct 2026 (owner: "il pulsante MANDA non si capisce").
 
-- Same mode as the cover (DARK by default), centred, layout T10. No handle, no counter, no corner logo.
+- Same mode as the cover (DARK by default), centred, layout T10. No handle, no corner logo.
 - Big centred logo lockup (~112 px, top ≈ 236), then the hierarchy **headline → button → follow line**:
   1. H1 with the **one** main invite and one accent phrase (news: "Mandalo a chi …"; prompts and lists: "Salvalo per …").
   2. A **filled button** a 70-year-old reads as a button: brand-blue pill, 96 px tall, Inter Tight 38 px, icon + words. News/curiosità: paper plane + "Mandalo a un amico"; prompt/lista: bookmark + "Salvalo per dopo"; serie: bell + "Segui Scopri AI".
