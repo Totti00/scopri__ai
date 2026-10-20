@@ -129,13 +129,16 @@
     switch (type) {
       case 'none': return null;
       case 'start': {
-        // cover with the swipe invite (owner, 20 Oct 2026): a short line at the arrow's height, starting 24 px after its tip, with the start node
+        // cover with the swipe invite (owner, 20 Oct 2026): a short line (C.swipeLine, 160 px) at the arrow's height that ends ON the
+        // right edge and carries on into slide 2; start node on its left end. Its y becomes the cover's seam (seams[0]).
         const a = sl.querySelector('.f-swipe svg');
-        if (a) { const p = rel(a, sl), y = Math.round(p.cy * 2) / 2, x0 = Math.round(p.r - (p.r - p.l) * 3 / 34 + 24);
-                 return { d: `M${x0} ${y} H${x0 + (C.swipeLine || 160)}`, nodes: [[x0, y]] }; }
+        if (a) { const y = Math.round(rel(a, sl).cy * 2) / 2, x0 = 1080 - (C.swipeLine || 160);
+                 return { d: `M${x0} ${y} H1080`, nodes: [[x0, y]], yout: y }; }
         return { d: `M${C.threadStart} ${yout} H1080`, nodes: [[C.threadStart, yout]] };
       }
-      case 'straight': return { d: `M0 ${yin} H1080`, nodes: [] };
+      // straight; if the exit differs a little from the entry (e.g. after the cover's swipe line), a soft S-bend at x 760–880
+      case 'straight': return yout == null || Math.abs(yout - yin) < .5 ? { d: `M0 ${yin} H1080`, nodes: [] }
+        : { d: `M0 ${yin} H760 C820 ${yin} 820 ${yout} 880 ${yout} H1080`, nodes: [] };
       case 'rightUp': case 'rightDown': { const x = 1032, s = yout < yin ? -1 : 1; return { d: `M0 ${yin} H${x - r} Q${x} ${yin} ${x} ${yin + s * r} V${yout - s * r} Q${x} ${yout} ${x + r} ${yout} H1080`, nodes: [] }; }
       case 'leftDown': case 'leftUp': { const x = 48, s = yout < yin ? -1 : 1; return { d: `M0 ${yin} H${x - r} Q${x} ${yin} ${x} ${yin + s * r} V${yout - s * r} Q${x} ${yout} ${x + r} ${yout} H1080`, nodes: [] }; }
       case 'end': {
@@ -151,6 +154,7 @@
     slides.forEach((sl, i) => {
       const yin = i > 0 ? C.seams[i - 1] : null, yout = i < N - 1 ? C.seams[i] : null;
       const rt = route(C.routes[i], yin, yout, sl); if (!rt) return;
+      if (rt.yout != null && i < N - 1) C.seams[i] = rt.yout;   // the cover's swipe line sets the first seam
       const glow = sl.classList.contains('mode-dark');
       sl.insertAdjacentHTML('beforeend',
         `<svg class="layer thread" viewBox="0 0 1080 1350">` +
@@ -262,7 +266,6 @@
     });
     for (let k = 0; k < ends.length - 1; k++) {
       const A = ends[k], B = ends[k + 1]; if (B.i !== A.i + 1) continue;
-      if (slides[A.i].querySelector('.f-swipe')) continue;   // the cover's short line by the swipe invite stops before the seam on purpose (20 Oct 2026)
       if (Math.abs(A.b.x - 1080) > 0.5 || Math.abs(B.a.x) > 0.5 || Math.abs(A.b.y - B.a.y) > 0.5) errors.push(`Seam ${A.i + 1}/${B.i + 1}: exit (${A.b.x.toFixed(0)},${A.b.y.toFixed(0)}) ≠ entry (${B.a.x.toFixed(0)},${B.a.y.toFixed(0)})`);
     }
     return { errors, info };
