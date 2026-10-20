@@ -44,15 +44,9 @@
     return bottoms.reduce((n, b, i) => n + (i === 0 || b - bottoms[i - 1] > 12 ? 1 : 0), 0);
   }
 
-  /* The lid of the Coperchio logo, used as the "bell" of the follow line */
-  /* The lid of the Coperchio logo as a ringing bell: slightly tilted, two curved vibration lines on each side (20 Oct 2026) */
-  const BELL = '<svg class="bell" viewBox="62 58 776 324" aria-hidden="true">' +
-    '<g transform="translate(168 62) scale(.94) rotate(-6 300 170)"><path d="M88 140C110 70 200 35 310 40C420 50 545 140 528 262Z"/>' +
-    '<path d="M42 160L555 312" style="fill:none;stroke:currentColor;stroke-width:64;stroke-linecap:round"/>' +
-    '<path d="M335 22L378 35" style="fill:none;stroke:currentColor;stroke-width:46;stroke-linecap:round"/></g>' +
-    '<g style="fill:none;stroke:currentColor;stroke-width:22;stroke-linecap:round">' +
-    '<path d="M160 150Q122 225 160 300"/><path d="M106 112Q52 225 106 338"/>' +
-    '<path d="M740 150Q778 225 740 300"/><path d="M794 112Q848 225 794 338"/></g></svg>';
+  /* The lid of the Coperchio logo, used as the "bell" of the follow line: the plain small lid, as slanted as in the logo,
+     no vibration lines (owner, 20 Oct 2026: the ringing version with curved lines was removed) */
+  const BELL = '<svg class="bell" viewBox="0 0 600 340" aria-hidden="true"><path d="M88 140C110 70 200 35 310 40C420 50 545 140 528 262Z"/><path d="M42 160L555 312" style="fill:none;stroke:currentColor;stroke-width:64;stroke-linecap:round"/><path d="M335 22L378 35" style="fill:none;stroke:currentColor;stroke-width:46;stroke-linecap:round"/></svg>';
   const FOLLOW = { notizia: 'Seguici per non perdere le prossime notizie', curiosita: 'Seguici per non perdere le prossime curiosità',
     prompt: 'Seguici per non perdere i prossimi prompt', lista: 'Seguici per non perdere i prossimi consigli', serie: 'Seguici per la prossima puntata' };
 

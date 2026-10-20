@@ -17,9 +17,9 @@ Consultate il 20/10/2026.
 |---|---|---|---|
 | `gathin-prima-dopo.jpg` → `gathin-prima.jpg`, `gathin-dopo.jpg` | 1, 2, 3 (e copertine a, e, f) | Gathin T. (@gathint) | https://x.com/gathint/status/2111379569030939102 (17/10, ~30.000 like, 6,29 mln visualizzazioni); stessa immagine nel README di cleanyourtv (`docs/stock-vs-new-side.jpg`) |
 | `mihir-menu.jpg` → `mihir-prima.jpg`, `mihir-dopo.jpg` | 4 (e copertina d) | Mihir Gupta (@0900mihir) | https://x.com/0900mihir/status/2111746030228455883 (18/10) |
-| `doyle-tv-veloce.mp4` (13 s, verticale) → `doyle-frame-1s.jpg` | 5 (e copertina c) | Ryan Doyle (@doooyle) | https://x.com/doooyle/status/2111247627748565091 (17/10) |
+| `doyle-tv-veloce.mp4` (13 s, verticale) → `doyle-frame-1s.jpg` | 5 (`slide-05.mp4`, `slide-05-completo.mp4`), copertina c e copertina video alternativa (`copertina-video.mp4`, primi 6 s; `copertina-video-completo.mp4`, 13 s) | Ryan Doyle (@doooyle) | https://x.com/doooyle/status/2111247627748565091 (17/10) |
 
-Scaricati ma non usati (per il finale, se servono): `doyle-screensaver.jpg` (Ryan Doyle, https://x.com/doooyle/status/2111196679680540724, 16/10), `dumbtv.mp4` (28 s, Muzzammil Sabuwala, https://x.com/DevMuzzammil/status/2111912547318395338, 18/10), `muzzammil-tv.jpg` (https://x.com/DevMuzzammil/status/2111595814099591535, 17/10).
+Scaricati ma non usati: `doyle-screensaver.jpg` (Ryan Doyle, https://x.com/doooyle/status/2111196679680540724, 16/10), `dumbtv.mp4` (28 s, Muzzammil Sabuwala, https://x.com/DevMuzzammil/status/2111912547318395338, 18/10), `muzzammil-tv.jpg` (https://x.com/DevMuzzammil/status/2111595814099591535, 17/10).
 
 Ritagli: solo lo schermo della TV, tolte le scritte inglesi "BEFORE / AFTER" e le didascalie; etichette "Prima / Dopo" nostre. Tutto a colori, anche il video (proprietario, 20/10). Le versioni `-mono.jpg` in `media/` non si usano più.
 
@@ -32,3 +32,8 @@ Ritagli: solo lo schermo della TV, tolte le scritte inglesi "BEFORE / AFTER" e l
 - https://www.instagram.com/p/Deq8BRRgN77/ — account **@evolving.ai** (Evolving AI), pagina di notizie AI **concorrente**, pubblicato il 19/10 circa ("21h" alla lettura). Letto senza login (pagina pubblica + browser): didascalia parziale e 5 elementi del carosello.
 - Contenuto: (1) loro copertina "People are now vibe coding their smart TVs…" con il prima/dopo di Gathin; (2) il prima/dopo di Gathin con le scritte BEFORE/AFTER rifatte da loro; (3) screenshot del post di Gathin; (4) screenshot del post di Ryan Doyle con la foto dello screensaver; (5) video di Ryan Doyle (13 s); (6) video di @0xProbabillity (casa in 3D controllata dalla TV, 6 s).
 - **È una ripubblicazione**: per la regola 4 di CLAUDE.md non usiamo nulla di loro (né grafiche né screenshot). Siamo risaliti agli originali: Gathin T. e Ryan Doyle (sopra). Il video di @0xProbabillity non l'abbiamo usato (tema diverso: domotica, non pulizia della TV) e non ne abbiamo cercato il post originale.
+
+## Finale (20/10/2026)
+- Tutti i link sopra ricontrollati il 20/10/2026 per il finale; nessun nuovo materiale aggiunto.
+- `dumbtv.mp4` (Muzzammil Sabuwala) valutato come copertina video e scartato: è un'animazione grafica di presentazione (scritte in inglese, schermate ricostruite, una Fire TV), non la ripresa di una TV vera prima e dopo.
+- Unico video vero usato: quello di Ryan Doyle (slide 5 e copertina video alternativa). Autore citato solo in "Fonti" in fondo alla caption.

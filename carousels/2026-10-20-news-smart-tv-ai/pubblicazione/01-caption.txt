@@ -1,0 +1,19 @@
+⚡ Smart TV piena di pubblicità? Con Claude Code, l'intelligenza artificiale di Anthropic, c'è chi l'ha ripulita in un pomeriggio.
+
+📺 Tutto è partito da un post su X del 17 ottobre: la TV Xiaomi dei genitori di uno sviluppatore mostrava un annuncio ancora prima di Netflix. Nei due giorni dopo, racconta lui, migliaia di persone hanno fatto lo stesso. E sono nate guide gratuite come cleanyourtv e dumbtv.
+
+🔧 Come funziona: dal computer, l'AI si collega alla TV con uno strumento che tutte le TV Android hanno già (si chiama ADB). Spegne le app del produttore, la pubblicità e il tracciamento, senza cancellarle. Le guide più serie salvano prima un elenco, così si torna indietro.
+
+👀 Perché tanta voglia di farlo: molte smart TV riconoscono cosa guardi (si chiama ACR) e usano quei dati per la pubblicità.
+
+👉 Cosa cambia per te: se hai una TV Android o Google TV e un po' di pazienza, si può fare. Se vuoi solo un menu più pulito, senza rischi, ci sono app già pronte che lo cambiano, come Projectivy Launcher.
+
+⚠️ L'AI può sbagliare: se spegne la cosa sbagliata, la TV può non ripartire. E a volte rifiuta se le chiedi di «hackerare» la TV.
+
+📩 Mandalo a chi si lamenta della pubblicità sulla TV.
+Tu ci proveresti sulla tua TV o non la tocchi? 👇
+🔔 Seguici per non perdere le prossime notizie.
+
+Fonti: TechCrunch (19/10), Punto Informatico (2/9), progetti cleanyourtv (Gathin T.) e dumbtv (Muzzammil Sabuwala), post su X di Gathin T., Mihir Gupta e Ryan Doyle
+
+#intelligenzaartificiale #claudecode #smarttv #androidtv #tecnologia

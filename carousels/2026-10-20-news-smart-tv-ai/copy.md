@@ -1,4 +1,4 @@
-_Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slide + chiusura (il contatore va da 01/07 a 07/07) · BOZZA da approvare_
+_Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slide + chiusura (il contatore va da 01/07 a 07/07) · FINALE (approvato dal proprietario il 20/10: «ok, top»)_
 
 **In una frase:** per chi ha una smart TV piena di pubblicità: mostra il prima e il dopo di TV vere ripulite con un'AI, avvisa che è un fai-da-te rischioso; invito: mandarlo a chi si lamenta della pubblicità sulla TV. · **Struttura:** Prima → Dopo → Ponte (scelta del proprietario), con la scoperta più forte (il dopo) subito in slide 2.
 
@@ -46,7 +46,7 @@ _Copy in italiano · formato: statico (slide 5 con video vero → MP4) · 7 slid
 ### 08 — Chiusura (DARK)
 - **Titolo:** Mandalo a chi / si lamenta della / *pubblicità sulla TV*
 - **Pulsante pieno blu** (aereo di carta): Mandalo a un amico
-- **Riga sotto, più piccola** (campana del logo inclinata, con due lineette curve per lato, come una notifica che suona): Seguici per non perdere le prossime notizie
+- **Riga sotto, più piccola** (la sola campana piccola del logo, ~44 × 25 px, inclinata come nel logo, blu chiaro, senza lineette di vibrazione: tolte dal proprietario il 20/10): Seguici per non perdere le prossime notizie
 - Niente @handle (tolto da tutte le slide).
 
 ### Caption
@@ -75,7 +75,8 @@ Controllo automatico (bozza): ✅ CAPTION PRONTA · carosello · notizia — 152
 ### Copertine (in `exports/`, tutte a colori; confronto in `copertine-confronto.jpg`)
 - Tutte senza etichetta di rubrica, con le didascalie di confronto sotto le immagini; a, d, e, f con gli schermi sovrapposti (d: «Prima: lentissima» / «Dopo: meno della metà»; c: «Dopo: il menu nuovo, nel video.»).
 - **copertina-a** = slide 1: titolo c, prima/dopo di Gathin (consigliata).
-- **copertina-c**: titolo c, fotogramma del **video di Ryan Doyle** (si può fare MP4 della copertina con la sua clip in finale).
+- **copertina-c**: titolo c, fotogramma del **video di Ryan Doyle** (nel finale tolta la didascalia «Dopo: il menu nuovo, nel video.»: non era un confronto).
+- **copertina-video** (finale, alternativa): `copertina-video.mp4` (6 s) + `copertina-video-completo.mp4` (13 s) + `copertina-video.png`; titolo b) «Pubblicità sulla tua smart TV? C'è chi la toglie *con l'AI.*» sul video vero di Ryan Doyle, senza didascalia. Stesso video della slide 5 (vedi `note.md`).
 - **copertina-d**: titolo c, prima/dopo di **Mihir Gupta**.
 - **copertina-e**: titolo a) «La TV dei suoi mostrava pubblicità prima di Netflix. *Non più.*»
 - **copertina-f**: titolo b) «Pubblicità sulla tua smart TV? C'è chi la toglie *con l'AI.*»
