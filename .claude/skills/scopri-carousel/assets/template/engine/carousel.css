@@ -214,8 +214,8 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 .mode-accent .apill{background:#fff;color:var(--accent-700);box-shadow:0 24px 60px -16px rgba(16,20,90,.5)}
 .mode-accent .apill svg{stroke:var(--accent-700)}
 /* Second, smaller invite under the button: the lid of the logo as a bell + "Seguici per non perdere …" */
-.follow{margin-top:40px;display:inline-flex;align-items:center;gap:18px;font:500 30px/1.25 var(--font-primary);color:var(--body);text-wrap:balance}
-.follow .bell{flex:none;width:132px;height:62px;fill:currentColor;color:var(--acc);overflow:visible}
+.follow{margin-top:40px;display:inline-flex;align-items:center;gap:14px;font:500 30px/1.25 var(--font-primary);color:var(--body);text-wrap:balance}
+.follow .bell{flex:none;width:86px;height:36px;fill:currentColor;color:var(--acc);overflow:visible;transform:translateY(-1px)}   /* ≈1.2× the 30 px text */
 .mode-accent .follow .bell{color:#fff}
 
 /* ===== Motion (animated carousels only; the engine assigns these, see references/animation.md) ===== */

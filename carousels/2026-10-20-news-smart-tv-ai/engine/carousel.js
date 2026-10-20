@@ -46,13 +46,13 @@
 
   /* The lid of the Coperchio logo, used as the "bell" of the follow line */
   /* The lid of the Coperchio logo as a ringing bell: slightly tilted, two curved vibration lines on each side (20 Oct 2026) */
-  const BELL = '<svg class="bell" viewBox="0 0 900 420" aria-hidden="true">' +
+  const BELL = '<svg class="bell" viewBox="62 58 776 324" aria-hidden="true">' +
     '<g transform="translate(168 62) scale(.94) rotate(-6 300 170)"><path d="M88 140C110 70 200 35 310 40C420 50 545 140 528 262Z"/>' +
     '<path d="M42 160L555 312" style="fill:none;stroke:currentColor;stroke-width:64;stroke-linecap:round"/>' +
     '<path d="M335 22L378 35" style="fill:none;stroke:currentColor;stroke-width:46;stroke-linecap:round"/></g>' +
-    '<g style="fill:none;stroke:currentColor;stroke-width:30;stroke-linecap:round">' +
-    '<path d="M118 130Q68 225 118 320"/><path d="M48 80Q-22 225 48 370"/>' +
-    '<path d="M782 130Q832 225 782 320"/><path d="M852 80Q922 225 852 370"/></g></svg>';
+    '<g style="fill:none;stroke:currentColor;stroke-width:22;stroke-linecap:round">' +
+    '<path d="M160 150Q122 225 160 300"/><path d="M106 112Q52 225 106 338"/>' +
+    '<path d="M740 150Q778 225 740 300"/><path d="M794 112Q848 225 794 338"/></g></svg>';
   const FOLLOW = { notizia: 'Seguici per non perdere le prossime notizie', curiosita: 'Seguici per non perdere le prossime curiosità',
     prompt: 'Seguici per non perdere i prossimi prompt', lista: 'Seguici per non perdere i prossimi consigli', serie: 'Seguici per la prossima puntata' };
 

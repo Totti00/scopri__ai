@@ -78,7 +78,7 @@ Redesigned on 20 Oct 2026 (owner: "il pulsante MANDA non si capisce").
 - Big centred logo lockup (~112 px, top ≈ 236), then the hierarchy **headline → button → follow line**:
   1. H1 with the **one** main invite and one accent phrase (news: "Mandalo a chi …"; prompts and lists: "Salvalo per …").
   2. A **filled button** a 70-year-old reads as a button: brand-blue pill, 96 px tall, Inter Tight 38 px, icon + words. News/curiosità: paper plane + "Mandalo a un amico"; prompt/lista: bookmark + "Salvalo per dopo"; serie: bell + "Segui Scopri AI".
-  3. A smaller **🔔 follow line** under it: the lid of the logo as a ringing bell (slightly tilted, two curved vibration lines per side, 132 × 62 px) + "Seguici per non perdere le prossime notizie" (prompt: "i prossimi prompt", curiosità: "le prossime curiosità", lista: "i prossimi consigli"). The engine writes it from `CAROUSEL.tipo`. Not in a *serie*, where following is already the main invite. On Instagram you "segui", never "iscriviti".
+  3. A smaller **🔔 follow line** under it: the lid of the logo as a ringing bell (slightly tilted, two thin curved vibration lines per side, 86 × 36 px ≈ 1.2× the 30 px text, optically centred on the line) + "Seguici per non perdere le prossime notizie" (prompt: "i prossimi prompt", curiosità: "le prossime curiosità", lista: "i prossimi consigli"). The engine writes it from `CAROUSEL.tipo`. Not in a *serie*, where following is already the main invite. On Instagram you "segui", never "iscriviti".
 - No lead is needed; if one is used, keep it to one line between headline and button.
 - The thread rises at x 120 (`threadEndX`) and ends in a node left of the button.
 
