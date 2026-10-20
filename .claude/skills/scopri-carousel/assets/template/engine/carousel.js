@@ -68,7 +68,8 @@
     });
   }
 
-  /* Captions under images (owner, 20 Oct 2026): <p class="cap" data-under="#img">Prima</p> sits CAP_GAP px under the
+  /* Captions under images (owner, 20 Oct 2026): only "Prima" / "Dopo" when there is a comparison, never a comment.
+     <p class="cap" data-under="#img">Prima</p> sits CAP_GAP px under the
      element(s), left-aligned with it. With several elements (data-under="#a,#b") or class "mid" it is centred under all of
      them, so it reads as one caption for both. Same gap and style on every slide: never place captions by hand. */
   const CAP_GAP = 28;
@@ -77,8 +78,9 @@
       const els = [...sl.querySelectorAll(cap.dataset.under)];
       if (!els.length) throw new Error('caption: nothing matches ' + cap.dataset.under);
       const rs = els.map(e => rel(e, sl)), l = Math.min(...rs.map(r => r.l)), r = Math.max(...rs.map(r => r.r)), b = Math.max(...rs.map(r => r.b));
-      if (els.length > 1) cap.classList.add('mid');
-      Object.assign(cap.style, { left: Math.round(l) + 'px', top: Math.round(b + CAP_GAP) + 'px', width: Math.round(r - l) + 'px' });
+      Object.assign(cap.style, { left: Math.round(l) + 'px', top: Math.round(b + CAP_GAP) + 'px' });
+      if (els.length > 1 || cap.classList.contains('mid')) { cap.classList.add('mid'); cap.style.width = Math.round(r - l) + 'px'; }   // one caption for all of them
+      // a single caption keeps its text width, so it never spills over a neighbouring (overlapping) image
     }));
   }
 

@@ -16,6 +16,7 @@
 .steps ol{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:14px}
 .steps li{display:grid;grid-template-columns:56px 1fr;align-items:baseline;font:500 29px/1.3 var(--font-primary);color:var(--snow)}
 .steps li b{font:500 24px/1 var(--font-meta);color:var(--accent-300)}
+.steps .foot{margin-top:24px;padding-top:20px;border-top:2px solid rgba(255,255,255,.08);font:500 28px/1.35 var(--font-primary);color:var(--gray-400)}
 /* slide 7: the risks */
 .risk{left:96px;top:640px;width:888px;padding:40px 44px 40px}
 .risk .r{margin-top:16px;display:grid;grid-template-columns:28px 1fr;gap:14px;align-items:baseline;font:500 29px/1.3 var(--font-primary);color:var(--gray-400)}
@@ -53,10 +54,10 @@
   <div class="layer rings" style="--rx:540px;--ry:900px"></div>
   <div class="glow" data-for="#c-dopo"></div>
   <h2 class="txt display qa-text" style="left:96px;top:216px;width:888px;font-size:88px;line-height:1.02" data-lines="4">Prima e dopo:<br>la stessa TV,<br><span class="em">ripulita dall'AI</span><br>in un pomeriggio.</h2>
-  <div class="img-box" id="c-prima" style="left:96px;top:636px;width:432px;height:340px;background-image:url(media/gathin-prima.jpg);background-position:0 30%"></div>
-  <div class="img-box" id="c-dopo" style="left:552px;top:636px;width:432px;height:340px;background-image:url(media/gathin-dopo.jpg);background-position:0 50%"></div>
-  <p class="cap qa-text" data-under="#c-prima">Prima: pubblicità</p>
-  <p class="cap qa-text" data-under="#c-dopo">Dopo: solo le app</p>
+  <div class="img-box" id="c-prima" style="left:96px;top:616px;width:580px;height:312px;background-image:url(media/gathin-prima.jpg);background-position:0 30%"></div>
+  <div class="img-box front" id="c-dopo" style="left:404px;top:736px;width:580px;height:312px;background-image:url(media/gathin-dopo.jpg);background-position:30% 50%"></div>
+  <p class="cap qa-text" data-under="#c-prima">Prima</p>
+  <p class="cap qa-text" data-under="#c-dopo">Dopo</p>
 </section></div>
 
 <!-- ============ 02 · IL DOPO, SUBITO · LIGHT · Gathin's "after" ============ -->
@@ -67,8 +68,8 @@
     <h2 class="h2 qa-text" style="width:888px" data-lines="2">Ha spento 25 app<br><span class="rc">e rifatto il menu.</span></h2>
     <p class="body qa-text" style="width:820px">Un ragazzo ha dato a Claude Code, un'AI che lavora sul computer, il modello della TV dei suoi genitori. L'AI l'ha trovata in Wi-Fi e ha fatto il resto.</p>
   </div>
-  <div class="img-box" id="i2" style="left:96px;top:624px;width:888px;height:400px;background-image:url(media/gathin-dopo.jpg);background-position:30% 0"></div>
-  <p class="cap qa-text" data-under="#i2">Sembra una Apple TV.</p>
+  <div class="img-box" id="i2" style="left:96px;top:624px;width:888px;height:412px;background-image:url(media/gathin-dopo.jpg);background-position:30% 0"></div>
+  <p class="cap qa-text" data-under="#i2">Dopo</p>
 </section></div>
 
 <!-- ============ 03 · IL PRIMA · ACCENT · Gathin's "before": the sponsored ad ============ -->
@@ -79,8 +80,8 @@
     <h2 class="h2 qa-text" style="width:888px" data-lines="2">Ha tolto la pubblicità<br><span class="bar">prima di Netflix.</span></h2>
     <p class="body qa-text" style="width:820px">Prima, appena accesa, la TV mostrava un annuncio. Sotto, file di consigli e app mai usate. Ora restano solo le app dei genitori.</p>
   </div>
-  <div class="img-box" id="i3" style="left:96px;top:624px;width:888px;height:400px;background-image:url(media/gathin-prima.jpg);background-position:0 0"></div>
-  <p class="cap qa-text" data-under="#i3">Prima: l'annuncio. Ora è sparito.</p>
+  <div class="img-box" id="i3" style="left:96px;top:624px;width:888px;height:412px;background-image:url(media/gathin-prima.jpg);background-position:0 0"></div>
+  <p class="cap qa-text" data-under="#i3">Prima</p>
 </section></div>
 
 <!-- ============ 04 · UN'ALTRA TV · LIGHT · Mihir Gupta's before/after ============ -->
@@ -91,10 +92,11 @@
     <h2 class="h2 qa-text" style="width:888px" data-lines="2">Ha alleggerito il menu:<br><span class="rc">da 192 a 83 MB.</span></h2>
     <p class="body qa-text" style="width:820px">Un altro utente ci ha provato sulla sua Google TV, diventata lentissima: 25 app spente e una schermata nuova con sfondi che cambiano.</p>
   </div>
-  <div class="img-box" id="i4a" style="left:96px;top:660px;width:432px;height:340px;background-image:url(media/mihir-prima.jpg);background-position:0 50%"></div>
-  <div class="img-box" id="i4b" style="left:552px;top:660px;width:432px;height:340px;background-image:url(media/mihir-dopo.jpg);background-position:0 50%"></div>
-  <p class="cap qa-text" data-under="#i4a">Prima: lentissima</p>
-  <p class="cap qa-text" data-under="#i4b">Dopo: meno della metà</p>
+  <!-- whole screens, original ratio 950:540 (owner: not cropped) -->
+  <div class="img-box" id="i4a" style="left:96px;top:700px;width:436px;height:248px;border-radius:24px;background-image:url(media/mihir-prima.jpg);background-size:100% 100%"></div>
+  <div class="img-box" id="i4b" style="left:548px;top:700px;width:436px;height:248px;border-radius:24px;background-image:url(media/mihir-dopo.jpg);background-size:100% 100%"></div>
+  <p class="cap qa-text" data-under="#i4a">Prima</p>
+  <p class="cap qa-text" data-under="#i4b">Dopo</p>
 </section></div>
 
 <!-- ============ 05 · VELOCE · DARK · Ryan Doyle's video (vertical, colour) ============ -->
@@ -108,8 +110,7 @@
     <p class="body qa-text" style="width:450px;color:var(--gray-400)">Nel video: il menu dopo la pulizia.</p>
   </div>
   <div class="video-box" id="v5" data-video="media/doyle-tv-veloce.mp4" data-start="0" data-dur="13" data-poster="4" data-tone="color"
-       style="left:600px;top:240px;width:384px;height:780px;border-radius:32px"></div>
-  <p class="cap qa-text" data-under="#v5">Vola.</p>
+       style="left:600px;top:240px;width:384px;height:860px;border-radius:32px"></div>
 </section></div>
 
 <!-- ============ 06 · SI PUÒ FARE? · LIGHT · how it works (interface card) ============ -->
@@ -128,8 +129,8 @@
       <li><b>02</b><span>Computer e TV sulla stessa rete Wi-Fi.</span></li>
       <li><b>03</b><span>L'AI spegne le app inutili, una alla volta.</span></li>
     </ol>
+    <div class="foot">Fai-da-te: non è un prodotto ufficiale, sono guide fatte da appassionati.</div>
   </div>
-  <p class="cap qa-text" data-under="#k6">Fai-da-te: guide di appassionati, non ufficiali.</p>
 </section></div>
 
 <!-- ============ 07 · ATTENZIONE · ACCENT · the risks ============ -->
@@ -146,7 +147,6 @@
     <div class="r"><i></i><span><b>Una Fire TV a metà:</b> Amazon blocca il menu nuovo.</span></div>
     <div class="r ok"><i></i><span><b>Le guide spengono, non cancellano:</b> si torna indietro.</span></div>
   </div>
-  <p class="cap qa-text" data-under="#k7">Rischio vero.</p>
 </section></div>
 
 <!-- ============ 08 · CHIUSURA · DARK (no corner logo, no counter, no swipe cue) ============ -->

@@ -104,8 +104,12 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 /* Real photo / screenshot box (news): same frame as .video-box; caption goes under it with .cap */
 .img-box{position:absolute;z-index:6;overflow:hidden;border-radius:32px;background:#0A0A0D center/cover no-repeat;box-shadow:var(--card-shadow)}
 .mode-light .img-box{box-shadow:0 30px 60px -30px rgba(10,10,13,.45),0 2px 6px rgba(10,10,13,.08)}
-/* Caption under an image or card (20 Oct 2026): replaces stickers and labels laid over images. Positioned by the engine
-   (data-under), CAP_GAP px below, same style everywhere; carries the 2–3-word comment ("Vola.", "Prima: 192 MB"). */
+/* before/after collage: the "after" screen in front of the "before" one, slightly offset (cover, 20 Oct 2026) */
+.img-box.front{z-index:7;outline:6px solid var(--ink-950)}
+.mode-light .img-box.front{outline-color:#F4F4F6}
+.mode-accent .img-box.front{outline-color:#1A32D1}
+/* Caption under an image (20 Oct 2026): ONLY "Prima" / "Dopo" in a before/after comparison, nothing else (no comments,
+   no stickers or labels over images). Positioned by the engine (data-under), CAP_GAP px below, same style everywhere. */
 .cap{position:absolute;z-index:7;margin:0;display:flex;align-items:center;gap:16px;font:500 30px/1.2 var(--font-primary);letter-spacing:-.01em;color:var(--tp);white-space:nowrap}
 .cap::before{content:"";width:32px;height:4px;border-radius:2px;background:var(--dash);flex:none}
 .cap.mid{justify-content:center}

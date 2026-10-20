@@ -82,7 +82,8 @@ Write this table into your notes first. It prevents most rework.
 | `.card` (+ `.abs`) | dark UI card, every mode | padding 32, radius 28; `.ui` / `.ui-meta` = UI text (non-essential only) |
 | `.sticker` | rotated pill on a card corner | **not used on Scopri AI slides since 20 Oct 2026**: use `.cap` under the card |
 | `.img-box` | real photo/screenshot box (engine) | `background-image:url(media/x.jpg)`, colour; radius 32 |
-| `.cap[data-under]` | caption under an image, video or card | engine places it 28 px below, left-aligned; several targets → centred under all. 30 px, accent dash. Keep the target's bottom ≤ ~1060 |
+| `.cap[data-under]` | **only "Prima" / "Dopo"** under an image in a before/after (no comments) | engine places it 28 px below, left-aligned, text width. 30 px, accent dash. Keep the image bottom ≤ ~1060 |
+| `.img-box.front` | the "after" screen in front of the "before" one (cover collage) | outlined in the background colour, z above the back screen |
 | `.pcard` + `.ph` | prompt composer card + `[placeholder]` | see §6 |
 | `.rows > .row > .idx/.t/.m` | T7 hairline rows, 96 px | starts around y 600 |
 | `.numeral` (+ `.suf`) + `.chip` | T4 Numeral XXL + end-point chip | the chart line is the thread (custom route) |
@@ -222,7 +223,7 @@ News carousels show the real thing: official clips (from X via `https://api.fxtw
 
 Then, after `npm run export`: `npm run media` (trimmed clips) or `npm run media -- --full` (also `slide-XX-completo.mp4` with the whole source video, which the owner trims in Instagram). It writes a poster frame into the box, so `slide-XX.png` and the previews show the clip, and stacks: full slide → video → everything in front of it (the frame, and any text, pill, sticker or card that overlaps the box: these are kept in front automatically; add class `over-video` to force it). Output: 1080 × 1350, 30 fps, H.264, no audio.
 
-Put any text about the clip **under** the box as `<p class="cap" data-under="#v">Vola.</p>`, never over it (20 Oct 2026).
+Never put text over a clip, and no comment caption under it either (20 Oct 2026): the slide's headline says it.
 
 Credit whoever made the clip in `fonti.md` and in "Fonti: …" at the end of the caption, never on the slide.
 
