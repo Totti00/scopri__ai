@@ -7,7 +7,7 @@ La guida qui sotto resta **in inglese, com'è nell'originale** (mandata dal prop
 - **Le regole di Scopri AI vengono prima** (come dice la guida stessa: "the brand file wins"): `CLAUDE.md` (2 fonti, foto e video veri, niente esagerazioni, "cosa ha fatto l'AI", niente scritte sotto le immagini tranne Prima/Dopo), `brand/identita.md`, `brand/crescita.md`.
 - **Decisioni del proprietario (16/10/2026):**
   - **il meglio all'inizio** (§5.3): la cosa più forte nella slide 2 o 3; in fondo vanno riepilogo e invito;
-  - **contatore "3/7"** (§5.4) in alto a destra su tutte le slide tranne la copertina: `carosello.py` lo mette da solo (stili A e B), negli altri template lo aggiunge il `costruttore-post`;
+  - **niente contatore "3/7"** (§5.4): tolto dal proprietario il 20/10/2026, su nessuna slide;
   - **un solo invito principale per post** (§8), scelto per tipo, nella chiusura e uguale in caption (più una domanda per i commenti); **in più, sempre** (20/10/2026), la riga "🔔 Seguici per non perdere le prossime notizie" sotto l'invito nella chiusura e in caption:
 
     | Post | Invito | Nel JSON della chiusura |

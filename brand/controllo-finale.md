@@ -12,7 +12,7 @@ Tabella adattata alle nostre regole; completa la lista di `format/carousel-copy.
 | Il meglio nascosto in fondo | Chi si ferma a metà non lo vede mai | La cosa più forte nella slide 2 o 3; in fondo riepilogo e invito |
 | Troppo testo | Si smette di leggere | Limiti di `format/carousel-copy.md` §2 (copertina ~12 parole, slide 2 ~25, contenuto ~40); tagliare o dividere |
 | I titoli da soli non raccontano la storia | Chi scorre veloce non capisce | Prova dei titoli: letti in fila, la storia fila |
-| Manca il contatore "N/totale" | Non si sa quanto manca | In alto a destra su tutte tranne la copertina (`carosello.py` lo mette da solo) |
+| C'è il contatore "N/totale" | Tolto dal proprietario il 20/10/2026 | Nessun contatore su nessuna slide |
 | Più di un invito principale, o nessuno | Chi legge non sa cosa fare | Un solo invito principale nella chiusura e lo stesso in caption (§8), più la riga 🔔 Seguici in chiusura e in caption (20/10/2026) |
 | "NEWS LAMPO" in copertina o `@scopri__ai` in basso a sinistra | Tolti dal proprietario | Copertina senza etichetta di rubrica, cornice senza nome utente (20/10/2026) |
 | Niente da salvare (6+ slide) | Meno salvataggi | Slide "In breve" prima della chiusura (`{"tipo": "riepilogo"}`) |
