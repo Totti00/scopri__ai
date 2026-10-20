@@ -7,7 +7,7 @@ Tabella adattata alle nostre regole; completa la lista di `format/carousel-copy.
 |---|---|---|
 | Copertina debole o oltre 12 parole | Nessuno scorre | Uno dei 12 ganci e il test del gancio di `format/carousel-copy.md` §3; video d'effetto |
 | Copertina che spiega già tutto | Non c'è motivo di scorrere | La copertina incuriosisce, spiega la seconda slide |
-| Manca "Scorri →" sulla copertina | La gente non capisce che c'è altro | Pillola gialla in basso a destra (`carosello.py` la mette da sola) |
+| Manca "Scorri →" sulla copertina | La gente non capisce che c'è altro | «SCORRI PER SCOPRIRE →» centrato in basso, sopra i pallini di Instagram, freccina centrata sulle maiuscole (20/10/2026, lo mette la skill) |
 | Seconda slide scollegata dalla copertina, o che non sta in piedi da sola | Chi scorre si perde; chi la vede per prima (Instagram la ripropone) non capisce | La seconda mostra subito ciò che la copertina promette e funziona anche da sola |
 | Il meglio nascosto in fondo | Chi si ferma a metà non lo vede mai | La cosa più forte nella slide 2 o 3; in fondo riepilogo e invito |
 | Troppo testo | Si smette di leggere | Limiti di `format/carousel-copy.md` §2 (copertina ~12 parole, slide 2 ~25, contenuto ~40); tagliare o dividere |

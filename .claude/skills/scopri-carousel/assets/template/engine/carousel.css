@@ -99,7 +99,8 @@ body.video *{animation-play-state:paused!important}           /* frames are seek
 .f-swipe{position:absolute;left:50%;top:1258px;transform:translateX(-50%);height:30px;display:flex;align-items:center;gap:14px;white-space:nowrap;z-index:9;
   font:600 25px/30px var(--font-primary);letter-spacing:.12em;text-transform:uppercase;color:var(--tp);text-shadow:0 0 14px rgba(0,0,0,.55),0 1px 3px rgba(0,0,0,.45)}
 .f-swipe span{margin-right:-.12em}
-.f-swipe svg{width:34px;height:16px;flex:none;fill:none;stroke:var(--accent-300);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(var(--accent-rgb),.6))}
+.f-swipe svg{width:34px;height:16px;flex:none;position:relative;top:-1px;   /* centred on the capitals (cap height), measured to ±0.5 px (20 Oct 2026) */
+  fill:none;stroke:var(--accent-300);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(var(--accent-rgb),.6))}
 .mode-light .f-swipe{text-shadow:none}.mode-light .f-swipe svg{stroke:var(--accent-500);filter:none}.mode-accent .f-swipe svg{stroke:#fff}
 .mode-accent .f-cue.filled svg{stroke:var(--accent-700)}
 

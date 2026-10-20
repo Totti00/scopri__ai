@@ -186,7 +186,7 @@ This writes `contact-sheet.jpg`, `strip-preview.jpg` and `cover-360.png`. **Read
 
 Then send the user the contact sheet (and the cover). Lead with anything not yet done.
 
-**Cover (Scopri AI, owner 20 Oct 2026).** Check slide-01 and the alternative covers at full size: the «SCORRI PER SCOPRIRE» invite is centred at the bottom (baseline ≈ y 1282, last ~60 px free for Instagram's dots), on one row with the filled arrow (lowered on the cover to centre y 1273), clear of the captions (keep the cover's content above y ≈ 1180).
+**Cover (Scopri AI, owner 20 Oct 2026).** Check slide-01 and the alternative covers at full size, and zoom on the invite: «SCORRI PER SCOPRIRE →» centred at the bottom (caps y ≈ 1263–1280, last ~60 px free for Instagram's dots), the blue arrow's vertical centre on the capitals' centre (±1 px: measure the white cap pixels and the blue arrow pixels), no filled arrow bottom-right on the cover, clear of the captions (keep the cover's content above y ≈ 1180).
 
 ## 9. Revisions
 
