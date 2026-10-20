@@ -14,7 +14,7 @@ Regola: **prendiamo le tecniche, non l'identità.**
 
 **Cosa non copiamo**
 - Fondo nero con lilla e viola, mascotte robot, etichetta "Ai facile →".
-- Foto dei CEO ritoccate in stile meme, fotogrammi di film, video di altri creator.
+- Foto dei CEO ritoccate in stile meme, video di altri creator.
 - Fonti quasi mai citate.
 - "La community più grande d'Italia".
 
