@@ -1,4 +1,4 @@
-# Note · 100 prompt per Claude (bozza 21/10/2026)
+# Note · 100 prompt per Claude (finale 21/10/2026, uscita venerdì 23/10 alle 15:30)
 
 ## Come è cambiato il lavoro oggi
 1. Prima richiesta: 10 prompt lunghi per Claude (cartella `2026-10-23-prompt-claude-da-salvare`). Fermata a metà su richiesta del regista.
@@ -47,5 +47,30 @@ Nessun prompt di salute: la categoria 10 del proprietario non ne ha.
 5. **Prompt corti.** Per stare nella griglia i prompt hanno 15–20 parole, non le 100 della skill. In caption e nel PDF c'è il trucco «Se ti manca un'informazione, chiedimela prima di rispondere».
 6. **Riga «Commenta «100» per avere il PDF»** in fondo a ogni categoria: si può togliere se pesa troppo.
 
-## Musica e orari
-Da fare nel modo «finale».
+## Modifiche del proprietario (approvazione del 21/10/2026)
+- La copertina D (elenco delle 10 categorie) è diventata la slide 1; la A (schede a ventaglio) resta tra le alternative (`exports/copertina-a.png`). `copertina-d.png` è uguale alla slide 1.
+- Caption rifatta sul modello di quella dello spunto, con parole nostre: prima riga «Commenta «100» e ti mando tutti i 100 prompt per Claude in PDF.», usi, come copiarli con il trucco, «📌 Salvalo: ci tornerai.», domanda, 🔔 Seguici, riga di parole chiave tra [parentesi quadre], 5 hashtag. Il controllo della caption non blocca la riga di parole chiave.
+- Nessun commento fissato: i prompt completi sono nelle slide e nel PDF.
+
+## Controllo finale (`brand/controllo-finale.md` e `build-guide.md` §8)
+- Copertina: niente etichetta di rubrica, niente contatore, «SCORRI PER SCOPRIRE» centrato sopra i pallini, linea blu corta che prosegue nella slide 2. Il titolo ha 7 parole; con l'elenco delle categorie supera le 12: scelta del proprietario.
+- La slide 2 (01 Imparare e studiare) mostra subito i prompt promessi dalla copertina.
+- Nessun contatore, nessun @scopri__ai in basso, logo a campana in alto a sinistra, niente giallo né arancione.
+- Chiusura: logo grande, un solo pulsante («Commenta «100» e ti mando il PDF»), riga 🔔. In caption l'invito principale per il controllo è «📌 Salvalo» (il «Commenta «100»» è ammesso dal 21/10/2026 e non conta come secondo invito).
+- Controllo automatico delle slide superato (12 slide e 4 copertine); striscia senza salti di linea alle giunture.
+- Deviazioni: testo delle schede a 21 px (meno dei 28 px della skill) per la griglia chiesta; numeri e segnaposto in blu sulle stesse schede (più di 2 accenti per slide).
+
+## Musica consigliata
+Umore del venerdì (prompt): lo-fi tranquillo, solo strumentale. Già usati o consigliati (`brand/musica-usata.md` e note degli ultimi post): Daft Punk, Justice, M83, Henry Mancini, Lalo Schifrin, Moderat, Jon Hopkins, Ratatat, Chemical Brothers, Kavinsky, Gesaffelstein, Boards of Canada, Aphex Twin, Röyksopp. Nessuno di questi qui.
+1. **Nujabes – Aruarian Dance** (strumentale, lo-fi hip hop classico, ritmo morbido che lascia leggere)
+2. **Idealism – Controlla** (strumentale, lo-fi calmo e caldo)
+3. **Kupla – Owls of the Night** (strumentale, lo-fi lento e pulito)
+Controlla che ci siano nella libreria di Instagram; se tra quelle di tendenza (↗) c'è un lo-fi strumentale, ha la precedenza. Quando scegli, scrivilo in `brand/musica-usata.md`.
+
+## Musica usata
+Da scrivere quando il proprietario sceglie.
+
+## Orari
+- **Venerdì 23/10 alle 15:30** (calendario).
+- Nella prima ora: rispondere ai commenti. A chi scrive «100» va mandato il PDF `pubblicazione/100-prompt-claude.pdf` in privato (a mano o con un risponditore automatico). Condividere il post nelle Storie, magari con un sondaggio («Quale categoria ti serve?»).
+- Testi alternativi: Impostazioni avanzate → Accessibilità → Scrivi testo alternativo, uno per slide (`pubblicazione/02-testi-alternativi.txt`).

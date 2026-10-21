@@ -1,15 +1,14 @@
 # 100 prompt per Claude
 
-_Copy in italiano · formato: statico · 12 slide (copertina + 10 categorie + chiusura) · bozza del 21/10/2026, uscita venerdì 23/10 alle 15:30_
+_Copy in italiano · formato: statico · 12 slide (copertina + 10 categorie + chiusura) · APPROVATO il 21/10/2026 con modifiche, uscita venerdì 23/10 alle 15:30_
 
 **In una frase:** per chi usa (o vuole usare) Claude senza sapere cosa chiedere: 100 richieste pronte, divise in 10 aree di vita e lavoro; l'azione è salvare il post e chiedere il PDF. **Struttura:** lista (copy guide §6), una categoria per slide, griglia 2 × 5 come nello spunto, nel nostro stile.
 
 Spunto: post «100 Claude prompts» di un creator (regola 7 del 21/10/2026: contenuto ripreso e riscritto in italiano con parole nostre, niente grafica, nome o slogan suoi). Le categorie 01–04 sono adattate dal suo post, 05–10 dagli screenshot del proprietario con modifiche (02: «Bilancio della settimana» e «Abitudini» sostituiti da «Menu e spesa» e «Bilancio di casa», per non ripetere la 10).
 
-### 01 — Copertina (scuro)
-- **Titolo:** «100 prompt» / per Claude (accento: «100 prompt»)
-- **Sottotitolo:** Divisi in 10 categorie. Pronti da copiare.
-- **Visual:** tre schede di prompt a ventaglio (n. 13, 41, 3), luce blu dietro. In basso «SCORRI PER SCOPRIRE» e la linea blu corta.
+### 01 — Copertina (scuro) · scelta del proprietario: la D
+- **Titolo:** «100 prompt» / per Claude, / in 10 aree (accento: «100 prompt»)
+- **Visual:** l'elenco delle 10 categorie su due colonne (01 Imparare e studiare … 10 Crescita personale). In basso «SCORRI PER SCOPRIRE» e la linea blu corta.
 
 ### 02 — 01 Imparare e studiare (chiaro)
 - **Titolo:** 01 Imparare e studiare
@@ -167,33 +166,28 @@ Spunto: post «100 Claude prompts» di un creator (regola 7 del 21/10/2026: cont
 - **Pulsante:** (fumetto) Commenta «100» e ti mando il PDF
 - **Riga 🔔:** Seguici per non perdere i prossimi prompt
 
-### Caption
+### Caption (finale, sul modello di quella dello spunto)
 ```text
-100 prompt per Claude, l'intelligenza artificiale di Anthropic: per studiare, lavorare, scrivere e decidere meglio. 👇
+Commenta «100» e ti mando tutti i 100 prompt per Claude in PDF.
 
-🧠 Un prompt è la richiesta che scrivi all'AI. Più è precisa, più la risposta ti serve: questi dicono a Claude cosa fare, per chi e in che forma.
+🧠 Prompt pronti per studio, lavoro, scrittura, ricerca, produttività, social, idee, decisioni e programmazione.
 
-Come usarli:
-✍️ Cambia le parti tra [PARENTESI QUADRE] con i tuoi dati.
-💬 Incollali in Claude. Funzionano anche con ChatGPT e Gemini.
-💡 Aggiungi in fondo: «Se ti manca un'informazione, chiedimela prima di rispondere». Le risposte migliorano subito.
-🔒 Prima di incollare documenti, togli nome, indirizzo, codice fiscale e IBAN.
+✍️ Copiali, cambia le parti tra [PARENTESI] e aggiungi in fondo: «Se ti manca un'informazione, chiedimela prima di rispondere». Così non riparti da zero ogni volta.
 
-⚠️ L'AI aiuta, ma può sbagliare: controlla date, cifre e scadenze prima di usarle.
-
-📄 Commenta «100» e ti mando il PDF con tutti i prompt, pronti da copiare.
-📌 Salvalo per quando ti serve.
-Quale categoria ti serve di più? 👇
+📌 Salvalo: ci tornerai.
+Quale categoria provi per prima?
 🔔 Seguici per non perdere i prossimi prompt.
+
+[prompt per Claude, 100 prompt Claude, Claude AI, migliori prompt, prompt AI, intelligenza artificiale, produttività con l'AI, Claude per programmare, strumenti AI, prompt in italiano]
 
 #claude #promptAI #intelligenzaartificiale #anthropic #produttività
 ```
 
 **Copertine alternative** (`exports/copertine-confronto.jpg`):
-- A (slide 1): «100 prompt per Claude» + schede a ventaglio
+- A: «100 prompt per Claude» + schede a ventaglio (era la slide 1 della bozza)
 - B: numero «100» gigante + «prompt per Claude» + lente 3D di vetro e cromo
 - C: «Smetti di chiedere a caso» + scheda chat con il prompt 01
-- D: «100 prompt per Claude, in 10 aree» + l'elenco delle 10 categorie
+- D (**slide 1**, scelta del proprietario): «100 prompt per Claude, in 10 aree» + l'elenco delle 10 categorie
 
 **Hook alternativi:** Smetti di chiedere a caso · Claude fa di più se sai chiedere · 100 cose da chiedere a Claude
 

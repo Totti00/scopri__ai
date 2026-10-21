@@ -171,7 +171,7 @@ window.CAROUSEL = {{
 </html>
 '''
 
-body = '<!--COVER-START-->\n' + COVER_A + '\n<!--COVER-END-->\n' + '\n'.join(slides) + '\n' + CLOSE
+body = '<!--COVER-START-->\n' + COVER_D + '\n<!--COVER-END-->\n' + '\n'.join(slides) + '\n' + CLOSE
 (here / 'index.html').write_text(HEAD + body + tail(12))
 (here / 'copertine.html').write_text(
     '<!--VARIANT a copertina principale (slide 1)-->\n' + COVER_A + '\n'
