@@ -1,0 +1,18 @@
+100 prompt per Claude, l'intelligenza artificiale di Anthropic: per studiare, lavorare, scrivere e decidere meglio. 👇
+
+🧠 Un prompt è la richiesta che scrivi all'AI. Più è precisa, più la risposta ti serve: questi dicono a Claude cosa fare, per chi e in che forma.
+
+Come usarli:
+✍️ Cambia le parti tra [PARENTESI QUADRE] con i tuoi dati.
+💬 Incollali in Claude. Funzionano anche con ChatGPT e Gemini.
+💡 Aggiungi in fondo: «Se ti manca un'informazione, chiedimela prima di rispondere». Le risposte migliorano subito.
+🔒 Prima di incollare documenti, togli nome, indirizzo, codice fiscale e IBAN.
+
+⚠️ L'AI aiuta, ma può sbagliare: controlla date, cifre e scadenze prima di usarle.
+
+📄 Commenta «100» e ti mando il PDF con tutti i prompt, pronti da copiare.
+📌 Salvalo per quando ti serve.
+Quale categoria ti serve di più? 👇
+🔔 Seguici per non perdere i prossimi prompt.
+
+#claude #promptAI #intelligenzaartificiale #anthropic #produttività

@@ -3,24 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Scopri AI · 10 prompt per Claude da salvare</title>
+<title>Scopri AI · 100 prompt per Claude</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
 <link rel="stylesheet" href="engine/carousel.css">
 <style>
-/* ===== Slide-specific CSS for this carousel goes here (the engine stays untouched) ===== */
-.chat{left:470px;top:704px;width:560px;padding:32px 32px 30px}
-.chat .msg{margin-top:18px;padding:18px 22px;border-radius:16px;background:rgba(255,255,255,.05);font:500 24px/1.35 var(--font-primary);color:var(--gray-300)}
-.chat .msg.me{background:rgba(var(--accent-rgb),.22);color:var(--snow);margin-left:72px}
-.chat .foot{margin-top:22px;display:flex;align-items:center;gap:12px}
-.chat .dot{width:10px;height:10px;border-radius:50%;background:var(--signal-500)}
-.chat .send{margin-left:auto;height:44px;padding:0 20px;border-radius:999px;background:#fff;color:var(--ink-950);display:inline-flex;align-items:center;font:600 22px/1 var(--font-primary)}
+/* ===== Griglia dei prompt: 2 colonne x 5 schede (richiesta del proprietario, 21/10/2026) ===== */
+.cat-title{left:96px;top:200px;width:888px;font-size:56px;white-space:nowrap}
+.cat-title .n{font:500 40px/1 var(--font-meta);color:var(--acc);letter-spacing:0;margin-right:22px;vertical-align:6px}
+.grid{position:absolute;left:96px;top:296px;width:888px;height:790px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(5,1fr);gap:12px;z-index:6}
+.pg{position:relative;padding:15px 20px 11px;border-radius:20px;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.mode-light .pg{box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 40px -24px rgba(10,10,20,.45)}
+.pg .pt{display:flex;align-items:baseline;gap:12px;font:600 25px/1.15 var(--font-primary);letter-spacing:-.01em;color:var(--snow);white-space:nowrap}
+.pg .pt b{font:500 19px/1 var(--font-meta);color:var(--accent-300);font-weight:500;min-width:30px}
+.pg p{margin:7px 0 0;font:400 21px/1.27 var(--font-primary);color:var(--gray-300);text-wrap:pretty}
+.pg .ph{font-weight:500;padding:0 .1em}
+.pdf-line{left:96px;top:1100px;width:888px;font:500 22px/1 var(--font-meta);letter-spacing:.06em;text-transform:uppercase;color:var(--meta)}
+.pdf-line b{color:var(--acc);font-weight:500}
+.apill .hl{background:#fff;color:var(--accent-700);border-radius:14px;padding:6px 12px;margin:0 2px}
+/* copertine: schede a ventaglio */
+.fan{position:absolute;z-index:6;width:560px;padding:30px 32px 28px}
+.fan.back p{visibility:hidden}
+.fan .pt{font-size:32px}.fan .pt b{font-size:24px}.fan p{font-size:28px;line-height:1.32;margin-top:12px}
+/* copertina D: le 10 categorie */
+.cats{position:absolute;left:96px;top:660px;width:888px;display:grid;grid-template-columns:1fr 1fr;column-gap:40px;z-index:7}
+.cats div{display:flex;gap:16px;align-items:baseline;padding:22px 0;border-top:2px solid var(--hair);font:500 29px/1.2 var(--font-primary);color:var(--tp);white-space:nowrap}
+.cats b{font:500 22px/1 var(--font-meta);color:var(--acc);font-weight:500}
+/* copertina C: composer */
+.composer{left:96px;top:640px;width:888px;padding:34px 36px 30px}
+.composer p{margin:16px 0 0;font:400 30px/1.36 var(--font-primary);color:var(--snow)}
+.composer .foot{margin-top:24px;display:flex;align-items:center;gap:12px}
+.composer .send{margin-left:auto;width:56px;height:56px;border-radius:50%;background:var(--accent-500);display:grid;place-items:center}
+.composer .send svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 </style>
 </head>
 <body>
-
-<!-- Shared SVG filters: grain (§6.6) and the thread glow (userSpaceOnUse, or a horizontal line loses its blur) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <filter id="grain" x="0" y="0" width="100%" height="100%">
     <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
@@ -30,188 +48,214 @@
     <feGaussianBlur stdDeviation="4"/>
   </filter>
 </svg>
-
 <header class="devbar">
-  <h1>Scopri AI · 10 prompt per Claude da salvare<small>1080 × 1350 · npm run export (PNG) · npm run export:video (MP4)</small></h1>
+  <h1>Scopri AI · 100 prompt per Claude<small>1080 × 1350 · npm run export (PNG)</small></h1>
   <button id="btn-grid" aria-pressed="true">Griglia</button>
   <button id="btn-strip" aria-pressed="false">Striscia (giunture)</button>
   <button id="btn-play" hidden>Riproduci animazioni</button>
   <button id="btn-qa">Esegui QA</button>
 </header>
 <div class="qa" id="qa-out"></div>
-
 <main class="deck" id="deck">
-<!--
-  LAYOUT LIBRARY. Every slide below is a proven layout from design-system.md §10, written in the brand style.
-  Their sample copy only describes the layout. Replace it with the approved copy, delete the slides you don't need,
-  duplicate the ones you need more of. Then re-derive the mode sequence (§11.1) and the thread table in CAROUSEL.
-  Mark every text element that QA must keep inside the live area with class "qa-text"; add data-lines="N"
-  where a headline must wrap to exactly N lines.
--->
-
-<!-- ============ T1 · COVER · DARK ============ -->
+<!--COVER-START-->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
-  <div class="layer rings" style="--rx:820px;--ry:900px"></div>
-  <div class="glow" data-for=".glassobj"></div>
-  <div class="glassobj" style="left:600px;top:660px;width:520px;height:470px">
-    <i style="left:40px;top:90px;width:330px;height:330px"></i>
-    <i class="sq" style="left:230px;top:10px;width:250px;height:250px"></i>
-    <i style="left:300px;top:290px;width:150px;height:150px"></i>
-  </div>
-  <!-- No pill on the cover: never a rubric label ("News lampo" …) on slide 1 (owner, 20 Oct 2026). Headline starts at y 216. -->
-  <h2 class="txt display qa-text" style="left:96px;top:216px;width:888px" data-lines="3"><span class="em">Hook in</span><br>sei parole<br>al massimo</h2>
-  <p class="txt lead qa-text" style="left:96px;top:1020px;width:356px" data-lines="2">Sotto-titolo breve, otto parole massimo.</p>
+  <div class="layer rings" style="--rx:760px;--ry:900px"></div>
+  <div class=.glow" style="left:700px;top:900px"></div>
+  <div class="pg card fan back" style="left:480px;top:640px;transform:rotate(-7deg);filter:brightness(.6)"><div class="pt"><b>13</b>Basta rimandare</div><p>Rimando <span class="ph">[COMPITO]</span> da giorni. Dividilo in passi piccolissimi e fammi iniziare entro 30 minuti.</p></div><div class="pg card fan back" style="left:500px;top:730px;transform:rotate(-2.5deg);filter:brightness(.8)"><div class="pt"><b>41</b>Idee per i contenuti</div><p>Dammi 30 idee di post su <span class="ph">[ARGOMENTO]</span>: prima quelle più utili, curiose e da condividere.</p></div><div class="pg card fan qa-text" id="front" style="left:416px;top:830px;transform:rotate(2deg)"><div class="pt"><b>03</b>Spiegamelo semplice</div><p>Spiegami <span class="ph">[ARGOMENTO]</span> come a un principiante: parole semplici, esempi di vita reale, riassunto finale.</p></div>
+  <h2 class="txt display qa-text" style="left:96px;top:216px;width:888px" data-lines="2"><span class="em">100 prompt</span><br>per Claude</h2>
+  <p class="txt lead qa-text" style="left:96px;top:520px;width:600px" data-lines="2">Divisi in 10 categorie.<br>Pronti da copiare.</p>
 </section></div>
-
-<!-- ============ T2 · HEADLINE + OBJECT · LIGHT ============ -->
+<!--COVER-END-->
 <div class="slot"><section class="slide mode-light">
   <div class="layer bg"></div>
-  <div class="card abs chat">
-    <div class="ui-meta">Esempio · card UI</div>
-    <div class="msg">Le card sono sempre scure, anche su sfondo chiaro.</div>
-    <div class="msg me">Il testo essenziale non va mai solo nelle card.</div>
-    <div class="foot"><span class="dot"></span><span class="ui">Bozza pronta</span><span class="send">Invia</span></div>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">01</span>Imparare e studiare</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>01</b>Impara da zero</div><p>Fai da mio insegnante di <span class="ph">[ABILITÀ]</span>. Parto da zero: un concetto alla volta, con esempi ed esercizi.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>02</b>Mappa completa</div><p>Disegnami il percorso per <span class="ph">[ABILITÀ]</span>, da principiante a esperto: livelli, concetti, progetti, traguardi.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>03</b>Spiegamelo semplice</div><p>Spiegami <span class="ph">[ARGOMENTO]</span> come a un principiante: parole semplici, esempi di vita reale, riassunto finale.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>04</b>Insegnami con domande</div><p>Insegnami <span class="ph">[ARGOMENTO]</span> solo con domande, una alla volta. Aspetta la mia risposta prima di continuare.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>05</b>Piano di 30 giorni</div><p>Fammi un piano di 30 giorni per imparare <span class="ph">[ABILITÀ]</span>: ogni giorno una lezione, un esercizio, una verifica.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>06</b>Trova i punti deboli</div><p>Fammi 15 domande su <span class="ph">[ARGOMENTO]</span>, dalla più facile alla più difficile. Poi un piano sui miei punti deboli.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>07</b>Imparo facendo</div><p>Aiutami a costruire <span class="ph">[PROGETTO]</span> da zero. Spiegami ogni concetto solo quando serve, mentre lo facciamo.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>08</b>Esercizi su misura</div><p>Dammi 30 esercizi su <span class="ph">[ARGOMENTO]</span>: facili, medi e difficili. Le soluzioni solo dopo il mio tentativo.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>09</b>Preparami all&#x27;esame</div><p>Ho l'esame di <span class="ph">[MATERIA]</span> tra <span class="ph">[NUMERO]</span> giorni. Dividi argomenti, ripassi, esercizi e simulazioni.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>10</b>Diventa esperto</div><p>Portami dalle basi di <span class="ph">[ARGOMENTO]</span> alle applicazioni vere, con gli errori comuni e le domande da colloquio.</p></div>
   </div>
-  <div class="pill qa-text">Re-hook · T2</div>
-  <div class="stack">
-    <h2 class="h1 qa-text" style="width:736px" data-lines="2"><span class="rc">La slide 2</span><br>regge da sola</h2>
-    <p class="body qa-text" style="width:432px">Instagram la mostra anche a chi ha saltato la copertina: deve funzionare come secondo hook.</p>
-  </div>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
 </section></div>
-
-<!-- ============ T4 · BIG NUMBER · DARK (the thread becomes the chart line) ============ -->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
-  <div class="glow" data-for=".numeral"></div>
-  <div class="pill qa-text">Il dato · T4</div>
-  <div class="numeral qa-text">1080</div>
-  <h2 class="txt h2 qa-text" style="left:96px;top:632px;width:584px" data-lines="2">pixel di larghezza,<br><span class="rc">su ogni slide</span></h2>
-  <p class="txt body qa-text" style="left:96px;top:806px;width:432px">Numero XXL: peso 200, gradiente d'accento. Un solo dato per slide.</p>
-  <span class="chip" style="left:840px;top:946px">1350 px</span>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">02</span>Produttività e organizzazione</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>11</b>Pianifica la giornata</div><p>Oggi devo fare: <span class="ph">[COMPITI]</span>. Mettili in ordine di priorità e urgenza, con il tempo stimato per ognuno.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>12</b>La mia settimana</div><p>Trasforma <span class="ph">[OBIETTIVI]</span> in compiti per questa settimana, con un giorno e una scadenza per ognuno.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>13</b>Basta rimandare</div><p>Rimando <span class="ph">[COMPITO]</span> da giorni. Dividilo in passi piccolissimi e fammi iniziare entro 30 minuti.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>14</b>Svuota la testa</div><p>Ho in testa: <span class="ph">[ELENCO]</span>. Dividilo in compiti, idee, decisioni, preoccupazioni e cose da lasciar perdere.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>15</b>Routine realistica</div><p>Crea una routine realistica per <span class="ph">[OBIETTIVI]</span>: lavoro, studio, sport, pause e tempo solo per me.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>16</b>Dove va il mio tempo</div><p>Ecco una mia giornata tipo: <span class="ph">[GIORNATA]</span>. Dimmi cosa mi ruba tempo e come recuperarlo.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>17</b>Cosa fare prima</div><p>Ordina <span class="ph">[ELENCO]</span> per urgenza, importanza e fatica. Poi dimmi cosa delegare e cosa eliminare.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>18</b>Lavoro concentrato</div><p>Dividi <span class="ph">[PROGETTO]</span> in sessioni da 45 minuti di lavoro concentrato, con pause vere tra una e l'altra.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>19</b>Menu e spesa</div><p>Menu di 7 giorni per <span class="ph">[PERSONE]</span> persone con <span class="ph">[BUDGET]</span> euro, cene in 30 minuti, più la lista della spesa.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>20</b>Bilancio di casa</div><p>Entrate e spese del mese: <span class="ph">[ELENCO]</span>. Dimmi dove spendo troppo e quanto posso mettere da parte.</p></div>
+  </div>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
 </section></div>
-
-<!-- ============ T9 · MANIFESTO · ACCENT ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">03</span>Lavoro e curriculum</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>21</b>Percorso di carriera</div><p>Faccio <span class="ph">[LAVORO]</span> e so fare <span class="ph">[COMPETENZE]</span>. Mostrami 3 strade per crescere e i passi per ognuna.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>22</b>Curriculum su misura</div><p>Confronta il mio curriculum con questo annuncio: <span class="ph">[ANNUNCIO]</span>. Cosa aggiungo, tolgo e riscrivo?</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>23</b>Riscrivi il curriculum</div><p>Riscrivi il mio curriculum: più breve, con risultati concreti, leggibile dai filtri automatici. <span class="ph">[CV]</span></p></div>
+    <div class="pg card qa-text"><div class="pt"><b>24</b>Simulazione di colloquio</div><p>Fai il selezionatore per <span class="ph">[RUOLO]</span>. Una domanda alla volta, poi un voto e come migliorare la risposta.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>25</b>Domande del colloquio</div><p>Elenca le 30 domande più probabili a un colloquio per <span class="ph">[RUOLO]</span>, con una risposta modello per ognuna.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>26</b>Cosa mi manca</div><p>So fare <span class="ph">[COMPETENZE]</span> e voglio fare <span class="ph">[RUOLO]</span>. Cosa mi manca, e come lo imparo per primo?</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>27</b>Valuta i miei lavori</div><p>Ecco i miei progetti: <span class="ph">[PROGETTI]</span>. Dimmi come li vedrebbe un selezionatore e cosa migliorare.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>28</b>Strategia di candidatura</div><p>Cerco lavoro come <span class="ph">[RUOLO]</span> a <span class="ph">[CITTÀ]</span>, livello <span class="ph">[LIVELLO]</span>. Fammi un piano settimana per settimana.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>29</b>LinkedIn migliore</div><p>Migliora il mio profilo LinkedIn: titolo, informazioni ed esperienze. Il testo attuale: <span class="ph">[PROFILO]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>30</b>Pronto in 90 giorni</div><p>Inizio come <span class="ph">[RUOLO]</span> tra poco. Fammi un piano di 90 giorni per partire bene e farmi notare.</p></div>
+  </div>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
+</section></div>
 <div class="slot"><section class="slide mode-accent">
   <div class="layer bg"></div>
-  <div class="supershape" style="left:350px;top:800px;width:1600px;height:1600px"></div>
-  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="4">Una slide,<br>un'idea.<br><span class="em">Il resto</span><br>è rumore.</h2>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">04</span>Programmare</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>31</b>Mentore di codice</div><p>Fai da mio mentore di programmazione. Il mio livello: <span class="ph">[LIVELLO]</span>. Correggimi e spiegami sempre il perché.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>32</b>Trova l&#x27;errore</div><p>Ecco il codice: <span class="ph">[CODICE]</span>. Trova l'errore, spiegami la causa, correggilo e dimmi come evitarlo.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>33</b>Impara un linguaggio</div><p>Insegnami <span class="ph">[LINGUAGGIO]</span> da zero, con un piccolo esercizio pratico dopo ogni argomento.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>34</b>Colloqui tecnici</div><p>Allenami ai colloqui tecnici per <span class="ph">[RUOLO]</span>: un esercizio alla volta, poi la soluzione e i miei errori.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>35</b>Un progetto vero</div><p>Guidami a costruire un progetto vero con <span class="ph">[TECNOLOGIA]</span>, dall'idea alla pubblicazione, passo per passo.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>36</b>Revisione del codice</div><p>Rivedi il mio codice: leggibilità, velocità, sicurezza e casi limite. Ecco il codice: <span class="ph">[CODICE]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>37</b>Spiegami l&#x27;errore</div><p>Spiegami in parole semplici questo messaggio di errore e cosa devo fare: <span class="ph">[ERRORE]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>38</b>Riordina il codice</div><p>Rendi questo codice più ordinato e leggibile, senza cambiare cosa fa: <span class="ph">[CODICE]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>39</b>Progettare un&#x27;app</div><p>Come progetteresti <span class="ph">[APP O SERVIZIO]</span>? Parti, dati, e cosa succede se gli utenti diventano tanti.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>40</b>10 progetti per imparare</div><p>Proponimi 10 progetti per imparare <span class="ph">[TECNOLOGIA]</span>, dal più facile al più difficile.</p></div>
+  </div>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
 </section></div>
-
-<!-- ============ T5 · NUMBERED POINT · LIGHT ============ -->
 <div class="slot"><section class="slide mode-light">
   <div class="layer bg"></div>
-  <div class="layer dots"></div>
-  <div class="ghost num">01</div>
-  <div class="pill qa-text">Punto 01</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" style="width:660px" data-lines="2">Titolo che si legge<br><span class="rc">anche da solo</span></h2>
-    <p class="body qa-text" style="width:584px">Poi una o due frasi brevi. Sopra le 40 parole, dividi il punto su due slide invece di rimpicciolire il testo.</p>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">05</span>Contenuti e social</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>41</b>Idee per i contenuti</div><p>Dammi 30 idee di post su <span class="ph">[ARGOMENTO]</span>: prima quelle più utili, curiose e da condividere.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>42</b>Calendario dei post</div><p>Fammi un calendario di 30 giorni per <span class="ph">[ARGOMENTO]</span>: tema, apertura, formato e scopo di ogni post.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>43</b>Apertura che ferma</div><p>Riscrivi questa frase d'apertura in 15 versioni più forti, brevi e curiose, senza esagerare: <span class="ph">[FRASE]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>44</b>Riusa un contenuto</div><p>Trasforma questo contenuto in 5 post, 3 video brevi e 10 frasi d'apertura, stesso messaggio: <span class="ph">[TESTO]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>45</b>Il mio profilo</div><p>Aiutami a definire il mio profilo su <span class="ph">[ARGOMENTO]</span>: per chi parlo, di cosa, con che tono, in cosa sono diverso.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>46</b>Cosa funziona</div><p>Ecco i miei post migliori: <span class="ph">[POST E NUMERI]</span>. Trova cosa hanno in comune e cosa dovrei fare di più.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>47</b>Un carosello</div><p>Trasforma <span class="ph">[ARGOMENTO]</span> in un carosello di 7 slide: titolo forte, testi brevi, un filo logico.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>48</b>Copione video</div><p>Scrivi il copione di un video di 60 secondi su <span class="ph">[ARGOMENTO]</span>: apertura forte, cosa utile, chiusura.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>49</b>Argomenti scoperti</div><p>Su <span class="ph">[ARGOMENTO]</span>, trova 20 temi utili di cui si parla poco o che vengono spiegati male.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>50</b>Un metodo fisso</div><p>Fammi un metodo per pubblicare <span class="ph">[NUMERO]</span> post a settimana: idee, scrittura, grafica, pubblicazione.</p></div>
   </div>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
 </section></div>
-
-<!-- ============ T5 · PROMPT CARD · DARK (prompt carousels: ~100-word structured prompts) ============ -->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
-  <div class="ghost num">02</div>
-  <div class="glow" data-for=".pcard"></div>
-  <div class="pill qa-text">Prompt 02</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Riassumi <span class="rc">il thread di email</span></h2>
-    <div class="pcard card qa-text">
-      <div class="sticker">Allega: email</div>
-      <p>Agisci come un assistente che prepara riassunti per chi ha poco tempo. Ti incollo un thread di email <span class="ph">[argomento]</span>, con i dati personali oscurati.</p>
-      <ol>
-        <li><span class="n">1.</span><span>Riassumi in tre righe cosa è stato deciso e da chi.</span></li>
-        <li><span class="n">2.</span><span>Elenca le domande rimaste aperte e chi deve rispondere.</span></li>
-        <li><span class="n">3.</span><span>Indica le scadenze citate, con la data esatta.</span></li>
-        <li><span class="n">4.</span><span>Proponi la prossima mossa per me, in una frase.</span></li>
-      </ol>
-      <p class="out">Usa elenchi puntati. Se un'informazione non è nel thread, scrivi «non indicato»: non inventarla.</p>
-    </div>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">06</span>Business e lavoro in proprio</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>51</b>Idee di attività</div><p>Ecco cosa so fare, il tempo e il budget: <span class="ph">[DETTAGLI]</span>. Dammi 20 idee di attività, dalla più facile.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>52</b>Valuta l&#x27;idea</div><p>Analizza la mia idea: <span class="ph">[IDEA]</span>. Per chi è, che problema risolve, concorrenti, rischi, come provarla.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>53</b>Problemi da risolvere</div><p>Elenca 30 problemi costosi o fastidiosi di <span class="ph">[CLIENTI]</span> per cui pagherebbero già una soluzione.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>54</b>La prima versione</div><p>Per questa idea, <span class="ph">[IDEA]</span>, descrivi la versione più semplice da lanciare subito: cosa c'è e cosa no.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>55</b>Come guadagnare</div><p>Dammi 10 modi per guadagnare con <span class="ph">[PRODOTTO O SERVIZIO]</span>, con pro, contro e fatica di ognuno.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>56</b>I concorrenti</div><p>Analizza i concorrenti di <span class="ph">[ATTIVITÀ]</span>: prezzi, punti forti, punti deboli e cosa manca a tutti.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>57</b>Il cliente tipo</div><p>Descrivi 3 clienti tipo di <span class="ph">[PRODOTTO]</span>: obiettivi, problemi, dubbi e cosa li convince a comprare.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>58</b>Il prezzo giusto</div><p>Fai il prezzo di <span class="ph">[PRODOTTO]</span>, che mi costa <span class="ph">[COSTO]</span>: tre pacchetti, cosa c'è in ognuno e per chi.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>59</b>I primi 100 clienti</div><p>Fammi un piano pratico per trovare i primi 100 clienti di <span class="ph">[ATTIVITÀ]</span>, con poco budget.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>60</b>Piano di 12 mesi</div><p>Fammi un piano di crescita di 12 mesi per <span class="ph">[ATTIVITÀ]</span>, con un traguardo per ogni mese.</p></div>
   </div>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
 </section></div>
-
-<!-- ============ T7 · LIST ROWS · LIGHT ============ -->
 <div class="slot"><section class="slide mode-light">
   <div class="layer bg"></div>
-  <div class="pill qa-text">Checklist · T7</div>
-  <div class="stack">
-    <h2 class="h1 qa-text" style="width:736px" data-lines="2">Prima di inviare,<br><span class="rc">controlla</span></h2>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">07</span>Ricerca, analisi e documenti</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>61</b>Ricerca su un tema</div><p>Fammi una ricerca su <span class="ph">[ARGOMENTO]</span>: contesto, situazione di oggi, opinioni diverse, conclusioni.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>62</b>Riassumi il documento</div><p>Riassumi questo documento: punti chiave, decisioni, scadenze, rischi e cose da fare. <span class="ph">[DOCUMENTO]</span></p></div>
+    <div class="pg card qa-text"><div class="pt"><b>63</b>Confronta due opzioni</div><p>Confronta <span class="ph">[OPZIONE A]</span> e <span class="ph">[OPZIONE B]</span> in una tabella: costi, vantaggi, limiti. Poi consigliami.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>64</b>Leggi i dati</div><p>Ecco i dati: <span class="ph">[DATI]</span>. Trova tendenze e anomalie, e separa i fatti dalle ipotesi.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>65</b>Trova la risposta</div><p>Leggi questo documento e tira fuori solo cosa serve per <span class="ph">[DOMANDA]</span>, citando le frasi esatte.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>66</b>Cosa non torna</div><p>In questo documento trova contraddizioni, dati mancanti e frasi poco chiare: <span class="ph">[DOCUMENTO]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>67</b>Appunti di studio</div><p>Trasforma questo testo in appunti puliti: titoli, punti, definizioni ed esempi. <span class="ph">[TESTO]</span></p></div>
+    <div class="pg card qa-text"><div class="pt"><b>68</b>Una pagina sola</div><p>Riduci questo documento a una pagina: idea principale, numeri chiave, rischi, prossimi passi.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>69</b>Dopo la riunione</div><p>Dagli appunti della riunione estrai compiti, chi li fa, scadenze e domande aperte: <span class="ph">[APPUNTI]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>70</b>Controlla i fatti</div><p>Controlla questo testo: dimmi cosa è sicuro, cosa è dubbio e cosa devo verificare. <span class="ph">[TESTO]</span></p></div>
   </div>
-  <div class="rows qa-text" style="top:600px">
-    <div class="row"><span class="idx">01</span><span class="t">Destinatario giusto</span></div>
-    <div class="row"><span class="idx">02</span><span class="t">Tono adatto</span></div>
-    <div class="row"><span class="idx">03</span><span class="t">Dati sensibili tolti</span></div>
-    <div class="row"><span class="idx">04</span><span class="t">Fatti verificati</span></div>
-    <div class="row"><span class="idx">05</span><span class="t">Una sola richiesta</span></div>
-  </div>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
 </section></div>
-
-<!-- ============ T6 · COMPARISON · ACCENT ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">08</span>Scrivere e comunicare</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>71</b>Più professionale</div><p>Riscrivi questo messaggio in modo professionale, chiaro e sicuro, senza cambiarne il senso: <span class="ph">[TESTO]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>72</b>Più naturale</div><p>Rendi questo testo naturale, come scritto da una persona: via frasi fatte e ripetizioni. <span class="ph">[TESTO]</span></p></div>
+    <div class="pg card qa-text"><div class="pt"><b>73</b>Prima mail</div><p>Scrivi una mail breve a <span class="ph">[PERSONA]</span> per proporre <span class="ph">[PRODOTTO O IDEA]</span>: su misura, utile, senza insistere.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>74</b>Il sollecito</div><p><span class="ph">[PERSONA]</span> non mi ha risposto a questo messaggio: <span class="ph">[MESSAGGIO]</span>. Scrivi un sollecito gentile e breve.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>75</b>Correggi l&#x27;italiano</div><p>Correggi grammatica e punteggiatura senza cambiare il mio stile, e spiega gli errori più importanti: <span class="ph">[TESTO]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>76</b>Più corto</div><p>Accorcia questo testo della metà senza perdere niente di importante: <span class="ph">[TESTO]</span>.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>77</b>Cambia il tono</div><p>Riscrivi questo messaggio in tre toni: formale, amichevole e deciso. Stesso significato. <span class="ph">[TESTO]</span></p></div>
+    <div class="pg card qa-text"><div class="pt"><b>78</b>Post per LinkedIn</div><p>Trasforma questa idea in un post per LinkedIn: inizio forte, paragrafi brevi, un consiglio utile. <span class="ph">[IDEA]</span></p></div>
+    <div class="pg card qa-text"><div class="pt"><b>79</b>Racconta una storia</div><p>Trasforma questi fatti in una storia: inizio che incuriosisce, tensione, dettagli, una lezione. <span class="ph">[FATTI]</span></p></div>
+    <div class="pg card qa-text"><div class="pt"><b>80</b>Comunica meglio</div><p>Analizza questo messaggio: <span class="ph">[MESSAGGIO]</span>. Dimmi come renderlo più chiaro e convincente, poi riscrivilo.</p></div>
+  </div>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
+</section></div>
 <div class="slot"><section class="slide mode-accent">
   <div class="layer bg"></div>
-  <div class="pill qa-text">Prima / dopo · T6</div>
-  <div class="stack">
-    <h2 class="h1 qa-text" style="width:888px" data-lines="2">Prompt vago,<br><span class="em">risposta vaga</span></h2>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">09</span>AI e automazione</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>81</b>Cosa può fare l&#x27;AI</div><p>Ecco come lavoro: <span class="ph">[ATTIVITÀ]</span>. Quali compiti ripetitivi potrebbe fare l'AI? Ordinali per tempo risparmiato.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>82</b>Un flusso con l&#x27;AI</div><p>Disegna un flusso con l'AI per <span class="ph">[COMPITO]</span>: da dove parte, i passaggi e dove controllo io.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>83</b>Un assistente su misura</div><p>Scrivi le istruzioni per un assistente AI che faccia <span class="ph">[COMPITO]</span>: obiettivo, regole, limiti.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>84</b>I miei programmi AI</div><p>Consigliami i programmi AI per <span class="ph">[OBIETTIVO]</span>: per scrivere, cercare, creare immagini, e quando usarli.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>85</b>Automatizza il lavoro</div><p>Nel mio lavoro, <span class="ph">[ATTIVITÀ]</span>, cosa si può automatizzare e cosa deve restare in mano a una persona?</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>86</b>Basta lavori ripetitivi</div><p>Elenca i compiti ripetitivi di <span class="ph">[ATTIVITÀ]</span> e per ognuno come aiuta l'AI e quanto tempo risparmio.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>87</b>Assistente personale</div><p>Aiutami a creare un assistente AI per le mie giornate: cosa fa, come mi risponde, cosa non fa mai.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>88</b>Ricerca con l&#x27;AI</div><p>Fammi un metodo per fare ricerche su <span class="ph">[ARGOMENTO]</span> con l'AI: fonti, controllo dei fatti, riassunto.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>89</b>Contenuti con l&#x27;AI</div><p>Fammi un metodo per creare contenuti su <span class="ph">[ARGOMENTO]</span> con l'AI, dall'idea alla pubblicazione.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>90</b>Lavora meglio</div><p>Ecco come faccio oggi <span class="ph">[ATTIVITÀ]</span>: <span class="ph">[PASSAGGI]</span>. Togli i passaggi inutili, con l'AI dove aiuta davvero.</p></div>
   </div>
-  <div class="cmp">
-    <div class="card muted qa-text">
-      <span class="c-tag">Prima</span>
-      <span class="c-title">«Scrivi una mail»</span>
-      <span class="c-body">Nessun ruolo e nessun contesto: l'AI tira a indovinare.</span>
-    </div>
-    <div class="card win qa-text">
-      <span class="c-tag">Dopo</span>
-      <span class="c-title">Ruolo e contesto</span>
-      <span class="c-body">Chi deve essere, cosa le dai, che formato vuoi: risposta usabile.</span>
-      <span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
-    </div>
-  </div>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
 </section></div>
-
-<!-- ============ T3 · OBJECT + HEADLINE · LIGHT ============ -->
 <div class="slot"><section class="slide mode-light">
   <div class="layer bg"></div>
-  <div class="glow" data-for=".glassobj"></div>
-  <div class="glassobj" style="left:400px;top:200px;width:520px;height:470px">
-    <i class="sq" style="left:0;top:40px;width:300px;height:300px"></i>
-    <i style="left:220px;top:120px;width:300px;height:300px"></i>
+  <h2 class="txt h2 cat-title qa-text" data-lines="1"><span class="n">10</span>Crescita personale e decisioni</h2>
+  <div class="grid">
+    <div class="pg card qa-text"><div class="pt"><b>91</b>I miei obiettivi</div><p>Ecco i miei obiettivi: <span class="ph">[OBIETTIVI]</span>. Quali contano di più, quali si scontrano e da dove parto?</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>92</b>Decidi meglio</div><p>Devo decidere <span class="ph">[DECISIONE]</span>. Confronta le opzioni: vantaggi, rischi, cosa perdo, se posso tornare indietro.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>93</b>Mettimi in dubbio</div><p>Io penso che <span class="ph">[OPINIONE]</span>. Dammi gli argomenti migliori a favore e contro, e cosa mi farebbe cambiare idea.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>94</b>Cosa non vedo</div><p>Ecco la situazione: <span class="ph">[SITUAZIONE]</span>. Quali rischi, pregiudizi e cose date per scontate non sto considerando?</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>95</b>Cambia un&#x27;abitudine</div><p>Voglio smettere di <span class="ph">[ABITUDINE]</span> e iniziare a <span class="ph">[NUOVA ABITUDINE]</span>. Fammi un sistema semplice per riuscirci.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>96</b>Bilancio della settimana</div><p>Fai da mio allenatore: fammi 10 domande, una alla volta, su cosa ha funzionato questa settimana e cosa cambiare.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>97</b>Piano di 3 anni</div><p>Con questi obiettivi, <span class="ph">[OBIETTIVI]</span>, fammi un piano di 3 anni: traguardi per anno, trimestre e mese.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>98</b>Imparo da un errore</div><p>Ho sbagliato con <span class="ph">[SITUAZIONE]</span>. Analizzalo senza giudicarmi: cosa dipendeva da me, cosa farò diversamente.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>99</b>Sbloccami</div><p>Sono bloccato su <span class="ph">[PROBLEMA]</span>. Fammi le poche domande necessarie, poi dammi tre strade con pro e contro.</p></div>
+    <div class="pg card qa-text"><div class="pt"><b>100</b>Il mio sistema</div><p>Aiutami a mettere in un unico sistema semplice obiettivi, abitudini, lavoro, soldi, salute e affetti.</p></div>
   </div>
-  <h2 class="txt h1 qa-text" style="left:96px;top:888px;width:584px" data-lines="2">Salva le slide<br><span class="em">che ti servono</span></h2>
-  <p class="txt body qa-text" style="left:704px;top:986px;width:280px" data-lines="2">Il riepilogo è la slide da salvare.</p>
+  <p class="txt pdf-line qa-text" data-lines="1">Commenta <b>«100»</b> per avere il PDF</p>
 </section></div>
-
-<!-- ============ T10 · CLOSING · DARK (no corner logo, no counter, no swipe cue, no handle) ============
-     Hierarchy (owner, 20 Oct 2026): big headline with the ONE main invite → filled button → smaller 🔔 follow line.
-     Button by type: notizia/curiosita → paper plane + "Mandalo a un amico"; prompt/lista → bookmark + "Salvalo per dopo";
-     serie → no .follow (the follow is the main invite). The .follow text comes from CAROUSEL.tipo (engine), or write your own. -->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
   <div class="layer rings" style="--rx:540px;--ry:300px"></div>
   <div class="glow" style="left:540px;top:290px"></div>
   <div class="logo-full qa-text" data-logo></div>
   <div class="cstack">
-    <h2 class="h1 qa-text" style="max-width:880px" data-lines="2">Salvalo per<br><span class="em">il prossimo post</span></h2>
-    <div class="actions"><span class="apill qa-text"><svg viewBox="0 0 24 24"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Salvalo per dopo</span></div>
+    <h2 class="h1 qa-text" style="max-width:880px;font-size:84px" data-lines="2">Vuoi tutti i 100 prompt<br><span class="em">in un posto solo?</span></h2>
+    <div class="actions"><span class="apill qa-text"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>Commenta <span class="hl">«100»</span> e ti mando il PDF</span></div>
     <p class="follow qa-text" data-lines="1"></p>
   </div>
 </section></div>
-
 </main>
-
 <script>
-/* ===== Carousel config: the only script you edit ===== */
 window.CAROUSEL = {
-  title: '10 prompt per Claude da salvare',
-  format: 'static',            // 'static' | 'animated'
-  tipo: 'prompt',                  // notizia | curiosita | prompt | lista | serie → the 🔔 follow line on the closing slide
-  // Thread line: seams[k] = y at the seam between slide k+1 and k+2 (exit of one = entry of the next).
-  seams:  [1150, 1150, 900, 1150, 1150, 360, 1150, 1150, 1150],
-  routes: ['start', 'straight',
-           { d: 'M0 1150 H140 C330 1150 400 1090 540 1068 S760 990 840 962 S1000 912 1080 900', nodes: [[840, 962]] },   // T4: thread = chart
-           { d: 'M0 900 H24 Q48 900 48 924 V1126 Q48 1150 72 1150 H1080' },                                           // drop down the left margin
-           'straight', 'rightUp', 'leftDown', 'straight', 'straight', 'end'],
+  title: '100 prompt per Claude',
+  format: 'static',
+  tipo: 'prompt',
+  seams:  [1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150],
+  routes: ['start', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'end'],
   threadStart: 780,
 };
 </script>
