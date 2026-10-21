@@ -17,7 +17,7 @@ La guida qui sotto resta **in inglese, com'è nell'originale** (mandata dal prop
     | Serie, appuntamenti fissi | 🔔 Seguici | `"invito": "segui"` |
   - **slide "In breve"** (riepilogo, §5.1) da 6 slide in su, prima della chiusura: `{"tipo": "riepilogo", "titolo": "In breve", "punti": [...]}`;
   - **"Scorri →"** sulla copertina (§5.4): la pillola gialla dei template.
-- **Cosa NON prendiamo:** "Comment [WORD] and I'll send it" (§8): è un'esca, Instagram la penalizza (`brand/crescita.md`).
+- **Ammesso dal 21/10/2026** (decisione del proprietario): "Comment [WORD] and I'll send it" → "Commenta «PAROLA» e ti mando …", solo se si regala davvero qualcosa in privato (es. PDF con tutti i prompt). Vedi `brand/crescita.md`.
 - **Ganci:** il `selezionatore` ne scrive 5–10 per notizia (§3.4), li passa al test (§3.2) e nel menu mette i 3 migliori, di tipi diversi tra i 12 del §3.3. **Schemi:** ne propone 2 tra quelli del §6 (più il nostro "Scoperte": gancio → la scoperta più forte → le altre → riepilogo → chiusura).
 - **Dati e numeri:** solo veri e con fonte (regola 1 di `CLAUDE.md` e §10 della guida).
 - Controllo finale: `brand/controllo-finale.md` (unisce il §13 della guida con le nostre regole).

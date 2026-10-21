@@ -46,10 +46,8 @@ INVITO_GIUSTO = {'notizia': 'manda', 'curiosita': 'manda', 'prompt': 'salva', 'l
 NOME_INVITO = {'manda': '📩 Mandalo a …', 'salva': '📌 Salvalo …', 'segui': '🔔 Seguici'}
 
 # esche che Instagram punisce (brand/crescita.md): mai
+# "commenta PAROLA e ti mando …" è ammesso dal 21/10/2026 (decisione del proprietario)
 ESCHE = [
-    (re.compile(r'\b(?i:commenta)(?:te)?\s+(?:con\s+)?["“«]?[A-ZÀ-Ù0-9]{2,}\b'), 'commenta PAROLA'),
-    (re.compile(r'\bscrivi(?:mi)?\s+["“«]?[A-ZÀ-Ù0-9]{2,}["”»]?\s+(?:nei|qui|sotto)', re.I), 'scrivi PAROLA nei commenti'),
-    (re.compile(r'\bcommenta\w*\b.{0,40}\bti\s+(?:mando|invio|mandiamo|inviamo)\b', re.I), 'commenta e ti mando'),
     (re.compile(r'\btagga(?:te)?\s+(?:\d+|un[oa]?|due|tre|i\s+tuoi|il\s+tuo|la\s+tua)\b', re.I), 'tagga un amico'),
     (re.compile(r'\b(?:metti|lascia(?:mi)?|mettete)\s+(?:un\s+)?(?:like|mi\s+piace|cuore)\b', re.I), 'metti like'),
     (re.compile(r'\blink\s+in\s+bio\b', re.I), 'link in bio'),

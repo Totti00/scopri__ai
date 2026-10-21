@@ -61,7 +61,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 Regole complete in `brand/crescita.md` (15/10/2026). In breve:
 - prima riga della caption con le parole che la gente cerca (prodotto, azienda, "intelligenza artificiale");
 - **massimo 5 hashtag**: Instagram ignora gli altri;
-- lo stesso invito principale della chiusura (`📩 Mandalo a …` per le notizie, `📌 Salvalo …` per prompt e liste), più la riga `🔔 Seguici per non perdere le prossime notizie`, e una domanda vera; mai esche come "commenta SÌ" o "tagga 3 amici";
+- lo stesso invito principale della chiusura (`📩 Mandalo a …` per le notizie, `📌 Salvalo …` per prompt e liste), più la riga `🔔 Seguici per non perdere le prossime notizie`, e una domanda vera; mai esche come "commenta SÌ" o "tagga 3 amici". **Ammesso** (deciso il 21/10/2026): "Commenta «PAROLA» e ti mando …" quando si regala davvero qualcosa in privato (es. il PDF con tutti i prompt); l'invio lo fa il proprietario;
 - mai un contenuto di altri messo da solo: sempre dentro le nostre slide, con i nostri testi.
 
 ## La squadra di agenti

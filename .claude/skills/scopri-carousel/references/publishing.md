@@ -34,7 +34,7 @@ This writes `pubblicazione/01-caption.txt`, `02-testi-alternativi.txt` (one file
 - there is one alt text per exported slide;
 - there are ≤ 3 pinned comments;
 - alt texts are ≤ 140 characters;
-- **the caption rules of Scopri AI**, through `scripts/caption_check.py` (also on `caption-reel.txt` when it exists): what shows before "altro", search words, ≤ 5 hashtags all at the end, "Fonti: …" before the hashtags for news and curiosità (never on prompt posts), one invite of the right kind, no engagement bait ("commenta PAROLA", "tagga un amico", "link in bio"), one real question, no links, emoji density, the name "Scopri AI". An error stops the pack.
+- **the caption rules of Scopri AI**, through `scripts/caption_check.py` (also on `caption-reel.txt` when it exists): what shows before "altro", search words, ≤ 5 hashtags all at the end, "Fonti: …" before the hashtags for news and curiosità (never on prompt posts), one invite of the right kind, no engagement bait ("tagga un amico", "link in bio"; "commenta PAROLA e ti mando…" is allowed since 21/10/2026), one real question, no links, emoji density, the name "Scopri AI". An error stops the pack.
 
 Put `"tipo"` (`notizia`, `curiosita`, `prompt`, `lista`, `serie`; default from the folder name) and `"parole"` (the 2–3 words people search, e.g. `["gemini", "google"]`) in `publish.json`. The run ends with the receipt line(s) `✅ CAPTION PRONTA · …`: paste them in the final message to the user.
 Standalone: `python scripts/caption_check.py caption-reel.txt --parole "gemini,google"` (exit 0 only when PRONTA).
