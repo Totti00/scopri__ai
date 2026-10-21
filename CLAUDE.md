@@ -27,7 +27,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
    - **Immagini create da noi** (deciso il 16/10/2026): quando non c'è niente di vero da mostrare (concetti, prompt, consigli), le immagini le crea Claude col codice: schede di interfaccia e oggetti 3D di vetro e cromo (`.claude/skills/scopri-carousel/assets/3d/`). I **meme con persone vere** si fanno solo partendo da una foto vera, con le regole dei fotomontaggi qui sopra. Niente generatori esterni.
 5. **Niente esagerazioni**: titoli con gancio sì, falsi o allarmisti no. Se una notizia è un'indiscrezione, si scrive al condizionale e lo si dichiara.
 6. **Mai lo stesso argomento due volte**: prima di scegliere, controllare `archivio/` e `carousels/`.
-7. **Non copiare** testi, slogan o grafiche dei concorrenti. Si prendono le tecniche, non l'identità.
+7. **Prendere spunto sì, copiare pari pari no** (cambiata il 21/10/2026): dai post dei concorrenti si possono prendere **i contenuti** (gli argomenti, le notizie, le liste di prompt, i formati) e riadattarli in versione nostra: in italiano, con parole nostre, verificati (notizie con 2 fonti, prompt provati) e con il nostro design. Mai copiati parola per parola, mai le loro grafiche, i loro video o i loro slogan, mai il loro nome sulle slide.
 
 ## Come si racconta una notizia
 - Mai il post banale "è uscito X". Si cerca il **gancio**: la cosa più sorprendente o utile, quella che fa venire voglia di scorrere.

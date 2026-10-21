@@ -1,7 +1,7 @@
 # Concorrenti e ispirazione (analisi del 13/10/2026)
 
 Analisi fatta con Claude in Chrome sugli ultimi 15 post di @ai__facile e sulle pagine simili.
-Regola: **prendiamo le tecniche, non l'identità.**
+Regola (cambiata il 21/10/2026): **prendiamo tecniche e contenuti e li riadattiamo**, mai copiati pari pari e mai le loro grafiche o la loro identità (vedi `CLAUDE.md`, regola 7).
 
 ## @ai__facile — 277K follower, ~1 post al giorno (3 caroselli ogni reel)
 **Cosa funziona**
