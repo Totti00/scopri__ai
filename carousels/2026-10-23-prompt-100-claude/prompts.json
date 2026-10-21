@@ -1,0 +1,122 @@
+[
+  {"cat": "Imparare e studiare", "items": [
+    ["Impara da zero", "Fai da mio insegnante di [ABILITÀ]. Parto da zero: un concetto alla volta, con esempi ed esercizi."],
+    ["Mappa completa", "Disegnami il percorso per [ABILITÀ], da principiante a esperto: livelli, concetti, progetti, traguardi."],
+    ["Spiegamelo semplice", "Spiegami [ARGOMENTO] come a un principiante: parole semplici, esempi di vita reale, riassunto finale."],
+    ["Insegnami con domande", "Insegnami [ARGOMENTO] solo con domande, una alla volta. Aspetta la mia risposta prima di continuare."],
+    ["Piano di 30 giorni", "Fammi un piano di 30 giorni per imparare [ABILITÀ]: ogni giorno una lezione, un esercizio, una verifica."],
+    ["Trova i punti deboli", "Fammi 15 domande su [ARGOMENTO], dalla più facile alla più difficile. Poi un piano sui miei punti deboli."],
+    ["Imparo facendo", "Aiutami a costruire [PROGETTO] da zero. Spiegami ogni concetto solo quando serve, mentre lo facciamo."],
+    ["Esercizi su misura", "Dammi 30 esercizi su [ARGOMENTO]: facili, medi e difficili. Le soluzioni solo dopo il mio tentativo."],
+    ["Preparami all'esame", "Ho l'esame di [MATERIA] tra [NUMERO] giorni. Dividi argomenti, ripassi, esercizi e simulazioni."],
+    ["Diventa esperto", "Portami dalle basi di [ARGOMENTO] alle applicazioni vere, con gli errori comuni e le domande da colloquio."]
+  ]},
+  {"cat": "Produttività e organizzazione", "items": [
+    ["Pianifica la giornata", "Oggi devo fare: [COMPITI]. Mettili in ordine di priorità e urgenza, con il tempo stimato per ognuno."],
+    ["La mia settimana", "Trasforma [OBIETTIVI] in compiti per questa settimana, con un giorno e una scadenza per ognuno."],
+    ["Basta rimandare", "Rimando [COMPITO] da giorni. Dividilo in passi piccolissimi e fammi iniziare entro 30 minuti."],
+    ["Svuota la testa", "Ho in testa: [ELENCO]. Dividilo in compiti, idee, decisioni, preoccupazioni e cose da lasciar perdere."],
+    ["Routine realistica", "Crea una routine realistica per [OBIETTIVI]: lavoro, studio, sport, pause e tempo solo per me."],
+    ["Dove va il mio tempo", "Ecco una mia giornata tipo: [GIORNATA]. Dimmi cosa mi ruba tempo e come recuperarlo."],
+    ["Cosa fare prima", "Ordina [ELENCO] per urgenza, importanza e fatica. Poi dimmi cosa delegare e cosa eliminare."],
+    ["Lavoro concentrato", "Dividi [PROGETTO] in sessioni da 45 minuti di lavoro concentrato, con pause vere tra una e l'altra."],
+    ["Bilancio della settimana", "Fammi il bilancio della settimana: domande una alla volta su cosa è andato bene e cosa cambiare."],
+    ["Abitudini migliori", "Voglio prendere l'abitudine di [ABITUDINE]. Dammi un aggancio, piccoli passi e un controllo settimanale."]
+  ]},
+  {"cat": "Lavoro e curriculum", "items": [
+    ["Percorso di carriera", "Faccio [LAVORO] e so fare [COMPETENZE]. Mostrami 3 strade per crescere e i passi per ognuna."],
+    ["Curriculum su misura", "Confronta il mio curriculum con questo annuncio: [ANNUNCIO]. Cosa aggiungo, tolgo e riscrivo?"],
+    ["Riscrivi il curriculum", "Riscrivi il mio curriculum: più breve, con risultati concreti, leggibile dai filtri automatici. [CV]"],
+    ["Simulazione di colloquio", "Fai il selezionatore per [RUOLO]. Una domanda alla volta, poi un voto e come migliorare la risposta."],
+    ["Domande del colloquio", "Elenca le 30 domande più probabili a un colloquio per [RUOLO], con una risposta modello per ognuna."],
+    ["Cosa mi manca", "So fare [COMPETENZE] e voglio fare [RUOLO]. Cosa mi manca, e come lo imparo per primo?"],
+    ["Valuta i miei lavori", "Ecco i miei progetti: [PROGETTI]. Dimmi come li vedrebbe un selezionatore e cosa migliorare."],
+    ["Strategia di candidatura", "Cerco lavoro come [RUOLO] a [CITTÀ], livello [LIVELLO]. Fammi un piano settimana per settimana."],
+    ["LinkedIn migliore", "Migliora il mio profilo LinkedIn: titolo, informazioni ed esperienze. Il testo attuale: [PROFILO]."],
+    ["Pronto in 90 giorni", "Inizio come [RUOLO] tra poco. Fammi un piano di 90 giorni per partire bene e farmi notare."]
+  ]},
+  {"cat": "Programmare", "items": [
+    ["Mentore di codice", "Fai da mio mentore di programmazione. Il mio livello: [LIVELLO]. Correggimi e spiegami sempre il perché."],
+    ["Trova l'errore", "Ecco il codice: [CODICE]. Trova l'errore, spiegami la causa, correggilo e dimmi come evitarlo."],
+    ["Impara un linguaggio", "Insegnami [LINGUAGGIO] da zero, con un piccolo esercizio pratico dopo ogni argomento."],
+    ["Colloqui tecnici", "Allenami ai colloqui tecnici per [RUOLO]: un esercizio alla volta, poi la soluzione e i miei errori."],
+    ["Un progetto vero", "Guidami a costruire un progetto vero con [TECNOLOGIA], dall'idea alla pubblicazione, passo per passo."],
+    ["Revisione del codice", "Rivedi il mio codice: leggibilità, velocità, sicurezza e casi limite. Ecco il codice: [CODICE]."],
+    ["Spiegami l'errore", "Spiegami in parole semplici questo messaggio di errore e cosa devo fare: [ERRORE]."],
+    ["Riordina il codice", "Rendi questo codice più ordinato e leggibile, senza cambiare cosa fa: [CODICE]."],
+    ["Progettare un'app", "Come progetteresti [APP O SERVIZIO]? Parti, dati, e cosa succede se gli utenti diventano tanti."],
+    ["10 progetti per imparare", "Proponimi 10 progetti per imparare [TECNOLOGIA], dal più facile al più difficile."]
+  ]},
+  {"cat": "Scrivere", "items": [
+    ["La mail difficile", "Scrivi una mail a [PERSONA] per [OBIETTIVO]. Cortese ma diretta: la richiesta nelle prime due righe."],
+    ["Il messaggio delicato", "Aiutami a scrivere a [PERSONA] per [MOTIVO]. Tono gentile, niente frasi fatte, tre versioni."],
+    ["Correggi il testo", "Correggi errori e punteggiatura senza cambiare il mio stile, ed elenca ogni modifica: [TESTO]."],
+    ["Più corto", "Accorcia questo testo della metà senza perdere niente di importante: [TESTO]."],
+    ["Cambia il tono", "Riscrivi questo messaggio con un tono più [FORMALE / AMICHEVOLE / DECISO]: [TESTO]."],
+    ["Il reclamo", "Scrivi un reclamo a [AZIENDA] per [PROBLEMA]: i fatti in ordine, cosa chiedo ed entro quando."],
+    ["Dire di no", "Aiutami a dire di no a [RICHIESTA] senza rovinare il rapporto con [PERSONA]. Breve e sincero."],
+    ["Rispondi alla mail", "Ecco la mail che ho ricevuto: [MAIL]. Scrivi una risposta che [ACCETTA / RIFIUTA / CHIEDE TEMPO]."],
+    ["Auguri non banali", "Scrivi gli auguri per [OCCASIONE] a [PERSONA], con questi ricordi: [DETTAGLI]. Niente frasi fatte."],
+    ["Discorso breve", "Scrivi un discorso di 2 minuti per [OCCASIONE]: un inizio che colpisce, un ricordo, un brindisi."]
+  ]},
+  {"cat": "Ricerca e analisi", "items": [
+    ["Riassumi il documento", "Riassumi questo documento in 5 righe, poi le 5 cose da sapere con la pagina: [DOCUMENTO]."],
+    ["Capisci la bolletta", "Spiegami questa bolletta voce per voce: quanto pago, per cosa, cosa pesa di più. [BOLLETTA]"],
+    ["Clausole del contratto", "Cita parola per parola scadenze, rinnovi, penali e costi extra di questo contratto: [CONTRATTO]."],
+    ["Confronta due offerte", "Confronta [OFFERTA A] e [OFFERTA B] in una tabella: costi, vantaggi, limiti. Quale conviene a me?"],
+    ["Pro e contro", "Fammi una tabella di pro e contro su [DECISIONE], pensando sia al breve sia al lungo periodo."],
+    ["La lettera difficile", "Spiegami questa lettera di [ENTE]: cosa mi chiede, entro quando, cosa succede se non rispondo."],
+    ["Verifica la notizia", "Ho letto questa notizia: [NOTIZIA]. Dimmi cosa e dove controllare per capire se è vera."],
+    ["Leggi i numeri", "Ecco una tabella di dati: [DATI]. Dimmi cosa salta all'occhio, in 5 punti semplici."],
+    ["Prepara le domande", "Devo incontrare [PERSONA O UFFICIO] per [MOTIVO]. Preparami le 10 domande da fare, in ordine."],
+    ["Recensioni in breve", "Ecco le recensioni di [PRODOTTO]: [RECENSIONI]. Quali pregi e difetti tornano più spesso?"]
+  ]},
+  {"cat": "Contenuti e social", "items": [
+    ["Idee per i post", "Dammi 20 idee di post su [ARGOMENTO] per [PUBBLICO], una riga ciascuna."],
+    ["La didascalia", "Scrivi 3 didascalie per questo post: [DESCRIZIONE]. Prima riga che incuriosisce, una domanda in fondo."],
+    ["Piano del mese", "Fammi un calendario di contenuti su [ARGOMENTO] per [MESE]: 3 post a settimana, con formato e tema."],
+    ["Da articolo a post", "Trasforma questo articolo in 5 post brevi, ognuno con una sola idea: [TESTO]."],
+    ["Il primo secondo", "Dammi 10 frasi d'apertura per un video su [ARGOMENTO]: devono far fermare chi scorre."],
+    ["Copione del video", "Scrivi il copione di un video di 30 secondi su [ARGOMENTO]: apertura, 3 punti, chiusura."],
+    ["La bio", "Scrivi 5 versioni della mia bio per [SOCIAL]: chi sono e cosa offro, massimo 150 caratteri. [INFO]"],
+    ["Commento negativo", "Ho ricevuto questo commento: [COMMENTO]. Scrivi una risposta calma, gentile e utile."],
+    ["Annuncia un evento", "Scrivi il post per [EVENTO]: cosa, quando, dove e perché venire. Breve e chiaro."],
+    ["La newsletter", "Scrivi una newsletter breve su [ARGOMENTO] per [PUBBLICO]: oggetto, 3 notizie, un saluto."]
+  ]},
+  {"cat": "Trovare idee", "items": [
+    ["20 idee al volo", "Dammi 20 idee per [PROBLEMA O PROGETTO]: 10 normali e 10 un po' folli."],
+    ["Il nome giusto", "Proponi 15 nomi per [ATTIVITÀ O PROGETTO]: brevi, facili da dire e da ricordare."],
+    ["Avvocato del diavolo", "Ecco la mia idea: [IDEA]. Fai l'avvocato del diavolo e trova i 5 punti deboli più seri."],
+    ["Migliora l'idea", "Ecco la mia idea: [IDEA]. Dammi 5 modi per renderla più semplice, economica o originale."],
+    ["Tre punti di vista", "Guarda [PROBLEMA] come farebbero un bambino, un ingegnere e un nonno. Cosa nota ognuno?"],
+    ["Con un limite", "Trova 10 soluzioni per [PROBLEMA] con questo limite: [LIMITE, ES. ZERO EURO, UN'ORA]."],
+    ["Mappa delle idee", "Fammi una mappa delle idee su [ARGOMENTO]: temi principali, sotto-temi e collegamenti."],
+    ["Il primo test", "Ho questa idea: [IDEA]. Qual è il test più piccolo ed economico per capire se funziona?"],
+    ["Unisci due idee", "Unisci [IDEA A] e [IDEA B] in 5 proposte nuove, con un nome per ognuna."],
+    ["Fammi domande", "Voglio fare [PROGETTO] ma è ancora confuso. Fammi 10 domande, una alla volta, per chiarirlo."]
+  ]},
+  {"cat": "Soldi e casa", "items": [
+    ["Bilancio di famiglia", "Entrate e spese del mese: [ELENCO]. Dimmi dove spendo troppo e quanto posso risparmiare."],
+    ["Menu e spesa", "Menu di 7 giorni per [PERSONE] persone, [BUDGET] euro, cene in 30 minuti. Più la lista della spesa."],
+    ["Obiettivo risparmio", "Voglio mettere da parte [CIFRA] euro entro [DATA]. Fammi un piano mese per mese."],
+    ["Abbonamenti", "I miei abbonamenti: [ELENCO, CON I PREZZI]. Quali taglio, e quanto risparmio in un anno?"],
+    ["Capire il mutuo", "Spiegami questa offerta di mutuo in parole semplici: tasso, TAEG, rata, spese. [OFFERTA]"],
+    ["Pulizie organizzate", "Piano di pulizie per una casa di [STANZE] stanze: 20 minuti al giorno, diviso tra [PERSONE]."],
+    ["Avanzi in frigo", "In frigo ho [INGREDIENTI]. Proponimi 3 ricette semplici per non buttare niente."],
+    ["Trasloco", "Trasloco il [DATA]. Fammi la lista delle cose da fare, settimana per settimana."],
+    ["Prima di comprare", "Voglio [PRODOTTO] con [BUDGET] euro. Quali caratteristiche contano davvero e quali sono fumo?"],
+    ["Consumare meno", "Siamo in [PERSONE] e la luce costa [CIFRA] al mese. Dammi 10 modi concreti per consumare meno."]
+  ]},
+  {"cat": "Vita di tutti i giorni", "items": [
+    ["Il viaggio", "[GIORNI] giorni a [DESTINAZIONE] con [BUDGET] euro: programma giorno per giorno e cosa prenotare."],
+    ["La valigia", "Lista per la valigia: [GIORNI] giorni a [DESTINAZIONE] a [MESE], per [ATTIVITÀ]."],
+    ["Dal medico, preparato", "Ho questi sintomi: [SINTOMI]. Niente diagnosi: aiutami a preparare le domande per il medico."],
+    ["Il regalo giusto", "10 idee regalo per [PERSONA], che ama [PASSIONI], con [BUDGET] euro. Niente cose banali."],
+    ["Decidi con me", "Devo scegliere tra [A] e [B]. Fammi 3 domande per capire cosa voglio davvero, poi consigliami."],
+    ["La festa", "Festa per [OCCASIONE], [INVITATI] invitati, [BUDGET] euro: menu, spesa e tempi."],
+    ["Allenamento a casa", "Allenamento di 20 minuti a casa, senza attrezzi, per livello [LIVELLO], 3 volte a settimana."],
+    ["Weekend con i bambini", "10 idee per un weekend vicino a [CITTÀ] con bambini di [ETÀ] anni, anche se piove."],
+    ["Dopo una lite", "Ho litigato con [PERSONA] per [MOTIVO]. Aiutami a capire il suo punto di vista e cosa dirgli."],
+    ["Pratiche senza panico", "Devo fare [PRATICA]. Elencami i passi, i documenti e dove controllare che sia tutto giusto."]
+  ]}
+]
