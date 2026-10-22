@@ -26,12 +26,12 @@ Il nuovo account, collegato allo stesso GitHub, ritrova tutto.
 ## Le 4 routine da ricreare
 Tutte con l'ambiente cloud del nuovo account e notifiche push attive. Gli orari sono in ora italiana (`CRON_TZ=Europe/Rome`). Ognuna apre una sessione nuova a ogni partenza e lavora sul repository `Totti00/scopri__ai`.
 
-| Nome | Quando | Cron |
-|---|---|---|
-| Scopri AI · Ricerca notizie | ogni giorno 07:45 | `CRON_TZ=Europe/Rome 45 7 * * *` |
-| Scopri AI · Prompt del venerdì | venerdì 08:50 | `CRON_TZ=Europe/Rome 50 8 * * 5` |
-| Scopri AI · Curiosità della domenica | domenica 14:50 | `CRON_TZ=Europe/Rome 50 14 * * 0` |
-| Scopri AI · News della settimana | domenica 17:50 | `CRON_TZ=Europe/Rome 50 17 * * 0` |
+| Nome | Quando | Cron | Modello |
+|---|---|---|---|
+| Scopri AI · Ricerca notizie | ogni giorno 07:45 | `CRON_TZ=Europe/Rome 45 7 * * *` | Opus 5.5 (`claude-opus-5-5`) |
+| Scopri AI · Prompt del venerdì | venerdì 08:50 | `CRON_TZ=Europe/Rome 50 8 * * 5` | Opus 5.5 (`claude-opus-5-5`) |
+| Scopri AI · Curiosità della domenica | domenica 14:50 | `CRON_TZ=Europe/Rome 50 14 * * 0` | Opus 5.5 (`claude-opus-5-5`) |
+| Scopri AI · News della settimana | domenica 17:50 | `CRON_TZ=Europe/Rome 50 17 * * 0` | Opus 5.5 (`claude-opus-5-5`) |
 
 
 ### Scopri AI · Ricerca notizie
@@ -74,7 +74,7 @@ Segui alla lettera routine/README.md e routine/news-settimana.md (se le regole d
 - Usa `create_trigger` (MCP `claude-code-remote`) per le **quattro** routine: `create_new_session_on_fire: true`, il cron della tabella e il messaggio del blocco. "📰 Notizie del giorno" **non** va creata: resta nel vecchio account.
 - `initiation: "human_request"`.
 - Notifiche: `{"push": true}`.
-- Modello: quello predefinito dell'account (per "Ricerca notizie" il più capace disponibile).
+- Modello: `claude-opus-5-5` per tutte e quattro (colonna "Modello" della tabella). Le routine lavorano a lungo: ricerca con 2 fonti, slide, video e controlli. Se un giorno i limiti dell'abbonamento si esauriscono, il proprietario può passare "Curiosità della domenica" a Sonnet 5.5.
 - Il repository va aggiunto alle sessioni delle routine: se `create_trigger` non lo fa da solo, il messaggio di ogni routine lo aggiunge con `add_repo`.
 - Dopo la creazione, `fire_trigger` su "Scopri AI · Ricerca notizie" per la prova, e scrivi al proprietario gli id delle routine create.
 - Non spegnere niente nel vecchio account: lo fa il proprietario dopo la prova.
