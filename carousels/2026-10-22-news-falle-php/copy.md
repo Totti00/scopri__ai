@@ -23,7 +23,6 @@ _File: `tweet.json` (copertina + 3 slide interne + chiusura, aggiunta su richies
 - **Profilo grande:** foto profilo, «Scopri AI», «@scopri__ai»
 - **Titolo (maiuscolo):** CONOSCI QUALCUNO / CON *UN SITO*? (accento lilla su «un sito»)
 - **Pulsante lilla:** 📩 Mandalo a chi ha un sito · sotto: «Il messaggio da girare a chi lo gestisce è nei commenti» (cambiato il 22/10: la chiusura deve essere coerente con il post)
-- **Sotto:** e te li mando in PDF
 - **In fondo:** 🔔 Seguici per non perdere le prossime notizie
 
 ### Copertina b (`exports/copertina-b.png`, alternativa non scelta)
