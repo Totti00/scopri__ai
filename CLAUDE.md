@@ -51,8 +51,13 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 - **Invito a scorrere** sulla copertina (20/10/2026, barra blu dal 22/10/2026): «SCORRI PER SCOPRIRE» (senza freccina) centrato in basso, **sopra i pallini** che Instagram disegna dentro l'immagine (pallini a circa y 1232 su 1350: la scritta sta più in alto, centro verso y 1175). Sulla copertina **niente cerchio blu con la freccia** in basso a destra (le altre slide lo tengono). A destra della scritta, alla stessa altezza, la **linea blu corta** (160 px) che tocca il bordo destro e continua nella slide 2 (come nel post del 20/10/2026 sulle smart TV: è il modello del footer per **tutti i caroselli**, non per i Reel). Solo sulla prima slide (e sulle copertine alternative).
 - Prima di consegnare, si passa il **controllo finale**: `brand/controllo-finale.md`.
 
+## Due stili, si sceglie post per post (dal 22/10/2026)
+- **Carosello Electric Mono** (qui sotto, skill `scopri-carousel`): storie lunghe, prompt, liste.
+- **Tweet** (`format/6-stile-tweet.md`, programma `strumenti/tweet.py`): fondo nero, font Inter, il nostro "profilo" in alto, il testo come un post e sotto la foto o il video vero; copertina con il titolo in MAIUSCOLO (massimo 3 righe) e il marchio "SCOPRI [AI]"; accento `#8FA3FF` in grassetto. Caption con chiusura "Tu cosa ne pensi? 🤔💬", fonte e invito ai 100 prompt al posto di "📩 Mandalo a …". Va bene anche per i Reel.
+- Il menu del `selezionatore` propone lo stile per ogni notizia; decide il proprietario.
+
 ## Design (dal 16/10/2026)
-- **Un solo stile: Electric Mono adattato a Scopri AI**, con la skill `.claude/skills/scopri-carousel/` (motore, layout, oggetti 3D, controlli, anteprime, pacchetto di pubblicazione). Le sue regole di brand sono in `references/brand-scopri-ai.md` della skill; le lezioni imparate in `references/lessons-learned.md`.
+- **Stile carosello: Electric Mono adattato a Scopri AI** (l'altro stile, il tweet, è qui sopra), con la skill `.claude/skills/scopri-carousel/` (motore, layout, oggetti 3D, controlli, anteprime, pacchetto di pubblicazione). Le sue regole di brand sono in `references/brand-scopri-ai.md` della skill; le lezioni imparate in `references/lessons-learned.md`.
 - Fondi **scuro, chiaro e blu** che si alternano, un solo colore d'accento: il blu `#2340FF`. **Niente giallo.** Font **Inter Tight** (e JetBrains Mono per le scritte piccole).
 - Logo **"Scopri AI" con la campana** (`brand/logo/ufficiale/`), nome sempre "Scopri AI".
 - I vecchi template A–G e il vecchio programma delle slide sono in `_vecchio/` (non si usano più, si possono riprendere).

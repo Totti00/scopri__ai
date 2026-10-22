@@ -14,6 +14,9 @@ Regole del 22/10/2026: in caption UN invito principale + UNA domanda. La riga "�
        quando si regala qualcosa) è l'invito principale: allora niente "Salvalo". Prima riga ≤ 125 caratteri (errore oltre).
        Notizie e curiosità: caption del carosello ≤ 800 caratteri (avviso), oltre 900 errore. Niente elenchi di parole
        chiave tra parentesi: le parole si mettono nelle prime frasi.
+Stile "tweet" (22/10/2026, format/6-stile-tweet.md, --stile tweet o "stile" in publish.json): prima riga con 1–2 emoji,
+       3–5 paragrafi brevi, chiusura "Tu cosa ne pensi? 🤔💬", poi la fonte ("🎥: @autore" oppure "Fonti: …"),
+       poi l'invito ai 100 prompt ("Commenta «…» e ti mando …"), al posto di "📩 Mandalo a …". Massimo 800 caratteri.
 Formati: carosello (la caption aggiunge alle slide) · reel (corta: 2–4 righe, chi la legge non ha visto slide)."""
 import argparse
 import json
@@ -33,6 +36,8 @@ MENTION_RE = re.compile(r'(?<![\w.])@[\w.]+')
 LINK_RE = re.compile(r'https?://\S+|www\.\S+|\b[\w-]+\.(?:com|it|ai|io|org|net|ly|me|app)(?:/\S*)?\b', re.I)
 EMOJI_RE = re.compile('[\U0001F300-\U0001FAFF\U00002600-\U000027BF\U0001F000-\U0001F2FF\U00002B00-\U00002BFF]')
 FONTI_RE = re.compile(r'^[ \t]*Fonti?[ \t]*:', re.I | re.M)
+FONTI_TWEET_RE = re.compile(r'^[ \t]*(?:Fonti?[ \t]*:|🎥\s*:?)', re.I | re.M)   # stile tweet: anche "🎥: @autore"
+CHIUSURA_TWEET = 'Tu cosa ne pensi?'
 # gancio concreto: un numero, un nome proprio a metà frase, un prodotto
 CONCRETE_RE = re.compile(r'\d|(?<=[a-zàèéìòù,:] )[A-Z][\w-]+|\b(?:ChatGPT|Gemini|Claude|Copilot|Siri|Alexa|Meta|Google|Apple|OpenAI|Microsoft|Amazon|Samsung|Tesla|NASA)\b')
 
@@ -76,7 +81,7 @@ def visible_window(text, cut=VISIBLE):
     return clip.rstrip(' ,;:'), True
 
 
-def check(text, tipo='notizia', formato='carosello', parole=()):
+def check(text, tipo='notizia', formato='carosello', parole=(), stile='carosello'):
     text = text.replace('\r\n', '\n').strip()
     lines = [l for l in text.split('\n')]
     first = next((l for l in lines if l.strip()), '')
@@ -160,7 +165,8 @@ def check(text, tipo='notizia', formato='carosello', parole=()):
             add('HASHTAG IN FONDO', 'ok', 'Tutti nell\'ultima riga.')
 
     # 7. fonti (regola 2)
-    fonti = list(FONTI_RE.finditer(text))
+    tweet = stile == 'tweet'
+    fonti = list((FONTI_TWEET_RE if tweet else FONTI_RE).finditer(text))
     if tipo in ('notizia', 'curiosita'):
         if not fonti:
             add('FONTI', 'errore', 'Manca la riga "Fonti: …" (regola 2: notizie e curiosità hanno sempre la fonte).')
@@ -168,7 +174,7 @@ def check(text, tipo='notizia', formato='carosello', parole=()):
             primo_tag = HASHTAG_RE.search(text)
             if primo_tag and primo_tag.start() < fonti[-1].start():
                 add('FONTI', 'errore', '"Fonti: …" deve venire prima degli hashtag.')
-            elif any(l.strip() and not re.fullmatch(r'(\s*#\w+)+\s*', l)
+            elif any(l.strip() and not re.fullmatch(r'(\s*#\w+)+\s*', l) and not (tweet and INVITI['commenta'].search(l))
                      for l in lines[text[:fonti[-1].start()].count('\n') + 1:]):
                 add('FONTI', 'avviso', 'Dopo "Fonti: …" c\'è altro testo: le fonti vanno in fondo, seguite solo dagli hashtag.')
             else:
@@ -183,8 +189,8 @@ def check(text, tipo='notizia', formato='carosello', parole=()):
     if trovati['commenta']:   # "Commenta «100» e ti mando…" contiene anche "mando a": non è un secondo invito
         trovati['manda'] = len(INVITI['manda'].findall(INVITI['commenta'].sub('', testo_inviti)))
     tipi = [k for k, v in trovati.items() if v]
-    ammessi = INVITI_AMMESSI.get(tipo, {INVITO_GIUSTO.get(tipo)})
-    giusto = INVITO_GIUSTO.get(tipo)
+    ammessi = {'commenta'} if tweet else INVITI_AMMESSI.get(tipo, {INVITO_GIUSTO.get(tipo)})
+    giusto = 'commenta' if tweet else INVITO_GIUSTO.get(tipo)
     if len(tipi) > 1:
         add('UN SOLO INVITO', 'errore', 'Più inviti (' + ', '.join(NOME_INVITO[k] for k in tipi) + '): in caption ne va uno solo, più la domanda.')
     elif not tipi:
@@ -246,6 +252,18 @@ def check(text, tipo='notizia', formato='carosello', parole=()):
     if re.search(r'Scopri\.AI|ScopriAI|Scopri Ai\b|Scopri\.ai', text):
         add('NOME', 'errore', 'Il nome è "Scopri AI" (con lo spazio, senza punto).')
 
+    if tweet:   # stile tweet (22/10/2026): chiusura fissa e paragrafi brevi
+        if CHIUSURA_TWEET.lower() not in text.lower():
+            add('CHIUSURA TWEET', 'avviso', 'Manca la chiusura "Tu cosa ne pensi? 🤔💬" prima della fonte.')
+        else:
+            add('CHIUSURA TWEET', 'ok', 'Tu cosa ne pensi? 🤔💬')
+        corpo_tw = text[:fonti[0].start()] if fonti else text
+        paragrafi = [p for p in re.split(r'\n\s*\n', corpo_tw) if p.strip() and CHIUSURA_TWEET.lower() not in p.lower()]
+        if not 3 <= len(paragrafi) <= 5:
+            add('PARAGRAFI', 'avviso', f'{len(paragrafi)} paragrafi: nello stile tweet ne servono 3–5, brevi.')
+        if not EMOJI_RE.search(first[:6]):
+            add('PRIMA RIGA EMOJI', 'avviso', 'Nello stile tweet la prima riga inizia con 1–2 emoji.')
+
     errori = sum(r['esito'] == 'errore' for r in res)
     avvisi = sum(r['esito'] == 'avviso' for r in res)
     verdetto = 'DA SISTEMARE' if errori else 'DA RICONTROLLARE' if avvisi else 'PRONTA'
@@ -305,6 +323,7 @@ if __name__ == '__main__':
     ap.add_argument('input', help='file .txt con la caption, oppure - per leggerla da stdin')
     ap.add_argument('--tipo', choices=sorted(set(INVITO_GIUSTO)), default=None, help='default: dal nome della cartella, altrimenti notizia')
     ap.add_argument('--formato', choices=['carosello', 'reel'], default=None, help='default: reel se il file si chiama *reel*')
+    ap.add_argument('--stile', choices=['carosello', 'tweet'], default='carosello', help='stile del post (tweet: format/6-stile-tweet.md)')
     ap.add_argument('--parole', default='', help='parole che la gente cerca, separate da virgole (es. "gemini,google")')
     ap.add_argument('--json', action='store_true')
     a = ap.parse_args()
@@ -315,6 +334,6 @@ if __name__ == '__main__':
         cartella = os.path.dirname(cartella)
     tipo = a.tipo or tipo_da_cartella(os.path.basename(cartella))
     formato = a.formato or ('reel' if 'reel' in os.path.basename(a.input).lower() else 'carosello')
-    r = check(text, tipo, formato, a.parole.split(',') if a.parole else ())
+    r = check(text, tipo, formato, a.parole.split(',') if a.parole else (), a.stile)
     print(json.dumps(r, ensure_ascii=False, indent=2) if a.json else render(r))
     sys.exit(0 if r['verdetto'] == 'PRONTA' else 1)

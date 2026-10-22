@@ -34,10 +34,11 @@ if len(caption) > LIMIT:
     errors.append(f'caption is {len(caption)} characters (limit {LIMIT})')
 tipo = data.get('tipo') or cc.tipo_da_cartella(base.resolve().name)
 parole = data.get('parole', [])
-checks = [('caption del carosello', cc.check(caption, tipo, 'carosello', parole))]
+stile = data.get('stile', 'carosello')   # 'tweet' = format/6-stile-tweet.md
+checks = [('caption del carosello', cc.check(caption, tipo, 'carosello', parole, stile))]
 reel = base / 'caption-reel.txt'
 if reel.exists():
-    checks.append(('caption-reel.txt', cc.check(reel.read_text(encoding='utf-8'), tipo, 'reel', parole)))
+    checks.append(('caption-reel.txt', cc.check(reel.read_text(encoding='utf-8'), tipo, 'reel', parole, stile)))
 for name, r in checks:
     print(f'— {name} —\n{cc.render(r)}\n')
     errors += [f"{name}: {c['controllo']}: {c['messaggio']}" for c in r['controlli'] if c['esito'] == 'errore']

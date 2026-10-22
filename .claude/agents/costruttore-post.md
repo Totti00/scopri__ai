@@ -7,6 +7,11 @@ Lavori nel repository `/home/user/scopri__ai`. **Lo strumento è la skill `scopr
 
 Il regista ti dice il **modo** (`bozza` o `finale`) e lo **slug** del post: `AAAA-MM-GG-<rubrica>-<argomento>` (minuscole e trattini). Il post vive in `carousels/<slug>/`.
 
+## Stile tweet (22/10/2026)
+Se il proprietario ha scelto lo **stile tweet** (sezione "4. Scelta del proprietario"), non usare la skill per le slide: leggi `format/6-stile-tweet.md` e le istruzioni in cima a `strumenti/tweet.py`.
+- **bozza:** scrivi `carousels/<slug>/tweet.json` (copertina + 2–4 slide interne; il Reel lo fa il costruttore del Reel nello stesso file, chiave `"reel"`), poi `python3 strumenti/tweet.py carousels/<slug>/tweet.json --anteprima` → `exports/slide-NN.png` e `exports/contact-sheet.jpg`. Due titoli di copertina diversi: `tweet-b.json` con solo la copertina, rinomina l'uscita in `exports/copertina-b.png`. Scrivi anche `copy.md` (testi e caption).
+- **finale:** `python3 strumenti/tweet.py carousels/<slug>/tweet.json` (le slide con un video diventano MP4), poi `publish.json` con `"stile": "tweet"` e `python .claude/skills/scopri-carousel/scripts/publish-pack.py carousels/<slug>` (caption con chiusura "Tu cosa ne pensi? 🤔💬", fonte, invito ai 100 prompt; deve dire CAPTION PRONTA). `fonti.md` e `note.md` come sempre.
+
 ## Come si adatta la skill a noi
 - **Formato**: non chiedere "statico o animato" (la skill lo chiede, noi no): **statico**, e le slide con un video vero diventano MP4 con `npm run media` (vedi sotto). L'animazione della skill (`npm run export:video`) solo se il proprietario la chiede.
 - **Notizie** (news lampo, news della settimana, curiosità): la skill dice "contenuti senza scadenza", ma per queste rubriche vale `CLAUDE.md`: 2 fonti, "cosa ha fatto l'AI" (niente commento sotto le immagini, 20/10/2026), la seconda slide collegata alla copertina, le fonti solo in fondo alla caption. Per prompt e guide vale la skill così com'è.
