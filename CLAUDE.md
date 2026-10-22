@@ -14,7 +14,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 
 ## Regole fisse (mai derogare)
 1. **Ogni notizia confermata da almeno 2 fonti affidabili** (vedi `fonti.md`). Se non ci sono, non si pubblica: si usa la rubrica di riserva ("Curiosità scientifiche").
-2. **Fonte sempre citata** per notizie, curiosità e dati, **solo in fondo alla caption** (deciso il 14/10/2026: le slide restano pulite, senza fonti). Sull'ultima slide di notizie e curiosità solo la scritta piccola "Notizia verificata · fonti nella caption" (22/10/2026, la mette la skill). **I post di prompt non hanno fonte.**
+2. **Fonte sempre citata** per notizie, curiosità e dati, **solo in fondo alla caption** (deciso il 14/10/2026: le slide restano pulite, senza fonti). Niente scritta "Notizia verificata · fonti nella caption" sull'ultima slide (provata e tolta il 22/10/2026). **I post di prompt non hanno fonte.**
 3. **Prompt controllati, senza dirlo**: prima di pubblicare un prompt che produce testo, Claude lo esegue e controlla che il risultato sia utile; se è debole, lo riscrive. È un controllo interno: sulle slide **non** compare nessun timbro "provato".
 4. **Foto e video veri** (deciso il 14/10/2026): se si parla di una persona o di una cosa reale, si mostra quella vera, non un disegno. I disegni restano per i concetti astratti e per i prompt (la chat).
    - **Prima scelta**, senza rischi: sala stampa ufficiale (Meta, Apple, Google, OpenAI…), Wikimedia Commons, NASA ed enti pubblici, screenshot e registrazioni fatti da noi, Pexels e Unsplash.

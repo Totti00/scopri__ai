@@ -78,7 +78,7 @@ The posts looked clean but weak as thumbnails in the profile grid. These rules o
 - **Cover title**: one small `.kicker` line at y 216 (38 px, body colour) + the big title in **2 lines of 3–6 words** at y 278 (`data-lines="2"`). Sentence case, never all caps (that is a competitor's look).
 - **A big real element on the cover**: screenshot, photo, object, logo or face, at least half the slide. The strongest covers so far (the before/after TV, the egg) had one.
 - **Swipe invite** = a filled blue bar (`.f-swipe`, 56 px, white words; white bar on ACCENT), same centre y 1175 and same thread line.
-- **Closing slide of news and curiosities**: a small mono line "Notizia verificata · fonti nella caption" (`.verified`, added by the engine from `CAROUSEL.tipo`). The sources themselves stay in the caption.
+- **No "Notizia verificata · fonti nella caption" line** on the closing slide: tried on 22 Oct 2026, the owner doesn't want it. Sources live only in the caption.
 - **Caption**: first line ≤ 125 characters; news ≤ 800 characters; one main invite + one question, no 🔔 follow line (it lives on the closing slide only); no bracketed keyword lists. `caption_check.py` enforces all of it.
 
 ## 5. Closing slide (CTA)
