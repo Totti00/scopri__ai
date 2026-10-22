@@ -1,0 +1,44 @@
+{
+  "carosello": [
+    {
+      "tipo": "copertina",
+      "titolo": "Google rade al suolo un bosco per l'AI: ora il caso va alla *polizia*",
+      "media": "media/drone-bosco-muhos.mp4",
+      "inizio": 2,
+      "verticale": 0.45
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Cosa è successo",
+      "testo": "A Muhos, in Finlandia, Google ha raso al suolo *330 ettari* di bosco per costruire un data center per l'AI. Sono circa 250.000 alberi, secondo il Guardian.",
+      "media": "media/muhos-dall-alto.jpg",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Senza i controlli",
+      "testo": "Mancava la valutazione ambientale, obbligatoria prima di tagliare. Il 6 ottobre i lavori sono stati fermati. Google: «Non siamo stati *all'altezza*».",
+      "media": "media/muhos-ceppi.jpg",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Ora la polizia",
+      "testo": "Ieri l'ente finlandese dei permessi ha chiesto alla polizia di indagare sui fossi scavati nel cantiere. Il timore: acqua *acida* nei ruscelli.",
+      "media": "media/annala-acqua.jpg",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Perché ti riguarda",
+      "testo": "L'AI che usi ogni giorno gira in enormi capannoni pieni di computer, che chiedono spazio ed energia. In Finlandia ne sono in progetto *145*.",
+      "media": "media/tralicci-muhos.jpg",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "chiusura",
+      "titolo": "Conosci qualcuno che *ama i boschi*?",
+      "pulsante": "📩 Mandalo a chi ama i boschi"
+    }
+  ]
+}
