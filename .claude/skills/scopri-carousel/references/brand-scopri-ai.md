@@ -71,6 +71,16 @@ These differ from `design-system.md` §3. Each one is the user's correction from
 - **No stickers or labels laid over images or cards** (20 Oct 2026). The only text tied to an image is a comparison caption under it, **«Prima: …» / «Dopo: …»** (`.cap`, see §6).
 - Everything else in the frame stays as the design system describes: positions, sizes. The cover's filled swipe cue is replaced by the «SCORRI PER SCOPRIRE» invite (20 Oct 2026).
 
+### 4b. Grid visibility (owner, 22 Oct 2026, after an external review of the first 9 posts)
+The posts looked clean but weak as thumbnails in the profile grid. These rules override the older ones above:
+- **Logo 64 px** high (`.f-logo`), always top-left.
+- **Keyword = filled blue block** (`#2340FF`, white text; on ACCENT a white block with `accent-700` text): `.em` inside `.display`, `.h1`, `.h2` (or `.kw` anywhere). The lilac `#8595FF` text was too faint at thumbnail size. One block per title.
+- **Cover title**: one small `.kicker` line at y 216 (38 px, body colour) + the big title in **2 lines of 3–6 words** at y 278 (`data-lines="2"`). Sentence case, never all caps (that is a competitor's look).
+- **A big real element on the cover**: screenshot, photo, object, logo or face, at least half the slide. The strongest covers so far (the before/after TV, the egg) had one.
+- **Swipe invite** = a filled blue bar (`.f-swipe`, 56 px, white words; white bar on ACCENT), same centre y 1175 and same thread line.
+- **Closing slide of news and curiosities**: a small mono line "Notizia verificata · fonti nella caption" (`.verified`, added by the engine from `CAROUSEL.tipo`). The sources themselves stay in the caption.
+- **Caption**: first line ≤ 125 characters; news ≤ 800 characters; one main invite + one question, no 🔔 follow line (it lives on the closing slide only); no bracketed keyword lists. `caption_check.py` enforces all of it.
+
 ## 5. Closing slide (CTA)
 
 Redesigned on 20 Oct 2026 (owner: "il pulsante MANDA non si capisce").

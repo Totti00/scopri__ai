@@ -13,11 +13,13 @@ Fonti (blog di marketing che riportano le parole di Adam Mosseri, capo di Instag
 
 ## La caption
 Regole complete in `format/carousel-copy.md` §9: i primi ~125 caratteri sono il gancio, la caption aggiunge e non ripete le slide.
-1. **Prima riga = parole che la gente cerca.** Nome del prodotto o dell'azienda + "intelligenza artificiale" (o il tema: salute, lavoro…), dentro una frase-gancio. È la parte che si vede prima di "altro" e che legge la ricerca di Instagram e di Google.
+1. **Prima riga = parole che la gente cerca, al massimo 125 caratteri** (22/10/2026: oltre, il controllo blocca). Nome del prodotto o dell'azienda + "intelligenza artificiale" (o il tema: salute, lavoro…), dentro una frase-gancio. È la parte che si vede prima di "altro" e che legge la ricerca di Instagram e di Google.
 2. **Massimo 5 hashtag**, in fondo, precisi: `#intelligenzaartificiale` + prodotto + tema. Instagram ignora quelli oltre il quinto.
-3. **Un invito principale, lo stesso della chiusura** (16/10/2026, `format/carousel-copy.md` §8): per le notizie `📩 Mandalo a …` con una persona precisa ("a chi pensa che l'AI sappia solo scrivere", "al collega che usa ancora Excel a mano"); per prompt e liste `📌 Salvalo per …`; per le serie `🔔 Seguici`. **In più, sempre** (20/10/2026), una riga con la campanella prima delle fonti: `🔔 Seguici per non perdere le prossime notizie.` (per i prompt "i prossimi prompt", per le curiosità "le prossime curiosità").
+3. **Un invito principale, lo stesso della chiusura** (16/10/2026, `format/carousel-copy.md` §8): per le notizie `📩 Mandalo a …` con una persona precisa ("a chi pensa che l'AI sappia solo scrivere", "al collega che usa ancora Excel a mano"); per prompt e liste `📌 Salvalo per …`; per le serie `🔔 Seguici`. **In caption un invito e una domanda, nient'altro** (22/10/2026): la riga `🔔 Seguici per non perdere le prossime notizie` sta solo sull'ultima slide, non in caption. Se si regala qualcosa ("Commenta «PAROLA» e ti mando…"), quello è l'invito principale e non si aggiunge "Salvalo".
 4. **Una domanda vera** per i commenti, sul contenuto. Niente "commenta SÌ", "tagga 3 amici": Instagram li considera esche e mostra meno il post. **Ammesso dal 21/10/2026** (decisione del proprietario): "Commenta «PAROLA» e ti mando …", solo quando si regala davvero qualcosa in privato (es. il PDF con tutti i prompt). Il messaggio privato lo manda il proprietario (a mano o con un risponditore automatico).
-5. Le **fonti** restano in fondo ("Fonti: …"), prima degli hashtag. Il "Salva" lo chiede già il terminatore: in caption non serve.
+5. Le **fonti** restano in fondo ("Fonti: …"), prima degli hashtag. Sull'ultima slide di notizie e curiosità la skill aggiunge la scritta piccola "Notizia verificata · fonti nella caption" (22/10/2026).
+6. **Lunghezza** (22/10/2026): notizie e curiosità **sotto gli 800 caratteri** (oltre 900 il controllo blocca): le slide raccontano già, la caption dà solo il contesto in più. Le caption lunghe si tengono per i prompt.
+7. **Niente elenchi di parole chiave** tra parentesi o in fondo ("[prompt per Claude, Claude AI, …]"): sembrano spam. Le parole si mettono, naturali, nelle prime frasi.
 
 ### Caption del carosello e caption del Reel (16/10/2026)
 Sono due lavori diversi:
@@ -25,7 +27,7 @@ Sono due lavori diversi:
 - **Reel**: chi lo vede di solito non ci segue e non ha visto nessuna slide. Caption **corta, 2–4 righe**: prima riga con le parole che la gente cerca e il gancio, una riga che dice cosa si vede, lo stesso invito del carosello, la domanda, "Fonti: …" per le notizie, massimo 5 hashtag.
 
 ### Controllo automatico
-Prima della consegna ogni caption passa `caption_check.py` (nella skill, lo lancia da solo `npm run publish`, anche su `caption-reel.txt`). Controlla: 2.200 caratteri, cosa si vede prima di "altro" (125), parole cercate, massimo 5 hashtag e tutti in fondo, "Fonti: …" per notizie e curiosità (prima degli hashtag; mai nei prompt), un solo invito principale e quello giusto per il tipo, la riga 🔔 Seguici, niente esche ("tagga", "link in bio", "metti like"; "commenta PAROLA e ti mando" è ammesso dal 21/10/2026), una domanda, niente link, poche emoji, nome "Scopri AI".
+Prima della consegna ogni caption passa `caption_check.py` (nella skill, lo lancia da solo `npm run publish`, anche su `caption-reel.txt`). Controlla: 2.200 caratteri, cosa si vede prima di "altro" (125), parole cercate, massimo 5 hashtag e tutti in fondo, "Fonti: …" per notizie e curiosità (prima degli hashtag; mai nei prompt), un solo invito principale e quello giusto per il tipo, niente riga 🔔 Seguici in caption, notizie sotto gli 800 caratteri, niente elenchi di parole chiave, niente esche ("tagga", "link in bio", "metti like"; "commenta PAROLA e ti mando" è ammesso dal 21/10/2026), una domanda, niente link, poche emoji, nome "Scopri AI".
 Se c'è un errore il pacchetto non si scrive. Alla fine stampa la ricevuta **"✅ CAPTION PRONTA"**, che va nel messaggio finale al proprietario.
 
 ## Il testo alternativo

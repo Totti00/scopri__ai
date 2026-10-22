@@ -14,7 +14,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 
 ## Regole fisse (mai derogare)
 1. **Ogni notizia confermata da almeno 2 fonti affidabili** (vedi `fonti.md`). Se non ci sono, non si pubblica: si usa la rubrica di riserva ("Curiosità scientifiche").
-2. **Fonte sempre citata** per notizie, curiosità e dati, **solo in fondo alla caption** (deciso il 14/10/2026: le slide restano pulite, senza fonti). **I post di prompt non hanno fonte.**
+2. **Fonte sempre citata** per notizie, curiosità e dati, **solo in fondo alla caption** (deciso il 14/10/2026: le slide restano pulite, senza fonti). Sull'ultima slide di notizie e curiosità solo la scritta piccola "Notizia verificata · fonti nella caption" (22/10/2026, la mette la skill). **I post di prompt non hanno fonte.**
 3. **Prompt controllati, senza dirlo**: prima di pubblicare un prompt che produce testo, Claude lo esegue e controlla che il risultato sia utile; se è debole, lo riscrive. È un controllo interno: sulle slide **non** compare nessun timbro "provato".
 4. **Foto e video veri** (deciso il 14/10/2026): se si parla di una persona o di una cosa reale, si mostra quella vera, non un disegno. I disegni restano per i concetti astratti e per i prompt (la chat).
    - **Prima scelta**, senza rischi: sala stampa ufficiale (Meta, Apple, Google, OpenAI…), Wikimedia Commons, NASA ed enti pubblici, screenshot e registrazioni fatti da noi, Pexels e Unsplash.
@@ -40,9 +40,15 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 - **Guida di scrittura dei caroselli** (adottata il 16/10/2026): `format/carousel-copy.md` (in inglese, com'è nell'originale; **i post si scrivono sempre in italiano**) — limiti di parole per slide, test del gancio, 12 tipi di gancio, 11 schemi di carosello, slide 2 che funziona anche da sola, riepilogo da salvare, caption che aggiunge e non ripete. Le regole di questo file vengono prima.
 - **Il meglio all'inizio** (16/10/2026): la cosa più forte nella slide 2 o 3, non in fondo.
 - **Niente contatore delle slide** ("03 / 08"): tolto per sempre il 20/10/2026.
-- **Un invito principale per post**, scelto per tipo: notizie → "📩 Mandalo a…", prompt e liste → "📌 Salvalo…", serie → "🔔 Seguici" (16/10/2026). **In più, sempre**, nella chiusura e in fondo alla caption, la riga con la campanella "🔔 Seguici per non perdere le prossime notizie" (o "i prossimi prompt"…) (deciso il 20/10/2026).
+- **Un invito principale per post**, scelto per tipo: notizie → "📩 Mandalo a…", prompt e liste → "📌 Salvalo…" (o "Commenta «PAROLA» e ti mando…" quando si regala qualcosa), serie → "🔔 Seguici" (16/10/2026). La riga con la campanella "🔔 Seguici per non perdere le prossime notizie" sta **solo sull'ultima slide**, non in caption (20/10/2026, cambiato il 22/10/2026).
 - **Niente etichetta di rubrica sulla copertina** (niente "NEWS LAMPO") e **niente `@scopri__ai` in basso a sinistra** sulle slide (deciso il 20/10/2026).
-- **Invito a scorrere** sulla copertina (20/10/2026): «SCORRI PER SCOPRIRE» (senza freccina) centrato in basso, **sopra i pallini** che Instagram disegna dentro l'immagine (pallini a circa y 1232 su 1350: la scritta sta più in alto, centro verso y 1175). Sulla copertina **niente cerchio blu con la freccia** in basso a destra (le altre slide lo tengono). A destra della scritta, alla stessa altezza, la **linea blu corta** (160 px) che tocca il bordo destro e continua nella slide 2 (come nel post del 20/10/2026 sulle smart TV: è il modello del footer per **tutti i caroselli**, non per i Reel). Solo sulla prima slide (e sulle copertine alternative).
+- **Copertina che si nota nella griglia** (22/10/2026, dopo una revisione esterna dei primi 9 post):
+  - **titolo corto**: una riga piccola sopra (`.kicker`) e il titolo grande in **2 righe da 3–6 parole** (niente maiuscolo tutto: è lo stile di altri);
+  - **parola chiave nel riquadro blu** `#2340FF` con il testo bianco (non più il testo lilla, che in miniatura sparisce): vale per tutti i titoli delle slide;
+  - **un elemento vero e grande** che occupa almeno metà della slide (screenshot, foto, oggetto, logo, volto);
+  - **logo più grande** (64 px), sempre in alto a sinistra;
+  - l'invito a scorrere è una **barra blu** con «SCORRI PER SCOPRIRE».
+- **Invito a scorrere** sulla copertina (20/10/2026, barra blu dal 22/10/2026): «SCORRI PER SCOPRIRE» (senza freccina) centrato in basso, **sopra i pallini** che Instagram disegna dentro l'immagine (pallini a circa y 1232 su 1350: la scritta sta più in alto, centro verso y 1175). Sulla copertina **niente cerchio blu con la freccia** in basso a destra (le altre slide lo tengono). A destra della scritta, alla stessa altezza, la **linea blu corta** (160 px) che tocca il bordo destro e continua nella slide 2 (come nel post del 20/10/2026 sulle smart TV: è il modello del footer per **tutti i caroselli**, non per i Reel). Solo sulla prima slide (e sulle copertine alternative).
 - Prima di consegnare, si passa il **controllo finale**: `brand/controllo-finale.md`.
 
 ## Design (dal 16/10/2026)
@@ -59,9 +65,11 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 
 ## Per arrivare a più persone
 Regole complete in `brand/crescita.md` (15/10/2026). In breve:
-- prima riga della caption con le parole che la gente cerca (prodotto, azienda, "intelligenza artificiale");
+- prima riga della caption con le parole che la gente cerca (prodotto, azienda, "intelligenza artificiale"), **al massimo 125 caratteri** (22/10/2026);
+- caption delle notizie **corte: sotto gli 800 caratteri** (le slide raccontano già); quelle lunghe solo per i prompt (22/10/2026);
+- **niente elenchi di parole chiave tra parentesi**: le parole si mettono nelle prime frasi (22/10/2026);
 - **massimo 5 hashtag**: Instagram ignora gli altri;
-- lo stesso invito principale della chiusura (`📩 Mandalo a …` per le notizie, `📌 Salvalo …` per prompt e liste), più la riga `🔔 Seguici per non perdere le prossime notizie`, e una domanda vera; mai esche come "commenta SÌ" o "tagga 3 amici". **Ammesso** (deciso il 21/10/2026): "Commenta «PAROLA» e ti mando …" quando si regala davvero qualcosa in privato (es. il PDF con tutti i prompt); l'invio lo fa il proprietario;
+- in caption **un invito principale e una domanda vera, nient'altro** (22/10/2026): lo stesso invito della chiusura (`📩 Mandalo a …` per le notizie, `📌 Salvalo …` per prompt e liste); la riga `🔔 Seguici` sta solo sull'ultima slide; mai esche come "commenta SÌ" o "tagga 3 amici". **Ammesso** (deciso il 21/10/2026): "Commenta «PAROLA» e ti mando …" quando si regala davvero qualcosa in privato (es. il PDF con tutti i prompt); l'invio lo fa il proprietario;
 - mai un contenuto di altri messo da solo: sempre dentro le nostre slide, con i nostri testi.
 
 ## La squadra di agenti

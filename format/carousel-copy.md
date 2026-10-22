@@ -8,7 +8,7 @@ La guida qui sotto resta **in inglese, com'è nell'originale** (mandata dal prop
 - **Decisioni del proprietario (16/10/2026):**
   - **il meglio all'inizio** (§5.3): la cosa più forte nella slide 2 o 3; in fondo vanno riepilogo e invito;
   - **niente contatore "3/7"** (§5.4): tolto dal proprietario il 20/10/2026, su nessuna slide;
-  - **un solo invito principale per post** (§8), scelto per tipo, nella chiusura e uguale in caption (più una domanda per i commenti); **in più, sempre** (20/10/2026), la riga "🔔 Seguici per non perdere le prossime notizie" sotto l'invito nella chiusura e in caption:
+  - **un solo invito principale per post** (§8), scelto per tipo, nella chiusura e uguale in caption (più una domanda per i commenti); la riga "🔔 Seguici per non perdere le prossime notizie" sta **solo nella chiusura**, sotto l'invito, non in caption (20/10/2026, cambiato il 22/10/2026):
 
     | Post | Invito | Nel JSON della chiusura |
     |---|---|---|

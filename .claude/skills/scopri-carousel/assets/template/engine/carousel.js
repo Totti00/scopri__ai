@@ -68,6 +68,9 @@
       sl.querySelectorAll('.follow').forEach(el => {
         if (!el.textContent.trim()) el.textContent = FOLLOW[C.tipo] || FOLLOW.notizia;
         el.insertAdjacentHTML('afterbegin', BELL);
+        // news and curiosities (22 Oct 2026): small "verified" line under the follow line; sources stay in the caption
+        const V = { notizia: 'Notizia verificata · fonti nella caption', curiosita: 'Curiosità verificata · fonti nella caption' };
+        if (V[C.tipo] && !sl.querySelector('.verified')) el.insertAdjacentHTML('afterend', `<p class="verified qa-text">${V[C.tipo]}</p>`);
       });
     });
   }

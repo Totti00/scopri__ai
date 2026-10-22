@@ -6,13 +6,13 @@ Non è più "ogni post ha il suo Reel": può esserci un carosello senza Reel, un
 ## Com'è fatto (semplice, veloce, cattura subito)
 Una sola schermata 1080×1920, niente scene e niente animazioni:
 - in alto **solo il logo** Scopri AI, con un po' di spazio prima del titolo: **niente etichette** come "NEWS LAMPO" (deciso il 16/10/2026);
-- un **titolo** che dice la cosa sorprendente, in una o due frasi (al massimo 22 parole, 4 righe), con 1–2 parole chiave in blu (`*così*`). Dice **cosa ha fatto l'AI**, come le slide;
+- un **titolo corto e grande** (22/10/2026, come le copertine): una riga piccola sopra (`"sopra"`) e il titolo in **2 righe da 3–6 parole** (al massimo 10 parole), con la parola chiave nel **riquadro blu** (`*così*`). Dice **cosa ha fatto l'AI**, come le slide;
 - sotto, il **video vero**, **sempre a colori** (16/10/2026; dal 20/10/2026 a colori anche nelle slide), in un riquadro con gli angoli arrotondati; il blocco sta al centro dello schermo;
 - senza audio: la musica strumentale la mette il proprietario.
 
 Lo fa `strumenti/reel.py` (istruzioni in cima al file) dal file `reel.json`, nella cartella del post (`carousels/<slug>/`):
 ```json
-{"titolo": "La nuova AI di Google ha insegnato a un *robot* a fare centro. Le è bastato *guardare un video*.",
+{"sopra": "Le è bastato guardare un video.", "titolo": "Un *robot* fa centro da solo",
  "video": "media/robot.mp4", "inizio": 31.3, "durata": 10, "zoom": 1.24, "copertina": 1.5}
 ```
 - `python3 strumenti/reel.py <cartella>/reel.json --anteprima` → `reel-anteprima.png` (pochi secondi), con il **primo fotogramma** del video: si vede subito se il Reel parte bene;

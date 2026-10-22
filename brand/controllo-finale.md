@@ -13,7 +13,11 @@ Tabella adattata alle nostre regole; completa la lista di `format/carousel-copy.
 | Troppo testo | Si smette di leggere | Limiti di `format/carousel-copy.md` §2 (copertina ~12 parole, slide 2 ~25, contenuto ~40); tagliare o dividere |
 | I titoli da soli non raccontano la storia | Chi scorre veloce non capisce | Prova dei titoli: letti in fila, la storia fila |
 | C'è il contatore "N/totale" | Tolto dal proprietario il 20/10/2026 | Nessun contatore su nessuna slide |
-| Più di un invito principale, o nessuno | Chi legge non sa cosa fare | Un solo invito principale nella chiusura e lo stesso in caption (§8), più la riga 🔔 Seguici in chiusura e in caption (20/10/2026) |
+| Più di un invito principale, o nessuno | Chi legge non sa cosa fare | Un solo invito principale nella chiusura e lo stesso in caption (§8), più una domanda; la riga 🔔 Seguici solo sull'ultima slide, mai in caption (22/10/2026) |
+| Copertina con titolo lungo (3–4 righe) | In miniatura non si legge | Riga piccola sopra + titolo in 2 righe da 3–6 parole (22/10/2026) |
+| Parola chiave in lilla o colorata e basta | Nella griglia sparisce | Parola chiave nel riquadro blu con il testo bianco (`.em` nei titoli) |
+| Copertina senza niente di grande da guardare | Non ferma il pollice | Un elemento vero e grande, almeno metà della slide |
+| Caption di notizia oltre gli 800 caratteri, o con elenco di parole chiave tra parentesi | Non la legge nessuno / sembra spam | Taglia; le parole chiave nelle prime frasi |
 | "NEWS LAMPO" in copertina o `@scopri__ai` in basso a sinistra | Tolti dal proprietario | Copertina senza etichetta di rubrica, cornice senza nome utente (20/10/2026) |
 | Niente da salvare (6+ slide) | Meno salvataggi | Slide "In breve" prima della chiusura (`{"tipo": "riepilogo"}`) |
 | Caption che ripete le slide | Non aggiunge niente | La caption dà il contesto e il perché (§9) |

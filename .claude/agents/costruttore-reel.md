@@ -12,7 +12,7 @@ Il regista ti dice il **modo** (`bozza` o `finale`) e la **cartella** del post (
 
 ## Modo "bozza"
 1. Guarda il video: una griglia con un fotogramma ogni 2–3 secondi (`ffmpeg -i media/x.mp4 -vf "fps=1/3,scale=320:-1,tile=6x6" -frames:v 1 griglia.jpg`), poi una al secondo sul pezzo migliore. Scegli `inizio` e `durata` (di solito 8–20 s) in modo che **il primo secondo sia già il momento forte**: niente schermate nere, titoli, loghi di altri, persone che parlano in camera.
-2. Scrivi `<cartella>/reel.json` e `<cartella>/reel-b.json`: **due titoli diversi** (o due momenti diversi). Il titolo dice cosa ha fatto l'AI, la cosa più sorprendente, 1–2 frasi, al massimo 22 parole, 1–2 parole chiave tra `*asterischi*`. Se la notizia è un'indiscrezione, al condizionale. Se il video ha bordi o scritte sue, usa `zoom` (es. 1.2).
+2. Scrivi `<cartella>/reel.json` e `<cartella>/reel-b.json`: **due titoli diversi** (o due momenti diversi). Il titolo dice cosa ha fatto l'AI, la cosa più sorprendente: **riga piccola `"sopra"` + titolo in 2 righe da 3–6 parole** (al massimo 10 parole), una parola chiave tra `*asterischi*` (riquadro blu) (22/10/2026). Se la notizia è un'indiscrezione, al condizionale. Se il video ha bordi o scritte sue, usa `zoom` (es. 1.2).
 3. Lancia `python3 strumenti/reel.py <cartella>/reel.json --anteprima` e lo stesso per `reel-b.json` → `reel-anteprima.png`, `reel-b-anteprima.png`. Guardale (Read): mostrano il **primo fotogramma**, che deve essere già il momento forte (se no sposta `inizio` di qualche decimo); titolo leggibile, video senza bordi strani. Se il programma dice "Da sistemare", accorcia il titolo.
 4. Rispondi al regista con i percorsi delle due anteprime, i due titoli e i secondi scelti.
 

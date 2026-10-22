@@ -48,7 +48,7 @@ Italian, following `carousel-copy.md` §9, plus the Scopri AI habits:
 - **Emoji:** about one per block, at the start of a line (🧠 📌 💬 🔒 ✍️ 📅 ⚠️ 🔖 style). The user asked for them.
 - **Body:** the context the slides don't hold, such as why it works, how to use it, practical tips and verified facts with their limits.
 - **One honesty line about AI**, e.g. "⚠️ L'AI spiega, ma può sbagliare. Verifica sempre…".
-- **The CTA at the end**, the same single ask as the closing slide, chosen by type: news → "📩 Mandalo a …", prompts and lists → "📌 Salvalo …", series → "🔔 Seguici". Then one real question. Then, except in *serie*, the line **`🔔 Seguici per non perdere le prossime notizie.`** (prompt: "i prossimi prompt", curiosità: "le prossime curiosità", lista: "i prossimi consigli"): it is required in addition to the single invite and `caption_check.py` doesn't count it as a second one (20 Oct 2026). For news and curiosità, "Fonti: …" right before the hashtags.
+- **The CTA at the end**, the same single ask as the closing slide, chosen by type: news → "📩 Mandalo a …", prompts and lists → "📌 Salvalo …", series → "🔔 Seguici". Then one real question, and nothing else: since 22 Oct 2026 the 🔔 follow line lives only on the closing slide, never in the caption (`caption_check.py` stops on it). When the post gives something away ("Commenta «PAROLA» e ti mando…"), that is the main invite: no "Salvalo" as well. First line ≤ 125 characters, news captions ≤ 800 characters, no bracketed keyword lists. For news and curiosità, "Fonti: …" right before the hashtags.
 - **3–5 specific hashtags** at the very end.
 - Natural search keywords the audience would type, in plain Italian.
 

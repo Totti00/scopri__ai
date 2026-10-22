@@ -11,7 +11,8 @@ Uso:
 
 Il JSON:
 {
-  "titolo": "Google ha insegnato a un *robot* a fare centro. Gli è bastato *guardare un video*.",
+  "sopra": "Gli è bastato guardare un video.",   (facoltativo: una riga piccola sopra il titolo)
+  "titolo": "Un *robot* fa centro da solo",
   "video": "media/robot.mp4",
   "inizio": 0,              (facoltativo, secondi)
   "durata": 20,             (facoltativo: senza, il video intero; con inizio/durata esce il pezzo migliore come reel.mp4
@@ -26,8 +27,9 @@ Il JSON:
 }
 In alto c'è solo il logo, con spazio prima del titolo: niente etichette come "NEWS LAMPO" (deciso il 16/10/2026).
 Il video è **sempre a colori** (deciso il 16/10/2026; dal 20/10/2026 anche nelle slide): niente bianco e nero col blu.
-Nel titolo *parola* = parola chiave, in blu. Il titolo dice la cosa sorprendente (cosa ha fatto l'AI), al massimo 22 parole,
-al massimo 4 righe. I testi stanno nella zona sicura (y 230–1440; sotto y 1000 anche a sinistra di x 850): se escono, si ferma.
+Titolo (22/10/2026, come le copertine): una riga piccola sopra ("sopra", facoltativa) e il titolo grande in 2 righe da 3–6 parole
+(al massimo 10 parole). *parola* = parola chiave, nel riquadro blu con il testo bianco. Il titolo dice la cosa sorprendente
+(cosa ha fatto l'AI). I testi stanno nella zona sicura (y 230–1440; sotto y 1000 anche a sinistra di x 850): se escono, si ferma.
 """
 import html
 import json
@@ -42,17 +44,17 @@ RADICE = pathlib.Path(__file__).resolve().parent.parent
 BRAND = RADICE / ".claude/skills/scopri-carousel/assets/brand"
 FPS = 30
 X, LARGHEZZA, FONDO_MAX = 64, 952, 1760     # margine, larghezza del riquadro, fin dove può scendere il video
-MAX_PAROLE, MAX_RIGHE = 22, 4
+MAX_PAROLE, MAX_RIGHE = 10, 2              # titolo corto e grande (22/10/2026)
 SPAZIO_LOGO = 96                            # spazio tra il logo e il titolo
 MODI = {
-    "scuro": dict(pieno="#0A0A0D", testo="#F5F5F7", chiave="#8595FF", logo="negativo", bordo="rgba(255,255,255,.14)",
+    "scuro": dict(blocco="#2340FF", blocco_testo="#FFFFFF", pieno="#0A0A0D", testo="#F5F5F7", chiave="#8595FF", logo="negativo", bordo="rgba(255,255,255,.14)",
                   alone="rgba(35,64,255,.40)", fondo="radial-gradient(70% 40% at 50% 62%,#1A1C2E 0%,transparent 70%),"
                   "radial-gradient(120% 100% at 50% 50%,transparent 60%,rgba(0,0,0,.45) 100%),#0A0A0D"),
-    "chiaro": dict(pieno="#F2F2F5", testo="#0A0A0D", chiave="#2340FF", logo="colore", bordo="rgba(10,10,13,.10)",
+    "chiaro": dict(blocco="#2340FF", blocco_testo="#FFFFFF", pieno="#F2F2F5", testo="#0A0A0D", chiave="#2340FF", logo="colore", bordo="rgba(10,10,13,.10)",
                    alone="rgba(10,10,20,.25)",
                    fondo="radial-gradient(70% 40% at 10% 0%,rgba(255,255,255,.9) 0%,transparent 70%),"
                    "linear-gradient(160deg,#F7F7FA 0%,#ECEDF1 55%,#E4E5EB 100%)"),
-    "blu": dict(pieno="#2340FF", testo="#FFFFFF", chiave="#0A0A0D", logo="bianco", bordo="rgba(255,255,255,.24)",
+    "blu": dict(blocco="#FFFFFF", blocco_testo="#0F26BD", pieno="#2340FF", testo="#FFFFFF", chiave="#0A0A0D", logo="bianco", bordo="rgba(255,255,255,.24)",
                 alone="rgba(16,20,90,.55)",
                 fondo="radial-gradient(70% 40% at 10% 0%,rgba(255,255,255,.14) 0%,transparent 70%),"
                 "linear-gradient(150deg,#4760FF 0%,#2340FF 45%,#1A32D1 100%)"),
@@ -99,14 +101,18 @@ html,body{{margin:0;background:{m["pieno"]}}}
 .bg{{position:absolute;inset:0;background:{m["fondo"]}}}
 .grana{{position:absolute;inset:0;background:{GRANA};opacity:.07;mix-blend-mode:overlay}}
 .colonna{{position:absolute;left:{X}px;top:{alto}px;width:{LARGHEZZA}px;display:flex;flex-direction:column;align-items:flex-start}}
-#titolo{{margin-top:{spazio}px;font-size:66px;font-weight:600;line-height:1.08;letter-spacing:-.03em;text-wrap:pretty;width:{LARGHEZZA}px}}
-.chiave{{color:{m["chiave"]};font-weight:700}}
+#sopra{{margin-top:{spazio}px;font-size:42px;font-weight:500;line-height:1.2;letter-spacing:-.01em;opacity:.78;width:{LARGHEZZA}px}}
+#sopra+#titolo{{margin-top:14px}}
+#titolo{{margin-top:{spazio}px;font-size:100px;font-weight:600;line-height:1;letter-spacing:-.04em;text-wrap:balance;width:{LARGHEZZA}px}}
+.chiave{{color:{m["blocco_testo"]};padding:0 .1em;border-radius:.08em;-webkit-box-decoration-break:clone;box-decoration-break:clone;
+  background:linear-gradient({m["blocco"]},{m["blocco"]}) 0 60%/100% 86% no-repeat}}
 #buco{{margin-top:{stacco}px;width:{LARGHEZZA}px;aspect-ratio:{rapporto};max-height:var(--max);border-radius:44px;
   box-shadow:inset 0 0 0 2px {m["bordo"]},0 60px 160px -30px {m["alone"]}}}
 </style></head><body><div class="pg">
 <div class="bg"></div><div class="grana"></div>
 <div class="colonna">
   <img class="testo" src="{logo}" style="height:64px">
+  {f'<div id="sopra" class="testo">{html.escape(r["sopra"])}</div>' if r.get("sopra") else ""}
   <div id="titolo" class="testo">{titolo_html(r["titolo"])}</div>
   <div id="buco"></div>
 </div>
@@ -146,7 +152,7 @@ def main():
 
     parole = [w for w in r["titolo"].replace("*", "").split() if re.search(r"\w", w)]
     if len(parole) > MAX_PAROLE:
-        print(f"avviso: titolo di {len(parole)} parole (massimo {MAX_PAROLE}): chi scorre non lo legge tutto")
+        print(f"avviso: titolo di {len(parole)} parole (massimo {MAX_PAROLE}): metti il resto nella riga piccola \"sopra\"")
     if not 5 <= durata <= 90:
         print(f"avviso: il video dura {durata:.1f} s (meglio tra 8 e 40 s; il proprietario può tagliarlo)")
 
@@ -158,7 +164,7 @@ def main():
         problemi = list(info.get("fuori") or [])
         t = info.get("titolo") or {}
         if t.get("righe") and t["righe"] > MAX_RIGHE:
-            problemi.append(f"il titolo è di {t['righe']} righe (massimo {MAX_RIGHE})")
+            problemi.append(f"il titolo è di {t['righe']} righe (massimo {MAX_RIGHE}): accorcialo o sposta una parte in \"sopra\"")
         b = info["buco"]
         if b["height"] < 420:
             problemi.append(f"per il video restano solo {b['height']} px di altezza: accorcia il titolo")
