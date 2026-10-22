@@ -22,7 +22,7 @@ Il JSON (si può avere solo "reel", solo "carosello" o tutti e due):
     {"tipo": "slide", "titolo": "Cosa è successo", "testo": "Due o tre frasi: chi, cosa, perché conta.",
      "media": "media/dopo.jpg", "adatta": "contain"},
     {"tipo": "chiusura", "titolo": "Vuoi i *100 prompt* per Claude?", "pulsante": "📥 Commenta «100»",
-     "testo": "e te li mando in PDF"}     (facoltativa, aggiunta il 22/10/2026 su richiesta del proprietario;
+     "testo": "e te li mando in PDF"}     (ultima slide, sempre: 22/10/2026; invito coerente con il post, i 100 prompt solo nei post di prompt;
                                           "seguici" cambia la riga 🔔 in fondo, che c'è sempre)
   ]
 }
@@ -32,7 +32,7 @@ Escono:
               e exports/contact-sheet.jpg
 Regole del disegno (format/6-stile-tweet.md): accento #8FA3FF in grassetto solo su 1–2 parole (*così*); titolo della
 copertina in MAIUSCOLO, al massimo 3 righe; testo del Reel al massimo 3 righe; testo della slide al massimo 4 righe.
-Se un testo è troppo lungo il programma si ferma. Foto e video sempre a colori, senza audio (la musica la mette il proprietario).
+Se un testo è troppo lungo il programma si ferma. Foto e video sempre a colori. Le slide sono senza audio; il Reel tiene l'audio originale del video (22/10/2026).
 """
 import html
 import json
@@ -180,7 +180,12 @@ def adatta(s, w, h, predefinito):
     return f"scale={zw}:{zh}:force_original_aspect_ratio=increase,crop={w}:{h}:(iw-{w})*{pos}:(ih-{h})*{vert},setsar=1"
 
 
-def componi(cornice, W, H, fin, media, s, uscita, fermo=False, intero=False, predefinito="cover"):
+def ha_audio(media):
+    """Vero se il video ha una traccia audio (i Reel la tengono: 22/10/2026)."""
+    return "Audio:" in subprocess.run(["ffmpeg", "-i", str(media)], capture_output=True, text=True).stderr
+
+
+def componi(cornice, W, H, fin, media, s, uscita, fermo=False, intero=False, predefinito="cover", audio=False):
     """Fondo nero → foto/video nella finestra → cornice (testi, maschera, sfumato) sopra."""
     w, h, video, durata = info_media(media)
     f = adatta(s, fin["w"], fin["h"], predefinito)
@@ -201,9 +206,11 @@ def componi(cornice, W, H, fin, media, s, uscita, fermo=False, intero=False, pre
     esegui(["ffmpeg", "-y", "-v", "error", "-f", "lavfi", "-i", f"color=black:s={W}x{H}:r={FPS}", "-i", str(media),
             "-loop", "1", "-i", str(cornice), "-filter_complex",
             f"[1:v]trim=start={da}:duration={quanto},setpts=PTS-STARTPTS,fps={FPS},{f}[m];"
-            f"[0:v][m]overlay={fin['x']}:{fin['y']}:shortest=1[b];[b][2:v]overlay=0:0,format=yuv420p[out]",
-            "-map", "[out]", "-t", str(quanto), "-r", str(FPS), "-c:v", "libx264", "-crf", "18", "-preset", "medium",
-            "-an", "-movflags", "+faststart", str(uscita)])
+            f"[0:v][m]overlay={fin['x']}:{fin['y']}:shortest=1[b];[b][2:v]overlay=0:0,format=yuv420p[out]"
+            + (f";[1:a]atrim=start={da}:duration={quanto},asetpts=PTS-STARTPTS[a]" if audio and ha_audio(media) else ""),
+            "-map", "[out]"] + (["-map", "[a]", "-c:a", "aac", "-b:a", "192k"] if audio and ha_audio(media) else ["-an"])
+           + ["-t", str(quanto), "-r", str(FPS), "-c:v", "libx264", "-crf", "18", "-preset", "medium",
+            "-movflags", "+faststart", str(uscita)])
     return quanto
 
 
@@ -235,10 +242,10 @@ def main():
                 componi(cornice, 1080, 1920, fin, media, r, cartella / "reel-anteprima.png", fermo=True)
                 print("Creato reel-anteprima.png")
             else:
-                d = componi(cornice, 1080, 1920, fin, media, r, cartella / "reel.mp4")
+                d = componi(cornice, 1080, 1920, fin, media, r, cartella / "reel.mp4", audio=True)
                 print(f"Creato reel.mp4 ({d:.1f} s)")
                 if tagliato(r, media):
-                    d = componi(cornice, 1080, 1920, fin, media, r, cartella / "reel-completo.mp4", intero=True)
+                    d = componi(cornice, 1080, 1920, fin, media, r, cartella / "reel-completo.mp4", intero=True, audio=True)
                     print(f"Creato reel-completo.mp4 ({d:.1f} s)")
                 esegui(["ffmpeg", "-y", "-v", "error", "-ss", str(min(float(r.get("copertina", 1.0)), 1e9)), "-i",
                         str(cartella / "reel.mp4"), "-frames:v", "1", "-q:v", "2", "-update", "1", str(cartella / "reel-copertina.jpg")])

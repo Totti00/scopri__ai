@@ -8,7 +8,7 @@ Una sola schermata 1080×1920, niente scene e niente animazioni:
 - in alto **solo il logo** Scopri AI, con un po' di spazio prima del titolo: **niente etichette** come "NEWS LAMPO" (deciso il 16/10/2026);
 - un **titolo corto e grande** (22/10/2026, come le copertine): una riga piccola sopra (`"sopra"`) e il titolo in **2 righe da 3–6 parole** (al massimo 10 parole), con la parola chiave nel **riquadro blu** (`*così*`). Dice **cosa ha fatto l'AI**, come le slide;
 - sotto, il **video vero**, **sempre a colori** (16/10/2026; dal 20/10/2026 a colori anche nelle slide), in un riquadro con gli angoli arrotondati; il blocco sta al centro dello schermo;
-- senza audio: la musica strumentale la mette il proprietario.
+- con l'audio originale del video (deciso il 22/10/2026: il Reel senza audio non va). Se il video non ha audio, la musica strumentale la mette il proprietario.
 
 Lo fa `strumenti/reel.py` (istruzioni in cima al file) dal file `reel.json`, nella cartella del post (`carousels/<slug>/`):
 ```json

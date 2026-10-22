@@ -12,7 +12,7 @@ python3 strumenti/tweet.py carousels/<slug>/tweet.json --anteprima   # immagini 
 python3 strumenti/tweet.py carousels/<slug>/tweet.json               # file finiti (finale)
 python3 strumenti/tweet.py carousels/<slug>/tweet.json --overlay     # anche le cornici trasparenti per Canva/CapCut
 ```
-Il formato del JSON è in cima a `strumenti/tweet.py`. Escono gli stessi file del carosello: `exports/slide-NN.png` (e `.mp4` per le slide con un video, più `-completo.mp4` se tagliato), `exports/contact-sheet.jpg`, e per il Reel `reel.mp4`, `reel-completo.mp4`, `reel-copertina.jpg`. Poi `publish.json` con `"stile": "tweet"` e `npm run publish` (o `python .claude/skills/scopri-carousel/scripts/publish-pack.py <cartella>`) per il pacchetto e il controllo della caption.
+Il formato del JSON è in cima a `strumenti/tweet.py`. Escono gli stessi file del carosello (il Reel con l'audio originale del video, le slide senza audio): `exports/slide-NN.png` (e `.mp4` per le slide con un video, più `-completo.mp4` se tagliato), `exports/contact-sheet.jpg`, e per il Reel `reel.mp4`, `reel-completo.mp4`, `reel-copertina.jpg`. Poi `publish.json` con `"stile": "tweet"` e `npm run publish` (o `python .claude/skills/scopri-carousel/scripts/publish-pack.py <cartella>`) per il pacchetto e il controllo della caption.
 
 ## Regole comuni
 - Fondo nero `#000000`, font **Inter** (solo in questo stile; il carosello resta in Inter Tight).
@@ -38,7 +38,9 @@ Il formato del JSON è in cima a `strumenti/tweet.py`. Escono gli stessi file de
 - Titoletto MAIUSCOLO Inter ExtraBold 40 a x 60, y 200 (una riga).
 - Testo Inter Regular 34, interlinea 1.38, bianco 92%, da y 262, **al massimo 4 righe**.
 - Foto o video a tutta larghezza da y 520, alto 608. Le immagini si vedono **intere** (`"adatta": "contain"`, è il valore di partenza nelle slide interne).
-- Niente slide di chiusura: l'invito sta in caption.
+## 4) Slide di chiusura (dal 22/10/2026, sempre nei caroselli)
+- Ultima slide di ogni carosello in stile tweet: `{"tipo": "chiusura", "titolo": …, "pulsante": …, "testo": …}` (formato in cima a `strumenti/tweet.py`). Fondo nero, il nostro profilo grande, titolo MAIUSCOLO con 1–2 parole in `*asterischi*`, un pulsante, una riga di testo, in fondo la riga "🔔 Seguici per non perdere le prossime notizie".
+- **L'invito deve essere coerente con il post** (deciso dal proprietario il 22/10/2026): per una notizia si invita a mandarla a chi le interessa (es. "Conosci qualcuno con *un sito*?" · "📩 Mandalo a chi ha un sito"); l'invito ai 100 prompt ("Vuoi i *100 prompt* per Claude?" · "📥 Commenta «100»") **solo quando il post parla di prompt**. Mai un invito messo a caso.
 
 ## Caption
 - Prima riga: 1–2 emoji + frase a effetto, con le parole che la gente cerca, **al massimo 125 caratteri**.

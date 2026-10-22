@@ -29,9 +29,9 @@
     },
     {
       "tipo": "chiusura",
-      "titolo": "Vuoi i *100 prompt* per Claude?",
-      "pulsante": "📥 Commenta «100»",
-      "testo": "e te li mando in PDF"
+      "titolo": "Conosci qualcuno con *un sito*?",
+      "pulsante": "📩 Mandalo a chi ha un sito",
+      "testo": "Il messaggio da girare a chi lo gestisce è nei commenti"
     }
   ]
 }
