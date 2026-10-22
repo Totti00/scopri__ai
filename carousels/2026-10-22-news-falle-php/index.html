@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scopri AI · Due falle in PHP nascoste dal 2004</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
+<link rel="stylesheet" href="engine/carousel.css">
+<style>
+/* ===== Slide-specific CSS for this carousel ===== */
+/* real images: engine .img-box, colour, shown whole (box at the image's ratio, background-size 100% 100%) */
+.img-box.whole{background-size:100% 100%}
+/* slide 2: PHP card */
+.phpcard{left:96px;top:744px;width:888px;height:330px;padding:40px 44px;display:grid;grid-template-columns:330px 1fr;gap:44px;align-items:center}
+.phpcard .logo{width:330px;height:178px;background:url(media/php-logo.svg) center/contain no-repeat}
+.phpcard .ui-meta{margin-bottom:18px}
+.phpcard ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.phpcard li{font:500 34px/1.15 var(--font-primary);color:var(--snow);display:flex;align-items:center;gap:16px}
+.phpcard li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--accent-300);flex:none}
+/* slide 5: offline list */
+.offrows .row{height:84px}
+.offrows .row .t{font-size:36px}
+/* slide 6: timeline */
+.tl{position:absolute;left:96px;top:548px;width:888px;z-index:7}
+.tl .r{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px 0;border-top:2px solid var(--hair)}
+.tl .r:last-child{border-bottom:2px solid var(--hair)}
+.tl .d{font:500 24px/1.6 var(--font-meta);letter-spacing:.06em;text-transform:uppercase;color:var(--accent-300)}
+.tl .x{font:400 29px/1.35 var(--font-primary);color:var(--body);text-wrap:pretty}
+.tl .x b{font-weight:600;color:var(--tp)}
+/* slide 7: message card */
+.msgcard{left:96px;top:600px;width:888px;padding:36px 40px 36px}
+.msgcard .bubble{margin-top:18px;padding:24px 28px;border-radius:20px 20px 20px 6px;background:rgba(var(--accent-rgb),.28);font:500 31px/1.35 var(--font-primary);color:var(--snow)}
+.msgcard .foot{margin-top:26px;padding-top:22px;border-top:2px solid rgba(255,255,255,.08);font:400 28px/1.4 var(--font-primary);color:var(--gray-300)}
+.msgcard .foot b{color:var(--snow);font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- Shared SVG filters: grain (§6.6) and the thread glow (userSpaceOnUse, or a horizontal line loses its blur) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <filter id="lineglow" filterUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1350">
+    <feGaussianBlur stdDeviation="4"/>
+  </filter>
+</svg>
+
+<header class="devbar">
+  <h1>Scopri AI · Due falle in PHP nascoste dal 2004<small>1080 × 1350 · npm run export (PNG) · npm run export:video (MP4)</small></h1>
+  <button id="btn-grid" aria-pressed="true">Griglia</button>
+  <button id="btn-strip" aria-pressed="false">Striscia (giunture)</button>
+  <button id="btn-play" hidden>Riproduci animazioni</button>
+  <button id="btn-qa">Esegui QA</button>
+</header>
+<div class="qa" id="qa-out"></div>
+
+<main class="deck" id="deck">
+<!--
+  LAYOUT LIBRARY. Every slide below is a proven layout from design-system.md §10, written in the brand style.
+  Their sample copy only describes the layout. Replace it with the approved copy, delete the slides you don't need,
+  duplicate the ones you need more of. Then re-derive the mode sequence (§11.1) and the thread table in CAROUSEL.
+  Mark every text element that QA must keep inside the live area with class "qa-text"; add data-lines="N"
+  where a headline must wrap to exactly N lines.
+-->
+
+<!--COVER-START-->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:540px;--ry:820px"></div>
+  <div class="glow" data-for="#cover-img"></div>
+  <p class="kicker qa-text" style="top:216px" data-lines="1">Dal 2004 nel programma di circa 7 siti su 10</p>
+  <h2 class="txt display qa-text" style="left:96px;top:278px;width:888px;font-size:104px;line-height:1.02" data-lines="2">Due falle in <span class="em">PHP</span><br>scovate dalle AI</h2>
+  <div class="img-box whole" id="cover-img" style="left:0;top:500px;width:1080px;height:620px;border-radius:0;background-image:url(media/phpnet-copertina.jpg)"></div>
+</section></div>
+<!--COVER-END-->
+
+<!-- 02 · La scoperta · LIGHT -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="pill qa-text">La scoperta</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="font-size:84px;width:888px" data-lines="2">Le AI hanno trovato<br>due buchi in <span class="em">PHP</span></h2>
+    <p class="body qa-text" style="width:760px">PHP è il programma che fa funzionare circa 7 siti su 10, secondo Wiz. Anche quelli fatti con WordPress. I buchi erano lì dal 2004.</p>
+  </div>
+  <div class="card abs phpcard">
+    <div class="logo"></div>
+    <div><div class="ui-meta">Gira su PHP</div>
+      <ul><li>WordPress</li><li>Wikipedia</li><li>Drupal</li><li>Joomla</li></ul></div>
+  </div>
+</section></div>
+
+<!-- 03 · Il pericolo · DARK -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="glow" data-for="#i3"></div>
+  <div class="pill qa-text">Il pericolo</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="font-size:84px;width:888px" data-lines="2">Hanno mostrato come<br><span class="em">entrare</span> nei server</h2>
+    <p class="body qa-text" style="width:888px">Senza password, un malintenzionato poteva prendere il controllo del computer che tiene in piedi il sito. Gravità: 9,2 su 10.</p>
+  </div>
+  <div class="img-box whole" id="i3" style="left:130px;top:636px;width:820px;height:474px;border-radius:24px;background-image:url(media/wiz-schema-attacco.png)"></div>
+</section></div>
+
+<!-- 04 · L'allarme · LIGHT -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="pill qa-text">L'allarme</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="font-size:84px;width:888px" data-lines="2">La NSA: aggiorna<br>o <span class="em">spegni</span> il sito</h2>
+    <p class="body qa-text" style="width:820px">L'agenzia di sicurezza americana l'ha scritto su X. Lo stesso consiglio è arrivato dall'agenzia inglese per la sicurezza informatica.</p>
+  </div>
+  <div class="img-box whole" id="i4" style="left:160px;top:632px;width:760px;height:470px;border-radius:24px;background-image:url(media/nsa-post.png)"></div>
+</section></div>
+
+<!-- 05 · Ieri · ACCENT -->
+<div class="slot"><section class="slide mode-accent">
+  <div class="layer bg"></div>
+  <div class="supershape" style="left:620px;top:-700px;width:1500px;height:1500px"></div>
+  <div class="pill qa-text">Ieri</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="width:888px" data-lines="2">Siti spenti<br>per <span class="em">precauzione</span></h2>
+    <p class="body qa-text" style="width:760px">In attesa della riparazione, in mezza Europa si è preferito staccare la spina.</p>
+  </div>
+  <div class="rows offrows qa-text" style="top:640px">
+    <div class="row"><span class="idx">01</span><span class="t">Governo finlandese</span></div>
+    <div class="row"><span class="idx">02</span><span class="t">Siti del governo francese</span></div>
+    <div class="row"><span class="idx">03</span><span class="t">Agenzia di sicurezza informatica olandese</span></div>
+    <div class="row"><span class="idx">04</span><span class="t">Porto di Rotterdam</span></div>
+    <div class="row"><span class="idx">05</span><span class="t">Una parte di Wikipedia</span></div>
+  </div>
+</section></div>
+
+<!-- 06 · Chi le ha trovate · DARK -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="pill qa-text">Chi le ha trovate</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="font-size:84px;width:888px" data-lines="2">Due squadre, due AI,<br>la stessa <span class="em">scoperta</span></h2>
+  </div>
+  <div class="tl qa-text">
+    <div class="r"><span class="d">2024</span><span class="x">Gli esperti di PHP vedono i primi segnali, ma non capiscono come sfruttarli.</span></div>
+    <div class="r"><span class="d">11 agosto</span><span class="x"><b>Calif</b>, con GPT-5.6 Sol di OpenAI, segnala la falla. Lo stesso giorno lo fa anche <b>OpenAI</b>.</span></div>
+    <div class="r"><span class="d">24 agosto</span><span class="x"><b>Wiz</b> (Google) segnala altre strade, trovate con Gemini 4 Argon.</span></div>
+    <div class="r"><span class="d">21 ottobre</span><span class="x">Esce la riparazione.</span></div>
+  </div>
+</section></div>
+
+<!-- 07 · Per te · LIGHT -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="pill qa-text">Per te</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="font-size:84px;width:888px" data-lines="2">Hai un sito?<br>Chiedi <span class="em">questo</span> oggi</h2>
+    <p class="body qa-text" style="width:760px">Se navighi e basta, non devi fare niente.</p>
+  </div>
+  <div class="card abs msgcard qa-text">
+    <div class="ui-meta">Da mandare a chi ti gestisce il sito</div>
+    <div class="bubble">«Ciao, il mio sito usa PHP? È già aggiornato a 8.5.12, 8.4.27, 8.3.36 o 8.2.35?»</div>
+    <div class="foot"><b>PHP 8.1 o più vecchio</b> non riceve più riparazioni: va cambiato. WordPress non va aggiornato: <b>va aggiornato PHP.</b></div>
+  </div>
+</section></div>
+
+<!-- 08 · In breve · ACCENT -->
+<div class="slot"><section class="slide mode-accent">
+  <div class="layer bg"></div>
+  <div class="supershape" style="left:420px;top:1010px;width:1500px;height:1500px"></div>
+  <div class="pill qa-text">In breve</div>
+  <div class="stack">
+    <h2 class="h1 qa-text" style="width:888px" data-lines="1">Da <span class="em">ricordare</span></h2>
+  </div>
+  <div class="rows qa-text" style="top:480px">
+    <div class="row"><span class="idx">01</span><span class="t">Due falle in PHP, lì dal 2004</span></div>
+    <div class="row"><span class="idx">02</span><span class="t">Le hanno scovate le AI</span></div>
+    <div class="row"><span class="idx">03</span><span class="t">Gravità: 9,2 su 10</span></div>
+    <div class="row"><span class="idx">04</span><span class="t">Siti di governo spenti</span></div>
+    <div class="row"><span class="idx">05</span><span class="t">Hai un sito? Aggiorna PHP</span></div>
+  </div>
+</section></div>
+
+<!-- 09 · Chiusura · DARK -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="layer rings" style="--rx:540px;--ry:300px"></div>
+  <div class="glow" style="left:540px;top:290px"></div>
+  <div class="logo-full qa-text" data-logo></div>
+  <div class="cstack">
+    <h2 class="h1 qa-text" style="max-width:880px" data-lines="2">Mandalo a<br>chi ha un <span class="em">sito</span></h2>
+    <div class="actions"><span class="apill qa-text"><svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>Mandalo a un amico</span></div>
+    <p class="follow qa-text" data-lines="1"></p>
+  </div>
+</section></div>
+
+</main>
+
+<script>
+/* ===== Carousel config: the only script you edit ===== */
+window.CAROUSEL = {
+  title: 'Due falle in PHP nascoste dal 2004',
+  format: 'static',            // 'static' | 'animated'
+  tipo: 'notizia',                  // notizia | curiosita | prompt | lista | serie → the 🔔 follow line on the closing slide
+  // Thread line: seams[k] = y at the seam between slide k+1 and k+2 (exit of one = entry of the next).
+  seams:  [1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150],
+  routes: ['start', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'end'],
+  threadStart: 780,
+};
+</script>
+<script src="engine/carousel.js"></script>
+</body>
+</html>
