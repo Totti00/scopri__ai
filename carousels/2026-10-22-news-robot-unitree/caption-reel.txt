@@ -1,8 +1,6 @@
-🤖🚗 Il robot Unitree H2-X salta sopra un'auto e poi ne solleva una.
+🤖🚗 Unitree H2-X, il robot con intelligenza artificiale che salta sopra un'auto e poi ne solleva una.
 
-Alto 1,8 metri, resta in piedi fino a 8 ore.
-
-Fa da scudo davanti a un coltello e solleva un'auto per liberare un manichino.
+Alto 1,8 metri, sta in piedi 8 ore e fa da scudo contro un coltello.
 
 È una dimostrazione montata da Unitree: non si sa quanto fa da solo.
 
