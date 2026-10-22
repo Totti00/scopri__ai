@@ -22,7 +22,7 @@ Il JSON (si può avere solo "reel", solo "carosello" o tutti e due):
     {"tipo": "slide", "titolo": "Cosa è successo", "testo": "Due o tre frasi: chi, cosa, perché conta.",
      "media": "media/dopo.jpg", "adatta": "contain"},
     {"tipo": "chiusura", "titolo": "Vuoi i *100 prompt* per Claude?", "pulsante": "📥 Commenta «100»"}
-                                         (ultima slide, niente "testo" sotto il pulsante: 22/10/2026, sempre: 22/10/2026; invito coerente con il post, i 100 prompt solo nei post di prompt;
+                                         (ultima slide, sempre, senza "testo" sotto il pulsante: 22/10/2026; invito coerente con il post, i 100 prompt solo nei post di prompt;
                                           "seguici" cambia la riga 🔔 in fondo, che c'è sempre)
   ]
 }
