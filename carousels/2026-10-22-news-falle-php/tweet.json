@@ -26,6 +26,12 @@
       "testo": "La NSA, l'agenzia di sicurezza americana, ha detto di prepararsi all'aggiornamento. In mezza Europa, siti di governo *spenti* per precauzione.",
       "media": "media/nsa-post.png",
       "adatta": "contain"
+    },
+    {
+      "tipo": "chiusura",
+      "titolo": "Vuoi i *100 prompt* per Claude?",
+      "pulsante": "📥 Commenta «100»",
+      "testo": "e te li mando in PDF"
     }
   ]
 }

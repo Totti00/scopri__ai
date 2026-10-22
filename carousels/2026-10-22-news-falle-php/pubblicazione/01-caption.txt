@@ -1,0 +1,15 @@
+⚠️🐘 Due falle gravi in PHP, il programma dietro WordPress, scovate dall'intelligenza artificiale di OpenAI e Wiz.
+
+Erano nel codice dal 2004. Gli esperti avevano visto i primi segnali nel 2024, ma senza capire come sfruttarle. Le AI hanno mostrato che si poteva.
+
+Il rischio: senza password, qualcuno poteva prendere il controllo del server che tiene in piedi un sito. Ieri in mezza Europa alcuni siti di governo sono stati spenti per precauzione.
+
+Se navighi e basta, non devi fare niente. Se hai un sito, chiedi a chi lo gestisce se PHP è già aggiornato.
+
+Tu cosa ne pensi? 🤔💬
+
+Fonti: PHP Foundation, Wiz, OpenAI, Wired, BBC, TechCrunch, The Verge
+
+📥 Commenta «100» e ti mando i 100 prompt per Claude in PDF.
+
+#intelligenzaartificiale #php #wordpress #sicurezzainformatica #cybersecurity

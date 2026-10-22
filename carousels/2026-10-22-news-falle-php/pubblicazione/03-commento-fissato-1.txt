@@ -1,0 +1,1 @@
+🛠️ Hai un sito? Manda questo messaggio a chi lo gestisce: «Ciao, il mio sito usa PHP? È già aggiornato a 8.5.12, 8.4.27, 8.3.36 o 8.2.35?» Se usa PHP 8.1 o più vecchio, non riceve più riparazioni: va cambiato.

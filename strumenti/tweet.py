@@ -20,7 +20,10 @@ Il JSON (si può avere solo "reel", solo "carosello" o tutti e due):
     {"tipo": "copertina", "titolo": "Una smart TV piena di pubblicità, *ripulita dall'AI*",
      "media": "media/tv.mp4", "inizio": 0, "durata": 8, "protagonista": "media/volto.jpg", "verticale": 0.5},
     {"tipo": "slide", "titolo": "Cosa è successo", "testo": "Due o tre frasi: chi, cosa, perché conta.",
-     "media": "media/dopo.jpg", "adatta": "contain"}
+     "media": "media/dopo.jpg", "adatta": "contain"},
+    {"tipo": "chiusura", "titolo": "Vuoi i *100 prompt* per Claude?", "pulsante": "📥 Commenta «100»",
+     "testo": "e te li mando in PDF"}     (facoltativa, aggiunta il 22/10/2026 su richiesta del proprietario;
+                                          "seguici" cambia la riga 🔔 in fondo, che c'è sempre)
   ]
 }
 Escono:
@@ -134,6 +137,29 @@ def pagina_slide(s):
                       f'font:400 34px/1.38 Inter;color:rgba(255,255,255,.92)">{marca(s["testo"])}</div>' if s.get("testo") else ""))
 
 
+SEGUICI = "🔔 Seguici per non perdere le prossime notizie"
+
+
+def pagina_chiusura(s):
+    """Slide di chiusura (22/10/2026): fondo nero, il nostro profilo grande, un invito con un pulsante, la riga 🔔."""
+    return documento(1080, 1350, '<div class="nero" style="background:#000"></div>' +
+                     '<div class="abs" style="left:0;top:150px;width:1080px;display:flex;flex-direction:column;align-items:center">'
+                     f'<img src="{AVATAR.as_uri()}" style="width:230px;height:230px;border-radius:50%;display:block">'
+                     '<span style="margin-top:26px;font:700 50px Inter;color:#fff">Scopri AI</span>'
+                     f'<span style="margin-top:6px;font:400 36px Inter;color:{GRIGIO}">@scopri__ai</span></div>' +
+                     '<div class="abs" style="left:0;top:560px;width:1080px;display:flex;flex-direction:column;align-items:center">' +
+                     (f'<div data-max="3" data-nome="titolo della chiusura" style="width:940px;text-align:center;text-wrap:balance;font:900 70px/1.08 Inter;'
+                      f'color:#fff;letter-spacing:-0.5px">{marca(s["titolo"], True)}</div>' if s.get("titolo") else "") +
+                     (f'<div style="margin-top:52px;background:{ACCENTO};color:#0B0E22;border-radius:999px;padding:24px 56px;'
+                      f'font:800 44px Inter">{marca(s["pulsante"])}</div>' if s.get("pulsante") else "") +
+                     (f'<div data-max="2" data-nome="testo della chiusura" style="margin-top:28px;width:900px;text-align:center;'
+                      f'font:400 36px/1.3 Inter;color:rgba(255,255,255,.85)">{marca(s["testo"])}</div>' if s.get("testo") else "") +
+                     '</div>'
+                     '<div class="abs" style="left:240px;top:1098px;width:600px;height:2px;background:rgba(255,255,255,.25)"></div>'
+                     f'<div class="abs" data-max="1" data-nome="riga seguici" style="left:40px;top:1132px;width:1000px;text-align:center;'
+                     f'font:600 34px/1.2 Inter;color:#fff">{marca(s.get("seguici", SEGUICI))}</div>')
+
+
 def fotografa(html_txt, W, H, tmp, nome):
     f = tmp / f"{nome}.html"
     f.write_text(html_txt, encoding="utf-8")
@@ -227,11 +253,12 @@ def main():
             for i, s in enumerate(slides, 1):
                 nn = f"{i:02d}"
                 copertina = s.get("tipo") == "copertina"
-                pg = pagina_copertina(s, cartella) if copertina else pagina_slide(s)
+                chiusura = s.get("tipo") == "chiusura"
+                pg = pagina_copertina(s, cartella) if copertina else pagina_chiusura(s) if chiusura else pagina_slide(s)
                 cornice, fin = fotografa(pg, 1080, 1350, tmp, f"slide-{nn}")
                 if overlay and i <= 2:
                     shutil.copy(cornice, uscite / f"overlay-{'copertina' if copertina else 'slide-interna'}.png")
-                if not s.get("media"):
+                if chiusura or not s.get("media"):
                     shutil.copy(cornice, uscite / f"slide-{nn}.png")
                     continue
                 media = cartella / s["media"]

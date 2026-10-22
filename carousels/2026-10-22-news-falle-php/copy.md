@@ -1,6 +1,6 @@
-# Versione STILE TWEET (bozza del 22/10/2026, richiesta del proprietario)
+# Versione STILE TWEET (FINALE del 22/10/2026, approvata dal proprietario con l'aggiunta della slide di chiusura)
 
-_File: `tweet.json` (copertina + 3 slide interne, niente chiusura) e `tweet-b.json` (solo copertina b). Resi con `python3 strumenti/tweet.py … --anteprima` in `exports/slide-01…04.png`, `exports/contact-sheet.jpg`, `exports/copertina-b.png`. La chiave "reel" di `tweet.json` la aggiunge il costruttore del Reel._
+_File: `tweet.json` (copertina + 3 slide interne + chiusura, aggiunta su richiesta del proprietario) e `tweet-b.json` (solo copertina b). Resi con `python3 strumenti/tweet.py … --anteprima` in `exports/slide-01…04.png`, `exports/contact-sheet.jpg`, `exports/copertina-b.png`. La chiave "reel" di `tweet.json` la aggiunge il costruttore del Reel._
 
 ### 01 — Copertina
 - **Titolo (2 righe, maiuscolo):** DUE FALLE IN *PHP* / SCOVATE DALLE AI (accento lilla su «PHP»)
@@ -19,7 +19,14 @@ _File: `tweet.json` (copertina + 3 slide interne, niente chiusura) e `tweet-b.js
 - **Media:** screenshot del post vero di @NSACyber del 21/10 (`media/nsa-post.png`), intero.
 - Nota: il post NSA dice "be prepared for an update" (prepararsi all'aggiornamento), non "spegnete": per questo qui non scriviamo "aggiorna o spegni" come nella versione Electric Mono.
 
-### Copertina b (`exports/copertina-b.png`)
+### 05 — Chiusura (aggiunta nel finale, richiesta del proprietario)
+- **Profilo grande:** foto profilo, «Scopri AI», «@scopri__ai»
+- **Titolo (maiuscolo):** VUOI I *100 PROMPT* / PER CLAUDE? (accento lilla su «100 prompt»)
+- **Pulsante lilla:** 📥 Commenta «100»
+- **Sotto:** e te li mando in PDF
+- **In fondo:** 🔔 Seguici per non perdere le prossime notizie
+
+### Copertina b (`exports/copertina-b.png`, alternativa non scelta)
 - **Titolo:** HAI UN SITO? AGGIORNA / *PHP* SUBITO · stessa schermata di php.net
 
 ### Caption (stile tweet, controllata con `caption_check.py --stile tweet`: CAPTION PRONTA, 789 caratteri, 5 hashtag)

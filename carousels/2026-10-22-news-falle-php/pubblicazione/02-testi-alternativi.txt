@@ -1,0 +1,14 @@
+Slide 1
+Copertina: il sito ufficiale di PHP con le nuove versioni e l'avviso del 21 ottobre. «Due falle in PHP scovate dalle AI».
+
+Slide 2
+Le AI di OpenAI e Wiz hanno scovato due buchi in PHP, lì dal 2004. Sotto, l'illustrazione PHP2Shell di Wiz.
+
+Slide 3
+Senza password si poteva controllare il server di un sito, gravità 9,2 su 10. Sotto, lo schema dell'attacco di Wiz.
+
+Slide 4
+La NSA dice di prepararsi all'aggiornamento; in Europa siti di governo spenti. Sotto, il post della NSA del 21 ottobre.
+
+Slide 5
+Logo Scopri AI. «Vuoi i 100 prompt per Claude?» Pulsante: Commenta «100». In fondo: Seguici per le prossime notizie.
