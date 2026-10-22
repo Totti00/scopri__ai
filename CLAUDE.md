@@ -53,7 +53,7 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 
 ## Due stili, si sceglie post per post (dal 22/10/2026)
 - **Carosello Electric Mono** (qui sotto, skill `scopri-carousel`): storie lunghe, prompt, liste.
-- **Tweet** (`format/6-stile-tweet.md`, programma `strumenti/tweet.py`): fondo nero, font Inter, il nostro "profilo" in alto, il testo come un post e sotto la foto o il video vero; copertina con il titolo in MAIUSCOLO (massimo 3 righe) e il marchio "SCOPRI [AI]"; accento `#8FA3FF` in grassetto. Caption con chiusura "Tu cosa ne pensi? 🤔💬", fonte e invito ai 100 prompt al posto di "📩 Mandalo a …". Va bene anche per i Reel.
+- **Tweet** (`format/6-stile-tweet.md`, programma `strumenti/tweet.py`): fondo nero, font Inter, il nostro "profilo" in alto, il testo come un post e sotto la foto o il video vero; copertina con il titolo in MAIUSCOLO (massimo 3 righe) e il marchio "SCOPRI [AI]"; accento `#8FA3FF` in grassetto. Caption con chiusura "Tu cosa ne pensi? 🤔💬", fonte e un invito coerente con il post, lo stesso della slide di chiusura (notizie "📩 Mandalo a …", i 100 prompt solo nei post di prompt: 22/10/2026). Il carosello finisce sempre con la slide di chiusura. Va bene anche per i Reel.
 - Il menu del `selezionatore` propone lo stile per ogni notizia; decide il proprietario.
 
 ## Design (dal 16/10/2026)

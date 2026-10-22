@@ -45,6 +45,6 @@ Il formato del JSON è in cima a `strumenti/tweet.py`. Escono gli stessi file de
 ## Caption
 - Prima riga: 1–2 emoji + frase a effetto, con le parole che la gente cerca, **al massimo 125 caratteri**.
 - 3–5 paragrafi brevi, **al massimo 800 caratteri** in tutto.
-- Chiusura, in quest'ordine: "Tu cosa ne pensi? 🤔💬", poi la fonte ("🎥: @autore" per un video, oppure "Fonti: …"), poi **l'invito ai 100 prompt** ("📥 Commenta «100» e ti mando i 100 prompt per Claude in PDF."), che qui prende il posto di "📩 Mandalo a …". Niente riga "🔔 Seguici".
+- Chiusura, in quest'ordine: "Tu cosa ne pensi? 🤔💬", poi la fonte ("🎥: @autore" per un video, oppure "Fonti: …"), poi **l'invito, coerente con il post e uguale a quello della slide di chiusura** (22/10/2026): notizie e curiosità "📩 Mandalo a chi …"; post di prompt "📥 Commenta «100» e ti mando i 100 prompt per Claude in PDF.". Niente riga "🔔 Seguici".
 - Massimo 5 hashtag, in fondo.
 - `caption_check.py --stile tweet` (o `"stile": "tweet"` in `publish.json`) controlla tutto questo.

@@ -41,7 +41,7 @@ _File: `tweet.json` (copertina + 3 slide interne + chiusura, aggiunta su richies
 >
 > Fonti: PHP Foundation, Wiz, OpenAI, Wired, BBC, TechCrunch, The Verge
 >
-> 📥 Commenta «100» e ti mando i 100 prompt per Claude in PDF.
+> 📩 Mandalo a chi ha un sito o un blog WordPress
 >
 > #intelligenzaartificiale #php #wordpress #sicurezzainformatica #cybersecurity
 

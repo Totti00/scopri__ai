@@ -16,7 +16,8 @@ Regole del 22/10/2026: in caption UN invito principale + UNA domanda. La riga "�
        chiave tra parentesi: le parole si mettono nelle prime frasi.
 Stile "tweet" (22/10/2026, format/6-stile-tweet.md, --stile tweet o "stile" in publish.json): prima riga con 1–2 emoji,
        3–5 paragrafi brevi, chiusura "Tu cosa ne pensi? 🤔💬", poi la fonte ("🎥: @autore" oppure "Fonti: …"),
-       poi l'invito ai 100 prompt ("Commenta «…» e ti mando …"), al posto di "📩 Mandalo a …". Massimo 800 caratteri.
+       poi l'invito, coerente con il post (22/10/2026): notizie e curiosità "📩 Mandalo a …", prompt e liste
+       "Commenta «100» e ti mando …" (o "📌 Salvalo …"). Massimo 800 caratteri.
 Formati: carosello (la caption aggiunge alle slide) · reel (corta: 2–4 righe, chi la legge non ha visto slide)."""
 import argparse
 import json
@@ -174,7 +175,7 @@ def check(text, tipo='notizia', formato='carosello', parole=(), stile='carosello
             primo_tag = HASHTAG_RE.search(text)
             if primo_tag and primo_tag.start() < fonti[-1].start():
                 add('FONTI', 'errore', '"Fonti: …" deve venire prima degli hashtag.')
-            elif any(l.strip() and not re.fullmatch(r'(\s*#\w+)+\s*', l) and not (tweet and INVITI['commenta'].search(l))
+            elif any(l.strip() and not re.fullmatch(r'(\s*#\w+)+\s*', l) and not (tweet and (INVITI['commenta'].search(l) or INVITI['manda'].search(l)))
                      for l in lines[text[:fonti[-1].start()].count('\n') + 1:]):
                 add('FONTI', 'avviso', 'Dopo "Fonti: …" c\'è altro testo: le fonti vanno in fondo, seguite solo dagli hashtag.')
             else:
@@ -189,8 +190,9 @@ def check(text, tipo='notizia', formato='carosello', parole=(), stile='carosello
     if trovati['commenta']:   # "Commenta «100» e ti mando…" contiene anche "mando a": non è un secondo invito
         trovati['manda'] = len(INVITI['manda'].findall(INVITI['commenta'].sub('', testo_inviti)))
     tipi = [k for k, v in trovati.items() if v]
-    ammessi = {'commenta'} if tweet else INVITI_AMMESSI.get(tipo, {INVITO_GIUSTO.get(tipo)})
-    giusto = 'commenta' if tweet else INVITO_GIUSTO.get(tipo)
+    # stile tweet: invito coerente con il post (22/10/2026), i 100 prompt solo nei post di prompt
+    ammessi = INVITI_AMMESSI.get(tipo, {INVITO_GIUSTO.get(tipo)})
+    giusto = 'commenta' if tweet and tipo in ('prompt', 'lista') else INVITO_GIUSTO.get(tipo)
     if len(tipi) > 1:
         add('UN SOLO INVITO', 'errore', 'Più inviti (' + ', '.join(NOME_INVITO[k] for k in tipi) + '): in caption ne va uno solo, più la domanda.')
     elif not tipi:
