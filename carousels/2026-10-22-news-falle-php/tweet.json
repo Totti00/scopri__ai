@@ -1,0 +1,31 @@
+{
+  "carosello": [
+    {
+      "tipo": "copertina",
+      "titolo": "Due falle in *PHP* scovate dalle AI",
+      "media": "media/phpnet-copertina.jpg",
+      "verticale": 0.3
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Le hanno trovate le AI",
+      "testo": "Le AI di OpenAI e Wiz hanno scovato due buchi in *PHP*, il programma di circa 7 siti su 10 secondo Wiz. Anche quelli fatti con WordPress. Erano lì dal 2004.",
+      "media": "media/wiz-php2shell.png",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Il pericolo",
+      "testo": "Senza password, un malintenzionato poteva prendere il controllo del computer che tiene in piedi il sito. Gravità: *9,2 su 10*.",
+      "media": "media/wiz-schema-attacco.png",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "slide",
+      "titolo": "L'allarme",
+      "testo": "La NSA, l'agenzia di sicurezza americana, ha detto di prepararsi all'aggiornamento. In mezza Europa, siti di governo *spenti* per precauzione.",
+      "media": "media/nsa-post.png",
+      "adatta": "contain"
+    }
+  ]
+}

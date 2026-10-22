@@ -1,3 +1,49 @@
+# Versione STILE TWEET (bozza del 22/10/2026, richiesta del proprietario)
+
+_File: `tweet.json` (copertina + 3 slide interne, niente chiusura) e `tweet-b.json` (solo copertina b). Resi con `python3 strumenti/tweet.py … --anteprima` in `exports/slide-01…04.png`, `exports/contact-sheet.jpg`, `exports/copertina-b.png`. La chiave "reel" di `tweet.json` la aggiunge il costruttore del Reel._
+
+### 01 — Copertina
+- **Titolo (2 righe, maiuscolo):** DUE FALLE IN *PHP* / SCOVATE DALLE AI (accento lilla su «PHP»)
+- **Media:** schermata vera di php.net fatta da noi il 22/10 (`media/phpnet-copertina.jpg`): logo php, versioni 8.4.27 · 8.3.36 · 8.2.35, avviso «Security advisory … 21 Oct 2026» sfumato verso il nero. I lati sono tagliati dalla finestra 1080×900 (logo, versioni e avviso restano).
+
+### 02 — LE HANNO TROVATE LE AI
+- **Testo:** Le AI di OpenAI e Wiz hanno scovato due buchi in *PHP*, il programma di circa 7 siti su 10 secondo Wiz. Anche quelli fatti con WordPress. Erano lì dal 2004.
+- **Media:** illustrazione ufficiale «PHP2Shell» di Wiz Research, intera (`media/wiz-php2shell.png`).
+
+### 03 — IL PERICOLO
+- **Testo:** Senza password, un malintenzionato poteva prendere il controllo del computer che tiene in piedi il sito. Gravità: *9,2 su 10*.
+- **Media:** schema ufficiale dell'attacco di Wiz, intero (`media/wiz-schema-attacco.png`).
+
+### 04 — L'ALLARME
+- **Testo:** La NSA, l'agenzia di sicurezza americana, ha detto di prepararsi all'aggiornamento. In mezza Europa, siti di governo *spenti* per precauzione.
+- **Media:** screenshot del post vero di @NSACyber del 21/10 (`media/nsa-post.png`), intero.
+- Nota: il post NSA dice "be prepared for an update" (prepararsi all'aggiornamento), non "spegnete": per questo qui non scriviamo "aggiorna o spegni" come nella versione Electric Mono.
+
+### Copertina b (`exports/copertina-b.png`)
+- **Titolo:** HAI UN SITO? AGGIORNA / *PHP* SUBITO · stessa schermata di php.net
+
+### Caption (stile tweet, controllata con `caption_check.py --stile tweet`: CAPTION PRONTA, 789 caratteri, 5 hashtag)
+> ⚠️🐘 Due falle gravi in PHP, il programma dietro WordPress, scovate dall'intelligenza artificiale di OpenAI e Wiz.
+>
+> Erano nel codice dal 2004. Gli esperti avevano visto i primi segnali nel 2024, ma senza capire come sfruttarle. Le AI hanno mostrato che si poteva.
+>
+> Il rischio: senza password, qualcuno poteva prendere il controllo del server che tiene in piedi un sito. Ieri in mezza Europa alcuni siti di governo sono stati spenti per precauzione.
+>
+> Se navighi e basta, non devi fare niente. Se hai un sito, chiedi a chi lo gestisce se PHP è già aggiornato.
+>
+> Tu cosa ne pensi? 🤔💬
+>
+> Fonti: PHP Foundation, Wiz, OpenAI, Wired, BBC, TechCrunch, The Verge
+>
+> 📥 Commenta «100» e ti mando i 100 prompt per Claude in PDF.
+>
+> #intelligenzaartificiale #php #wordpress #sicurezzainformatica #cybersecurity
+
+---
+
+# Versione ELECTRIC MONO (alternativa, resta valida)
+_Le sue immagini sono state spostate in `exports/electric-mono/` (slide-01…09, copertine b–g, contact sheet), perché `tweet.py` riscrive `exports/slide-NN.png`. Il sorgente è sempre `index.html` / `copertine.html`._
+
 _Copy in italiano · formato: statico (nessun video vero: niente MP4) · 8 slide + chiusura · BOZZA del 22/10/2026_
 
 **In una frase:** per chi naviga e per chi ha un sito: le AI di OpenAI e Wiz hanno scovato due falle in PHP, il programma di circa 7 siti su 10, nascoste dal 2004; ieri siti di governo spenti; chi ha un sito chiede subito l'aggiornamento. Invito: mandarlo a chi ha un sito. · **Struttura:** Scoperte (scelta del proprietario), il colpo più forte (l'AI che le trova, il pericolo) in slide 2 e 3.
