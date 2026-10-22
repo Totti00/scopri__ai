@@ -39,7 +39,7 @@ Il formato del JSON è in cima a `strumenti/tweet.py`. Escono gli stessi file de
 - Testo Inter Regular 34, interlinea 1.38, bianco 92%, da y 262, **al massimo 4 righe**.
 - Foto o video a tutta larghezza da y 520, alto 608. Le immagini si vedono **intere** (`"adatta": "contain"`, è il valore di partenza nelle slide interne).
 ## 4) Slide di chiusura (dal 22/10/2026, sempre nei caroselli)
-- Ultima slide di ogni carosello in stile tweet: `{"tipo": "chiusura", "titolo": …, "pulsante": …, "testo": …}` (formato in cima a `strumenti/tweet.py`). Fondo nero, il nostro profilo grande, titolo MAIUSCOLO con 1–2 parole in `*asterischi*`, un pulsante, una riga di testo, in fondo la riga "🔔 Seguici per non perdere le prossime notizie".
+- Ultima slide di ogni carosello in stile tweet: `{"tipo": "chiusura", "titolo": …, "pulsante": …}` (formato in cima a `strumenti/tweet.py`). Fondo nero, il nostro profilo grande, titolo MAIUSCOLO con 1–2 parole in `*asterischi*`, un pulsante e, in fondo, la riga "🔔 Seguici per non perdere le prossime notizie". **Niente riga di testo sotto il pulsante** (tipo "Il messaggio da girare … è nei commenti": tolta dal proprietario il 22/10/2026).
 - **L'invito deve essere coerente con il post** (deciso dal proprietario il 22/10/2026): per una notizia si invita a mandarla a chi le interessa (es. "Conosci qualcuno con *un sito*?" · "📩 Mandalo a chi ha un sito"); l'invito ai 100 prompt ("Vuoi i *100 prompt* per Claude?" · "📥 Commenta «100»") **solo quando il post parla di prompt**. Mai un invito messo a caso.
 
 ## Caption
