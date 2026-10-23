@@ -14,5 +14,5 @@ Nell'ordine:
 Le fanno l'`analista` e il `selezionatore` (vedi `.claude/agents/`), con queste regole:
 - solo notizie di tech e AI che interessano o incuriosiscono una persona normale (`CLAUDE.md`, "Di cosa parliamo");
 - tutto finisce in `notizie/AAAA-MM-GG.md`, anche le notizie con voto basso: servono per le news del lunedì;
-- news lampo solo con voto **4 o 5**, al massimo una al giorno, cartella `carousels/AAAA-MM-GG-news-<argomento>/` (con la skill `scopri-carousel`);
+- news lampo solo con voto **4 o 5**, al massimo una al giorno, cartella `carousels/AAAA-MM-GG-news-<argomento>/` (stile tweet o skill `scopri-carousel`: sceglie il proprietario);
 - orari consigliati: carosello 12:30; Reel (solo se c'è un video bomba, `format/5-reel.md`) alle 20:00 dello stesso giorno.

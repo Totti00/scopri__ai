@@ -4,6 +4,7 @@ Un secondo stile, **da scegliere post per post** al posto del carosello Electric
 Il menu del `selezionatore` propone per ogni notizia lo stile: **carosello** o **tweet**. Decide il proprietario.
 
 **Quando conviene:** notizie con una foto o un video vero forte, da raccontare in poco (2–4 slide, oppure solo un Reel). Il carosello Electric Mono resta per le storie lunghe, i prompt e le liste.
+**Dal 23/10/2026 è lo stile preferito dal proprietario** per tutti i caroselli: il menu lo consiglia di solito, ma propone sempre anche il carosello Electric Mono, e decide il proprietario (non è una regola fissa).
 
 ## Come si fa
 Si scrive `carousels/<slug>/tweet.json` con solo testi e media, poi:

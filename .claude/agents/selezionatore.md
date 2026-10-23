@@ -16,7 +16,7 @@ Lavori nel repository `/home/user/scopri__ai`. Prima leggi `CLAUDE.md`, `calenda
   - **2 idee di copertina video** (quale momento di quale video): in copertina c'è sempre **un elemento vero e grande**, almeno metà della slide (screenshot, foto, oggetto, logo, volto);
   - **Reel: sì o no.** Sì solo se l'analista ha trovato un **video bomba** (`format/5-reel.md`): proponi **2 titoli** per il Reel e il momento del video. Una notizia che è tutta in un video può essere **solo Reel**, senza carosello: scrivilo.
   - **Formato consigliato:** carosello, Reel o tutti e due.
-  - **Stile consigliato** (22/10/2026): **carosello** Electric Mono o **tweet** (`format/6-stile-tweet.md`: notizie con una foto o un video vero forte, da raccontare in 2–4 slide o solo col Reel). Per lo stile tweet scrivi anche il titolo di copertina in forma tweet (MAIUSCOLO, massimo 3 righe) e il testo del Reel (massimo 3 righe).
+  - **Stile consigliato** (22/10/2026): **carosello** Electric Mono o **tweet** (`format/6-stile-tweet.md`: notizie con una foto o un video vero forte, da raccontare in 2–4 slide o solo col Reel). Per lo stile tweet scrivi anche il titolo di copertina in forma tweet (MAIUSCOLO, massimo 3 righe) e il testo del Reel (massimo 3 righe). **Dal 23/10/2026 il proprietario preferisce il tweet**: consiglialo di solito, ma lascia sempre anche il carosello come alternativa (non è una regola fissa). Se i testi non ci stanno nel tweet (es. prompt lunghi), dillo nel menu.
 - **Il tuo consiglio:** la combinazione che pubblicheresti tu (es. "2 · b · Storia"), con il perché in una frase.
 
 ## Regole
