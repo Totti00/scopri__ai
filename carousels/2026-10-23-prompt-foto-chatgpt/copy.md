@@ -1,5 +1,7 @@
 # 10 prompt per modificare le foto con ChatGPT
 
+**FINALE (23/10/2026): stile tweet scelto dal proprietario.** Slide in `exports/`, caption in `pubblicazione/01-caption.txt` (testo di `caption-tweet-bozza.txt`). La versione Electric Mono descritta sotto resta in `exports/electric-mono/`.
+
 _Copy in italiano · formato: statico · 8 slide (copertina + 5 slide da due prompt + regole + chiusura) · BOZZA del 23/10/2026, rivista lo stesso giorno: due prompt per slide (richiesta del proprietario)_
 
 **In una frase:** per chi fa foto col telefono e non sa cosa scrivere a ChatGPT (o Gemini) per sistemarle: 10 prompt pronti, ognuno con la riga «Lascia uguale» che evita di stravolgere la foto; l'azione è commentare «FOTO» per avere il PDF. **Struttura:** lista (copy guide §6), un prompt per slide, i più utili per primi.

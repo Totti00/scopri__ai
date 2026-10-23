@@ -1,4 +1,4 @@
-# Note · 10 prompt per modificare le foto con ChatGPT (bozza, 23/10/2026)
+# Note · 10 prompt per modificare le foto con ChatGPT (finale, 23/10/2026)
 
 ## Dubbio principale per il proprietario
 **I prompt NON sono stati eseguiti su un'immagine vera.** Sono prompt per immagini e da qui non possiamo usare ChatGPT o Gemini per generare (niente generatori esterni, regola 4). Al posto della prova (regola 3) c'è il controllo ragionato qui sotto. Se vuoi, prima di pubblicare provane 2-3 tu dal telefono (consiglio: 01 togli, 02 occhi, 03 sfondo) su una foto tua.
@@ -36,5 +36,13 @@ Tutti i 10 hanno la riga «Lascia uguale:» separata: è la nostra aggiunta (lo 
 ## Come si rigenera
 `python3 genera.py` (index.html da `prompts.json`, `_head.html`, `copertine.html` variante a) → `npm run export` → `PATH=/usr/bin:$PATH npm run previews` → `node export-copertine.mjs` → `node genera-pdf.mjs`. Tweet: `node genera-schede-tweet.mjs`, poi `strumenti/tweet.py` su una copia della cartella (cancella `exports/slide-*`), risultato in `exports/tweet/`.
 
+## Finale (23/10/2026, pomeriggio)
+- **Stile scelto dal proprietario: tweet.** Le slide finali sono in `exports/` (8 PNG, nessun video). La versione Electric Mono resta in `exports/electric-mono/` (non si pubblica).
+- Copertina usata: A (tramonto col telefono, `tweet.json`). Alternative pronte: `exports/copertina-b.png` («Smetti di scrivere "migliora la foto"») e `exports/copertina-c.png`: per cambiarla basta sostituire la slide 1.
+- Il proprietario non ha detto niente su copertina, slide «Tre regole» e opzione «finestra alta»: restano come in bozza.
+- Le schede dei prompt (`genera-schede-tweet.mjs`) passate da Inter a Google Sans Flex (regola del 23/10/2026); tutti i prompt stanno ancora interi.
+- Prompt non provati su foto vere: resta valido il dubbio principale qui sopra.
+
 ## Musica consigliata e orari
-Da scrivere nel modo finale.
+- Pubblicazione: oggi, venerdì 23/10, alle 15:30.
+- Musica (facoltativa, carosello di sole foto): un pezzo tranquillo e leggero dalla libreria di Instagram, per esempio lo-fi o acustica, volume basso.
