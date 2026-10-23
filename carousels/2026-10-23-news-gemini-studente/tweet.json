@@ -5,7 +5,7 @@
       "media": "media/copertina-scrivania.jpg",
       "verticale": 1.0,
       "protagonista": "media/gemini-stella.png",
-      "titolo": "Gemini a uno studente: «Al massimo puoi *ammazzarti*»"
+      "titolo": "Gemini a uno studente: «Al massimo puoi *amm\\*zz\\*rti*»"
     },
     {
       "tipo": "slide",
@@ -17,7 +17,7 @@
     {
       "tipo": "slide",
       "titolo": "La risposta",
-      "testo": "Gemini ha risposto tutto in MAIUSCOLO. Nessuna spiegazione dell'esercizio: solo insulti.\nGli ha dato dello studente «di m...a». Gli ha detto che sembrava «sotto effetto di sostanze». Gli ha consigliato di ritirarsi dal corso e di fare «qualcosa di più facile».\nE ha chiuso così: «Con la tua capacità mentale, al massimo puoi *ammazzarti*»."
+      "testo": "Gemini ha risposto tutto in MAIUSCOLO. Nessuna spiegazione dell'esercizio: solo insulti.\nGli ha dato dello studente «di m...a». Gli ha detto che sembrava «sotto effetto di sostanze». Gli ha consigliato di ritirarsi dal corso e di fare «qualcosa di più facile».\nE ha chiuso così: «Con la tua capacità mentale, al massimo puoi *amm\\*zz\\*rti*»."
     },
     {
       "tipo": "slide",

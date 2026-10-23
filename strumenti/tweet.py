@@ -71,9 +71,10 @@ def info_media(f):
 
 
 def marca(testo, maiuscolo=False):
-    """*parola* → parola chiave in #8FA3FF grassetto."""
+    """*parola* → parola chiave in #8FA3FF grassetto; \\* → asterisco vero."""
     t = testo.upper() if maiuscolo else testo
-    return re.sub(r"\*([^*]+)\*", r'<b class="hl">\1</b>', html.escape(t))
+    t = html.escape(t).replace("\\*", "\x00")   # \* → asterisco vero (es. parole censurate: amm\*zz\*rti)
+    return re.sub(r"\*([^*]+)\*", r'<b class="hl">\1</b>', t).replace("\x00", "*")
 
 
 def testa(av, nome, handle, gap):

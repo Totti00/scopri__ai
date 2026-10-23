@@ -35,3 +35,4 @@ Da scrivere quando il proprietario sceglie (anche in `brand/musica-usata.md`).
 
 ## Orari consigliati
 Oggi, venerdì 23/10, alle **12:30** (orario delle news lampo), se non esce un altro post nella stessa fascia; altrimenti alle **18:30**. Evitare di pubblicarlo a ridosso di altri post del 23/10 (Google Finlandia, istruzioni IKEA, 100 prompt): almeno 3 ore di distanza.
+- **23/10:** il proprietario chiede gli asterischi: «amm*zz*rti» su copertina e slide 3 (in tweet.py ora \* scrive un asterisco vero).

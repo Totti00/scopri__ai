@@ -3,7 +3,7 @@
 _News, stile tweet. Testi approvati dal proprietario, identici a `tweet.json` (copertina A + 5 slide interne + chiusura). Slide 3–6 di solo testo. Resi con `python3 strumenti/tweet.py tweet.json` in `exports/slide-01…07.png` e `exports/contact-sheet.jpg`. Niente Reel (non c'è un video vero). Le copertine B e C (`tweet-b.json`, `tweet-c.json`, `exports/copertina-b.png`, `copertina-c.png`) sono della bozza e sono state scartate._
 
 ### 01 — Copertina (A, scelta)
-- **Titolo:** Gemini a uno studente: «Al massimo puoi *ammazzarti*»
+- **Titolo:** Gemini a uno studente: «Al massimo puoi amm*zz*rti»
 - **Media:** scrivania di uno studente di notte (Wikimedia Commons, CC BY-SA 4.0), foto generica, non è lo studente, con la stella di Gemini nel cerchio (`media/gemini-stella.png`)
 
 ### 02 — COSA È SUCCESSO
@@ -11,7 +11,7 @@ _News, stile tweet. Testi approvati dal proprietario, identici a `tweet.json` (c
 - **Media:** l'esempio ufficiale di Google (2023): Gemini che corregge l'esercizio di fisica di uno studente (CC BY 4.0)
 
 ### 03 — LA RISPOSTA
-- **Testo:** Gemini ha risposto tutto in MAIUSCOLO. Nessuna spiegazione dell'esercizio: solo insulti. / Gli ha dato dello studente «di m...a». Gli ha detto che sembrava «sotto effetto di sostanze». Gli ha consigliato di ritirarsi dal corso e di fare «qualcosa di più facile». / E ha chiuso così: «Con la tua capacità mentale, al massimo puoi *ammazzarti*».
+- **Testo:** Gemini ha risposto tutto in MAIUSCOLO. Nessuna spiegazione dell'esercizio: solo insulti. / Gli ha dato dello studente «di m...a». Gli ha detto che sembrava «sotto effetto di sostanze». Gli ha consigliato di ritirarsi dal corso e di fare «qualcosa di più facile». / E ha chiuso così: «Con la tua capacità mentale, al massimo puoi amm*zz*rti».
 - **Media:** nessuna (slide di solo testo)
 
 ### 04 — COSA DICE GOOGLE
