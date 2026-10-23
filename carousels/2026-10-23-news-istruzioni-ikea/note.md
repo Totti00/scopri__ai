@@ -30,3 +30,13 @@ Reel alle **20:00** di oggi, venerdì 23/10/2026.
 
 ## Musica usata
 Da scrivere quando il proprietario sceglie (anche in `brand/musica-usata.md`).
+
+## Finale (23/10/2026)
+- Scelta del proprietario: **versione B in stile tweet** (`tweet.json`, uguale a `tweet-b.json`), con due correzioni:
+  testo «Un designer ha trasformato il manuale IKEA in 3D: ora vedi *ogni vite* andare al suo posto.» (3 righe) e
+  **video intero di 32 s con l'audio originale** (niente `inizio`/`durata`).
+- Copertina `reel-copertina.jpg` a 29,0 s: libreria quasi finita, ultimo ripiano che entra.
+- `reel-completo.mp4` è una copia di `reel.mp4` (il video non è tagliato).
+- Caption finale: `caption-reel.txt` (stile tweet). `caption-reel-tweet.txt` è la versione della bozza.
+- `reel-anteprima.png` è stata rifatta con il testo nuovo (la vecchia anteprima della A è stata sovrascritta).
+- Avviso del controllo caption che resta: manca #intelligenzaartificiale, di proposito (l'AI non è confermata).
