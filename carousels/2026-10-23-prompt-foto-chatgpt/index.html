@@ -9,18 +9,53 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
 <link rel="stylesheet" href="engine/carousel.css">
 <style>
-/* ===== Slide-specific CSS for this carousel goes here (the engine stays untouched) ===== */
-.chat{left:470px;top:704px;width:560px;padding:32px 32px 30px}
-.chat .msg{margin-top:18px;padding:18px 22px;border-radius:16px;background:rgba(255,255,255,.05);font:500 24px/1.35 var(--font-primary);color:var(--gray-300)}
-.chat .msg.me{background:rgba(var(--accent-rgb),.22);color:var(--snow);margin-left:72px}
-.chat .foot{margin-top:22px;display:flex;align-items:center;gap:12px}
-.chat .dot{width:10px;height:10px;border-radius:50%;background:var(--signal-500)}
-.chat .send{margin-left:auto;height:44px;padding:0 20px;border-radius:999px;background:#fff;color:var(--ink-950);display:inline-flex;align-items:center;font:600 22px/1 var(--font-primary)}
+/* ===== Scheda del prompt: la chat con la foto allegata ===== */
+.pc{position:relative;width:888px;margin-top:48px;padding:34px 40px 32px;z-index:6}
+.pc .att{display:flex;align-items:center;gap:16px}
+.pc .thumb{width:64px;height:64px;border-radius:14px;background:rgba(var(--accent-rgb),.22);display:grid;place-items:center}
+.pc .thumb svg{width:34px;height:34px;fill:none;stroke:var(--accent-300);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pc .ui-meta{font-size:22px}
+.pc p{margin:24px 0 0;font:400 38px/1.36 var(--font-primary);letter-spacing:-.01em;color:var(--snow);text-wrap:pretty}
+.pc .keep{margin-top:22px;padding-top:22px;border-top:2px solid rgba(255,255,255,.1);color:var(--gray-300)}
+.pc .keep b{font-weight:600;color:#fff}
+.pc .ph{font-weight:500}
+.pc .foot{margin-top:22px;display:flex;justify-content:flex-end}
+.send{width:60px;height:60px;border-radius:50%;background:var(--accent-500);display:grid;place-items:center}
+.send svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.works{left:96px;top:1094px;width:888px;font:500 22px/1 var(--font-meta);letter-spacing:.06em;text-transform:uppercase;color:var(--meta)}
+.works b{color:var(--tp);font-weight:500}
+/* ===== Regole ===== */
+.tips{position:absolute;left:96px;top:500px;width:888px;z-index:7}
+.tip{display:flex;gap:28px;padding:34px 0;border-top:2px solid var(--hair)}
+.tip:last-child{border-bottom:2px solid var(--hair)}
+.tip>b{flex:none;width:52px;font:500 24px/48px var(--font-meta);color:var(--acc)}
+.tip h3{margin:0;font:600 44px/1.12 var(--font-primary);letter-spacing:-.02em;color:var(--tp)}
+.tip p{margin:12px 0 0;font:400 31px/1.35 var(--font-primary);color:var(--body);text-wrap:pretty}
+/* ===== Chiusura ===== */
+.apill .hl{background:#fff;color:var(--accent-700);border-radius:14px;padding:6px 12px;margin:0 2px}
+/* ===== Copertine ===== */
+.cover-photo{z-index:2;left:0;top:560px;width:1080px;height:790px;border-radius:0;box-shadow:none;background-position:50% 50%}
+.cover-fade{position:absolute;left:0;top:560px;width:1080px;height:180px;z-index:3;background:linear-gradient(#0A0A0D,rgba(10,10,13,0))}
+.chatwin{left:96px;top:530px;width:888px;padding:28px 32px 26px}
+.chatwin .top{display:flex;align-items:center;gap:12px;padding-bottom:20px;border-bottom:2px solid rgba(255,255,255,.08)}
+.chatwin .top b{font:600 28px/1 var(--font-primary);color:var(--snow)}
+.chatwin .dot{width:12px;height:12px;border-radius:50%;background:var(--signal-500)}
+.chatwin .me{margin:22px 0 0 auto;width:600px;padding:18px;border-radius:24px;background:rgba(var(--accent-rgb),.28)}
+.chatwin .me .shot{height:200px;border-radius:16px;background:url(media/tramonto-telefono.jpg) center/cover}
+.chatwin .me p{margin:16px 6px 2px;font:400 30px/1.34 var(--font-primary);color:var(--snow)}
+.chatwin .me p b{font-weight:600}
+.chatwin .compose{margin-top:22px;display:flex;align-items:center;gap:14px;padding:10px 10px 10px 26px;border-radius:999px;background:rgba(255,255,255,.06)}
+.chatwin .compose span{font:400 26px/1 var(--font-primary);color:var(--gray-500)}
+.chatwin .compose .send{margin-left:auto;width:52px;height:52px}
+.cmp.cv{top:560px}
+.cmp.cv .card{min-height:0;padding:34px 32px;gap:16px}
+.cmp.cv .c-title{font-size:38px}
+.cmp.cv .muted .c-title{text-decoration:line-through;text-decoration-thickness:3px}
+.cmp.cv .keep{color:var(--snow);font-weight:600}
 </style>
 </head>
 <body>
 
-<!-- Shared SVG filters: grain (§6.6) and the thread glow (userSpaceOnUse, or a horizontal line loses its blur) -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <filter id="grain" x="0" y="0" width="100%" height="100%">
     <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
@@ -32,7 +67,7 @@
 </svg>
 
 <header class="devbar">
-  <h1>Scopri AI · 10 prompt per modificare le foto con ChatGPT<small>1080 × 1350 · npm run export (PNG) · npm run export:video (MP4)</small></h1>
+  <h1>Scopri AI · 10 prompt per modificare le foto con ChatGPT<small>1080 × 1350 · npm run export (PNG)</small></h1>
   <button id="btn-grid" aria-pressed="true">Griglia</button>
   <button id="btn-strip" aria-pressed="false">Striscia (giunture)</button>
   <button id="btn-play" hidden>Riproduci animazioni</button>
@@ -41,179 +76,223 @@
 <div class="qa" id="qa-out"></div>
 
 <main class="deck" id="deck">
-<!--
-  LAYOUT LIBRARY. Every slide below is a proven layout from design-system.md §10, written in the brand style.
-  Their sample copy only describes the layout. Replace it with the approved copy, delete the slides you don't need,
-  duplicate the ones you need more of. Then re-derive the mode sequence (§11.1) and the thread table in CAROUSEL.
-  Mark every text element that QA must keep inside the live area with class "qa-text"; add data-lines="N"
-  where a headline must wrap to exactly N lines.
--->
 
-<!-- ============ T1 · COVER · DARK ============ -->
+<!--COVER-START-->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
-  <div class="layer rings" style="--rx:820px;--ry:900px"></div>
-  <div class="glow" data-for=".glassobj"></div>
-  <div class="glassobj" style="left:600px;top:660px;width:520px;height:470px">
-    <i style="left:40px;top:90px;width:330px;height:330px"></i>
-    <i class="sq" style="left:230px;top:10px;width:250px;height:250px"></i>
-    <i style="left:300px;top:290px;width:150px;height:150px"></i>
-  </div>
-  <!-- No pill on the cover: never a rubric label ("News lampo" …) on slide 1 (owner, 20 Oct 2026).
-       Cover title (22 Oct 2026): one small kicker line at y 216, then the big title in 2 lines of 3–6 words at y 278,
-       one keyword in the blue block (.em). A big real element (screenshot, photo, object, logo, face) fills at least half the slide. -->
-  <p class="kicker qa-text" style="top:216px" data-lines="1">Una riga piccola che prepara il colpo</p>
-  <h2 class="txt display qa-text" style="left:96px;top:278px;width:888px" data-lines="2">Titolo in due<br><span class="em">righe corte</span></h2>
+  <div class="img-box cover-photo" style="background-image:url(media/tramonto-telefono.jpg)"></div>
+  <div class="cover-fade"></div>
+  <p class="kicker qa-text" style="top:216px" data-lines="1">Con ChatGPT e Gemini, pronti da copiare</p>
+  <h2 class="txt display qa-text" style="left:96px;top:278px;width:888px;font-size:116px" data-lines="2">10 prompt per<br><span class="em">foto perfette</span></h2>
 </section></div>
+<!--COVER-END-->
 
-<!-- ============ T2 · HEADLINE + OBJECT · LIGHT ============ -->
+<!-- ============ Prompt 01 · Togli chi non c'entra · LIGHT ============ -->
 <div class="slot"><section class="slide mode-light">
   <div class="layer bg"></div>
-  <div class="card abs chat">
-    <div class="ui-meta">Esempio · card UI</div>
-    <div class="msg">Le card sono sempre scure, anche su sfondo chiaro.</div>
-    <div class="msg me">Il testo essenziale non va mai solo nelle card.</div>
-    <div class="foot"><span class="dot"></span><span class="ui">Bozza pronta</span><span class="send">Invia</span></div>
-  </div>
-  <div class="pill qa-text">Re-hook · T2</div>
-  <div class="stack">
-    <h2 class="h1 qa-text" style="width:736px" data-lines="2"><span class="rc">La slide 2</span><br>regge da sola</h2>
-    <p class="body qa-text" style="width:432px">Instagram la mostra anche a chi ha saltato la copertina: deve funzionare come secondo hook.</p>
-  </div>
-</section></div>
-
-<!-- ============ T4 · BIG NUMBER · DARK (the thread becomes the chart line) ============ -->
-<div class="slot"><section class="slide mode-dark">
-  <div class="layer bg"></div>
-  <div class="glow" data-for=".numeral"></div>
-  <div class="pill qa-text">Il dato · T4</div>
-  <div class="numeral qa-text">1080</div>
-  <h2 class="txt h2 qa-text" style="left:96px;top:632px;width:584px" data-lines="2">pixel di larghezza,<br><span class="rc">su ogni slide</span></h2>
-  <p class="txt body qa-text" style="left:96px;top:806px;width:432px">Numero XXL: peso 200, gradiente d'accento. Un solo dato per slide.</p>
-  <span class="chip" style="left:840px;top:946px">1350 px</span>
-</section></div>
-
-<!-- ============ T9 · MANIFESTO · ACCENT ============ -->
-<div class="slot"><section class="slide mode-accent">
-  <div class="layer bg"></div>
-  <div class="supershape" style="left:350px;top:800px;width:1600px;height:1600px"></div>
-  <h2 class="txt display qa-text" style="left:96px;top:288px;width:888px" data-lines="4">Una slide,<br>un'idea.<br><span class="em">Il resto</span><br>è rumore.</h2>
-</section></div>
-
-<!-- ============ T5 · NUMBERED POINT · LIGHT ============ -->
-<div class="slot"><section class="slide mode-light">
-  <div class="layer bg"></div>
-  <div class="layer dots"></div>
   <div class="ghost num">01</div>
-  <div class="pill qa-text">Punto 01</div>
+  <div class="glow" data-for=".pc"></div>
+  <div class="pill qa-text">Prompt 01</div>
   <div class="stack">
-    <h2 class="h2 qa-text" style="width:660px" data-lines="2">Titolo che si legge<br><span class="rc">anche da solo</span></h2>
-    <p class="body qa-text" style="width:584px">Poi una o due frasi brevi. Sopra le 40 parole, dividi il punto su due slide invece di rimpicciolire il testo.</p>
+    <h2 class="h2 qa-text" data-lines="1">Togli chi <span class="em">non c'entra</span></h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Togli <span class="ph">[CHI O COSA]</span> dalla foto allegata. Ricostruisci quello che c'era dietro, con la stessa luce, le stesse ombre e la stessa prospettiva.</p>
+      <p class="keep"><b>Lascia uguale:</b> le altre persone, i colori e l'inquadratura.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+    </div>
   </div>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
 </section></div>
-
-<!-- ============ T5 · PROMPT CARD · DARK (prompt carousels: ~100-word structured prompts) ============ -->
+<!-- ============ Prompt 02 · Apri gli occhi chiusi · DARK ============ -->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
   <div class="ghost num">02</div>
-  <div class="glow" data-for=".pcard"></div>
+  <div class="glow" data-for=".pc"></div>
   <div class="pill qa-text">Prompt 02</div>
   <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Riassumi <span class="rc">il thread di email</span></h2>
-    <div class="pcard card qa-text">
-      <div class="sticker">Allega: email</div>
-      <p>Agisci come un assistente che prepara riassunti per chi ha poco tempo. Ti incollo un thread di email <span class="ph">[argomento]</span>, con i dati personali oscurati.</p>
-      <ol>
-        <li><span class="n">1.</span><span>Riassumi in tre righe cosa è stato deciso e da chi.</span></li>
-        <li><span class="n">2.</span><span>Elenca le domande rimaste aperte e chi deve rispondere.</span></li>
-        <li><span class="n">3.</span><span>Indica le scadenze citate, con la data esatta.</span></li>
-        <li><span class="n">4.</span><span>Proponi la prossima mossa per me, in una frase.</span></li>
-      </ol>
-      <p class="out">Usa elenchi puntati. Se un'informazione non è nel thread, scrivi «non indicato»: non inventarla.</p>
+    <h2 class="h2 qa-text" data-lines="1">Apri gli <span class="em">occhi chiusi</span></h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Nella foto allegata <span class="ph">[CHI]</span> ha gli occhi chiusi. Aprili in modo naturale: occhi <span class="ph">[COLORE]</span>, sguardo verso l'obiettivo. Fai una modifica leggera.</p>
+      <p class="keep"><b>Lascia uguale:</b> viso, espressione, capelli, luce e sfondo.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
     </div>
   </div>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
 </section></div>
-
-<!-- ============ T7 · LIST ROWS · LIGHT ============ -->
+<!-- ============ Prompt 03 · Cambia lo sfondo · LIGHT ============ -->
 <div class="slot"><section class="slide mode-light">
   <div class="layer bg"></div>
-  <div class="pill qa-text">Checklist · T7</div>
+  <div class="ghost num">03</div>
+  <div class="glow" data-for=".pc"></div>
+  <div class="pill qa-text">Prompt 03</div>
   <div class="stack">
-    <h2 class="h1 qa-text" style="width:736px" data-lines="2">Prima di inviare,<br><span class="rc">controlla</span></h2>
+    <h2 class="h2 qa-text" data-lines="1">Cambia <span class="em">lo sfondo</span></h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Cambia lo sfondo della foto allegata con <span class="ph">[NUOVO SFONDO]</span>. Adatta luce e ombre al nuovo posto, così sembra uno scatto vero.</p>
+      <p class="keep"><b>Lascia uguale:</b> la persona, la posa, i vestiti e i capelli.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+    </div>
   </div>
-  <div class="rows qa-text" style="top:600px">
-    <div class="row"><span class="idx">01</span><span class="t">Destinatario giusto</span></div>
-    <div class="row"><span class="idx">02</span><span class="t">Tono adatto</span></div>
-    <div class="row"><span class="idx">03</span><span class="t">Dati sensibili tolti</span></div>
-    <div class="row"><span class="idx">04</span><span class="t">Fatti verificati</span></div>
-    <div class="row"><span class="idx">05</span><span class="t">Una sola richiesta</span></div>
-  </div>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
 </section></div>
-
-<!-- ============ T6 · COMPARISON · ACCENT ============ -->
+<!-- ============ Prompt 04 · Rendi nitida la foto · ACCENT ============ -->
 <div class="slot"><section class="slide mode-accent">
   <div class="layer bg"></div>
-  <div class="pill qa-text">Prima / dopo · T6</div>
+  <div class="ghost num">04</div>
+  <div class="glow" data-for=".pc"></div>
+  <div class="pill qa-text">Prompt 04</div>
   <div class="stack">
-    <h2 class="h1 qa-text" style="width:888px" data-lines="2">Prompt vago,<br><span class="em">risposta vaga</span></h2>
-  </div>
-  <div class="cmp">
-    <div class="card muted qa-text">
-      <span class="c-tag">Prima</span>
-      <span class="c-title">«Scrivi una mail»</span>
-      <span class="c-body">Nessun ruolo e nessun contesto: l'AI tira a indovinare.</span>
-    </div>
-    <div class="card win qa-text">
-      <span class="c-tag">Dopo</span>
-      <span class="c-title">Ruolo e contesto</span>
-      <span class="c-body">Chi deve essere, cosa le dai, che formato vuoi: risposta usabile.</span>
-      <span class="ok"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+    <h2 class="h2 qa-text" data-lines="1">Rendi <span class="em">nitida</span> la foto</h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Rendi più nitida e pulita la foto allegata: meno sgranata, dettagli più chiari, colori giusti. Non aggiungere e non togliere niente. Deve sembrare una foto, non un disegno.</p>
+      <p class="keep"><b>Lascia uguale:</b> inquadratura, persone, visi ed espressioni.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
     </div>
   </div>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
 </section></div>
-
-<!-- ============ T3 · OBJECT + HEADLINE · LIGHT ============ -->
+<!-- ============ Prompt 05 · Ritocco naturale · LIGHT ============ -->
 <div class="slot"><section class="slide mode-light">
   <div class="layer bg"></div>
-  <div class="glow" data-for=".glassobj"></div>
-  <div class="glassobj" style="left:400px;top:200px;width:520px;height:470px">
-    <i class="sq" style="left:0;top:40px;width:300px;height:300px"></i>
-    <i style="left:220px;top:120px;width:300px;height:300px"></i>
+  <div class="ghost num">05</div>
+  <div class="glow" data-for=".pc"></div>
+  <div class="pill qa-text">Prompt 05</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" data-lines="1">Ritocco <span class="em">naturale</span></h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Ritocca la foto allegata come un fotografo professionista: luce più bella, colori equilibrati, esposizione giusta, un po' più di nitidezza. Effetto naturale, niente filtri.</p>
+      <p class="keep"><b>Lascia uguale:</b> lineamenti, pelle (anche nei e rughe), capelli, vestiti e proporzioni.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+    </div>
   </div>
-  <h2 class="txt h1 qa-text" style="left:96px;top:888px;width:584px" data-lines="2">Salva le slide<br><span class="em">che ti servono</span></h2>
-  <p class="txt body qa-text" style="left:704px;top:986px;width:280px" data-lines="2">Il riepilogo è la slide da salvare.</p>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
+</section></div>
+<!-- ============ Prompt 06 · Dal giorno alla notte · DARK ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="ghost num">06</div>
+  <div class="glow" data-for=".pc"></div>
+  <div class="pill qa-text">Prompt 06</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" data-lines="1">Dal giorno <span class="em">alla notte</span></h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Trasforma la foto allegata come se fosse scattata <span class="ph">[AL TRAMONTO / DI NOTTE]</span>. Cambia cielo, luce e ombre in modo coerente. Di notte, accendi finestre e lampioni.</p>
+      <p class="keep"><b>Lascia uguale:</b> persone, edifici e inquadratura.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+    </div>
+  </div>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
+</section></div>
+<!-- ============ Prompt 07 · Allarga la foto · LIGHT ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="ghost num">07</div>
+  <div class="glow" data-for=".pc"></div>
+  <div class="pill qa-text">Prompt 07</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" data-lines="1">Allarga <span class="em">la foto</span></h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Allarga la foto allegata fino al formato <span class="ph">[4:5 PER INSTAGRAM / 16:9 PER LO SCHERMO]</span>. Continua in modo realistico quello che c'è ai bordi: sfondo, pavimento, cielo.</p>
+      <p class="keep"><b>Lascia uguale:</b> tutta la foto originale, senza spostarla né ritagliarla.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+    </div>
+  </div>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
+</section></div>
+<!-- ============ Prompt 08 · Cambia i vestiti · DARK ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="ghost num">08</div>
+  <div class="glow" data-for=".pc"></div>
+  <div class="pill qa-text">Prompt 08</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" data-lines="1">Cambia <span class="em">i vestiti</span></h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Nella foto allegata, fai indossare <span class="ph">[VESTITO]</span> a <span class="ph">[CHI]</span>. Il vestito deve cadere in modo naturale, con pieghe e ombre giuste.</p>
+      <p class="keep"><b>Lascia uguale:</b> viso, corpo, posa, mani e sfondo.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+    </div>
+  </div>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
+</section></div>
+<!-- ============ Prompt 09 · Via le pieghe · ACCENT ============ -->
+<div class="slot"><section class="slide mode-accent">
+  <div class="layer bg"></div>
+  <div class="ghost num">09</div>
+  <div class="glow" data-for=".pc"></div>
+  <div class="pill qa-text">Prompt 09</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" data-lines="1">Via <span class="em">le pieghe</span></h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Stira i vestiti nella foto allegata: togli pieghe e grinze, come appena ritirati dalla stireria. Deve sembrare una foto vera, non un dipinto.</p>
+      <p class="keep"><b>Lascia uguale:</b> tessuto, colore, cuciture e le pieghe naturali di gomiti e fianchi.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+    </div>
+  </div>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
+</section></div>
+<!-- ============ Prompt 10 · Colori da film · DARK ============ -->
+<div class="slot"><section class="slide mode-dark">
+  <div class="layer bg"></div>
+  <div class="ghost num">10</div>
+  <div class="glow" data-for=".pc"></div>
+  <div class="pill qa-text">Prompt 10</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" data-lines="1">Colori <span class="em">da film</span></h2>
+    <div class="card pc qa-text">
+      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
+      <p>Dai alla foto allegata i colori di un film, <span class="ph">[CALDI E DORATI / FREDDI E BLU]</span>, con luci e ombre equilibrate. Cambiano solo i colori.</p>
+      <p class="keep"><b>Lascia uguale:</b> persone, pelle naturale, oggetti e inquadratura.</p>
+      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+    </div>
+  </div>
+  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
+</section></div>
+<!-- ============ Regole · LIGHT ============ -->
+<div class="slot"><section class="slide mode-light">
+  <div class="layer bg"></div>
+  <div class="layer dots"></div>
+  <div class="pill qa-text">Prima di usarli</div>
+  <div class="stack">
+    <h2 class="h2 qa-text" data-lines="2">Tre regole<br><span class="em">da ricordare</span></h2>
+  </div>
+  <div class="tips qa-text">
+    <div class="tip"><b>01</b><div><h3>Scrivi cosa resta uguale</h3><p>Se non lo dici, l'AI può cambiare anche il viso.</p></div></div>
+    <div class="tip"><b>02</b><div><h3>Controlla prima di usarla</h3><p>Guarda viso, mani e scritte: a volte l'AI li cambia un po'.</p></div></div>
+    <div class="tip"><b>03</b><div><h3>Foto di altri? Chiedi prima</h3><p>Modifica le foto delle altre persone solo con il loro permesso.</p></div></div>
+  </div>
 </section></div>
 
-<!-- ============ T10 · CLOSING · DARK (no corner logo, no counter, no swipe cue, no handle) ============
-     Hierarchy (owner, 20 Oct 2026): big headline with the ONE main invite → filled button → smaller 🔔 follow line.
-     Button by type: notizia/curiosita → paper plane + "Mandalo a un amico"; prompt/lista → bookmark + "Salvalo per dopo";
-     serie → no .follow (the follow is the main invite). The .follow text comes from CAROUSEL.tipo (engine), or write your own. -->
+<!-- ============ Chiusura · DARK ============ -->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
   <div class="layer rings" style="--rx:540px;--ry:300px"></div>
   <div class="glow" style="left:540px;top:290px"></div>
   <div class="logo-full qa-text" data-logo></div>
   <div class="cstack">
-    <h2 class="h1 qa-text" style="max-width:880px" data-lines="2">Salvalo per<br><span class="em">il prossimo post</span></h2>
-    <div class="actions"><span class="apill qa-text"><svg viewBox="0 0 24 24"><path d="M19 21l-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Salvalo per dopo</span></div>
+    <h2 class="h1 qa-text" style="max-width:880px;font-size:88px" data-lines="2">Vuoi i 10 prompt<br><span class="em">in un PDF?</span></h2>
+    <div class="actions"><span class="apill qa-text"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12z"/></svg>Commenta <span class="hl">«FOTO»</span> e ti mando il PDF</span></div>
     <p class="follow qa-text" data-lines="1"></p>
   </div>
 </section></div>
-
 </main>
 
 <script>
-/* ===== Carousel config: the only script you edit ===== */
 window.CAROUSEL = {
   title: '10 prompt per modificare le foto con ChatGPT',
-  format: 'static',            // 'static' | 'animated'
-  tipo: 'prompt',                  // notizia | curiosita | prompt | lista | serie → the 🔔 follow line on the closing slide
-  // Thread line: seams[k] = y at the seam between slide k+1 and k+2 (exit of one = entry of the next).
-  seams:  [1150, 1150, 900, 1150, 1150, 360, 1150, 1150, 1150],
-  routes: ['start', 'straight',
-           { d: 'M0 1150 H140 C330 1150 400 1090 540 1068 S760 990 840 962 S1000 912 1080 900', nodes: [[840, 962]] },   // T4: thread = chart
-           { d: 'M0 900 H24 Q48 900 48 924 V1126 Q48 1150 72 1150 H1080' },                                           // drop down the left margin
-           'straight', 'rightUp', 'leftDown', 'straight', 'straight', 'end'],
+  format: 'static',
+  tipo: 'prompt',
+  seams:  [1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150],
+  routes: ['start', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'end'],
   threadStart: 780,
 };
 </script>

@@ -1,0 +1,12 @@
+10 prompt per modificare le foto con ChatGPT e Gemini: togli chi non c'entra, apri gli occhi chiusi, cambia lo sfondo.
+
+✍️ Allega la foto nella chat, copia il prompt e cambia le parti tra [PARENTESI].
+
+🔑 Il trucco è la riga «Lascia uguale». Se non dici cosa non toccare, l'AI rifà tutta la foto e a volte cambia anche il viso.
+
+⚠️ Controlla sempre il risultato prima di usarlo. E le foto degli altri si modificano solo con il loro permesso.
+
+Commenta «FOTO» e ti mando i 10 prompt in PDF 📩
+Quale prompt provi per primo?
+
+#chatgpt #gemini #fotoritocco #intelligenzaartificiale #prompt
