@@ -18,16 +18,14 @@ In caption: «Fonti: La Repubblica (Italian Tech), LaPresse, AI News».
 - Guida di App Gemini, «Invia un feedback o segnala un problema»: https://support.google.com/gemini/answer/13275746?hl=it
 - Telefono Amico Italia: 02 2327 2327
 
-## Immagini (tutte vere, a colori, nessuna generata, nessuna chat inventata)
+## Immagini nel post finale (tutte vere, a colori, nessuna generata, nessuna chat inventata)
 | Slide | File | Chi l'ha fatta / licenza |
 |---|---|---|
-| 01 copertina A e C | `media/copertina-scrivania.jpg` | BabyBen98, «A Student's Reading Table in a home» (18/01/2022), Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:A_Student%E2%80%99s_Reading_Table_in_a_home.jpg (ritagliata dal riquadro) |
-| copertina B, cerchio della C | `media/copertina-gemini.png`, `media/gemini-stella.png` | logo ufficiale di Gemini (stella), dal blog di Google: https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_SparkIcon_.width-500.format-webp.webp ; la copertina B è il logo messo da noi su fondo nero |
+| 01 copertina | `media/copertina-scrivania.jpg` | BabyBen98, «A Student's Reading Table in a home» (18/01/2022), Wikimedia Commons, CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:A_Student%E2%80%99s_Reading_Table_in_a_home.jpg (ritagliata dal riquadro). Foto generica, non è lo studente |
+| 01 cerchio | `media/gemini-stella.png` | logo ufficiale di Gemini (stella), dal blog di Google: https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_SparkIcon_.width-500.format-webp.webp |
 | 02 | `media/gemini-esercizio-demo.png` | Gemini Team, Google, «Gemini: A Family of Highly Capable Multimodal Models» (19/12/2023, https://arxiv.org/abs/2312.11805), su Wikimedia Commons, CC BY 4.0 — https://commons.wikimedia.org/wiki/File:Gemini_verifying_a_student%E2%80%99s_solution_to_a_physics_problem.png |
-| 03 | `media/gemini-interfaccia.png` | screenshot di gemini.google.com, Wikimedia Commons «Google Gemini Screenshot (2026).png» (autore indicato: Google; licenza non chiara, marchio di Google) — https://commons.wikimedia.org/wiki/File:Google_Gemini_Screenshot_(2026).png |
-| 04 | `media/norme-gemini.png` | nostro screenshot di gemini.google/policy-guidelines (23/10/2026) |
-| 05 | `media/ai-act-art55.png` | nostro screenshot di EUR-Lex (23/10/2026), evidenziazione blu nostra |
-| 06 | `media/segnala-gemini.png` | nostro screenshot di support.google.com (23/10/2026) |
-| riserva | `media/please-die-2024.png` | Wikimedia Commons «Google Gemini Please die. message.png» (02/12/2024), pubblico dominio (testo generato da AI) |
-| riserva | `media/candidati/` | altre prove (pagina Gemini, chiave grafica Gemini 4 Argon, foto Pixabay) |
+| 03–06 | nessuna | slide di solo testo |
 | 07 chiusura | `brand/logo/ufficiale/foto-profilo.png` | nostro logo |
+
+## Immagini della bozza non usate nel finale
+`media/copertina-gemini.png` (copertina B, scartata), `media/gemini-interfaccia.png` (Wikimedia Commons «Google Gemini Screenshot (2026).png»), `media/norme-gemini.png`, `media/ai-act-art55.png`, `media/segnala-gemini.png` (nostri screenshot del 23/10/2026), `media/please-die-2024.png` (Wikimedia Commons, pubblico dominio), `media/candidati/`.

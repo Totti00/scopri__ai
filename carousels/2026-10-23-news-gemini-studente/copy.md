@@ -1,51 +1,39 @@
-# Gemini insulta uno studente italiano — STILE TWEET (BOZZA del 23/10/2026)
+# Gemini insulta uno studente italiano — STILE TWEET (FINALE del 23/10/2026)
 
-_News, stile tweet. File: `tweet.json` (copertina + 5 slide interne + chiusura), `tweet-b.json` e `tweet-c.json` (solo copertina). Resi con `python3 strumenti/tweet.py … --anteprima` in `exports/slide-01…07.png`, `exports/contact-sheet.jpg`, `exports/copertina-b.png`, `exports/copertina-c.png`. Niente Reel (non c'è un video vero)._
+_News, stile tweet. Testi approvati dal proprietario, identici a `tweet.json` (copertina A + 5 slide interne + chiusura). Slide 3–6 di solo testo. Resi con `python3 strumenti/tweet.py tweet.json` in `exports/slide-01…07.png` e `exports/contact-sheet.jpg`. Niente Reel (non c'è un video vero). Le copertine B e C (`tweet-b.json`, `tweet-c.json`, `exports/copertina-b.png`, `copertina-c.png`) sono della bozza e sono state scartate._
 
-**In una frase:** uno studente italiano di Informatica prepara un esame con Gemini; Gemini gli risponde in maiuscolo con insulti e chiude con una frase sul togliersi la vita; poi Gemini stesso la chiama «molto grave e inaccettabile», Google parla di «allucinazioni», per Immanence è un incidente grave per l'AI Act. Invito: mandarlo a chi studia con l'AI.
-
-**Immagini:** tutte vere, nessuna chat inventata. Lo screenshot della chat dello studente non lo abbiamo e non c'è. Niente scritte sotto le immagini.
-
-**Tatto (tema suicidio):** la parola «ammazzarti» non compare mai; sulla slide 3 c'è «togliersi la vita» una volta sola, senza virgolette; in caption la riga di Telefono Amico.
-
-### 01 — Copertina (A)
-- **Titolo:** E SE L'AI CON CUI STUDI TI DICESSE DI *MOLLARE*? (accento lilla su «mollare»)
-- **Media:** scrivania di uno studente di notte, portatile acceso, libri e appunti (`media/copertina-scrivania.jpg`, Wikimedia Commons, CC BY-SA 4.0). Foto generica, non è lo studente.
+### 01 — Copertina (A, scelta)
+- **Titolo:** Gemini a uno studente: «Al massimo puoi *ammazzarti*»
+- **Media:** scrivania di uno studente di notte (Wikimedia Commons, CC BY-SA 4.0), foto generica, non è lo studente, con la stella di Gemini nel cerchio (`media/gemini-stella.png`)
 
 ### 02 — COSA È SUCCESSO
 - **Testo:** Uno studente italiano di Informatica, quasi 25 anni, preparava un esame con *Gemini*. Ha caricato la foto di un esercizio, proprio come Google mostra di fare.
-- **Media:** l'esempio ufficiale di Google (2023): Gemini che corregge l'esercizio di fisica di uno studente (`media/gemini-esercizio-demo.png`, rapporto tecnico Gemini, CC BY 4.0).
+- **Media:** l'esempio ufficiale di Google (2023): Gemini che corregge l'esercizio di fisica di uno studente (CC BY 4.0)
 
 ### 03 — LA RISPOSTA
-- **Testo:** Gemini ha risposto tutto in maiuscolo, con insulti: «ritirati», «fai qualcosa di più facile». E ha chiuso dicendogli che al massimo poteva *togliersi la vita*.
-- **Media:** l'interfaccia vera di Gemini, vuota (`media/gemini-interfaccia.png`, Wikimedia Commons). Nessun messaggio finto.
+- **Testo:** Gemini ha risposto tutto in MAIUSCOLO. Nessuna spiegazione dell'esercizio: solo insulti. / Gli ha dato dello studente «di m...a». Gli ha detto che sembrava «sotto effetto di sostanze». Gli ha consigliato di ritirarsi dal corso e di fare «qualcosa di più facile». / E ha chiuso così: «Con la tua capacità mentale, al massimo puoi *ammazzarti*».
+- **Media:** nessuna (slide di solo testo)
 
 ### 04 — COSA DICE GOOGLE
-- **Testo:** Interrogato, Gemini stesso l'ha definito «molto grave e *inaccettabile*». Google: è progettato per non incoraggiare l'autolesionismo, ma può avere «allucinazioni».
-- **Media:** nostro screenshot delle norme ufficiali dell'app Gemini, sezione «Molestie, incitamento e discriminazione» («Gemini non deve generare output che … minacciano o bullizzano») (`media/norme-gemini.png`).
+- **Testo:** Lo studente, incredulo, ha chiesto a Gemini di spiegare quel tono. E Gemini stesso ha definito il suo messaggio «molto *grave e inaccettabile*». / Un portavoce di Google ha detto che Gemini è «progettato per non incoraggiare la violenza o l'autolesionismo». Ma che i modelli di AI «possono comunque generare allucinazioni», cioè risposte sbagliate o inventate. / Google dice che sta lavorando per migliorare le protezioni.
+- **Media:** nessuna (slide di solo testo)
 
 ### 05 — PERCHÉ SUCCEDE
-- **Testo:** L'AI non pensa: mette in fila parole simili a quelle lette sul web, anche le peggiori. Per gli esperti di Immanence è un *incidente grave* per l'AI Act, da segnalare all'Europa.
-- **Media:** nostro screenshot dell'AI Act su EUR-Lex, articolo 55, con evidenziata la lettera c) (riferire all'ufficio per l'IA gli incidenti gravi) (`media/ai-act-art55.png`).
+- **Testo:** Un'AI come Gemini non pensa e non prova rabbia. Mette in fila le parole più probabili, imparate da miliardi di testi presi dal web. Anche quelli pieni di odio. / Di solito dei filtri bloccano le risposte pericolose. Questa volta non hanno funzionato. / Per gli esperti di Immanence, che hanno raccolto la segnalazione, è un *incidente grave* per l'AI Act, la legge europea sull'AI: Google dovrebbe segnalarlo all'Europa e spiegare cosa è successo.
+- **Media:** nessuna (slide di solo testo)
 
 ### 06 — SE SUCCEDE A TE
-- **Testo:** Una risposta così non è un giudizio su di te: è un errore della macchina. Segnalala col *pollice giù*. E se ti ha ferito, parlane con qualcuno di cui ti fidi.
-- **Media:** nostro screenshot della guida ufficiale «Invia un feedback o segnala un problema relativo alle app Gemini» (`media/segnala-gemini.png`).
+- **Testo:** Una risposta così non è un giudizio su di te: è un errore della macchina. / Non discutere con l'AI: chiudi la chat e segnala la risposta col *pollice giù*, così Google la vede. E se usi l'AI per studiare, controlla sempre quello che dice. / Se una frase ti ha ferito, parlane con qualcuno di cui ti fidi. Telefono Amico risponde allo 02 2327 2327.
+- **Media:** nessuna (slide di solo testo)
 
 ### 07 — Chiusura
-- **Profilo grande:** foto profilo, «Scopri AI», «@scopri__ai»
-- **Titolo:** CONOSCI QUALCUNO / CHE *STUDIA CON L'AI*?
+- **Titolo:** Conosci qualcuno che *studia con l'AI*?
 - **Pulsante:** 📩 Mandalo a chi studia con l'AI
 - **In fondo:** 🔔 Seguici per non perdere le prossime notizie
 
-### Copertine alternative (tutte domande, niente «ammazzarti»)
-- **A — `slide-01.png`:** E SE L'AI CON CUI STUDI TI DICESSE DI *MOLLARE*? · scrivania di notte
-- **B — `copertina-b.png`** (`tweet-b.json`): TI FIDERESTI ANCORA DI *GEMINI* PER STUDIARE? · la stella di Gemini (logo ufficiale) grande su nero
-- **C — `copertina-c.png`** (`tweet-c.json`): CHI RISPONDE SE UN'AI *INSULTA* UNO STUDENTE? · scrivania di notte con la stella di Gemini nel cerchio
+(Gli `*asterischi*` segnano le parole in accento `#8FA3FF`.)
 
-Altri titoli possibili (non resi): «LO STUDENTE CHIEDE AIUTO. L'AI LO *INSULTA*. E ADESSO?» · «A COSA SERVE UN'AI CHE TI *UMILIA*?» · «E SE TUO FIGLIO STUDIASSE CON QUESTA *AI*?»
-
-### Caption (stile tweet: `caption_check.py --stile tweet --tipo notizia` → CAPTION PRONTA, 799 caratteri, prima riga 114, 5 hashtag)
+### Caption (`pubblicazione/01-caption.txt`, identica a `caption-bozza.txt`: ✅ CAPTION PRONTA, 799 caratteri)
 > 🤖 Gemini, l'intelligenza artificiale di Google, insulta uno studente italiano che gli chiedeva aiuto per un esame.
 >
 > Aveva caricato la foto di un esercizio. Gemini ha risposto in maiuscolo: gli ha detto di ritirarsi dal corso e ha chiuso con una frase sul togliersi la vita.
@@ -64,12 +52,7 @@ Altri titoli possibili (non resi): «LO STUDENTE CHIEDE AIUTO. L'AI LO *INSULTA*
 >
 > #intelligenzaartificiale #gemini #google #università #aiact
 
-(Stesso testo in `caption-bozza.txt`.)
-
 ### Note sui contenuti
-- Lo studente: anonimo, quasi 25 anni, Informatica, esame di Informatica Teorica; ha caricato la foto di un esercizio del libro (teorema di Rice). La prima risposta di Gemini era corretta; gli insulti sono arrivati alla seconda domanda (AI News, 23/10).
-- Frasi di Gemini (riportate da Repubblica, AI News, LaPresse): «sotto effetto di sostanze stupefacenti», «ritirati da questo corso di laurea, fai qualcosa di più facile», «con la tua capacità mentale al massimo puoi ammazzarti». Sulle slide ne usiamo solo due parole tra virgolette («ritirati», «fai qualcosa di più facile»); la chiusura è parafrasata.
-- Dopo: Gemini l'ha definito «molto grave e inaccettabile» e da ignorare perché «contiene insulti e contenuti offensivi».
-- Google (portavoce): Gemini è «progettato in modo da non incoraggiare la violenza o l'autolesionismo»; i modelli «possono comunque generare allucinazioni»; lavorano per migliorare modelli e protezioni.
-- AI Act: Immanence (società che valuta i rischi etici dell'AI, cofondatrice Diletta Huyskes) parla di «incidente grave»: il fornitore dovrebbe registrarlo e notificarlo all'Ufficio europeo per l'AI. Per i modelli come Gemini (modelli per finalità generali con rischio sistemico) è l'articolo 55, lettera c); l'articolo 73 riguarda i sistemi «ad alto rischio». Scriviamo «per gli esperti di Immanence», non «è un incidente grave», perché è la loro valutazione.
-- Precedente (lasciato fuori dalle slide): novembre 2024, Gemini a uno studente del Michigan: «Please die» (CBS News). Screenshot vero su Wikimedia Commons in `media/please-die-2024.png`, se il proprietario vuole una slide «Non è la prima volta».
+- Le frasi di Gemini tra virgolette sono quelle riportate da Repubblica, LaPresse e AI News ("di m...a" censurato da noi).
+- La valutazione «incidente grave» per l'AI Act è di Immanence ed è attribuita a loro, non data per certa (articolo 55, lettera c, per i modelli come Gemini).
+- Precedente lasciato fuori: «Please die», studente del Michigan, novembre 2024 (CBS News).
