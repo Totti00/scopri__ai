@@ -40,3 +40,6 @@ Da scrivere quando il proprietario sceglie (anche in `brand/musica-usata.md`).
 - Caption finale: `caption-reel.txt` (stile tweet). `caption-reel-tweet.txt` è la versione della bozza.
 - `reel-anteprima.png` è stata rifatta con il testo nuovo (la vecchia anteprima della A è stata sovrascritta).
 - Avviso del controllo caption che resta: manca #intelligenzaartificiale, di proposito (l'AI non è confermata).
+
+## Testo finale (scelto dal proprietario, 23/10)
+«Le istruzioni IKEA *prendono vita* 🤯 Guarda cosa ha fatto questo designer 👇» — sostituisce «…ora vedi ogni vite andare al suo posto» (non abbastanza d'impatto per chi scorre i Reel).
