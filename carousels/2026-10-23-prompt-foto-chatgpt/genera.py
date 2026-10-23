@@ -7,30 +7,34 @@ P = json.loads((here / 'prompts.json').read_text())
 
 def ph(s):
     s = html.escape(s, quote=False)
+    i = s.rfind(' ')            # ultime due parole insieme: niente parola sola sull'ultima riga
+    if i > 0 and ']' not in s[i:]:
+        s = s[:i] + '\u00a0' + s[i + 1:]
     return re.sub(r'\[([^\]]+)\]', lambda m: f'<span class="ph">[{m.group(1)}]</span>', s)
 
-MODES = ['light', 'dark', 'light', 'accent', 'light', 'dark', 'light', 'dark', 'accent', 'dark']
+MODES = ['light', 'dark', 'accent', 'light', 'dark']
 
 CLIP = '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg>'
-SEND = '<svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg>'
 
-def prompt_slide(i, p):
+def card(i, p):
     n = f'{i + 1:02d}'
-    return f'''
-<!-- ============ Prompt {n} · {p['titolo']} · {MODES[i].upper()} ============ -->
-<div class="slot"><section class="slide mode-{MODES[i]}">
-  <div class="layer bg"></div>
-  <div class="ghost num">{n}</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt {n}</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">{p['h2']}</h2>
-    <div class="card pc qa-text">
-      <div class="att"><span class="thumb">{CLIP}</span><span class="ui-meta">Allega la tua foto</span></div>
+    return f'''<div class="card pc qa-text">
+      <div class="pt"><b>{n}</b><span>{html.escape(p['titolo'])}</span><span class="thumb">{CLIP}</span></div>
       <p>{ph(p['prompt'])}</p>
       <p class="keep"><b>Lascia uguale:</b> {ph(p['uguale'])}</p>
-      <div class="foot"><span class="send">{SEND}</span></div>
-    </div>
+    </div>'''
+
+def prompt_slide(k):
+    a, b = 2 * k, 2 * k + 1
+    return f'''
+<!-- ============ Prompt {a + 1:02d} e {b + 1:02d} · {MODES[k].upper()} ============ -->
+<div class="slot"><section class="slide mode-{MODES[k]}">
+  <div class="layer bg"></div>
+  <div class="glow" data-for=".pairs"></div>
+  <div class="pill qa-text">Prompt {a + 1:02d} · {b + 1:02d}</div>
+  <div class="pairs">
+    {card(a, P[a])}
+    {card(b, P[b])}
   </div>
   <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
 </section></div>'''
@@ -39,7 +43,7 @@ COVER = (here / 'copertine.html').read_text().split('<!--VARIANT')[1]
 COVER = COVER[COVER.index('-->') + 3:].strip()
 
 head = (here / '_head.html').read_text()
-slides = ''.join(prompt_slide(i, p) for i, p in enumerate(P))
+slides = ''.join(prompt_slide(k) for k in range(len(P) // 2))
 
 tail = '''
 <!-- ============ Regole · LIGHT ============ -->
@@ -76,8 +80,8 @@ window.CAROUSEL = {
   title: '10 prompt per modificare le foto con ChatGPT',
   format: 'static',
   tipo: 'prompt',
-  seams:  [1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150],
-  routes: ['start', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'end'],
+  seams:  [1150, 1150, 1150, 1150, 1150, 1150, 1150],
+  routes: ['start', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'end'],
   threadStart: 780,
 };
 </script>

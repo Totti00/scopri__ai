@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
 <link rel="stylesheet" href="engine/carousel.css">
 <style>
-/* ===== Scheda del prompt: la chat con la foto allegata ===== */
-.pc{position:relative;width:888px;margin-top:48px;padding:34px 40px 32px;z-index:6}
-.pc .att{display:flex;align-items:center;gap:16px}
-.pc .thumb{width:64px;height:64px;border-radius:14px;background:rgba(var(--accent-rgb),.22);display:grid;place-items:center}
-.pc .thumb svg{width:34px;height:34px;fill:none;stroke:var(--accent-300);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.pc .ui-meta{font-size:22px}
-.pc p{margin:24px 0 0;font:400 38px/1.36 var(--font-primary);letter-spacing:-.01em;color:var(--snow);text-wrap:pretty}
-.pc .keep{margin-top:22px;padding-top:22px;border-top:2px solid rgba(255,255,255,.1);color:var(--gray-300)}
+/* ===== Due schede prompt per slide (23/10/2026) ===== */
+.pairs{position:absolute;left:96px;top:268px;width:888px;display:flex;flex-direction:column;gap:24px;z-index:6}
+.pc{position:relative;width:888px;box-sizing:border-box;padding:28px 34px 28px}
+.pc .pt{display:flex;align-items:baseline;gap:16px;font:600 38px/1.15 var(--font-primary);letter-spacing:-.015em;color:var(--snow)}
+.pc .pt b{font:500 26px/1 var(--font-meta);color:var(--accent-300);font-weight:500}
+.pc .thumb{margin-left:auto;align-self:center;width:44px;height:44px;border-radius:12px;background:rgba(var(--accent-rgb),.22);display:grid;place-items:center}
+.pc .thumb svg{width:26px;height:26px;fill:none;stroke:var(--accent-300);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pc p{margin:16px 0 0;font:400 33px/1.33 var(--font-primary);letter-spacing:-.008em;color:var(--snow);text-wrap:pretty}
+.pc .keep{margin-top:14px;padding-top:14px;border-top:2px solid rgba(255,255,255,.1);color:var(--gray-300)}
 .pc .keep b{font-weight:600;color:#fff}
 .pc .ph{font-weight:500}
-.pc .foot{margin-top:22px;display:flex;justify-content:flex-end}
 .send{width:60px;height:60px;border-radius:50%;background:var(--accent-500);display:grid;place-items:center}
 .send svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .works{left:96px;top:1094px;width:888px;font:500 22px/1 var(--font-meta);letter-spacing:.06em;text-transform:uppercase;color:var(--meta)}

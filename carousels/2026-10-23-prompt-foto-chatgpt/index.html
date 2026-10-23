@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200;400;500;600;800&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet">
 <link rel="stylesheet" href="engine/carousel.css">
 <style>
-/* ===== Scheda del prompt: la chat con la foto allegata ===== */
-.pc{position:relative;width:888px;margin-top:48px;padding:34px 40px 32px;z-index:6}
-.pc .att{display:flex;align-items:center;gap:16px}
-.pc .thumb{width:64px;height:64px;border-radius:14px;background:rgba(var(--accent-rgb),.22);display:grid;place-items:center}
-.pc .thumb svg{width:34px;height:34px;fill:none;stroke:var(--accent-300);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.pc .ui-meta{font-size:22px}
-.pc p{margin:24px 0 0;font:400 38px/1.36 var(--font-primary);letter-spacing:-.01em;color:var(--snow);text-wrap:pretty}
-.pc .keep{margin-top:22px;padding-top:22px;border-top:2px solid rgba(255,255,255,.1);color:var(--gray-300)}
+/* ===== Due schede prompt per slide (23/10/2026) ===== */
+.pairs{position:absolute;left:96px;top:268px;width:888px;display:flex;flex-direction:column;gap:24px;z-index:6}
+.pc{position:relative;width:888px;box-sizing:border-box;padding:28px 34px 28px}
+.pc .pt{display:flex;align-items:baseline;gap:16px;font:600 38px/1.15 var(--font-primary);letter-spacing:-.015em;color:var(--snow)}
+.pc .pt b{font:500 26px/1 var(--font-meta);color:var(--accent-300);font-weight:500}
+.pc .thumb{margin-left:auto;align-self:center;width:44px;height:44px;border-radius:12px;background:rgba(var(--accent-rgb),.22);display:grid;place-items:center}
+.pc .thumb svg{width:26px;height:26px;fill:none;stroke:var(--accent-300);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pc p{margin:16px 0 0;font:400 33px/1.33 var(--font-primary);letter-spacing:-.008em;color:var(--snow);text-wrap:pretty}
+.pc .keep{margin-top:14px;padding-top:14px;border-top:2px solid rgba(255,255,255,.1);color:var(--gray-300)}
 .pc .keep b{font-weight:600;color:#fff}
 .pc .ph{font-weight:500}
-.pc .foot{margin-top:22px;display:flex;justify-content:flex-end}
 .send{width:60px;height:60px;border-radius:50%;background:var(--accent-500);display:grid;place-items:center}
 .send svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .works{left:96px;top:1094px;width:888px;font:500 22px/1 var(--font-meta);letter-spacing:.06em;text-transform:uppercase;color:var(--meta)}
@@ -87,172 +87,97 @@
 </section></div>
 <!--COVER-END-->
 
-<!-- ============ Prompt 01 · Togli chi non c'entra · LIGHT ============ -->
+<!-- ============ Prompt 01 e 02 · LIGHT ============ -->
 <div class="slot"><section class="slide mode-light">
   <div class="layer bg"></div>
-  <div class="ghost num">01</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 01</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Togli chi <span class="em">non c'entra</span></h2>
+  <div class="glow" data-for=".pairs"></div>
+  <div class="pill qa-text">Prompt 01 · 02</div>
+  <div class="pairs">
     <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Togli <span class="ph">[CHI O COSA]</span> dalla foto allegata. Ricostruisci quello che c'era dietro, con la stessa luce, le stesse ombre e la stessa prospettiva.</p>
-      <p class="keep"><b>Lascia uguale:</b> le altre persone, i colori e l'inquadratura.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+      <div class="pt"><b>01</b><span>Togli chi non c&#x27;entra</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Togli <span class="ph">[CHI O COSA]</span> dalla foto allegata. Ricostruisci quello che c'era dietro, con la stessa luce, le stesse ombre e la stessa prospettiva.</p>
+      <p class="keep"><b>Lascia uguale:</b> le altre persone, i colori e l'inquadratura.</p>
+    </div>
+    <div class="card pc qa-text">
+      <div class="pt"><b>02</b><span>Apri gli occhi chiusi</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Nella foto allegata <span class="ph">[CHI]</span> ha gli occhi chiusi. Aprili in modo naturale: occhi <span class="ph">[COLORE]</span>, sguardo verso l'obiettivo. Fai una modifica leggera.</p>
+      <p class="keep"><b>Lascia uguale:</b> viso, espressione, capelli, luce e sfondo.</p>
     </div>
   </div>
   <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
 </section></div>
-<!-- ============ Prompt 02 · Apri gli occhi chiusi · DARK ============ -->
+<!-- ============ Prompt 03 e 04 · DARK ============ -->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
-  <div class="ghost num">02</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 02</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Apri gli <span class="em">occhi chiusi</span></h2>
+  <div class="glow" data-for=".pairs"></div>
+  <div class="pill qa-text">Prompt 03 · 04</div>
+  <div class="pairs">
     <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Nella foto allegata <span class="ph">[CHI]</span> ha gli occhi chiusi. Aprili in modo naturale: occhi <span class="ph">[COLORE]</span>, sguardo verso l'obiettivo. Fai una modifica leggera.</p>
-      <p class="keep"><b>Lascia uguale:</b> viso, espressione, capelli, luce e sfondo.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+      <div class="pt"><b>03</b><span>Cambia lo sfondo</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Cambia lo sfondo della foto allegata con <span class="ph">[NUOVO SFONDO]</span>. Adatta luce e ombre al nuovo posto, così sembra uno scatto vero.</p>
+      <p class="keep"><b>Lascia uguale:</b> la persona, la posa, i vestiti e i capelli.</p>
+    </div>
+    <div class="card pc qa-text">
+      <div class="pt"><b>04</b><span>Rendi nitida la foto</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Rendi più nitida e pulita la foto allegata: meno sgranata, dettagli più chiari, colori giusti. Non aggiungere e non togliere niente. Deve sembrare una foto, non un disegno.</p>
+      <p class="keep"><b>Lascia uguale:</b> inquadratura, persone, visi ed espressioni.</p>
     </div>
   </div>
   <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
 </section></div>
-<!-- ============ Prompt 03 · Cambia lo sfondo · LIGHT ============ -->
-<div class="slot"><section class="slide mode-light">
-  <div class="layer bg"></div>
-  <div class="ghost num">03</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 03</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Cambia <span class="em">lo sfondo</span></h2>
-    <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Cambia lo sfondo della foto allegata con <span class="ph">[NUOVO SFONDO]</span>. Adatta luce e ombre al nuovo posto, così sembra uno scatto vero.</p>
-      <p class="keep"><b>Lascia uguale:</b> la persona, la posa, i vestiti e i capelli.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
-    </div>
-  </div>
-  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
-</section></div>
-<!-- ============ Prompt 04 · Rendi nitida la foto · ACCENT ============ -->
+<!-- ============ Prompt 05 e 06 · ACCENT ============ -->
 <div class="slot"><section class="slide mode-accent">
   <div class="layer bg"></div>
-  <div class="ghost num">04</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 04</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Rendi <span class="em">nitida</span> la foto</h2>
+  <div class="glow" data-for=".pairs"></div>
+  <div class="pill qa-text">Prompt 05 · 06</div>
+  <div class="pairs">
     <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Rendi più nitida e pulita la foto allegata: meno sgranata, dettagli più chiari, colori giusti. Non aggiungere e non togliere niente. Deve sembrare una foto, non un disegno.</p>
-      <p class="keep"><b>Lascia uguale:</b> inquadratura, persone, visi ed espressioni.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+      <div class="pt"><b>05</b><span>Ritocco naturale</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Ritocca la foto allegata come un fotografo professionista: luce più bella, colori equilibrati, esposizione giusta, un po' più di nitidezza. Effetto naturale, niente filtri.</p>
+      <p class="keep"><b>Lascia uguale:</b> lineamenti, pelle (anche nei e rughe), capelli, vestiti e proporzioni.</p>
+    </div>
+    <div class="card pc qa-text">
+      <div class="pt"><b>06</b><span>Dal giorno alla notte</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Trasforma la foto allegata come se fosse scattata <span class="ph">[AL TRAMONTO / DI NOTTE]</span>. Cambia cielo, luce e ombre in modo coerente. Di notte, accendi finestre e lampioni.</p>
+      <p class="keep"><b>Lascia uguale:</b> persone, edifici e inquadratura.</p>
     </div>
   </div>
   <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
 </section></div>
-<!-- ============ Prompt 05 · Ritocco naturale · LIGHT ============ -->
+<!-- ============ Prompt 07 e 08 · LIGHT ============ -->
 <div class="slot"><section class="slide mode-light">
   <div class="layer bg"></div>
-  <div class="ghost num">05</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 05</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Ritocco <span class="em">naturale</span></h2>
+  <div class="glow" data-for=".pairs"></div>
+  <div class="pill qa-text">Prompt 07 · 08</div>
+  <div class="pairs">
     <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Ritocca la foto allegata come un fotografo professionista: luce più bella, colori equilibrati, esposizione giusta, un po' più di nitidezza. Effetto naturale, niente filtri.</p>
-      <p class="keep"><b>Lascia uguale:</b> lineamenti, pelle (anche nei e rughe), capelli, vestiti e proporzioni.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+      <div class="pt"><b>07</b><span>Allarga la foto</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Allarga la foto allegata fino al formato <span class="ph">[4:5 PER INSTAGRAM / 16:9 PER LO SCHERMO]</span>. Continua in modo realistico quello che c'è ai bordi: sfondo, pavimento, cielo.</p>
+      <p class="keep"><b>Lascia uguale:</b> tutta la foto originale, senza spostarla né ritagliarla.</p>
+    </div>
+    <div class="card pc qa-text">
+      <div class="pt"><b>08</b><span>Cambia i vestiti</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Nella foto allegata, fai indossare <span class="ph">[VESTITO]</span> a <span class="ph">[CHI]</span>. Il vestito deve cadere in modo naturale, con pieghe e ombre giuste.</p>
+      <p class="keep"><b>Lascia uguale:</b> viso, corpo, posa, mani e sfondo.</p>
     </div>
   </div>
   <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
 </section></div>
-<!-- ============ Prompt 06 · Dal giorno alla notte · DARK ============ -->
+<!-- ============ Prompt 09 e 10 · DARK ============ -->
 <div class="slot"><section class="slide mode-dark">
   <div class="layer bg"></div>
-  <div class="ghost num">06</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 06</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Dal giorno <span class="em">alla notte</span></h2>
+  <div class="glow" data-for=".pairs"></div>
+  <div class="pill qa-text">Prompt 09 · 10</div>
+  <div class="pairs">
     <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Trasforma la foto allegata come se fosse scattata <span class="ph">[AL TRAMONTO / DI NOTTE]</span>. Cambia cielo, luce e ombre in modo coerente. Di notte, accendi finestre e lampioni.</p>
-      <p class="keep"><b>Lascia uguale:</b> persone, edifici e inquadratura.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+      <div class="pt"><b>09</b><span>Via le pieghe</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Stira i vestiti nella foto allegata: togli pieghe e grinze, come appena ritirati dalla stireria. Deve sembrare una foto vera, non un dipinto.</p>
+      <p class="keep"><b>Lascia uguale:</b> tessuto, colore, cuciture e le pieghe naturali di gomiti e fianchi.</p>
     </div>
-  </div>
-  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
-</section></div>
-<!-- ============ Prompt 07 · Allarga la foto · LIGHT ============ -->
-<div class="slot"><section class="slide mode-light">
-  <div class="layer bg"></div>
-  <div class="ghost num">07</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 07</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Allarga <span class="em">la foto</span></h2>
     <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Allarga la foto allegata fino al formato <span class="ph">[4:5 PER INSTAGRAM / 16:9 PER LO SCHERMO]</span>. Continua in modo realistico quello che c'è ai bordi: sfondo, pavimento, cielo.</p>
-      <p class="keep"><b>Lascia uguale:</b> tutta la foto originale, senza spostarla né ritagliarla.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
-    </div>
-  </div>
-  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
-</section></div>
-<!-- ============ Prompt 08 · Cambia i vestiti · DARK ============ -->
-<div class="slot"><section class="slide mode-dark">
-  <div class="layer bg"></div>
-  <div class="ghost num">08</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 08</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Cambia <span class="em">i vestiti</span></h2>
-    <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Nella foto allegata, fai indossare <span class="ph">[VESTITO]</span> a <span class="ph">[CHI]</span>. Il vestito deve cadere in modo naturale, con pieghe e ombre giuste.</p>
-      <p class="keep"><b>Lascia uguale:</b> viso, corpo, posa, mani e sfondo.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
-    </div>
-  </div>
-  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
-</section></div>
-<!-- ============ Prompt 09 · Via le pieghe · ACCENT ============ -->
-<div class="slot"><section class="slide mode-accent">
-  <div class="layer bg"></div>
-  <div class="ghost num">09</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 09</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Via <span class="em">le pieghe</span></h2>
-    <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Stira i vestiti nella foto allegata: togli pieghe e grinze, come appena ritirati dalla stireria. Deve sembrare una foto vera, non un dipinto.</p>
-      <p class="keep"><b>Lascia uguale:</b> tessuto, colore, cuciture e le pieghe naturali di gomiti e fianchi.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
-    </div>
-  </div>
-  <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
-</section></div>
-<!-- ============ Prompt 10 · Colori da film · DARK ============ -->
-<div class="slot"><section class="slide mode-dark">
-  <div class="layer bg"></div>
-  <div class="ghost num">10</div>
-  <div class="glow" data-for=".pc"></div>
-  <div class="pill qa-text">Prompt 10</div>
-  <div class="stack">
-    <h2 class="h2 qa-text" data-lines="1">Colori <span class="em">da film</span></h2>
-    <div class="card pc qa-text">
-      <div class="att"><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span><span class="ui-meta">Allega la tua foto</span></div>
-      <p>Dai alla foto allegata i colori di un film, <span class="ph">[CALDI E DORATI / FREDDI E BLU]</span>, con luci e ombre equilibrate. Cambiano solo i colori.</p>
-      <p class="keep"><b>Lascia uguale:</b> persone, pelle naturale, oggetti e inquadratura.</p>
-      <div class="foot"><span class="send"><svg viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></span></div>
+      <div class="pt"><b>10</b><span>Colori da film</span><span class="thumb"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.8"/><path d="M4 17l5-5 4 4 3-3 4 4"/></svg></span></div>
+      <p>Dai alla foto allegata i colori di un film, <span class="ph">[CALDI E DORATI / FREDDI E BLU]</span>, con luci e ombre equilibrate. Cambiano solo i colori.</p>
+      <p class="keep"><b>Lascia uguale:</b> persone, pelle naturale, oggetti e inquadratura.</p>
     </div>
   </div>
   <p class="txt works qa-text" data-lines="1">Funziona con: <b>ChatGPT, Gemini</b></p>
@@ -291,8 +216,8 @@ window.CAROUSEL = {
   title: '10 prompt per modificare le foto con ChatGPT',
   format: 'static',
   tipo: 'prompt',
-  seams:  [1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150, 1150],
-  routes: ['start', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'end'],
+  seams:  [1150, 1150, 1150, 1150, 1150, 1150, 1150],
+  routes: ['start', 'straight', 'straight', 'straight', 'straight', 'straight', 'straight', 'end'],
   threadStart: 780,
 };
 </script>

@@ -25,11 +25,16 @@ Tutti i 10 hanno la riga «Lascia uguale:» separata: è la nostra aggiunta (lo 
 - **Gemini:** «Funziona con: ChatGPT, Gemini» vale per l'uso tipico (allegare la foto in chat e scrivere la richiesta). Non abbiamo scritto nomi di modelli né limiti del piano gratuito, perché cambiano spesso.
 - **Accento sulle slide prompt:** ogni slide ha il riquadro blu nel titolo (regola 22/10) più le parti tra parentesi in blu e il filo: un accento in più rispetto al budget della skill (§3 build-guide). Il controllo automatico è passato; se il proprietario lo trova troppo blu, si possono mettere le parentesi in bianco.
 - **Copertina A:** la foto è tagliata un po' ai lati (formato 4:3 in un riquadro più stretto). Non è una foto di notizia: va bene, ma lo segnalo.
-- **13 slide** (Instagram ne accetta fino a 20). La slide 12 «Tre regole» è nostra e si può togliere; se si sceglie la copertina C, meglio spostarla al posto 2.
+- **8 slide** (rivisto il 23/10: due prompt per slide, richiesta del proprietario). La slide 7 «Tre regole» è nostra e si può togliere; se si sceglie la copertina C, meglio spostarla al posto 2. Alternativa proposta, non applicata: togliere la slide «Tre regole» e lasciare il consiglio solo in caption (c'è già) → 7 slide.
 - **PDF in bozza:** `pubblicazione/10-prompt-foto.pdf` (4 pagine: copertina con istruzioni, trucco e avviso; i 10 prompt; chiusura). Rifatto con `genera-pdf.mjs` dal file `prompts.json`, la stessa fonte delle slide (`genera.py`).
 
+## Due prompt per slide (23/10/2026)
+- **Nessun prompt accorciato**, in tutte e due le versioni: Electric Mono a 33 px (titolini 38 px), tweet a 38 px (titolini 40 px). I testi di `prompts.json` e del PDF sono gli stessi.
+- Electric Mono: nelle schede le ultime due parole del prompt e di «Lascia uguale» sono legate da uno spazio che non va a capo (`genera.py`), così nessuna parola resta sola sull'ultima riga. Il testo non cambia.
+- Tweet: per far stare due schede leggibili ho aggiunto a `strumenti/tweet.py` l'opzione `"finestra": "alta"` (solo titoletto, immagine da y 290 alta 900). È un'aggiunta: senza l'opzione tutto resta come prima. Da confermare dal proprietario, perché cambia la forma della slide interna dello stile tweet (`format/6-stile-tweet.md` §3 non la descrive ancora).
+
 ## Come si rigenera
-`python3 genera.py` (index.html da `prompts.json`, `_head.html`, `copertine.html` variante a) → `npm run export` → `PATH=/usr/bin:$PATH npm run previews` → `node export-copertine.mjs` → `node genera-pdf.mjs`.
+`python3 genera.py` (index.html da `prompts.json`, `_head.html`, `copertine.html` variante a) → `npm run export` → `PATH=/usr/bin:$PATH npm run previews` → `node export-copertine.mjs` → `node genera-pdf.mjs`. Tweet: `node genera-schede-tweet.mjs`, poi `strumenti/tweet.py` su una copia della cartella (cancella `exports/slide-*`), risultato in `exports/tweet/`.
 
 ## Musica consigliata e orari
 Da scrivere nel modo finale.

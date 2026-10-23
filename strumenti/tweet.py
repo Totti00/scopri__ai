@@ -21,6 +21,8 @@ Il JSON (si può avere solo "reel", solo "carosello" o tutti e due):
      "media": "media/tv.mp4", "inizio": 0, "durata": 8, "protagonista": "media/volto.jpg", "verticale": 0.5},
     {"tipo": "slide", "titolo": "Cosa è successo", "testo": "Due o tre frasi: chi, cosa, perché conta.",
      "media": "media/dopo.jpg", "adatta": "contain"},
+    {"tipo": "slide", "titolo": "01 e 02", "media": "media/schede-01.png", "finestra": "alta"},
+                                         ("finestra": "alta" → niente testo, immagine da y 290 alta 900: due schede di prompt, 23/10/2026)
     {"tipo": "chiusura", "titolo": "Vuoi i *100 prompt* per Claude?", "pulsante": "📥 Commenta «100»"}
                                          (ultima slide, sempre, senza "testo" sotto il pulsante: 22/10/2026; invito coerente con il post, i 100 prompt solo nei post di prompt;
                                           "seguici" cambia la riga 🔔 in fondo, che c'è sempre)
@@ -129,7 +131,10 @@ def pagina_copertina(s, cartella):
 
 
 def pagina_slide(s):
-    return documento(1080, 1350, maschera(1080, 1350, 0, 520, 1080, 608) +
+    # "finestra": "alta" (23/10/2026, post di prompt con due schede per slide): niente testo, solo il titoletto,
+    # e la foto/scheda da y 290 a y 1190 (alta 900) invece di 520–1128.
+    alta = s.get("finestra") == "alta"
+    return documento(1080, 1350, maschera(1080, 1350, 0, 290 if alta else 520, 1080, 900 if alta else 608) +
                      f'<div class="abs" style="right:44px;top:40px">{testa(78, 30, 25, 14)}</div>' +
                      (f'<div class="abs" data-max="1" data-nome="titoletto" style="left:60px;top:200px;width:960px;font:800 40px/1.2 Inter;'
                       f'color:#fff;letter-spacing:-0.2px">{marca(s["titolo"], True)}</div>' if s.get("titolo") else "") +
