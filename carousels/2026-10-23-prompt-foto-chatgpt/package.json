@@ -1,0 +1,12 @@
+{
+  "name": "scopri-ai-2026-10-23-prompt-foto-chatgpt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export": "node export.mjs",
+    "export:video": "node export-video.mjs",
+    "media": "node export-media.mjs",
+    "previews": "python ../../.claude/skills/scopri-carousel/scripts/previews.py .",
+    "publish": "python ../../.claude/skills/scopri-carousel/scripts/publish-pack.py ."
+  }
+}
