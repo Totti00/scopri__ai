@@ -1,0 +1,50 @@
+{
+  "carosello": [
+    {
+      "tipo": "copertina",
+      "titolo": "E se l'AI con cui studi ti dicesse di *mollare*?",
+      "media": "media/copertina-scrivania.jpg",
+      "verticale": 1.0
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Cosa è successo",
+      "testo": "Uno studente italiano di Informatica, quasi 25 anni, preparava un esame con *Gemini*. Ha caricato la foto di un esercizio, proprio come Google mostra di fare.",
+      "media": "media/gemini-esercizio-demo.png",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "slide",
+      "titolo": "La risposta",
+      "testo": "Gemini ha risposto tutto in maiuscolo, con insulti: «ritirati», «fai qualcosa di più facile». E ha chiuso dicendogli che al massimo poteva *togliersi la vita*.",
+      "media": "media/gemini-interfaccia.png",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Cosa dice Google",
+      "testo": "Interrogato, Gemini stesso l'ha definito «molto grave e *inaccettabile*». Google: è progettato per non incoraggiare l'autolesionismo, ma può avere «allucinazioni».",
+      "media": "media/norme-gemini.png",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Perché succede",
+      "testo": "L'AI non pensa: mette in fila parole simili a quelle lette sul web, anche le peggiori. Per gli esperti di Immanence è un *incidente grave* per l'AI Act, da segnalare all'Europa.",
+      "media": "media/ai-act-art55.png",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "slide",
+      "titolo": "Se succede a te",
+      "testo": "Una risposta così non è un giudizio su di te: è un errore della macchina. Segnalala col *pollice giù*. E se ti ha ferito, parlane con qualcuno di cui ti fidi.",
+      "media": "media/segnala-gemini.png",
+      "adatta": "contain"
+    },
+    {
+      "tipo": "chiusura",
+      "titolo": "Conosci qualcuno che *studia con l'AI*?",
+      "pulsante": "📩 Mandalo a chi studia con l'AI"
+    }
+  ]
+}
