@@ -23,7 +23,7 @@ Le storie virali (post di X o Reddit) hanno regole a parte: vedi in fondo.
 - Prodotti Apple e Google: 9to5Mac, 9to5Google, MacRumors, Android Authority.
 
 **Italiane:**
-- Agenzie e giornali: ANSA (Tecnologia), Il Sole 24 Ore, Corriere (Innovazione e Tecnologia), Repubblica (Italian Tech), Il Post.
+- Agenzie e giornali: ANSA (Tecnologia), LaPresse (anche la sezione LaSalute), Il Sole 24 Ore, Corriere (Innovazione e Tecnologia), Repubblica (Italian Tech, italian.tech), Il Post.
 - Tecnologia: Wired Italia, DDay.it, HDblog, Tom's Hardware Italia, Punto Informatico, Agenda Digitale, StartupItalia.
 
 ## Livello 3 — segnali (servono a trovare le notizie, non a confermarle)
@@ -38,6 +38,8 @@ Le storie virali (post di X o Reddit) hanno regole a parte: vedi in fondo.
 - **Newsletter da controllare ogni giorno:** **TLDR** (edizioni AI e Tech, archivio su tldr.tech) e **The Rundown AI** (archivio su therundown.ai). Claude le legge online. Ogni notizia si segue fino al link originale e si conferma lì.
 - **Altre newsletter:** Ben's Bites, Import AI.
 - **Pagine internazionali:** @evolving.ai, @therundownai, @chatgptricks.
+- **Pagine e siti italiani** (aggiunti il 23/10/2026): @it.italiantech (la pagina Instagram di Repubblica Italian Tech: la notizia si conferma sull'articolo o su una seconda testata), AI News (ainews.it), Key4biz, Italia Informa.
+- **Altri siti internazionali:** GIGAZINE (gigazine.net, in inglese).
 
 Una notizia vista solo qui **non si pubblica** finché non arriva una conferma di livello 1 o 2.
 

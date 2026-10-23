@@ -6,7 +6,7 @@ Il regista segue `routine/README.md`. Qui ci sono le indicazioni per questa rubr
 Nell'ordine:
 1. **Sale stampa ufficiali:** Google (blog.google e gemini.google/release-notes), OpenAI (openai.com/news/rss.xml), Anthropic (anthropic.com/news), Meta (about.fb.com/news), Apple (apple.com/newsroom), Microsoft, NVIDIA, Amazon, xAI, Mistral, DeepSeek.
 2. **Newsletter:** TLDR AI e TLDR Tech di oggi e di ieri (`https://tldr.tech/ai/AAAA-MM-GG`, `https://tldr.tech/tech/AAAA-MM-GG`), The Rundown AI (`https://rss.beehiiv.com/feeds/2R3C6Bt5wj.xml`).
-3. **Testate:** The Verge (rss AI), TechCrunch (feed AI), ANSA Tecnologia, Wired Italia, Google News in italiano (`https://news.google.com/rss/search?q=intelligenza+artificiale&hl=it&gl=IT&ceid=IT:it`).
+3. **Testate:** The Verge (rss AI), TechCrunch (feed AI), ANSA Tecnologia, Wired Italia, Repubblica Italian Tech (italian.tech e la pagina Instagram @it.italiantech), LaPresse (Tecnologia e LaSalute), AI News (ainews.it), Key4biz, Italia Informa, GIGAZINE, Google News in italiano (`https://news.google.com/rss/search?q=intelligenza+artificiale&hl=it&gl=IT&ceid=IT:it`).
 4. **Reddit** (con `strumenti/leggi-pagina.cjs`): r/technology, r/artificial, r/OpenAI, r/ChatGPT, r/singularity, r/nottheonion (top del giorno).
 5. Ricerca web per confermare e per completare.
 
