@@ -43,6 +43,15 @@ Tutti i 10 hanno la riga «Lascia uguale:» separata: è la nostra aggiunta (lo 
 - Le schede dei prompt (`genera-schede-tweet.mjs`) passate da Inter a Google Sans Flex (regola del 23/10/2026); tutti i prompt stanno ancora interi.
 - Prompt non provati su foto vere: resta valido il dubbio principale qui sopra.
 
-## Musica consigliata e orari
-- Pubblicazione: oggi, venerdì 23/10, alle 15:30.
-- Musica (facoltativa, carosello di sole foto): un pezzo tranquillo e leggero dalla libreria di Instagram, per esempio lo-fi o acustica, volume basso.
+## Musica consigliata
+Umore del venerdì (prompt): lo-fi tranquillo, solo strumentale, si sceglie il punto in cui entra il ritmo (`brand/crescita.md`). Già usati o consigliati (`brand/musica-usata.md` e note degli ultimi post): Daft Punk, Justice, M83, Mr. Oizo, Vitalic, Boys Noize, Carpenter Brut, Perturbator, Trent Reznor & Atticus Ross, Tangerine Dream, Nujabes, Idealism, Kupla e altri: nessuno di questi qui.
+1. **Tomppabeats – Monday Loop** (strumentale, lo-fi morbido e allegro, giusto per un venerdì pomeriggio)
+2. **Jinsang – Affection** (strumentale, lo-fi caldo e lento, lascia leggere i prompt)
+3. **Saib – Sakura Trees** (strumentale, lo-fi leggero con chitarra)
+Se tra le canzoni di tendenza (↗) c'è un lo-fi strumentale, ha la precedenza. Quando scegli, si scrive in `brand/musica-usata.md`.
+
+## Orari
+Pubblicazione: oggi, venerdì 23/10, alle 15:30.
+
+## Musica usata
+Da scrivere quando il proprietario sceglie (anche in `brand/musica-usata.md`).
