@@ -53,13 +53,13 @@ Dettagli: `brand/identita.md`. Concorrenti e ispirazione: `ispirazione/`.
 
 ## Due stili, si sceglie post per post (dal 22/10/2026)
 - **Carosello Electric Mono** (qui sotto, skill `scopri-carousel`): storie lunghe, prompt, liste.
-- **Tweet** (`format/6-stile-tweet.md`, programma `strumenti/tweet.py`): fondo nero, font Inter, il nostro "profilo" in alto, il testo come un post e sotto la foto o il video vero; copertina con il titolo in MAIUSCOLO (massimo 3 righe) e il marchio "SCOPRI [AI]"; accento `#8FA3FF` in grassetto. Caption con chiusura "Tu cosa ne pensi? 🤔💬", fonte e un invito coerente con il post, lo stesso della slide di chiusura (notizie "📩 Mandalo a …", i 100 prompt solo nei post di prompt: 22/10/2026). Il carosello finisce sempre con la slide di chiusura. Va bene anche per i Reel.
+- **Tweet** (`format/6-stile-tweet.md`, programma `strumenti/tweet.py`): fondo nero, font Google Sans Flex, il nostro "profilo" in alto, il testo come un post e sotto la foto o il video vero; copertina con il titolo in MAIUSCOLO (massimo 3 righe) e il marchio "SCOPRI [AI]"; accento `#8FA3FF` in grassetto. Caption con chiusura "Tu cosa ne pensi? 🤔💬", fonte e un invito coerente con il post, lo stesso della slide di chiusura (notizie "📩 Mandalo a …", i 100 prompt solo nei post di prompt: 22/10/2026). Il carosello finisce sempre con la slide di chiusura. Va bene anche per i Reel.
 - Il menu del `selezionatore` propone lo stile per ogni notizia; decide il proprietario.
 - **Preferenza del proprietario (23/10/2026): di solito il tweet**, per tutti i caroselli (notizie, curiosità, settimana e, se ci stanno, anche i prompt). **Non è una regola fissa**: nel menu il tweet è lo stile consigliato, ma c'è sempre anche il carosello Electric Mono come alternativa, e sceglie il proprietario. Vale anche se il messaggio di una routine nomina solo la skill `scopri-carousel`. Se un testo non ci sta nel tweet (es. un prompt lungo: massimo 4 righe per slide), il menu lo dice.
 
 ## Design (dal 16/10/2026)
 - **Stile carosello: Electric Mono adattato a Scopri AI** (l'altro stile, il tweet, è qui sopra), con la skill `.claude/skills/scopri-carousel/` (motore, layout, oggetti 3D, controlli, anteprime, pacchetto di pubblicazione). Le sue regole di brand sono in `references/brand-scopri-ai.md` della skill; le lezioni imparate in `references/lessons-learned.md`.
-- Fondi **scuro, chiaro e blu** che si alternano, un solo colore d'accento: il blu `#2340FF`. **Niente giallo.** Font **Inter Tight** (e JetBrains Mono per le scritte piccole).
+- Fondi **scuro, chiaro e blu** che si alternano, un solo colore d'accento: il blu `#2340FF`. **Niente giallo.** Font **Google Sans Flex** (larghezza normale) **per tutti i post** (deciso il 23/10/2026): carosello, tweet, Reel e immagini fatte da noi (schede dei prompt, PDF), anche le scritte piccole. Prima erano Inter Tight e JetBrains Mono nel carosello, Inter nel tweet; i post già fatti restano come sono.
 - Logo **"Scopri AI" con la campana** (`brand/logo/ufficiale/`), nome sempre "Scopri AI".
 - I vecchi template A–G e il vecchio programma delle slide sono in `_vecchio/` (non si usano più, si possono riprendere).
 

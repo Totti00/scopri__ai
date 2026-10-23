@@ -94,10 +94,10 @@ def pagina(r, m, rapporto):
     alto, spazio, stacco, fine = (232, 40, 32, 1880) if r.get("compatto") else (250, SPAZIO_LOGO, 56, FONDO_MAX)
     logo = (BRAND / f"scopri-ai-logo-{m['logo']}.png").as_uri()
     return f'''<!doctype html><html lang="it"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700&amp;display=block" rel="stylesheet">
 <style>
 html,body{{margin:0;background:{m["pieno"]}}}
-.pg{{position:relative;width:1080px;height:1920px;overflow:hidden;color:{m["testo"]};font-family:'Inter Tight','Noto Color Emoji',sans-serif;-webkit-font-smoothing:antialiased}}
+.pg{{position:relative;width:1080px;height:1920px;overflow:hidden;color:{m["testo"]};font-family:'Google Sans Flex','Noto Color Emoji',sans-serif;-webkit-font-smoothing:antialiased}}
 .bg{{position:absolute;inset:0;background:{m["fondo"]}}}
 .grana{{position:absolute;inset:0;background:{GRANA};opacity:.07;mix-blend-mode:overlay}}
 .colonna{{position:absolute;left:{X}px;top:{alto}px;width:{LARGHEZZA}px;display:flex;flex-direction:column;align-items:flex-start}}

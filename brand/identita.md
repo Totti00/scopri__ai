@@ -34,7 +34,7 @@ Nessun concorrente unisce velocità, fonti verificate e utilità pratica: è il 
 Regole complete (contrasti, sfumature, grana, quanto accento per slide): `references/brand-scopri-ai.md` e `references/design-system.md` della skill `.claude/skills/scopri-carousel/`. Il giallo `#FFD84D` della palette del 13/10 non si usa più nei caroselli.
 
 ## Grafica
-- Font: **Inter Tight** (titoli e testo, per tutti i post dal 16/10/2026; prima Bricolage Grotesque), **JetBrains Mono** (etichette e prompt).
+- Font: **Google Sans Flex**, larghezza normale, per tutto (titoli, testo, etichette e prompt), in tutti i post dal 23/10/2026. Prima: Inter Tight e JetBrains Mono (dal 16/10/2026), Inter nello stile tweet, all'inizio Bricolage Grotesque.
 - **Nome: "Scopri AI"**, con lo spazio, senza punto (deciso il 16/10/2026). Il nome utente resta `@scopri__ai`.
 - **Logo ufficiale (definitivo dal 16/10/2026): "Scopri AI" con la campana da chef ("cloche") inclinata sopra "AI"**: l'AI che si scopre, come un piatto servito. Niente giallo.
   - Foto profilo: `brand/logo/ufficiale/foto-profilo.png` (campana e "AI" bianchi su campo blu `#2340FF` sfumato).

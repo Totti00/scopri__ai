@@ -1,5 +1,5 @@
 """Stile "tweet" di Scopri AI (deciso il 22/10/2026, ispirato ai post a forma di tweet di @evolving.ai):
-fondo nero, font Inter, in alto il nostro "profilo" (foto profilo, "Scopri AI", "@scopri__ai"), il testo come in un post
+fondo nero, font Google Sans Flex (dal 23/10/2026, prima Inter), in alto il nostro "profilo" (foto profilo, "Scopri AI", "@scopri__ai"), il testo come in un post
 e sotto la foto o il video vero. Si sceglie post per post al posto del carosello Electric Mono (format/6-stile-tweet.md).
 Tu dai solo testi e media: il programma fa i file finiti.
 
@@ -82,17 +82,17 @@ def testa(av, nome, handle, gap):
     return (f'<div style="display:flex;align-items:center;gap:{gap}px">'
             f'<img src="{AVATAR.as_uri()}" style="width:{av}px;height:{av}px;border-radius:50%;display:block;flex:none">'
             f'<div style="display:flex;flex-direction:column;line-height:1.15">'
-            f'<span style="font:700 {nome}px Inter;color:#fff">Scopri AI</span>'
-            f'<span style="font:400 {handle}px Inter;color:{GRIGIO}">@scopri__ai</span></div></div>')
+            f'<span style="font:700 {nome}px Google Sans Flex;color:#fff">Scopri AI</span>'
+            f'<span style="font:400 {handle}px Google Sans Flex;color:{GRIGIO}">@scopri__ai</span></div></div>')
 
 
 def documento(W, H, interno):
     return f'''<!doctype html><html lang="it"><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;600;700;800;900&amp;display=block" rel="stylesheet">
 <style>html,body{{margin:0;width:{W}px;height:{H}px;overflow:hidden;background:transparent;-webkit-font-smoothing:antialiased}}
 .abs{{position:absolute}} b.hl{{color:{ACCENTO};font-weight:inherit}} .hl{{font-weight:700}}
 .nero{{position:absolute;inset:0}}</style></head>
-<body><div style="position:relative;width:{W}px;height:{H}px;font-family:Inter,'Noto Color Emoji',sans-serif">{interno}</div></body></html>'''
+<body><div style="position:relative;width:{W}px;height:{H}px;font-family:'Google Sans Flex','Noto Color Emoji',sans-serif">{interno}</div></body></html>'''
 
 
 def maschera(W, H, x, y, w, h):
@@ -106,12 +106,12 @@ def pagina_reel(r, alto):
     return documento(1080, 1920, maschera(1080, 1920, 0, 690, 1080, alto) +
                      f'<div class="abs" style="left:60px;top:300px">{testa(104, 40, 34, 22)}</div>' +
                      (f'<div class="abs" data-max="3" data-nome="testo del Reel" style="left:60px;top:440px;width:960px;'
-                      f'font:500 48px/1.27 Inter;color:#fff;letter-spacing:-0.3px">{marca(r["testo"])}</div>' if r.get("testo") else ""))
+                      f'font:500 48px/1.27 Google Sans Flex;color:#fff;letter-spacing:-0.3px">{marca(r["testo"])}</div>' if r.get("testo") else ""))
 
 
 LINEA_LOGO = (f'<div class="abs" style="left:0;top:858px;width:1080px;display:flex;align-items:center;justify-content:center;gap:22px">'
               f'<div style="width:250px;height:2px;background:rgba(255,255,255,.55)"></div>'
-              f'<div style="display:flex;align-items:center;gap:6px;font:900 28px Inter;color:#fff;letter-spacing:1px">SCOPRI'
+              f'<div style="display:flex;align-items:center;gap:6px;font:900 28px Google Sans Flex;color:#fff;letter-spacing:1px">SCOPRI'
               f'<span style="background:{ACCENTO};color:#0B0E22;border-radius:6px;padding:1px 8px 2px">AI</span></div>'
               f'<div style="width:250px;height:2px;background:rgba(255,255,255,.55)"></div></div>')
 
@@ -125,8 +125,8 @@ def pagina_copertina(s, cartella):
                'background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.75) 60%,#000 100%)"></div>')
     return documento(1080, 1350, maschera(1080, 1350, 0, 0, 1080, 900) + sfumato + prot + LINEA_LOGO +
                      f'<div class="abs" data-max="3" data-nome="titolo della copertina" style="left:50px;top:915px;width:980px;'
-                     f'text-align:center;font:900 70px/1.04 Inter;color:#fff;letter-spacing:-0.5px">{marca(s["titolo"], True)}</div>'
-                     '<div class="abs" style="left:0;top:1288px;width:1080px;text-align:center;font:700 24px Inter;'
+                     f'text-align:center;font:900 70px/1.04 Google Sans Flex;color:#fff;letter-spacing:-0.5px">{marca(s["titolo"], True)}</div>'
+                     '<div class="abs" style="left:0;top:1288px;width:1080px;text-align:center;font:700 24px Google Sans Flex;'
                      'color:rgba(255,255,255,.85);letter-spacing:3px">SCORRI PER SAPERNE DI PIÙ →</div>')
 
 
@@ -136,10 +136,10 @@ def pagina_slide(s):
     alta = s.get("finestra") == "alta"
     return documento(1080, 1350, maschera(1080, 1350, 0, 290 if alta else 520, 1080, 900 if alta else 608) +
                      f'<div class="abs" style="right:44px;top:40px">{testa(78, 30, 25, 14)}</div>' +
-                     (f'<div class="abs" data-max="1" data-nome="titoletto" style="left:60px;top:200px;width:960px;font:800 40px/1.2 Inter;'
+                     (f'<div class="abs" data-max="1" data-nome="titoletto" style="left:60px;top:200px;width:960px;font:800 40px/1.2 Google Sans Flex;'
                       f'color:#fff;letter-spacing:-0.2px">{marca(s["titolo"], True)}</div>' if s.get("titolo") else "") +
                      (f'<div class="abs" data-max="4" data-nome="testo della slide" style="left:60px;top:262px;width:960px;'
-                      f'font:400 34px/1.38 Inter;color:rgba(255,255,255,.92)">{marca(s["testo"])}</div>' if s.get("testo") else ""))
+                      f'font:400 34px/1.38 Google Sans Flex;color:rgba(255,255,255,.92)">{marca(s["testo"])}</div>' if s.get("testo") else ""))
 
 
 SEGUICI = "🔔 Seguici per non perdere le prossime notizie"
@@ -150,19 +150,19 @@ def pagina_chiusura(s):
     return documento(1080, 1350, '<div class="nero" style="background:#000"></div>' +
                      '<div class="abs" style="left:0;top:150px;width:1080px;display:flex;flex-direction:column;align-items:center">'
                      f'<img src="{AVATAR.as_uri()}" style="width:230px;height:230px;border-radius:50%;display:block">'
-                     '<span style="margin-top:26px;font:700 50px Inter;color:#fff">Scopri AI</span>'
-                     f'<span style="margin-top:6px;font:400 36px Inter;color:{GRIGIO}">@scopri__ai</span></div>' +
+                     '<span style="margin-top:26px;font:700 50px Google Sans Flex;color:#fff">Scopri AI</span>'
+                     f'<span style="margin-top:6px;font:400 36px Google Sans Flex;color:{GRIGIO}">@scopri__ai</span></div>' +
                      '<div class="abs" style="left:0;top:560px;width:1080px;display:flex;flex-direction:column;align-items:center">' +
-                     (f'<div data-max="3" data-nome="titolo della chiusura" style="width:940px;text-align:center;text-wrap:balance;font:900 70px/1.08 Inter;'
+                     (f'<div data-max="3" data-nome="titolo della chiusura" style="width:940px;text-align:center;text-wrap:balance;font:900 70px/1.08 Google Sans Flex;'
                       f'color:#fff;letter-spacing:-0.5px">{marca(s["titolo"], True)}</div>' if s.get("titolo") else "") +
                      (f'<div style="margin-top:52px;background:{ACCENTO};color:#0B0E22;border-radius:999px;padding:24px 56px;'
                       f'font:800 44px Inter">{marca(s["pulsante"])}</div>' if s.get("pulsante") else "") +
                      (f'<div data-max="2" data-nome="testo della chiusura" style="margin-top:28px;width:900px;text-align:center;'
-                      f'font:400 36px/1.3 Inter;color:rgba(255,255,255,.85)">{marca(s["testo"])}</div>' if s.get("testo") else "") +
+                      f'font:400 36px/1.3 Google Sans Flex;color:rgba(255,255,255,.85)">{marca(s["testo"])}</div>' if s.get("testo") else "") +
                      '</div>'
                      '<div class="abs" style="left:240px;top:1098px;width:600px;height:2px;background:rgba(255,255,255,.25)"></div>'
                      f'<div class="abs" data-max="1" data-nome="riga seguici" style="left:40px;top:1132px;width:1000px;text-align:center;'
-                     f'font:600 34px/1.2 Inter;color:#fff">{marca(s.get("seguici", SEGUICI))}</div>')
+                     f'font:600 34px/1.2 Google Sans Flex;color:#fff">{marca(s.get("seguici", SEGUICI))}</div>')
 
 
 def fotografa(html_txt, W, H, tmp, nome):

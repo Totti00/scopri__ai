@@ -11,8 +11,8 @@
   --accent-rgb:35,64,255; --accent-300-rgb:133,149,255;
   --accent-gradient:linear-gradient(120deg,#6F52FF 0%,#2340FF 50%,#1F8EFF 100%);
   --signal-500:#3DDC84;
-  --font-primary:"Inter Tight","Inter","Helvetica Neue",Arial,sans-serif;
-  --font-meta:"JetBrains Mono","IBM Plex Mono",ui-monospace,monospace;
+  --font-primary:"Google Sans Flex","Inter","Helvetica Neue",Arial,sans-serif;   /* Google Sans Flex per tutti i post dal 23/10/2026 (prima Inter Tight) */
+  --font-meta:"Google Sans Flex","Inter","Helvetica Neue",Arial,sans-serif;     /* anche le scritte piccole (prima JetBrains Mono) */
   --ease-out:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}

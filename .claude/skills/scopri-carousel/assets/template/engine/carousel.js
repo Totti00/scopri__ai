@@ -19,7 +19,7 @@
   if (q.has('export')) document.body.classList.add('export');
   if (q.has('video')) document.body.classList.add('video');
 
-  const FONT_SPECS = ['200 100px "Inter Tight"', '400 30px "Inter Tight"', '500 30px "Inter Tight"', '600 100px "Inter Tight"', '800 100px "Inter Tight"', '500 20px "JetBrains Mono"'];
+  const FONT_SPECS = ['200 100px "Google Sans Flex"', '400 30px "Google Sans Flex"', '500 30px "Google Sans Flex"', '600 100px "Google Sans Flex"', '800 100px "Google Sans Flex"'];
   const slides = [...document.querySelectorAll('.slide')];
   const N = slides.length;
   const pad = n => String(n).padStart(2, '0');
