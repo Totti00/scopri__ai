@@ -17,3 +17,7 @@
 
 ## Musica e orari
 Da decidere in finale (vedi `brand/musica-usata.md`): tono serio, brano strumentale calmo, niente musica tesa o drammatica.
+
+## Correzioni del proprietario (23/10, fermata 2)
+- Copertina: foto e stella della C, ma frase più forte. Proposte: A «Gemini a uno studente: «Al massimo puoi ammazzarti»» (principale, è la citazione vera), B «Gemini dice a uno studente di togliersi la vita», C «L'AI di Google invita uno studente a uccidersi?».
+- Slide 3–6: più testo, senza immagini (nuova slide di solo testo in strumenti/tweet.py). Le slide 1, 2 e 7 restano come prima. copy.md è superato: i testi validi sono in tweet.json.

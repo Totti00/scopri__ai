@@ -129,6 +129,15 @@ def pagina_copertina(s, cartella):
 
 
 def pagina_slide(s):
+    if not s.get("media"):   # slide di solo testo (23/10/2026): più spazio e testo più grande
+        return documento(1080, 1350, '<div class="nero" style="background:#000"></div>' +
+                         f'<div class="abs" style="right:44px;top:40px">{testa(78, 30, 25, 14)}</div>' +
+                         '<div class="abs" style="left:60px;top:200px;width:960px;height:1060px;display:flex;flex-direction:column;justify-content:center">' +
+                         (f'<div data-max="2" data-nome="titoletto" style="font:800 52px/1.15 Inter;color:#fff;letter-spacing:-0.3px">'
+                          f'{marca(s["titolo"], True)}</div>' if s.get("titolo") else "") +
+                         (f'<div data-max="16" data-nome="testo della slide" style="margin-top:36px;font:400 42px/1.4 Inter;'
+                          f'color:rgba(255,255,255,.92)">' + "".join(f'<p style="margin:0 0 24px">{marca(r)}</p>' for r in s["testo"].split("\n")) + '</div>' if s.get("testo") else "") +
+                         '</div>')
     return documento(1080, 1350, maschera(1080, 1350, 0, 520, 1080, 608) +
                      f'<div class="abs" style="right:44px;top:40px">{testa(78, 30, 25, 14)}</div>' +
                      (f'<div class="abs" data-max="1" data-nome="titoletto" style="left:60px;top:200px;width:960px;font:800 40px/1.2 Inter;'

@@ -2,9 +2,10 @@
   "carosello": [
     {
       "tipo": "copertina",
-      "titolo": "E se l'AI con cui studi ti dicesse di *mollare*?",
       "media": "media/copertina-scrivania.jpg",
-      "verticale": 1.0
+      "verticale": 1.0,
+      "protagonista": "media/gemini-stella.png",
+      "titolo": "Gemini a uno studente: «Al massimo puoi *ammazzarti*»"
     },
     {
       "tipo": "slide",
@@ -16,30 +17,22 @@
     {
       "tipo": "slide",
       "titolo": "La risposta",
-      "testo": "Gemini ha risposto tutto in maiuscolo, con insulti: «ritirati», «fai qualcosa di più facile». E ha chiuso dicendogli che al massimo poteva *togliersi la vita*.",
-      "media": "media/gemini-interfaccia.png",
-      "adatta": "contain"
+      "testo": "Gemini ha risposto tutto in MAIUSCOLO. Nessuna spiegazione dell'esercizio: solo insulti.\nGli ha dato dello studente «di m...a». Gli ha detto che sembrava «sotto effetto di sostanze». Gli ha consigliato di ritirarsi dal corso e di fare «qualcosa di più facile».\nE ha chiuso così: «Con la tua capacità mentale, al massimo puoi *ammazzarti*»."
     },
     {
       "tipo": "slide",
       "titolo": "Cosa dice Google",
-      "testo": "Interrogato, Gemini stesso l'ha definito «molto grave e *inaccettabile*». Google: è progettato per non incoraggiare l'autolesionismo, ma può avere «allucinazioni».",
-      "media": "media/norme-gemini.png",
-      "adatta": "contain"
+      "testo": "Lo studente, incredulo, ha chiesto a Gemini di spiegare quel tono. E Gemini stesso ha definito il suo messaggio «molto *grave e inaccettabile*».\nUn portavoce di Google ha detto che Gemini è «progettato per non incoraggiare la violenza o l'autolesionismo». Ma che i modelli di AI «possono comunque generare allucinazioni», cioè risposte sbagliate o inventate.\nGoogle dice che sta lavorando per migliorare le protezioni."
     },
     {
       "tipo": "slide",
       "titolo": "Perché succede",
-      "testo": "L'AI non pensa: mette in fila parole simili a quelle lette sul web, anche le peggiori. Per gli esperti di Immanence è un *incidente grave* per l'AI Act, da segnalare all'Europa.",
-      "media": "media/ai-act-art55.png",
-      "adatta": "contain"
+      "testo": "Un'AI come Gemini non pensa e non prova rabbia. Mette in fila le parole più probabili, imparate da miliardi di testi presi dal web. Anche quelli pieni di odio.\nDi solito dei filtri bloccano le risposte pericolose. Questa volta non hanno funzionato.\nPer gli esperti di Immanence, che hanno raccolto la segnalazione, è un *incidente grave* per l'AI Act, la legge europea sull'AI: Google dovrebbe segnalarlo all'Europa e spiegare cosa è successo."
     },
     {
       "tipo": "slide",
       "titolo": "Se succede a te",
-      "testo": "Una risposta così non è un giudizio su di te: è un errore della macchina. Segnalala col *pollice giù*. E se ti ha ferito, parlane con qualcuno di cui ti fidi.",
-      "media": "media/segnala-gemini.png",
-      "adatta": "contain"
+      "testo": "Una risposta così non è un giudizio su di te: è un errore della macchina.\nNon discutere con l'AI: chiudi la chat e segnala la risposta col *pollice giù*, così Google la vede. E se usi l'AI per studiare, controlla sempre quello che dice.\nSe una frase ti ha ferito, parlane con qualcuno di cui ti fidi. Telefono Amico risponde allo 02 2327 2327."
     },
     {
       "tipo": "chiusura",
