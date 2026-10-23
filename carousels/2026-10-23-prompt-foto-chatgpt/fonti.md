@@ -9,7 +9,10 @@ Post di prompt: nessuna fonte in caption (regola 2 di `CLAUDE.md`).
 | File | Dove si usa | Autore | Link | Licenza |
 |---|---|---|---|---|
 | `media/tramonto-telefono.jpg` | copertina A (slide 1) e B | Mantas Hesthaven | https://unsplash.com/photos/xZM5sAsuib0 | Unsplash License (gratuita, uso commerciale, nessun obbligo di citazione) |
-| `media/mano-iphone.jpg` | non usata (riserva) | Nathan Dumlao | https://unsplash.com/photos/svGjvc3xm2g | Unsplash License |
-| `media/donna-telefono.jpg` | non usata (riserva) | Artem Beliaikin | https://unsplash.com/photos/0wyy5mAj1-o | Unsplash License |
+| `media/mano-iphone.jpg` | copertina B della versione tweet | Nathan Dumlao | https://unsplash.com/photos/svGjvc3xm2g | Unsplash License |
+| `media/donna-telefono.jpg` | copertina C della versione tweet | Artem Beliaikin | https://unsplash.com/photos/0wyy5mAj1-o | Unsplash License |
 
 La finestra di chat della copertina B e le schede dei prompt sono ricostruite da noi col codice (niente logo di OpenAI o Google).
+
+## Versione tweet
+Copertina A: `media/tramonto-telefono.jpg` (Mantas Hesthaven). Copertina B: `media/mano-iphone.jpg` (Nathan Dumlao). Copertina C: `media/donna-telefono.jpg` (Artem Beliaikin). Tutte Unsplash License, link nella tabella sopra. Le schede dei prompt (`media/tweet-*.png`) sono disegnate da noi.

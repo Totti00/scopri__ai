@@ -91,3 +91,49 @@ Ogni slide prompt ha la stessa forma: pill «Prompt 0N», titolo con la parola c
 - Post di prompt: niente fonti in caption.
 
 Fonti: nessuna per i contenuti (post di prompt). Foto di copertina: Unsplash, vedi `fonti.md`.
+
+---
+
+## Versione tweet (in più, richiesta del proprietario il 23/10/2026)
+
+File: `tweet.json` (carosello), `tweet-b.json` e `tweet-c.json` (solo copertine), uscite in `exports/tweet/` (slide-01…13.png, contact-sheet.jpg, copertina-b.png, copertina-c.png). Le schede dei prompt sotto il testo sono disegnate da noi con `node genera-schede-tweet.mjs` (da `prompts.json`, stessi testi della versione Electric Mono) → `media/tweet-prompt-NN.png` e `media/tweet-confronto.png`.
+Attenzione: `strumenti/tweet.py` cancella `exports/slide-*` della cartella del JSON, quindi l'export tweet è stato fatto su una copia nella cartella temporanea, poi spostato in `exports/tweet/`. Gli export Electric Mono sono rimasti intatti.
+
+### 01 — Copertina (3 versioni)
+- **A (slide 1):** «10 PROMPT PER MODIFICARE LE FOTO CON **CHATGPT**» · foto Unsplash della ragazza che fotografa il tramonto.
+- **B:** «SMETTI DI SCRIVERE **«MIGLIORA LA FOTO»**» · foto Unsplash della mano con il telefono (Nathan Dumlao).
+- **C:** «RITOCCA LE FOTO CON CHATGPT: **10 PROMPT** DA COPIARE» · foto Unsplash della donna col telefono (Artem Beliaikin).
+
+### 02–11 — Un prompt per slide (titoletto · testo · sotto, la scheda col prompt e «Lascia uguale»)
+- 01 · Togli chi non c'entra — Il passante, il cartello, il bidone sullo sfondo. Allega la foto alla chat e scrivi così:
+- 02 · Apri gli occhi chiusi — La foto di gruppo perfetta, tranne uno con gli occhi chiusi. Scrivi il **colore degli occhi**: l'AI non può indovinarlo.
+- 03 · Cambia lo sfondo — Stessa persona, posto diverso. Chiedi di adattare **luce e ombre**, se no si vede il ritaglio.
+- 04 · Rendi nitida la foto — Per le foto sgranate o un po' mosse. Se è molto sfocata, però, l'AI **ridisegna** i dettagli: controlla.
+- 05 · Ritocco naturale — Luce e colori da fotografo, senza l'effetto plastica. La parte importante: **nei e rughe** restano.
+- 06 · Dal giorno alla notte — Una foto scattata di giorno diventa un **tramonto** o una notte, con le finestre accese.
+- 07 · Allarga la foto — Troppo stretta per Instagram o per lo schermo? L'AI **continua** quello che c'è ai bordi.
+- 08 · Cambia i vestiti — Prova un vestito senza cambiarti. Scrivi sempre le **mani**: sono il punto debole dell'AI.
+- 09 · Via le pieghe — La camicia stropicciata nella foto importante. Restano solo le **pieghe naturali**.
+- 10 · Colori da film — Colori caldi o freddi, come in un film. Cambiano **solo i colori**, le persone no.
+
+### 12 — Tre regole da ricordare
+- Scrivi sempre **cosa resta uguale**. Controlla viso, mani e scritte prima di usarla. Le foto degli altri? Solo con il loro permesso.
+- Sotto: scheda «COSÌ NO: «Migliora la foto» — L'AI tira a indovinare. E a volte ti cambia anche il viso.» / «COSÌ SÌ: «Ritocca la luce» — Lascia uguale: viso, pelle e capelli. Cambia solo quello che chiedi.»
+
+### 13 — Chiusura
+- **Titolo:** VUOI I **10 PROMPT** IN PDF? · **Pulsante:** 📥 Commenta «FOTO» · in fondo: 🔔 Seguici per non perdere i prossimi prompt. Niente testo sotto il pulsante.
+
+### Caption tweet
+> 📸 10 prompt per modificare le foto con ChatGPT e Gemini: togli chi non c'entra, apri gli occhi chiusi.
+>
+> Allega la foto nella chat, copia il prompt e cambia le parti tra [PARENTESI]. Il trucco è la riga «Lascia uguale». Se non dici cosa non toccare, l'AI rifà tutta la foto e a volte cambia anche il viso.
+>
+> Controlla sempre il risultato prima di usarlo. E le foto degli altri si modificano solo con il loro permesso.
+>
+> Tu cosa ne pensi? 🤔💬
+>
+> 📥 Commenta «FOTO» e ti mando i 10 prompt in PDF.
+>
+> #chatgpt #gemini #fotoritocco #intelligenzaartificiale #prompt
+
+(Testo anche in `caption-tweet-bozza.txt`. `caption_check.py --stile tweet`: ✅ CAPTION PRONTA · carosello · prompt — 551/2200 caratteri. Nessuna fonte: è un post di prompt.)
