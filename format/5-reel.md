@@ -25,7 +25,7 @@ Lo fa `strumenti/reel.py` (istruzioni in cima al file) dal file `reel.json`, nel
 - **Zona sicura:** i testi stanno tra y 230 e y 1440 (sotto y 1000 anche lontano dal bordo destro, dove ci sono i pulsanti). Il programma si ferma se un testo esce.
 - **Tecnica presa da altre pagine, identità nostra:** il formato "titolo + video" lo usano anche altri (es. ai__facile); da noi grafica Electric Mono, logo, parole e titoli nostri (regola 7).
 - **Il video si vede intero** (deciso il 19/10/2026): `"formato": "originale"`, niente tagli sopra e sotto. Se il video è verticale il riquadro si stringa in larghezza (lo fa `reel.py`). Gli altri formati (4:5, 1:1) solo se lo chiede il proprietario. Per i video verticali si aggiunge `"compatto": true`: tutto più in alto e video più grande, fino quasi al fondo (19/10/2026).
-- **Due versioni** nella bozza: due titoli diversi (o due momenti del video) → `reel.json` e `reel-b.json`, sceglie il proprietario.
+- **Quattro versioni** nella bozza (24/10/2026): due classiche con due titoli diversi (o due momenti del video) → `reel.json` e `reel-b.json`, più **sempre** due in stile tweet (`format/6-stile-tweet.md`) → `tweet.json` e `tweet-b.json`. Sceglie il proprietario.
 
 ## Quando esce
 Alle **20:00**: lo stesso giorno della news, oppure da solo se la notizia è solo il video.

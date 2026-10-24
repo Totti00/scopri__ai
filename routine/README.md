@@ -16,7 +16,7 @@ Le routine sono sessioni di Claude che partono da sole a un orario fisso. Ogni r
 | `analista` | 2. Analisi | → "2. Analisi" (fonti, gancio, media, voto) |
 | `selezionatore` | 3. Menu | → "3. Menu" (tante opzioni + un consiglio; sceglie il proprietario) |
 | `costruttore-post` | 4. Costruzione post | `archivio/<cartella>/`: bozza, poi slide, caption, testo alternativo, fonti, note |
-| `costruttore-reel` | 5. Costruzione Reel (solo se scelto) | `carousels/<slug>/`: `reel.json` e `reel-b.json` con le anteprime, poi `reel.mp4`, `reel-completo.mp4`, `caption-reel.txt` |
+| `costruttore-reel` | 5. Costruzione Reel (solo se scelto) | `carousels/<slug>/`: `reel.json` e `reel-b.json` (classici) e `tweet.json` e `tweet-b.json` (stile tweet, sempre: 24/10/2026) con le anteprime, poi `reel.mp4`, `reel-completo.mp4`, `caption-reel.txt` |
 
 **La pubblicazione la fa il proprietario**, a mano. Nessun agente pubblica.
 
@@ -39,7 +39,7 @@ Non costruire niente finché non risponde. Scrivi la sua scelta in `notizie/AAAA
 ## Fase B — bozza (dopo la scelta)
 1. `costruttore-post` (modo `bozza`, con lo **slug** `AAAA-MM-GG-<rubrica>-<argomento>`) e, **solo se il proprietario ha scelto un Reel**, `costruttore-reel` (modo `bozza`, stessa cartella) **in parallelo**. Se ha scelto "solo Reel", lavora solo il `costruttore-reel`. Il costruttore del post usa lo stile scelto dal proprietario: tweet (`strumenti/tweet.py`, quello che preferisce dal 23/10/2026) oppure la skill `scopri-carousel`. Testi completi in `carousels/<slug>/copy.md`, slide statiche esportate, copertine alternative.
 2. Commit e push.
-3. Manda al proprietario (SendUserFile): `exports/contact-sheet.jpg`, le copertine alternative (`exports/copertina-*.png`), le anteprime del Reel se c'è (`reel-anteprima.png`, `reel-b-anteprima.png`) e i testi di `copy.md` in versione corta (titolo e testo di ogni slide, caption). Chiedi: **"Va bene così? Dimmi quale copertina e quale Reel, e cosa cambiare."**
+3. Manda al proprietario (SendUserFile): `exports/contact-sheet.jpg`, le copertine alternative (`exports/copertina-*.png`), le anteprime del Reel se c'è (sempre tutte e quattro: `reel-anteprima.png`, `reel-b-anteprima.png`, `reel-tweet-anteprima.png`, `reel-tweet-b-anteprima.png`) e i testi di `copy.md` in versione corta (titolo e testo di ogni slide, caption). Chiedi: **"Va bene così? Dimmi quale copertina e quale Reel, e cosa cambiare."**
 
 ### 🛑 Fermata 2 — aspetta l'approvazione e le correzioni
 Un sì chiaro ("va bene", "approvato") approva tutto quello che non viene citato: applica le modifiche chieste e vai avanti, senza richiedere l'approvazione.
