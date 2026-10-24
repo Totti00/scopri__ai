@@ -36,3 +36,12 @@
 ## Orario e musica
 - Reel alle **20:00 di oggi, 24/10/2026**.
 - Musica: nessuna, audio originale del video (regola del 22/10/2026).
+
+## Versione con il video di Hugging Face (24/10/2026, dopo la consegna)
+- Il proprietario ha chiesto se si poteva usare il video del Reel di @evolving.ai. No: è una pagina concorrente (regola 4). Si è risaliti all'originale: il filmato grezzo "raw footage" pubblicato su X da Clem Delangue, CEO di Hugging Face, il 27/8/2026 (`fonti.md`).
+- File: `tweet-hf.json` → `reel-hf.mp4` (83,1 s, dal secondo 2,6), `reel-hf-completo.mp4` (85,7 s, il video intero da 0, non va su GitHub), `reel-hf-copertina.jpg` (i quattro paperotti colorati, secondo 63,9 del Reel), `caption-reel-hf.txt`.
+- Stesso testo del Reel NVIDIA. Il Reel parte dal secondo 2,6: nei primi 2,5 s la stanza è vuota con il titolo "Microduck RAW FOOTAGE" e il paperotto entra solo dopo; il video intero è in `reel-hf-completo.mp4`.
+- Audio originale (rumori dei motori e le voci dei paperotti, media −26 dB); nessuna musica. Negli ultimi ~0,8 s il video originale sfuma nel nero.
+- Nel video ci sono le scritte in inglese del filmato originale ("Balance recovery", "Floor picking", "Roller skating", "Chatting"): sono dell'autore, non nostre.
+- Caption: `caption-reel-hf.txt`, CAPTION PRONTA (442 caratteri). Niente NVIDIA, perché il video non è quello del keynote.
+- Il proprietario sceglie quale Reel pubblicare: NVIDIA (`reel.mp4`) o Hugging Face (`reel-hf.mp4`).
