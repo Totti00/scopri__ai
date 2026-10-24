@@ -1,7 +1,7 @@
 """Reel Scopri AI semplice (deciso il 16/10/2026): una sola schermata con un titolo che incuriosisce e, sotto,
 il video vero che è "una bomba". Niente scene, niente animazioni: facile, veloce, cattura subito.
-Si fa solo quando c'è un video vero che vale da solo (vedi format/5-reel.md). 1080×1920, senza audio
-(la musica strumentale la mette il proprietario su Instagram). Stile Electric Mono, logo a campana, niente giallo.
+Si fa solo quando c'è un video vero che vale da solo (vedi format/5-reel.md). 1080×1920, con l'audio originale
+del video (deciso il 22/10/2026; se il video non ha audio, la musica strumentale la mette il proprietario su Instagram). Stile Electric Mono, logo a campana, niente giallo.
 
 Uso:
     python3 strumenti/reel.py carousels/<slug>/reel.json               → reel.mp4 + reel-copertina.jpg
@@ -18,10 +18,12 @@ Il JSON:
   "durata": 20,             (facoltativo: senza, il video intero; con inizio/durata esce il pezzo migliore come reel.mp4
                              e il video intero come reel-completo.mp4, così il proprietario può tagliare da solo)
   "fondo": "scuro",         (scuro, chiaro o blu; di solito scuro)
-  "formato": "originale",   (originale, 1:1, 4:5 o 16:9: come tagliare il video nel riquadro)
+  "formato": "originale",   (originale, 1:1, 4:5, 16:9 o un rapporto su misura "L:A", es. "1080:760" per togliere
+                             le bande sfocate sopra e sotto di un video quadrato: come tagliare il video nel riquadro)
   "posizione": 0.5,         (taglio orizzontale, da 0 = sinistra a 1 = destra)
   "zoom": 1.0,              (ingrandisce il video nel riquadro: 1.2 toglie bordi o scritte ai lati del video originale)
   "copertina": 1.0,         (secondo del video da usare per reel-copertina.jpg)
+  "audio": true,            (facoltativo, 24/10/2026: l'audio originale resta se il video ce l'ha; false per toglierlo)
   "compatto": true          (facoltativo, 19/10/2026: tutto più in alto e video più grande, fino quasi al fondo;
                              per i video verticali da mostrare interi)
 }
@@ -85,6 +87,11 @@ def info_video(f):
     return w, h, int(d.group(1)) * 3600 + int(d.group(2)) * 60 + float(d.group(3))
 
 
+def ha_audio(f):
+    err = subprocess.run(["ffmpeg", "-i", str(f)], capture_output=True, text=True).stderr
+    return bool(re.search(r"Stream #.*Audio:", err))
+
+
 def titolo_html(testo):
     return re.sub(r"\*([^*]+)\*", r'<span class="chiave">\1</span>', html.escape(testo))
 
@@ -146,7 +153,13 @@ def main():
     m = MODI[r.get("fondo", "scuro")]
     video = cartella / r["video"]
     vw, vh, totale = info_video(video)
-    rapporto = {"1:1": "1/1", "4:5": "4/5", "16:9": "16/9"}.get(r.get("formato", "originale"), f"{vw}/{vh}")
+    formato = str(r.get("formato", "originale"))
+    su_misura = re.fullmatch(r"(\d+(?:\.\d+)?):(\d+(?:\.\d+)?)", formato)
+    rapporto = (f"{su_misura.group(1)}/{su_misura.group(2)}" if su_misura
+                else {"1:1": "1/1", "4:5": "4/5", "16:9": "16/9"}.get(formato, f"{vw}/{vh}"))
+    audio = r.get("audio", True) and ha_audio(video)
+    if r.get("audio", True) and not audio:
+        print("avviso: il video non ha audio: la musica strumentale la mette il proprietario su Instagram")
     inizio = float(r.get("inizio", 0))
     durata = min(float(r.get("durata") or (totale - inizio)), totale - inizio)
 
@@ -196,12 +209,15 @@ def main():
         uscite = [(dest, inizio, durata)]
         if inizio > 0 or durata < totale - 0.05:
             uscite.append((cartella / f"{nome}-completo.mp4", 0, totale))
-        for file, da, quanto in uscite:
+        for file, da, quanto in uscite:   # l'audio originale si taglia come il video (atrim), così resta a tempo
+            suono = (f";[1:a]atrim=start={da}:duration={quanto},asetpts=PTS-STARTPTS[a]" if audio else "")
             esegui(["ffmpeg", "-y", "-v", "error", "-loop", "1", "-framerate", str(FPS), "-i", str(fondo),
                     "-i", str(video), "-loop", "1", "-i", str(mask),
-                    "-filter_complex", filtro(f"trim=start={da}:duration={quanto},setpts=PTS-STARTPTS,"), "-map", "[out]", "-t", str(quanto), "-r", str(FPS),
-                    "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-an", "-movflags", "+faststart", str(file)])
-            print(f"Creato {file.name} ({quanto:.1f} secondi)")
+                    "-filter_complex", filtro(f"trim=start={da}:duration={quanto},setpts=PTS-STARTPTS,") + suono,
+                    "-map", "[out]", *(["-map", "[a]", "-c:a", "aac", "-b:a", "192k", "-ar", "48000"] if audio else ["-an"]),
+                    "-t", str(quanto), "-r", str(FPS),
+                    "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-movflags", "+faststart", str(file)])
+            print(f"Creato {file.name} ({quanto:.1f} secondi, {'con l' + chr(39) + 'audio originale' if audio else 'senza audio'})")
         copertina = cartella / f"{nome}-copertina.jpg"
         esegui(["ffmpeg", "-y", "-v", "error", "-ss", str(min(float(r.get("copertina", 1.0)), durata - 0.1)), "-i", str(dest),
                 "-frames:v", "1", "-q:v", "2", str(copertina)])
