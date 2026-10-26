@@ -7,7 +7,7 @@ _File: `tweet.json` (copertina + 8 slide interne + chiusura = 10 slide), `tweet-
 **Immagini:** tutte vere e a colori, intere nelle slide interne, niente scritte sotto. In finale le slide 2, 3 e 5 diventano MP4 (video ufficiali di CapCut, Anthropic, Block).
 
 ### 01 — Copertina
-- **Titolo (3 righe, maiuscolo):** 8 NOTIZIE AI DELLA SETTIMANA CHE TI SEI *PERSO*
+- **Titolo (3 righe, maiuscolo):** 7 NOTIZIE AI DELLA SETTIMANA CHE TI SEI *PERSO*
 - **Media:** i loghi delle app che si collegano a Claude Duet (`media/claude-duet-app-loghi.png`, Anthropic): un muro di app colorate, si riconoscono Gmail, Canva, TikTok, Slack, LinkedIn.
 
 ### 02 — 1 · CAPCUT DENTRO CHATGPT
@@ -49,7 +49,7 @@ _File: `tweet.json` (copertina + 8 slide interne + chiusura = 10 slide), `tweet-
 - **In fondo:** 🔔 Seguici per non perdere le prossime notizie
 
 ### Copertine alternative
-- **slide-01** (`tweet.json`): 8 NOTIZIE AI DELLA SETTIMANA CHE TI SEI *PERSO* · loghi delle app di Claude Duet
+- **slide-01** (`tweet.json`): 7 NOTIZIE AI DELLA SETTIMANA CHE TI SEI *PERSO* · loghi delle app di Claude Duet
 - **copertina-b** (`tweet-b.json`): CLAUDE ORA LAVORA PER TE *MENTRE SEI VIA* · video Anthropic da 5 s (il telefono con il riassunto del mattino). Il video è solo 640×360: in copertina si vede un po' morbido.
 - **copertina-c** (`tweet-c.json`): BARCLAYS TAGLIA *5.000 POSTI* E PUNTA SULL'AI · foto della sede con l'insegna
 - **copertina-d** (`tweet-d.json`): L'AI CHE RIDE, ESITA E *TI INTERROMPE* · video di Dessa (Human / Dessa)
@@ -73,7 +73,7 @@ Fonti: CapCut, SoyaCincau, Anthropic, The Verge, xAI, Digital Trends, Block, Tec
 ```
 
 ### Hook alternativi
-- 8 NOTIZIE AI DELLA SETTIMANA CHE TI SEI *PERSO* (slide-01)
+- 7 NOTIZIE AI DELLA SETTIMANA CHE TI SEI *PERSO* (slide-01)
 - CLAUDE ORA LAVORA PER TE *MENTRE SEI VIA* (copertina-b)
 - BARCLAYS TAGLIA *5.000 POSTI* E PUNTA SULL'AI (copertina-c)
 - L'AI CHE RIDE, ESITA E *TI INTERROMPE* (copertina-d)
@@ -99,3 +99,6 @@ Fonti: CapCut, SoyaCincau, Anthropic, The Verge, xAI, Digital Trends, Block, Tec
 - The Guardian, BBC, CNBC, Reuters (22/10) su Barclays
 - Reuters su The Star (21/10) · Wall Street Journal (23/10) · The Next Web su Getty
 - Foto Wikimedia Commons: Kidfly182 (CC BY 4.0), Bajajvikram (pubblico dominio), Philafrenzy (CC BY-SA 4.0)
+
+
+> 26/10/2026: il proprietario ha tolto la notizia su Getty Images (slide 9). Ora 7 notizie, 9 slide.

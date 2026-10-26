@@ -49,3 +49,4 @@ Da scrivere quando il proprietario sceglie (anche in `brand/musica-usata.md`).
 - Nessuna slide "In breve" (riepilogo): con lo stile tweet il carosello finisce con la chiusura, come approvato in bozza.
 
 - 26/10/2026: tolta da tutte le slide la frase "👉 Per te: …" su richiesta del proprietario ("è bruttissima"); regola aggiornata in format/1-news-della-settimana.md.
+- 26/10/2026: tolta la notizia su Getty Images (slide 9) su richiesta del proprietario; copertina «7 notizie», 9 slide.

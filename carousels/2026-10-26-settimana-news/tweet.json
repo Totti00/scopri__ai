@@ -2,7 +2,7 @@
   "carosello": [
     {
       "tipo": "copertina",
-      "titolo": "8 notizie AI della settimana che ti sei *perso*",
+      "titolo": "7 notizie AI della settimana che ti sei *perso*",
       "media": "media/claude-duet-app-loghi.png",
       "verticale": 0.5
     },
@@ -53,12 +53,6 @@
       "titolo": "7 · Barclays, 5.000 posti in meno",
       "testo": "La banca inglese taglia *5.000 posti* quest'anno, il 5% del personale. Con l'AI servono meno programmatori, ma contano anche altri risparmi.",
       "media": "media/barclays-sede-canary-wharf.jpg"
-    },
-    {
-      "tipo": "slide",
-      "titolo": "8 · Getty Images e i debiti",
-      "testo": "La più grande agenzia di foto ha chiesto il Chapter 11: *ristruttura i debiti* e continua a lavorare. Pesano anche le immagini fatte con l'AI, scrive Reuters.",
-      "media": "media/getty-images-gallery-londra.jpg"
     },
     {
       "tipo": "chiusura",
