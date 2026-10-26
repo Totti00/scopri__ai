@@ -156,7 +156,7 @@ def pagina_chiusura(s):
                      (f'<div data-max="3" data-nome="titolo della chiusura" style="width:940px;text-align:center;text-wrap:balance;font:900 70px/1.08 Google Sans Flex;'
                       f'color:#fff;letter-spacing:-0.5px">{marca(s["titolo"], True)}</div>' if s.get("titolo") else "") +
                      (f'<div style="margin-top:52px;background:{ACCENTO};color:#0B0E22;border-radius:999px;padding:24px 56px;'
-                      f'font:800 44px Inter">{marca(s["pulsante"])}</div>' if s.get("pulsante") else "") +
+                      f'font:800 44px \'Google Sans Flex\',\'Noto Color Emoji\',sans-serif">{marca(s["pulsante"])}</div>' if s.get("pulsante") else "") +
                      (f'<div data-max="2" data-nome="testo della chiusura" style="margin-top:28px;width:900px;text-align:center;'
                       f'font:400 36px/1.3 Google Sans Flex;color:rgba(255,255,255,.85)">{marca(s["testo"])}</div>' if s.get("testo") else "") +
                      '</div>'
