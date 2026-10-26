@@ -11,35 +11,35 @@ _File: `tweet.json` (copertina + 8 slide interne + chiusura = 10 slide), `tweet-
 - **Media:** i loghi delle app che si collegano a Claude Duet (`media/claude-duet-app-loghi.png`, Anthropic): un muro di app colorate, si riconoscono Gmail, Canva, TikTok, Slack, LinkedIn.
 
 ### 02 — 1 · CAPCUT DENTRO CHATGPT
-- **Testo:** CapCut, l'app di montaggio di TikTok, arriverà dentro ChatGPT: gli scrivi l'idea e lui *monta il video*. Prova aperta da novembre. 👉 Per te: se fai video per i social, segnatelo.
+- **Testo:** CapCut, l'app di montaggio di TikTok, arriverà dentro ChatGPT: gli scrivi l'idea e lui *monta il video*. Prova aperta da novembre.
 - **Media:** video ufficiale CapCut (`media/capcut-chatgpt-annuncio.mp4`, da 7 s per 12 s): la chat con le 5 clip di calcio e la richiesta "Turn these clips into a 12-second highlight reel", poi il montaggio.
 
 ### 03 — 2 · CLAUDE DUET
-- **Testo:** Anthropic prova Claude Duet: controlla mail e app collegate e *ti scrive lui* quando serve. Prima di agire chiede il permesso. 👉 Per te: per ora solo negli USA, con lista d'attesa.
+- **Testo:** Anthropic prova Claude Duet: controlla mail e app collegate e *ti scrive lui* quando serve. Prima di agire chiede il permesso.
 - **Media:** video ufficiale Anthropic (`media/claude-duet-video.mp4`, da 2 s per 15 s): la notifica "Morning, Nicole!" e il riassunto del mattino sul telefono.
 
 ### 04 — 3 · GROK BOT SUL TELEFONO
-- **Testo:** Grok Bot di xAI ora usa calendario, promemoria, contatti, messaggi e altre app del telefono. *Ogni app* va permessa a parte. 👉 Per te: se lo provi, dai solo i permessi che servono.
+- **Testo:** Grok Bot di xAI ora usa calendario, promemoria, contatti, messaggi e altre app del telefono. *Ogni app* va permessa a parte.
 - **Media:** immagine ufficiale xAI (`media/grokbot-app-telefono.jpg`): il telefono con le 6 app e i pulsanti "Allow".
 
 ### 05 — 4 · DESSA, L'AI CHE RIDE
-- **Testo:** Block, l'azienda di Jack Dorsey, ha creato Dessa: ha imparato a parlare solo ascoltando. Ride, esita, *ti interrompe*. 👉 Per te: non è ancora per tutti, ma al telefono sarà più difficile capire chi parla.
+- **Testo:** Block, l'azienda di Jack Dorsey, ha creato Dessa: ha imparato a parlare solo ascoltando. Ride, esita, *ti interrompe*.
 - **Media:** video ufficiale Block (`media/dessa-ragavan-conversazione.mp4`, da 8 s per 20 s): conversazione "Human / Dessa" con i sottotitoli.
 
 ### 06 — 5 · KIMI K3.1 PRO
-- **Testo:** La cinese Moonshot presenta Kimi K3.1 Pro. Legge *1 milione di token* in una volta: circa 700.000 parole, come una pila di libri. 👉 Per te: lo provi già nell'app Kimi.
+- **Testo:** La cinese Moonshot presenta Kimi K3.1 Pro. Legge *1 milione di token* in una volta: circa 700.000 parole, come una pila di libri.
 - **Media:** grafico ufficiale Moonshot ritagliato su un solo test (`media/kimi-k31-terminal-bench.png`, da `kimi-k31-benchmark.webp`): Terminal-Bench 4.0, Kimi 65,7 contro Claude Opus 5.5 66,4.
 
 ### 07 — 6 · BANCHE CONTRO GLI AGENTI AI
-- **Testo:** JPMorgan e altre banche USA chiudono fuori le AI di altri che entrano nei conti con la password dei clienti. Alcune, secondo Axios, avrebbero agito *da sole*. 👉 Per te: mai la password della banca a un'AI.
+- **Testo:** JPMorgan e altre banche USA chiudono fuori le AI di altri che entrano nei conti con la password dei clienti. Alcune, secondo Axios, avrebbero agito *da sole*.
 - **Media:** la nuova sede di JPMorgan, 270 Park Avenue a New York (`media/jpmorgan-270-park-avenue.jpg`, Wikimedia Commons, Kidfly182, CC BY 4.0).
 
 ### 08 — 7 · BARCLAYS, 5.000 POSTI IN MENO
-- **Testo:** La banca inglese taglia *5.000 posti* quest'anno, il 5% del personale. Con l'AI servono meno programmatori, ma contano anche altri risparmi. 👉 Per te: il lavoro d'ufficio cambia in fretta.
+- **Testo:** La banca inglese taglia *5.000 posti* quest'anno, il 5% del personale. Con l'AI servono meno programmatori, ma contano anche altri risparmi.
 - **Media:** la sede di Barclays a Canary Wharf, Londra, con l'insegna (`media/barclays-sede-canary-wharf.jpg`, Wikimedia Commons, Bajajvikram, pubblico dominio).
 
 ### 09 — 8 · GETTY IMAGES E I DEBITI
-- **Testo:** La più grande agenzia di foto ha chiesto il Chapter 11: *ristruttura i debiti* e continua a lavorare. Pesano anche le immagini fatte con l'AI, scrive Reuters. 👉 Per te: le foto nei giornali restano.
+- **Testo:** La più grande agenzia di foto ha chiesto il Chapter 11: *ristruttura i debiti* e continua a lavorare. Pesano anche le immagini fatte con l'AI, scrive Reuters.
 - **Media:** la galleria Getty Images di Eastcastle Street, Londra (`media/getty-images-gallery-londra.jpg`, Wikimedia Commons, Philafrenzy, CC BY-SA 4.0). Alternativa: il logo (`media/getty-images-logo.png`, ma è nero su trasparente: su fondo nero va schiarito).
 
 ### 10 — Chiusura

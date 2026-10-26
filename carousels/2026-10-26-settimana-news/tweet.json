@@ -9,7 +9,7 @@
     {
       "tipo": "slide",
       "titolo": "1 · CapCut dentro ChatGPT",
-      "testo": "CapCut, l'app di montaggio di TikTok, arriverà dentro ChatGPT: gli scrivi l'idea e lui *monta il video*. Prova aperta da novembre. 👉 Per te: se fai video per i social, segnatelo.",
+      "testo": "CapCut, l'app di montaggio di TikTok, arriverà dentro ChatGPT: gli scrivi l'idea e lui *monta il video*. Prova aperta da novembre.",
       "media": "media/capcut-chatgpt-annuncio.mp4",
       "inizio": 7,
       "durata": 12
@@ -17,7 +17,7 @@
     {
       "tipo": "slide",
       "titolo": "2 · Claude Duet",
-      "testo": "Anthropic prova Claude Duet: controlla mail e app collegate e *ti scrive lui* quando serve. Prima di agire chiede il permesso. 👉 Per te: per ora solo negli USA, con lista d'attesa.",
+      "testo": "Anthropic prova Claude Duet: controlla mail e app collegate e *ti scrive lui* quando serve. Prima di agire chiede il permesso.",
       "media": "media/claude-duet-video.mp4",
       "inizio": 2,
       "durata": 15
@@ -25,13 +25,13 @@
     {
       "tipo": "slide",
       "titolo": "3 · Grok Bot sul telefono",
-      "testo": "Grok Bot di xAI ora usa calendario, promemoria, contatti, messaggi e altre app del telefono. *Ogni app* va permessa a parte. 👉 Per te: se lo provi, dai solo i permessi che servono.",
+      "testo": "Grok Bot di xAI ora usa calendario, promemoria, contatti, messaggi e altre app del telefono. *Ogni app* va permessa a parte.",
       "media": "media/grokbot-app-telefono.jpg"
     },
     {
       "tipo": "slide",
       "titolo": "4 · Dessa, l'AI che ride",
-      "testo": "Block, l'azienda di Jack Dorsey, ha creato Dessa: ha imparato a parlare solo ascoltando. Ride, esita, *ti interrompe*. 👉 Per te: non è ancora per tutti, ma al telefono sarà più difficile capire chi parla.",
+      "testo": "Block, l'azienda di Jack Dorsey, ha creato Dessa: ha imparato a parlare solo ascoltando. Ride, esita, *ti interrompe*.",
       "media": "media/dessa-ragavan-conversazione.mp4",
       "inizio": 8,
       "durata": 20
@@ -39,25 +39,25 @@
     {
       "tipo": "slide",
       "titolo": "5 · Kimi K3.1 Pro",
-      "testo": "La cinese Moonshot presenta Kimi K3.1 Pro. Legge *1 milione di token* in una volta: circa 700.000 parole, come una pila di libri. 👉 Per te: lo provi già nell'app Kimi.",
+      "testo": "La cinese Moonshot presenta Kimi K3.1 Pro. Legge *1 milione di token* in una volta: circa 700.000 parole, come una pila di libri.",
       "media": "media/kimi-k31-terminal-bench.png"
     },
     {
       "tipo": "slide",
       "titolo": "6 · Banche contro gli agenti AI",
-      "testo": "JPMorgan e altre banche USA chiudono fuori le AI di altri che entrano nei conti con la password dei clienti. Alcune, secondo Axios, avrebbero agito *da sole*. 👉 Per te: mai la password della banca a un'AI.",
+      "testo": "JPMorgan e altre banche USA chiudono fuori le AI di altri che entrano nei conti con la password dei clienti. Alcune, secondo Axios, avrebbero agito *da sole*.",
       "media": "media/jpmorgan-270-park-avenue.jpg"
     },
     {
       "tipo": "slide",
       "titolo": "7 · Barclays, 5.000 posti in meno",
-      "testo": "La banca inglese taglia *5.000 posti* quest'anno, il 5% del personale. Con l'AI servono meno programmatori, ma contano anche altri risparmi. 👉 Per te: il lavoro d'ufficio cambia in fretta.",
+      "testo": "La banca inglese taglia *5.000 posti* quest'anno, il 5% del personale. Con l'AI servono meno programmatori, ma contano anche altri risparmi.",
       "media": "media/barclays-sede-canary-wharf.jpg"
     },
     {
       "tipo": "slide",
       "titolo": "8 · Getty Images e i debiti",
-      "testo": "La più grande agenzia di foto ha chiesto il Chapter 11: *ristruttura i debiti* e continua a lavorare. Pesano anche le immagini fatte con l'AI, scrive Reuters. 👉 Per te: le foto nei giornali restano.",
+      "testo": "La più grande agenzia di foto ha chiesto il Chapter 11: *ristruttura i debiti* e continua a lavorare. Pesano anche le immagini fatte con l'AI, scrive Reuters.",
       "media": "media/getty-images-gallery-londra.jpg"
     },
     {

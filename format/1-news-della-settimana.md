@@ -11,7 +11,7 @@ Le 5 notizie di tech e AI più rilevanti degli ultimi 7 giorni (anche di altri t
    - numero grande (01–05);
    - titolo in 1 riga;
    - 2–3 righe di spiegazione semplice;
-   - **"👉 Per te:"** una frase concreta;
+   - **niente frase "👉 Per te:"** sulle slide (tolta dal proprietario il 26/10/2026: "è bruttissima"); se serve, cosa cambia per una persona normale si dice dentro la spiegazione o in caption;
 7. **Chiusura** (fondo blu) — "Ci rivediamo la prossima settimana" + "🔔 Seguici per non perdere la prossima".
 
 ## Caption

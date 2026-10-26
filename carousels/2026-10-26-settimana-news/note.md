@@ -47,3 +47,5 @@ Da scrivere quando il proprietario sceglie (anche in `brand/musica-usata.md`).
 - Caption: 720 caratteri, prima riga 104, 5 hashtag, "Tu cosa ne pensi? 🤔💬", fonti in fondo: CAPTION PRONTA.
 - Indiscrezioni al condizionale (banche), annunci detti come annunci (CapCut).
 - Nessuna slide "In breve" (riepilogo): con lo stile tweet il carosello finisce con la chiusura, come approvato in bozza.
+
+- 26/10/2026: tolta da tutte le slide la frase "👉 Per te: …" su richiesta del proprietario ("è bruttissima"); regola aggiornata in format/1-news-della-settimana.md.
