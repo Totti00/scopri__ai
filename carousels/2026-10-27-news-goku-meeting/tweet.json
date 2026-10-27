@@ -1,7 +1,7 @@
 {
   "reel": {
     "testo": "Il teletrasporto di Goku ora *esiste* davvero: due dita sulla fronte e l'AI ti fa sparire dalla videochiamata.",
-    "video": "media/goku.mp4", "inizio": 1.4,
+    "video": "media/goku.mp4", "inizio": 0,
     "finestra": "auto", "zoom": 1.0, "posizione": 0.5, "copertina": 3.2
   }
 }

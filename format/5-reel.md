@@ -20,7 +20,7 @@ Lo fa `strumenti/reel.py` (istruzioni in cima al file) dal file `reel.json`, nel
 
 ## Regole
 - **Il primo secondo è già il momento forte.** Niente loghi, titoli di altri, persone che parlano in camera o schermate nere all'inizio: si sceglie `inizio` guardando una griglia di fotogrammi (un fotogramma al secondo con ffmpeg).
-- **Durata:** il pezzo migliore, di solito 8–20 secondi (corto = lo guardano fino in fondo e ripartono). Il video intero va comunque consegnato.
+- **Durata: il video intero, sempre con l'audio** (deciso il 27/10/2026 dal proprietario): niente tagli di inizio e fine nel Reel (`inizio` 0, nessuna `durata`). Prima si sceglieva il pezzo migliore di 8–20 secondi.
 - **Video vero e originale** (regola 4 di `CLAUDE.md`): dal post dell'azienda o dell'autore, mai da pagine che ripubblicano. Se il video ha bordi o scritte sue, si tolgono con `zoom`.
 - **Zona sicura:** i testi stanno tra y 230 e y 1440 (sotto y 1000 anche lontano dal bordo destro, dove ci sono i pulsanti). Il programma si ferma se un testo esce.
 - **Tecnica presa da altre pagine, identità nostra:** il formato "titolo + video" lo usano anche altri (es. ai__facile); da noi grafica Electric Mono, logo, parole e titoli nostri (regola 7).

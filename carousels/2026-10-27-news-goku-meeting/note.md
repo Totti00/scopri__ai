@@ -1,4 +1,16 @@
-# Note — Reel "teletrasporto di Goku" (bozza, 27/10/2026)
+# Note — Reel "teletrasporto di Goku" (27/10/2026)
+
+## Finale (27/10/2026)
+- Scelta del proprietario: **versione 3 = tweet A** (`tweet.json`): «Il teletrasporto di Goku ora *esiste* davvero: due dita sulla fronte e l'AI ti fa sparire dalla videochiamata.»
+- Correzione del proprietario: "video sempre con audio e intero" → `inizio` 0, senza `durata`: il Reel è il video intero, 0–23,6 s, con l'audio originale (AAC). Nessun taglio.
+- File: `reel.mp4` (1080×1920, 23,6 s, con audio), `reel-completo.mp4` (copia identica di `reel.mp4`: il video non è tagliato, `tweet.py` non lo crea da solo; aggiunto perché il pacchetto lo prevede), `reel-copertina.jpg` (a 3,2 s, stanza vuota dopo il gesto).
+- Il primo fotogramma ora è lui che indica la webcam col braccio teso (il gesto parte a ~1,4 s): accettato per la regola "video intero".
+- Caption: `caption-reel.txt`, CAPTION PRONTA con `--stile tweet --formato reel` (444 caratteri, 5 hashtag). `caption-reel-classico.txt` non serve più.
+- Controllo finale (voci del Reel): 1080×1920 ✔ · testo nella zona sicura (3 righe, `tweet.py` non si è fermato) ✔ · video bomba ✔ · caption pronta ✔ · primo secondo: parte dal gesto che si prepara, non dal momento forte (scelta del proprietario).
+
+---
+
+# Bozza
 
 Reel senza carosello. Quattro versioni da scegliere:
 
