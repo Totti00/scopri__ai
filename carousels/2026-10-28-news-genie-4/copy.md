@@ -1,4 +1,17 @@
-# Genie 4 di Google: una frase e l'AI crea un mondo a parte (bozza, 28/10/2026)
+# Genie 4 di Google: una frase e l'AI crea un mondo a parte (finale, 28/10/2026)
+
+## Versione finale (approvata alla Fermata 2: «Tweet a, video intero con audio»)
+- **Tweet A** (`tweet.json`), testo invariato (3 righe): "Niente di questo è stato girato. Basta una frase e Genie 4, l'AI di Google, crea un *mondo a parte*."
+- Video: la demo della moto **intera**, da 0 a 30,5 s, con l'audio originale (niente musica). Finestra 4:5 (1080×864), zoom 1.0:
+  niente bande nere né tasti W/A/S/D. Nei primi 3 s resta l'avviso di Google "Results for illustrative purposes. Sequences shortened." (è dentro l'immagine).
+- Copertina: fotogramma a 24,4 s (il mostro grande con le esplosioni sopra la città, i due in moto di spalle).
+- File: `reel.mp4` (30,5 s, audio originale com'è, molto basso: -32 LUFS), `reel-volume-alto.mp4` (stesso video, audio alzato a circa -15 LUFS: consigliato), `reel-copertina.jpg`, `caption-reel.txt` (approvata così com'è, CAPTION PRONTA). Niente `reel-completo.mp4`: il Reel è già intero.
+- Al proprietario: `reel-copertina.jpg` e `reel-volume-alto.mp4` (o `reel.mp4`). Le anteprime `reel-*-anteprima.png` sono della bozza (la tweet A partiva da 16,2 s).
+- Esce **oggi, mercoledì 28/10, alle 20:00**. Dettagli in `note.md`, fonti in `fonti.md`.
+
+---
+Sotto, la bozza com'era (le altre tre versioni restano nella cartella, non costruite).
+
 
 Solo Reel, niente carosello. Scelta del proprietario: notizia 1, "r2 reel", ma con una frase nuova e d'impatto
 sull'idea «una frase e l'AI crea un mondo a parte» (il titolo r2 "Una frase, e arrivano i tentacoli" non si usa).
@@ -12,7 +25,7 @@ Esce mercoledì 28/10 alle 20:00.
   Il riquadro del comando scritto ("Gigantic alien tentacles that destroy the world.") è dentro l'immagine e resta:
   nel momento A si legge la frase intera nel primo secondo, ed è proprio l'idea del titolo.
 - La scritta di avviso di Google ("Results for illustrative purposes. Sequences shortened.") c'è solo nei primi secondi:
-  nei pezzi scelti non si vede (resta in `reel-completo.mp4`).
+  nei pezzi scelti non si vede (resta in `reel-completo.mp4`). [Superato nel finale: col video intero da 0 l'avviso si vede nei primi 3 s, e `reel-completo.mp4` non c'è.]
 - Due momenti:
   - **A, da 16,2 s a 30,5 s (14,3 s):** si apre con la frase intera nel riquadro ("…that destroy the world.") e le
     esplosioni sul fiume; a 17,5 s arrivano i tentacoli, a 19,7 s il mostro, poi esplosioni sulla città fino in fondo.
@@ -41,7 +54,7 @@ Scartati: "Una frase, e arrivano i tentacoli" (r2, da cambiare per il proprietar
 (troppo simile alla A, e "Scrivi" fa pensare che si possa già provare) · "Ora puoi creare il tuo mondo"
 (falso: per ora solo tester) · "Google crea mondi infiniti" (falso: le scene restano coerenti circa 2 minuti).
 
-## Caption del Reel (bozza, `caption-reel.txt`)
+## Caption del Reel (`caption-reel.txt`, approvata così com'è)
 Stile tweet (domanda → fonti → invito). `caption_check.py --stile tweet --formato reel --parole "genie,google"`:
 ✅ CAPTION PRONTA · reel · notizia — 445/2200 caratteri · 5 hashtag · invito: 📩 Mandalo a … · domanda: sì · fonti: sì
 ```

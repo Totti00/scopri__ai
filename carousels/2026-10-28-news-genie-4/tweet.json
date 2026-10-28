@@ -1,7 +1,7 @@
 {
   "reel": {
     "testo": "Niente di questo è stato girato. Basta una frase e Genie 4, l'AI di Google, crea un *mondo a parte*.",
-    "video": "media/genie4-moto.mp4", "inizio": 16.2, "durata": 14.3,
-    "finestra": "4:5", "zoom": 1.0, "posizione": 0.5, "copertina": 8.3
+    "video": "media/genie4-moto.mp4",
+    "finestra": "4:5", "zoom": 1.0, "posizione": 0.5, "copertina": 24.4
   }
 }
