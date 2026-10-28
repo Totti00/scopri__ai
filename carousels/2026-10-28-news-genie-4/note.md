@@ -42,3 +42,9 @@
 ## Orario e musica
 - Reel alle **20:00 di oggi, mercoledì 28/10/2026**.
 - Musica: nessuna, audio originale del video (regola del 22/10/2026).
+
+## Copertine alternative del Reel (28/10)
+- `reel-copertina.jpg` (consigliata): 24,4 s del video, mostro grande ed esplosioni sulla città.
+- `reel-copertina-b.jpg`: 19,9 s, il mostro dietro il casco bianco.
+- `reel-copertina-c.jpg`: 27,2 s, i tentacoli sui grattacieli, di spalle.
+Su Instagram: "Copertina" → "Aggiungi dal rullino" e scegli il file. Nella griglia del profilo il Reel si vede tagliato al centro (3:4): testo e video restano dentro.
